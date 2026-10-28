@@ -81,12 +81,11 @@ export const MOCK_NO_MATCH_RESPONSE = deepFreeze({
 export const MOCK_VALIDATION_ERROR_RESPONSE = deepFreeze({
   status: "error",
   error_code: "VALIDATION_ERROR",
-  message: "The 'idea' field must contain at least 10 characters.",
+  message: "Demo scenario: simulated server-side validation error. This is a demonstration and does not indicate a problem with your submitted idea.",
   details: {
     field: "idea",
     constraint: "min_length",
-    min_length: 10,
-    actual_length: 5
+    min_length: 10
   }
 });
 

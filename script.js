@@ -39,6 +39,7 @@ const VERIFICATION_LABELS = {
 // ---------------------------------------------------------------------------
 let activeRequest = null;   // { id, controller, mode, timedOut, cancelled }
 let requestCounter = 0;
+let cardSeq = 0;
 let liveStatus = 'idle';    // 'idle' | 'ok' | 'failed' — only meaningful in live mode
 
 // ---------------------------------------------------------------------------
@@ -132,6 +133,15 @@ function init() {
   searchForm.addEventListener('submit', handleFormSubmit);
   dataSourceSelect.addEventListener('change', handleModeChange);
   updateModeIndicators();
+
+  const editIdeaBtn = $('edit-idea-btn');
+  if (editIdeaBtn) {
+    editIdeaBtn.addEventListener('click', () => {
+      ideaInput.focus();
+      const end = ideaInput.value.length;
+      try { ideaInput.setSelectionRange(end, end); } catch (_) { /* not supported: ignore */ }
+    });
+  }
 
   const samples = [
     ['sample-idea-1', 'An IoT-based crop disease detection system using Raspberry Pi and CNNs to monitor foliar infections in real time.'],
@@ -526,7 +536,7 @@ function parseSuccessPayload(data, topK) {
   // Checked against the raw match list, before any client-side filtering or top_k trimming.
   if (data.result_count !== data.matches.length) throw bad();
   if (!Array.isArray(data.warnings) || !data.warnings.every((w) => typeof w === 'string')) throw bad();
-  if (data.message !== null && typeof data.message !== 'string') throw bad();
+  if (data.message !== null && data.message !== undefined && typeof data.message !== 'string') throw bad();
 
   const notices = [];
   const usable = data.matches.filter(
@@ -668,34 +678,72 @@ function buildMatchCard(match, index, isMock) {
     card.appendChild(excerpt);
   }
 
-  // Shared concepts + technologies
+  // Shared concepts stay visible: they are the quickest way to see why a record is related.
   const shared = Array.isArray(match.shared_elements)
     ? buildTagSection('Shared concepts', match.shared_elements, 'bg-amber-50 text-amber-900 border border-amber-300')
     : null;
   if (shared) card.appendChild(shared);
 
+  // Secondary information (technologies, source) sits behind a disclosure control.
+  const detailsId = `match-details-${++cardSeq}`;
+  const details = el('div', 'flex flex-col gap-3 pt-3 border-t border-slate-200 text-sm');
+
   const tech = Array.isArray(match.technologies)
     ? buildTagSection('Technologies', match.technologies, 'bg-slate-100 text-slate-800 border border-slate-300')
     : null;
-  if (tech) card.appendChild(tech);
-
-  // Footer: ranking details + provenance
-  const footer = el('div', 'flex flex-wrap items-center justify-between gap-x-4 gap-y-3 pt-3 border-t border-slate-200 text-sm');
-
-  if (!isMock && isHttpUrl(match.source_url)) {
-    const link = el('a', 'inline-flex items-center gap-1 text-indigo-700 hover:text-indigo-900 underline underline-offset-2 font-semibold', 'View source record');
-    link.href = match.source_url;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    const hint = el('span', 'sr-only', ' (opens in a new tab)');
-    link.appendChild(hint);
-    link.appendChild(el('span', null, '↗')).setAttribute('aria-hidden', 'true');
-    footer.appendChild(link);
-  } else {
-    footer.appendChild(el('span', 'text-slate-600 italic', isMock ? 'Demo record — no real source' : 'No public source link available'));
+  if (tech) {
+    details.appendChild(tech);
   }
 
-  card.appendChild(footer);
+  const sourceRow = el('div', 'flex flex-col gap-1');
+  sourceRow.appendChild(el('span', 'text-xs font-bold text-slate-700 uppercase tracking-wider', 'Source'));
+  const sourceVal = el('div', 'text-slate-800');
+  if (isMock) {
+    sourceVal.appendChild(el('span', 'italic text-slate-700', 'Illustrative demo record — not a real source and not verified.'));
+  } else {
+    const label = nonEmptyString(match.source_type) ? (SOURCE_LABELS[match.source_type] || match.source_type) : null;
+    if (label) sourceVal.appendChild(el('span', 'font-medium mr-3', label));
+    if (isHttpUrl(match.source_url)) {
+      const link = el('a', 'inline-flex items-center gap-1 text-indigo-700 hover:text-indigo-900 underline underline-offset-2 font-semibold break-all', 'View source record');
+      link.href = match.source_url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.appendChild(el('span', 'sr-only', ' (opens in a new tab)'));
+      const arrow = el('span', null, '↗');
+      arrow.setAttribute('aria-hidden', 'true');
+      link.appendChild(arrow);
+      sourceVal.appendChild(link);
+    } else {
+      sourceVal.appendChild(el('span', 'italic text-slate-600', 'No public source link available'));
+    }
+  }
+  sourceRow.appendChild(sourceVal);
+  details.appendChild(sourceRow);
+
+  const panel = el('div');
+  panel.id = detailsId;
+  panel.hidden = true;
+  panel.appendChild(details);
+
+  const toggle = el('button', 'self-start inline-flex items-center gap-1.5 px-3 py-1.5 -ml-1 rounded-lg text-sm font-semibold text-indigo-700 hover:bg-indigo-50 border border-transparent hover:border-indigo-200');
+  toggle.type = 'button';
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-controls', detailsId);
+  const toggleText = el('span', null, 'Show details');
+  const toggleHint = el('span', 'sr-only', ` for ${nonEmptyString(match.title) ? match.title.trim() : 'this record'}`);
+  const chevron = el('span', 'inline-block transition-transform', '▾');
+  chevron.setAttribute('aria-hidden', 'true');
+  toggle.append(toggleText, toggleHint, chevron);
+  toggle.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    panel.hidden = expanded;
+    toggleText.textContent = expanded ? 'Show details' : 'Hide details';
+    chevron.style.transform = expanded ? '' : 'rotate(180deg)';
+  });
+
+  card.appendChild(toggle);
+  card.appendChild(panel);
   return card;
 }
 
