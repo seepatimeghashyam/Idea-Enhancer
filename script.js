@@ -1,606 +1,709 @@
 /**
  * Idea Enhancer — Frontend Controller & API Adapter
- * 
- * Features:
- * - Full compliance with docs/API_CONTRACT.md
- * - Light-themed research workspace with safe DOM construction
- * - Robust input validation (10–2000 chars, trimmed whitespace)
- * - Anti-duplicate submission locks and accessible loading states
- * - Dual mode: Contract-matching Mock Demos vs Live FastAPI backend
- * - Strictly represents RRF score as a ranking metric, never a percentage
+ *
+ * - Follows the agreed POST /search contract (request: { idea, top_k }).
+ * - Vanilla JS, safe DOM construction (no HTML injection from data).
+ * - Demo scenarios use fixed fixtures and are always labelled as demo data.
+ * - Every request is tracked: switching mode or starting a new search
+ *   cancels/ignores any older in-flight request, so stale results never render.
+ * - Internal retrieval scores and sub-ranks are never displayed; only the ordered rank number is.
  */
 
-import {
-  MOCK_SUCCESS_RESPONSE,
-  MOCK_NO_MATCH_RESPONSE,
-  MOCK_VALIDATION_ERROR_RESPONSE,
-  MOCK_SERVER_ERROR_RESPONSE
-} from './mockData.js';
+import { MOCK_SCENARIOS, cloneFixture } from './mockData.js';
 
-// Configuration constants
-const DEFAULT_API_BASE_URL = 'http://localhost:8000';
+// ---------------------------------------------------------------------------
+// Configuration
+// ---------------------------------------------------------------------------
+const API_BASE_URL = String(
+  (typeof window !== 'undefined' && window.IDEA_ENHANCER_API_BASE_URL) || 'http://localhost:8000'
+).replace(/\/+$/, '');
 const REQUEST_TIMEOUT_MS = 10000;
 const MIN_IDEA_CHARS = 10;
 const MAX_IDEA_CHARS = 2000;
+const DEFAULT_TOP_K = 5;
+const MIN_TOP_K = 1;
+const MAX_TOP_K = 20;
 
-// Application state
-let isSubmitting = false;
+const SOURCE_LABELS = {
+  rvce: 'Institutional archive',
+  global: 'Open dataset'
+};
 
-// DOM Elements
-const searchForm = document.getElementById('search-form');
-const ideaInput = document.getElementById('idea-input');
-const topKInput = document.getElementById('top-k-input');
-const charCountDisplay = document.getElementById('char-count');
-const submitBtn = document.getElementById('submit-btn');
-const submitBtnText = document.getElementById('submit-btn-text');
-const submitBtnSpinner = document.getElementById('submit-btn-spinner');
-const submitBtnIcon = document.getElementById('submit-btn-icon');
+const VERIFICATION_LABELS = {
+  checked: { text: 'Evidence checked', tone: 'ok' },
+  insufficient: { text: 'Insufficient evidence', tone: 'warn' }
+};
 
-// Mode Selector & Status Indicators
-const dataSourceSelect = document.getElementById('data-source-select');
-const modeStatusPill = document.getElementById('mode-status-pill');
-const modeStatusText = document.getElementById('mode-status-text');
-const mockNoticeBanner = document.getElementById('mock-notice-banner');
+// ---------------------------------------------------------------------------
+// State
+// ---------------------------------------------------------------------------
+let activeRequest = null;   // { id, controller, mode, timedOut, cancelled }
+let requestCounter = 0;
+let liveStatus = 'idle';    // 'idle' | 'ok' | 'failed' — only meaningful in live mode
 
-// Feedback & Results Elements
-const clientValidationError = document.getElementById('client-validation-error');
-const clientValidationText = document.getElementById('client-validation-text');
-const loadingSkeleton = document.getElementById('loading-skeleton');
-const errorBanner = document.getElementById('error-banner');
-const errorMessageEl = document.getElementById('error-message');
-const warningsContainer = document.getElementById('warnings-container');
-const warningsList = document.getElementById('warnings-list');
+// ---------------------------------------------------------------------------
+// DOM references
+// ---------------------------------------------------------------------------
+const $ = (id) => document.getElementById(id);
 
-const resultsContainer = document.getElementById('results-container');
-const resultsSummary = document.getElementById('results-summary');
-const matchesList = document.getElementById('matches-list');
-const noMatchesBanner = document.getElementById('no-matches-banner');
-const noMatchesMessage = document.getElementById('no-matches-message');
+const searchForm = $('search-form');
+const ideaInput = $('idea-input');
+const topKInput = $('top-k-input');
+const charCountDisplay = $('char-count');
+const submitBtn = $('submit-btn');
+const submitBtnText = $('submit-btn-text');
+const submitBtnSpinner = $('submit-btn-spinner');
+const submitBtnIcon = $('submit-btn-icon');
 
-// Sample Idea Quick Fill Buttons
-const sampleIdeaBtn1 = document.getElementById('sample-idea-1');
-const sampleIdeaBtn2 = document.getElementById('sample-idea-2');
+const dataSourceSelect = $('data-source-select');
+const headerModeDot = $('header-mode-dot');
+const modeStatusPill = $('mode-status-pill');
+const modeStatusText = $('mode-status-text');
+const mockNoticeBanner = $('mock-notice-banner');
+const mockFixtureQuery = $('mock-fixture-query');
 
-/**
- * Initialize event listeners on page load
- */
-function init() {
-  if (ideaInput) {
-    ideaInput.addEventListener('input', updateCharCount);
-    updateCharCount();
-  }
+const clientValidationError = $('client-validation-error');
+const clientValidationText = $('client-validation-text');
+const loadingSkeleton = $('loading-skeleton');
+const errorBanner = $('error-banner');
+const errorMessageEl = $('error-message');
+const warningsContainer = $('warnings-container');
+const warningsList = $('warnings-list');
 
-  if (searchForm) {
-    searchForm.addEventListener('submit', handleFormSubmit);
-  }
+const resultsContainer = $('results-container');
+const resultsSummary = $('results-summary');
+const resultsQuery = $('results-query');
+const matchesList = $('matches-list');
+const noMatchesBanner = $('no-matches-banner');
+const noMatchesMessage = $('no-matches-message');
 
-  if (dataSourceSelect) {
-    dataSourceSelect.addEventListener('change', updateModeStatusDisplay);
-    updateModeStatusDisplay();
-  }
-
-  if (sampleIdeaBtn1) {
-    sampleIdeaBtn1.addEventListener('click', () => {
-      ideaInput.value = 'An IoT-based crop disease detection system using Raspberry Pi and CNNs to monitor foliar infections in real time.';
-      updateCharCount();
-      clearFeedback();
-      ideaInput.focus();
-    });
-  }
-
-  if (sampleIdeaBtn2) {
-    sampleIdeaBtn2.addEventListener('click', () => {
-      ideaInput.value = 'A quantum teleportation device for household pets using acoustic levitation and subatomic resonant harmonic feedback.';
-      updateCharCount();
-      clearFeedback();
-      ideaInput.focus();
-    });
-  }
+// ---------------------------------------------------------------------------
+// Small helpers
+// ---------------------------------------------------------------------------
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text != null) node.textContent = text;
+  return node;
 }
 
-/**
- * Update real-time character count and visual indicators
- */
-function updateCharCount() {
-  const currentLength = ideaInput.value.length;
-  charCountDisplay.textContent = `${currentLength} / ${MAX_IDEA_CHARS} characters`;
-
-  if (currentLength > MAX_IDEA_CHARS) {
-    charCountDisplay.className = 'text-xs font-bold text-rose-600';
-  } else if (currentLength > 0 && currentLength < MIN_IDEA_CHARS) {
-    charCountDisplay.className = 'text-xs font-semibold text-amber-600';
-  } else {
-    charCountDisplay.className = 'text-xs font-medium text-slate-400';
-  }
+function isPlainObject(v) {
+  return v !== null && typeof v === 'object' && !Array.isArray(v);
 }
 
-/**
- * Synchronize the mode pill indicator with the selected source option
- */
-function updateModeStatusDisplay() {
-  const mode = dataSourceSelect ? dataSourceSelect.value : 'mock-success';
-
-  if (mode === 'live') {
-    modeStatusPill.className = 'inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 shrink-0';
-    modeStatusPill.firstElementChild.className = 'w-2 h-2 rounded-full bg-emerald-500 animate-pulse';
-    modeStatusText.textContent = 'Live Backend Active';
-    if (mockNoticeBanner) {
-      mockNoticeBanner.classList.add('hidden');
-    }
-  } else {
-    modeStatusPill.className = 'inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200 shrink-0';
-    modeStatusPill.firstElementChild.className = 'w-2 h-2 rounded-full bg-amber-500';
-    modeStatusText.textContent = 'Demo Fixture Active';
-  }
+function nonEmptyString(v) {
+  return typeof v === 'string' && v.trim().length > 0;
 }
 
-/**
- * Clear existing feedback, errors, and warnings
- */
-function clearFeedback() {
-  clientValidationError.classList.add('hidden');
-  clientValidationText.textContent = '';
-  errorBanner.classList.add('hidden');
-  errorMessageEl.textContent = '';
-  noMatchesBanner.classList.add('hidden');
-  warningsContainer.classList.add('hidden');
-  warningsList.innerHTML = '';
-}
-
-/**
- * Main form submission handler with validation guards and lockouts
- */
-async function handleFormSubmit(event) {
-  event.preventDefault();
-
-  if (isSubmitting) {
-    return;
-  }
-
-  clearFeedback();
-
-  // 1. Client-side input validation
-  const rawIdea = ideaInput.value;
-  const trimmedIdea = rawIdea.trim();
-
-  if (trimmedIdea.length < MIN_IDEA_CHARS) {
-    showClientValidationError(`Proposal description must contain at least ${MIN_IDEA_CHARS} characters (currently ${trimmedIdea.length}).`);
-    ideaInput.focus();
-    return;
-  }
-
-  if (trimmedIdea.length > MAX_IDEA_CHARS) {
-    showClientValidationError(`Proposal description must not exceed ${MAX_IDEA_CHARS} characters (currently ${trimmedIdea.length}).`);
-    ideaInput.focus();
-    return;
-  }
-
-  // 2. Validate top_k parameter
-  let topK = parseInt(topKInput.value, 10);
-  if (isNaN(topK) || topK < 1) {
-    topK = 5;
-    topKInput.value = '5';
-  } else if (topK > 20) {
-    topK = 20;
-    topKInput.value = '20';
-  }
-
-  // 3. Set loading state to prevent duplicate submissions
-  setLoadingState(true);
-
+function isHttpUrl(value) {
+  if (typeof value !== 'string') return false;
   try {
-    const selectedMode = dataSourceSelect ? dataSourceSelect.value : 'live';
-    const response = await fetchSearch(trimmedIdea, topK, selectedMode);
-    handleSearchResponse(response, selectedMode);
-  } catch (error) {
-    handleSearchError(error);
-  } finally {
-    setLoadingState(false);
-  }
-}
-
-/**
- * Show inline client validation error
- */
-function showClientValidationError(message) {
-  clientValidationText.textContent = message;
-  clientValidationError.classList.remove('hidden');
-}
-
-/**
- * Toggle the loading state, updating button and skeleton visibility
- */
-function setLoadingState(loading) {
-  isSubmitting = loading;
-  submitBtn.disabled = loading;
-
-  if (loading) {
-    submitBtnText.textContent = 'Investigating…';
-    submitBtnSpinner.classList.remove('hidden');
-    if (submitBtnIcon) submitBtnIcon.classList.add('hidden');
-    loadingSkeleton.classList.remove('hidden');
-    resultsContainer.classList.add('hidden');
-  } else {
-    submitBtnText.textContent = 'Investigate Idea';
-    submitBtnSpinner.classList.add('hidden');
-    if (submitBtnIcon) submitBtnIcon.classList.remove('hidden');
-    loadingSkeleton.classList.add('hidden');
-  }
-}
-
-/**
- * API Adapter: executes live POST /search or returns mock scenario
- */
-async function fetchSearch(idea, topK, mode) {
-  // Scenario A: Mock Matches Found
-  if (mode === 'mock-success') {
-    await simulateDelay(600);
-    return { ...MOCK_SUCCESS_RESPONSE, query: idea };
-  }
-
-  // Scenario B: Mock Zero Matches Found
-  if (mode === 'mock-no-match') {
-    await simulateDelay(600);
-    return { ...MOCK_NO_MATCH_RESPONSE, query: idea };
-  }
-
-  // Scenario C: Mock Validation Error (422)
-  if (mode === 'mock-val-error') {
-    await simulateDelay(400);
-    const err = new Error(MOCK_VALIDATION_ERROR_RESPONSE.message);
-    err.status = 422;
-    err.errorData = MOCK_VALIDATION_ERROR_RESPONSE;
-    throw err;
-  }
-
-  // Scenario D: Mock Server Error (500)
-  if (mode === 'mock-server-error') {
-    await simulateDelay(400);
-    const err = new Error(MOCK_SERVER_ERROR_RESPONSE.message);
-    err.status = 500;
-    err.errorData = MOCK_SERVER_ERROR_RESPONSE;
-    throw err;
-  }
-
-  // Live Backend Call: POST /search
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
-
-  try {
-    const res = await fetch(`${DEFAULT_API_BASE_URL}/search`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ idea, top_k: topK }),
-      signal: controller.signal
-    });
-
-    clearTimeout(timeoutId);
-
-    const data = await res.json().catch(() => null);
-
-    if (!res.ok) {
-      const err = new Error((data && data.message) || `HTTP error ${res.status}`);
-      err.status = res.status;
-      err.errorData = data;
-      throw err;
-    }
-
-    return data;
-  } catch (error) {
-    clearTimeout(timeoutId);
-    if (error.name === 'AbortError') {
-      const timeoutErr = new Error('The search request timed out. Please check if your FastAPI backend is running on http://localhost:8000.');
-      timeoutErr.isTimeout = true;
-      throw timeoutErr;
-    }
-    throw error;
-  }
-}
-
-/**
- * Helper to simulate network latency for mock demonstrations
- */
-function simulateDelay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-/**
- * Handle successful API response envelope and orchestrate rendering
- */
-function handleSearchResponse(data, mode) {
-  if (!data || data.status !== 'success') {
-    showErrorBanner(data?.message || 'Unexpected response format from search service.');
-    return;
-  }
-
-  // Toggle Mock Demonstration Banner based on mode
-  if (mockNoticeBanner) {
-    if (mode && mode.startsWith('mock-')) {
-      mockNoticeBanner.classList.remove('hidden');
-    } else {
-      mockNoticeBanner.classList.add('hidden');
-    }
-  }
-
-  // Render warnings if returned by server (e.g. top_k clamped)
-  if (Array.isArray(data.warnings) && data.warnings.length > 0) {
-    warningsList.innerHTML = '';
-    data.warnings.forEach(warningText => {
-      const li = document.createElement('li');
-      li.textContent = warningText;
-      warningsList.appendChild(li);
-    });
-    warningsContainer.classList.remove('hidden');
-  }
-
-  const matches = Array.isArray(data.matches) ? data.matches : [];
-
-  if (matches.length === 0) {
-    // Zero-matches scenario
-    resultsContainer.classList.remove('hidden');
-    resultsSummary.textContent = '0 Relevant Matches Found';
-    matchesList.innerHTML = '';
-    
-    noMatchesMessage.textContent = data.message || 'No close match was found in the available dataset.';
-    noMatchesBanner.classList.remove('hidden');
-    return;
-  }
-
-  // Matches found
-  resultsSummary.textContent = `${matches.length} Prior-Art Record${matches.length === 1 ? '' : 's'} Discovered`;
-  renderMatchCards(matches);
-  resultsContainer.classList.remove('hidden');
-}
-
-/**
- * Safe DOM rendering of research-grade match cards
- */
-function renderMatchCards(matches) {
-  matchesList.innerHTML = '';
-
-  matches.forEach(match => {
-    const card = document.createElement('article');
-    card.className = 'surface-card rounded-2xl p-6 bg-white border border-slate-200/90 flex flex-col gap-4.5 animate-fade-in-up';
-
-    // 1. Header Row: Rank Badge, Title, Verification Badge
-    const headerRow = document.createElement('div');
-    headerRow.className = 'flex flex-wrap items-start justify-between gap-3';
-
-    const titleGroup = document.createElement('div');
-    titleGroup.className = 'flex items-start gap-3.5 flex-1 min-w-[260px]';
-
-    // Rank Badge
-    const rankBadge = document.createElement('span');
-    rankBadge.className = 'inline-flex items-center justify-center px-3 py-1 text-xs font-bold rounded-xl bg-indigo-50 text-indigo-700 border border-indigo-200/80 shrink-0 shadow-sm';
-    rankBadge.textContent = `#${match.rank || '-'}`;
-
-    const titleContainer = document.createElement('div');
-    const title = document.createElement('h3');
-    title.className = 'text-lg font-bold text-slate-900 leading-snug tracking-tight';
-    title.textContent = match.title || 'Untitled Project Record';
-    titleContainer.appendChild(title);
-
-    // Meta subrow (Source Type, Domain, Year)
-    const metaSubRow = document.createElement('div');
-    metaSubRow.className = 'flex flex-wrap items-center gap-2 mt-1.5 text-xs text-slate-500';
-
-    if (match.source_type) {
-      const sourceTag = document.createElement('span');
-      sourceTag.className = 'uppercase tracking-wider font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded text-[10px] border border-slate-200';
-      sourceTag.textContent = match.source_type === 'rvce' ? 'RVCE Archive' : match.source_type;
-      metaSubRow.appendChild(sourceTag);
-    }
-
-    if (match.domain) {
-      const domainSpan = document.createElement('span');
-      domainSpan.className = 'font-medium text-slate-600';
-      domainSpan.textContent = `• ${match.domain}`;
-      metaSubRow.appendChild(domainSpan);
-    }
-
-    if (match.year) {
-      const yearSpan = document.createElement('span');
-      yearSpan.className = 'text-slate-400 font-normal';
-      yearSpan.textContent = `• ${match.year}`;
-      metaSubRow.appendChild(yearSpan);
-    }
-
-    titleContainer.appendChild(metaSubRow);
-    titleGroup.appendChild(rankBadge);
-    titleGroup.appendChild(titleContainer);
-
-    // Verification Status Badge
-    const statusBadge = document.createElement('div');
-    statusBadge.className = 'shrink-0';
-    const statusText = document.createElement('span');
-    statusText.className = 'inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full border';
-
-    const statusDot = document.createElement('span');
-    statusDot.className = 'w-1.5 h-1.5 rounded-full';
-
-    if (match.verification_status === 'checked') {
-      statusText.className += ' bg-emerald-50 text-emerald-800 border-emerald-200';
-      statusDot.className += ' bg-emerald-500';
-      statusText.appendChild(statusDot);
-      statusText.appendChild(document.createTextNode('Evidence Checked'));
-    } else if (match.verification_status === 'insufficient') {
-      statusText.className += ' bg-amber-50 text-amber-800 border-amber-200';
-      statusDot.className += ' bg-amber-500';
-      statusText.appendChild(statusDot);
-      statusText.appendChild(document.createTextNode('Insufficient Evidence'));
-    } else {
-      statusText.className += ' bg-slate-50 text-slate-700 border-slate-200';
-      statusText.textContent = match.verification_status || 'Unchecked';
-    }
-    statusBadge.appendChild(statusText);
-
-    headerRow.appendChild(titleGroup);
-    headerRow.appendChild(statusBadge);
-    card.appendChild(headerRow);
-
-    // 2. Abstract / Description Excerpt
-    if (match.description_excerpt) {
-      const excerptContainer = document.createElement('div');
-      excerptContainer.className = 'bg-[#FAF9F5] border-l-4 border-indigo-400/80 p-3.5 rounded-r-xl text-xs sm:text-sm text-slate-700 leading-relaxed font-normal';
-      
-      const excerptText = document.createElement('p');
-      excerptText.textContent = match.description_excerpt;
-      excerptContainer.appendChild(excerptText);
-      card.appendChild(excerptContainer);
-    }
-
-    // 3. Shared Elements (Detected Concepts)
-    if (Array.isArray(match.shared_elements) && match.shared_elements.length > 0) {
-      const overlapSection = document.createElement('div');
-      overlapSection.className = 'flex flex-col gap-1.5 pt-1';
-
-      const overlapLabel = document.createElement('span');
-      overlapLabel.className = 'text-xs font-bold text-slate-600 uppercase tracking-wider text-[10px]';
-      overlapLabel.textContent = 'Detected Shared Concepts:';
-      overlapSection.appendChild(overlapLabel);
-
-      const tagsContainer = document.createElement('div');
-      tagsContainer.className = 'flex flex-wrap gap-1.5';
-
-      match.shared_elements.forEach(term => {
-        const tag = document.createElement('span');
-        tag.className = 'bg-amber-50 text-amber-900 border border-amber-200 px-2.5 py-0.5 rounded-lg text-xs font-medium';
-        tag.textContent = term;
-        tagsContainer.appendChild(tag);
-      });
-
-      overlapSection.appendChild(tagsContainer);
-      card.appendChild(overlapSection);
-    }
-
-    // 4. Technology Stack Badges
-    if (Array.isArray(match.technologies) && match.technologies.length > 0) {
-      const techSection = document.createElement('div');
-      techSection.className = 'flex flex-wrap items-center gap-1.5';
-
-      const techLabel = document.createElement('span');
-      techLabel.className = 'text-[10px] font-bold text-slate-600 uppercase tracking-wider mr-1';
-      techLabel.textContent = 'Tech Stack:';
-      techSection.appendChild(techLabel);
-
-      match.technologies.forEach(tech => {
-        const badge = document.createElement('span');
-        badge.className = 'bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md text-xs font-medium border border-slate-200';
-        badge.textContent = tech;
-        techSection.appendChild(badge);
-      });
-
-      card.appendChild(techSection);
-    }
-
-    // 5. Card Footer: Ranking Details & Provenance Link
-    const footer = document.createElement('div');
-    footer.className = 'flex flex-wrap items-center justify-between gap-3 pt-3 mt-1 border-t border-slate-100 text-xs text-slate-500';
-
-    // RRF Score and Retrieval Metrics Container
-    const metricsGroup = document.createElement('div');
-    metricsGroup.className = 'flex flex-wrap items-center gap-3';
-
-    // RRF score pill — clearly labeled as rank value, never a percentage
-    const rrfPill = document.createElement('div');
-    rrfPill.className = 'inline-flex items-center gap-1.5 bg-indigo-50/80 px-2.5 py-1 rounded-lg border border-indigo-200/80 text-indigo-900 font-medium';
-    
-    const rrfLabel = document.createElement('span');
-    rrfLabel.className = 'text-[10px] uppercase font-bold text-indigo-600';
-    rrfLabel.textContent = 'RRF Score';
-
-    const rrfValue = document.createElement('span');
-    rrfValue.className = 'font-mono font-bold text-indigo-800';
-    rrfValue.textContent = typeof match.rrf_score === 'number' ? match.rrf_score.toFixed(4) : (match.rrf_score || '-');
-
-    rrfPill.appendChild(rrfLabel);
-    rrfPill.appendChild(rrfValue);
-    metricsGroup.appendChild(rrfPill);
-
-    if (match.bm25_rank != null) {
-      const bm25Span = document.createElement('span');
-      bm25Span.className = 'text-slate-500 font-medium';
-      bm25Span.textContent = `BM25: #${match.bm25_rank}`;
-      metricsGroup.appendChild(bm25Span);
-    }
-
-    if (match.vector_rank != null) {
-      const vectorSpan = document.createElement('span');
-      vectorSpan.className = 'text-slate-500 font-medium';
-      vectorSpan.textContent = `Vector: #${match.vector_rank}`;
-      metricsGroup.appendChild(vectorSpan);
-    }
-
-    footer.appendChild(metricsGroup);
-
-    // Provenance Link (rendered only if valid HTTP/HTTPS URL provided)
-    if (match.source_url && isValidHttpUrl(match.source_url)) {
-      const link = document.createElement('a');
-      link.href = match.source_url;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.className = 'inline-flex items-center gap-1 text-indigo-600 hover:text-indigo-800 hover:underline font-semibold text-xs transition-colors';
-      link.textContent = 'View Source Record ↗';
-      footer.appendChild(link);
-    }
-
-    card.appendChild(footer);
-    matchesList.appendChild(card);
-  });
-}
-
-/**
- * Handle HTTP or network errors gracefully without exposing raw stack traces
- */
-function handleSearchError(error) {
-  resultsContainer.classList.add('hidden');
-
-  if (error.status === 422 && error.errorData) {
-    const detailMsg = error.errorData.message || 'The idea submission failed validation on the server.';
-    showErrorBanner(detailMsg);
-    return;
-  }
-
-  if (error.status === 500) {
-    showErrorBanner('The search service encountered an internal error. Please check your query or try again.');
-    return;
-  }
-
-  if (error.status === 503) {
-    showErrorBanner('The search service is temporarily unavailable. Check that the search index has been initialized.');
-    return;
-  }
-
-  if (error.isTimeout) {
-    showErrorBanner('The search request timed out. Please check if your FastAPI backend is running on http://localhost:8000.');
-    return;
-  }
-
-  // Generic network error (e.g. server down or refused connection)
-  showErrorBanner('Unable to reach the Idea Enhancer backend. Ensure the FastAPI server is running on http://localhost:8000, or switch to Mock Demo mode above to test the interface.');
-}
-
-/**
- * Display top error alert banner
- */
-function showErrorBanner(message) {
-  errorMessageEl.textContent = message;
-  errorBanner.classList.remove('hidden');
-}
-
-/**
- * Safely validate whether a string is an authentic HTTP or HTTPS URL
- */
-function isValidHttpUrl(string) {
-  try {
-    const url = new URL(string);
+    const url = new URL(value);
     return url.protocol === 'http:' || url.protocol === 'https:';
   } catch (_) {
     return false;
   }
 }
 
-// Bootstrap application on DOM ready
-document.addEventListener('DOMContentLoaded', init);
+function currentMode() {
+  return dataSourceSelect ? dataSourceSelect.value : 'mock-success';
+}
+
+function isMockMode(mode) {
+  return typeof mode === 'string' && mode.startsWith('mock-');
+}
+
+class SearchError extends Error {
+  constructor(message, kind, status) {
+    super(message);
+    this.name = 'SearchError';
+    this.kind = kind;       // 'validation' | 'server' | 'unavailable' | 'timeout' | 'network' | 'malformed' | 'http'
+    this.status = status;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Initialisation
+// ---------------------------------------------------------------------------
+function init() {
+  ideaInput.addEventListener('input', updateCharCount);
+  updateCharCount();
+
+  searchForm.addEventListener('submit', handleFormSubmit);
+  dataSourceSelect.addEventListener('change', handleModeChange);
+  updateModeIndicators();
+
+  const samples = [
+    ['sample-idea-1', 'An IoT-based crop disease detection system using Raspberry Pi and CNNs to monitor foliar infections in real time.'],
+    ['sample-idea-2', 'A quantum teleportation device for household pets using acoustic levitation and subatomic resonant harmonic feedback.']
+  ];
+  samples.forEach(([id, text]) => {
+    const btn = $(id);
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      ideaInput.value = text;
+      updateCharCount();
+      clearFeedback();
+      ideaInput.focus();
+    });
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Character counter (counts the trimmed text, which is what gets validated/sent)
+// ---------------------------------------------------------------------------
+function updateCharCount() {
+  const len = ideaInput.value.trim().length;
+  charCountDisplay.textContent = `${len} / ${MAX_IDEA_CHARS} characters`;
+
+  let tone = 'text-slate-500';
+  if (len > MAX_IDEA_CHARS) tone = 'text-rose-700 font-bold';
+  else if (len > 0 && len < MIN_IDEA_CHARS) tone = 'text-amber-700 font-semibold';
+  charCountDisplay.className = `text-xs font-medium ${tone}`;
+}
+
+// ---------------------------------------------------------------------------
+// Mode indicators (header dot, status pill, demo banner)
+// ---------------------------------------------------------------------------
+const PILL_BASE = 'inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold border shrink-0';
+const TONES = {
+  amber:  { pill: 'bg-amber-50 text-amber-900 border-amber-300',     dot: 'bg-amber-500' },
+  indigo: { pill: 'bg-indigo-50 text-indigo-900 border-indigo-200',  dot: 'bg-indigo-500' },
+  green:  { pill: 'bg-emerald-50 text-emerald-900 border-emerald-300', dot: 'bg-emerald-600' },
+  rose:   { pill: 'bg-rose-50 text-rose-900 border-rose-200',        dot: 'bg-rose-500' }
+};
+
+function updateModeIndicators() {
+  const mode = currentMode();
+  let tone = TONES.amber;
+  let text = 'Demo data — not real results';
+
+  if (!isMockMode(mode)) {
+    if (liveStatus === 'ok') {
+      tone = TONES.green;
+      text = 'Live search — results from the backend';
+    } else if (liveStatus === 'failed') {
+      tone = TONES.rose;
+      text = 'Live search — last request failed';
+    } else {
+      tone = TONES.indigo;
+      text = 'Live search selected — not yet contacted';
+    }
+  }
+
+  modeStatusPill.className = `${PILL_BASE} ${tone.pill}`;
+  if (modeStatusPill.firstElementChild) {
+    modeStatusPill.firstElementChild.className = `w-2 h-2 rounded-full ${tone.dot}`;
+    modeStatusPill.firstElementChild.setAttribute('aria-hidden', 'true');
+  }
+  modeStatusText.textContent = text;
+  if (headerModeDot) headerModeDot.className = `w-2 h-2 rounded-full ${tone.dot}`;
+}
+
+/**
+ * Switching mode cancels any in-flight request and discards everything that
+ * was on screen, so results from one mode can never appear under another.
+ */
+function handleModeChange() {
+  cancelActiveRequest();
+  liveStatus = 'idle';
+  clearFeedback();
+  clearResults();
+  setLoadingState(false);
+  updateModeIndicators();
+}
+
+function cancelActiveRequest() {
+  if (!activeRequest) return;
+  activeRequest.cancelled = true;
+  activeRequest.controller.abort();
+  activeRequest = null;
+}
+
+// ---------------------------------------------------------------------------
+// Clearing UI state
+// ---------------------------------------------------------------------------
+function clearFeedback() {
+  clientValidationError.classList.add('hidden');
+  clientValidationText.textContent = '';
+  errorBanner.classList.add('hidden');
+  errorMessageEl.textContent = '';
+  warningsContainer.classList.add('hidden');
+  warningsList.replaceChildren();
+}
+
+function clearResults() {
+  resultsContainer.classList.add('hidden');
+  matchesList.replaceChildren();
+  noMatchesBanner.classList.add('hidden');
+  noMatchesMessage.textContent = '';
+  resultsQuery.classList.add('hidden');
+  resultsQuery.textContent = '';
+  mockNoticeBanner.classList.add('hidden');
+  mockFixtureQuery.textContent = '';
+  resultsSummary.textContent = 'Search results';
+}
+
+function showClientValidationError(message) {
+  clientValidationText.textContent = message;
+  clientValidationError.classList.remove('hidden');
+}
+
+function showErrorBanner(message) {
+  errorMessageEl.textContent = message;
+  errorBanner.classList.remove('hidden');
+  errorBanner.scrollIntoView({ block: 'nearest' });
+}
+
+function showWarnings(list) {
+  warningsList.replaceChildren();
+  const items = list.filter(nonEmptyString);
+  if (items.length === 0) {
+    warningsContainer.classList.add('hidden');
+    return;
+  }
+  items.forEach((text) => warningsList.appendChild(el('li', null, text)));
+  warningsContainer.classList.remove('hidden');
+}
+
+function setLoadingState(loading) {
+  submitBtn.disabled = loading;
+  searchForm.setAttribute('aria-busy', loading ? 'true' : 'false');
+  loadingSkeleton.setAttribute('aria-busy', loading ? 'true' : 'false');
+  submitBtnText.textContent = loading ? 'Investigating…' : 'Investigate idea';
+  submitBtnSpinner.classList.toggle('hidden', !loading);
+  if (submitBtnIcon) submitBtnIcon.classList.toggle('hidden', loading);
+  loadingSkeleton.classList.toggle('hidden', !loading);
+}
+
+// ---------------------------------------------------------------------------
+// top_k handling
+// ---------------------------------------------------------------------------
+function normalizeTopK(raw) {
+  const text = String(raw ?? '').trim();
+  const n = text === '' ? NaN : Number(text);
+
+  if (!Number.isFinite(n)) {
+    return { value: DEFAULT_TOP_K, notice: `The number of matches was not a valid number, so the default of ${DEFAULT_TOP_K} was used.` };
+  }
+  let value = n;
+  let notice = null;
+  if (!Number.isInteger(value)) {
+    value = Math.floor(value);
+    notice = `The number of matches must be a whole number, so it was rounded down to ${Math.max(value, MIN_TOP_K)}.`;
+  }
+  if (value < MIN_TOP_K) {
+    value = MIN_TOP_K;
+    notice = `The number of matches was raised to the minimum of ${MIN_TOP_K}.`;
+  } else if (value > MAX_TOP_K) {
+    value = MAX_TOP_K;
+    notice = `The number of matches was lowered to the maximum of ${MAX_TOP_K}.`;
+  }
+  return { value, notice };
+}
+
+// ---------------------------------------------------------------------------
+// Submit flow
+// ---------------------------------------------------------------------------
+async function handleFormSubmit(event) {
+  event.preventDefault();
+  if (activeRequest) return;
+
+  const mode = currentMode();
+  clearFeedback();
+  clearResults();
+
+  const idea = ideaInput.value.trim();
+
+  // Demo error scenarios replay a fixed error regardless of the typed idea,
+  // so they are exempt from client-side length checks (otherwise unreachable).
+  const replaysFixedError = mode === 'mock-val-error' || mode === 'mock-server-error';
+
+  if (!replaysFixedError) {
+    if (idea.length < MIN_IDEA_CHARS) {
+      showClientValidationError(`Your description needs at least ${MIN_IDEA_CHARS} characters (currently ${idea.length}).`);
+      ideaInput.focus();
+      return;
+    }
+    if (idea.length > MAX_IDEA_CHARS) {
+      showClientValidationError(`Your description must not exceed ${MAX_IDEA_CHARS} characters (currently ${idea.length}).`);
+      ideaInput.focus();
+      return;
+    }
+  }
+
+  const { value: topK, notice: topKNotice } = normalizeTopK(topKInput.value);
+  topKInput.value = String(topK);
+  const clientNotices = topKNotice ? [topKNotice] : [];
+
+  const req = {
+    id: ++requestCounter,
+    mode,
+    controller: new AbortController(),
+    timedOut: false,
+    cancelled: false
+  };
+  activeRequest = req;
+  setLoadingState(true);
+
+  try {
+    const data = await fetchSearch(req, idea, topK);
+    if (req.cancelled || activeRequest !== req) return;
+
+    const parsed = parseSuccessPayload(data, topK);
+    if (!isMockMode(mode)) liveStatus = 'ok';
+    renderSuccess(parsed, { mode, idea, topK, clientNotices });
+  } catch (error) {
+    if (req.cancelled || activeRequest !== req) return;
+    if (!isMockMode(mode)) liveStatus = 'failed';
+    clearResults();
+    showWarnings(clientNotices);
+    showErrorBanner(describeError(error));
+  } finally {
+    if (activeRequest === req) {
+      activeRequest = null;
+      setLoadingState(false);
+      updateModeIndicators();
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// API adapter: POST /search (live) or fixed demo scenario
+// ---------------------------------------------------------------------------
+function delay(ms, signal) {
+  return new Promise((resolve, reject) => {
+    if (signal.aborted) {
+      reject(new DOMException('Aborted', 'AbortError'));
+      return;
+    }
+    const t = setTimeout(() => {
+      signal.removeEventListener('abort', onAbort);
+      resolve();
+    }, ms);
+    function onAbort() {
+      clearTimeout(t);
+      reject(new DOMException('Aborted', 'AbortError'));
+    }
+    signal.addEventListener('abort', onAbort, { once: true });
+  });
+}
+
+async function fetchSearch(req, idea, topK) {
+  const scenario = MOCK_SCENARIOS[req.mode];
+
+  if (scenario) {
+    await delay(scenario.delay, req.controller.signal);
+    const payload = cloneFixture(scenario.payload);
+    if (scenario.kind === 'error') {
+      throw errorFromResponse(scenario.status, payload);
+    }
+    return payload;
+  }
+
+  if (req.mode !== 'live') {
+    throw new SearchError('Unknown search mode selected.', 'malformed');
+  }
+
+  const timer = setTimeout(() => {
+    req.timedOut = true;
+    req.controller.abort();
+  }, REQUEST_TIMEOUT_MS);
+
+  try {
+    let res;
+    try {
+      res = await fetch(`${API_BASE_URL}/search`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ idea, top_k: topK }),
+        signal: req.controller.signal
+      });
+    } catch (err) {
+      if (err && err.name === 'AbortError') {
+        if (req.timedOut) throw new SearchError('timeout', 'timeout');
+        throw err; // cancelled by the user (mode switch)
+      }
+      throw new SearchError('network', 'network');
+    }
+
+    // Keep the timeout armed while the body downloads.
+    let data = null;
+    try {
+      const text = await res.text();
+      data = text ? JSON.parse(text) : null;
+    } catch (err) {
+      if (err && err.name === 'AbortError') {
+        if (req.timedOut) throw new SearchError('timeout', 'timeout');
+        throw err;
+      }
+      data = null; // non-JSON body
+    }
+
+    if (!res.ok) throw errorFromResponse(res.status, data);
+    return data;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+function extractServerMessage(data) {
+  if (!isPlainObject(data)) return null;
+  if (nonEmptyString(data.message)) return data.message.trim();
+  // FastAPI default validation shape: { detail: [{ msg, loc }] } or { detail: "..." }
+  if (nonEmptyString(data.detail)) return data.detail.trim();
+  if (Array.isArray(data.detail)) {
+    const msgs = data.detail
+      .map((d) => (isPlainObject(d) && nonEmptyString(d.msg) ? d.msg.trim() : null))
+      .filter(Boolean);
+    if (msgs.length) return msgs.join(' ');
+  }
+  return null;
+}
+
+function errorFromResponse(status, data) {
+  const serverMessage = extractServerMessage(data);
+
+  if (status === 400 || status === 422) {
+    return new SearchError(serverMessage || 'The server rejected the submitted idea. Please check it and try again.', 'validation', status);
+  }
+  if (status === 404) {
+    return new SearchError('The search service could not be found at the configured address.', 'http', status);
+  }
+  if (status === 429) {
+    return new SearchError('Too many requests were sent. Please wait a moment and try again.', 'http', status);
+  }
+  if (status === 503) {
+    return new SearchError('The search service is temporarily unavailable or its index is not ready. Please try again shortly.', 'unavailable', status);
+  }
+  if (status === 502 || status === 504) {
+    return new SearchError('The search service could not be reached by its gateway. Please try again shortly.', 'unavailable', status);
+  }
+  if (status >= 500) {
+    return new SearchError('The search service ran into an internal error. Please try again.', 'server', status);
+  }
+  if (status >= 400) {
+    return new SearchError(serverMessage || `The request was rejected (HTTP ${status}).`, 'http', status);
+  }
+  return new SearchError(`Unexpected response (HTTP ${status}).`, 'malformed', status);
+}
+
+function describeError(error) {
+  if (error instanceof SearchError) {
+    switch (error.kind) {
+      case 'timeout':
+        return `The search took longer than ${REQUEST_TIMEOUT_MS / 1000} seconds and was stopped. Please try again.`;
+      case 'network':
+        return 'Unable to reach the search service. Check your connection and that the backend is running, or switch to a demo mode to explore the interface.';
+      case 'malformed':
+        return error.message || 'The search service returned a response this page could not understand.';
+      default:
+        return error.message;
+    }
+  }
+  return 'Something unexpected went wrong while searching. Please try again.';
+}
+
+// ---------------------------------------------------------------------------
+// Response validation
+// ---------------------------------------------------------------------------
+function parseSuccessPayload(data, topK) {
+  if (!isPlainObject(data)) {
+    throw new SearchError('The search service returned an empty or unreadable response.', 'malformed');
+  }
+  if (data.status === 'error') {
+    throw new SearchError(extractServerMessage(data) || 'The search service reported an error.', 'server');
+  }
+  if (data.status !== 'success') {
+    throw new SearchError('The search service returned a response in an unexpected format.', 'malformed');
+  }
+  const bad = () => new SearchError('The search service returned results in an unexpected format.', 'malformed');
+
+  // Required success-envelope fields: query, result_count, matches, warnings (message: string|null).
+  if (typeof data.query !== 'string') throw bad();
+  if (!Array.isArray(data.matches)) throw bad();
+  if (!Number.isInteger(data.result_count) || data.result_count < 0) throw bad();
+  // Checked against the raw match list, before any client-side filtering or top_k trimming.
+  if (data.result_count !== data.matches.length) throw bad();
+  if (!Array.isArray(data.warnings) || !data.warnings.every((w) => typeof w === 'string')) throw bad();
+  if (data.message !== null && typeof data.message !== 'string') throw bad();
+
+  const notices = [];
+  const usable = data.matches.filter(
+    (m) => isPlainObject(m) && (nonEmptyString(m.title) || nonEmptyString(m.description_excerpt))
+  );
+
+  if (data.matches.length > 0 && usable.length === 0) {
+    throw new SearchError('The search service returned results in an unexpected format.', 'malformed');
+  }
+  const skipped = data.matches.length - usable.length;
+  if (skipped > 0) {
+    notices.push(skipped === 1 ? '1 incomplete result could not be displayed.' : `${skipped} incomplete results could not be displayed.`);
+  }
+
+  let matches = usable;
+  if (matches.length > topK) {
+    matches = matches.slice(0, topK);
+    notices.push(`The service returned more results than requested; showing the top ${topK}.`);
+  }
+
+  const serverWarnings = data.warnings.filter(nonEmptyString);
+
+  return {
+    matches,
+    message: nonEmptyString(data.message) ? data.message.trim() : null,
+    warnings: [...notices, ...serverWarnings],
+    fixtureQuery: nonEmptyString(data.query) ? data.query : null
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Rendering
+// ---------------------------------------------------------------------------
+function renderSuccess(parsed, { mode, idea, clientNotices }) {
+  const isMock = isMockMode(mode);
+
+  showWarnings([...clientNotices, ...parsed.warnings]);
+
+  if (isMock) {
+    mockFixtureQuery.textContent = parsed.fixtureQuery ? `Sample idea in this fixture: “${parsed.fixtureQuery}”.` : '';
+    mockNoticeBanner.classList.remove('hidden');
+    resultsQuery.classList.add('hidden');
+  } else {
+    mockNoticeBanner.classList.add('hidden');
+    const shown = idea.length > 160 ? `${idea.slice(0, 157)}…` : idea;
+    resultsQuery.textContent = `Results for: “${shown}”`;
+    resultsQuery.classList.remove('hidden');
+  }
+
+  const count = parsed.matches.length;
+  matchesList.replaceChildren();
+
+  if (count === 0) {
+    resultsSummary.textContent = 'No close matches found';
+    noMatchesMessage.textContent = parsed.message || 'No close match was found in the available dataset.';
+    noMatchesBanner.classList.remove('hidden');
+  } else {
+    noMatchesBanner.classList.add('hidden');
+    resultsSummary.textContent = `${count} similar project${count === 1 ? '' : 's'} found`;
+    parsed.matches.forEach((m, i) => matchesList.appendChild(buildMatchCard(m, i, isMock)));
+  }
+
+  resultsContainer.classList.remove('hidden');
+  resultsSummary.focus({ preventScroll: false });
+}
+
+function buildBadge(label, tone) {
+  const tones = {
+    ok:      ['bg-emerald-50 text-emerald-900 border-emerald-300', 'bg-emerald-600'],
+    warn:    ['bg-amber-50 text-amber-900 border-amber-300', 'bg-amber-500'],
+    neutral: ['bg-slate-50 text-slate-800 border-slate-300', 'bg-slate-500']
+  };
+  const [classes, dotClass] = tones[tone] || tones.neutral;
+  const badge = el('span', `inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full border ${classes}`);
+  const dot = el('span', `w-1.5 h-1.5 rounded-full ${dotClass}`);
+  dot.setAttribute('aria-hidden', 'true');
+  badge.appendChild(dot);
+  badge.appendChild(document.createTextNode(label));
+  return badge;
+}
+
+function buildTagSection(label, items, tagClass) {
+  const clean = items.map((t) => (typeof t === 'string' ? t.trim() : t == null ? '' : String(t))).filter(Boolean);
+  if (clean.length === 0) return null;
+  const section = el('div', 'flex flex-col gap-1.5');
+  section.appendChild(el('span', 'text-xs font-bold text-slate-700 uppercase tracking-wider', label));
+  const row = el('ul', 'flex flex-wrap gap-1.5 list-none p-0 m-0');
+  clean.forEach((t) => {
+    const li = el('li', `${tagClass} px-2.5 py-0.5 rounded-lg text-xs sm:text-sm font-medium break-words max-w-full`, t);
+    row.appendChild(li);
+  });
+  section.appendChild(row);
+  return section;
+}
+
+function buildMatchCard(match, index, isMock) {
+  const card = el('li', 'surface-card rounded-2xl p-5 sm:p-6 bg-white flex flex-col gap-4 animate-fade-in-up min-w-0');
+
+  // Header: rank, title, meta, verification
+  const header = el('div', 'flex flex-col sm:flex-row sm:items-start justify-between gap-3');
+  const titleGroup = el('div', 'flex items-start gap-3 min-w-0 flex-1');
+
+  const rankNum = typeof match.rank === 'number' && Number.isFinite(match.rank) ? match.rank : index + 1;
+  const rankBadge = el('span', 'inline-flex items-center justify-center min-w-[2.5rem] px-2.5 py-1 text-sm font-bold rounded-xl bg-indigo-50 text-indigo-800 border border-indigo-200 shrink-0', `#${rankNum}`);
+  rankBadge.setAttribute('aria-label', `Rank ${rankNum}`);
+
+  const titleBox = el('div', 'min-w-0');
+  titleBox.appendChild(el('h3', 'text-lg sm:text-xl font-bold text-slate-900 leading-snug tracking-tight break-words', nonEmptyString(match.title) ? match.title.trim() : 'Untitled project record'));
+
+  const meta = el('div', 'flex flex-wrap items-center gap-x-2 gap-y-1 mt-1.5 text-sm text-slate-600');
+  if (!isMock && nonEmptyString(match.source_type)) {
+    const label = SOURCE_LABELS[match.source_type] || match.source_type;
+    meta.appendChild(el('span', 'font-semibold text-slate-700 bg-slate-100 px-2 py-0.5 rounded text-xs border border-slate-300', label));
+  }
+  if (nonEmptyString(match.domain)) meta.appendChild(el('span', 'font-medium', match.domain));
+  if (typeof match.year === 'number' && Number.isFinite(match.year)) meta.appendChild(el('span', null, String(match.year)));
+  // Add separators visually via gap only; keep reading order simple for screen readers.
+  titleBox.appendChild(meta);
+
+  titleGroup.appendChild(rankBadge);
+  titleGroup.appendChild(titleBox);
+
+  const status = VERIFICATION_LABELS[match.verification_status];
+  const statusWrap = el('div', 'shrink-0');
+  if (isMock) {
+    statusWrap.appendChild(buildBadge('Illustrative demo record', 'neutral'));
+  } else {
+    statusWrap.appendChild(status ? buildBadge(status.text, status.tone) : buildBadge('Not verified', 'neutral'));
+  }
+
+  header.appendChild(titleGroup);
+  header.appendChild(statusWrap);
+  card.appendChild(header);
+
+  // Excerpt
+  if (nonEmptyString(match.description_excerpt)) {
+    const excerpt = el('div', 'bg-[#FAF9F5] border-l-4 border-indigo-400 p-3.5 sm:p-4 rounded-r-xl');
+    excerpt.appendChild(el('p', 'text-sm sm:text-base text-slate-800 leading-relaxed break-words', match.description_excerpt.trim()));
+    card.appendChild(excerpt);
+  }
+
+  // Shared concepts + technologies
+  const shared = Array.isArray(match.shared_elements)
+    ? buildTagSection('Shared concepts', match.shared_elements, 'bg-amber-50 text-amber-900 border border-amber-300')
+    : null;
+  if (shared) card.appendChild(shared);
+
+  const tech = Array.isArray(match.technologies)
+    ? buildTagSection('Technologies', match.technologies, 'bg-slate-100 text-slate-800 border border-slate-300')
+    : null;
+  if (tech) card.appendChild(tech);
+
+  // Footer: ranking details + provenance
+  const footer = el('div', 'flex flex-wrap items-center justify-between gap-x-4 gap-y-3 pt-3 border-t border-slate-200 text-sm');
+
+  if (!isMock && isHttpUrl(match.source_url)) {
+    const link = el('a', 'inline-flex items-center gap-1 text-indigo-700 hover:text-indigo-900 underline underline-offset-2 font-semibold', 'View source record');
+    link.href = match.source_url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    const hint = el('span', 'sr-only', ' (opens in a new tab)');
+    link.appendChild(hint);
+    link.appendChild(el('span', null, '↗')).setAttribute('aria-hidden', 'true');
+    footer.appendChild(link);
+  } else {
+    footer.appendChild(el('span', 'text-slate-600 italic', isMock ? 'Demo record — no real source' : 'No public source link available'));
+  }
+
+  card.appendChild(footer);
+  return card;
+}
+
+// ---------------------------------------------------------------------------
+// Bootstrap
+// ---------------------------------------------------------------------------
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}

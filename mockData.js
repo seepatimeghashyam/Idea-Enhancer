@@ -1,16 +1,33 @@
 /**
  * MOCK / DEMO DATA FIXTURES FOR IDEA ENHANCER FRONTEND
- * 
+ *
  * IMPORTANT: These fixtures are strictly for standalone frontend demonstration
- * and testing without a running backend. They match the approved contract in
- * docs/API_CONTRACT.md exactly.
- * 
- * DO NOT treat these as live or verified results.
- * Placeholder external URLs are set to null so that unverified sources are not
- * presented as authentic project links.
+ * and testing without a running backend. Their shapes follow the approved
+ * POST /search contract (docs/API_CONTRACT.md).
+ *
+ * DO NOT treat these as live or verified results. They are FIXED sample
+ * payloads: they do NOT depend on the idea the user types, and the UI must
+ * always label them as demo data. Placeholder external URLs are null so that
+ * unverified sources are never presented as authentic project links.
+ *
+ * Fixtures are deep-frozen; consumers must call cloneFixture() before
+ * adapting a payload (e.g. truncating to top_k) so the originals never change.
  */
 
-export const MOCK_SUCCESS_RESPONSE = {
+function deepFreeze(value) {
+  if (value && typeof value === 'object' && !Object.isFrozen(value)) {
+    Object.freeze(value);
+    Object.values(value).forEach(deepFreeze);
+  }
+  return value;
+}
+
+/** Return a mutable deep copy of a fixture payload. */
+export function cloneFixture(fixture) {
+  return JSON.parse(JSON.stringify(fixture));
+}
+
+export const MOCK_SUCCESS_RESPONSE = deepFreeze({
   status: "success",
   query: "An IoT-based crop disease detection system using Raspberry Pi and CNNs",
   result_count: 2,
@@ -50,18 +67,18 @@ export const MOCK_SUCCESS_RESPONSE = {
   ],
   message: null,
   warnings: []
-};
+});
 
-export const MOCK_NO_MATCH_RESPONSE = {
+export const MOCK_NO_MATCH_RESPONSE = deepFreeze({
   status: "success",
   query: "A quantum teleportation device for household pets using acoustic levitation",
   result_count: 0,
   matches: [],
   message: "No close match was found in the available dataset.",
   warnings: []
-};
+});
 
-export const MOCK_VALIDATION_ERROR_RESPONSE = {
+export const MOCK_VALIDATION_ERROR_RESPONSE = deepFreeze({
   status: "error",
   error_code: "VALIDATION_ERROR",
   message: "The 'idea' field must contain at least 10 characters.",
@@ -71,11 +88,23 @@ export const MOCK_VALIDATION_ERROR_RESPONSE = {
     min_length: 10,
     actual_length: 5
   }
-};
+});
 
-export const MOCK_SERVER_ERROR_RESPONSE = {
+export const MOCK_SERVER_ERROR_RESPONSE = deepFreeze({
   status: "error",
   error_code: "SEARCH_FAILED",
   message: "An internal error occurred while processing the search. Please try again.",
   details: null
-};
+});
+
+/**
+ * Scenario registry used by the UI mode selector.
+ * kind "success" resolves with the payload; kind "error" rejects with the
+ * given HTTP status and payload (mirroring the real API's error envelope).
+ */
+export const MOCK_SCENARIOS = Object.freeze({
+  'mock-success':      Object.freeze({ kind: 'success', delay: 600, payload: MOCK_SUCCESS_RESPONSE }),
+  'mock-no-match':     Object.freeze({ kind: 'success', delay: 600, payload: MOCK_NO_MATCH_RESPONSE }),
+  'mock-val-error':    Object.freeze({ kind: 'error', status: 422, delay: 400, payload: MOCK_VALIDATION_ERROR_RESPONSE }),
+  'mock-server-error': Object.freeze({ kind: 'error', status: 500, delay: 400, payload: MOCK_SERVER_ERROR_RESPONSE })
+});
