@@ -1,0 +1,23 @@
+# Approved Python dependencies for Idea Enhancer V1
+# These are version range constraints, not exact pins.
+# Verified installation in a clean Python 3.12 environment is required
+# before declaring this file ready.
+
+# --- Backend framework ---
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+
+# --- Search and retrieval ---
+rank-bm25>=0.2.2,<1
+chromadb>=0.5,<1
+sentence-transformers>=3.0,<4
+
+# --- Configuration ---
+python-dotenv>=1.0,<2
+
+# --- Data validation (included with FastAPI, explicit for clarity) ---
+pydantic>=2.0,<3
+
+# --- Testing ---
+pytest>=8.0,<9
+httpx>=0.27,<1
