@@ -103,3 +103,20 @@ def test_search_returns_safe_error_when_core_fails_unexpectedly() -> None:
         "message": "An internal error occurred while processing the search. Please try again.",
         "details": None,
     }
+
+
+def test_search_allows_the_local_frontend_to_make_a_cors_preflight_request() -> None:
+    client = TestClient(create_app(MockCoreSearchGateway()))
+
+    response = client.options(
+        "/search",
+        headers={
+            "Origin": "http://localhost:8080",
+            "Access-Control-Request-Method": "POST",
+            "Access-Control-Request-Headers": "content-type",
+        },
+    )
+
+    assert response.status_code == 200
+    assert response.headers["access-control-allow-origin"] == "http://localhost:8080"
+    assert "POST" in response.headers["access-control-allow-methods"]

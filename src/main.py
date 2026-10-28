@@ -5,6 +5,7 @@ from __future__ import annotations
 from typing import Any, Mapping
 
 from fastapi import Body, FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from src.search_gateway import (
@@ -144,6 +145,14 @@ def create_app(search_gateway: SearchGateway | None = None) -> FastAPI:
     """Create an app with an injectable search boundary for tests and integration."""
 
     app = FastAPI(title="Idea Enhancer API")
+    # The frontend runs on a different local port during development.
+    # Allow only local browser origins to call this API.
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origin_regex=r"^http://(localhost|127\.0\.0\.1)(?::\d+)?$",
+        allow_methods=["POST", "OPTIONS"],
+        allow_headers=["Content-Type", "Accept"],
+    )
     gateway = search_gateway or UnavailableCoreSearchGateway()
 
     @app.post("/search")
