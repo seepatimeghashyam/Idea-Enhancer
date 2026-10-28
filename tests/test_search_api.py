@@ -1,5 +1,8 @@
 """Tests for the committed POST /search API contract."""
 
+from typing import Any
+
+import pytest
 from fastapi.testclient import TestClient
 
 from src.main import NO_MATCH_MESSAGE, create_app
@@ -120,3 +123,119 @@ def test_search_allows_the_local_frontend_to_make_a_cors_preflight_request() -> 
     assert response.status_code == 200
     assert response.headers["access-control-allow-origin"] == "http://localhost:8080"
     assert "POST" in response.headers["access-control-allow-methods"]
+
+
+def test_search_rejects_missing_request_body_using_error_envelope() -> None:
+    client = TestClient(create_app(MockCoreSearchGateway()))
+
+    response = client.post("/search")
+
+    assert response.status_code == 422
+    assert response.json() == {
+        "status": "error",
+        "error_code": "VALIDATION_ERROR",
+        "message": "The request body must be a JSON object.",
+        "details": {"field": "body", "constraint": "object"},
+    }
+
+
+def test_search_rejects_non_object_request_body() -> None:
+    client = TestClient(create_app(MockCoreSearchGateway()))
+
+    response = client.post("/search", json="not a dictionary")
+
+    assert response.status_code == 422
+    assert response.json() == {
+        "status": "error",
+        "error_code": "VALIDATION_ERROR",
+        "message": "The request body must be a JSON object.",
+        "details": {"field": "body", "constraint": "object"},
+    }
+
+
+def test_search_rejects_missing_idea_field() -> None:
+    client = TestClient(create_app(MockCoreSearchGateway()))
+
+    response = client.post("/search", json={"top_k": 5})
+
+    assert response.status_code == 422
+    assert response.json() == {
+        "status": "error",
+        "error_code": "VALIDATION_ERROR",
+        "message": "The 'idea' field must be a string.",
+        "details": {"field": "idea", "constraint": "string"},
+    }
+
+
+@pytest.mark.parametrize("invalid_idea", [None, 12345, ["a valid length idea in a list"], {"text": "idea"}])
+def test_search_rejects_invalid_idea_types(invalid_idea: Any) -> None:
+    client = TestClient(create_app(MockCoreSearchGateway()))
+
+    response = client.post("/search", json={"idea": invalid_idea})
+
+    assert response.status_code == 422
+    assert response.json() == {
+        "status": "error",
+        "error_code": "VALIDATION_ERROR",
+        "message": "The 'idea' field must be a string.",
+        "details": {"field": "idea", "constraint": "string"},
+    }
+
+
+def test_search_rejects_idea_exceeding_maximum_length() -> None:
+    client = TestClient(create_app(MockCoreSearchGateway()))
+
+    long_idea = "A" * 2001
+    response = client.post("/search", json={"idea": long_idea})
+
+    assert response.status_code == 422
+    assert response.json() == {
+        "status": "error",
+        "error_code": "VALIDATION_ERROR",
+        "message": "The 'idea' field must contain at most 2000 characters.",
+        "details": {
+            "field": "idea",
+            "constraint": "max_length",
+            "max_length": 2000,
+            "actual_length": 2001,
+        },
+    }
+
+
+def test_search_uses_default_top_k_when_omitted() -> None:
+    calls: list[tuple[str, int]] = []
+    client = TestClient(create_app(MockCoreSearchGateway(calls=calls)))
+
+    response = client.post("/search", json={"idea": "A valid project idea with enough length"})
+
+    assert response.status_code == 200
+    assert response.json()["status"] == "success"
+    assert response.json()["warnings"] == []
+    assert calls == [("A valid project idea with enough length", 5)]
+
+
+@pytest.mark.parametrize("low_top_k", [0, -1, -10])
+def test_search_clamps_top_k_below_minimum(low_top_k: int) -> None:
+    calls: list[tuple[str, int]] = []
+    client = TestClient(create_app(MockCoreSearchGateway(calls=calls)))
+
+    response = client.post("/search", json={"idea": "A valid project idea with enough length", "top_k": low_top_k})
+
+    assert response.status_code == 200
+    assert response.json()["warnings"] == ["top_k was clamped to 1."]
+    assert calls == [("A valid project idea with enough length", 1)]
+
+
+@pytest.mark.parametrize("invalid_top_k", ["5", 3.14, True, False, [5], {"k": 5}])
+def test_search_rejects_invalid_top_k_types(invalid_top_k: Any) -> None:
+    client = TestClient(create_app(MockCoreSearchGateway()))
+
+    response = client.post("/search", json={"idea": "A valid project idea with enough length", "top_k": invalid_top_k})
+
+    assert response.status_code == 422
+    assert response.json() == {
+        "status": "error",
+        "error_code": "VALIDATION_ERROR",
+        "message": "The 'top_k' field must be an integer.",
+        "details": {"field": "top_k", "constraint": "integer"},
+    }

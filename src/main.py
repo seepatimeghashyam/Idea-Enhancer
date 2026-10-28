@@ -5,6 +5,7 @@ from __future__ import annotations
 from typing import Any, Mapping
 
 from fastapi import Body, FastAPI
+from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
@@ -155,8 +156,17 @@ def create_app(search_gateway: SearchGateway | None = None) -> FastAPI:
     )
     gateway = search_gateway or UnavailableCoreSearchGateway()
 
+    @app.exception_handler(RequestValidationError)
+    def handle_request_validation_error(_request: Any, exc: RequestValidationError) -> JSONResponse:
+        return error_response(
+            422,
+            "VALIDATION_ERROR",
+            "The request body must be a valid JSON object.",
+            exc.errors(),
+        )
+
     @app.post("/search")
-    def search(payload: Any = Body(...)) -> JSONResponse:
+    def search(payload: Any = Body(None)) -> JSONResponse:
         try:
             query, top_k, warnings = validate_search_payload(payload)
         except ContractValidationError as error:
