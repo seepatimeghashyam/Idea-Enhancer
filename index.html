@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idea Enhancer — Engineering Project Prior-Art Discovery & Differentiation</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans (Modern Geometric) & Newsreader (Editorial Serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,600&family=Plus Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS via Official CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Design System & Keyframe Animations -->
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="min-h-full flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Top Navigation Bar -->
+  <header class="sticky top-0 z-30 bg-[#FBF9F5]/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo & Identity -->
+      <a href="#" class="flex items-center gap-3.5 group focus:outline-none">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-700 to-violet-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-200">
+          <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-base sm:text-lg font-bold tracking-tight text-slate-900 group-hover:text-indigo-600 transition-colors">Idea Enhancer</span>
+            <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/60 uppercase tracking-wider">Research V1</span>
+          </div>
+          <p class="text-xs text-slate-500 hidden sm:block">RVCE Computer Science & Engineering</p>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+        <a href="#discover" class="hover:text-indigo-600 transition-colors py-1">Discover</a>
+        <a href="#how-it-works" class="hover:text-indigo-600 transition-colors py-1">How It Works</a>
+        <a href="#system-architecture" class="hover:text-indigo-600 transition-colors py-1">Architecture & Limits</a>
+      </nav>
+
+      <!-- Mode Selector Controls (Demo Mock vs Live Backend) -->
+      <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm">
+        <label for="data-source-select" class="text-xs font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          Mode:
+        </label>
+        <select id="data-source-select" class="bg-slate-50 text-slate-800 text-xs font-medium rounded-lg border border-slate-200 px-2.5 py-1 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none cursor-pointer hover:bg-slate-100 transition-colors">
+          <option value="mock-success">Mock Demo: Matches Found</option>
+          <option value="mock-no-match">Mock Demo: 0 Matches</option>
+          <option value="mock-val-error">Mock Demo: Validation Error</option>
+          <option value="mock-server-error">Mock Demo: Server Error</option>
+          <option value="live">Live Backend (localhost:8000)</option>
+        </select>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="flex-1 flex flex-col">
+
+    <!-- Hero Section: Editorial Headline & Prototyping Collage -->
+    <section class="relative pt-12 pb-20 sm:pt-16 sm:pb-24 border-b border-slate-200/80 overflow-hidden">
+      
+      <!-- Subtle Decorative Background Gradients -->
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-gradient-to-b from-indigo-100/60 via-purple-50/40 to-transparent blur-3xl -z-10 pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Left Column: Editorial Headline & Mission -->
+          <div class="lg:col-span-7 flex flex-col items-start gap-6">
+            
+            <!-- Eyebrow Pill -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-sm text-xs font-semibold text-slate-700">
+              <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-700 uppercase tracking-wider">Prior-Art</span>
+              <span>Engineering Project Intelligence</span>
+            </div>
+
+            <!-- Expressive Title -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.12]">
+              Explore what exists.<br>
+              Find your next <span class="font-editorial italic font-normal text-indigo-600">distinctive angle</span>.
+            </h1>
+
+            <!-- Supporting Paragraph -->
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
+              Idea Enhancer helps engineering students investigate historical college databases and open datasets before investing months in development. Uncover traceable, evidence-backed overlap and pinpoint opportunities to differentiate your concept.
+            </p>
+
+            <!-- Actions Row -->
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a href="#discover" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-semibold text-sm transition-all shadow-md hover:shadow-lg shadow-indigo-600/20 hover:-translate-y-0.5">
+                <span>Investigate an Idea</span>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </a>
+              <a href="#how-it-works" class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-semibold text-sm transition-all shadow-sm hover:border-slate-300">
+                <span>How Retrieval Works</span>
+              </a>
+            </div>
+
+            <!-- Micro Metrics / Guarantees -->
+            <div class="flex flex-wrap items-center gap-6 pt-4 text-xs text-slate-500 font-medium">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>BM25 + ChromaDB Hybrid</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Reciprocal Rank Fusion</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Evidence-Backed Overlap</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Research & Prototyping Collage -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative w-full max-w-md mx-auto aspect-[4/5] sm:aspect-[4/4.5] flex items-center justify-center">
+              
+              <!-- Background Ambient Card -->
+              <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50/60 rounded-3xl border border-slate-200/80 shadow-sm -rotate-2 -z-10"></div>
+              
+              <!-- Main Photograph Container (Robotics / Hardware prototyping) -->
+              <div class="w-[86%] h-[76%] rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-white relative img-fallback-wrapper">
+                <img 
+                  src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" 
+                  alt="Students examining hardware circuit prototype in engineering laboratory"
+                  loading="lazy"
+                  class="w-full h-full object-cover"
+                  onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                >
+                <!-- Fallback if Unsplash is unreachable -->
+                <div class="hidden absolute inset-0 bg-gradient-to-tr from-indigo-100 to-purple-100 flex flex-col items-center justify-center p-6 text-center">
+                  <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center mb-2 font-bold">IE</div>
+                  <p class="text-xs font-semibold text-slate-700">Engineering Prior-Art Research</p>
+                  <p class="text-[10px] text-slate-500 mt-1">Indexing student projects & technical records</p>
+                </div>
+              </div>
+
+              <!-- Floating Card 1: Top Right (Hybrid Math Badge) -->
+              <div class="absolute -top-4 -right-4 sm:-right-6 bg-white p-3.5 rounded-2xl shadow-lg border border-slate-200/90 max-w-[210px] animate-float-1 flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-200">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <div class="text-[11px] leading-tight">
+                  <p class="font-bold text-slate-900">ChromaDB + BM25</p>
+                  <p class="text-slate-500 mt-0.5">Fused via Reciprocal Rank</p>
+                </div>
+              </div>
+
+              <!-- Floating Card 2: Bottom Left (Secondary Image + Evidence Tag) -->
+              <div class="absolute -bottom-6 -left-4 sm:-left-6 bg-white p-3.5 rounded-2xl shadow-lg border border-slate-200/90 max-w-[230px] animate-float-2 flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-slate-200 bg-slate-100 img-fallback-wrapper">
+                  <img 
+                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=300&q=80" 
+                    alt="Engineers reviewing collaborative software architecture data"
+                    loading="lazy"
+                    class="w-full h-full object-cover"
+                    onerror="this.style.display='none';"
+                  >
+                </div>
+                <div class="text-[11px] leading-tight">
+                  <span class="inline-block px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-50 text-amber-700 border border-amber-200 mb-1">Traceability</span>
+                  <p class="font-semibold text-slate-800">Clear Overlap Evidence</p>
+                </div>
+              </div>
+
+            </div>
+            
+            <!-- Research Atmosphere Disclaimer -->
+            <p class="text-[10px] text-slate-400 text-center mt-6 italic">
+              *Collage images represent engineering research atmosphere; not retrieved project assets.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Workspace Section: Idea Submission & Results -->
+    <section id="discover" class="py-14 sm:py-20 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Step 1 — Investigation Workspace</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Submit Your Project Idea</h2>
+          <p class="text-sm text-slate-600 mt-1 max-w-xl">
+            Input a proposal, abstract, or methodology. Our hybrid pipeline will search across indexed project records and isolate overlapping concepts.
+          </p>
+        </div>
+
+        <!-- Mode Indicator Chip (Displays whether currently in Mock or Live mode) -->
+        <div id="mode-status-pill" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200 shrink-0">
+          <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+          <span id="mode-status-text">Demo Fixture Active</span>
+        </div>
+      </div>
+
+      <!-- Main Submission Surface Card -->
+      <div class="surface-card rounded-3xl p-6 sm:p-8 bg-white border border-slate-200/90 shadow-md">
+        
+        <form id="search-form" novalidate class="flex flex-col gap-6">
+          
+          <!-- Textarea Container -->
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <label for="idea-input" class="text-sm font-semibold text-slate-800 flex items-center gap-1.5">
+                <span>Technical Project Proposal</span>
+                <span class="text-rose-500">*</span>
+              </label>
+              <!-- Live Character Counter -->
+              <span id="char-count" class="text-xs font-medium text-slate-400" aria-live="polite">
+                0 / 2000 characters
+              </span>
+            </div>
+
+            <textarea 
+              id="idea-input" 
+              name="idea" 
+              rows="5"
+              placeholder="e.g. An IoT-based crop disease detection system using Raspberry Pi and CNNs to monitor foliar infections in real time..."
+              required
+              aria-describedby="idea-hint"
+              class="w-full bg-[#FAF9F6] text-slate-900 text-sm sm:text-base border border-slate-300 rounded-2xl p-4 placeholder:text-slate-400 focus:bg-white focus:border-indigo-600 focus:ring-4 focus:ring-indigo-100 focus:outline-none transition-all resize-y leading-relaxed font-normal shadow-inner"
+            ></textarea>
+            
+            <div class="flex flex-wrap items-center justify-between gap-3 mt-1.5">
+              <p id="idea-hint" class="text-xs text-slate-500">
+                Minimum 10 characters, maximum 2000 characters. Specific details on hardware, models, and domain produce better matches.
+              </p>
+
+              <!-- Sample Quick-Fill Prompts -->
+              <div class="flex items-center gap-2 text-xs">
+                <span class="text-slate-400 font-medium">Try sample:</span>
+                <button type="button" id="sample-idea-1" class="chip-interactive px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 font-medium border border-indigo-200/70">
+                  🌱 IoT Crop Disease
+                </button>
+                <button type="button" id="sample-idea-2" class="chip-interactive px-2.5 py-1 rounded-lg bg-purple-50 text-purple-700 hover:bg-purple-100 font-medium border border-purple-200/70">
+                  🌌 Quantum Pet Device
+                </button>
+              </div>
+            </div>
+
+            <!-- Client-Side Validation Alert Box -->
+            <div id="client-validation-error" class="hidden mt-3 p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-700 font-medium flex items-center gap-2" role="alert">
+              <svg class="w-4 h-4 text-rose-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+              <span id="client-validation-text"></span>
+            </div>
+          </div>
+
+          <!-- Bottom Control Bar: top_k & Submit Button -->
+          <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-100">
+            
+            <!-- Top_K Selector -->
+            <div class="flex items-center gap-3">
+              <label for="top-k-input" class="text-xs sm:text-sm font-semibold text-slate-700">Matches to retrieve (top_k):</label>
+              <input 
+                type="number" 
+                id="top-k-input" 
+                name="top_k" 
+                min="1" 
+                max="20" 
+                value="5" 
+                class="w-16 bg-white text-slate-900 text-sm font-semibold border border-slate-300 rounded-xl px-2.5 py-1.5 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 focus:outline-none text-center shadow-sm"
+              >
+              <span class="text-xs text-slate-400">(1–20, default 5)</span>
+            </div>
+
+            <!-- Submit Button with Spinner & Icon -->
+            <button 
+              type="submit" 
+              id="submit-btn"
+              class="inline-flex items-center justify-center gap-2.5 px-7 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-semibold text-sm transition-all shadow-md hover:shadow-indigo-500/25 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer hover:-translate-y-0.5"
+            >
+              <!-- Animated Spinner for Loading State -->
+              <svg id="submit-btn-spinner" class="hidden animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              <!-- Search Icon -->
+              <svg id="submit-btn-icon" class="w-4 h-4 text-indigo-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <span id="submit-btn-text">Investigate Idea</span>
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- Error Alert Banner -->
+      <div id="error-banner" class="hidden mt-6 p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-sm flex items-start gap-3 shadow-sm" role="alert">
+        <div class="w-8 h-8 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center shrink-0 font-bold">
+          !
+        </div>
+        <div class="flex-1">
+          <p class="font-bold text-rose-900">Request Error</p>
+          <p id="error-message" class="text-xs sm:text-sm mt-0.5 text-rose-700 leading-relaxed"></p>
+        </div>
+      </div>
+
+      <!-- Warnings Container (e.g. Clamped top_k from server) -->
+      <div id="warnings-container" class="hidden mt-4 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs">
+        <p class="font-bold text-amber-800 flex items-center gap-1.5">
+          <span>⚠️ Server Notice:</span>
+        </p>
+        <ul id="warnings-list" class="list-disc list-inside mt-1 space-y-1 text-amber-800"></ul>
+      </div>
+
+      <!-- Loading Skeleton Experience -->
+      <section id="loading-skeleton" class="hidden mt-10 flex flex-col gap-6" aria-label="Searching indexed project database">
+        
+        <!-- Animated Scanning Beam Container -->
+        <div class="surface-card rounded-2xl p-6 bg-white border border-slate-200/90 flex items-center gap-4 relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-500/10 to-transparent animate-scanline"></div>
+          <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-slate-800">Comparing your idea with indexed project records…</h3>
+            <p class="text-xs text-slate-500 mt-0.5">Executing BM25 keyword matching and ChromaDB vector retrieval with Reciprocal Rank Fusion.</p>
+          </div>
+        </div>
+
+        <!-- Shimmer Placeholder Cards -->
+        <div class="flex flex-col gap-4">
+          <div class="surface-card rounded-2xl p-6 bg-white border border-slate-200/90 flex flex-col gap-3">
+            <div class="w-1/3 h-5 skeleton-shimmer rounded-lg"></div>
+            <div class="w-full h-16 skeleton-shimmer rounded-lg mt-1"></div>
+            <div class="w-2/3 h-4 skeleton-shimmer rounded-lg"></div>
+          </div>
+          <div class="surface-card rounded-2xl p-6 bg-white border border-slate-200/90 flex flex-col gap-3">
+            <div class="w-1/4 h-5 skeleton-shimmer rounded-lg"></div>
+            <div class="w-full h-16 skeleton-shimmer rounded-lg mt-1"></div>
+            <div class="w-1/2 h-4 skeleton-shimmer rounded-lg"></div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Results Experience Container -->
+      <section id="results-container" class="hidden mt-12 flex flex-col gap-6" aria-live="polite">
+        
+        <!-- Mock Data Visible Banner Alert (Appears whenever mock data is on screen) -->
+        <div id="mock-notice-banner" class="hidden p-3.5 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/90 text-amber-900 text-xs flex items-center justify-between gap-3 shadow-sm">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping shrink-0"></span>
+            <span class="font-bold uppercase tracking-wider text-[11px] bg-amber-200/70 text-amber-900 px-2 py-0.5 rounded">MOCK / DEMO</span>
+            <span class="font-medium text-amber-800">Illustrative test data for frontend inspection — not real search results from the dataset.</span>
+          </div>
+          <span class="text-[11px] text-amber-700/80 hidden sm:inline">Contract: POST /search</span>
+        </div>
+
+        <!-- Results Header Bar -->
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-4">
+          <div>
+            <h2 id="results-summary" class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">Search Results</h2>
+            <p class="text-xs text-slate-500 mt-0.5">Ranked by Reciprocal Rank Fusion (BM25 + ChromaDB Vectors)</p>
+          </div>
+          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
+            V1 Search Pipeline
+          </span>
+        </div>
+
+        <!-- Zero Matches State Banner -->
+        <div id="no-matches-banner" class="hidden surface-card rounded-3xl p-10 bg-white border border-slate-200/90 text-center flex flex-col items-center gap-4 shadow-sm animate-fade-in-up">
+          <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 border border-indigo-100 flex items-center justify-center text-2xl shadow-inner">
+            🔍
+          </div>
+          <div class="max-w-md">
+            <h3 class="text-lg font-bold text-slate-900">No Close Match Found in Indexed Records</h3>
+            <p id="no-matches-message" class="text-sm text-slate-600 mt-2 leading-relaxed"></p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-xs text-slate-500 max-w-lg leading-relaxed mt-2">
+            <strong class="text-slate-700 font-semibold">Important Research Limitation:</strong> This result indicates that no close match exists in the sources <em>currently indexed</em>. It does not prove universal originality or that a similar idea does not exist elsewhere.
+          </div>
+        </div>
+
+        <!-- Dynamic Matches Card List -->
+        <div id="matches-list" class="flex flex-col gap-5"></div>
+
+      </section>
+
+    </section>
+
+    <!-- How It Works Section: Conceptual Workflow & Boundaries -->
+    <section id="how-it-works" class="py-16 sm:py-24 bg-white border-t border-b border-slate-200/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">The Discovery Pipeline</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1.5">How Idea Enhancer Evaluates Ideas</h2>
+          <p class="text-sm sm:text-base text-slate-600 mt-2">
+            A deterministic hybrid retrieval architecture designed to eliminate blind spots without fabricating similarity scores.
+          </p>
+        </div>
+
+        <!-- 4 Workflow Steps -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Step 1 -->
+          <div class="p-6 rounded-2xl bg-[#FBF9F5] border border-slate-200/80 flex flex-col gap-3">
+            <div class="w-9 h-9 rounded-xl bg-indigo-100 text-indigo-700 font-bold text-sm flex items-center justify-center">1</div>
+            <h3 class="font-bold text-slate-900 text-base">Describe Idea</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Submit your technical abstract detailing hardware, architecture, machine learning models, and application goals.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="p-6 rounded-2xl bg-[#FBF9F5] border border-slate-200/80 flex flex-col gap-3">
+            <div class="w-9 h-9 rounded-xl bg-purple-100 text-purple-700 font-bold text-sm flex items-center justify-center">2</div>
+            <h3 class="font-bold text-slate-900 text-base">Dual Retrieval</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Simultaneous keyword matching via BM25 and semantic embedding retrieval in ChromaDB using <code class="text-xs text-indigo-600">bge-small-en-v1.5</code>.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="p-6 rounded-2xl bg-[#FBF9F5] border border-slate-200/80 flex flex-col gap-3">
+            <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 font-bold text-sm flex items-center justify-center">3</div>
+            <h3 class="font-bold text-slate-900 text-base">Rank Fusion</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Reciprocal Rank Fusion (RRF) combines sparse and dense rankings mathematically without inventing arbitrary similarity percentages.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="p-6 rounded-2xl bg-[#FBF9F5] border border-slate-200/80 flex flex-col gap-3">
+            <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 font-bold text-sm flex items-center justify-center">4</div>
+            <h3 class="font-bold text-slate-900 text-base">Evidence & Angle</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Inspect shared technical concepts and verification tags to understand prior art and discover opportunities to differentiate.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Architectural Boundaries Card -->
+        <div id="system-architecture" class="mt-12 p-6 sm:p-8 rounded-3xl bg-indigo-50/60 border border-indigo-100 text-indigo-950 flex flex-col md:flex-row items-start gap-6">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-xl shrink-0 shadow-md shadow-indigo-500/20">
+            ⚖️
+          </div>
+          <div class="flex-1 text-xs sm:text-sm leading-relaxed">
+            <h3 class="font-bold text-base text-indigo-950 mb-1">Guiding Principle & Scope Boundaries</h3>
+            <p class="text-indigo-900/80 mb-2">
+              Idea Enhancer is a research copilot for student engineers, <strong>not a plagiarism detector</strong>. It cannot prove universal originality or catalog all worldwide projects. It retrieves traceable matches from indexed academic and historical databases.
+            </p>
+            <p class="text-indigo-800/70">
+              RRF scores are fusion ranking values, never similarity percentages. Our mission is to help you explore past engineering work with confidence and clarity.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Product Footer -->
+  <footer class="bg-[#F8F6F1] border-t border-slate-200 py-10 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <p class="font-bold text-slate-800">Idea Enhancer — Engineering Project Prior-Art Discovery</p>
+        <p class="mt-0.5 text-slate-500">Built by 3rd-Semester CS Students at RV College of Engineering • Bengaluru</p>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#discover" class="hover:text-indigo-600 transition-colors">Workspace</a>
+        <a href="#how-it-works" class="hover:text-indigo-600 transition-colors">How It Works</a>
+        <a href="#system-architecture" class="hover:text-indigo-600 transition-colors">Boundaries</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Frontend Controller & API Adapter Module -->
+  <script type="module" src="./script.js"></script>
+</body>
+</html>

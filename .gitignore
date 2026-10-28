@@ -218,3 +218,4 @@ __marimo__/
 .streamlit/secrets.toml
 # ChromaDB local storage
 chroma_db/
+aisf.txt
