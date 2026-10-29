@@ -8,18 +8,6 @@ import unittest
 from pathlib import Path
 from typing import Any
 
-# Backward-compatibility shim for Python < 3.10 where slots=True is unsupported in dataclasses
-if sys.version_info < (3, 10):
-    import dataclasses
-
-    _orig_dataclass = dataclasses.dataclass
-
-    def _compat_dataclass(*args: Any, **kwargs: Any) -> Any:
-        kwargs.pop("slots", None)
-        return _orig_dataclass(*args, **kwargs)
-
-    dataclasses.dataclass = _compat_dataclass  # type: ignore[assignment]
-
 from src.core.contracts import ProjectRecord, RetrievalHit
 
 
