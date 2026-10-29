@@ -2,7 +2,7 @@
 
 This document defines the approved HTTP API contract for Idea Enhancer V1. All modules (frontend, API, core search) must use these definitions. Do not change request/response fields, route names, or error formats without a Decision Request and project-owner approval.
 
-> **Implementation status:** As of 2026-10-27, no API endpoints have been implemented. This document defines the approved contract that implementation must follow.
+> **Implementation status (2026-10-29):** POST /search is implemented with the request, success, validation, unavailable, and internal-error envelopes below. The live route has been smoke-tested against the supplied canonical CSV. POST /enhance remains deferred; its schema below is only a proposal.
 
 ---
 
@@ -82,7 +82,7 @@ Search the indexed project database for ideas related to the submitted text.
       "project_id": "rvce_042",
       "title": "Smart Crop Monitoring System",
       "description_excerpt": "Text excerpt from the actual indexed abstract field",
-      "source_type": "rvce",
+      "source_type": "institutional_project",
       "source_url": null,
       "year": 2024,
       "domain": "IoT/Agriculture",
@@ -98,7 +98,7 @@ Search the indexed project database for ideas related to the submitted text.
       "project_id": "global_107",
       "title": "Plant Disease Detection Using Deep Learning",
       "description_excerpt": "Text excerpt from the actual indexed abstract field",
-      "source_type": "global",
+      "source_type": "open_source_repository",
       "source_url": "https://example.com/record",
       "year": 2023,
       "domain": "AI/Agriculture",
@@ -136,7 +136,7 @@ Search the indexed project database for ideas related to the submitted text.
 | `project_id` | string | dataset `project_id` | Stable unique identifier from the canonical dataset. |
 | `title` | string | dataset `title` | Project title from the indexed record. |
 | `description_excerpt` | string | dataset `abstract` | Excerpt from the project's abstract. This is a transformation of the dataset's `abstract` field — it may be truncated for display. |
-| `source_type` | string | dataset `source_type` | Provenance label (e.g., `"rvce"`, `"global"`, `"historical"`). |
+| source_type | string | dataset source_type | Provenance label, such as institutional_project, open_source_repository, or research_paper. |
 | `source_url` | string or null | dataset `source_url` | URL to the original source record. `null` when not available. |
 | `year` | integer or null | dataset `year` | Project year from the indexed record. `null` when not available. |
 | `domain` | string or null | dataset `domain` | Project domain or category. `null` when not available. |
@@ -145,8 +145,8 @@ Search the indexed project database for ideas related to the submitted text.
 | `bm25_rank` | integer or null | computed | Position in the BM25 result list (1-based). `null` if this result was not in the BM25 top results. |
 | `vector_rank` | integer or null | computed | Position in the ChromaDB vector result list (1-based). `null` if this result was not in the vector top results. |
 | `rrf_score` | number | computed | Reciprocal Rank Fusion score. **This is a ranking-fusion value, not a similarity percentage.** See [Scoring Semantics](#scoring-semantics). |
-| `shared_elements` | array of strings | computed | Terms or concepts found in common between the query and this record, supported by the actual descriptions. |
-| `verification_status` | string | computed | Result of evidence checks: `"checked"` (evidence inspected), `"unchecked"` (not yet inspected), or `"insufficient"` (evidence too weak to assess). |
+| shared_elements | array of strings | computed | Exact lexical terms found in common between the query and the record's title, abstract, technology stack, or domain. This is not a semantic relevance score. |
+| verification_status | string | computed | Result of the lexical overlap check only: checked (one or more shared terms found), insufficient (the check found none), or unchecked (no check was performed). It does not mean the linked source was independently verified. |
 
 ### Dataset-to-API field mapping
 

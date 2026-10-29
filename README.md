@@ -1,14 +1,37 @@
-Idea Enhancer
-An AI-driven hybrid project validator built by 3rd-semester Computer Science students at RV College of Engineering. 
-About the Project
-Idea Enhancer evaluates student project ideas against historical college databases and external datasets using a hybrid search engine (BM25 + ChromaDB) combined with an LLM evaluation layer. It delivers instant, structured feedback on uniqueness, feasibility, and technical stack recommendations.
-## 🛠️ Tech Stack
-* **Frontend:** HTML5, Tailwind CSS, JavaScript
-* **Backend:** Python, FastAPI
-* **Search & Database:** ChromaDB, BM25, Reciprocal Rank Fusion (RRF)
-* **AI Layer:** Large Language Models (LLMs) via API
-## 👥 Team Roles & Architecture
-* **Data Collection & Ingestion:** Managing historical project datasets and CSV pipelines.
-* **Core Backend & Search:** BM25 keyword matching, ChromaDB vector embeddings, and RRF math.
-* **API & LLM Integration:** FastAPI endpoints and structured AI prompt templates.
-* **Frontend UI:** Modern dark-mode dashboard for real-time user validation.
+# Idea Enhancer
+
+Idea Enhancer helps engineering students search project records for traceable prior-art overlap before investing time in a build. Search results are evidence from the indexed corpus, not proof of originality or plagiarism.
+
+## Current MVP state
+
+- The responsive HTML/Tailwind/vanilla JavaScript frontend supports clearly labelled demo modes and live search, including validation, loading, timeout, empty-result, unavailable, and server-error states.
+- The FastAPI POST /search route is connected through the API-owned gateway to Core Search.
+- Core Search loads the canonical CSV, runs BM25 and ChromaDB vector retrieval, fuses ranks with RRF, and maps canonical evidence to the public response.
+- The supplied conservative search-ready dataset is installed at data/historical_projects.csv. Its quality limitations are documented in [Dataset Readiness](docs/DATASET_READINESS.md).
+- A sun/moon control switches between the warm light theme and ambient dark theme.
+- POST /enhance and LLM-generated recommendations remain deferred until search quality is evaluated and an LLM provider is approved.
+
+## Run locally
+
+Start the API from the repository root:
+
+    python -m uvicorn src.main:app --reload
+
+In a second terminal, serve the frontend from the repository root:
+
+    python -m http.server 5500
+
+Open http://localhost:5500, select Live search, and submit an idea with at least 10 characters. The first search builds the local vector index and may take a while. EMBEDDING_MODEL and CHROMA_DB_PATH can be set in the process environment or in a local .env copied from .env.example.
+
+Run tests with:
+
+    python -m pytest tests -q
+
+## Stack
+
+- Frontend: HTML, Tailwind CSS CDN, vanilla JavaScript
+- API: Python and FastAPI
+- Retrieval: rank-bm25, ChromaDB, BAAI/bge-small-en-v1.5
+- Fusion: Reciprocal Rank Fusion (RRF)
+
+RRF values are ordering values, not similarity percentages. Dataset records and their source URLs still require source-level review before results are described as independently verified.

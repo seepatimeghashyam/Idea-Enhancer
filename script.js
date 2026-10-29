@@ -26,12 +26,15 @@ const MAX_TOP_K = 20;
 
 const SOURCE_LABELS = {
   rvce: 'Institutional archive',
-  global: 'Open dataset'
+  global: 'Open dataset',
+  institutional_project: 'Institutional project',
+  open_source_repository: 'Open-source repository',
+  research_paper: 'Research paper'
 };
 
 const VERIFICATION_LABELS = {
-  checked: { text: 'Evidence checked', tone: 'ok' },
-  insufficient: { text: 'Insufficient evidence', tone: 'warn' }
+  checked: { text: 'Text overlap found', tone: 'ok' },
+  insufficient: { text: 'No shared terms found', tone: 'warn' }
 };
 
 // ---------------------------------------------------------------------------
@@ -56,6 +59,7 @@ const submitBtnText = $('submit-btn-text');
 const submitBtnSpinner = $('submit-btn-spinner');
 const submitBtnIcon = $('submit-btn-icon');
 
+const themeToggle = $('theme-toggle');
 const dataSourceSelect = $('data-source-select');
 const headerModeDot = $('header-mode-dot');
 const modeStatusPill = $('mode-status-pill');
@@ -126,7 +130,31 @@ class SearchError extends Error {
 // ---------------------------------------------------------------------------
 // Initialisation
 // ---------------------------------------------------------------------------
+function applyTheme(theme, persist = false) {
+  const dark = theme === 'dark';
+  document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  if (themeToggle) {
+    themeToggle.setAttribute('aria-pressed', String(dark));
+    themeToggle.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+  }
+  if (persist) {
+    try { localStorage.setItem('idea-enhancer-theme', dark ? 'dark' : 'light'); } catch (_) {}
+  }
+}
+
+function initTheme() {
+  const initialTheme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+  applyTheme(initialTheme);
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      applyTheme(nextTheme, true);
+    });
+  }
+}
+
 function init() {
+  initTheme();
   ideaInput.addEventListener('input', updateCharCount);
   updateCharCount();
 
@@ -704,7 +732,7 @@ function buildMatchCard(match, index, isMock) {
     const label = nonEmptyString(match.source_type) ? (SOURCE_LABELS[match.source_type] || match.source_type) : null;
     if (label) sourceVal.appendChild(el('span', 'font-medium mr-3', label));
     if (isHttpUrl(match.source_url)) {
-      const link = el('a', 'inline-flex items-center gap-1 text-indigo-700 hover:text-indigo-900 underline underline-offset-2 font-semibold break-all', 'View source record');
+      const link = el('a', 'inline-flex items-center gap-1 text-indigo-700 hover:text-indigo-900 underline underline-offset-2 font-semibold break-all', 'Open source URL');
       link.href = match.source_url;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
