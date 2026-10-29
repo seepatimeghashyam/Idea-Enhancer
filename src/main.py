@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from src.search_gateway import (
+    CoreSearchGateway,
     CoreSearchUnavailable,
     SearchGateway,
     SearchOutcome,
@@ -154,7 +155,7 @@ def create_app(search_gateway: SearchGateway | None = None) -> FastAPI:
         allow_methods=["POST", "OPTIONS"],
         allow_headers=["Content-Type", "Accept"],
     )
-    gateway = search_gateway or UnavailableCoreSearchGateway()
+    gateway = search_gateway or CoreSearchGateway()
 
     @app.exception_handler(RequestValidationError)
     def handle_request_validation_error(_request: Any, exc: RequestValidationError) -> JSONResponse:

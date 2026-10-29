@@ -1,12 +1,9 @@
-"""API-owned boundary for the future Core Search integration.
+"""API-owned boundary for the Core Search integration."""
 
-This module deliberately contains no retrieval logic and no project records.  Once
-the Core Search owner supplies their approved public interface, this gateway is the
-only API-owned place that should be changed to call it.
-"""
+from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Any, Mapping, Protocol, Sequence
+from typing import Any, Callable, Mapping, Protocol, Sequence
 
 
 @dataclass(frozen=True)
@@ -28,8 +25,59 @@ class SearchGateway(Protocol):
         """Return search records for a validated query, or raise an integration error."""
 
 
+class CoreSearchGateway:
+    """Concrete API gateway adapter calling the Core Search public facade."""
+
+    def __init__(self, search_fn: Callable[[str, int], list[dict[str, Any]]] | None = None) -> None:
+        self._search_fn = search_fn
+
+    def _get_search_fn(self) -> Callable[[str, int], list[dict[str, Any]]]:
+        if self._search_fn is not None:
+            return self._search_fn
+        try:
+            from src.database import search_projects
+
+            return search_projects
+        except (ImportError, ModuleNotFoundError) as error:
+            raise CoreSearchUnavailable(
+                "Core Search module is not installed or available."
+            ) from error
+        except Exception as error:
+            raise CoreSearchUnavailable(
+                f"Core Search module could not be loaded: {error}"
+            ) from error
+
+    def search(self, idea: str, top_k: int) -> SearchOutcome:
+        """Call the facade, wrap returned records in SearchOutcome, and translate errors."""
+        search_fn = self._get_search_fn()
+
+        try:
+            from src.database import CoreSearchUnavailable as DatabaseCoreSearchUnavailable
+        except Exception:
+            DatabaseCoreSearchUnavailable = None
+
+        try:
+            results = search_fn(idea, top_k)
+        except Exception as error:
+            if (
+                DatabaseCoreSearchUnavailable is not None
+                and isinstance(error, DatabaseCoreSearchUnavailable)
+            ) or type(error).__name__ == "CoreSearchUnavailable":
+                raise CoreSearchUnavailable(str(error)) from error
+            if isinstance(error, CoreSearchUnavailable):
+                raise
+            if "unavailable" in type(error).__name__.lower() or "not found" in str(error).lower():
+                raise CoreSearchUnavailable(str(error)) from error
+            raise
+
+        if not isinstance(results, Sequence):
+            results = list(results)
+
+        return SearchOutcome(matches=results, warnings=())
+
+
 class UnavailableCoreSearchGateway:
-    """Safe default until the Core Search handoff has been completed."""
+    """Fallback gateway explicitly raising CoreSearchUnavailable."""
 
     def search(self, idea: str, top_k: int) -> SearchOutcome:
         raise CoreSearchUnavailable(
