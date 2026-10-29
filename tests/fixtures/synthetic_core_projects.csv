@@ -1,4 +1,0 @@
-project_id,title,abstract,tech_stack,domain,source_type,source_url,year
-SYNTHETIC-001,MOCK ONLY: Crop monitor,MOCK ONLY: detect crop disease with image analysis,Raspberry Pi,agriculture,MOCK ONLY,,2024
-SYNTHETIC-002,MOCK ONLY: Water sensor,MOCK ONLY: measure soil moisture,Python,,MOCK ONLY,,
-SYNTHETIC-003,MOCK ONLY: Campus map,MOCK ONLY: route planning for students,,,MOCK ONLY,,2022
