@@ -190,4 +190,4 @@ Unknown optional fields should be left empty (not filled with placeholder values
 - **Approved by:** Shyam (project owner)
 - **Condition to revisit:** If separate source files require independent update or indexing cycles.
 
-> **Status:** This decision is approved but **not yet implemented**. The data pipeline is Phase 1 work.
+> **Status (2026-10-29):** A conservative 1,998-record search-ready CSV is installed at data/historical_projects.csv and passes structural validation. This is a partial implementation: source-level provenance review and a reproducible full ingestion/cleaning pipeline remain incomplete. See [Dataset Readiness](DATASET_READINESS.md).

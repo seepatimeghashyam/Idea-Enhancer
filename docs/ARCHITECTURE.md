@@ -2,7 +2,7 @@
 
 This document describes the approved system architecture for Idea Enhancer V1. It reflects approved decisions only. Components marked as **planned** or **deferred** are not yet implemented.
 
-> **Implementation status:** As of 2026-10-27, no application code has been implemented. This document describes the approved design, not the current state of the codebase. See the [Decision Log](DECISIONS.md) for the approval record.
+> **Implementation status (2026-10-29):** The frontend, FastAPI POST /search route, API gateway, BM25/vector retrieval, RRF fusion, dataset loader, and public response mapping are implemented. The supplied 1,998-record search-ready CSV has passed structural checks and a real /search smoke test. Source-level verification and relevance evaluation remain incomplete. LLM enhancement remains deferred. See [Dataset Readiness](DATASET_READINESS.md) and the [Decision Log](DECISIONS.md).
 
 ---
 
@@ -16,15 +16,13 @@ The system is **not** a plagiarism detector and cannot prove universal originali
 
 ## Architecture Diagram
 
-The architecture is illustrated in the `diagram.png` file in the repository root. The diagram shows the following flow:
+The current request flow is:
 
 ```
-Student → Validation Dashboard → FastAPI Endpoints → Idea Validator
-    ├── Historical Projects (data store)
-    ├── External Datasets (future — not in V1)
-    ├── BM25 Search ─┐
-    ├── ChromaDB Search ─┤→ RRF Fusion
-    └── LLM API → Structured Feedback (deferred)
+Student → Frontend → FastAPI POST /search → Core Search
+    ├── Canonical CSV → BM25 Search ─┐
+    ├── Canonical CSV → ChromaDB Search ─┤→ RRF Fusion → Traceable matches
+    └── LLM enhancement (deferred)
 ```
 
 ---
@@ -33,12 +31,12 @@ Student → Validation Dashboard → FastAPI Endpoints → Idea Validator
 
 | Layer | Technology | Status |
 |---|---|---|
-| Frontend | HTML5, Tailwind CSS, vanilla JavaScript | Approved — not yet implemented |
-| Backend / API | Python, FastAPI | Approved — not yet implemented |
-| Keyword retrieval | BM25 via `rank-bm25` | Approved — not yet implemented |
-| Semantic retrieval | ChromaDB with `BAAI/bge-small-en-v1.5` embeddings | Approved — not yet implemented |
-| Ranking fusion | Reciprocal Rank Fusion (RRF) | Approved — not yet implemented |
-| Dataset | `data/historical_projects.csv` (canonical) | Schema approved — data pipeline not yet implemented |
+| Frontend | HTML5, Tailwind CSS, vanilla JavaScript | Implemented; demo/live modes and light/dark theme |
+| Backend / API | Python, FastAPI | Implemented; POST /search |
+| Keyword retrieval | BM25 via rank-bm25 | Implemented |
+| Semantic retrieval | ChromaDB with BAAI/bge-small-en-v1.5 embeddings | Implemented; local model and index required |
+| Ranking fusion | Reciprocal Rank Fusion (RRF) | Implemented |
+| Dataset | data/historical_projects.csv | 1,998 search-ready rows; provenance and relevance review remain |
 | LLM enhancement | Provider TBD | Deferred until search pipeline works |
 | Relational database | Not required for V1 | — |
 
@@ -167,4 +165,4 @@ These are documented in the [API Contract](API_CONTRACT.md).
 | 5. Integration | End-to-end connection and smoke testing | All | Phases 2–4 |
 | 6. LLM Enhancement | `/enhance` endpoint with approved LLM | API & LLM Lead | Phase 5 + LLM decision |
 
-> **Status:** Currently executing Phase 0. All other phases are planned, not implemented.
+> **Status (2026-10-29):** Phases 0–5 have working implementations, and the real-data /search path has passed a smoke test. Phase 1 is only partially complete because source-level verification and a labeled relevance evaluation are still missing. Phase 6 remains deferred.
