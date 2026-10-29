@@ -59,15 +59,10 @@ class CoreSearchGateway:
         try:
             results = search_fn(idea, top_k)
         except Exception as error:
-            if (
-                DatabaseCoreSearchUnavailable is not None
-                and isinstance(error, DatabaseCoreSearchUnavailable)
-            ) or type(error).__name__ == "CoreSearchUnavailable":
+            if DatabaseCoreSearchUnavailable is not None and isinstance(error, DatabaseCoreSearchUnavailable):
                 raise CoreSearchUnavailable(str(error)) from error
             if isinstance(error, CoreSearchUnavailable):
                 raise
-            if "unavailable" in type(error).__name__.lower() or "not found" in str(error).lower():
-                raise CoreSearchUnavailable(str(error)) from error
             raise
 
         if not isinstance(results, Sequence):

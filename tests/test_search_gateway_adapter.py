@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import sys
+import types
 from typing import Any
 
 import pytest
@@ -15,12 +16,18 @@ from src.search_gateway import (
     SearchOutcome,
 )
 
+# Use the real src.database.CoreSearchUnavailable when available, or provide an isolated
+# fallback in sys.modules so the exact type check passes on environments without dataclass slots support.
+try:
+    from src.database import CoreSearchUnavailable as DatabaseCoreSearchUnavailable
+except Exception:
+    db_mod = types.ModuleType("src.database")
 
-class FakeDatabaseCoreSearchUnavailable(RuntimeError):
-    """Simulates src.database.CoreSearchUnavailable without importing src.database."""
+    class DatabaseCoreSearchUnavailable(RuntimeError):
+        """Simulates src.database.CoreSearchUnavailable."""
 
-
-FakeDatabaseCoreSearchUnavailable.__name__ = "CoreSearchUnavailable"
+    db_mod.CoreSearchUnavailable = DatabaseCoreSearchUnavailable  # type: ignore[attr-defined]
+    sys.modules["src.database"] = db_mod
 
 
 SAMPLE_PROJECT: dict[str, Any] = {
@@ -86,7 +93,7 @@ def test_gateway_preserves_successful_empty_results() -> None:
 
 def test_gateway_translates_database_core_search_unavailable_exception() -> None:
     def unavailable_search(_idea: str, _top_k: int) -> list[dict[str, Any]]:
-        raise FakeDatabaseCoreSearchUnavailable("Vector index has not been built yet.")
+        raise DatabaseCoreSearchUnavailable("Vector index has not been built yet.")
 
     gateway = CoreSearchGateway(search_fn=unavailable_search)
 
@@ -104,6 +111,33 @@ def test_gateway_translates_database_core_search_unavailable_exception() -> None
         "status": "error",
         "error_code": "SEARCH_UNAVAILABLE",
         "message": "Vector index has not been built yet.",
+        "details": None,
+    }
+
+
+def test_gateway_preserves_unexpected_exceptions_as_internal_errors() -> None:
+    class CustomUnavailableError(RuntimeError):
+        """Simulates an unexpected error whose name or message contains keywords."""
+
+    def failing_search(_idea: str, _top_k: int) -> list[dict[str, Any]]:
+        raise CustomUnavailableError("Network socket closed: project record not found")
+
+    gateway = CoreSearchGateway(search_fn=failing_search)
+
+    # Calling gateway directly preserves the original exception
+    with pytest.raises(CustomUnavailableError) as exc_info:
+        gateway.search("A valid project query", 5)
+    assert "Network socket closed: project record not found" in str(exc_info.value)
+
+    # Calling via the API returns the safe 500 SEARCH_FAILED response
+    client = TestClient(create_app(gateway))
+    response = client.post("/search", json={"idea": "A valid project query"})
+
+    assert response.status_code == 500
+    assert response.json() == {
+        "status": "error",
+        "error_code": "SEARCH_FAILED",
+        "message": "An internal error occurred while processing the search. Please try again.",
         "details": None,
     }
 
