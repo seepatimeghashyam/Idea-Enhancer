@@ -2,14 +2,17 @@
 
 from __future__ import annotations
 
+import sys
 from dataclasses import dataclass
 from typing import Literal, Protocol
+
+_SLOTS = {"slots": True} if sys.version_info >= (3, 10) else {}
 
 
 VerificationStatus = Literal["checked", "unchecked", "insufficient"]
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True, **_SLOTS)
 class ProjectRecord:
     """One canonical project row. Optional source metadata stays unknown as None."""
 
@@ -23,7 +26,7 @@ class ProjectRecord:
     year: int | None
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True, **_SLOTS)
 class RetrievalHit:
     """A project identifier and its 1-based position in one retriever's ranking."""
 
@@ -38,7 +41,7 @@ class Retriever(Protocol):
         """Return at most ``top_k`` hits, ordered by rank (1-based)."""
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True, **_SLOTS)
 class SearchMatch:
     """Canonical project plus fused ranking and conservative evidence fields."""
 
