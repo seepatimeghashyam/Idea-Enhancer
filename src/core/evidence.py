@@ -3,12 +3,9 @@
 from __future__ import annotations
 
 import re
-import sys
 from dataclasses import dataclass
 
 from src.core.contracts import ProjectRecord, VerificationStatus, build_search_text
-
-_SLOTS = {"slots": True} if sys.version_info >= (3, 10) else {}
 
 
 _WORD = re.compile(r"[\w]+", flags=re.UNICODE)
@@ -18,7 +15,7 @@ _STOP_WORDS = frozenset(
 )
 
 
-@dataclass(frozen=True, **_SLOTS)
+@dataclass(frozen=True, slots=True)
 class Evidence:
     shared_elements: list[str]
     verification_status: VerificationStatus

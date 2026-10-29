@@ -3,12 +3,28 @@
 from __future__ import annotations
 
 import logging
+import os
+import sys
 from collections.abc import Sequence
+from pathlib import Path
 from typing import Any
+
+# Backward-compatibility shim for Python < 3.10 where slots=True is unsupported in dataclasses
+if sys.version_info < (3, 10):
+    import dataclasses
+
+    _orig_dataclass = dataclasses.dataclass
+
+    def _compat_dataclass(*args: Any, **kwargs: Any) -> Any:
+        kwargs.pop("slots", None)
+        return _orig_dataclass(*args, **kwargs)
+
+    dataclasses.dataclass = _compat_dataclass  # type: ignore[assignment]
 
 from src.core.contracts import ProjectRecord, RetrievalHit, build_search_text
 
 DEFAULT_MODEL_NAME = "BAAI/bge-small-en-v1.5"
+DEFAULT_CHROMA_PATH = "./chroma_db"
 logger = logging.getLogger(__name__)
 
 
@@ -33,6 +49,7 @@ class VectorRetriever:
         embedder: Any = None,
         chroma_client: Any = None,
         collection_name: str | None = None,
+        persist_directory: str | Path | None = None,
         auto_build: bool = True,
     ) -> None:
         self._records_map: dict[str, ProjectRecord] = {}
@@ -45,6 +62,7 @@ class VectorRetriever:
         self._embedder = embedder
         self._chroma_client = chroma_client
         self._collection_name = collection_name or "idea_enhancer_vector_index"
+        self._persist_directory = persist_directory
         self._collection: Any = None
         self._is_indexed = False
 
@@ -67,15 +85,19 @@ class VectorRetriever:
     def _get_client(self) -> Any:
         if self._chroma_client is not None:
             return self._chroma_client
+        persist_path = self._persist_directory or os.getenv("CHROMA_DB_PATH", DEFAULT_CHROMA_PATH)
         try:
             import chromadb
             from chromadb.config import Settings
 
-            self._chroma_client = chromadb.Client(Settings(anonymized_telemetry=False, is_persistent=False))
+            self._chroma_client = chromadb.PersistentClient(
+                path=str(persist_path),
+                settings=Settings(anonymized_telemetry=False),
+            )
             return self._chroma_client
         except Exception as err:
             raise VectorIndexUnavailableError(
-                f"Failed to initialize ChromaDB client: {err}"
+                f"Failed to initialize ChromaDB persistent client at '{persist_path}': {err}"
             ) from err
 
     def build_index(self) -> None:
@@ -183,9 +205,11 @@ class VectorRetriever:
             raw_ids = results["ids"][0]
 
         hits: list[RetrievalHit] = []
+        seen_ids: set[str] = set()
         rank = 1
         for pid in raw_ids:
-            if pid in self._records_map:
+            if pid in self._records_map and pid not in seen_ids:
+                seen_ids.add(pid)
                 hits.append(RetrievalHit(project_id=pid, rank=rank))
                 rank += 1
                 if len(hits) >= top_k:

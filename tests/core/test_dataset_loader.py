@@ -22,8 +22,7 @@ def temporary_csv(contents: str) -> Iterator[Path]:
 
     with TemporaryDirectory(dir=PROJECT_ROOT) as directory:
         csv_path = Path(directory) / "synthetic.csv"
-        with open(csv_path, "w", encoding="utf-8", newline="") as f:
-            f.write(contents)
+        csv_path.write_text(contents, encoding="utf-8", newline="")
         yield csv_path
 
 
