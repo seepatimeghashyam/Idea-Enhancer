@@ -2,6 +2,10 @@
 
 from __future__ import annotations
 
+import logging
+import os
+import threading
+from contextlib import asynccontextmanager
 from typing import Any, Mapping
 
 from fastapi import Body, FastAPI
@@ -23,6 +27,19 @@ DEFAULT_TOP_K = 5
 MIN_TOP_K = 1
 MAX_TOP_K = 20
 NO_MATCH_MESSAGE = "No close match was found in the available dataset."
+logger = logging.getLogger("idea_enhancer.api")
+
+
+def warm_up_search() -> None:
+    """Initialize the real search engine in the background and log failures."""
+
+    try:
+        from src.database import _get_engine
+
+        _get_engine()
+        logger.info("Search index is ready.")
+    except Exception:
+        logger.exception("Search warm-up failed; it will be retried on the first search.")
 
 
 class ContractValidationError(ValueError):
@@ -146,7 +163,20 @@ def success_response(query: str, outcome: SearchOutcome, warnings: list[str]) ->
 def create_app(search_gateway: SearchGateway | None = None) -> FastAPI:
     """Create an app with an injectable search boundary for tests and integration."""
 
-    app = FastAPI(title="Idea Enhancer API")
+    @asynccontextmanager
+    async def lifespan(_app: FastAPI):
+        if search_gateway is None:
+            try:
+                from dotenv import load_dotenv
+
+                load_dotenv()
+            except ImportError:
+                pass
+            if os.getenv("IDEA_ENHANCER_WARMUP", "1") != "0":
+                threading.Thread(target=warm_up_search, name="search-warm-up", daemon=True).start()
+        yield
+
+    app = FastAPI(title="Idea Enhancer API", lifespan=lifespan)
     # The frontend runs on a different local port during development.
     # Allow only local browser origins to call this API.
     app.add_middleware(
@@ -176,8 +206,10 @@ def create_app(search_gateway: SearchGateway | None = None) -> FastAPI:
         try:
             outcome = gateway.search(query, top_k)
         except CoreSearchUnavailable as error:
+            logger.warning("Search unavailable: %s", error)
             return error_response(503, "SEARCH_UNAVAILABLE", str(error))
         except Exception:
+            logger.exception("Search failed")
             return error_response(
                 500,
                 "SEARCH_FAILED",
