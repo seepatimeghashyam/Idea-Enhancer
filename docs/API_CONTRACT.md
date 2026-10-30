@@ -40,7 +40,18 @@ All error responses use a consistent envelope:
 | 200 | Success | Successful search or enhancement |
 | 422 | Validation Error | Missing/invalid request fields |
 | 500 | Internal Server Error | Unexpected server failure |
-| 503 | Service Unavailable | Search index not ready or dependency failure |
+| 503 | Service Unavailable | Search index not ready or dependency failure; response message is generic and diagnostics stay in server logs |
+
+Unavailable responses use a generic client-safe message; the API logs the underlying initialization reason:
+
+```json
+{
+  "status": "error",
+  "error_code": "SEARCH_UNAVAILABLE",
+  "message": "Search is temporarily unavailable. Please try again shortly.",
+  "details": null
+}
+```
 
 ---
 
@@ -163,7 +174,7 @@ Search the indexed project database for ideas related to the submitted text.
 
 ### No matches response (200)
 
-When no relevant results are found, the API returns a success response with an empty matches array:
+When the retrievers return no candidates, the API returns a success response with an empty matches array. This describes the current search output; it is not a relevance-threshold decision:
 
 ```json
 {
@@ -171,12 +182,12 @@ When no relevant results are found, the API returns a success response with an e
   "query": "A quantum teleportation device for household pets",
   "result_count": 0,
   "matches": [],
-  "message": "No close match was found in the available dataset.",
+  "message": "No records were returned from the current search.",
   "warnings": []
 }
 ```
 
-> **Important:** The absence of matches does not prove the idea is original. It means no close match was found in the sources actually indexed. The frontend must not present this as proof of uniqueness.
+> **Important:** The absence of matches does not prove the idea is original or that no similar record exists in the indexed sources. The system has no calibrated relevance cutoff for deciding that a nearest result is “close.”
 
 ### Validation error response (422)
 
