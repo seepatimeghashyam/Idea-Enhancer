@@ -11,6 +11,10 @@ from src.core.contracts import ProjectRecord, RetrievalHit, build_search_text
 
 
 _TOKEN_PATTERN = re.compile(r"\w+", flags=re.UNICODE)
+_QUERY_STOP_WORDS = frozenset(
+    "a an and are as at be by for from has have in into is it its of on or that the their this to was were "
+    "with using use used based system project idea".split()
+)
 
 
 def tokenize(text: str) -> list[str]:
@@ -76,7 +80,7 @@ class BM25Retriever:
         if self._bm25 is None or not self._records:
             return []
 
-        query_tokens = tokenize(query)
+        query_tokens = [token for token in tokenize(query) if token not in _QUERY_STOP_WORDS]
         if not query_tokens:
             return []
 

@@ -17,7 +17,8 @@ import { MOCK_SCENARIOS, cloneFixture } from './mockData.js';
 const API_BASE_URL = String(
   (typeof window !== 'undefined' && window.IDEA_ENHANCER_API_BASE_URL) || 'http://localhost:8000'
 ).replace(/\/+$/, '');
-const REQUEST_TIMEOUT_MS = 10000;
+// A cold vector search may load the embedding model and build a local index.
+const REQUEST_TIMEOUT_MS = 120000;
 const MIN_IDEA_CHARS = 10;
 const MAX_IDEA_CHARS = 2000;
 const DEFAULT_TOP_K = 5;
@@ -396,7 +397,9 @@ async function handleFormSubmit(event) {
     if (!isMockMode(mode)) liveStatus = 'failed';
     clearResults();
     showWarnings(clientNotices);
-    showErrorBanner(describeError(error));
+    const text = describeError(error);
+    // A simulated error must never read like a real outage.
+    showErrorBanner(isMockMode(mode) && !/^demo/i.test(text) ? `Demo scenario (simulated): ${text}` : text);
   } finally {
     if (activeRequest === req) {
       activeRequest = null;
@@ -432,7 +435,7 @@ async function fetchSearch(req, idea, topK) {
 
   if (scenario) {
     await delay(scenario.delay, req.controller.signal);
-    const payload = cloneFixture(scenario.payload);
+    const payload = scenario.build ? scenario.build(topK) : cloneFixture(scenario.payload);
     if (scenario.kind === 'error') {
       throw errorFromResponse(scenario.status, payload);
     }

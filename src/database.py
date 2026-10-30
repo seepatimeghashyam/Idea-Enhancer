@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import sys
+import threading
 from collections.abc import Sequence
 from typing import Any
 
@@ -17,6 +18,7 @@ class CoreSearchUnavailable(RuntimeError):
 
 _configured_engine: CoreSearchEngine | None = None
 _cached_engine: CoreSearchEngine | None = None
+_engine_lock = threading.Lock()
 
 
 def configure_search_engine(engine: CoreSearchEngine | None) -> None:
@@ -58,12 +60,18 @@ def _get_engine() -> CoreSearchEngine:
     if _cached_engine is not None:
         return _cached_engine
 
-    try:
-        records = load_project_records(CANONICAL_DATASET_PATH)
-        _cached_engine = _make_default_engine(records)
-    except (DatasetLoadError, CoreSearchUnavailable) as error:
-        raise CoreSearchUnavailable(str(error)) from error
-    return _cached_engine
+    # The vector retriever rebuilds its persistent collection during construction.
+    # Serialize first initialization so concurrent requests cannot delete and rebuild
+    # that collection at the same time.
+    with _engine_lock:
+        if _cached_engine is not None:
+            return _cached_engine
+        try:
+            records = load_project_records(CANONICAL_DATASET_PATH)
+            _cached_engine = _make_default_engine(records)
+        except (DatasetLoadError, CoreSearchUnavailable) as error:
+            raise CoreSearchUnavailable(str(error)) from error
+        return _cached_engine
 
 
 def search_projects(idea: str, top_k: int = 5) -> list[dict[str, Any]]:

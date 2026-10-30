@@ -77,7 +77,7 @@ def load_project_records(path: str | Path = CANONICAL_DATASET_PATH) -> list[Proj
     dataset_path = Path(path)
     if not dataset_path.is_file():
         raise DatasetLoadError(
-            f"Canonical dataset not found at {dataset_path}. Prepare data/historical_projects.csv first."
+            f"Canonical dataset not found at {dataset_path.name}. Prepare data/historical_projects.csv first."
         )
 
     records: list[ProjectRecord] = []
@@ -89,15 +89,15 @@ def load_project_records(path: str | Path = CANONICAL_DATASET_PATH) -> list[Proj
             try:
                 raw_headers = next(reader)
             except StopIteration as error:
-                raise DatasetLoadError(f"Dataset {dataset_path} is empty and has no CSV header.") from error
+                raise DatasetLoadError(f"Dataset {dataset_path.name} is empty and has no CSV header.") from error
 
             headers = [header.strip() for header in raw_headers]
             if len(headers) != len(set(headers)):
-                raise DatasetLoadError(f"Dataset {dataset_path} has duplicate column names in its header.")
+                raise DatasetLoadError(f"Dataset {dataset_path.name} has duplicate column names in its header.")
             missing = [column for column in REQUIRED_COLUMNS if column not in headers]
             if missing:
                 raise DatasetLoadError(
-                    f"Dataset {dataset_path} is missing required column(s): {', '.join(missing)}."
+                    f"Dataset {dataset_path.name} is missing required column(s): {', '.join(missing)}."
                 )
 
             row_count = 0
@@ -118,10 +118,10 @@ def load_project_records(path: str | Path = CANONICAL_DATASET_PATH) -> list[Proj
                 records.append(record)
 
             if row_count == 0:
-                raise DatasetLoadError(f"Dataset {dataset_path} contains a header but no project records.")
+                raise DatasetLoadError(f"Dataset {dataset_path.name} contains a header but no project records.")
     except DatasetLoadError:
         raise
     except (OSError, UnicodeError, csv.Error) as error:
-        raise DatasetLoadError(f"Could not read dataset {dataset_path}: {error}") from error
+        raise DatasetLoadError(f"Could not read dataset {dataset_path.name}: {error}") from error
 
     return records
