@@ -621,8 +621,8 @@ function renderSuccess(parsed, { mode, idea, clientNotices }) {
   matchesList.replaceChildren();
 
   if (count === 0) {
-    resultsSummary.textContent = 'No close matches found';
-    noMatchesMessage.textContent = parsed.message || 'No close match was found in the available dataset.';
+    resultsSummary.textContent = 'No search results returned';
+    noMatchesMessage.textContent = parsed.message || 'No records were returned from the current search.';
     noMatchesBanner.classList.remove('hidden');
   } else {
     noMatchesBanner.classList.add('hidden');
@@ -702,10 +702,19 @@ function buildMatchCard(match, index, isMock) {
   header.appendChild(statusWrap);
   card.appendChild(header);
 
-  // Excerpt
-  if (nonEmptyString(match.description_excerpt)) {
-    const excerpt = el('div', 'bg-[#FAF9F5] border-l-4 border-indigo-400 p-3.5 sm:p-4 rounded-r-xl');
-    excerpt.appendChild(el('p', 'text-sm sm:text-base text-slate-800 leading-relaxed break-words', match.description_excerpt.trim()));
+  // Do not display the dataset's placeholder as if it were a project description.
+  const description = nonEmptyString(match.description_excerpt) ? match.description_excerpt.trim() : '';
+  if (/^description not independently verified\.?$/i.test(description)) {
+    const notice = el('div', 'result-excerpt border-l-4 border-indigo-400 p-3.5 sm:p-4 rounded-r-xl');
+    notice.appendChild(el(
+      'p',
+      'text-sm sm:text-base text-slate-800 leading-relaxed break-words',
+      'Title only — this record has no independently verified description.'
+    ));
+    card.appendChild(notice);
+  } else if (description) {
+    const excerpt = el('div', 'result-excerpt border-l-4 border-indigo-400 p-3.5 sm:p-4 rounded-r-xl');
+    excerpt.appendChild(el('p', 'text-sm sm:text-base text-slate-800 leading-relaxed break-words', description));
     card.appendChild(excerpt);
   }
 

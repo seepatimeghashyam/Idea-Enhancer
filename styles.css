@@ -386,6 +386,14 @@ html[data-theme="dark"] .bg-white {
   background-color: #131b2d;
 }
 
+.result-excerpt {
+  background-color: #faf9f5;
+}
+
+html[data-theme="dark"] .result-excerpt {
+  background-color: #202a3c;
+}
+
 html[data-theme="dark"] .bg-slate-50 {
   background-color: #1a2438;
 }
