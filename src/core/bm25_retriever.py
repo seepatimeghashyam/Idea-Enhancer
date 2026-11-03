@@ -36,7 +36,6 @@ class BM25Retriever:
         """
         seen_ids: set[str] = set()
         self._records: list[ProjectRecord] = []
-        self._project_ids: list[str] = []
         tokenized_corpus: list[list[str]] = []
 
         for record in records:
@@ -49,7 +48,6 @@ class BM25Retriever:
 
             seen_ids.add(record.project_id)
             self._records.append(record)
-            self._project_ids.append(record.project_id)
             searchable_text = build_search_text(record)
             tokenized_corpus.append(tokenize(searchable_text))
 
@@ -93,9 +91,9 @@ class BM25Retriever:
         scores = self._bm25.get_scores(query_tokens)
 
         candidates: list[tuple[str, float]] = []
-        for pid, score in zip(self._project_ids, scores):
+        for record, score in zip(self._records, scores):
             if score > 0:
-                candidates.append((pid, float(score)))
+                candidates.append((record.project_id, float(score)))
 
         if not candidates:
             return []

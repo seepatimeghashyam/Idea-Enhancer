@@ -1,6 +1,6 @@
 # Idea Enhancer
 
-Idea Enhancer is a student project similarity and research-discovery tool that evaluates proposed engineering ideas against existing projects, academic research and open-source repositories. Search results are evidence from the indexed corpus, not proof of originality or plagiarism.
+Idea Enhancer helps engineering students evaluate proposed project ideas against historical project records using hybrid search, with planned integration of academic research and open-source repositories.
 
 ## Current MVP state
 
