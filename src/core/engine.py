@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections.abc import Sequence
 
 from src.core.contracts import ProjectRecord, Retriever, SearchMatch
-from src.core.evidence import inspect_evidence
+from src.core.evidence import _evidence_terms, inspect_evidence
 from src.core.fusion import fuse_rankings
 
 
@@ -53,9 +53,10 @@ class CoreSearchEngine:
         vector_hits = self._vector.search(query, limit)
         matches = fuse_rankings(bm25_hits, vector_hits, self._records, limit)
 
+        query_terms = _evidence_terms(query)
         enriched: list[SearchMatch] = []
         for match in matches:
-            evidence = inspect_evidence(query, match.project)
+            evidence = inspect_evidence(query, match.project, query_terms=query_terms)
             enriched.append(
                 SearchMatch(
                     project=match.project,
