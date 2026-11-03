@@ -12,7 +12,7 @@
 
 Idea Enhancer helps engineering students investigate a project idea before investing time in building it. It searches indexed project records, returns traceable matches, checks the evidence for potential overlap, and may generate one constrained improvement suggestion based on retrieved evidence.
 
-The project is not a plagiarism detector and cannot prove universal originality. It can only describe what was or was not found in the sources actually indexed. Correct wording includes “No close match was found in the available dataset.”
+The project is not a plagiarism detector and cannot prove universal originality. It can only describe what the current retrieval returned from the indexed sources. Correct wording includes “No records were returned from the current search”; this is not evidence that no similar project exists.
 
 The planned core flow is:
 

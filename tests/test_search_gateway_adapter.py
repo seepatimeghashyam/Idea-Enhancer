@@ -110,7 +110,7 @@ def test_gateway_translates_database_core_search_unavailable_exception() -> None
     assert response.json() == {
         "status": "error",
         "error_code": "SEARCH_UNAVAILABLE",
-        "message": "Vector index has not been built yet.",
+        "message": "Search is temporarily unavailable. Please try again shortly.",
         "details": None,
     }
 

@@ -26,7 +26,8 @@ MAX_IDEA_LENGTH = 2000
 DEFAULT_TOP_K = 5
 MIN_TOP_K = 1
 MAX_TOP_K = 20
-NO_MATCH_MESSAGE = "No close match was found in the available dataset."
+NO_MATCH_MESSAGE = "No records were returned from the current search."
+SEARCH_UNAVAILABLE_MESSAGE = "Search is temporarily unavailable. Please try again shortly."
 logger = logging.getLogger("idea_enhancer.api")
 
 
@@ -207,7 +208,7 @@ def create_app(search_gateway: SearchGateway | None = None) -> FastAPI:
             outcome = gateway.search(query, top_k)
         except CoreSearchUnavailable as error:
             logger.warning("Search unavailable: %s", error)
-            return error_response(503, "SEARCH_UNAVAILABLE", str(error))
+            return error_response(503, "SEARCH_UNAVAILABLE", SEARCH_UNAVAILABLE_MESSAGE)
         except Exception:
             logger.exception("Search failed")
             return error_response(
