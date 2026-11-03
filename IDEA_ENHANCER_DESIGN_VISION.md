@@ -1,6 +1,6 @@
 # Idea Enhancer — Design Vision & Deferred UI Enhancements
 
-**Status:** Approved direction for future implementation  
+**Status:** Approved direction for future implementation
 **Scope:** Frontend experience only. Do not implement until the current frontend is stable and backend integration has been tested.
 
 ## Purpose

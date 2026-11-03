@@ -8,7 +8,9 @@ if not exist "%~dp0src\main.py" (
   exit /b 1
 )
 
-for /f "delims=" %%I in ('wsl.exe -d Ubuntu -- wslpath -a "%~dp0"') do set "WSL_PROJECT=%%I"
+set "WINDOWS_PROJECT=%~dp0"
+set "WINDOWS_PROJECT=%WINDOWS_PROJECT:\=/%"
+for /f "delims=" %%I in ('wsl.exe -d Ubuntu -- wslpath -a "%WINDOWS_PROJECT%"') do set "WSL_PROJECT=%%I"
 if not defined WSL_PROJECT (
   echo Could not translate the project path for WSL.
   pause
@@ -22,7 +24,7 @@ if not defined WSL_PYTHON (
   if not errorlevel 1 set "WSL_PYTHON=python3"
 )
 if not defined WSL_PYTHON (
-  for /f "delims=" %%I in ('wsl.exe -d Ubuntu -- bash -lc "for p in /home/*/.venvs/*/bin/python; do if test -x \"$p\"; then echo \"$p\"; break; fi; done"') do set "WSL_PYTHON=%%I"
+  for /f "delims=" %%I in ('wsl.exe -d Ubuntu -- bash -lc "for p in /home/*/.venvs/*/bin/python; do if test -x \$p; then echo \$p; break; fi; done"') do set "WSL_PYTHON=%%I"
 )
 if not defined WSL_PYTHON (
   echo No WSL Python environment with the required API dependencies was found.
