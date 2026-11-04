@@ -34,13 +34,14 @@ def test_snapshot_evaluator_reports_methods_slices_and_discovery_recall_without_
     report = evaluate_snapshot(snapshot, use_dense=False)
     assert report["case_count"] == 1
     assert report["mean_discovery_recall"] == 1.0
-    assert set(report["cases"][0]["metrics"]) == {"bm25", "dense", "hybrid_rrf"}
+    assert set(report["cases"][0]["metrics"]) == {"bm25"}
     assert report["cases"][0]["provider_native_rankings"] == {
         "github": ["test-only-relevant", "test-only-other"]
     }
     assert "github" in report["cases"][0]["provider_native_metrics"]
-    assert report["cases"][0]["rankings"]["dense"] == []
-    assert report["cases"][0]["rankings"]["hybrid_rrf"] == report["cases"][0]["rankings"]["bm25"]
+    assert report["cases"][0]["rankings"]["dense"] is None
+    assert report["cases"][0]["rankings"]["hybrid_rrf"] is None
+    assert report["cases"][0]["dense_state"] == "disabled"
     assert "fixed snapshot only" in report["interpretation"]
 
 

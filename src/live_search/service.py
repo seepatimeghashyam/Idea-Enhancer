@@ -129,17 +129,40 @@ class LiveSearchService:
             return ProviderResult(provider.name, "upstream_error", (), "provider_error", "The discovery provider could not complete the request.")
 
     async def search(self, idea: str, top_k: int) -> LiveSearchResponse:
-        if not isinstance(idea, str) or not 10 <= len(idea.strip()) <= 2000:
-            raise ValueError("idea must contain 10 to 2000 characters after trimming")
+        normalized = self._normalize_idea(idea)
         if isinstance(top_k, bool) or not isinstance(top_k, int) or not 1 <= top_k <= 20:
             raise ValueError("top_k must be an integer from 1 to 20")
         await self.start()
-        normalized = " ".join(idea.split())[:2000]
         async with self._search_semaphore:
-            return await self._search_normalized(normalized, top_k)
+            provider_results = await self._discover_normalized(normalized)
+            return await self._search_normalized(normalized, top_k, provider_results)
 
-    async def _search_normalized(self, normalized: str, top_k: int) -> LiveSearchResponse:
-        provider_results = await asyncio.gather(*(self._query_provider(p, normalized) for p in self.providers))
+    @staticmethod
+    def _normalize_idea(idea: str) -> str:
+        if not isinstance(idea, str) or not 10 <= len(idea.strip()) <= 2000:
+            raise ValueError("idea must contain 10 to 2000 characters after trimming")
+        return " ".join(idea.split())[:2000]
+
+    async def _discover_normalized(self, normalized: str) -> tuple[ProviderResult, ...]:
+        """Call and normalize the existing providers without invoking retrieval."""
+        return tuple(await asyncio.gather(*(self._query_provider(p, normalized) for p in self.providers)))
+
+    async def discover_candidates(self, idea: str) -> tuple[str, tuple[ProviderResult, ...]]:
+        """Collect the full bounded provider pool before fusion, for local evaluation capture.
+
+        This deliberately does not load the embedding model or run any ranking.
+        """
+        normalized = self._normalize_idea(idea)
+        await self.start()
+        async with self._search_semaphore:
+            return normalized, await self._discover_normalized(normalized)
+
+    async def _search_normalized(
+        self,
+        normalized: str,
+        top_k: int,
+        provider_results: tuple[ProviderResult, ...],
+    ) -> LiveSearchResponse:
         provider_status = {result.provider: result.public_dict() for result in provider_results}
         successful = [result for result in provider_results if result.state in _SUCCESS_PROVIDER_STATES]
         if not successful:

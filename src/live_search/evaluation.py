@@ -6,6 +6,16 @@ import math
 from collections.abc import Sequence
 
 
+EVALUATION_SLICES = frozenset({
+    "agriculture", "assistive_technology", "cybersecurity", "energy_sustainability",
+    "healthcare_devices", "industrial_automation", "iot_embedded", "nlp_accessibility",
+    "robotics", "sensor_fault_detection", "smart_infrastructure", "software_systems",
+    "transportation", "water_management", "computer_vision",
+    # Backward-compatible categories for existing version-1 snapshots.
+    "paper", "repository", "mixed", "other",
+})
+
+
 def precision_at_k(ranking: Sequence[str], relevance: dict[str, int], k: int = 5) -> float:
     if k < 1:
         raise ValueError("k must be positive")
