@@ -18,6 +18,7 @@ from src.live_search.retrieval import DenseEncoder, SentenceTransformerEncoder, 
 logger = logging.getLogger("idea_enhancer.live_search")
 MAX_CANDIDATES_PER_PROVIDER = 25
 MAX_CANDIDATES_TOTAL = 50
+MAX_CONCURRENT_LIVE_SEARCHES = 4
 _SUCCESS_PROVIDER_STATES = {"success", "empty"}
 _VALID_PROVIDER_STATES = _SUCCESS_PROVIDER_STATES | {
     "timeout", "rate_limited", "authentication_error", "configuration_error",
@@ -66,6 +67,7 @@ class LiveSearchService:
         self._client = client
         self._owns_client = client is None
         self._client_lock = asyncio.Lock()
+        self._search_semaphore = asyncio.Semaphore(MAX_CONCURRENT_LIVE_SEARCHES)
 
     async def start(self) -> None:
         if self._client is None:
@@ -73,7 +75,9 @@ class LiveSearchService:
                 if self._client is None:
                     timeout = httpx.Timeout(connect=4.0, read=10.0, write=5.0, pool=3.0)
                     limits = httpx.Limits(max_connections=4, max_keepalive_connections=2)
-                    self._client = httpx.AsyncClient(timeout=timeout, limits=limits, follow_redirects=True)
+                    # Provider APIs should return JSON directly. Refuse redirects
+                    # so an upstream response cannot make the server fetch arbitrary URLs.
+                    self._client = httpx.AsyncClient(timeout=timeout, limits=limits, follow_redirects=False)
 
     async def close(self) -> None:
         if self._owns_client and self._client is not None:
@@ -91,14 +95,37 @@ class LiveSearchService:
             if result.state in _SUCCESS_PROVIDER_STATES:
                 if not all(isinstance(candidate, CandidateRecord) for candidate in result.candidates):
                     raise TypeError("provider candidates do not match the candidate contract")
+                unique_candidates: list[tuple[int, CandidateRecord]] = []
+                identity_to_id: dict[tuple[str, str], str] = {}
+                id_to_identity: dict[str, tuple[str, str]] = {}
+                for discovery_rank, candidate in enumerate(result.candidates[:MAX_CANDIDATES_PER_PROVIDER], 1):
+                    identity = (candidate.source_provider, candidate.provider_id)
+                    if (
+                        candidate.source_provider != provider.name
+                        or not candidate.candidate_id
+                        or not candidate.provider_id
+                        or len(candidate.candidate_id) > 512
+                    ):
+                        raise ValueError("provider candidate identity is invalid")
+                    prior_id = identity_to_id.get(identity)
+                    prior_identity = id_to_identity.get(candidate.candidate_id)
+                    if prior_id is not None and prior_id != candidate.candidate_id:
+                        raise ValueError("provider identity mapped to multiple candidate IDs")
+                    if prior_identity is not None and prior_identity != identity:
+                        raise ValueError("candidate ID collision across provider records")
+                    if prior_id is None:
+                        identity_to_id[identity] = candidate.candidate_id
+                        id_to_identity[candidate.candidate_id] = identity
+                        unique_candidates.append((discovery_rank, candidate))
                 candidates = tuple(
-                    replace(candidate, provider_metadata={**candidate.provider_metadata, "discovery_rank": index})
-                    for index, candidate in enumerate(result.candidates, 1)
+                    replace(candidate, provider_metadata={**candidate.provider_metadata, "discovery_rank": discovery_rank})
+                    for discovery_rank, candidate in unique_candidates
                 )
-                return ProviderResult(result.provider, result.state, candidates[:MAX_CANDIDATES_PER_PROVIDER])
+                state = "success" if candidates else "empty"
+                return ProviderResult(result.provider, state, candidates)
             return result
         except Exception as error:
-            logger.exception("Unexpected provider failure for %s (%s)", provider.name, type(error).__name__)
+            logger.error("Unexpected provider failure for %s (%s)", provider.name, type(error).__name__)
             return ProviderResult(provider.name, "upstream_error", (), "provider_error", "The discovery provider could not complete the request.")
 
     async def search(self, idea: str, top_k: int) -> LiveSearchResponse:
@@ -108,6 +135,10 @@ class LiveSearchService:
             raise ValueError("top_k must be an integer from 1 to 20")
         await self.start()
         normalized = " ".join(idea.split())[:2000]
+        async with self._search_semaphore:
+            return await self._search_normalized(normalized, top_k)
+
+    async def _search_normalized(self, normalized: str, top_k: int) -> LiveSearchResponse:
         provider_results = await asyncio.gather(*(self._query_provider(p, normalized) for p in self.providers))
         provider_status = {result.provider: result.public_dict() for result in provider_results}
         successful = [result for result in provider_results if result.state in _SUCCESS_PROVIDER_STATES]
@@ -141,7 +172,7 @@ class LiveSearchService:
                     rank_candidates, normalized, tuple(candidates.values()), encoder=encoder, top_k=top_k
                 )
             except Exception as error:
-                logger.exception("Live retrieval failed (%s)", type(error).__name__)
+                logger.error("Live retrieval failed (%s)", type(error).__name__)
                 raise
         else:
             ranked, dense_available, dense_warning = rank_candidates(
@@ -159,10 +190,10 @@ class LiveSearchService:
             warnings.append("Providers returned candidates, but no candidate matched the active ranking signals.")
         if provider_failed:
             state: SearchState = "partial"
-        elif not ranked:
-            state = "no_candidates"
         elif not dense_available:
             state = "degraded"
+        elif not ranked:
+            state = "no_candidates"
         else:
             state = "complete"
         recurring = self._recurring_evidence(ranked)

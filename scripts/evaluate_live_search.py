@@ -20,7 +20,7 @@ from src.live_search.retrieval import SentenceTransformerEncoder, rank_candidate
 
 def evaluate_snapshot(snapshot: dict[str, Any], *, use_dense: bool = True) -> dict[str, Any]:
     cases = snapshot.get("cases")
-    if snapshot.get("version") != 1 or not isinstance(cases, list):
+    if snapshot.get("version") != 1 or not isinstance(cases, list) or not cases:
         raise ValueError("Snapshot must have version=1 and a cases array.")
     encoder = SentenceTransformerEncoder() if use_dense else None
     case_outputs = []
@@ -32,10 +32,13 @@ def evaluate_snapshot(snapshot: dict[str, Any], *, use_dense: bool = True) -> di
         if not isinstance(case, dict) or not isinstance(case.get("candidates"), list):
             raise ValueError("Each case must contain a candidates array.")
         query = case.get("query")
-        if not isinstance(query, str) or not query.strip():
-            raise ValueError("Each case needs a non-empty query.")
+        if not isinstance(query, str) or not 10 <= len(query.strip()) <= 2000:
+            raise ValueError("Each case query must contain 10 to 2000 characters after trimming.")
+        if len(case["candidates"]) > 50:
+            raise ValueError("Each fixed candidate snapshot is limited to 50 records.")
         candidate_records: list[CandidateRecord] = []
         provider_order: dict[str, list[tuple[int, str]]] = defaultdict(list)
+        seen_candidate_ids: set[str] = set()
         for item in case["candidates"]:
             if not isinstance(item, dict):
                 raise ValueError("Candidate entries must be objects.")
@@ -45,14 +48,19 @@ def evaluate_snapshot(snapshot: dict[str, Any], *, use_dense: bool = True) -> di
             provider = item.get("source_provider")
             if not all(isinstance(value, str) and value for value in (cid, candidate_type, title, provider)):
                 raise ValueError("Each candidate requires candidate_id, candidate_type, title, and source_provider.")
+            if cid in seen_candidate_ids:
+                raise ValueError(f"Duplicate candidate_id in snapshot: {cid!r}.")
+            seen_candidate_ids.add(cid)
             if candidate_type not in {"paper", "repository"}:
                 raise ValueError("candidate_type must be paper or repository.")
+            if len(cid) > 512 or len(title) > 2000 or len(provider) > 100:
+                raise ValueError("Candidate ID, title, or provider name exceeds its size limit.")
             text = item.get("description")
-            if text is not None and not isinstance(text, str):
-                raise ValueError("candidate description must be a string or null.")
+            if text is not None and (not isinstance(text, str) or len(text) > 12000):
+                raise ValueError("candidate description must be a string of at most 12000 characters or null.")
             topics = item.get("topics", [])
-            if not isinstance(topics, list) or not all(isinstance(topic, str) for topic in topics):
-                raise ValueError("candidate topics must be a string array.")
+            if not isinstance(topics, list) or len(topics) > 30 or not all(isinstance(topic, str) and len(topic) <= 120 for topic in topics):
+                raise ValueError("candidate topics must be an array of at most 30 strings, each at most 120 characters.")
             candidate_records.append(CandidateRecord(
                 candidate_id=cid, source_provider=provider,
                 provider_id=str(item.get("provider_id") or cid), candidate_type=candidate_type,
@@ -62,15 +70,30 @@ def evaluate_snapshot(snapshot: dict[str, Any], *, use_dense: bool = True) -> di
                 topics=tuple(topics),
             ))
             provider_rank = item.get("provider_discovery_rank")
-            if isinstance(provider_rank, int) and provider_rank > 0:
+            if provider_rank is not None and (
+                isinstance(provider_rank, bool) or not isinstance(provider_rank, int) or provider_rank < 1
+            ):
+                raise ValueError("provider_discovery_rank must be a positive integer when provided.")
+            if provider_rank is not None:
                 provider_order[provider].append((provider_rank, cid))
 
         grades = case.get("relevance_grades")
-        if not isinstance(grades, dict) or any(not isinstance(v, int) or isinstance(v, bool) or v < 0 or v > 3 for v in grades.values()):
+        if (
+            not isinstance(grades, dict)
+            or any(not isinstance(key, str) or not key for key in grades)
+            or any(not isinstance(v, int) or isinstance(v, bool) or v < 0 or v > 3 for v in grades.values())
+        ):
             raise ValueError("Each case needs relevance_grades mapping candidate IDs to integer grades 0..3.")
-        grade_map = {str(key): value for key, value in grades.items()}
+        grade_map = grades.copy()
         if any(cid not in {record.candidate_id for record in candidate_records} for cid in grade_map):
             raise ValueError("Every relevance label must refer to a candidate in this fixed snapshot.")
+        missing_labels = {record.candidate_id for record in candidate_records} - set(grade_map)
+        if missing_labels:
+            raise ValueError("Every candidate in a fixed snapshot needs a reviewed relevance grade (0..3).")
+        for provider, ranked_ids in provider_order.items():
+            ranks = [rank for rank, _ in ranked_ids]
+            if len(ranks) != len(set(ranks)):
+                raise ValueError(f"provider_discovery_rank values must be unique within {provider!r}.")
         case_id = str(case.get("id") or f"case-{len(case_outputs) + 1}")
         category = str(case.get("slice") or "mixed")
 
@@ -91,8 +114,9 @@ def evaluate_snapshot(snapshot: dict[str, Any], *, use_dense: bool = True) -> di
         }
         provider_native_metrics = {}
         for provider, ranking in provider_native.items():
-            provider_grades = {cid: grade_map[cid] for cid in ranking if cid in grade_map}
-            provider_native_metrics[provider] = ranking_metrics(ranking, provider_grades)
+            # Score every provider against the same reviewed candidate universe.
+            # Relevant candidates absent from this source remain misses in recall.
+            provider_native_metrics[provider] = ranking_metrics(ranking, grade_map)
             method = f"provider_native:{provider}"
             for metric, value in provider_native_metrics[provider].items():
                 slice_totals[category][method][metric] += value
@@ -104,9 +128,14 @@ def evaluate_snapshot(snapshot: dict[str, Any], *, use_dense: bool = True) -> di
 
         known_relevant = case.get("known_relevant_ids")
         discovery_recall = None
-        if isinstance(known_relevant, list):
-            if not all(isinstance(cid, str) for cid in known_relevant):
-                raise ValueError("known_relevant_ids must contain candidate IDs as strings.")
+        if "known_relevant_ids" in case:
+            if not isinstance(known_relevant, list):
+                raise ValueError("known_relevant_ids must be an array of reviewed candidate IDs.")
+            if (
+                not all(isinstance(cid, str) and cid for cid in known_relevant)
+                or len(known_relevant) != len(set(known_relevant))
+            ):
+                raise ValueError("known_relevant_ids must contain unique, non-empty candidate IDs.")
             relevant_set = set(known_relevant)
             discovered = {record.candidate_id for record in candidate_records}
             discovery_recall = len(relevant_set & discovered) / len(relevant_set) if relevant_set else 0.0

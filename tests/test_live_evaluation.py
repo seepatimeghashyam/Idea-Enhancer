@@ -50,3 +50,45 @@ def test_snapshot_evaluator_rejects_unlabelled_or_invalid_grade_values() -> None
 
     with pytest.raises(ValueError, match="grades 0..3"):
         evaluate_snapshot({"version": 1, "cases": [{"query": "test only query", "candidates": [], "relevance_grades": {"x": 4}}]}, use_dense=False)
+
+
+def test_provider_native_recall_counts_relevant_candidates_missed_by_that_provider() -> None:
+    snapshot = {
+        "version": 1,
+        "cases": [{
+            "query": "test-only vibration monitor",
+            "candidates": [
+                {"candidate_id": "test-only-github-hit", "candidate_type": "repository", "source_provider": "github", "title": "Vibration monitor", "provider_discovery_rank": 1},
+                {"candidate_id": "test-only-openalex-missed", "candidate_type": "paper", "source_provider": "openalex", "title": "Vibration monitoring study", "provider_discovery_rank": 1},
+            ],
+            "relevance_grades": {"test-only-github-hit": 3, "test-only-openalex-missed": 3},
+        }],
+    }
+    result = evaluate_snapshot(snapshot, use_dense=False)["cases"][0]
+    assert result["provider_native_metrics"]["github"]["recall_at_10"] == 0.5
+    assert result["provider_native_metrics"]["openalex"]["recall_at_10"] == 0.5
+
+
+def test_snapshot_evaluator_requires_complete_labels_and_unique_ids() -> None:
+    candidate_record = {
+        "candidate_id": "test-only-duplicate", "candidate_type": "paper",
+        "source_provider": "openalex", "title": "test-only title",
+    }
+    with pytest.raises(ValueError, match="needs a reviewed relevance grade"):
+        evaluate_snapshot({"version": 1, "cases": [{
+            "query": "test-only query", "candidates": [candidate_record], "relevance_grades": {},
+        }]}, use_dense=False)
+
+    with pytest.raises(ValueError, match="Duplicate candidate_id"):
+        evaluate_snapshot({"version": 1, "cases": [{
+            "query": "test-only query", "candidates": [candidate_record, candidate_record],
+            "relevance_grades": {"test-only-duplicate": 1},
+        }]}, use_dense=False)
+
+
+def test_snapshot_evaluator_rejects_malformed_known_relevant_ids() -> None:
+    with pytest.raises(ValueError, match="known_relevant_ids must be an array"):
+        evaluate_snapshot({"version": 1, "cases": [{
+            "query": "test-only query", "candidates": [], "relevance_grades": {},
+            "known_relevant_ids": "test-only-id",
+        }]}, use_dense=False)

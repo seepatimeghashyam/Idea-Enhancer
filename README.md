@@ -24,6 +24,8 @@ In a second terminal, serve the frontend from the repository root:
 
 Open http://localhost:5500. Choose **Offline Demo** to search the supplied local dataset or **Live Research** to search external sources. Live search requires internet access. The first semantic search may download the embedding model; set `LIVE_DENSE_SEARCH=0` to use explicitly degraded BM25-only live ranking. GitHub accepts unauthenticated requests; an optional `GITHUB_TOKEN` raises its rate limit. Copy `.env.example` to `.env` for local configuration. `EMBEDDING_MODEL` and `CHROMA_DB_PATH` configure offline search; `LIVE_EMBEDDING_MODEL` and `LIVE_DENSE_SEARCH` configure live ranking.
 
+For a separately hosted frontend, set its public API origin in `config.js` and add that exact HTTPS frontend origin to the backend's `CORS_ALLOWED_ORIGINS`. Never put API tokens in `config.js`.
+
 ## Start on the prepared demo laptop
 
 Double-click `Run Idea Enhancer.cmd`. It opens the API and frontend in separate windows, then opens http://localhost:5500. Keep both server windows open while presenting. Close both windows to stop the app.

@@ -64,6 +64,9 @@ class CandidateRecord:
             value["description"] = value["description"][:4000]
         value["authors"] = list(self.authors)
         value["topics"] = list(self.topics)
+        discovery_rank = self.provider_metadata.get("discovery_rank")
+        if isinstance(discovery_rank, int) and not isinstance(discovery_rank, bool) and discovery_rank > 0:
+            value["provider_discovery_rank"] = discovery_rank
         value.pop("provider_metadata", None)
         return value
 

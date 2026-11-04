@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import ipaddress
 import logging
 import os
 import re
@@ -39,13 +40,36 @@ def _clean_text(value: Any, limit: int = 12000) -> str | None:
 
 
 def _safe_url(value: Any) -> str | None:
-    if not isinstance(value, str):
+    if (
+        not isinstance(value, str)
+        or len(value) > 2048
+        or "\\" in value
+        or any(char.isspace() or ord(char) < 33 for char in value)
+    ):
         return None
     try:
         parsed = urlparse(value)
         if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
             return None
-        return value[:2048]
+        host = parsed.hostname.rstrip(".")
+        port = parsed.port
+        try:
+            address = ipaddress.ip_address(host)
+        except ValueError:
+            ascii_host = host.encode("idna").decode("ascii")
+            labels = ascii_host.split(".")
+            if len(labels) < 2 or any(
+                not label or len(label) > 63
+                or not re.fullmatch(r"[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?", label)
+                for label in labels
+            ):
+                return None
+        else:
+            if not address.is_global:
+                return None
+        if port is not None and not 1 <= port <= 65535:
+            return None
+        return value
     except ValueError:
         return None
 
@@ -68,7 +92,7 @@ def reconstruct_abstract(inverted_index: Any) -> str | None:
         if not isinstance(token, str) or not isinstance(indexes, list):
             continue
         for index in indexes:
-            if isinstance(index, int) and 0 <= index < 100000:
+            if isinstance(index, int) and not isinstance(index, bool) and 0 <= index < 100000:
                 positions.setdefault(index, token)
     return " ".join(positions[index] for index in sorted(positions)) or None
 
@@ -99,7 +123,11 @@ class OpenAlexProvider:
             if not provider_id or not title:
                 continue
             abstract = _clean_text(reconstruct_abstract(item.get("abstract_inverted_index")))
-            location = item.get("best_oa_location") or item.get("primary_location") or {}
+            location = item.get("best_oa_location")
+            if not isinstance(location, dict):
+                location = item.get("primary_location")
+            if not isinstance(location, dict):
+                location = {}
             source = location.get("source") if isinstance(location, dict) else None
             source_url = _safe_url((location.get("landing_page_url") if isinstance(location, dict) else None) or item.get("doi") or provider_id)
             authorships = item.get("authorships")
@@ -116,11 +144,23 @@ class OpenAlexProvider:
                 provider_id=provider_id, candidate_type="paper", title=title, description=abstract,
                 source_url=source_url, doi=_clean_text(item.get("doi"), 512), authors=authors,
                 publication_date=_clean_text(item.get("publication_date"), 32),
-                publication_year=item.get("publication_year") if isinstance(item.get("publication_year"), int) else None,
+                publication_year=(
+                    item["publication_year"]
+                    if isinstance(item.get("publication_year"), int)
+                    and not isinstance(item.get("publication_year"), bool)
+                    and 1000 <= item["publication_year"] <= 9999
+                    else None
+                ),
                 work_type=_clean_text(item.get("type"), 120),
                 venue=_clean_text(source.get("display_name"), 500) if isinstance(source, dict) else None,
                 open_access=oa.get("is_oa") if isinstance(oa, dict) and isinstance(oa.get("is_oa"), bool) else None,
-                citation_count=item.get("cited_by_count") if isinstance(item.get("cited_by_count"), int) else None,
+                citation_count=(
+                    item["cited_by_count"]
+                    if isinstance(item.get("cited_by_count"), int)
+                    and not isinstance(item.get("cited_by_count"), bool)
+                    and item["cited_by_count"] >= 0
+                    else None
+                ),
             ))
         if results and not candidates:
             return ProviderResult(self.name, "invalid_response", (), "invalid_records", "OpenAlex results contained no usable paper records.")
@@ -171,8 +211,20 @@ class GitHubProvider:
                 repository_pushed_at=_clean_text(item.get("pushed_at"), 32),
                 programming_language=_clean_text(item.get("language"), 120),
                 topics=tuple(x for x in (_clean_text(t, 120) for t in topics if isinstance(t, str)) if x)[:30] if isinstance(topics, list) else (),
-                stars=item.get("stargazers_count") if isinstance(item.get("stargazers_count"), int) else None,
-                forks=item.get("forks_count") if isinstance(item.get("forks_count"), int) else None,
+                stars=(
+                    item["stargazers_count"]
+                    if isinstance(item.get("stargazers_count"), int)
+                    and not isinstance(item.get("stargazers_count"), bool)
+                    and item["stargazers_count"] >= 0
+                    else None
+                ),
+                forks=(
+                    item["forks_count"]
+                    if isinstance(item.get("forks_count"), int)
+                    and not isinstance(item.get("forks_count"), bool)
+                    and item["forks_count"] >= 0
+                    else None
+                ),
                 archived=item.get("archived") if isinstance(item.get("archived"), bool) else None,
                 license_name=_clean_text(license_data.get("spdx_id") or license_data.get("name"), 300) if isinstance(license_data, dict) else None,
                 provider_metadata={"default_branch": _clean_text(item.get("default_branch"), 200)},

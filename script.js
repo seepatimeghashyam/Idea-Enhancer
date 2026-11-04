@@ -12,9 +12,21 @@
 // ---------------------------------------------------------------------------
 // Configuration
 // ---------------------------------------------------------------------------
-const API_BASE_URL = String(
-  (typeof window !== 'undefined' && window.IDEA_ENHANCER_API_BASE_URL) || 'http://localhost:8000'
-).replace(/\/+$/, '');
+function readApiBaseUrl() {
+  const configured = String(
+    (typeof window !== 'undefined' && window.IDEA_ENHANCER_API_BASE_URL) || 'http://localhost:8000'
+  );
+  try {
+    const url = new URL(configured);
+    const loopback = ['localhost', '127.0.0.1', '[::1]'].includes(url.hostname.toLowerCase());
+    if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password || url.search || url.hash) return null;
+    if (url.protocol === 'http:' && !loopback) return null;
+    return `${url.origin}${url.pathname}`.replace(/\/+$/, '');
+  } catch (_) {
+    return null;
+  }
+}
+const API_BASE_URL = readApiBaseUrl();
 // A cold vector search may load the embedding model and build a local index.
 const REQUEST_TIMEOUT_MS = 180000;
 const MIN_IDEA_CHARS = 10;
@@ -405,6 +417,9 @@ async function handleFormSubmit(event) {
 // API adapter: local historical search or external live research search
 // ---------------------------------------------------------------------------
 async function fetchSearch(req, idea, topK) {
+  if (!API_BASE_URL) {
+    throw new SearchError('The API address in config.js is invalid. Use localhost for development or an HTTPS API URL.', 'configuration');
+  }
   if (req.mode !== 'live' && req.mode !== 'offline') {
     throw new SearchError('Unknown search mode selected.', 'malformed');
   }
@@ -499,7 +514,9 @@ function describeError(error) {
       case 'timeout':
         return `The search took longer than ${REQUEST_TIMEOUT_MS / 1000} seconds and was stopped. Please try again.`;
       case 'network':
-        return 'Unable to reach the search service. Check your connection and that the backend is running, or switch to a demo mode to explore the interface.';
+        return 'Unable to reach the API. Check your connection and that the backend is running, then try again.';
+      case 'configuration':
+        return error.message;
       case 'malformed':
         return error.message || 'The search service returned a response this page could not understand.';
       default:
@@ -696,7 +713,10 @@ function buildMatchCard(match, index, mode) {
   titleGroup.appendChild(rankBadge);
   titleGroup.appendChild(titleBox);
 
-  const status = VERIFICATION_LABELS[match.verification_status];
+  const liveHasOverlap = Array.isArray(match.shared_elements) && match.shared_elements.length > 0;
+  const status = mode === 'live'
+    ? { text: liveHasOverlap ? 'Text overlap found' : 'No shared terms found', tone: liveHasOverlap ? 'ok' : 'warn' }
+    : VERIFICATION_LABELS[match.verification_status];
   const statusWrap = el('div', 'shrink-0');
   statusWrap.appendChild(status ? buildBadge(status.text, status.tone) : buildBadge('Text overlap not checked', 'neutral'));
 
@@ -765,6 +785,9 @@ function buildMatchCard(match, index, mode) {
   if (Array.isArray(match.distinctive_terms) && match.distinctive_terms.length) {
     const distinctive = buildTagSection('Other terms in this record', match.distinctive_terms, 'bg-slate-50 text-slate-700 border border-slate-200');
     if (distinctive) details.appendChild(distinctive);
+  }
+  if (Number.isInteger(match.provider_discovery_rank) && match.provider_discovery_rank > 0) {
+    details.appendChild(el('p', 'text-xs text-slate-500', `Provider discovery order: ${match.provider_discovery_rank}.`));
   }
   const retrievalRanks = [];
   if (Number.isInteger(match.bm25_rank)) retrievalRanks.push(`keyword rank ${match.bm25_rank}`);

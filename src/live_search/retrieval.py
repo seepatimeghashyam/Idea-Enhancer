@@ -18,6 +18,8 @@ _WORD = re.compile(r"[\w]+", flags=re.UNICODE)
 _STOP = frozenset("a an and are as at be by for from has have in into is it its of on or that the their this to was were with using use used based system project idea build create develop design".split())
 RRF_CONSTANT = 60
 QUERY_INSTRUCTION = "Represent this sentence for searching relevant passages: "
+MAX_ENCODER_TEXT_CHARS = 8000
+MAX_ENCODER_ITEMS = 50
 
 
 class DenseEncoder(Protocol):
@@ -45,13 +47,28 @@ class SentenceTransformerEncoder:
                     self._model = get_sentence_transformer(self.model_name, "cpu")
                 except Exception as error:
                     raise DenseUnavailable(f"The semantic model could not be initialized ({type(error).__name__}).") from error
-            prepared = [QUERY_INSTRUCTION + text if query else text for text in texts]
+            if len(texts) > MAX_ENCODER_ITEMS or any(not isinstance(text, str) for text in texts):
+                raise DenseUnavailable("The semantic encoder received an invalid batch.")
+            prepared = [
+                (QUERY_INSTRUCTION if query else "") + text[:MAX_ENCODER_TEXT_CHARS]
+                for text in texts
+            ]
             try:
                 vectors = self._model.encode(
                     prepared, normalize_embeddings=True, show_progress_bar=False,
                     batch_size=16, convert_to_numpy=True,
                 )
-                return vectors.tolist() if hasattr(vectors, "tolist") else vectors
+                vectors = vectors.tolist() if hasattr(vectors, "tolist") else vectors
+                dimension = self._model.get_sentence_embedding_dimension()
+                if (
+                    not isinstance(vectors, list)
+                    or len(vectors) != len(prepared)
+                    or not isinstance(dimension, int)
+                    or dimension < 1
+                    or any(not isinstance(vector, list) or len(vector) != dimension for vector in vectors)
+                ):
+                    raise DenseUnavailable("The embedding model returned an unexpected vector shape.")
+                return vectors
             except Exception as error:
                 raise DenseUnavailable(f"The semantic model could not encode this search ({type(error).__name__}).") from error
 
@@ -73,6 +90,33 @@ def _cosine_for_normalized(left: Sequence[float], right: Sequence[float]) -> flo
     return max(-1.0, min(1.0, score))
 
 
+def _rrf_fuse(
+    bm25_ranks: dict[str, int],
+    dense_ranks: dict[str, int],
+    top_k: int,
+) -> tuple[list[str], dict[str, float]]:
+    """Fuse independent 1-based rankings; a missing rank contributes nothing."""
+    ranked_ids = set(bm25_ranks) | set(dense_ranks)
+    fused_scores = {
+        candidate_id: sum(
+            1.0 / (RRF_CONSTANT + ranks[candidate_id])
+            for ranks in (bm25_ranks, dense_ranks) if candidate_id in ranks
+        )
+        for candidate_id in ranked_ids
+    }
+    ordered_ids = sorted(
+        ranked_ids,
+        key=lambda candidate_id: (
+            -fused_scores[candidate_id],
+            min(rank for rank in (bm25_ranks.get(candidate_id), dense_ranks.get(candidate_id)) if rank is not None),
+            bm25_ranks.get(candidate_id, math.inf),
+            dense_ranks.get(candidate_id, math.inf),
+            candidate_id,
+        ),
+    )[:top_k]
+    return ordered_ids, fused_scores
+
+
 def rank_candidates(
     idea: str,
     candidates: Sequence[CandidateRecord],
@@ -81,7 +125,11 @@ def rank_candidates(
     top_k: int,
 ) -> tuple[list[RankedCandidate], bool, str | None]:
     """Return hybrid rankings; if dense fails, explicitly return BM25-only mode."""
-    unique = {candidate.candidate_id: candidate for candidate in candidates}
+    if isinstance(top_k, bool) or not isinstance(top_k, int) or not 1 <= top_k <= MAX_ENCODER_ITEMS:
+        raise ValueError("top_k must be an integer from 1 to 50")
+    unique: dict[str, CandidateRecord] = {}
+    for candidate in candidates:
+        unique.setdefault(candidate.candidate_id, candidate)
     corpus = list(unique.values())
     if not corpus:
         return [], True, None
@@ -98,7 +146,11 @@ def rank_candidates(
                     index.idf[token] = floor
             scores = index.get_scores(query_tokens)
             ordered = sorted(
-                ((candidate, float(score)) for candidate, score in zip(corpus, scores) if score > 0),
+                (
+                    (candidate, float(score))
+                    for candidate, score in zip(corpus, scores)
+                    if math.isfinite(float(score)) and float(score) > 0
+                ),
                 key=lambda item: (-item[1], item[0].candidate_id),
             )
             bm25_ranks = {candidate.candidate_id: rank for rank, (candidate, _) in enumerate(ordered, 1)}
@@ -126,24 +178,8 @@ def rank_candidates(
             ordered_dense = sorted(corpus, key=lambda c: (-cosine_scores[c.candidate_id], c.candidate_id))
             dense_ranks = {candidate.candidate_id: rank for rank, candidate in enumerate(ordered_dense, 1)}
 
-    ranked_ids = set(bm25_ranks) | set(dense_ranks)
+    ordered_ids, fused_scores = _rrf_fuse(bm25_ranks, dense_ranks, top_k)
     candidate_by_id = unique
-    fused_scores: dict[str, float] = {}
-    for candidate_id in ranked_ids:
-        fused_scores[candidate_id] = sum(
-            1.0 / (RRF_CONSTANT + ranks[candidate_id])
-            for ranks in (bm25_ranks, dense_ranks) if candidate_id in ranks
-        )
-    ordered_ids = sorted(
-        ranked_ids,
-        key=lambda candidate_id: (
-            -fused_scores[candidate_id],
-            min(rank for rank in (bm25_ranks.get(candidate_id), dense_ranks.get(candidate_id)) if rank is not None),
-            bm25_ranks.get(candidate_id, math.inf),
-            dense_ranks.get(candidate_id, math.inf),
-            candidate_id,
-        ),
-    )[:top_k]
 
     idea_set = set(query_tokens)
     result: list[RankedCandidate] = []
@@ -161,8 +197,6 @@ def rank_candidates(
         explanation = f"Retrieved from {candidate.source_provider} by {why}."
         if shared:
             explanation += " Shared terms: " + ", ".join(shared) + "."
-        if candidate.provider_metadata.get("discovery_rank") is not None:
-            explanation += f" Provider discovery position: {candidate.provider_metadata['discovery_rank']}."
         result.append(RankedCandidate(
             candidate=candidate, rank=rank, bm25_rank=bm25_ranks.get(candidate_id),
             dense_rank=dense_ranks.get(candidate_id), rrf_score=fused_scores[candidate_id],

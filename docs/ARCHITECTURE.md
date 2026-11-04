@@ -8,7 +8,7 @@ This document describes the approved system architecture for Idea Enhancer V1. I
 
 ## System Overview
 
-Idea Enhancer helps engineering students investigate a project idea before investing time in building it. It searches indexed project records, returns traceable matches with ranking evidence, and may generate a constrained improvement suggestion based on retrieved evidence.
+Idea Enhancer helps engineering students investigate a project idea before investing time in building it. It searches indexed project records and external research providers, returning traceable matches with ranking evidence. A constrained improvement suggestion based on retrieved evidence is a future possibility; LLM enhancement is not implemented.
 
 The system is **not** a plagiarism detector and cannot prove universal originality. It can only describe what was or was not found in the local dataset or external providers that actually responded to a search.
 
@@ -34,7 +34,7 @@ Student → Frontend → FastAPI
 | Layer | Technology | Status |
 |---|---|---|
 | Frontend | HTML5, Tailwind CSS, vanilla JavaScript | Implemented; demo/live modes and light/dark theme |
-| Backend / API | Python, FastAPI | Implemented; POST /search |
+| Backend / API | Python, FastAPI | Implemented; POST /search and POST /live-search |
 | Keyword retrieval | BM25 via rank-bm25 | Implemented |
 | Semantic retrieval | ChromaDB with BAAI/bge-small-en-v1.5 embeddings | Implemented; local model and index required |
 | Ranking fusion | Reciprocal Rank Fusion (RRF) | Implemented |
@@ -156,9 +156,11 @@ Provider text is external and untrusted. It is returned as JSON text and rendere
 
 - **Environment variables:** Defined in `.env.example` (not committed with real values).
 - **Key variables:**
-  - `EMBEDDING_MODEL` — sentence-transformer model name
-  - `CHROMA_DB_PATH` — path to ChromaDB persistent storage
-  - `LLM_API_KEY` — deferred until LLM provider is approved
+  - `EMBEDDING_MODEL` and `CHROMA_DB_PATH` — model and persistent index for Offline Demo.
+  - `LIVE_DENSE_SEARCH` and `LIVE_EMBEDDING_MODEL` — enable and select the live candidate reranker; disabling dense search returns explicitly degraded BM25-only results.
+  - `GITHUB_TOKEN` — optional server-side GitHub API token; never expose it in frontend configuration.
+  - `CORS_ALLOWED_ORIGINS` — comma-separated exact HTTPS origins for a separately hosted frontend; localhost remains allowed for development.
+  - `LLM_API_KEY` — not currently used; LLM integration remains deferred.
 
 ---
 

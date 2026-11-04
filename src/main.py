@@ -7,6 +7,7 @@ import os
 import threading
 from contextlib import asynccontextmanager
 from typing import Any, Mapping
+from urllib.parse import urlsplit
 
 from fastapi import Body, FastAPI
 from fastapi.exceptions import RequestValidationError
@@ -29,6 +30,7 @@ MIN_TOP_K = 1
 MAX_TOP_K = 20
 NO_MATCH_MESSAGE = "No records were returned from the current search."
 SEARCH_UNAVAILABLE_MESSAGE = "Search is temporarily unavailable. Please try again shortly."
+DEFAULT_CORS_ORIGINS = ("http://localhost:5500", "http://127.0.0.1:5500")
 logger = logging.getLogger("idea_enhancer.api")
 
 
@@ -64,6 +66,53 @@ def error_response(status_code: int, error_code: str, message: str, details: Any
             "details": details,
         },
     )
+
+
+def configured_cors_origins() -> list[str]:
+    """Return localhost defaults plus validated, explicitly configured origins."""
+    try:
+        from dotenv import load_dotenv
+
+        load_dotenv()
+    except ImportError:
+        pass
+
+    origins = list(DEFAULT_CORS_ORIGINS)
+    configured = os.getenv("CORS_ALLOWED_ORIGINS", "")
+    for value in (part.strip() for part in configured.split(",")):
+        if not value:
+            continue
+        try:
+            parsed = urlsplit(value)
+            hostname = parsed.hostname
+            # An origin has no credentials, path, query, fragment, or wildcard.
+            if (
+                parsed.scheme not in {"http", "https"}
+                or not hostname
+                or hostname == "*"
+                or not parsed.netloc
+                or any(char.isspace() or ord(char) < 33 for char in value)
+                or parsed.username is not None
+                or parsed.password is not None
+                or parsed.path not in {"", "/"}
+                or parsed.query
+                or parsed.fragment
+                or value == "*"
+            ):
+                raise ValueError
+            parsed.port  # Force validation of a malformed port.
+            if parsed.scheme == "http" and hostname.casefold() not in {"localhost", "127.0.0.1", "::1"}:
+                raise ValueError
+        except ValueError as error:
+            raise ValueError(f"Invalid CORS origin in CORS_ALLOWED_ORIGINS: {value!r}") from error
+        scheme = parsed.scheme.lower()
+        netloc = parsed.netloc.lower()
+        if (scheme == "https" and parsed.port == 443) or (scheme == "http" and parsed.port == 80):
+            netloc = netloc.rsplit(":", 1)[0]
+        origin = f"{scheme}://{netloc}"
+        if origin not in origins:
+            origins.append(origin)
+    return origins
 
 
 def validate_search_payload(payload: Any) -> tuple[str, int, list[str]]:
@@ -186,6 +235,7 @@ def create_app(
     # Allow only local browser origins to call this API.
     app.add_middleware(
         CORSMiddleware,
+        allow_origins=configured_cors_origins(),
         allow_origin_regex=r"^http://(localhost|127\.0\.0\.1)(?::\d+)?$",
         allow_methods=["POST", "OPTIONS"],
         allow_headers=["Content-Type", "Accept"],
@@ -244,7 +294,7 @@ def create_app(
                 },
             )
         except Exception:
-            logger.exception("Live research search failed")
+            logger.error("Live research search failed due to an internal exception")
             return error_response(
                 500,
                 "SEARCH_FAILED",
@@ -269,7 +319,6 @@ def create_app(
                 "technologies": [programming_language] if isinstance(programming_language, str) and programming_language else None,
                 "vector_rank": match.get("dense_rank"),
                 "shared_elements": shared,
-                "verification_status": "checked" if shared else "insufficient",
                 "publication_date": publication_date,
             })
         return JSONResponse(status_code=200, content={

@@ -110,20 +110,6 @@ All decisions here have been explicitly approved by the project owner. Planned o
 
 ---
 
-## Decision 009: Independent Live Research Mode
-
-- **Decision ID:** D-009
-- **Date:** 2026-11-04
-- **Question:** How can the independent MVP add external research while preserving historical search?
-- **Decision:** Keep `POST /search` as the offline historical dataset contract and add a separate `POST /live-search` path. Live mode queries OpenAlex Works and GitHub Repository Search concurrently, normalizes provider results, and reranks a bounded in-memory candidate pool with BM25, BAAI/bge-small-en-v1.5 dense embeddings, and RRF.
-- **Reason:** Separate routes prevent external-provider failure from silently returning local demo records, preserve existing API consumers, and allow provider states and candidate metadata to remain explicit.
-- **Affected files/modules:** `src/live_search/`, `src/main.py`, `index.html`, `script.js`, `docs/LIVE_SEARCH.md`, API and architecture documentation.
-- **Failure behavior:** Provider failure is typed and visible. One successful provider yields partial results. Both unavailable yields HTTP 503. Dense-model failure yields explicitly degraded BM25-only results. Successful empty provider results remain empty results.
-- **Scope:** One bounded query per provider per search; no persistent external index, cache, LLM, source-code crawling, or full-text paper retrieval. Human-labelled fixed snapshots are required before claiming rank-quality improvements.
-- **Approved by:** Shyam (independent MVP assignment authorization, 2026-11-04).
-
----
-
 ## Decision 007: Canonical Dataset Schema
 
 - **Decision ID:** D-007
@@ -205,3 +191,29 @@ Unknown optional fields should be left empty (not filled with placeholder values
 - **Condition to revisit:** If separate source files require independent update or indexing cycles.
 
 > **Status (2026-10-29):** A conservative 1,998-record search-ready CSV is installed at data/historical_projects.csv and passes structural validation. This is a partial implementation: source-level provenance review and a reproducible full ingestion/cleaning pipeline remain incomplete. See [Dataset Readiness](DATASET_READINESS.md).
+
+---
+
+## Decision 011: Independent Live Research Mode
+
+- **Decision ID:** D-011
+- **Date:** 2026-11-04
+- **Question:** How can the independent MVP add external research while preserving historical search?
+- **Decision:** Keep `POST /search` as the offline historical dataset contract and add a separate `POST /live-search` path. Live mode queries OpenAlex Works and GitHub Repository Search concurrently, normalizes provider results, and reranks a bounded in-memory candidate pool with BM25, BAAI/bge-small-en-v1.5 dense embeddings, and RRF.
+- **Reason:** Separate routes prevent external-provider failure from silently returning local demo records, preserve existing API consumers, and allow provider states and candidate metadata to remain explicit.
+- **Affected files/modules:** `src/live_search/`, `src/main.py`, `index.html`, `script.js`, `docs/LIVE_SEARCH.md`, API and architecture documentation.
+- **Failure behavior:** Provider failure is typed and visible. One successful provider yields partial results. Both unavailable yields HTTP 503. Dense-model failure yields explicitly degraded BM25-only results. Successful empty provider results remain empty results.
+- **Scope:** One bounded query per provider per search; no query expansion, persistent external index, LLM, source-code crawling, or full-text paper retrieval. Human-labelled fixed snapshots are required before claiming rank-quality improvements.
+- **Approved by:** Shyam (independent MVP assignment authorization, 2026-11-04).
+
+---
+
+## Decision 012: Restrictive Configurable Browser Origins
+
+- **Decision ID:** D-012
+- **Date:** 2026-11-04
+- **Question:** How can a separately hosted frontend call the API without wildcard CORS?
+- **Decision:** Allow the fixed local development frontend origins and permit additional exact origins from `CORS_ALLOWED_ORIGINS`; configured non-local origins must use HTTPS.
+- **Reason:** This supports a separately hosted demonstration while keeping browser access limited to known origins and retaining local development.
+- **Affected files/modules:** `src/main.py`, `.env.example`, and `docs/LIVE_SEARCH.md`.
+- **Approved by:** Shyam (autonomous MVP assignment authorization, 2026-11-04).
