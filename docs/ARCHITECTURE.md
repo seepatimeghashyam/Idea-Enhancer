@@ -2,7 +2,7 @@
 
 This document describes the approved system architecture for Idea Enhancer V1. It reflects approved decisions only. Components marked as **planned** or **deferred** are not yet implemented.
 
-> **Implementation status (2026-10-29):** The frontend, FastAPI POST /search route, API gateway, BM25/vector retrieval, RRF fusion, dataset loader, and public response mapping are implemented. The supplied 1,998-record search-ready CSV has passed structural checks and a real /search smoke test. Source-level verification and relevance evaluation remain incomplete. LLM enhancement remains deferred. See [Dataset Readiness](DATASET_READINESS.md) and the [Decision Log](DECISIONS.md).
+> **Implementation status (2026-11-04):** Offline historical search remains available through `POST /search` and the Core Search BM25/ChromaDB/RRF pipeline. The independent MVP adds `POST /live-search`, OpenAlex/GitHub adapters, candidate normalization, bounded BM25/dense/RRF reranking, and a two-mode frontend. Provider behavior is fixture-tested; a fixed human-labelled live relevance benchmark and sustained real-provider verification remain pending. LLM enhancement remains deferred. See [Live Search](LIVE_SEARCH.md), [Dataset Readiness](DATASET_READINESS.md), and the [Decision Log](DECISIONS.md).
 
 ---
 
@@ -10,19 +10,21 @@ This document describes the approved system architecture for Idea Enhancer V1. I
 
 Idea Enhancer helps engineering students investigate a project idea before investing time in building it. It searches indexed project records, returns traceable matches with ranking evidence, and may generate a constrained improvement suggestion based on retrieved evidence.
 
-The system is **not** a plagiarism detector and cannot prove universal originality. It can only describe what was or was not found in the sources actually indexed.
+The system is **not** a plagiarism detector and cannot prove universal originality. It can only describe what was or was not found in the local dataset or external providers that actually responded to a search.
 
 ---
 
 ## Architecture Diagram
 
-The current request flow is:
+The application has two explicit request flows:
 
 ```
-Student → Frontend → FastAPI POST /search → Core Search
-    ├── Canonical CSV → BM25 Search ─┐
-    ├── Canonical CSV → ChromaDB Search ─┤→ RRF Fusion → Traceable matches
-    └── LLM enhancement (deferred)
+Student → Frontend → FastAPI
+    ├── Offline Demo → POST /search → canonical CSV → BM25 + ChromaDB → RRF
+    └── Live Research → POST /live-search
+          ├── OpenAlex ─┐
+          ├── GitHub ───┴→ normalized candidate pool → BM25 + BGE embeddings → RRF
+          └──────────────────────────────────────────────→ evidence + source states
 ```
 
 ---
@@ -36,16 +38,20 @@ Student → Frontend → FastAPI POST /search → Core Search
 | Keyword retrieval | BM25 via rank-bm25 | Implemented |
 | Semantic retrieval | ChromaDB with BAAI/bge-small-en-v1.5 embeddings | Implemented; local model and index required |
 | Ranking fusion | Reciprocal Rank Fusion (RRF) | Implemented |
+| Live discovery | OpenAlex Works API and GitHub Repository Search API | Implemented; internet required; GitHub token optional |
+| Live dense retrieval | BAAI/bge-small-en-v1.5 in bounded in-memory candidate pool | Implemented; model required for hybrid mode; BM25 degradation is explicit |
+| Live evaluation | Fixed snapshot metrics and 0–3 human relevance grades | Tool implemented; reviewed live labels are not yet available |
 | Dataset | data/historical_projects.csv | 1,998 search-ready rows; provenance and relevance review remain |
 | LLM enhancement | Provider TBD | Deferred until search pipeline works |
 | Relational database | Not required for V1 | — |
 
-### Explicitly excluded from V1 (unless approved)
+### Explicitly excluded from this MVP
 
 - React, Vue, or other frontend frameworks
 - Node.js, Express, or a second backend server
 - MySQL, MongoDB, or other relational/document databases
-- External dataset integrations (GitHub API, paper sources)
+- Persistent external candidate index or provider-result history
+- LLM-based suggestions or idea generation
 
 ---
 
@@ -65,7 +71,7 @@ Student → Frontend → FastAPI POST /search → Core Search
 ```
 Frontend (HTML/JS)
     │
-    │ HTTP (POST /search, POST /enhance)
+    │ HTTP (POST /search, POST /live-search)
     ▼
 API Layer (FastAPI - src/main.py)
     │
@@ -80,6 +86,11 @@ Core Search (src/database.py)
     │ reads
     ▼
 Canonical Dataset (data/historical_projects.csv)
+
+Live Research (separate API route)
+    ├── OpenAlex Works API
+    ├── GitHub Repository Search API
+    └── in-memory normalized candidate pool → BM25 + dense → RRF
 ```
 
 ### Key architectural rules
@@ -92,7 +103,7 @@ Canonical Dataset (data/historical_projects.csv)
 
 ---
 
-## Data Flow — Search Request
+## Data Flow — Offline Demo (`POST /search`)
 
 1. Student submits an idea through the frontend form.
 2. Frontend validates input (non-empty, minimum length) and sends `POST /search` to the API.
@@ -105,6 +116,17 @@ Canonical Dataset (data/historical_projects.csv)
 9. Core Search returns structured match records to the API.
 10. API formats the response per the API contract and returns it to the frontend.
 11. Frontend renders result cards with match details and evidence.
+
+## Data Flow — Live Research (`POST /live-search`)
+
+1. The API validates the idea and `top_k` using the same request bounds as offline search.
+2. OpenAlex and GitHub are queried concurrently with bounded timeouts, one retry, and bounded candidate counts.
+3. Each provider independently returns `success`, `empty`, or a typed failure state. Both unavailable produces HTTP 503; one available produces partial results; provider success with no candidates is an honest empty result.
+4. Provider records are normalized into `CandidateRecord`; IDs remain provider-specific, deduplication uses stable provider IDs, and missing metadata remains unknown.
+5. BM25 and the lazy BGE encoder rank the in-memory pool. RRF combines ranks. If dense embedding fails or is disabled, BM25 results are returned with a degraded state.
+6. Deterministic text evidence and repeated terms are attached; the UI reports source status, provenance, ranking signals, and source links.
+
+Provider text is external and untrusted. It is returned as JSON text and rendered with DOM text nodes. No provider request occurs at import time. Live candidates are request-scoped and are not persisted.
 
 ---
 

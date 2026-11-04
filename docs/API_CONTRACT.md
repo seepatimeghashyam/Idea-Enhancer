@@ -2,7 +2,7 @@
 
 This document defines the approved HTTP API contract for Idea Enhancer V1. All modules (frontend, API, core search) must use these definitions. Do not change request/response fields, route names, or error formats without a Decision Request and project-owner approval.
 
-> **Implementation status (2026-10-29):** POST /search is implemented with the request, success, validation, unavailable, and internal-error envelopes below. The live route has been smoke-tested against the supplied canonical CSV. POST /enhance remains deferred; its schema below is only a proposal.
+> **Implementation status (2026-11-04):** `POST /search` remains the historical local-dataset contract below. The independent MVP adds `POST /live-search` for OpenAlex and GitHub candidate discovery; its separate response semantics are documented below. External provider use still requires live network access. `POST /enhance` remains deferred.
 
 ---
 
@@ -289,3 +289,17 @@ These fields must remain distinct. No module should collapse them into a single 
 - The `source_url` field should only be rendered as a clickable link when it is a non-null, valid URL.
 - Display `message` to the user when it is non-null (e.g., the no-match message).
 - Display `warnings` entries if present (e.g., `top_k` was clamped).
+
+---
+
+## `POST /live-search` — Independent Research Mode
+
+This route is separate from `/search`; it never substitutes historical records. It accepts the same validated request fields and bounds. Provider discovery is performed against OpenAlex and GitHub, then candidates are reranked locally.
+
+The successful envelope uses `status: "success"` plus a `search_state` of `complete`, `partial`, `degraded`, or `no_candidates`. `providers` reports each source's state and count. `ranking_mode` is `hybrid_rrf`, `bm25_only`, or `not_run`. `recurring_evidence` contains terms/topics observed across multiple returned candidates. A successful no-candidate response is HTTP 200. When both providers are unavailable, return HTTP 503 with `error_code: "LIVE_SEARCH_UNAVAILABLE"` and provider states in `details`.
+
+Each live match contains `candidate_id`, `source_provider`, `provider_id`, `candidate_type`, `title`, optional `description`, `source_url`, and only provider-supplied metadata such as DOI, authors, owner, publication date/year/work type, repository creation/push dates, venue, language, topics, stars, forks, open-access flag, license, and retrieval timestamp. Provider-specific fields are not conflated: publication dates do not represent repository update dates, authors are not repository owners, and absent fields remain unknown.
+
+Ranking fields are `rank` (fused rank), `bm25_rank`, `dense_rank`, `rrf_score`, and optional raw `semantic_similarity`. RRF and semantic values are not probabilities or similarity percentages. The API also returns `shared_concepts`, `distinctive_terms`, and a retrieval `explanation`; all are deterministic text-derived evidence. The API does not claim independent source verification.
+
+For bounds, provider-state details, environment configuration, and snapshot evaluation, see [Live Search](LIVE_SEARCH.md).

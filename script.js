@@ -3,13 +3,11 @@
  *
  * - Follows the agreed POST /search contract (request: { idea, top_k }).
  * - Vanilla JS, safe DOM construction (no HTML injection from data).
- * - Demo scenarios use fixed fixtures and are always labelled as demo data.
+ * - Offline mode queries the local historical dataset; live mode queries external providers.
  * - Every request is tracked: switching mode or starting a new search
  *   cancels/ignores any older in-flight request, so stale results never render.
  * - Internal retrieval scores and sub-ranks are never displayed; only the ordered rank number is.
  */
-
-import { MOCK_SCENARIOS, cloneFixture } from './mockData.js';
 
 // ---------------------------------------------------------------------------
 // Configuration
@@ -18,7 +16,7 @@ const API_BASE_URL = String(
   (typeof window !== 'undefined' && window.IDEA_ENHANCER_API_BASE_URL) || 'http://localhost:8000'
 ).replace(/\/+$/, '');
 // A cold vector search may load the embedding model and build a local index.
-const REQUEST_TIMEOUT_MS = 120000;
+const REQUEST_TIMEOUT_MS = 180000;
 const MIN_IDEA_CHARS = 10;
 const MAX_IDEA_CHARS = 2000;
 const DEFAULT_TOP_K = 5;
@@ -44,7 +42,7 @@ const VERIFICATION_LABELS = {
 let activeRequest = null;   // { id, controller, mode, timedOut, cancelled }
 let requestCounter = 0;
 let cardSeq = 0;
-let liveStatus = 'idle';    // 'idle' | 'ok' | 'failed' — only meaningful in live mode
+let liveStatus = 'idle';    // 'idle' | complete/partial/degraded/no_candidates | 'failed'
 
 // ---------------------------------------------------------------------------
 // DOM references
@@ -65,8 +63,8 @@ const dataSourceSelect = $('data-source-select');
 const headerModeDot = $('header-mode-dot');
 const modeStatusPill = $('mode-status-pill');
 const modeStatusText = $('mode-status-text');
-const mockNoticeBanner = $('mock-notice-banner');
-const mockFixtureQuery = $('mock-fixture-query');
+const modeDescription = $('mode-description');
+const offlineDatasetNotice = $('offline-dataset-notice');
 
 const clientValidationError = $('client-validation-error');
 const clientValidationText = $('client-validation-text');
@@ -82,6 +80,9 @@ const resultsQuery = $('results-query');
 const matchesList = $('matches-list');
 const noMatchesBanner = $('no-matches-banner');
 const noMatchesMessage = $('no-matches-message');
+const providerStatus = $('provider-status');
+const recurringEvidence = $('recurring-evidence');
+const recurringEvidenceList = $('recurring-evidence-list');
 
 // ---------------------------------------------------------------------------
 // Small helpers
@@ -112,11 +113,7 @@ function isHttpUrl(value) {
 }
 
 function currentMode() {
-  return dataSourceSelect ? dataSourceSelect.value : 'mock-success';
-}
-
-function isMockMode(mode) {
-  return typeof mode === 'string' && mode.startsWith('mock-');
+  return dataSourceSelect ? dataSourceSelect.value : 'offline';
 }
 
 class SearchError extends Error {
@@ -214,20 +211,14 @@ const TONES = {
 
 function updateModeIndicators() {
   const mode = currentMode();
-  let tone = TONES.amber;
-  let text = 'Demo data — not real results';
-
-  if (!isMockMode(mode)) {
-    if (liveStatus === 'ok') {
-      tone = TONES.green;
-      text = 'Live search — results from the backend';
-    } else if (liveStatus === 'failed') {
-      tone = TONES.rose;
-      text = 'Live search — last request failed';
-    } else {
-      tone = TONES.indigo;
-      text = 'Live search selected — not yet contacted';
-    }
+  let tone = mode === 'offline' ? TONES.amber : TONES.indigo;
+  let text = mode === 'offline' ? 'Offline Demo — local historical records' : 'Live Research — OpenAlex + GitHub';
+  if (mode === 'live' && liveStatus === 'failed') {
+    tone = TONES.rose;
+    text = 'Live Research — last request failed';
+  } else if (mode === 'live' && ['complete', 'partial', 'degraded', 'no_candidates'].includes(liveStatus)) {
+    tone = liveStatus === 'complete' ? TONES.green : TONES.amber;
+    text = `Live Research — ${liveStatus.replace('_', ' ')}`;
   }
 
   modeStatusPill.className = `${PILL_BASE} ${tone.pill}`;
@@ -237,6 +228,11 @@ function updateModeIndicators() {
   }
   modeStatusText.textContent = text;
   if (headerModeDot) headerModeDot.className = `w-2 h-2 rounded-full ${tone.dot}`;
+  if (modeDescription) {
+    modeDescription.textContent = mode === 'live'
+      ? 'Live Research sends your idea text to OpenAlex and GitHub to discover papers and repositories.'
+      : 'Offline Demo searches the local historical project dataset through this local API.';
+  }
 }
 
 /**
@@ -278,8 +274,11 @@ function clearResults() {
   noMatchesMessage.textContent = '';
   resultsQuery.classList.add('hidden');
   resultsQuery.textContent = '';
-  mockNoticeBanner.classList.add('hidden');
-  mockFixtureQuery.textContent = '';
+  offlineDatasetNotice.classList.add('hidden');
+  providerStatus.classList.add('hidden');
+  providerStatus.textContent = '';
+  recurringEvidence.classList.add('hidden');
+  recurringEvidenceList.replaceChildren();
   resultsSummary.textContent = 'Search results';
 }
 
@@ -354,21 +353,15 @@ async function handleFormSubmit(event) {
 
   const idea = ideaInput.value.trim();
 
-  // Demo error scenarios replay a fixed error regardless of the typed idea,
-  // so they are exempt from client-side length checks (otherwise unreachable).
-  const replaysFixedError = mode === 'mock-val-error' || mode === 'mock-server-error';
-
-  if (!replaysFixedError) {
-    if (idea.length < MIN_IDEA_CHARS) {
-      showClientValidationError(`Your description needs at least ${MIN_IDEA_CHARS} characters (currently ${idea.length}).`);
-      ideaInput.focus();
-      return;
-    }
-    if (idea.length > MAX_IDEA_CHARS) {
-      showClientValidationError(`Your description must not exceed ${MAX_IDEA_CHARS} characters (currently ${idea.length}).`);
-      ideaInput.focus();
-      return;
-    }
+  if (idea.length < MIN_IDEA_CHARS) {
+    showClientValidationError(`Your description needs at least ${MIN_IDEA_CHARS} characters (currently ${idea.length}).`);
+    ideaInput.focus();
+    return;
+  }
+  if (idea.length > MAX_IDEA_CHARS) {
+    showClientValidationError(`Your description must not exceed ${MAX_IDEA_CHARS} characters (currently ${idea.length}).`);
+    ideaInput.focus();
+    return;
   }
 
   const { value: topK, notice: topKNotice } = normalizeTopK(topKInput.value);
@@ -390,16 +383,15 @@ async function handleFormSubmit(event) {
     if (req.cancelled || activeRequest !== req) return;
 
     const parsed = parseSuccessPayload(data, topK);
-    if (!isMockMode(mode)) liveStatus = 'ok';
+    if (mode === 'live') liveStatus = parsed.searchState || 'complete';
     renderSuccess(parsed, { mode, idea, topK, clientNotices });
   } catch (error) {
     if (req.cancelled || activeRequest !== req) return;
-    if (!isMockMode(mode)) liveStatus = 'failed';
+    if (mode === 'live') liveStatus = 'failed';
     clearResults();
     showWarnings(clientNotices);
     const text = describeError(error);
-    // A simulated error must never read like a real outage.
-    showErrorBanner(isMockMode(mode) && !/^demo/i.test(text) ? `Demo scenario (simulated): ${text}` : text);
+    showErrorBanner(text);
   } finally {
     if (activeRequest === req) {
       activeRequest = null;
@@ -410,39 +402,10 @@ async function handleFormSubmit(event) {
 }
 
 // ---------------------------------------------------------------------------
-// API adapter: POST /search (live) or fixed demo scenario
+// API adapter: local historical search or external live research search
 // ---------------------------------------------------------------------------
-function delay(ms, signal) {
-  return new Promise((resolve, reject) => {
-    if (signal.aborted) {
-      reject(new DOMException('Aborted', 'AbortError'));
-      return;
-    }
-    const t = setTimeout(() => {
-      signal.removeEventListener('abort', onAbort);
-      resolve();
-    }, ms);
-    function onAbort() {
-      clearTimeout(t);
-      reject(new DOMException('Aborted', 'AbortError'));
-    }
-    signal.addEventListener('abort', onAbort, { once: true });
-  });
-}
-
 async function fetchSearch(req, idea, topK) {
-  const scenario = MOCK_SCENARIOS[req.mode];
-
-  if (scenario) {
-    await delay(scenario.delay, req.controller.signal);
-    const payload = scenario.build ? scenario.build(topK) : cloneFixture(scenario.payload);
-    if (scenario.kind === 'error') {
-      throw errorFromResponse(scenario.status, payload);
-    }
-    return payload;
-  }
-
-  if (req.mode !== 'live') {
+  if (req.mode !== 'live' && req.mode !== 'offline') {
     throw new SearchError('Unknown search mode selected.', 'malformed');
   }
 
@@ -454,7 +417,8 @@ async function fetchSearch(req, idea, topK) {
   try {
     let res;
     try {
-      res = await fetch(`${API_BASE_URL}/search`, {
+      const route = req.mode === 'live' ? '/live-search' : '/search';
+      res = await fetch(`${API_BASE_URL}${route}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({ idea, top_k: topK }),
@@ -568,6 +532,10 @@ function parseSuccessPayload(data, topK) {
   if (data.result_count !== data.matches.length) throw bad();
   if (!Array.isArray(data.warnings) || !data.warnings.every((w) => typeof w === 'string')) throw bad();
   if (data.message !== null && data.message !== undefined && typeof data.message !== 'string') throw bad();
+  const allowedSearchStates = ['complete', 'partial', 'degraded', 'no_candidates', 'unavailable'];
+  if (data.search_state !== undefined && !allowedSearchStates.includes(data.search_state)) throw bad();
+  if (data.providers !== undefined && !isPlainObject(data.providers)) throw bad();
+  if (data.recurring_evidence !== undefined && !Array.isArray(data.recurring_evidence)) throw bad();
 
   const notices = [];
   const usable = data.matches.filter(
@@ -594,7 +562,10 @@ function parseSuccessPayload(data, topK) {
     matches,
     message: nonEmptyString(data.message) ? data.message.trim() : null,
     warnings: [...notices, ...serverWarnings],
-    fixtureQuery: nonEmptyString(data.query) ? data.query : null
+    searchState: data.search_state || null,
+    providers: isPlainObject(data.providers) ? data.providers : null,
+    rankingMode: nonEmptyString(data.ranking_mode) ? data.ranking_mode : null,
+    recurringEvidence: Array.isArray(data.recurring_evidence) ? data.recurring_evidence : []
   };
 }
 
@@ -602,36 +573,66 @@ function parseSuccessPayload(data, topK) {
 // Rendering
 // ---------------------------------------------------------------------------
 function renderSuccess(parsed, { mode, idea, clientNotices }) {
-  const isMock = isMockMode(mode);
-
   showWarnings([...clientNotices, ...parsed.warnings]);
+  offlineDatasetNotice.classList.toggle('hidden', mode !== 'offline');
+  const shown = idea.length > 160 ? `${idea.slice(0, 157)}…` : idea;
+  resultsQuery.textContent = `Results for: “${shown}”`;
+  resultsQuery.classList.remove('hidden');
 
-  if (isMock) {
-    mockFixtureQuery.textContent = parsed.fixtureQuery ? `Sample idea in this fixture: “${parsed.fixtureQuery}”.` : '';
-    mockNoticeBanner.classList.remove('hidden');
-    resultsQuery.classList.add('hidden');
-  } else {
-    mockNoticeBanner.classList.add('hidden');
-    const shown = idea.length > 160 ? `${idea.slice(0, 157)}…` : idea;
-    resultsQuery.textContent = `Results for: “${shown}”`;
-    resultsQuery.classList.remove('hidden');
-  }
+  renderProviderStatus(parsed);
+  renderRecurringEvidence(parsed.recurringEvidence);
 
   const count = parsed.matches.length;
   matchesList.replaceChildren();
 
   if (count === 0) {
-    resultsSummary.textContent = 'No search results returned';
-    noMatchesMessage.textContent = parsed.message || 'No records were returned from the current search.';
+    resultsSummary.textContent = 'No candidates returned';
+    noMatchesMessage.textContent = parsed.message || (mode === 'live' && parsed.searchState === 'partial'
+      ? 'The sources that responded returned no candidates; one or more other sources were unavailable.'
+      : mode === 'live'
+        ? 'The live sources returned no candidates for this query.'
+        : 'The local historical dataset returned no candidates for this query.');
     noMatchesBanner.classList.remove('hidden');
   } else {
     noMatchesBanner.classList.add('hidden');
-    resultsSummary.textContent = `${count} similar project${count === 1 ? '' : 's'} found`;
-    parsed.matches.forEach((m, i) => matchesList.appendChild(buildMatchCard(m, i, isMock)));
+    resultsSummary.textContent = mode === 'live'
+      ? `${count} live research candidate${count === 1 ? '' : 's'} found`
+      : `${count} historical project match${count === 1 ? '' : 'es'} found`;
+    parsed.matches.forEach((m, i) => matchesList.appendChild(buildMatchCard(m, i, mode)));
   }
 
   resultsContainer.classList.remove('hidden');
   resultsSummary.focus({ preventScroll: false });
+}
+
+function renderProviderStatus(parsed) {
+  if (!parsed.providers) {
+    providerStatus.classList.add('hidden');
+    return;
+  }
+  const labels = { success: 'results returned', empty: 'no candidates', timeout: 'timed out', rate_limited: 'rate limited', authentication_error: 'authentication failed', configuration_error: 'configuration issue', invalid_response: 'invalid response', network_error: 'network unavailable', upstream_error: 'temporarily unavailable' };
+  const rows = Object.entries(parsed.providers).map(([name, value]) => {
+    const state = isPlainObject(value) && typeof value.state === 'string' ? value.state : 'upstream_error';
+    const count = isPlainObject(value) && Number.isInteger(value.count) ? ` (${value.count})` : '';
+    return `${name === 'openalex' ? 'OpenAlex' : name === 'github' ? 'GitHub' : name}: ${labels[state] || 'status unknown'}${count}`;
+  });
+  const rankingLabels = { hybrid_rrf: 'hybrid', bm25_only: 'keyword only', not_run: 'not run' };
+  providerStatus.textContent = `Source status: ${rows.join(' · ')}${parsed.rankingMode ? ` · Ranking: ${rankingLabels[parsed.rankingMode] || 'unknown'}` : ''}`;
+  providerStatus.classList.remove('hidden');
+}
+
+function renderRecurringEvidence(items) {
+  recurringEvidenceList.replaceChildren();
+  const valid = items.filter((item) => isPlainObject(item) && nonEmptyString(item.term) && Number.isInteger(item.candidate_count) && item.candidate_count >= 2);
+  if (!valid.length) {
+    recurringEvidence.classList.add('hidden');
+    return;
+  }
+  valid.forEach((item) => {
+    const li = el('li', 'px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 border border-indigo-200 text-xs font-medium', `${item.term} · ${item.candidate_count} candidates`);
+    recurringEvidenceList.appendChild(li);
+  });
+  recurringEvidence.classList.remove('hidden');
 }
 
 function buildBadge(label, tone) {
@@ -663,7 +664,7 @@ function buildTagSection(label, items, tagClass) {
   return section;
 }
 
-function buildMatchCard(match, index, isMock) {
+function buildMatchCard(match, index, mode) {
   const card = el('li', 'surface-card rounded-2xl p-5 sm:p-6 bg-white flex flex-col gap-4 animate-fade-in-up min-w-0');
 
   // Header: rank, title, meta, verification
@@ -678,9 +679,14 @@ function buildMatchCard(match, index, isMock) {
   titleBox.appendChild(el('h3', 'text-lg sm:text-xl font-bold text-slate-900 leading-snug tracking-tight break-words', nonEmptyString(match.title) ? match.title.trim() : 'Untitled project record'));
 
   const meta = el('div', 'flex flex-wrap items-center gap-x-2 gap-y-1 mt-1.5 text-sm text-slate-600');
-  if (!isMock && nonEmptyString(match.source_type)) {
+  if (nonEmptyString(match.source_type)) {
     const label = SOURCE_LABELS[match.source_type] || match.source_type;
-    meta.appendChild(el('span', 'font-semibold text-slate-700 bg-slate-100 px-2 py-0.5 rounded text-xs border border-slate-300', label));
+    const kindTone = match.source_type === 'research_paper'
+      ? 'text-violet-800 bg-violet-50 border-violet-200'
+      : match.source_type === 'open_source_repository'
+        ? 'text-sky-800 bg-sky-50 border-sky-200'
+        : 'text-slate-700 bg-slate-100 border-slate-300';
+    meta.appendChild(el('span', `font-semibold px-2 py-0.5 rounded text-xs border ${kindTone}`, label));
   }
   if (nonEmptyString(match.domain)) meta.appendChild(el('span', 'font-medium', match.domain));
   if (typeof match.year === 'number' && Number.isFinite(match.year)) meta.appendChild(el('span', null, String(match.year)));
@@ -692,11 +698,7 @@ function buildMatchCard(match, index, isMock) {
 
   const status = VERIFICATION_LABELS[match.verification_status];
   const statusWrap = el('div', 'shrink-0');
-  if (isMock) {
-    statusWrap.appendChild(buildBadge('Illustrative demo record', 'neutral'));
-  } else {
-    statusWrap.appendChild(status ? buildBadge(status.text, status.tone) : buildBadge('Not verified', 'neutral'));
-  }
+  statusWrap.appendChild(status ? buildBadge(status.text, status.tone) : buildBadge('Text overlap not checked', 'neutral'));
 
   header.appendChild(titleGroup);
   header.appendChild(statusWrap);
@@ -704,7 +706,7 @@ function buildMatchCard(match, index, isMock) {
 
   // Do not display the dataset's placeholder as if it were a project description.
   const description = nonEmptyString(match.description_excerpt) ? match.description_excerpt.trim() : '';
-  if (/^description not independently verified\.?$/i.test(description)) {
+  if (mode === 'offline' && /^description not independently verified\.?$/i.test(description)) {
     const notice = el('div', 'result-excerpt border-l-4 border-indigo-400 p-3.5 sm:p-4 rounded-r-xl');
     notice.appendChild(el(
       'p',
@@ -716,6 +718,8 @@ function buildMatchCard(match, index, isMock) {
     const excerpt = el('div', 'result-excerpt border-l-4 border-indigo-400 p-3.5 sm:p-4 rounded-r-xl');
     excerpt.appendChild(el('p', 'text-sm sm:text-base text-slate-800 leading-relaxed break-words', description));
     card.appendChild(excerpt);
+  } else {
+    card.appendChild(el('p', 'text-sm text-slate-600 italic', 'The source did not provide a description or abstract.'));
   }
 
   // Shared concepts stay visible: they are the quickest way to see why a record is related.
@@ -723,39 +727,69 @@ function buildMatchCard(match, index, isMock) {
     ? buildTagSection('Shared concepts', match.shared_elements, 'bg-amber-50 text-amber-900 border border-amber-300')
     : null;
   if (shared) card.appendChild(shared);
+  if (nonEmptyString(match.explanation)) {
+    const explanation = el('div', 'rounded-xl bg-indigo-50/70 border border-indigo-100 p-3 text-sm text-indigo-950');
+    explanation.appendChild(el('span', 'font-semibold', 'Why it appeared: '));
+    explanation.appendChild(document.createTextNode(match.explanation));
+    card.appendChild(explanation);
+  }
 
   // Secondary information (technologies, source) sits behind a disclosure control.
   const detailsId = `match-details-${++cardSeq}`;
   const details = el('div', 'flex flex-col gap-3 pt-3 border-t border-slate-200 text-sm');
 
   const tech = Array.isArray(match.technologies)
-    ? buildTagSection('Technologies', match.technologies, 'bg-slate-100 text-slate-800 border border-slate-300')
+    ? buildTagSection(match.candidate_type === 'repository' ? 'Programming language' : 'Technologies', match.technologies, 'bg-slate-100 text-slate-800 border border-slate-300')
     : null;
   if (tech) {
     details.appendChild(tech);
   }
+  const topicsSection = Array.isArray(match.topics)
+    ? buildTagSection('Repository topics', match.topics, 'bg-slate-100 text-slate-800 border border-slate-300')
+    : null;
+  if (topicsSection) details.appendChild(topicsSection);
+  if (Array.isArray(match.authors) && match.authors.length) details.appendChild(el('p', 'text-sm text-slate-700', `Authors: ${match.authors.join(', ')}`));
+  if (nonEmptyString(match.owner)) details.appendChild(el('p', 'text-sm text-slate-700', `Repository owner: ${match.owner}`));
+  if (nonEmptyString(match.venue)) details.appendChild(el('p', 'text-sm text-slate-700', `Publication venue: ${match.venue}`));
+  if (nonEmptyString(match.work_type)) details.appendChild(el('p', 'text-sm text-slate-700', `Work type: ${match.work_type}`));
+  if (nonEmptyString(match.doi)) details.appendChild(el('p', 'text-sm text-slate-700 break-all', `DOI: ${match.doi}`));
+  if (Number.isInteger(match.citation_count)) details.appendChild(el('p', 'text-sm text-slate-700', `Citations reported by OpenAlex: ${match.citation_count}`));
+  if (nonEmptyString(match.publication_date)) details.appendChild(el('p', 'text-sm text-slate-700', `Publication date: ${match.publication_date}`));
+  if (nonEmptyString(match.repository_created_at)) details.appendChild(el('p', 'text-sm text-slate-700', `Repository created: ${match.repository_created_at.slice(0, 10)}`));
+  if (nonEmptyString(match.repository_pushed_at)) details.appendChild(el('p', 'text-sm text-slate-700', `Last pushed: ${match.repository_pushed_at.slice(0, 10)}`));
+  if (Number.isInteger(match.stars)) details.appendChild(el('p', 'text-sm text-slate-700', `Stars: ${match.stars}`));
+  if (Number.isInteger(match.forks)) details.appendChild(el('p', 'text-sm text-slate-700', `Forks: ${match.forks}`));
+  if (nonEmptyString(match.license_name)) details.appendChild(el('p', 'text-sm text-slate-700', `License: ${match.license_name}`));
+  if (typeof match.open_access === 'boolean') details.appendChild(el('p', 'text-sm text-slate-700', match.open_access ? 'Open access: yes' : 'Open access: no'));
+  if (typeof match.archived === 'boolean') details.appendChild(el('p', 'text-sm text-slate-700', match.archived ? 'Repository archived: yes' : 'Repository archived: no'));
+  if (Array.isArray(match.distinctive_terms) && match.distinctive_terms.length) {
+    const distinctive = buildTagSection('Other terms in this record', match.distinctive_terms, 'bg-slate-50 text-slate-700 border border-slate-200');
+    if (distinctive) details.appendChild(distinctive);
+  }
+  const retrievalRanks = [];
+  if (Number.isInteger(match.bm25_rank)) retrievalRanks.push(`keyword rank ${match.bm25_rank}`);
+  if (Number.isInteger(match.dense_rank)) retrievalRanks.push(`semantic rank ${match.dense_rank}`);
+  if (retrievalRanks.length) details.appendChild(el('p', 'text-xs text-slate-500', `Internal ranking signals: ${retrievalRanks.join(' · ')}. Ranks explain ordering and are not probabilities.`));
 
   const sourceRow = el('div', 'flex flex-col gap-1');
   sourceRow.appendChild(el('span', 'text-xs font-bold text-slate-700 uppercase tracking-wider', 'Source'));
   const sourceVal = el('div', 'text-slate-800');
-  if (isMock) {
-    sourceVal.appendChild(el('span', 'italic text-slate-700', 'Illustrative demo record — not a real source and not verified.'));
+  const label = nonEmptyString(match.source_provider)
+    ? (match.source_provider === 'openalex' ? 'OpenAlex' : match.source_provider === 'github' ? 'GitHub' : match.source_provider)
+    : (nonEmptyString(match.source_type) ? (SOURCE_LABELS[match.source_type] || match.source_type) : null);
+  if (label) sourceVal.appendChild(el('span', 'font-medium mr-3', label));
+  if (isHttpUrl(match.source_url)) {
+    const link = el('a', 'inline-flex items-center gap-1 text-indigo-700 hover:text-indigo-900 underline underline-offset-2 font-semibold break-all', 'Open original source');
+    link.href = match.source_url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.appendChild(el('span', 'sr-only', ' (opens in a new tab)'));
+    const arrow = el('span', null, '↗');
+    arrow.setAttribute('aria-hidden', 'true');
+    link.appendChild(arrow);
+    sourceVal.appendChild(link);
   } else {
-    const label = nonEmptyString(match.source_type) ? (SOURCE_LABELS[match.source_type] || match.source_type) : null;
-    if (label) sourceVal.appendChild(el('span', 'font-medium mr-3', label));
-    if (isHttpUrl(match.source_url)) {
-      const link = el('a', 'inline-flex items-center gap-1 text-indigo-700 hover:text-indigo-900 underline underline-offset-2 font-semibold break-all', 'Open source URL');
-      link.href = match.source_url;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.appendChild(el('span', 'sr-only', ' (opens in a new tab)'));
-      const arrow = el('span', null, '↗');
-      arrow.setAttribute('aria-hidden', 'true');
-      link.appendChild(arrow);
-      sourceVal.appendChild(link);
-    } else {
-      sourceVal.appendChild(el('span', 'italic text-slate-600', 'No public source link available'));
-    }
+    sourceVal.appendChild(el('span', 'italic text-slate-600', 'No safe source link was provided'));
   }
   sourceRow.appendChild(sourceVal);
   details.appendChild(sourceRow);

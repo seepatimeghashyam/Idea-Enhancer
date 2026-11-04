@@ -99,10 +99,12 @@ class VectorRetrieverTests(unittest.TestCase):
 
     def test_embedding_model_uses_environment_configuration(self) -> None:
         calls: list[str] = []
+        devices: list[str] = []
 
         class FakeSentenceTransformer:
-            def __init__(self, model_name: str) -> None:
+            def __init__(self, model_name: str, device: str = "cpu") -> None:
                 calls.append(model_name)
+                devices.append(device)
 
         fake_module = type(sys)("sentence_transformers")
         fake_module.SentenceTransformer = FakeSentenceTransformer
@@ -113,6 +115,7 @@ class VectorRetrieverTests(unittest.TestCase):
                 retriever._get_embedder()
 
         self.assertEqual(calls, ["synthetic/test-model"])
+        self.assertEqual(devices, ["cpu"])
 
     def test_indexing_known_synthetic_records_and_retrieval(self) -> None:
         records = [

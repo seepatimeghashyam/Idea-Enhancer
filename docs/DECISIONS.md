@@ -110,6 +110,20 @@ All decisions here have been explicitly approved by the project owner. Planned o
 
 ---
 
+## Decision 009: Independent Live Research Mode
+
+- **Decision ID:** D-009
+- **Date:** 2026-11-04
+- **Question:** How can the independent MVP add external research while preserving historical search?
+- **Decision:** Keep `POST /search` as the offline historical dataset contract and add a separate `POST /live-search` path. Live mode queries OpenAlex Works and GitHub Repository Search concurrently, normalizes provider results, and reranks a bounded in-memory candidate pool with BM25, BAAI/bge-small-en-v1.5 dense embeddings, and RRF.
+- **Reason:** Separate routes prevent external-provider failure from silently returning local demo records, preserve existing API consumers, and allow provider states and candidate metadata to remain explicit.
+- **Affected files/modules:** `src/live_search/`, `src/main.py`, `index.html`, `script.js`, `docs/LIVE_SEARCH.md`, API and architecture documentation.
+- **Failure behavior:** Provider failure is typed and visible. One successful provider yields partial results. Both unavailable yields HTTP 503. Dense-model failure yields explicitly degraded BM25-only results. Successful empty provider results remain empty results.
+- **Scope:** One bounded query per provider per search; no persistent external index, cache, LLM, source-code crawling, or full-text paper retrieval. Human-labelled fixed snapshots are required before claiming rank-quality improvements.
+- **Approved by:** Shyam (independent MVP assignment authorization, 2026-11-04).
+
+---
+
 ## Decision 007: Canonical Dataset Schema
 
 - **Decision ID:** D-007

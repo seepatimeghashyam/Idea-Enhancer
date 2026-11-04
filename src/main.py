@@ -20,6 +20,7 @@ from src.search_gateway import (
     SearchOutcome,
     UnavailableCoreSearchGateway,
 )
+from src.live_search.service import LiveSearchService, LiveSearchUnavailable
 
 MIN_IDEA_LENGTH = 10
 MAX_IDEA_LENGTH = 2000
@@ -118,12 +119,7 @@ def validate_search_payload(payload: Any) -> tuple[str, int, list[str]]:
 
 
 def format_match(record: Mapping[str, Any]) -> dict[str, Any]:
-    """Map a Core Search record to the committed public API fields.
-
-    The Core Search handoff is still pending. This formatter accepts both the
-    canonical data names (``abstract``, ``tech_stack``) and their public API
-    equivalents so that the future adapter can be kept small.
-    """
+    """Map a Core Search record to the stable public API field names."""
 
     technologies = record.get("technologies")
     if technologies is None and record.get("tech_stack"):
@@ -161,8 +157,12 @@ def success_response(query: str, outcome: SearchOutcome, warnings: list[str]) ->
     }
 
 
-def create_app(search_gateway: SearchGateway | None = None) -> FastAPI:
+def create_app(
+    search_gateway: SearchGateway | None = None,
+    live_search_service: LiveSearchService | None = None,
+) -> FastAPI:
     """Create an app with an injectable search boundary for tests and integration."""
+    live_service = live_search_service or LiveSearchService()
 
     @asynccontextmanager
     async def lifespan(_app: FastAPI):
@@ -175,7 +175,11 @@ def create_app(search_gateway: SearchGateway | None = None) -> FastAPI:
                 pass
             if os.getenv("IDEA_ENHANCER_WARMUP", "1") != "0":
                 threading.Thread(target=warm_up_search, name="search-warm-up", daemon=True).start()
-        yield
+        await live_service.start()
+        try:
+            yield
+        finally:
+            await live_service.close()
 
     app = FastAPI(title="Idea Enhancer API", lifespan=lifespan)
     # The frontend runs on a different local port during development.
@@ -218,6 +222,74 @@ def create_app(search_gateway: SearchGateway | None = None) -> FastAPI:
             )
 
         return JSONResponse(status_code=200, content=success_response(query, outcome, warnings))
+
+    @app.post("/live-search")
+    async def live_search(payload: Any = Body(None)) -> JSONResponse:
+        try:
+            query, top_k, warnings = validate_search_payload(payload)
+        except ContractValidationError as error:
+            return error_response(422, "VALIDATION_ERROR", str(error), error.details)
+
+        try:
+            outcome = await live_service.search(query, top_k)
+        except LiveSearchUnavailable as error:
+            logger.warning("Live research search unavailable for all providers")
+            return JSONResponse(
+                status_code=503,
+                content={
+                    "status": "error",
+                    "error_code": "LIVE_SEARCH_UNAVAILABLE",
+                    "message": "Live research sources are temporarily unavailable. Please try again shortly.",
+                    "details": {"providers": error.providers},
+                },
+            )
+        except Exception:
+            logger.exception("Live research search failed")
+            return error_response(
+                500,
+                "SEARCH_FAILED",
+                "An internal error occurred while processing the search. Please try again.",
+            )
+
+        matches = []
+        for match in outcome.matches:
+            candidate_type = match.get("candidate_type")
+            publication_date = match.get("publication_date")
+            publication_year = match.get("publication_year")
+            year = publication_year if isinstance(publication_year, int) else None
+            programming_language = match.get("programming_language")
+            shared = match.get("shared_concepts", [])
+            matches.append({
+                **match,
+                "project_id": match.get("candidate_id"),
+                "description_excerpt": match.get("description") or "",
+                "source_type": "research_paper" if candidate_type == "paper" else "open_source_repository",
+                "year": year,
+                "domain": None,
+                "technologies": [programming_language] if isinstance(programming_language, str) and programming_language else None,
+                "vector_rank": match.get("dense_rank"),
+                "shared_elements": shared,
+                "verification_status": "checked" if shared else "insufficient",
+                "publication_date": publication_date,
+            })
+        return JSONResponse(status_code=200, content={
+            "status": "success",
+            "search_state": outcome.state,
+            "query": query,
+            "result_count": len(matches),
+            "matches": matches,
+            "message": (
+                "No live candidates were returned from the configured research sources."
+                if outcome.state == "no_candidates"
+                else "The sources that responded returned no candidates; one or more other sources were unavailable."
+                if outcome.state == "partial" and not matches
+                else None
+            ),
+            "providers": outcome.providers,
+            "ranking_mode": outcome.ranking_mode,
+            "warnings": [*warnings, *outcome.warnings],
+            "recurring_evidence": list(outcome.recurring_evidence),
+        })
 
     return app
 
