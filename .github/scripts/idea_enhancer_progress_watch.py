@@ -325,7 +325,7 @@ def call_gemini(prompt: str, api_key: str, model: str) -> dict[str, Any]:
         "systemInstruction": {"parts": [{"text": SYSTEM_INSTRUCTION}]},
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {
-            "temperature": 0.15,
+            "thinkingConfig": {"thinkingLevel": "low"},
             "maxOutputTokens": MAX_OUTPUT_TOKENS,
             "responseMimeType": "application/json",
             "responseSchema": RESPONSE_SCHEMA,
@@ -343,9 +343,9 @@ def call_gemini(prompt: str, api_key: str, model: str) -> dict[str, Any]:
     )
 
     last_error = "unknown error"
-    for attempt in range(2):
+    for attempt in range(3):
         try:
-            with urlopen(request, timeout=90) as response:
+            with urlopen(request, timeout=180) as response:
                 result = json.loads(response.read().decode("utf-8"))
             candidates = result.get("candidates") or []
             if not candidates:
@@ -361,7 +361,7 @@ def call_gemini(prompt: str, api_key: str, model: str) -> dict[str, Any]:
             return parsed
         except HTTPError as error:
             last_error = f"Gemini API returned HTTP {error.code}"
-            if error.code not in {429, 500, 502, 503, 504} or attempt == 1:
+            if error.code not in {429, 500, 502, 503, 504} or attempt == 2:
                 break
             retry_after = error.headers.get("Retry-After") if error.headers else None
             try:
@@ -371,9 +371,9 @@ def call_gemini(prompt: str, api_key: str, model: str) -> dict[str, Any]:
             time.sleep(delay)
         except (URLError, TimeoutError) as error:
             last_error = f"Gemini API network/timeout error: {getattr(error, 'reason', str(error))}"
-            if attempt == 1:
+            if attempt == 2:
                 break
-            time.sleep(2)
+            time.sleep(min(3 * (2 ** attempt), 15))
         except (json.JSONDecodeError, KeyError, TypeError, RuntimeError) as error:
             last_error = str(error)
             break
