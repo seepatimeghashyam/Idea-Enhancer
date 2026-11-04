@@ -1,5 +1,6 @@
 import importlib.util
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 SCRIPT = Path(__file__).parents[1] / ".github" / "scripts" / "idea_enhancer_progress_watch.py"
@@ -106,6 +107,48 @@ class ProgressWatchTests(unittest.TestCase):
         self.assertIn("did not run the test suite", body)
         self.assertIn(f"idea-enhancer-progress-watch:{sha}", body)
         self.assertIn("@seepatimeghashyam", body)
+
+
+    def test_gemini_uses_low_thinking_and_retries_a_read_timeout(self):
+        class FakeResponse:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                return False
+
+            def read(self):
+                return (
+                    b'{"candidates":[{"content":{"parts":[{"text":"'
+                    b'\\"notify\\":false,'
+                    b'\\"category\\":\\"none\\",'
+                    b'\\"title\\":\\"Routine\\",'
+                    b'\\"summary\\":\\"No milestone.\\",'
+                    b'\\"significance\\":\\"Routine changes.\\",'
+                    b'\\"evidence\\":[],'
+                    b'\\"verification_note\\":\\"No notification.\\",'
+                    b'\\"confidence\\":0.2'
+                    b'}"}]}}]}'
+                )
+
+        with patch.object(
+            progress_watch,
+            "urlopen",
+            side_effect=[TimeoutError("read operation timed out"), FakeResponse()],
+        ) as mocked_urlopen, patch.object(progress_watch.time, "sleep"):
+            result = progress_watch.call_gemini(
+                "test prompt", "test-api-key", "gemini-3.8-flash"
+            )
+
+        self.assertFalse(result["notify"])
+        self.assertEqual(mocked_urlopen.call_count, 2)
+        request = mocked_urlopen.call_args_list[0].args[0]
+        request_body = __import__("json").loads(request.data.decode("utf-8"))
+        self.assertEqual(
+            request_body["generationConfig"]["thinkingConfig"]["thinkingLevel"],
+            "low",
+        )
+        self.assertNotIn("temperature", request_body["generationConfig"])
 
 
 if __name__ == "__main__":
