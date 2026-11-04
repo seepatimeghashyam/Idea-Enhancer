@@ -118,18 +118,24 @@ class ProgressWatchTests(unittest.TestCase):
                 return False
 
             def read(self):
-                return (
-                    b'{"candidates":[{"content":{"parts":[{"text":"'
-                    b'\\"notify\\":false,'
-                    b'\\"category\\":\\"none\\",'
-                    b'\\"title\\":\\"Routine\\",'
-                    b'\\"summary\\":\\"No milestone.\\",'
-                    b'\\"significance\\":\\"Routine changes.\\",'
-                    b'\\"evidence\\":[],'
-                    b'\\"verification_note\\":\\"No notification.\\",'
-                    b'\\"confidence\\":0.2'
-                    b'}"}]}}]}'
-                )
+                payload = {
+                    "notify": False,
+                    "category": "none",
+                    "title": "Routine",
+                    "summary": "No milestone.",
+                    "significance": "Routine changes.",
+                    "evidence": [],
+                    "verification_note": "No notification.",
+                    "confidence": 0.2,
+                }
+                response = {
+                    "candidates": [{
+                        "content": {
+                            "parts": [{"text": __import__("json").dumps(payload)}]
+                        }
+                    }]
+                }
+                return __import__("json").dumps(response).encode("utf-8")
 
         with patch.object(
             progress_watch,
