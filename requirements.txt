@@ -1,0 +1,2 @@
+# Dependencies for Idea Enhancer - OpenAlex API Connector
+requests>=2.31.0
