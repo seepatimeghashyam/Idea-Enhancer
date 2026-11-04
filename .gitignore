@@ -218,3 +218,10 @@ __marimo__/
 .streamlit/secrets.toml
 # ChromaDB local storage
 chroma_db/
+
+# Git bundle backups
+*.bundle
+
+# Operating system artifacts
+.DS_Store
+Thumbs.db

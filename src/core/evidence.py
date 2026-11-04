@@ -32,10 +32,15 @@ def _evidence_terms(text: str) -> list[str]:
     return result
 
 
-def inspect_evidence(query: str, record: ProjectRecord) -> Evidence:
+def inspect_evidence(
+    query: str,
+    record: ProjectRecord,
+    query_terms: list[str] | None = None,
+) -> Evidence:
     """Return exact meaningful token overlap drawn only from approved content fields."""
 
-    query_terms = _evidence_terms(query)
+    if query_terms is None:
+        query_terms = _evidence_terms(query)
     record_terms = set(_evidence_terms(build_search_text(record)))
     shared = [term for term in query_terms if term in record_terms]
     return Evidence(
