@@ -26,6 +26,7 @@ MAX_PATCH_PER_FILE = 5_000
 MAX_TOTAL_PATCH_CHARS = 36_000
 MAX_OUTPUT_TOKENS = 1_400
 NOTIFY_CONFIDENCE = 0.72
+MARKDOWN_TICK = chr(96)
 
 # These paths are never sent to the model. The file's path and change counts
 # remain visible, but the content is withheld.
@@ -460,9 +461,9 @@ def build_report_body(
     commit_lookup = {commit["sha"]: commit for commit in commits}
     for item in assessment["evidence"]:
         commit = commit_lookup[item["commit_sha"]]
-        path = item["file"].replace("\`", "\\\`")
+        path = item["file"].replace(MARKDOWN_TICK, "\\" + MARKDOWN_TICK)
         lines.append(
-            f"- [\`{commit['short_sha']}\`]({commit['url']}) · \`{path}\` — {item['detail']}"
+            f"- [{MARKDOWN_TICK}{commit['short_sha']}{MARKDOWN_TICK}]({commit['url']}) · {MARKDOWN_TICK}{path}{MARKDOWN_TICK} — {item['detail']}"
         )
     lines.extend([
         "",
@@ -474,8 +475,8 @@ def build_report_body(
         "evidence that the test passed.",
         "",
         f"**Repository:** [{repo}](https://github.com/{repo})  ",
-        f"**Branch:** \`{branch}\`  ",
-        f"**Push range:** \`{before[:12]}\` → [\`{after[:12]}\`](https://github.com/{repo}/commit/{after})",
+        f"**Branch:** {MARKDOWN_TICK}{branch}{MARKDOWN_TICK}  ",
+        f"**Push range:** {MARKDOWN_TICK}{before[:12]}{MARKDOWN_TICK} → [{MARKDOWN_TICK}{after[:12]}{MARKDOWN_TICK}](https://github.com/{repo}/commit/{after})",
         "",
         f"**Actions run:** [View analysis run](https://github.com/{repo}/actions/runs/{os.environ.get('GITHUB_RUN_ID', '')}/attempts/{os.environ.get('GITHUB_RUN_ATTEMPT', '1')})  ",
         "",
@@ -547,9 +548,9 @@ def deliver_github_notification(
 
     initial_body = (
         "This is the persistent log for meaningful milestones and significant blockers on "
-        f"\`{TARGET_BRANCH}\`. The workflow checks every push, but posts only when its evidence-based "
+        f"{MARKDOWN_TICK}{TARGET_BRANCH}{MARKDOWN_TICK}. The workflow checks every push, but posts only when its evidence-based "
         "review meets the notification threshold. Close this issue to pause notifications; reopening it "
-        "resumes delivery.\\n\\n---\\n\\n"
+        "resumes delivery.\n\n---\n\n"
         + report_body
     )
     result = github_api_request(
@@ -567,7 +568,7 @@ def write_step_summary(text: str) -> None:
     if not path:
         return
     with open(path, "a", encoding="utf-8") as handle:
-        handle.write(text.rstrip() + "\\n")
+        handle.write(text.rstrip() + "\n")
 
 
 def main() -> int:
@@ -640,7 +641,7 @@ def main() -> int:
                 f"Category={assessment['category']}, confidence={assessment['confidence']:.2f}."
             )
             write_step_summary(
-                "## Progress Watch\\n\\nNo notification was created for this push. "
+                "## Progress Watch\n\nNo notification was created for this push. "
                 "The changes did not meet the configured evidence and confidence threshold."
             )
             return 0
@@ -648,8 +649,8 @@ def main() -> int:
         report_body = build_report_body(repo, TARGET_BRANCH, before, after, commits, assessment)
         notification_url = deliver_github_notification(repo, gh_token, report_body, after, assessment)
         write_step_summary(
-            "## Progress Watch\\n\\n"
-            f"Meaningful change detected: **{assessment['title']}**\\n\\n"
+            "## Progress Watch\n\n"
+            f"Meaningful change detected: **{assessment['title']}**\n\n"
             f"Notification: {notification_url}"
         )
         return 0
