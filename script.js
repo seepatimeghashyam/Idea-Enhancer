@@ -241,9 +241,13 @@ function updateModeIndicators() {
   modeStatusText.textContent = text;
   if (headerModeDot) headerModeDot.className = `w-2 h-2 rounded-full ${tone.dot}`;
   if (modeDescription) {
-    modeDescription.textContent = mode === 'live'
-      ? 'Live Research sends your idea text to OpenAlex and GitHub to discover papers and repositories. See the privacy note by the idea field.'
-      : 'Offline Demo searches the local historical project dataset through this local API.';
+    const liveMode = mode === 'live';
+    modeDescription.className = liveMode
+      ? 'mt-3 max-w-xl rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-sm text-indigo-950'
+      : 'mt-3 max-w-xl rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-950';
+    modeDescription.textContent = liveMode
+      ? 'Live Research sends your idea text to OpenAlex and GitHub to find papers and repositories. Do not submit confidential or personally sensitive information. See the privacy note by the idea field.'
+      : 'Offline Demo searches the local historical project dataset through this API. It does not send your idea to OpenAlex or GitHub.';
   }
   const privacyNotice = $('privacy-notice');
   if (privacyNotice) privacyNotice.classList.toggle('hidden', mode !== 'live');

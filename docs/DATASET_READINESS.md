@@ -24,7 +24,7 @@ The validator's warnings are prompts for human review. It does not delete record
 
 ## Remaining work outside the smoke test
 
-1. Verify a sample of each source type against its linked source and confirm the intended reuse conditions.
+1. Project-owner review task: check five records from each source type (15 total) against their linked source. For each, record whether the source supports the displayed title and description, and mark reuse status as clear, unclear, or not permitted. Keep notes separate from the CSV; this sample is a triage step, not proof that the whole dataset is verified.
 2. Build a small, human-labeled query/relevance set and evaluate BM25, vector search, and RRF before making relevance or uniqueness claims.
 3. Decide how records with unverified institutional descriptions should be surfaced to users; do not invent replacement summaries.
 4. Make dataset updates reproducible and retain source snapshots and audit artifacts when provenance permits.

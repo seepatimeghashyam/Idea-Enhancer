@@ -34,7 +34,7 @@ Student → Frontend → FastAPI
 | Layer | Technology | Status |
 |---|---|---|
 | Frontend | HTML5, Tailwind CSS, vanilla JavaScript | Implemented; demo/live modes and light/dark theme |
-| Backend / API | Python, FastAPI | Implemented; POST /search and POST /live-search |
+| Backend / API | Python, FastAPI | Implemented; GET /health liveness, POST /search, and POST /live-search |
 | Keyword retrieval | BM25 via rank-bm25 | Implemented |
 | Semantic retrieval | ChromaDB with BAAI/bge-small-en-v1.5 embeddings | Implemented; local model and index required |
 | Ranking fusion | Reciprocal Rank Fusion (RRF) | Implemented |

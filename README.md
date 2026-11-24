@@ -9,7 +9,7 @@ Idea Enhancer helps engineering students evaluate proposed project ideas against
 - Dense ranking uses `BAAI/bge-small-en-v1.5` when available. If the model cannot load, live results are explicitly marked as keyword-only degraded results; if both providers fail, live search returns unavailable and never falls back to historical records.
 - The supplied conservative search-ready dataset is installed at `data/historical_projects.csv`. Its quality limitations are documented in [Dataset Readiness](docs/DATASET_READINESS.md).
 - A sun/moon control switches between the warm light theme and ambient dark theme.
-- Candidate metadata and source links are shown only when returned by a provider. Search order is not a similarity percentage, originality guarantee, or verification of source claims.
+- Live Research tells users before submission that their idea is sent to OpenAlex and GitHub; Offline Demo states that it does not send the query to those providers. Candidate metadata and source links are shown only when returned by a provider. Search order is not a similarity percentage, originality guarantee, or verification of source claims.
 - LLM-generated recommendations remain deferred.
 
 ## Run locally
@@ -52,5 +52,6 @@ Run tests with:
 - [API contract](docs/API_CONTRACT.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Decision log](docs/DECISIONS.md)
+- [Operations, quotas, workflow data flow, and staging checklist](docs/OPERATIONS.md)
 
 RRF values are ordering values, not similarity percentages. Dataset records and their source URLs still require source-level review before results are described as independently verified.

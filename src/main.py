@@ -242,6 +242,11 @@ def create_app(
     )
     gateway = search_gateway or CoreSearchGateway()
 
+    @app.get("/health", tags=["operations"])
+    def health() -> dict[str, str]:
+        """Report process liveness without checking providers, indexes, or models."""
+        return {"status": "ok"}
+
     @app.exception_handler(RequestValidationError)
     def handle_request_validation_error(_request: Any, exc: RequestValidationError) -> JSONResponse:
         return error_response(

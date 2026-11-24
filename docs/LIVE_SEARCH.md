@@ -27,6 +27,12 @@ python -m http.server 5500
 
 Open `http://localhost:5500` and select **Live Research · OpenAlex + GitHub**. Live mode requires internet access to both provider APIs. The first semantic query can also download `BAAI/bge-small-en-v1.5` (384-dimensional output); this model is cached by Sentence Transformers after download.
 
+## Privacy and GitHub query construction
+
+When Live Research is selected, the browser sends the submitted idea to this API, which forwards it to OpenAlex and GitHub. The interface warns users before submission and advises against entering confidential or personally sensitive information. Each provider's own data-handling policies apply; this project makes no claim about provider retention.
+
+GitHub repository search uses up to ten deterministic, distinctive terms extracted from the idea instead of sending the full sentence. URLs, common filler words, duplicate terms, and GitHub boolean operators are excluded. The provider still makes one bounded request and returns the same candidate fields. This is an unmeasured query-construction heuristic; more results would not by itself prove better recall or relevance. Compare it with the existing fixed-snapshot workflow and human labels before making quality claims.
+
 ## Configuration
 
 | Variable | Default | Purpose |
@@ -61,7 +67,7 @@ The current BM25 text construction repeats the title three times and the descrip
 
 Provider states distinguish results, empty success, timeout, rate limiting, authentication/configuration failure, invalid response, network failure, and upstream failure. Overall states are `complete`, `partial`, `degraded`, `no_candidates`, and `unavailable`. If both sources fail, the endpoint returns HTTP 503. If one source works, its results remain available with `partial` status. Empty success is not treated as a provider failure. Live search has no historical-data fallback.
 
-Provider requests are concurrent and bounded to one search per provider, at most 25 candidates per provider, 50 total candidates, a 12-second total timeout per attempt, at most one retry, a 2 MiB decoded response body per provider request, and a maximum of 20 returned matches. Redirects are not followed. Embedding batches are capped at 50 texts, with each model input capped at 8,000 characters and batches encoded in chunks of 16. Search text is capped, and provider text is rendered as text in the browser. External source links are accepted only when they are HTTPS URLs with a valid public host and no embedded credentials.
+Provider requests are concurrent and bounded to one search per provider, at most 25 candidates per provider, 50 total candidates, a 12-second total timeout per attempt, at most one retry, a 2 MiB decoded response body per provider request, and a maximum of 20 returned matches. Redirects are not followed. Embedding batches are capped at 50 texts, with each model input capped at 8,000 characters and batches encoded in chunks of 16. Search text is capped, and provider text is rendered as text in the browser. External source links are accepted only when they are HTTPS URLs with a valid public host and no embedded credentials. The service caps concurrent live searches at four per process; it has no per-caller request quota. For shared deployments, apply request limits at a trusted hosting edge rather than relying on arbitrary forwarded IP headers.
 
 ## Offline Demo
 
