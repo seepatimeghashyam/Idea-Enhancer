@@ -55,6 +55,10 @@ Unavailable responses use a generic client-safe message; the API logs the underl
 
 ---
 
+## `GET /health` — Process liveness
+
+Returns `200` with `{"status":"ok"}` while the FastAPI process is serving requests. This liveness response does not contact OpenAlex or GitHub and does not verify the offline index or embedding model. No readiness endpoint is provided; do not interpret `/health` as proof that search dependencies are warm or available.
+
 ## `POST /search`
 
 Search the indexed project database for ideas related to the submitted text.
