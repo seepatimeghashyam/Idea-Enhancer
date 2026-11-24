@@ -16,7 +16,7 @@ from fastapi.testclient import TestClient
 
 from src.live_search.contracts import CandidateRecord, ProviderResult
 from src.live_search.http import MAX_PROVIDER_RESPONSE_BYTES, _retry_after_seconds
-from src.live_search.providers import GitHubProvider, OpenAlexProvider, _safe_url, reconstruct_abstract
+from src.live_search.providers import GitHubProvider, OpenAlexProvider, _github_search_terms, _safe_url, reconstruct_abstract
 from src.live_search.retrieval import DenseUnavailable, _rrf_fuse, rank_candidates
 from src.live_search.service import LiveSearchService, LiveSearchUnavailable
 from src.main import create_app, configured_cors_origins
@@ -105,6 +105,33 @@ def test_openalex_provider_maps_paper_fields_and_preserves_unknowns() -> None:
         assert paper.source_url == "https://publisher.example/paper"
         assert paper.repository_created_at is None
         assert paper.owner is None
+
+    asyncio.run(scenario())
+
+
+def test_github_query_uses_bounded_keywords_instead_of_the_full_idea() -> None:
+    idea = (
+        "Develop an IoT-based crop disease detection system using Raspberry Pi and CNNs "
+        "to monitor foliar infections in real time. language:python OR fork:true"
+    )
+    terms = _github_search_terms(idea)
+    assert terms == ["iot-based", "crop", "disease", "detection", "raspberry", "pi", "cnns", "monitor", "foliar", "infections"]
+    assert len(_github_search_terms(" ".join(f"keyword{index}" for index in range(30)))) == 10
+    assert all(":" not in term for term in terms)
+
+    async def scenario() -> None:
+        requests: list[httpx.Request] = []
+
+        async def handler(request: httpx.Request) -> httpx.Response:
+            requests.append(request)
+            return httpx.Response(200, json={"items": []})
+
+        async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
+            result = await GitHubProvider().search(idea, client, 4)
+        assert result.state == "empty"
+        assert len(requests) == 1
+        assert requests[0].url.params["q"] == "iot-based crop disease detection raspberry pi cnns monitor foliar infections in:name,description,readme"
+        assert requests[0].url.params["per_page"] == "4"
 
     asyncio.run(scenario())
 
