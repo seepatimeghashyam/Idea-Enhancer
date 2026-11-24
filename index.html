@@ -272,7 +272,7 @@
               rows="5"
               placeholder="e.g. An IoT-based crop disease detection system using Raspberry Pi and CNNs to monitor foliar infections in real time..."
               required
-              aria-describedby="idea-hint char-count client-validation-text"
+              aria-describedby="idea-hint privacy-notice char-count client-validation-text"
               class="w-full bg-[#FAF9F6] text-slate-900 text-base border border-slate-300 rounded-2xl p-4 placeholder:text-slate-500 focus:bg-white focus:border-indigo-600 focus:ring-4 focus:ring-indigo-100 focus:outline-none transition-all resize-y leading-relaxed font-normal shadow-inner"
             ></textarea>
             
@@ -292,6 +292,10 @@
                 </button>
               </div>
             </div>
+
+            <p id="privacy-notice" class="hidden rounded-xl border border-indigo-200 bg-indigo-50 px-3.5 py-3 text-xs leading-relaxed text-indigo-950" role="note">
+              <span class="font-semibold">Live Research shares your idea text with OpenAlex and GitHub</span> to find related papers and repositories. These are external services, and Idea Enhancer does not control how they handle submitted queries. Use Offline Demo for searches that should stay within the local historical dataset.
+            </p>
 
             <!-- Client-Side Validation Alert Box -->
             <div id="client-validation-error" class="hidden mt-3 p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-700 font-medium flex items-center gap-2" role="alert">

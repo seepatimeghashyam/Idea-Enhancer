@@ -1,0 +1,1032 @@
+Bro, first, let's separate two things: your ChatGPT subscription is ending; Idea Enhancer is not ending.
+
+You have already done a substantial amount of work. I don't want you to abandon it just because you cannot pay for an AI coding assistant right now. We need to change our working method, not abandon the project.
+
+And I want to make this a proper handover document—something you can save and follow even when you no longer have access to this conversation.
+
+# Idea Enhancer — Long-term development roadmap
+
+# Project baseline
+
+Existing implementation preserved
+
+Repository: `seepatimeghashyam/Idea-Enhancer`
+
+Working branch: `solo/independent-mvp`
+
+Last verified commit: `9c0ad39`
+
+Relationship to main: 10 commits ahead, 0 behind; not merged.
+
+Existing foundation: HTML, Tailwind, JavaScript, FastAPI, BM25, BGE embeddings, ChromaDB, RRF, OpenAlex and GitHub integrations.
+
+Verified against the GitHub repository on November 6, 2026. No newer pushed changes were visible in this check.
+
+## 1. First priority: preserve the project
+
+Before implementing anything else, create a safe recovery point. This is the most important work to do before your subscription expires.
+
+Do these steps on your laptop:
+
+1. Open the project repository locally.
+2. Confirm you are on `solo/independent-mvp`.
+3. Check `git status`.
+4. Commit any legitimate unfinished work only after reviewing the changes.
+5. Push the branch to GitHub.
+6. Create a local backup of the whole project, including its Git history.
+
+Suggested commands:
+
+```
+git status
+git branch --show-current
+git log -5 --oneline
+git remote -v
+```
+
+Once your working tree is clean:
+
+```
+git push origin solo/independent-mvp
+```
+
+Create a portable Git backup:
+
+```
+git bundle create idea-enhancer-backup.bundle --all
+```
+
+Verify the backup:
+
+```
+git bundle verify idea-enhancer-backup.bundle
+```
+
+Keep the backup outside the project folder.
+
+Important: Do not blindly reset, rebase or merge anything. Your `main` branch is protected, and the independent MVP should remain isolated until we have a reason to merge it.
+
+## 2. You do not need paid subscriptions for the core development
+
+This is important: none of the main search components requires Codex, Claude or a paid LLM API to run.
+
+| Component          | No-cost development route                               | Important limitation                             |
+| ------------------ | ------------------------------------------------------- | ------------------------------------------------ |
+| Frontend           | VS Code, HTML, Tailwind and JavaScript                  | Browser testing remains manual                   |
+| Backend            | Local Python 3.12 and FastAPI                           | Requires local dependency setup                  |
+| BM25               | Existing local implementation                           | Quality depends on query and data                |
+| BGE embeddings     | Run the existing model locally                          | First download and model loading can be slow     |
+| ChromaDB           | Local persistent storage                                | Index rebuilding needs to be controlled          |
+| GitHub discovery   | Public GitHub Search API                                | Search quota applies                             |
+| Academic discovery | OpenAlex API                                            | Daily and per-second usage limits apply          |
+| Testing            | Local pytest and GitHub Actions                         | CI still needs to be implemented                 |
+| Code assistance    | Manual coding, documentation and optional free AI tools | Free AI quotas and model availability can change |
+
+A few useful current details:
+
+- GitHub Actions standard hosted runners are free and unlimited for public repositories. That means we can add full-project CI without paying for a coding subscription.&#x20;
+
+  [image](https://www.google.com/s2/favicons?domain=https://docs.github.com\&sz=32)
+
+  GitHub Docs+1
+
+- GitHub's repository search endpoint has a separate search quota: up to 10 unauthenticated requests per minute and 30 authenticated requests per minute. The ordinary REST API also has its own limits.&#x20;
+
+  [image](https://www.google.com/s2/favicons?domain=https://docs.github.com\&sz=32)
+
+  GitHub Docs+1
+
+- OpenAlex supports basic free API use without a key. Its current documentation also describes a free API key with a $1 daily usage budget and a higher request rate.&#x20;
+
+  [image](https://www.google.com/s2/favicons?domain=https://help.openalex.org\&sz=32)
+
+  OpenAlex Help Center+1
+
+- Google's Gemini API offers a free tier for selected models, but access and rate limits vary. Its free-tier data-use terms also matter, so do not send private data or secrets to it.&#x20;
+
+  [image](https://www.google.com/s2/favicons?domain=https://ai.google.dev\&sz=32)
+
+  ai.google.dev+1
+
+
+
+My rule for the project from now on:
+
+An AI coding assistant may help write the code, but the project must never depend on one to run, test or maintain itself.
+
+For local development, VS Code's Python tooling supports virtual environments, package installation and debugging without requiring an AI subscription.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://code.visualstudio.com\&sz=32)
+
+code.visualstudio.com+1
+
+
+
+## 3. The development roadmap, in the correct order
+
+I would divide the remaining work into nine phases. Each has a specific objective, implementation work, a completion condition and a failure-handling strategy.
+
+## 4. Detailed implementation roadmap
+
+# IDEA ENHANCER
+
+## Long-Term Development & Maintenance Roadmap
+
+**Repository:** `seepatimeghashyam/Idea-Enhancer`\
+**Active development branch:** `solo/independent-mvp`\
+**Baseline commit:** `9c0ad39`\
+**Main branch:** `fe48696`\
+**Development principle:** Free-first, local-first, measurable and reproducible.
+
+---
+
+# PHASE 0 — Project Preservation and Handover
+
+### Objective
+
+Make sure development can resume at any time, even after losing access to paid coding assistants.
+
+### Tasks
+
+1. Verify the current Git branch.
+2. Check for uncommitted or unpushed work.
+3. Push all reviewed work to `solo/independent-mvp`.
+4. Create a complete Git bundle backup.
+5. Keep a separate copy of important local configuration.
+6. Make sure `.env`, API keys and other credentials are not committed.
+7. Record the current commit SHA and the Python version used.
+
+### Commands
+
+```
+git status
+git branch --show-current
+git log -5 --oneline
+git push origin solo/independent-mvp
+git bundle create idea-enhancer-backup.bundle --all
+git bundle verify idea-enhancer-backup.bundle
+```
+
+### Completion condition
+
+- Remote branch is up to date.
+- Local backup has been verified.
+- No credentials are exposed.
+- A teammate can clone the repository and understand where development stopped.
+
+### Possible problems
+
+| Problem                          | Response                                                                                            |
+| -------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Uncommitted changes              | Review each file before staging.                                                                    |
+| Push rejected                    | Fetch and inspect the remote changes; don't force-push.                                             |
+| Git bundle fails                 | Check disk space and Git repository integrity.                                                      |
+| `.env` accidentally committed    | Revoke exposed keys immediately, then remove the secret from the repository history as appropriate. |
+| Local and remote branches differ | Compare commits before deciding which changes to preserve.                                          |
+
+---
+
+# PHASE 1 — Reproducible Development Environment and CI
+
+### Objective
+
+Ensure the project can be installed, executed and tested without an AI coding assistant.
+
+### 1.1 Establish the development environment
+
+Use Python 3.12 as the target environment, subject to a successful clean installation.
+
+Windows PowerShell:
+
+```
+py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+If PowerShell blocks environment activation, use a temporary process-level execution-policy change rather than weakening the machine-wide policy.
+
+```
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
+Then verify:
+
+```
+python --version
+python -m pip check
+```
+
+### 1.2 Establish the current test baseline
+
+Run:
+
+```
+python -m pytest tests -q
+python -m compileall -q src scripts
+```
+
+For JavaScript, run a syntax check using the appropriate ES-module mode for `script.js` and `config.js`.
+
+The previous review reported 217 passing tests. Repeat the suite locally and retain the actual result as the new baseline.
+
+### 1.3 Add full-project GitHub Actions CI
+
+Create a separate workflow, for example:
+
+`.github/workflows/ci.yml`
+
+It should:
+
+- Run on pushes to development branches.
+- Run on pull requests.
+- Install the supported Python version.
+- Install project dependencies.
+- Run the full pytest suite.
+- Run Python compilation checks.
+- Run JavaScript syntax checks.
+- Report failures clearly.
+
+Important: do not make the Gemini progress-watch workflow a dependency of the project's testing pipeline.
+
+The progress-watch system is optional monitoring. CI is mandatory project validation.
+
+For CI, do not download the complete BGE model on every ordinary test run. Test model-dependent paths with mocks where appropriate, and conduct a separate real-model smoke test.
+
+### 1.4 Dependency reproducibility
+
+Once the clean environment works:
+
+- Record the supported Python version.
+- Pin direct and transitive dependencies.
+- Prefer a generated lockfile with hashes.
+- Test fresh installation using that lockfile.
+- Document how to update dependencies safely.
+
+Do not blindly pin whatever happens to exist in a developer's global Python environment.
+
+### Completion condition
+
+A fresh local installation succeeds and the complete test suite runs. Every relevant push produces a CI result.
+
+---
+
+# PHASE 2 — First Human-Labelled Search Benchmark
+
+### Objective
+
+Determine how good the existing retrieval system actually is.
+
+This is the next major product milestone.
+
+### 2.1 Approve the query catalogue
+
+Review:
+
+`data/evaluation/queries.example.json`
+
+It currently contains 15 engineering queries across 15 topical areas.
+
+Start with a three-query pilot using:
+
+- `network-anomaly-lab`
+- `crop-irrigation-advisor`
+- `road-damage-vision`
+
+The pilot is only for verifying the evaluation process. It is not the final benchmark.
+
+Keep the original 15-query catalogue unchanged unless a reviewed update is necessary.
+
+### 2.2 Capture real results
+
+Use:
+
+```
+python scripts/capture_live_snapshot.py \
+  data/evaluation/queries.example.json \
+  --output data/evaluation/captures/run-YYYY-MM-DD.json
+```
+
+Use a new filename every time. The capture utility refuses to overwrite existing captures.
+
+The current design captures up to:
+
+- 25 OpenAlex candidates per query.
+- 25 GitHub repository candidates per query.
+
+For 15 queries, that is a theoretical maximum of 750 candidate records.
+
+Actual counts will probably be lower.
+
+**Quota consideration:** If using unauthenticated GitHub Search, be mindful of the 10-request-per-minute search limit. Use a free authenticated token stored locally or introduce request pacing before running a full capture. Never put that token in the frontend.
+
+### 2.3 Export annotations
+
+```
+python scripts/export_live_annotations.py \
+  data/evaluation/captures/run-YYYY-MM-DD.json \
+  --output data/evaluation/annotations/run-YYYY-MM-DD.csv
+```
+
+The annotation sheet must remain neutral. It should not expose ranking scores or positions to reviewers.
+
+### 2.4 Human grading
+
+Use the existing 0–3 rubric:
+
+| Grade | Interpretation        |
+| ----- | --------------------- |
+| 0     | Not relevant          |
+| 1     | Weakly related        |
+| 2     | Substantially related |
+| 3     | Highly relevant       |
+
+Every candidate must receive an explicit grade.
+
+Do not leave blanks for candidates believed to be irrelevant. Use grade 0.
+
+Record a short rationale and confidence level.
+
+For team-based evaluation, assign a primary reviewer to each candidate and have another reviewer independently assess a sample. Record disagreements separately; the current annotation schema does not automatically identify multiple reviewers.
+
+### 2.5 Build the reviewed snapshot
+
+```
+python scripts/build_reviewed_snapshot.py \
+  data/evaluation/captures/run-YYYY-MM-DD.json \
+  data/evaluation/annotations/run-YYYY-MM-DD.csv \
+  --output data/evaluation/reviewed/run-YYYY-MM-DD.json
+```
+
+The builder rejects incomplete or inconsistent annotations.
+
+### 2.6 Generate the evaluation report
+
+```
+python scripts/evaluate_live_search.py \
+  data/evaluation/reviewed/run-YYYY-MM-DD.json
+```
+
+Also run the BM25-only mode:
+
+```
+python scripts/evaluate_live_search.py \
+  data/evaluation/reviewed/run-YYYY-MM-DD.json \
+  --bm25-only
+```
+
+Compare:
+
+- Provider-native ranking.
+- BM25.
+- BGE dense retrieval.
+- Hybrid RRF.
+
+Metrics:
+
+- Precision\@5.
+- Recall\@10.
+- nDCG\@10.
+- MRR\@10.
+
+### Interpretation rules
+
+- Empty provider response is not the same as a failed provider.
+- Provider failure is not a collection of irrelevant results.
+- No positive labels means meaningful relevance metrics cannot be calculated.
+- If BGE fails, do not report BM25 fallback as dense retrieval.
+- The benchmark measures candidates discovered in the captured pool, not every relevant project on the internet.
+
+### Completion condition
+
+The first reviewed benchmark report exists, is reproducible and contains no automatically generated relevance labels.
+
+---
+
+# PHASE 3 — GitHub Discovery Quality Improvement
+
+### Objective
+
+Improve the number and relevance of repositories discovered by GitHub Search.
+
+### Existing issue
+
+The current GitHub adapter sends almost the entire idea sentence as a single search query.
+
+This can cause poor retrieval and can exceed GitHub's documented search-query length limit discussed in the earlier code review.
+
+### 3.1 Preserve the current implementation as baseline
+
+Before changing anything:
+
+- Keep the existing search-query behaviour.
+- Capture baseline results.
+- Record candidate counts and provider states.
+- Do not modify BM25, BGE or RRF.
+
+### 3.2 Build deterministic query extraction
+
+Create a local query-construction component.
+
+It should identify and preserve:
+
+- Main problem or application domain.
+- Relevant hardware.
+- Programming languages and frameworks.
+- Technical approaches.
+- Named algorithms, models and protocols.
+- Important acronyms.
+
+It should remove unnecessary conversational words such as "I want to build", "create a system", and "develop a solution".
+
+Example:
+
+Input:
+
+> Build a low-cost system that combines vibration and temperature sensors to identify early signs of failure in small factory motors and notify maintenance staff.
+
+Possible compact query:
+
+`motor predictive maintenance vibration temperature sensors`
+
+This is an experiment, not a guaranteed improvement.
+
+### 3.3 Implement query validation
+
+The generated GitHub search text must:
+
+- Stay comfortably below the documented query limit.
+- Exclude unsupported or malformed syntax.
+- Keep important technical terms intact.
+- Preserve the original idea separately.
+- Avoid silently dropping critical concepts.
+
+Keep the GitHub API qualifiers separate from the generated keyword text.
+
+### 3.4 Compare search strategies
+
+Evaluate:
+
+A. Original full-sentence query.
+
+B. Compact extracted keyword query.
+
+C. A compact phrase retaining the main application and technologies.
+
+Use the same idea catalogue and similar capture conditions.
+
+### Important evaluation gap
+
+The existing evaluation system compares ranking methods over one captured candidate pool. It does not, by itself, prove that a new query strategy discovered more relevant candidates.
+
+Therefore, add a discovery comparison workflow that:
+
+1. Preserves the candidate pools from both strategies.
+2. Identifies common candidates.
+3. Identifies candidates unique to either strategy.
+4. Combines candidates into a reviewed union for human grading.
+5. Measures relevant candidates discovered by each strategy.
+6. Records API failures and provider quotas separately.
+
+Do not compare only raw result counts. More results do not necessarily mean better discovery.
+
+### Completion condition
+
+The new GitHub query strategy demonstrates measurable improvements against the baseline without sacrificing important relevant results.
+
+---
+
+# PHASE 4 — Retrieval and Ranking Refinement
+
+### Objective
+
+Improve the ranking of candidates after discovery quality has been measured.
+
+### 4.1 BM25
+
+Investigate:
+
+- Tokenization.
+- Technical compound terms.
+- Acronyms.
+- Technology names.
+- Repeated terms.
+- Stopword treatment.
+- Candidate-description quality.
+
+Do not add arbitrary keyword weights without an evaluation reason.
+
+### 4.2 Dense retrieval
+
+Investigate:
+
+- Model loading behaviour.
+- Text preprocessing.
+- Embedding normalization.
+- Batch processing.
+- Empty or missing descriptions.
+- Similarity calculations.
+- CPU fallback.
+
+Do not replace BGE merely because another embedding model is fashionable.
+
+Any alternative must be compared using the same query and annotation set.
+
+### 4.3 Reciprocal Rank Fusion
+
+After baseline evaluation:
+
+- Inspect how BM25 and dense rankings complement each other.
+- Test RRF parameters systematically.
+- Compare results per topical slice.
+- Retain the original ranking as a baseline.
+- Record every parameter change.
+
+### 4.4 Relevance thresholds
+
+Do not introduce a rejection threshold until the benchmark provides evidence.
+
+Test different thresholds offline first.
+
+Measure:
+
+- Relevant results lost.
+- Weak results removed.
+- Queries with zero results.
+- Behaviour across different domains.
+
+### Completion condition
+
+A documented ranking configuration is better supported by human-labelled evidence than the original configuration.
+
+---
+
+# PHASE 5 — Backend Reliability and API Protection
+
+### Objective
+
+Make Live Research dependable when multiple users submit ideas.
+
+### Implement the following
+
+**1. Caching**
+
+Cache normalized provider responses.
+
+Suggested starting policy:
+
+- GitHub repository results: short configurable TTL.
+- OpenAlex research records: longer configurable TTL.
+- Include normalized query, provider, adapter version and relevant configuration in the cache key.
+
+Avoid serving the same query to multiple concurrent requests by making duplicate in-flight requests share the same provider operation.
+
+A local SQLite-backed cache is a reasonable initial no-cost option for a single-instance deployment.
+
+**2. Rate limiting**
+
+Implement:
+
+- Per-client request limits.
+- Global provider request budgets.
+- Protection against rapid repeated submissions.
+- A maximum number of concurrent provider calls.
+
+Do not trust arbitrary client-supplied `X-Forwarded-For` headers. Only use forwarded client information from a trusted proxy configuration.
+
+**3. Error and retry handling**
+
+- Respect `Retry-After`.
+- Use bounded exponential backoff with jitter for transient failures.
+- Do not repeatedly retry invalid requests or invalid credentials.
+- Keep provider states distinguishable.
+- Preserve partial success.
+
+**4. Health endpoint**
+
+Introduce `/health` with a small, stable response.
+
+Distinguish application availability from the availability of external providers.
+
+**5. Structured logs**
+
+Include:
+
+- Request ID.
+- Endpoint.
+- Provider status.
+- Provider latency.
+- Cache hit/miss.
+- Error category.
+- Ranking mode.
+
+Do not log the full submitted project idea by default.
+
+**6. Privacy disclosure**
+
+Before Live Research submission, communicate that the idea is sent to OpenAlex and GitHub for search.
+
+Do not promise that submitted data is never stored unless that has been verified.
+
+### Completion condition
+
+The backend protects shared API quotas, reports failures correctly and handles repeat requests efficiently.
+
+---
+
+# PHASE 6 — Historical Dataset Verification
+
+### Objective
+
+Make Offline Demo results trustworthy and traceable.
+
+Current dataset readiness documentation reports:
+
+- 1,998 total records.
+- 510 institutional records with placeholder descriptions.
+- 1,786 records with empty technology-stack fields.
+- 505 institutional records sharing a KSCST PDF URL.
+- Two retraction-related records excluded from the search-ready dataset.
+
+### Tasks
+
+1. Verify representative records against their linked sources.
+2. Review source terms and reuse conditions.
+3. Record source provenance.
+4. Identify descriptions that are placeholders.
+5. Distinguish missing metadata from a negative claim.
+6. Preserve the audit trail.
+7. Review retraction-related exclusions.
+8. Create a reproducible dataset update process.
+
+### Data presentation rules
+
+- Never present placeholder descriptions as official abstracts.
+- Never invent technology stacks.
+- Never treat repeated URLs as proof of duplicate projects.
+- Do not claim that all records are independently verified.
+- Avoid distributing source text if the relevant reuse permission is unclear.
+
+If permissions are not established, consult the project supervisor and consider limiting the public display to appropriately sourced metadata and links.
+
+### Completion condition
+
+Every displayed dataset field has a known provenance or an explicit unverified/unknown state.
+
+---
+
+# PHASE 7 — Startup Performance and Local Index Management
+
+### Objective
+
+Avoid unnecessary model loading and vector-index rebuilding.
+
+### Tasks
+
+1. Inspect the ChromaDB initialization and collection lifecycle.
+2. Determine why and when the existing code rebuilds the index.
+3. Define an index fingerprint using:
+   - Dataset content hash.
+   - Embedding model identifier.
+   - Embedding dimension.
+   - Index schema version.
+4. Reuse the existing index when its fingerprint matches.
+5. Rebuild only when the dataset or model configuration changes.
+6. Avoid deleting an existing valid index before the replacement is successfully built.
+7. Test interrupted index creation.
+8. Test application restart and recovery.
+9. Keep the live-search model configuration separate from offline search configuration.
+
+### Failure scenarios
+
+- BGE cannot download: use explicitly labelled BM25-only degraded mode.
+- CUDA out of memory: retry with CPU or smaller embedding batches.
+- Index is incomplete: verify its fingerprint and rebuild safely.
+- Dataset changed: invalidate the old index through a controlled rebuild.
+- Model version changed: rebuild embeddings; do not silently mix model versions.
+
+### Completion condition
+
+Repeated server restarts do not unnecessarily rebuild a valid local index.
+
+---
+
+# PHASE 8 — Frontend and User Experience Finalisation
+
+### Objective
+
+Make search results understandable without misrepresenting what the system knows.
+
+### Tasks
+
+1. Distinguish Offline Demo and Live Research clearly.
+2. Distinguish no results from provider failure.
+3. Display partial provider availability.
+4. Show source type and useful metadata.
+5. Keep original provider URLs visible.
+6. Explain the evidence behind matches.
+7. Make degraded BM25-only mode visible.
+8. Improve accessibility and keyboard navigation.
+9. Test mobile and desktop layouts.
+10. Replace the Tailwind Play CDN setup with built CSS.
+11. Configure production security headers.
+12. Ensure the deployed frontend points to the actual HTTPS backend.
+
+### Product presentation policy
+
+Do not show invented similarity percentages.
+
+Do not call the system a plagiarism detector.
+
+Do not claim that a project idea is original simply because no matching record was retrieved.
+
+I recommend hiding raw keyword rank and dense rank from ordinary users while preserving them for development diagnostics.
+
+### Privacy notice example
+
+"Live Research sends your project description to external research and repository search services, including OpenAlex and GitHub. Do not submit confidential or personally sensitive information."
+
+### Completion condition
+
+A student can understand the results, their sources and the limits of the search without needing a technical explanation.
+
+---
+
+# PHASE 9 — Controlled Demonstration and Deployment
+
+### Objective
+
+Produce a stable, demonstrable version of the project.
+
+### First target: local demonstration
+
+Do this before public deployment.
+
+- Install from a clean environment.
+- Start the FastAPI backend.
+- Start the static frontend.
+- Verify Offline Demo.
+- Verify Live Research.
+- Test provider partial failure.
+- Test no-result responses.
+- Test degraded BM25-only mode.
+- Test a long idea input.
+- Test a repeat query.
+- Restart the application and verify index reuse.
+
+### Second target: deployment
+
+Only after local validation:
+
+- Host the frontend separately.
+- Run the Python backend in a persistent container.
+- Configure HTTPS.
+- Configure exact CORS origins.
+- Store tokens as server-side secrets.
+- Add health checks.
+- Configure logs.
+- Protect quotas with cache and rate limits.
+- Confirm the deployment host's actual free-tier restrictions.
+
+Do not assume a free backend host will remain available indefinitely. Free plans can sleep, impose resource limits or change their terms.
+
+### Release gate
+
+Do not call the system production-ready merely because it is hosted.
+
+A successful student demonstration is a more appropriate first release target.
+
+---
+
+# 5. Team responsibilities
+
+The original division of work can be restored with clearer deliverables.
+
+| Responsibility | Main ownership                       | Deliverables                                                     |
+| -------------- | ------------------------------------ | ---------------------------------------------------------------- |
+| Frontend       | Project coordinator / frontend owner | UI, search modes, API integration, accessibility, browser tests  |
+| Core search    | Retrieval owner                      | BM25, BGE, RRF, benchmark analysis, ranking improvements         |
+| Backend        | API owner                            | OpenAlex, GitHub, FastAPI, caching, rate limiting, health checks |
+| Dataset        | Data owner                           | Source auditing, provenance, missing metadata, reuse review      |
+| Evaluation     | Shared responsibility                | Query approval, human relevance labels, independent review       |
+
+The project coordinator should not personally implement every module.
+
+Each task should have:
+
+- One directly responsible owner.
+- A clear input and output.
+- A test or review condition.
+- A branch or pull request.
+- A documented completion result.
+
+The project should return to being a team effort, not another situation where one person carries the entire implementation.
+
+---
+
+# 6. Error and exception handling reference
+
+| Error / situation                            | Likely reason                                      | Correct response                                                         |
+| -------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------------ |
+| `ModuleNotFoundError`                        | Wrong interpreter or missing dependencies          | Activate `.venv` and install requirements                                |
+| Python version mismatch                      | Unsupported environment                            | Use the documented Python version                                        |
+| `pip install` failure                        | Network, package compatibility or platform issue   | Inspect exact package failure; install individually only when diagnosing |
+| Port 8000 occupied                           | Existing API process                               | Stop the process or use another port and update config                   |
+| Frontend port unavailable                    | Existing HTTP server                               | Use another port and ensure CORS permits that exact origin               |
+| CORS error                                   | Wrong or missing origin                            | Check exact frontend origin in backend configuration                     |
+| Frontend sends to localhost after deployment | Default API configuration was not replaced         | Set public HTTPS API origin                                              |
+| OpenAlex timeout                             | Network or provider issue                          | Bounded retry; preserve failure state                                    |
+| OpenAlex `429`                               | Request-rate or daily-budget limit                 | Respect response headers and stop repeated attempts                      |
+| GitHub `401`                                 | Invalid or missing authentication where required   | Check server-side token configuration                                    |
+| GitHub `403`                                 | Permission, primary quota or secondary quota issue | Inspect response headers and message before retrying                     |
+| GitHub `422`                                 | Invalid or overly long search query                | Validate and compact the query; don't retry unchanged input              |
+| GitHub `429`                                 | Search-specific rate limit                         | Honor `Retry-After` and reduce request frequency                         |
+| One provider fails                           | External provider unavailable                      | Return valid partial results                                             |
+| Both providers fail                          | Neither external source is available               | Return unavailable, not an empty success                                 |
+| No candidates found                          | Successful provider search returned zero items     | Show an actual empty-result state                                        |
+| BGE download failure                         | Network or model-host availability                 | Use explicit BM25-only degraded mode                                     |
+| BGE out of memory                            | Insufficient memory for current configuration      | Use CPU or smaller batches                                               |
+| ChromaDB index mismatch                      | Dataset/model/schema changed                       | Rebuild safely using a verified fingerprint                              |
+| Capture filename exists                      | Protection against overwriting data                | Choose a unique filename                                                 |
+| CSV annotations incomplete                   | Some candidates were not reviewed                  | Complete every row; use explicit grade 0                                 |
+| Duplicate candidate annotations              | Accidental duplicated rows                         | Resolve duplicates before snapshot creation                              |
+| Query changed after capture                  | Catalogue no longer matches captured data          | Create a new capture for the revised catalogue                           |
+| No positive relevance labels                 | Query has no reviewed relevant candidates          | Keep case visible but exclude invalid aggregate calculations             |
+| Evaluation output missing dense metrics      | Embedding process failed                           | Report the dense failure; do not mislabel BM25 fallback                  |
+| Git accidentally tracks evaluation captures  | `.gitignore` mistake or forced add                 | Inspect `git status`; remove sensitive generated data from staging       |
+| GitHub Actions fails installing packages     | Runner or dependency incompatibility               | Inspect installation logs and reproduce locally                          |
+| GitHub Actions passes but BGE fails locally  | CI didn't download/load the real model             | Run the separate local model smoke test                                  |
+| Tailwind styles disappear offline            | CDN unavailable                                    | Use built CSS                                                            |
+| Shared provider quota is exhausted           | Too many users/searches                            | Use caching, rate limits and quota monitoring                            |
+
+---
+
+# 7. Features deliberately postponed
+
+Do not expand the scope until the current MVP is measured and stable.
+
+Postpone:
+
+- LLM-generated project recommendations.
+- Automatic idea enhancement.
+- User accounts and authentication.
+- Personal project-history storage.
+- Social or collaboration features.
+- Complex recommendation dashboards.
+- Paid external search providers.
+- A database migration solely for architectural fashion.
+- A completely new embedding model without benchmarking.
+
+The current product's core promise is project discovery and evaluation. Complete that promise first.
+
+---
+
+# 8. Final release acceptance checklist
+
+The first stable demonstration should satisfy all of the following:
+
+- Project installs on a clean supported environment.
+- Full Python test suite passes.
+- GitHub Actions runs the full suite.
+- JavaScript syntax checks pass.
+- Offline Demo works.
+- Live Research works with both providers.
+- OpenAlex partial success is handled.
+- GitHub partial success is handled.
+- Both-provider failure is handled.
+- Dense-search failure is reported as degraded BM25-only mode.
+- Human-labelled benchmark exists.
+- GitHub discovery strategy has been compared against baseline.
+- Dataset limitations are visibly disclosed.
+- Source reuse conditions have been reviewed.
+- No credentials are committed or exposed.
+- Privacy notice is in place.
+- Repeated server starts do not rebuild an unchanged index.
+- Frontend and backend configuration is documented.
+- Demo instructions are reproducible.
+- Final branch is reviewed before a merge to `main`.
+
+**Final rule:** A feature is not complete merely because an AI coding assistant says it implemented it. It is complete when the change is reviewed, tested, documented and its failure behaviour is understood.
+
+## 5. A practical error-handling strategy for the project
+
+The roadmap contains a full error matrix, but I want to highlight five cases that are especially important for Idea Enhancer.
+
+Case A — GitHub is unavailable, OpenAlex works
+
+Expected behaviour: partial results
+
+Keep the academic paper results, mark GitHub unavailable and allow the user to retry later. Do not present this as a successful two-provider search.
+
+Case B — OpenAlex works, GitHub returns HTTP 422
+
+Expected behaviour: query/provider error
+
+Inspect the constructed GitHub query. Do not blindly retry the same malformed or overlong query.
+
+Case C — BGE cannot load
+
+Expected behaviour: degraded search
+
+Continue using BM25 when permitted by the existing design. Clearly identify that dense and hybrid evaluation was unavailable.
+
+Case D — Evaluation has no relevant candidates
+
+Expected behaviour: no unsupported conclusion
+
+Keep the case visible, inspect the discovery process and avoid claiming that the idea has no prior art.
+
+Case E — An AI assistant disappears or reaches its quota
+
+Expected behaviour: development continues
+
+Read the issue, inspect the relevant files, implement a small change, run tests and commit it. No application functionality should be affected.
+
+## 6. The free-first working arrangement
+
+I would use the following arrangement going forward.
+
+| Work                            | Preferred method                              |
+| ------------------------------- | --------------------------------------------- |
+| Understand an unfamiliar module | Read the code and its tests first             |
+| Small Python changes            | Manual coding with VS Code                    |
+| Frontend bug fixes              | Browser DevTools and local debugging          |
+| Large refactors                 | Break into small independently testable tasks |
+| Test generation                 | Write tests around existing behaviour         |
+| Project documentation           | Markdown in the repository                    |
+| Search evaluation               | Existing local evaluation scripts             |
+| Source discovery                | OpenAlex and GitHub APIs                      |
+| Regression prevention           | GitHub Actions                                |
+
+For OpenAlex, start without a key. A free key is an optional enhancement, not a requirement. For GitHub, keep requests controlled and cached so your application doesn't repeatedly consume its shared search quota.
+
+The Gemini progress-watch workflow can remain optional. Its API key and quota should not become a requirement for normal development. In particular, don't send secrets, user submissions or private team information to an external code-analysis service.
+
+## 7. What I would do during the remaining two hours
+
+Don't try to implement nine phases tonight. The goal is to leave the project in a state where nothing important is lost.
+
+Project handover checklist
+
+## 0/8
+
+Check git status and confirm the active branch is solo/independent-mvp.
+
+Push all reviewed, legitimate local work to GitHub.
+
+Create and verify idea-enhancer-backup.bundle.
+
+Confirm .env and all provider credentials are excluded from Git.
+
+Save this roadmap in a separate local file.
+
+Send the team the progress and pending-work message.
+
+Write down the exact local setup and test commands.
+
+Make sure at least one teammate knows where the working branch and backup are.
+
+## 8. My recommendation for your next development session
+
+When you return to the repository, do not start by asking an AI assistant to build a new feature.
+
+Start with this exact order:
+
+1. Run the test suite and establish the local baseline.
+2. Complete the three-query evaluation pilot.
+3. Fix any problems in the evaluation workflow itself.
+4. Capture the full 15-query catalogue.
+5. Get the team to review and grade candidates.
+6. Generate the first benchmark.
+7. Begin the GitHub query-discovery experiment.
+
+This keeps the most important work moving even when you have no coding-assistant quota.
+
+## 9. One final thing, bro
+
+You have spent considerable effort on this project, and I know it has sometimes felt like you were carrying more than your share of the work.
+
+But don't make the mistake of thinking that you need a paid subscription to be a capable developer. You need the ability to understand the code, identify a problem, make a controlled change and verify the result.
+
+An AI assistant can accelerate that process. It cannot replace that skill.
+
+You also have teammates. Bring them back into the work with clear responsibilities rather than trying to carry everything alone again.
+
+The project is saved in GitHub. The architecture is documented. The next milestones are clear. You are not starting from zero.
+
+And remember: the goal is not to build the biggest system. It is to deliver a trustworthy engineering project discovery tool that you and your team can explain, demonstrate and defend.
+
+Take care of your finances first. Don't buy a subscription you cannot comfortably afford just to keep this project moving. ❤️
+
+Useful references to keep bookmarked:
+
+- [Idea Enhancer repository](https://github.com/seepatimeghashyam/Idea-Enhancer?utm_source=chatgpt.com)
+- [Evaluation workflow](https://github.com/seepatimeghashyam/Idea-Enhancer/blob/solo/independent-mvp/docs/EVALUATION_WORKFLOW.md?utm_source=chatgpt.com)
+- [Live Research documentation](https://github.com/seepatimeghashyam/Idea-Enhancer/blob/solo/independent-mvp/docs/LIVE_SEARCH.md?utm_source=chatgpt.com)
+- [GitHub Actions billing](https://docs.github.com/en/actions/concepts/billing-and-usage?utm_source=chatgpt.com)
+- [OpenAlex API authentication](https://help.openalex.org/api/authentication/?utm_source=chatgpt.com)
+- [GitHub API rate limits](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?utm_source=chatgpt.com)
+
+You can keep this roadmap independently of your ChatGPT subscription.

@@ -242,9 +242,11 @@ function updateModeIndicators() {
   if (headerModeDot) headerModeDot.className = `w-2 h-2 rounded-full ${tone.dot}`;
   if (modeDescription) {
     modeDescription.textContent = mode === 'live'
-      ? 'Live Research sends your idea text to OpenAlex and GitHub to discover papers and repositories.'
+      ? 'Live Research sends your idea text to OpenAlex and GitHub to discover papers and repositories. See the privacy note by the idea field.'
       : 'Offline Demo searches the local historical project dataset through this local API.';
   }
+  const privacyNotice = $('privacy-notice');
+  if (privacyNotice) privacyNotice.classList.toggle('hidden', mode !== 'live');
 }
 
 /**
