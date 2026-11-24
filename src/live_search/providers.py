@@ -18,7 +18,34 @@ from src.live_search.http import ProviderFailure, get_json
 
 logger = logging.getLogger("idea_enhancer.providers")
 MAX_PROVIDER_CANDIDATES = 30
+MAX_GITHUB_QUERY_TERMS = 10
 _SPACE = re.compile(r"\s+")
+_GITHUB_QUERY_URL = re.compile(r"(?i)\b(?:https?://|www\.)\S+")
+_GITHUB_QUERY_TOKEN = re.compile(r"[A-Za-z0-9][A-Za-z0-9+#.-]{0,47}")
+_GITHUB_QUERY_STOPWORDS = frozenset("""a about after all an and any are as at be because been before being between both but by can could did do does doing down during each few for from further had has have having he her here hers herself him himself his how if in into is it its itself just more most my myself nor of off on once only or other our ours ourselves out over own same she should so some such than that the their theirs them themselves then there these they this those through to too under until up very was we were what when where which while who whom why will with would you your yours yourself yourselves based build built create creates creating design designed develop developing development developed idea project application app system tool using use used powered based related real time low cost affordable""".split())
+
+
+def _github_search_terms(idea: str) -> list[str]:
+    """Extract up to ten safe, distinctive terms without sending a full idea sentence."""
+    text = _GITHUB_QUERY_URL.sub(" ", idea)
+    selected: list[str] = []
+    seen: set[str] = set()
+    fallback: list[str] = []
+    fallback_seen: set[str] = set()
+    for match in _GITHUB_QUERY_TOKEN.finditer(text):
+        term = match.group(0).casefold().strip(".-")
+        if len(term) < 2 or term in {"and", "or", "not"}:
+            continue
+        if term not in fallback_seen:
+            fallback.append(term)
+            fallback_seen.add(term)
+        if term in _GITHUB_QUERY_STOPWORDS or term in seen:
+            continue
+        selected.append(term)
+        seen.add(term)
+        if len(selected) == MAX_GITHUB_QUERY_TERMS:
+            break
+    return selected or fallback[:3]
 
 
 class DiscoveryProvider(Protocol):
@@ -176,7 +203,7 @@ class GitHubProvider:
 
     async def search(self, idea: str, client: httpx.AsyncClient, limit: int = 20) -> ProviderResult:
         bounded_limit = min(max(int(limit), 1), MAX_PROVIDER_CANDIDATES)
-        query = f"{_SPACE.sub(' ', idea).strip()[:400]} in:name,description,readme"
+        query = f"{' '.join(_github_search_terms(idea))} in:name,description,readme"
         headers = {"Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"}
         token = self._token if self._token is not None else os.getenv("GITHUB_TOKEN")
         token = token.strip() if isinstance(token, str) else None
