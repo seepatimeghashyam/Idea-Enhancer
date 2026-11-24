@@ -246,9 +246,11 @@ function updateModeIndicators() {
       ? 'mt-3 max-w-xl rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-sm text-indigo-950'
       : 'mt-3 max-w-xl rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-950';
     modeDescription.textContent = liveMode
-      ? 'Live Research sends the text you enter to OpenAlex and GitHub to find papers and repositories. Do not submit confidential or personally sensitive information. Those services’ data-handling policies apply. Switch to Offline Demo to search the local historical dataset without sending the query to these providers.'
-      : 'Offline Demo searches this app’s historical project dataset. It does not send your idea to OpenAlex or GitHub.';
+      ? 'Live Research sends your idea text to OpenAlex and GitHub to find papers and repositories. Do not submit confidential or personally sensitive information. See the privacy note by the idea field.'
+      : 'Offline Demo searches the local historical project dataset through this API. It does not send your idea to OpenAlex or GitHub.';
   }
+  const privacyNotice = $('privacy-notice');
+  if (privacyNotice) privacyNotice.classList.toggle('hidden', mode !== 'live');
 }
 
 /**
