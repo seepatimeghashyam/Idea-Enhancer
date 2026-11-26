@@ -84,9 +84,9 @@ class VectorRetriever:
         _load_environment()
         model_name = os.getenv("EMBEDDING_MODEL", DEFAULT_MODEL_NAME).strip() or DEFAULT_MODEL_NAME
         try:
-            from sentence_transformers import SentenceTransformer
+            from src.embeddings import get_sentence_transformer
 
-            self._embedder = SentenceTransformer(model_name)
+            self._embedder = get_sentence_transformer(model_name, "cpu")
             return self._embedder
         except Exception as err:
             raise VectorIndexUnavailableError(

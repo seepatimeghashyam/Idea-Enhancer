@@ -10,6 +10,15 @@ from src.search_gateway import SearchOutcome
 from tests.mock_core_search import MOCK_MATCH, MockCoreSearchGateway, unavailable_core
 
 
+def test_health_is_liveness_only_and_does_not_require_the_search_gateway() -> None:
+    client = TestClient(create_app(unavailable_core()))
+
+    response = client.get("/health")
+
+    assert response.status_code == 200
+    assert response.json() == {"status": "ok"}
+
+
 def test_search_returns_contract_response_and_calls_core_with_normalized_input() -> None:
     calls: list[tuple[str, int]] = []
     client = TestClient(create_app(MockCoreSearchGateway(calls=calls)))

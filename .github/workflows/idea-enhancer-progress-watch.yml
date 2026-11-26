@@ -1,0 +1,39 @@
+name: Idea Enhancer Progress Watch
+
+on:
+  push:
+    branches:
+      - solo/independent-mvp
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  analyze-push:
+    name: Analyze meaningful repository progress
+    # This branch is monitored for the repository owner's pushes only.
+    if: github.actor == 'seepatimeghashyam'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out the pushed revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Test the progress-watch helper
+        run: python3 -m unittest discover -s tests -p 'test_progress_watch.py' -v
+
+      - name: Analyze pushed commits and notify on meaningful progress
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-3.8-flash
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_RUN_ATTEMPT: ${{ github.run_attempt }}
+        run: python3 .github/scripts/idea_enhancer_progress_watch.py

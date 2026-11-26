@@ -1,0 +1,92 @@
+# Live Research Mode
+
+Live Research is a separate path from the existing historical-data search. It queries OpenAlex Works and GitHub Repository Search, normalizes each source into a provider-neutral candidate, and reranks the bounded candidate pool locally. It never substitutes historical CSV records when a provider is unavailable.
+
+## Run locally
+
+Use Python 3.12, matching the CI runtime. From the repository root, create and activate a Python virtual environment, install the declared dependencies, and prepare local settings:
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+Copy-Item .env.example .env
+```
+
+In `.env`, optionally set `GITHUB_TOKEN` for a higher GitHub API rate limit. A token is not required. Keep the token server-side and do not commit `.env`.
+
+Start the API and frontend in separate terminals:
+
+```powershell
+python -m uvicorn src.main:app --reload
+```
+
+```powershell
+python -m http.server 5500
+```
+
+Open `http://localhost:5500` and select **Live Research · OpenAlex + GitHub**. Live mode requires internet access to both provider APIs. The first semantic query can also download `BAAI/bge-small-en-v1.5` (384-dimensional output); this model is cached by Sentence Transformers after download.
+
+## Privacy and GitHub query construction
+
+When Live Research is selected, the browser sends the submitted idea to this API, which forwards it to OpenAlex and GitHub. The interface warns users before submission and advises against entering confidential or personally sensitive information. Each provider's own data-handling policies apply; this project makes no claim about provider retention.
+
+GitHub repository search uses up to ten deterministic, distinctive terms extracted from the idea instead of sending the full sentence. URLs, common filler words, duplicate terms, and GitHub boolean operators are excluded. The provider still makes one bounded request and returns the same candidate fields. This is an unmeasured query-construction heuristic; more results would not by itself prove better recall or relevance. Compare it with the existing fixed-snapshot workflow and human labels before making quality claims.
+
+## Configuration
+
+| Variable | Default | Purpose |
+|---|---|---|
+| `GITHUB_TOKEN` | unset | Optional server-side GitHub API token |
+| `LIVE_DENSE_SEARCH` | `1` | Set to `0` to intentionally run live results with BM25 only |
+| `LIVE_EMBEDDING_MODEL` | `BAAI/bge-small-en-v1.5` | Sentence Transformers model used for live dense ranking |
+| `CORS_ALLOWED_ORIGINS` | local frontend origins | Comma-separated additional trusted origins; remote origins must use HTTPS |
+| `EMBEDDING_MODEL` | `BAAI/bge-small-en-v1.5` | Offline ChromaDB model; independent setting |
+| `CHROMA_DB_PATH` | `./chroma_db` | Offline vector index storage |
+| `IDEA_ENHANCER_WARMUP` | `1` | Initialize the offline local search index during API startup |
+
+The first live dense query may load the model and take longer. If the model cannot initialize, the API returns BM25-only results with `search_state: "degraded"` and a warning. Setting `LIVE_DENSE_SEARCH=0` has the same explicit degraded mode by choice.
+
+## Deployment shape
+
+For a small demonstration deployment, host the static frontend on an HTTPS static host and run FastAPI as a separate CPU-capable Python service. Set `window.IDEA_ENHANCER_API_BASE_URL` in `config.js` to the API's HTTPS origin. Set `CORS_ALLOWED_ORIGINS` on the API to the exact frontend origin (for example `https://ideas.example.edu`); loopback HTTP origins on localhost or 127.0.0.1 remain allowed for development. Do not use wildcard CORS. `config.js` contains only a public API origin; provide `GITHUB_TOKEN` as a server-side secret if desired. Keep the historical CSV available to the API and mount writable local storage for ChromaDB if Offline Demo is enabled. Allow outbound HTTPS to OpenAlex, GitHub, and the model host, and provision enough startup time and memory for the BGE model to download/load. This has not been deployed to a hosted service; provider, memory, cold-start, and hosting limits must be checked in the chosen platform before presenting it as production-ready.
+
+## API
+
+`POST /live-search` accepts the existing bounded request shape:
+
+```json
+{"idea": "A sufficiently detailed engineering project idea", "top_k": 5}
+```
+
+The response retains `status`, `query`, `result_count`, `matches`, `message`, and `warnings` and adds `search_state`, per-provider states, `ranking_mode`, and recurring evidence. A candidate retains its provider ID, type, original URL, retrieval time, provider-native discovery rank, and available metadata. Paper publication dates and repository creation/push dates remain separate. Missing fields are `null` or absent, never guessed.
+
+Each match includes BM25 rank, dense rank, fused rank, and RRF value as separate fields. RRF is only an ordering score, and semantic similarity is a raw retrieval signal; neither is a probability or percentage. `explanation`, `shared_concepts`, and `distinctive_terms` are derived from candidate text and provider fields, not generated by an LLM. Repeated terms in the returned pool are surfaced as recurring evidence, not recommendations.
+
+The current BM25 text construction repeats the title three times and the description twice; repository topics, programming language, and paper venue are included once. Provider discovery position is reported as provenance but does not affect ranking. This is an explicit heuristic, not a learned weighting; it remains untuned until a reviewed labelled snapshot can compare alternatives.
+
+Provider states distinguish results, empty success, timeout, rate limiting, authentication/configuration failure, invalid response, network failure, and upstream failure. Overall states are `complete`, `partial`, `degraded`, `no_candidates`, and `unavailable`. If both sources fail, the endpoint returns HTTP 503. If one source works, its results remain available with `partial` status. Empty success is not treated as a provider failure. Live search has no historical-data fallback.
+
+Provider requests are concurrent and bounded to one search per provider, at most 25 candidates per provider, 50 total candidates, a 12-second total timeout per attempt, at most one retry, a 2 MiB decoded response body per provider request, and a maximum of 20 returned matches. Redirects are not followed. Embedding batches are capped at 50 texts, with each model input capped at 8,000 characters and batches encoded in chunks of 16. Search text is capped, and provider text is rendered as text in the browser. External source links are accepted only when they are HTTPS URLs with a valid public host and no embedded credentials. The service caps concurrent live searches at four per process; it has no per-caller request quota. For shared deployments, apply request limits at a trusted hosting edge rather than relying on arbitrary forwarded IP headers.
+
+## Offline Demo
+
+The **Offline Demo · historical records** mode still calls the original `POST /search` Core Search facade and local CSV/ChromaDB index. It does not call OpenAlex or GitHub and requires no provider credentials. Existing canonical dataset quality limitations still apply; see [Dataset Readiness](DATASET_READINESS.md).
+
+The fixed UI fixtures in `mockData.js` are not connected to either public search mode. Test-only fixtures are labelled in the test suite and are injected through the provider interface.
+
+## Evaluation
+
+The capture, neutral annotation CSV, reviewed-snapshot builder, commands, human grading scale, and metric caveats are documented in [Evaluation Workflow](EVALUATION_WORKFLOW.md). In brief, capture full normalized provider pools before local ranking; then a person must grade every candidate 0–3. Blank labels are rejected. No relevance or originality is inferred by the tooling.
+
+Run `python scripts/evaluate_live_search.py reviewed_snapshot.json`. Add `--bm25-only` to skip dense initialization. Every available ranking uses the same reviewed candidate universe. Relevant candidates not discovered by one provider remain misses in that provider's recall denominator. The evaluator reports Precision@5 (denominator 5), Recall@10 over all grade-above-zero candidates in the reviewed pool, graded nDCG@10, and MRR@10 (first grade-above-zero result). Optional discovery recall requires a separate reviewed known-relevant inventory. Provider-native orders remain separate. If dense evaluation fails, dense and hybrid metrics are omitted for that query; the BM25 fallback is not reported under those methods. Empty-pool and no-positive-label queries are shown and excluded from aggregate means. Metrics describe only the fixed, captured, human-reviewed benchmark, not overall search quality.
+
+## Limitations
+
+- Provider availability, network access, and rate limits vary. OpenAlex/GitHub results are not guaranteed to be exhaustive.
+- Ranking quality has not yet been measured against a human-labelled live-search benchmark. Search order is not calibrated similarity.
+- Dense search depends on model download/cache availability. BM25-only fallback is disclosed in the response.
+- Query expansion is not enabled: without a reviewed candidate snapshot, more provider calls cannot be shown to improve discovery recall enough to justify extra latency and rate-limit use.
+- Provider metadata and source descriptions can be incomplete or wrong; Idea Enhancer does not independently verify source claims.
+- Live provider data is retrieved per request and is not persisted as a user workspace or long-term candidate index.
+- There is no LLM recommendation, paper full-text retrieval, repository source-code analysis, authentication, or user history in this MVP.

@@ -219,6 +219,12 @@ __marimo__/
 # ChromaDB local storage
 chroma_db/
 
+# Local evaluation artifacts may contain unreviewed provider data or private reviewer notes.
+# Approved, human-reviewed benchmark artifacts can be force-added after project-owner review.
+/data/evaluation/captures/
+/data/evaluation/annotations/
+/data/evaluation/reviewed/
+
 # Git bundle backups
 *.bundle
 

@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "description": "Proposed engineering student project queries for human approval; this file contains no candidate records or relevance labels.",
+  "queries": [
+    {
+      "query_id": "iot-motor-maintenance",
+      "slice": "industrial_automation",
+      "tags": ["iot", "sensors", "maintenance"],
+      "query": "Build a low-cost system that combines vibration and temperature sensors to identify early signs of failure in small factory motors and notify maintenance staff."
+    },
+    {
+      "query_id": "water-pipeline-leak-monitor",
+      "slice": "water_management",
+      "tags": ["water", "leak detection", "iot"],
+      "query": "Develop a network of low-power pressure and flow sensors that can detect likely leaks in a campus water pipeline and help staff locate the affected section."
+    },
+    {
+      "query_id": "road-damage-vision",
+      "slice": "computer_vision",
+      "tags": ["roads", "computer vision", "mobile"],
+      "query": "Create a phone-based tool that identifies potholes and surface cracks from street images and records approximate locations for a municipal repair team."
+    },
+    {
+      "query_id": "accessible-campus-signs",
+      "slice": "nlp_accessibility",
+      "tags": ["accessibility", "ocr", "speech"],
+      "query": "Design an assistive mobile system that reads campus signs aloud, supports multiple local languages, and remains usable for people with limited connectivity."
+    },
+    {
+      "query_id": "network-anomaly-lab",
+      "slice": "cybersecurity",
+      "tags": ["network monitoring", "anomaly detection"],
+      "query": "Build a privacy-conscious network monitoring tool for a small laboratory that flags unusual device traffic and explains which observable traffic patterns triggered an alert."
+    },
+    {
+      "query_id": "indoor-delivery-robot",
+      "slice": "robotics",
+      "tags": ["robotics", "navigation", "safety"],
+      "query": "Prototype a small indoor robot that carries documents between campus offices, avoids people and temporary obstacles, and reports when it cannot safely continue."
+    },
+    {
+      "query_id": "solar-panel-fault-triage",
+      "slice": "energy_sustainability",
+      "tags": ["solar", "energy", "fault detection"],
+      "query": "Develop a monitoring system that uses electrical output and weather readings to identify underperforming rooftop solar panels and prioritize inspection."
+    },
+    {
+      "query_id": "crop-irrigation-advisor",
+      "slice": "agriculture",
+      "tags": ["agriculture", "irrigation", "sensors"],
+      "query": "Create an affordable field device that combines soil moisture and local weather measurements to recommend when a small farm plot should be irrigated."
+    },
+    {
+      "query_id": "traffic-signal-pedestrian-safety",
+      "slice": "smart_infrastructure",
+      "tags": ["traffic", "pedestrian safety", "edge computing"],
+      "query": "Design an edge-based intersection monitor that estimates pedestrian waiting and crossing activity without storing identifiable video, to help evaluate signal timing."
+    },
+    {
+      "query_id": "campus-energy-dashboard",
+      "slice": "software_systems",
+      "tags": ["energy", "dashboard", "building systems"],
+      "query": "Build a software platform that combines electricity meter readings from campus buildings, detects unusual consumption, and gives facility teams understandable comparisons over time."
+    },
+    {
+      "query_id": "medicine-cold-chain-alarm",
+      "slice": "healthcare_devices",
+      "tags": ["cold chain", "temperature", "alarms"],
+      "query": "Develop a portable temperature logger that warns clinic staff when a medicine storage refrigerator has been outside its safe temperature range for too long."
+    },
+    {
+      "query_id": "bus-arrival-crowding",
+      "slice": "transportation",
+      "tags": ["public transit", "arrival prediction", "crowding"],
+      "query": "Create a campus bus information tool that estimates arrival times and approximate crowding from vehicle location updates while working on low-end phones."
+    },
+    {
+      "query_id": "sign-language-classroom-aid",
+      "slice": "assistive_technology",
+      "tags": ["assistive technology", "computer vision", "education"],
+      "query": "Explore a classroom communication aid that recognizes a limited, clearly defined set of sign-language gestures and provides captions without claiming general translation."
+    },
+    {
+      "query_id": "embedded-device-inventory",
+      "slice": "iot_embedded",
+      "tags": ["embedded systems", "inventory", "wireless"],
+      "query": "Build a tool that discovers and inventories authorized embedded devices on a research lab network, records their firmware versions, and highlights devices needing updates."
+    },
+    {
+      "query_id": "river-quality-sensor-network",
+      "slice": "sensor_fault_detection",
+      "tags": ["environment", "water quality", "sensor calibration"],
+      "query": "Prototype a low-cost river monitoring station that measures pH, turbidity, and temperature and detects sensor drift before sending questionable readings to a dashboard."
+    }
+  ]
+}
