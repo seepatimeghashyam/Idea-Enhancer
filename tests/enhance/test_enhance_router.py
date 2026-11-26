@@ -1,8 +1,15 @@
 """FastAPI router integration tests for POST /enhance."""
 
-import pytest
-from fastapi import FastAPI
-from fastapi.testclient import TestClient
+try:
+    import pytest
+except ImportError:
+    pass
+try:
+    from fastapi import FastAPI
+    from fastapi.testclient import TestClient
+except ImportError:
+    FastAPI = None  # type: ignore[assignment,misc]
+    TestClient = None  # type: ignore[assignment,misc]
 
 from src.enhance.cache import EnhanceCache
 from src.enhance.llm_client import FakeLLMClient
