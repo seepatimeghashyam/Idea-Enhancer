@@ -118,9 +118,9 @@
 - **slice:** `computer_vision_smart_infrastructure`
 - **tags:** `computer vision`, `smart infrastructure`, `parking`, `IoT`
 - **query:** Create a parking-area monitor that estimates occupied and free spaces from periodic camera images and displays the current availability without retaining unnecessary identifiable footage.
-- **Evidence:** https://github.com/AyrtonSoler/Smart-Parking-Lot-Counter
-- **Evidence scope:** Repository describes ESP32-CAM image capture, vehicle detection, occupancy estimation, and a backend status display.
-- **Caveat:** Test occlusion, lighting, camera placement, and privacy; do not treat the output as guaranteed real-time availability.
+- **Evidence:** https://github.com/AJC938/smart-parking-yolo
+- **Evidence scope:** The README describes a local parking-lot video application using YOLO vehicle detection, ByteTrack tracking, mapped parking spaces, and a dashboard showing occupied and available spaces.
+- **Caveat:** This is a video-based demonstrator; test changes in camera angle, lighting, occlusion, and privacy before claiming live-site reliability.
 
 ### 13. Plant-leaf disease-region segmentation
 - **query_id:** `leaf-disease-severity-segmentation`
