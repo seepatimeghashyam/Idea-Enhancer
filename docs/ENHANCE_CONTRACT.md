@@ -8,8 +8,8 @@ This document defines the formal request and response specification for the **En
 
 * **Route:** `POST /enhance`
 * **Content-Type:** `application/json`
-* **Purpose:** Takes a student's idea and the retrieved top matches (from `POST /search` or `/live-search`) and generates a structured, evidence-grounded architectural enhancement analysis.
-* **Grounding Rule:** Every suggestion and overlap claim must cite one or more `project_id`s from the retrieved search matches. The LLM is strictly prohibited from inventing projects or citing non-retrieved IDs.
+* **Purpose:** Takes a student's idea and top search matches (max 5) and generates a structured, evidence-grounded architectural enhancement analysis.
+* **Strict Grounding Rule:** Every suggestion and overlap claim must cite one or more valid `project_id`s from the retrieved matches. If an LLM cites an unretrieved ID, it is dropped. Suggestions with zero valid citations are removed. If zero grounded suggestions remain, the request fails with `502 ENHANCE_BAD_LLM_OUTPUT`.
 
 ---
 
@@ -35,7 +35,8 @@ This document defines the formal request and response specification for the **En
       "shared_elements": ["Raspberry Pi", "CNN", "crop disease"],
       "verification_status": "checked"
     }
-  ]
+  ],
+  "evidence_scope": "local"
 }
 ```
 
@@ -44,16 +45,20 @@ This document defines the formal request and response specification for the **En
 | Field | Type | Required | Constraints | Description |
 |---|---|---|---|---|
 | `idea` | string | Yes | Min 10, max 2000 chars | The student's submitted project proposal. |
-| `matches` | array of objects | Yes | Max 20 items | The retrieved match records from `POST /search`. If no matches were found, pass an empty array `[]`. |
+| `matches` | array of objects | No | Max 5 items | The retrieved match records from search. If no matches were found, pass `[]`. |
+| `evidence_scope` | string | No | `"local"` or `"local+online"` (default: `"local"`) | Indicates the scope of the searched corpus. |
 
-Each object in `matches` must include at least:
-* `project_id` (string, required)
-* `title` (string, required)
-* `description_excerpt` (string, optional)
-* `domain` (string, optional)
-* `technologies` (array of strings, optional)
-* `rrf_score` (number, optional)
-* `shared_elements` (array of strings, optional)
+#### Match Object Constraints:
+* `project_id`: string, min 1, max 128 chars (Required).
+* `title`: string, min 1, max 300 chars (Required).
+* `description_excerpt`: string, optional, max 2000 chars.
+* `source_type`: string, optional, max 100 chars.
+* `source_url`: string, optional, max 1000 chars.
+* `domain`: string, optional, max 200 chars.
+* `technologies`: array of strings, optional, max 20 items of max 60 chars.
+* `shared_elements`: array of strings, optional, max 20 items of max 60 chars.
+* `rank`: integer, optional (used for rank-aware sorting).
+* `rrf_score`: number, optional.
 
 ---
 
@@ -131,86 +136,64 @@ Each object in `matches` must include at least:
     "rating": 4,
     "reasons": [
       "Hardware components (Raspberry Pi, camera modules, sensors) are accessible and student-budget friendly.",
-      "Pretrained vision models (MobileNetV3, YOLOv8-nano) offer high accuracy transfer learning with minimal initial training cost.",
-      "Field calibration and multi-modal sensor fusion will require moderate engineering effort and testing."
+      "Pretrained vision models (MobileNetV3, YOLOv8-nano) offer high accuracy transfer learning with minimal initial training cost."
     ]
   },
-  "cached": false
+  "cached": false,
+  "warnings": []
 }
 ```
 
-### Response Field Definitions
+### Novelty Representation
 
-* **`status`**: `"success"`
-* **`idea`**: Echo of the student's idea string.
-* **`overlap_summary`**: 1–2 sentence high-level synthesis of how the idea compares with the retrieved corpus.
-* **`facet_map`**: Analysis across 5 dimensions:
-  * `problem`: Target problem and use-case overlap.
-  * `domain`: Industry / application sector overlap.
-  * `method`: Algorithmic and architectural methodology overlap.
-  * `tech_stack`: Overlap of libraries, hardware, and frameworks.
-  * `data`: Datasets, telemetry, and input format overlap.
-  * Each facet contains:
-    * `overlap`: `"none"` | `"partial"` | `"strong"`
-    * `details`: Explanatory reasoning.
-    * `matched_project_ids`: List of cited project IDs from the request matches.
-* **`novelty`**:
-  * `level`: `"low"` | `"medium"` | `"high"` (Derived directly from the evidence-based score).
-  * `score`: Float between `0.00` and `1.00` (computed deterministically from match overlap, RRF scores, and shared elements).
-  * `reason`: Clear explanation of the novelty rating grounded in evidence.
-* **`suggestions`**: Array of 3–5 actionable improvements.
-  * Every suggestion **must** cite at least one `project_id` from the retrieved matches (`cites: ["<id>"]`).
-  * If `matches` was empty, `cites` will be empty (`[]`).
-* **`suggested_tech_stack`**: Array of 3–6 recommended tools/technologies with their specific role.
-* **`feasibility`**:
-  * `rating`: Integer from `1` (Extremely difficult / unrealistic for students) to `5` (Highly feasible with standard student resources).
-  * `reasons`: 2–4 concise bullet points explaining the rating.
-* **`cached`**: Boolean indicating whether the result was served from the in-memory cache.
+* When matches are present, `novelty.score` is a float between `0.05` and `0.95`, and `novelty.level` is `"low"`, `"medium"`, or `"high"`.
+* When **zero matches** are present:
+  * `novelty.level` is `"unknown"`.
+  * `novelty.score` is `null`.
+  * `novelty.reason` clearly explains that a missing local match is not proof of novelty and that a wider search is needed.
+
+### Grounding Rules
+* If fewer than 3 valid suggestions remain after filtering ungrounded citations, the valid ones (1–2) are returned, and `warnings` contains `["Fewer than 3 grounded suggestions were produced."]`.
+* If a facet claims `"partial"` or `"strong"` overlap without citing any valid retrieved IDs, its overlap is automatically downgraded to `"none"` with `matched_project_ids: []`.
+* Invalid citations are never forged or replaced by the top match ID.
 
 ---
 
 ## 3. Error Responses
 
-All error responses use the standard envelope defined in `docs/API_CONTRACT.md`.
+### 3.1 Bad LLM Output (`502 Bad Gateway`)
 
-### 3.1 Validation Error (`422 Unprocessable Entity`)
+Returned when the AI returns invalid JSON, missing required fields, or zero grounded suggestions:
 
-Returned when `idea` is too short/long, `matches` is invalid, or required fields are missing:
+```json
+{
+  "status": "error",
+  "error_code": "ENHANCE_BAD_LLM_OUTPUT",
+  "message": "The AI returned an unusable answer. Please try again.",
+  "details": null
+}
+```
+
+### 3.2 Validation Error (`422 Unprocessable Entity`)
+
+Returned when request violates constraints (e.g. idea too short, more than 5 matches, oversized fields):
 
 ```json
 {
   "status": "error",
   "error_code": "VALIDATION_ERROR",
-  "message": "The 'idea' field must contain at least 10 characters.",
-  "details": {
-    "field": "idea",
-    "constraint": "min_length",
-    "min_length": 10,
-    "actual_length": 4
-  }
+  "message": "The request body must be a valid JSON object.",
+  "details": [...]
 }
 ```
 
-### 3.2 LLM Service Unavailable / Timeout (`503 Service Unavailable`)
-
-Returned when the LLM provider fails, times out, rate limits, or API key is unconfigured:
+### 3.3 LLM Service Unavailable / Timeout (`503 Service Unavailable`)
 
 ```json
 {
   "status": "error",
-  "error_code": "LLM_UNAVAILABLE",
-  "message": "The AI enhancement service is currently unavailable or timed out. Please try again.",
-  "details": null
-}
-```
-
-### 3.3 Internal Error (`500 Internal Server Error`)
-
-```json
-{
-  "status": "error",
-  "error_code": "ENHANCE_FAILED",
-  "message": "An unexpected error occurred while generating enhancements.",
+  "error_code": "LLM_TIMEOUT",
+  "message": "The AI enhancement service timed out while generating suggestions. Please try again.",
   "details": null
 }
 ```

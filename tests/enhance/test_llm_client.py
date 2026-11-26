@@ -1,34 +1,11 @@
 """Tests for LLM clients."""
 
 import os
-try:
-    import pytest
-except ImportError:
-    class _RaisesContext:
-        def __init__(self, expected_exc):
-            self.expected_exc = expected_exc
-            self.value = None
-
-        def __enter__(self):
-            return self
-
-        def __exit__(self, exc_type, exc_val, exc_tb):
-            if exc_type is None:
-                raise AssertionError(f"Expected {self.expected_exc.__name__} was not raised")
-            if not issubclass(exc_type, self.expected_exc):
-                return False
-            self.value = exc_val
-            return True
-
-    class _MockPytest:
-        @staticmethod
-        def raises(expected_exc):
-            return _RaisesContext(expected_exc)
-
-    pytest = _MockPytest()  # type: ignore[assignment]
+import pytest
 from src.enhance.llm_client import (
     FakeLLMClient,
     GeminiLLMClient,
+    LLMBadResponseError,
     LLMTimeoutError,
     LLMUnavailableError,
 )
@@ -55,6 +32,13 @@ def test_fake_llm_client_unavailable() -> None:
     assert "Rate limit" in str(exc_info.value)
 
 
+def test_fake_llm_client_bad_response() -> None:
+    client = FakeLLMClient(raise_bad_response=True, error_message="Abnormal finish")
+    with pytest.raises(LLMBadResponseError) as exc_info:
+        client.generate_enhancement("prompt")
+    assert "Abnormal finish" in str(exc_info.value)
+
+
 def test_gemini_client_missing_api_key() -> None:
     old_key = os.environ.pop("GEMINI_API_KEY", None)
     try:
@@ -65,3 +49,11 @@ def test_gemini_client_missing_api_key() -> None:
     finally:
         if old_key is not None:
             os.environ["GEMINI_API_KEY"] = old_key
+
+
+def test_gemini_endpoint_url_no_query_key() -> None:
+    client = GeminiLLMClient(api_key="test_key", model="gemini-2.5-flash")
+    from src.enhance.llm_client import GEMINI_ENDPOINT_URL
+    formatted = GEMINI_ENDPOINT_URL.format(model=client.model)
+    assert "?key=" not in formatted
+    assert formatted.endswith("/gemini-2.5-flash:generateContent")

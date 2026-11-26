@@ -2,55 +2,47 @@
 
 from __future__ import annotations
 
-from typing import Any, List, Literal, Optional
-try:
-    from pydantic import BaseModel, Field, field_validator
-except ImportError:
-    # Fallback shim if pydantic is not installed yet
-    class BaseModel:  # type: ignore[no-redef]
-        def __init__(self, **kwargs: Any) -> None:
-            for k, v in kwargs.items():
-                setattr(self, k, v)
-
-        def dict(self) -> dict[str, Any]:
-            return {k: v for k, v in self.__dict__.items() if not k.startswith("_")}
-
-        def model_dump(self) -> dict[str, Any]:
-            return self.dict()
-
-    def Field(*args: Any, **kwargs: Any) -> Any:  # type: ignore[no-redef]
-        return kwargs.get("default", kwargs.get("default_factory", lambda: None)()) if "default" in kwargs or "default_factory" in kwargs else None
-
-    def field_validator(*args: Any, **kwargs: Any) -> Any:  # type: ignore[no-redef]
-        def decorator(fn: Any) -> Any:
-            return fn
-        return decorator
+from typing import List, Literal, Optional
+from pydantic import BaseModel, Field, field_validator
 
 
 class MatchInput(BaseModel):
     """A single project match retrieved from search."""
 
-    project_id: str
-    title: str
-    description_excerpt: Optional[str] = None
-    source_type: Optional[str] = None
-    source_url: Optional[str] = None
+    project_id: str = Field(..., min_length=1, max_length=128)
+    title: str = Field(..., min_length=1, max_length=300)
+    description_excerpt: Optional[str] = Field(default=None, max_length=2000)
+    source_type: Optional[str] = Field(default=None, max_length=100)
+    source_url: Optional[str] = Field(default=None, max_length=1000)
     year: Optional[int] = None
-    domain: Optional[str] = None
+    domain: Optional[str] = Field(default=None, max_length=200)
     technologies: Optional[List[str]] = None
     rank: Optional[int] = None
     bm25_rank: Optional[int] = None
     vector_rank: Optional[int] = None
     rrf_score: Optional[float] = None
     shared_elements: Optional[List[str]] = None
-    verification_status: Optional[str] = None
+    verification_status: Optional[str] = Field(default=None, max_length=50)
+
+    @field_validator("technologies", "shared_elements")
+    @classmethod
+    def validate_string_list(cls, v: Optional[List[str]]) -> Optional[List[str]]:
+        if v is None:
+            return v
+        if len(v) > 20:
+            raise ValueError("List must contain at most 20 items.")
+        for item in v:
+            if not isinstance(item, str) or len(item) > 60:
+                raise ValueError("List items must be strings of at most 60 characters.")
+        return v
 
 
 class EnhanceRequest(BaseModel):
     """Public payload for POST /enhance."""
 
     idea: str = Field(..., description="Student project proposal text (10-2000 chars)")
-    matches: List[MatchInput] = Field(default_factory=list, description="Top retrieved matches")
+    matches: List[MatchInput] = Field(default_factory=list, max_length=5, description="Top retrieved matches (max 5)")
+    evidence_scope: Literal["local", "local+online"] = Field(default="local", description="Scope of searched corpus")
 
     @field_validator("idea")
     @classmethod
@@ -84,8 +76,8 @@ class FacetMap(BaseModel):
 class NoveltyAssessment(BaseModel):
     """Evidence-grounded novelty evaluation."""
 
-    level: Literal["low", "medium", "high"]
-    score: float = Field(..., ge=0.0, le=1.0)
+    level: Literal["low", "medium", "high", "unknown"]
+    score: Optional[float] = Field(default=None, ge=0.0, le=1.0)
     reason: str
 
 
@@ -123,3 +115,4 @@ class EnhanceResponse(BaseModel):
     suggested_tech_stack: List[TechStackItem]
     feasibility: FeasibilityRating
     cached: bool = False
+    warnings: List[str] = Field(default_factory=list)

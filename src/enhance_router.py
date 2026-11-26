@@ -9,7 +9,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.responses import JSONResponse
 
 from src.enhance.contracts import EnhanceRequest, EnhanceResponse
-from src.enhance.llm_client import LLMTimeoutError, LLMUnavailableError
+from src.enhance.llm_client import LLMBadResponseError, LLMTimeoutError, LLMUnavailableError
 from src.enhance.service import EnhanceService
 
 logger = logging.getLogger(__name__)
@@ -61,6 +61,13 @@ def enhance_idea(
             status.HTTP_503_SERVICE_UNAVAILABLE,
             "LLM_TIMEOUT",
             "The AI enhancement service timed out while generating suggestions. Please try again.",
+        )
+    except LLMBadResponseError as err:
+        logger.warning("Enhance LLM bad response: %s", err)
+        return error_response(
+            status.HTTP_502_BAD_GATEWAY,
+            "ENHANCE_BAD_LLM_OUTPUT",
+            "The AI returned an unusable answer. Please try again.",
         )
     except LLMUnavailableError as err:
         logger.warning("Enhance LLM service unavailable: %s", err)
