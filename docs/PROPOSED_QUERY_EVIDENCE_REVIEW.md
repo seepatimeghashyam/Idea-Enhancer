@@ -156,3 +156,12 @@
 3. Only approved query objects are added to a new version of the query catalogue. Do not overwrite the existing v1 catalogue silently.
 4. Capture a fresh immutable provider snapshot using the approved catalogue.
 5. Human reviewers grade every captured candidate; this evidence review does not contain relevance labels.
+
+
+## Source-check log — 2026-11-26
+
+The linked GitHub repositories were checked for public repository availability and their README contents were inspected to confirm that the described project area is present. The parking-occupancy source was replaced after the initially listed repository returned not found during the check; the current source is `AJC938/smart-parking-yolo`.
+
+**What this check verifies:** the public repositories exist and their README text describes a project relevant to the corresponding query.
+
+**What this check does not verify:** independent reproduction of results, hardware performance, dataset rights/quality, peer review, safety, deployment readiness, or novelty. Performance numbers and implementation claims remain repository-author claims unless separately reproduced or independently published.
