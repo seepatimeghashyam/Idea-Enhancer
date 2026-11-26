@@ -3,11 +3,12 @@ name: Python CI
 on:
   push:
     branches:
-      - solo/independent-mvp
-      - codex/ci-python-tests
+      - main
+      - v1
   pull_request:
     branches:
-      - solo/independent-mvp
+      - main
+      - v1
 
 permissions:
   contents: read

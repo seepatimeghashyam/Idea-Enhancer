@@ -4,10 +4,10 @@ Live Research is a separate path from the existing historical-data search. It qu
 
 ## Run locally
 
-From the repository root, create and activate a Python virtual environment, install the declared dependencies, and prepare local settings:
+Use Python 3.12, matching the CI runtime. From the repository root, create and activate a Python virtual environment, install the declared dependencies, and prepare local settings:
 
 ```powershell
-py -m venv .venv
+py -3.12 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 Copy-Item .env.example .env

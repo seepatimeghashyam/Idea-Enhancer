@@ -14,7 +14,13 @@ Idea Enhancer helps engineering students evaluate proposed project ideas against
 
 ## Run locally
 
-Install the dependencies from `requirements.txt`, then start the API from the repository root:
+Use Python 3.12, matching the CI runtime. On Windows, create and activate a project environment, then install the dependencies:
+
+    py -3.12 -m venv .venv
+    .\.venv\Scripts\Activate.ps1
+    python -m pip install -r requirements.txt
+
+Start the API from the repository root:
 
     python -m uvicorn src.main:app --reload
 
@@ -32,7 +38,7 @@ Double-click `Run Idea Enhancer.cmd`. It opens the API and frontend in separate 
 
 Choose **Offline Demo** for a predictable walkthrough using the local historical dataset. Choose **Live Research** to query OpenAlex and GitHub. The first semantic search may take longer while the model loads. Keep the API and frontend server windows open while presenting. Search matches are evidence leads, not proof of similarity, originality, or independent source verification.
 
-The launcher uses the Ubuntu WSL environment prepared on the demonstration laptop. It is a presentation shortcut; fresh developers should follow the dependency installation instructions above and in [Live Search](docs/LIVE_SEARCH.md).
+The launcher uses Ubuntu WSL and the Python 3.12 environment at `~/.venvs/idea-enhancer-py312`. It does not guess among system interpreters or unrelated virtual environments. Set `IDEA_ENHANCER_WSL_PYTHON` only when using another Python 3.12 executable with the project dependencies installed. Fresh developers should follow the dependency installation instructions above and in [Live Search](docs/LIVE_SEARCH.md).
 
 Run tests with:
 
