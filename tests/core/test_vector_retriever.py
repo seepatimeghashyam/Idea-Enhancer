@@ -339,11 +339,14 @@ class VectorRetrieverTests(unittest.TestCase):
                 persist_directory=tmpdir,
                 collection_name="test_persist_collection",
             )
-            hits = retriever.search("agriculture", top_k=1)
-            self.assertEqual(len(hits), 1)
-            self.assertEqual(hits[0].project_id, "P_PERSIST")
-            # Verify persistent storage directory has contents created by ChromaDB
-            self.assertTrue(any(Path(tmpdir).iterdir()))
+            try:
+                hits = retriever.search("agriculture", top_k=1)
+                self.assertEqual(len(hits), 1)
+                self.assertEqual(hits[0].project_id, "P_PERSIST")
+                # Verify persistent storage directory has contents created by ChromaDB
+                self.assertTrue(any(Path(tmpdir).iterdir()))
+            finally:
+                retriever.close()
 
     def test_model_or_client_initialization_failure(self) -> None:
         class FailingClient:

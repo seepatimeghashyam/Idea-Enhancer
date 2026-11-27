@@ -70,6 +70,7 @@ class VectorRetriever:
         self._records = list(records)
         self._embedder = embedder
         self._chroma_client = chroma_client
+        self._owns_chroma_client = chroma_client is None
         self._collection_name = collection_name or "idea_enhancer_vector_index"
         self._persist_directory = persist_directory
         self._collection: Any = None
@@ -77,6 +78,17 @@ class VectorRetriever:
 
         if auto_build and self._records:
             self.build_index()
+
+    def close(self) -> None:
+        """Release a Chroma client owned by this retriever, if one was opened."""
+        client = self._chroma_client
+        self._collection = None
+        self._chroma_client = None
+        self._is_indexed = False
+        if self._owns_chroma_client and client is not None:
+            close = getattr(client, "close", None)
+            if callable(close):
+                close()
 
     def _get_embedder(self) -> Any:
         if self._embedder is not None:

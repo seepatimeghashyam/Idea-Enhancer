@@ -10,7 +10,7 @@ Idea Enhancer helps engineering students evaluate proposed project ideas against
 - The supplied conservative search-ready dataset is installed at `data/historical_projects.csv`. Its quality limitations are documented in [Dataset Readiness](docs/DATASET_READINESS.md).
 - A sun/moon control switches between the warm light theme and ambient dark theme.
 - Live Research tells users before submission that their idea is sent to OpenAlex and GitHub; Offline Demo states that it does not send the query to those providers. Candidate metadata and source links are shown only when returned by a provider. Search order is not a similarity percentage, originality guarantee, or verification of source claims.
-- LLM-generated recommendations remain deferred.
+- Optional AI enhancement retrieves evidence on the server and uses Gemini only when `GEMINI_API_KEY` is configured. The idea and retrieved excerpts are sent to Gemini after the user requests enhancement; no numeric originality score is produced.
 
 ## Run locally
 
@@ -51,6 +51,7 @@ Run tests with:
 - Retrieval: rank-bm25, ChromaDB, BAAI/bge-small-en-v1.5
 - Fusion: Reciprocal Rank Fusion (RRF)
 - Live discovery: OpenAlex Works API and GitHub Repository Search API via `httpx`
+- Optional enhancement: Gemini API, configured only on the backend
 
 ## Developer docs
 

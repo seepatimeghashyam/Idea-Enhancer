@@ -22,6 +22,10 @@ from src.search_gateway import (
     UnavailableCoreSearchGateway,
 )
 from src.live_search.service import LiveSearchService, LiveSearchUnavailable
+from src.enhance.contracts import EnhanceRequest
+from src.enhance.provider import ProviderBadOutput, ProviderUnavailable
+from src.enhance.service import EnhanceService
+from src.enhance.provider import EnhancementProvider
 
 MIN_IDEA_LENGTH = 10
 MAX_IDEA_LENGTH = 2000
@@ -209,6 +213,7 @@ def success_response(query: str, outcome: SearchOutcome, warnings: list[str]) ->
 def create_app(
     search_gateway: SearchGateway | None = None,
     live_search_service: LiveSearchService | None = None,
+    enhance_provider: EnhancementProvider | None = None,
 ) -> FastAPI:
     """Create an app with an injectable search boundary for tests and integration."""
     live_service = live_search_service or LiveSearchService()
@@ -241,6 +246,7 @@ def create_app(
         allow_headers=["Content-Type", "Accept"],
     )
     gateway = search_gateway or CoreSearchGateway()
+    enhance_service = EnhanceService(gateway, live_service, enhance_provider)
 
     @app.get("/health", tags=["operations"])
     def health() -> dict[str, str]:
@@ -344,6 +350,26 @@ def create_app(
             "warnings": [*warnings, *outcome.warnings],
             "recurring_evidence": list(outcome.recurring_evidence),
         })
+
+    @app.post("/enhance")
+    async def enhance(payload: EnhanceRequest) -> JSONResponse:
+        """Retrieve evidence on the server and generate a grounded analysis."""
+        try:
+            response = await enhance_service.enhance(payload)
+        except CoreSearchUnavailable:
+            return error_response(503, "SEARCH_UNAVAILABLE", SEARCH_UNAVAILABLE_MESSAGE)
+        except LiveSearchUnavailable:
+            return error_response(503, "LIVE_SEARCH_UNAVAILABLE", "Online research sources are temporarily unavailable.")
+        except ProviderUnavailable as error:
+            logger.info("Enhance provider unavailable")
+            return error_response(503, "ENHANCE_UNAVAILABLE", str(error))
+        except ProviderBadOutput as error:
+            logger.warning("Enhance provider returned unusable output")
+            return error_response(502, "ENHANCE_BAD_OUTPUT", str(error))
+        except Exception:
+            logger.exception("Enhancement failed")
+            return error_response(500, "ENHANCE_FAILED", "An internal error occurred while preparing the analysis.")
+        return JSONResponse(status_code=200, content=response.model_dump())
 
     return app
 
