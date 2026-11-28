@@ -13,6 +13,7 @@ from urllib.parse import urlparse
 
 import httpx
 
+from src.core.query_expansion import build_expanded_query
 from src.live_search.contracts import CandidateRecord, ProviderResult
 from src.live_search.http import ProviderFailure, get_json
 
@@ -27,6 +28,11 @@ _GITHUB_QUERY_STOPWORDS = frozenset("""a about after all an and any are as at be
 
 def _github_search_terms(idea: str) -> list[str]:
     """Extract up to ten safe, distinctive terms without sending a full idea sentence."""
+    # Use query expansion if enabled
+    if os.getenv("LIVE_QUERY_EXPANSION", "0").strip().lower() not in {"0", "false", "no", "off"}:
+        expanded = build_expanded_query(idea, max_terms=MAX_GITHUB_QUERY_TERMS)
+        return expanded.split()
+
     text = _GITHUB_QUERY_URL.sub(" ", idea)
     selected: list[str] = []
     seen: set[str] = set()
@@ -130,7 +136,11 @@ class OpenAlexProvider:
 
     async def search(self, idea: str, client: httpx.AsyncClient, limit: int = 20) -> ProviderResult:
         bounded_limit = min(max(int(limit), 1), MAX_PROVIDER_CANDIDATES)
-        params = {"search": _SPACE.sub(" ", idea).strip()[:512], "per-page": bounded_limit}
+        # Use query expansion if enabled
+        search_query = idea
+        if os.getenv("LIVE_QUERY_EXPANSION", "0").strip().lower() not in {"0", "false", "no", "off"}:
+            search_query = build_expanded_query(idea, max_terms=20)
+        params = {"search": _SPACE.sub(" ", search_query).strip()[:512], "per-page": bounded_limit}
         select = "id,doi,display_name,publication_year,publication_date,authorships,primary_location,best_oa_location,open_access,cited_by_count,type,abstract_inverted_index"
         params["select"] = select
         try:
