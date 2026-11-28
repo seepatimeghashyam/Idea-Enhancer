@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import hashlib
+import json
 import logging
 import os
 import sys
@@ -70,6 +72,7 @@ class VectorRetriever:
         self._records = list(records)
         self._embedder = embedder
         self._chroma_client = chroma_client
+        self._owns_chroma_client = chroma_client is None
         self._collection_name = collection_name or "idea_enhancer_vector_index"
         self._persist_directory = persist_directory
         self._collection: Any = None
@@ -77,6 +80,17 @@ class VectorRetriever:
 
         if auto_build and self._records:
             self.build_index()
+
+    def close(self) -> None:
+        """Release a Chroma client owned by this retriever, if one was opened."""
+        client = self._chroma_client
+        self._collection = None
+        self._chroma_client = None
+        self._is_indexed = False
+        if self._owns_chroma_client and client is not None:
+            close = getattr(client, "close", None)
+            if callable(close):
+                close()
 
     def _get_embedder(self) -> Any:
         if self._embedder is not None:
@@ -112,13 +126,82 @@ class VectorRetriever:
                 f"Failed to initialize ChromaDB persistent client at '{persist_path}': {err}"
             ) from err
 
-    def build_index(self) -> None:
-        """Build or rebuild the vector index from the canonical records."""
+    def _index_signature(self, texts: list[str]) -> tuple[str, str]:
+        _load_environment()
+        model_name = os.getenv("EMBEDDING_MODEL", DEFAULT_MODEL_NAME).strip() or DEFAULT_MODEL_NAME
+        record_texts = sorted(zip((record.project_id for record in self._records), texts))
+        serialized = json.dumps(
+            {"model": model_name, "records": record_texts},
+            ensure_ascii=False,
+            separators=(",", ":"),
+        )
+        return model_name, hashlib.sha256(serialized.encode("utf-8")).hexdigest()
+
+    def _existing_index_matches(
+        self,
+        collection: Any,
+        texts: list[str],
+        model_name: str,
+        signature: str,
+    ) -> bool:
+        """Check persisted index provenance, verifying legacy collections by content."""
+        try:
+            if collection.count() != len(self._records):
+                return False
+            metadata = getattr(collection, "metadata", None) or {}
+            if metadata.get("dataset_sha256") == signature and metadata.get("embedding_model") == model_name:
+                return True
+
+            # Collections created before signatures were added are accepted only
+            # after checking every id, document, and stored embedding.
+            stored = collection.get(include=["documents", "embeddings"])
+            stored_ids = stored.get("ids") or []
+            stored_documents = stored.get("documents") or []
+            stored_embeddings = stored.get("embeddings")
+            if (
+                len(stored_ids) != len(self._records)
+                or len(stored_documents) != len(self._records)
+                or stored_embeddings is None
+                or len(stored_embeddings) != len(self._records)
+                or any(embedding is None for embedding in stored_embeddings)
+            ):
+                return False
+            expected = dict(zip((record.project_id for record in self._records), texts))
+            if dict(zip(stored_ids, stored_documents)) != expected:
+                return False
+
+            return True
+        except Exception as error:
+            logger.debug("Existing Chroma collection could not be validated: %s", error)
+            return False
+
+    def build_index(self, force: bool = False) -> None:
+        """Reuse an unchanged persisted index, otherwise build from canonical records."""
         if not self._records:
             self._is_indexed = True
             return
 
         client = self._get_client()
+        texts = [build_search_text(record) for record in self._records]
+        ids = [record.project_id for record in self._records]
+        model_name, signature = self._index_signature(texts)
+        metadata = {
+            "hnsw:space": "cosine",
+            "dataset_sha256": signature,
+            "embedding_model": model_name,
+        }
+
+        if not force:
+            try:
+                existing = client.get_collection(self._collection_name)
+            except Exception:
+                existing = None
+            if existing is not None and self._existing_index_matches(existing, texts, model_name, signature):
+                self._collection = existing
+                self._is_indexed = True
+                logger.info("Reusing validated Chroma collection '%s'.", self._collection_name)
+                return
+
         embedder = self._get_embedder()
 
         try:
@@ -128,15 +211,12 @@ class VectorRetriever:
                 pass
             self._collection = client.create_collection(
                 name=self._collection_name,
-                metadata={"hnsw:space": "cosine"},
+                metadata=metadata,
             )
         except Exception as err:
             raise VectorIndexUnavailableError(
                 f"Failed to create ChromaDB collection '{self._collection_name}': {err}"
             ) from err
-
-        texts = [build_search_text(record) for record in self._records]
-        ids = [record.project_id for record in self._records]
 
         try:
             embeddings = self._encode_texts(embedder, texts)
@@ -159,7 +239,7 @@ class VectorRetriever:
                 new_map[r.project_id] = r
             self._records_map = new_map
             self._records = list(records)
-        self.build_index()
+        self.build_index(force=True)
 
     def _encode_texts(self, embedder: Any, texts: list[str]) -> list[list[float]]:
         if hasattr(embedder, "encode"):

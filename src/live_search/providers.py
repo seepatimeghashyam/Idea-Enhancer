@@ -13,6 +13,7 @@ from urllib.parse import urlparse
 
 import httpx
 
+from src.core.query_expansion import build_expanded_query
 from src.live_search.contracts import CandidateRecord, ProviderResult
 from src.live_search.http import ProviderFailure, get_json
 
@@ -27,6 +28,11 @@ _GITHUB_QUERY_STOPWORDS = frozenset("""a about after all an and any are as at be
 
 def _github_search_terms(idea: str) -> list[str]:
     """Extract up to ten safe, distinctive terms without sending a full idea sentence."""
+    # Use query expansion if enabled
+    if os.getenv("LIVE_QUERY_EXPANSION", "0").strip().lower() not in {"0", "false", "no", "off"}:
+        expanded = build_expanded_query(idea, max_terms=MAX_GITHUB_QUERY_TERMS)
+        return expanded.split()
+
     text = _GITHUB_QUERY_URL.sub(" ", idea)
     selected: list[str] = []
     seen: set[str] = set()
@@ -130,7 +136,11 @@ class OpenAlexProvider:
 
     async def search(self, idea: str, client: httpx.AsyncClient, limit: int = 20) -> ProviderResult:
         bounded_limit = min(max(int(limit), 1), MAX_PROVIDER_CANDIDATES)
-        params = {"search": _SPACE.sub(" ", idea).strip()[:512], "per-page": bounded_limit}
+        # Use query expansion if enabled
+        search_query = idea
+        if os.getenv("LIVE_QUERY_EXPANSION", "0").strip().lower() not in {"0", "false", "no", "off"}:
+            search_query = build_expanded_query(idea, max_terms=20)
+        params = {"search": _SPACE.sub(" ", search_query).strip()[:512], "per-page": bounded_limit}
         select = "id,doi,display_name,publication_year,publication_date,authorships,primary_location,best_oa_location,open_access,cited_by_count,type,abstract_inverted_index"
         params["select"] = select
         try:
@@ -192,6 +202,157 @@ class OpenAlexProvider:
         if results and not candidates:
             return ProviderResult(self.name, "invalid_response", (), "invalid_records", "OpenAlex results contained no usable paper records.")
         return _result(self.name, candidates)
+
+    async def expand_citations(
+        self,
+        client: httpx.AsyncClient,
+        work_ids: list[str],
+        max_per_work: int = 5,
+        direction: str = "both",
+    ) -> list[CandidateRecord]:
+        """Expand candidate pool via citation graph traversal.
+
+        Args:
+            client: HTTP client
+            work_ids: List of OpenAlex work IDs (e.g., "https://openalex.org/W123")
+            max_per_work: Max citations to fetch per work
+            direction: "cited_by" (forward), "references" (backward), or "both"
+
+        Returns:
+            List of new CandidateRecord from citation graph
+        """
+        if not work_ids:
+            return []
+
+        expanded: list[CandidateRecord] = []
+        seen_ids: set[str] = set()
+
+        for work_id in work_ids[:20]:  # Limit to first 20 works to control API calls
+            if direction in ("cited_by", "both"):
+                cited_by = await self._fetch_cited_by(client, work_id, max_per_work)
+                for c in cited_by:
+                    if c.provider_id not in seen_ids:
+                        seen_ids.add(c.provider_id)
+                        expanded.append(c)
+
+            if direction in ("references", "both"):
+                references = await self._fetch_references(client, work_id, max_per_work)
+                for c in references:
+                    if c.provider_id not in seen_ids:
+                        seen_ids.add(c.provider_id)
+                        expanded.append(c)
+
+        return expanded
+
+    async def _fetch_cited_by(
+        self,
+        client: httpx.AsyncClient,
+        work_id: str,
+        limit: int,
+    ) -> list[CandidateRecord]:
+        """Fetch papers that cite the given work (forward citations)."""
+        try:
+            params = {
+                "filter": f"cited_by:{work_id}",
+                "per-page": min(max(int(limit), 1), 25),
+                "select": "id,doi,display_name,publication_year,publication_date,authorships,primary_location,best_oa_location,open_access,cited_by_count,type,abstract_inverted_index",
+            }
+            payload = await get_json(client, self.endpoint, params=params, headers={"User-Agent": "IdeaEnhancer/1.0 (student research discovery)"})
+            return self._parse_openalex_results(payload)
+        except Exception as e:
+            logger.debug("Cited-by fetch failed for %s: %s", work_id, e)
+            return []
+
+    async def _fetch_references(
+        self,
+        client: httpx.AsyncClient,
+        work_id: str,
+        limit: int,
+    ) -> list[CandidateRecord]:
+        """Fetch papers referenced by the given work (backward citations)."""
+        # First get the work to extract referenced_works
+        try:
+            params = {
+                "select": "referenced_works",
+                "per-page": 1,
+            }
+            work_url = f"{self.endpoint}/{work_id.split('/')[-1]}"
+            payload = await get_json(client, work_url, params=params, headers={"User-Agent": "IdeaEnhancer/1.0 (student research discovery)"})
+            referenced = payload.get("referenced_works", [])
+            if not referenced:
+                return []
+
+            # Batch fetch referenced works
+            ref_ids = [w.split('/')[-1] for w in referenced[:limit]]
+            if not ref_ids:
+                return []
+
+            params = {
+                "filter": "ids.openalex:" + "|".join(ref_ids),
+                "per-page": len(ref_ids),
+                "select": "id,doi,display_name,publication_year,publication_date,authorships,primary_location,best_oa_location,open_access,cited_by_count,type,abstract_inverted_index",
+            }
+            payload = await get_json(client, self.endpoint, params=params, headers={"User-Agent": "IdeaEnhancer/1.0 (student research discovery)"})
+            return self._parse_openalex_results(payload)
+        except Exception as e:
+            logger.debug("References fetch failed for %s: %s", work_id, e)
+            return []
+
+    def _parse_openalex_results(self, payload: dict[str, Any]) -> list[CandidateRecord]:
+        """Parse OpenAlex results into CandidateRecords."""
+        results = payload.get("results")
+        if not isinstance(results, list):
+            return []
+
+        candidates: list[CandidateRecord] = []
+        for item in results:
+            if not isinstance(item, dict):
+                continue
+            provider_id = _clean_text(item.get("id"), 512)
+            title = _clean_text(item.get("display_name"), 2000)
+            if not provider_id or not title:
+                continue
+            abstract = _clean_text(reconstruct_abstract(item.get("abstract_inverted_index")))
+            location = item.get("best_oa_location")
+            if not isinstance(location, dict):
+                location = item.get("primary_location")
+            if not isinstance(location, dict):
+                location = {}
+            source = location.get("source") if isinstance(location, dict) else None
+            source_url = _safe_url((location.get("landing_page_url") if isinstance(location, dict) else None) or item.get("doi") or provider_id)
+            authorships = item.get("authorships")
+            authors = tuple(
+                name for auth in (authorships if isinstance(authorships, list) else [])
+                if isinstance(auth, dict)
+                for author in [auth.get("author")]
+                if isinstance(author, dict)
+                for name in [_clean_text(author.get("display_name"), 300)] if name
+            )[:30]
+            oa = item.get("open_access")
+            candidates.append(CandidateRecord(
+                candidate_id=_candidate_id(self.name, provider_id), source_provider=self.name,
+                provider_id=provider_id, candidate_type="paper", title=title, description=abstract,
+                source_url=source_url, doi=_clean_text(item.get("doi"), 512), authors=authors,
+                publication_date=_clean_text(item.get("publication_date"), 32),
+                publication_year=(
+                    item["publication_year"]
+                    if isinstance(item.get("publication_year"), int)
+                    and not isinstance(item.get("publication_year"), bool)
+                    and 1000 <= item["publication_year"] <= 9999
+                    else None
+                ),
+                work_type=_clean_text(item.get("type"), 120),
+                venue=_clean_text(source.get("display_name"), 500) if isinstance(source, dict) else None,
+                open_access=oa.get("is_oa") if isinstance(oa, dict) and isinstance(oa.get("is_oa"), bool) else None,
+                citation_count=(
+                    item["cited_by_count"]
+                    if isinstance(item.get("cited_by_count"), int)
+                    and not isinstance(item.get("cited_by_count"), bool)
+                    and item["cited_by_count"] >= 0
+                    else None
+                ),
+            ))
+        return candidates
 
 
 class GitHubProvider:

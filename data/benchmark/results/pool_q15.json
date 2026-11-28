@@ -1,0 +1,1004 @@
+{
+  "query_id": "q15",
+  "query_text": "Blockchain-based decentralized document storage with NFT authentication",
+  "category": "Blockchain",
+  "timestamp": 1795890755.360479,
+  "local_candidates": [
+    {
+      "candidate_id": "local:RVCE-PUB-0030",
+      "candidate_type": "local",
+      "title": "Decentralized Document Storage with NFT Authentication Using Blockchain Technology",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating decentralized document storage with nft authentication using blockchain technology. Published in 2024 8th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2024).",
+      "source_url": "https://doi.org/10.1109/csitss64042.2024.10816830",
+      "source_type": "research_paper",
+      "year": 2024,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 1,
+      "bm25_rank": 1,
+      "vector_rank": 1,
+      "rrf_score": 0.03278688524590164,
+      "shared_elements": [
+        "blockchain",
+        "decentralized",
+        "document",
+        "storage",
+        "nft",
+        "authentication"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_MCA_0102",
+      "candidate_type": "local",
+      "title": "Distributed Pii Authentication On Blockchain Networks",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 2,
+      "bm25_rank": 2,
+      "vector_rank": 5,
+      "rrf_score": 0.0315136476426799,
+      "shared_elements": [
+        "blockchain",
+        "decentralized",
+        "authentication"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2445",
+      "candidate_type": "local",
+      "title": "Blockchain Meets Aptitude: The Aptified Breakthrough",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 3,
+      "bm25_rank": 7,
+      "vector_rank": 3,
+      "rrf_score": 0.030798389007344232,
+      "shared_elements": [
+        "blockchain",
+        "decentralized"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_6350",
+      "candidate_type": "local",
+      "title": "Fortiblock: Hybrid Blockchain Framework For Secure Access Control In Cloud Environment",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 4,
+      "bm25_rank": 13,
+      "vector_rank": 2,
+      "rrf_score": 0.029827662395050816,
+      "shared_elements": [
+        "blockchain",
+        "decentralized"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3268",
+      "candidate_type": "local",
+      "title": "Next Gen Academic Verification With Blockchain Technology",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 5,
+      "bm25_rank": 9,
+      "vector_rank": 6,
+      "rrf_score": 0.02964426877470356,
+      "shared_elements": [
+        "blockchain",
+        "decentralized"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0375",
+      "candidate_type": "local",
+      "title": "Blockchain-Based Authentication and Authorization Mechanisms for Secure EV Supply Chain Management",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating blockchain-based authentication and authorization mechanisms for secure ev supply chain management. Published in 2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2025).",
+      "source_url": "https://doi.org/10.1109/csitss67709.2025.11295727",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 6,
+      "bm25_rank": 3,
+      "vector_rank": 13,
+      "rrf_score": 0.029571646010002173,
+      "shared_elements": [
+        "blockchain",
+        "decentralized",
+        "authentication"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_1052",
+      "candidate_type": "local",
+      "title": "Next Generation Democracy Based Online Election System Using Blockchain With Security Feature Enhancement",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 7,
+      "bm25_rank": 14,
+      "vector_rank": 7,
+      "rrf_score": 0.028438886647841874,
+      "shared_elements": [
+        "blockchain",
+        "decentralized"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_4213",
+      "candidate_type": "local",
+      "title": "Fake Product Detection Using Blockchain",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 8,
+      "bm25_rank": 6,
+      "vector_rank": 17,
+      "rrf_score": 0.02813852813852814,
+      "shared_elements": [
+        "blockchain",
+        "decentralized"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_1181",
+      "candidate_type": "local",
+      "title": "Blockchain-based Tax Calculator And Government Fund Allocation And Tracking Prototype",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 9,
+      "bm25_rank": 12,
+      "vector_rank": 11,
+      "rrf_score": 0.02797339593114241,
+      "shared_elements": [
+        "blockchain",
+        "decentralized"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_5164",
+      "candidate_type": "local",
+      "title": "Examination Portal Using Blockchain",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 10,
+      "bm25_rank": 5,
+      "vector_rank": 20,
+      "rrf_score": 0.027884615384615386,
+      "shared_elements": [
+        "blockchain",
+        "decentralized"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_0346",
+      "candidate_type": "local",
+      "title": "Agrichain: Blockchain- Enabled Agricultural Supply Chain Management",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 11,
+      "bm25_rank": 8,
+      "vector_rank": 16,
+      "rrf_score": 0.02786377708978328,
+      "shared_elements": [
+        "blockchain",
+        "decentralized"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2800",
+      "candidate_type": "local",
+      "title": "Automation In Deployment Of Smart Contract Using Blockchain",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 12,
+      "bm25_rank": 10,
+      "vector_rank": 19,
+      "rrf_score": 0.02694394213381555,
+      "shared_elements": [
+        "blockchain",
+        "decentralized"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2067",
+      "candidate_type": "local",
+      "title": "Cryptotrace: Ai-powered Cryptocurrency Transaction Tracing Platform",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 13,
+      "bm25_rank": 18,
+      "vector_rank": 14,
+      "rrf_score": 0.026334026334026334,
+      "shared_elements": [
+        "blockchain",
+        "decentralized"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_5962",
+      "candidate_type": "local",
+      "title": "Trustchain Governence: Revolutionizing Public Sector Projects Through Blockchain Based System For Transparency And Accountability",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 14,
+      "bm25_rank": 15,
+      "vector_rank": 18,
+      "rrf_score": 0.026153846153846153,
+      "shared_elements": [
+        "blockchain",
+        "decentralized"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0217",
+      "candidate_type": "local",
+      "title": "CORRIGENDUM: Energy storage management using ann based adaptive decentralized control in DC nanogrid (2025 <i>Eng. Res. Express</i> 7 045380)",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating corrigendum: energy storage management using ann based adaptive decentralized control in dc nanogrid (2025 <i>eng. res. express</i> 7 045380). Published in Engineering Research Express (2026).",
+      "source_url": "https://doi.org/10.1088/2631-8695/ae923d",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 15,
+      "bm25_rank": 4,
+      "vector_rank": null,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "blockchain",
+        "decentralized",
+        "storage"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_6396",
+      "candidate_type": "local",
+      "title": "Design And Deployment Of Secure Multi Party Distributed Ledger Technology (dlt) For Loan Management",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 16,
+      "bm25_rank": null,
+      "vector_rank": 4,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "blockchain",
+        "decentralized"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_0014",
+      "candidate_type": "local",
+      "title": "Design And Implementation Of A Secure Bitcoin Hardware Wallet",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 17,
+      "bm25_rank": null,
+      "vector_rank": 8,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0228",
+      "candidate_type": "local",
+      "title": "UniPCH: A Unified Framework for Cross-Chain Payments via Payment Channel Hubs",
+      "description": "Payment channel hubs (PCHs) enable private cross-chain payments, but existing protocols remain difficult to extend across heterogeneous blockchains. Their payment flows often depend on how particular blockchains represent transactions, authorize channel updates, and settle balances. Some protocols do not explain how their channels are implemented on actual blockchains. Supporting a new ledger or execution model requires a corresponding channel realization and may also require protocol adaptation and security analysis. We present UniPCH, a framework with two layers that separates native channel execution from private cross-chain payment logic. The lower UniPC layer defines common state transitions and security requirements. It separates task authorization from confirmation of the complete channel state. We provide realizations for UTXO ledgers and account ledgers that support smart contracts. At the upper layer, we develop selective re-signing blind conditional signatures (S-RBCS) to coordinate conditional authorization across hubs. Using S-RBCS, we construct a payment protocol that coordinates different channels in four phases. Our analysis establishes local UniPC security, griefing resistance, economic atomicity, and session unlinkability. We implement a Go prototype and evaluate the running time and bandwidth of each phase under different network conditions and system parameters. Results show modest computational overhead from the common interfaces. Most evaluated configurations run faster than comparable schemes under network delay. A full refresh ablation shows that reusing valid task evidence reduces computation and communication costs in the account realization.",
+      "source_url": "https://arxiv.org/abs/2610.36866v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Cybersecurity / Applied Cryptography",
+      "tech_stack": null,
+      "rank": 18,
+      "bm25_rank": null,
+      "vector_rank": 9,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_1298",
+      "candidate_type": "local",
+      "title": "Revolutionizing Medical Repository Security Through Custom Blockchain Solution",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Healthcare / Biomedical AI",
+      "tech_stack": null,
+      "rank": 19,
+      "bm25_rank": null,
+      "vector_rank": 10,
+      "rrf_score": 0.014285714285714285,
+      "shared_elements": [
+        "blockchain"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2921",
+      "candidate_type": "local",
+      "title": "Detection Of Vunerabilities In Blockchain Smart Contract Using Deep Learning",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 20,
+      "bm25_rank": 11,
+      "vector_rank": null,
+      "rrf_score": 0.014084507042253521,
+      "shared_elements": [
+        "blockchain",
+        "decentralized"
+      ],
+      "verification_status": "checked"
+    }
+  ],
+  "live_candidates": [
+    {
+      "candidate_id": "openalex_f26258a3e34675413bc6f3cf",
+      "candidate_type": "paper",
+      "title": "Decentralized Document Storage with NFT Authentication Using Blockchain Technology",
+      "description": "This research introduces a solution to escalating data security and privacy concerns by utilizing Ethereum-based blockchain technologies, like Polygon, and NFTs for decentralized document storage and authentication. Unique NFTs associated with each document are cryptographic proofs, minted and recorded on the blockchain to ensure resilience and tamper resistance. This research experiments with the use of Solidity based smart contract along with a decentralized file storage protocal, IPFS, to enhance flexibility and scalability.",
+      "source_url": "https://doi.org/10.1109/csitss64042.2024.10816830",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 1,
+      "bm25_rank": 1,
+      "dense_rank": 1,
+      "rrf_score": 0.03278688524590164,
+      "shared_concepts": [
+        "decentralized",
+        "document",
+        "storage",
+        "nft",
+        "authentication",
+        "blockchain"
+      ],
+      "distinctive_terms": [
+        "technology",
+        "research",
+        "introduces",
+        "solution",
+        "escalating",
+        "data",
+        "security",
+        "privacy"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 1 and semantic rank 1. Shared terms: decentralized, document, storage, nft, authentication, blockchain."
+    },
+    {
+      "candidate_id": "openalex_814639215ca85eaf7a8cfd1a",
+      "candidate_type": "paper",
+      "title": "CryptoBooks: next-generation library management with NFTs and blockchain technology",
+      "description": "Purpose This study proposes CryptoBooks, a novel framework integrating cryptographic hashing and blockchain-based non-fungible tokens (NFTs) to ensure document authenticity, ownership and integrity in digital library environments. Design/methodology/approach A design science research approach is adopted to develop and demonstrate a prototype system combining SHA-512 hashing, InterPlanetary File System storage and Ethereum-based NFT minting. The workflow is implemented using Python scripting, decentralized storage and smart contract deployment via Remix Integrated Development Environment (IDE). Findings The prototype demonstrates that digital documents can be transformed into immutable, verifiable assets with embedded cryptographic fingerprints and decentralized ownership records. The system ensures tamper-evident verification, transparent provenance tracking and independent authentication without reliance on centralized authorities. Mapping the framework against established authenticity criteria shows that its three components correspond to the content, agent and time of creation of a record. Practical implications The framework supports digital preservation, forgery prevention and verifiable credentialing in academic libraries. Seven applications are identified, including provenance for special collections, priority claims in academic integrity disputes and mitigation of reference rot. A staged adoption roadmap is proposed whose first stage requires no distributed ledger and no expenditure. Originality/value While cryptographic hashing combined with token-based ownership is established in other sectors, this study is among the first to adapt the approach to document-level authentication in libraries and to map its components onto the conditions of authenticity codified in archival science.",
+      "source_url": "https://doi.org/10.2139/ssrn.5052287",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 2,
+      "bm25_rank": 2,
+      "dense_rank": 2,
+      "rrf_score": 0.03225806451612903,
+      "shared_concepts": [
+        "blockchain",
+        "document",
+        "storage",
+        "nft",
+        "decentralized",
+        "authentication"
+      ],
+      "distinctive_terms": [
+        "cryptobooks",
+        "next",
+        "generation",
+        "library",
+        "management",
+        "nfts",
+        "technology",
+        "purpose"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 2 and semantic rank 2. Shared terms: blockchain, document, storage, nft, decentralized, authentication."
+    },
+    {
+      "candidate_id": "openalex_ff935f6ae2194e8370d73dc2",
+      "candidate_type": "paper",
+      "title": "Decentralized Management of Medical Test Results Utilizing Blockchain, Smart Contracts, and NFTs",
+      "description": "In today\u2019s medical landscape, the effective management and availability of diagnostic data, including current and historical medical tests, play a critical role in inform-ing physicians\u2019 therapeutic decisions. However, the conventional centralized storage system presents a significant impediment, particularly when patients switch healthcare providers. Given the sensitive nature of medical data, retrieving this information from a different healthcare facility can be fraught with challenges. While decentralized storage models using blockchain and smart contracts have been suggested as potential solutions, these methodologies often expose sensitive personal information due to the inherently open nature of data on the blockchain. Addressing these challenges, we present an innovative approach integrating Non-Fungible Tokens (NFTs) to facilitate the creation and sharing of medical document sets based on test results within a medical environment. This novel approach effectively balances data accessibility and security, introducing four key contributions: (a) We introduce a mechanism for sharing medical test results while preserving data privacy. (b) We offer a model for generating certified, NFT-based document sets that encapsulate these results.(c) We provide a proof-of-concept reflecting the proposed model\u2019s functionality and (d) We deploy this proof-of-concept across four EVM-supported platforms\u2014BNB Smart Chain, Fantom, Polygon, and Celo\u2014to identify the most compatible platform for our proposed model. Our work underscores the potential of blockchain, smart contracts, and NFTs to revolutionize medical data management, demonstrating a practical solution to the challenges posed by centralized storage systems.",
+      "source_url": null,
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 3,
+      "bm25_rank": 3,
+      "dense_rank": 6,
+      "rrf_score": 0.031024531024531024,
+      "shared_concepts": [
+        "decentralized",
+        "blockchain",
+        "storage",
+        "document",
+        "nft"
+      ],
+      "distinctive_terms": [
+        "management",
+        "medical",
+        "test",
+        "results",
+        "utilizing",
+        "smart",
+        "contracts",
+        "nfts"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 3 and semantic rank 6. Shared terms: decentralized, blockchain, storage, document, nft."
+    },
+    {
+      "candidate_id": "openalex_e0a79df2bd4d92cd849d9616",
+      "candidate_type": "paper",
+      "title": "A scientometric analysis on blockchain and NFTs: trends and development",
+      "description": "This study provides a comprehensive contribution to the current understanding of blockchain technology and non-fungible token (NFTs). Blockchain technology is a revolutionary data storage and management tool that records data shared across a network of computers globally, making it safe, transparent, and decentralized. Non-fungible token is a specific type of token built on a blockchain, enabling the authentication of digital assets and safeguarding them against copying or fabrication. The research employed information on 3760 abstract data collected for the period from January 1, 2017, to June 03, 2025. The search criteria for data retrieval are based on the following keywords: \u201cblockchain\u201d, \u201cnon-fungible token\u201d, and \u201ctoken\u201d. The data sources are Scopus and Web of Science. The study highlights the multi-dimensional and evolving discussion around blockchain and NFTs, including elements of technology, security, money, digital rights, and decentralization. The Wordcloud indicates a strong and growing innovation ecosystem, proposing new study avenues in trust mechanisms, smart contract development, and tokenized economies. The correlation graph visualizes that AI, data, finance, and blockchain show their mutual dependence has revolutionized our view of autonomy and governance. The study highlights authors who actively research blockchain and NFTs, as well as correlations between them. China leads the way in this research area and USA leads in terms of citation. The study\u2019s finding informs evidence-based decision-making regarding the regulation and governance of blockchain and NFT technologies. For industry practitioners, the study\u2019s insights can guide the development of innovative applications and solutions leveraging blockchain and NFTs. By examining a vast dataset of academic papers, the inquiry illuminates the key themes, emerging trends, and potential research gaps within this rapidly evolving field.",
+      "source_url": "https://doi.org/10.1057/s41599-025-05979-2",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 4,
+      "bm25_rank": 7,
+      "dense_rank": 3,
+      "rrf_score": 0.030798389007344232,
+      "shared_concepts": [
+        "blockchain",
+        "storage",
+        "decentralized",
+        "authentication",
+        "nft"
+      ],
+      "distinctive_terms": [
+        "scientometric",
+        "analysis",
+        "nfts",
+        "trends",
+        "development",
+        "study",
+        "provides",
+        "comprehensive"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 7 and semantic rank 3. Shared terms: blockchain, storage, decentralized, authentication, nft."
+    },
+    {
+      "candidate_id": "openalex_3f1eb031dd1ca12c8287119d",
+      "candidate_type": "paper",
+      "title": "Decentralized Certificate Authentication with Blockchain Technology",
+      "description": "Certificate authentication has typically depended on central authorities, which can lead to security issues likeforgery, data tampering, and vulnerabilities that stem from a single point of failure. In this paper, we introduce adecentralized method for certificate authentication through blockchain technology, which helps provide security,transparency, and a permanent record. By using smart contracts and cryptographic hashing, this system removesthe need for middlemen, allowing organizations to securely create, manage, and confirm certificates. Theblockchain acts as a secure ledger, making sure that certificates are protected from tampering and can always beverified.This method builds trust in digital credentials, cuts down on fraud, and makes the authentication process easierfor employers, schools, and other organizations. With blockchain, we reduce administrative burdens and stopunauthorized changes, which streamlines how we handle certificates. Also, the decentralized setup means that itcan be accessed and used by a variety of institutions and industries around the globe. Through our prototype andanalysis, we show that blockchain-based certificate authentication is feasible, secure, and efficient in real-lifesituations. Our results point to how blockchain technology could transform how we verify digital credentials,opening new possibilities for a safer and more decentralized future in education and the job market.",
+      "source_url": "https://ijerst.org/index.php/ijerst/article/view/946",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 5,
+      "bm25_rank": 6,
+      "dense_rank": 4,
+      "rrf_score": 0.030776515151515152,
+      "shared_concepts": [
+        "decentralized",
+        "authentication",
+        "blockchain"
+      ],
+      "distinctive_terms": [
+        "certificate",
+        "technology",
+        "typically",
+        "depended",
+        "central",
+        "authorities",
+        "which",
+        "can"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 6 and semantic rank 4. Shared terms: decentralized, authentication, blockchain."
+    },
+    {
+      "candidate_id": "openalex_d86da9aa987ae5a98bd3133c",
+      "candidate_type": "paper",
+      "title": "A Framework Based on the DAO and NFT in Blockchain for Electronic Document Sharing",
+      "description": "In the information age, electronic documents (e-documents) have become a popular alternative to paper documents due to their lower costs, higher dissemination rates, and ease of knowledge sharing. However, digital copyright infringements occur frequently due to the ease of copying, which not only infringes on the rights of creators but also weakens their creative enthusiasm. Therefore, it is crucial to establish an e-document sharing system that enforces copyright protection. However, the existing centralized system has outstanding vulnerabilities, and the plagiarism detection algorithm used cannot fully detect the context, semantics, style, and other factors of the text. Digital watermark technology is only used as a means of infringement tracing. This paper proposes a decentralized framework for e-document sharing based on decentralized autonomous organization (DAO) and non-fungible token (NFT) in blockchain. The use of blockchain as a distributed credit base resolves the vulnerabilities inherent in traditional centralized systems. The e-document evaluation and plagiarism detection mechanisms based on the DAO model effectively address challenges in comprehensive text information checks, thereby promoting the enhancement of e-document quality. The mechanism for protecting and circulating e-document copyrights using NFT technology ensures effective safeguarding of users\u2019 e-document copyrights and facilitates e-document sharing. Moreover, recognizing the security issues within the DAO governance mechanism, we introduce an innovative optimization solution. Through experimentation, we validate the enhanced security of the optimized governance mechanism, reducing manipulation risks by up to 51%. Additionally, by utilizing evolutionary game analysis to deduce the equilibrium strategies of the framework, we discovered that adjusting the reward and penalty parameters of the incentive mechanism motivates creators to generate superior quality and unique e-documents, while evaluators are more likely to engage in assessments.",
+      "source_url": "https://doi.org/10.32604/cmes.2024.049996",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 6,
+      "bm25_rank": 4,
+      "dense_rank": 7,
+      "rrf_score": 0.03055037313432836,
+      "shared_concepts": [
+        "nft",
+        "blockchain",
+        "document",
+        "decentralized"
+      ],
+      "distinctive_terms": [
+        "framework",
+        "dao",
+        "electronic",
+        "sharing",
+        "information",
+        "age",
+        "documents",
+        "become"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 4 and semantic rank 7. Shared terms: nft, blockchain, document, decentralized."
+    },
+    {
+      "candidate_id": "openalex_08c816dd7537762288570567",
+      "candidate_type": "paper",
+      "title": "NFTCert: Streamlining Certificate Creation and Verification with Blockchain and NFTs",
+      "description": "This project emerges from the need to address the inefficiencies and vulnerabilities in traditional certificate management and authentication processes across various industries. The project's central objective is to develop an innovative solution by harnessing the power of blockchain technology, with a specific focus on leveraging the Polygon blockchain. The problem it aims to solve is the cumbersome and often error-prone nature of certificate creation and verification. Traditional methods lack transparency and are susceptible to fraud and unauthorized alterations. This project presents an approach to autonomously generate certificates using predefined templates, streamlining the entire certificate creation process. These certificates, along with their associated metadata, are securely stored on the blockchain in the form of non-fungible tokens (NFTs), ensuring immutability and traceability. The methodology employed involves the integration of blockchain and NFT technology to provide a robust and efficient system for certificate management and authentication. It emphasizes transparency, security, and efficiency throughout the process. While the full results and details are discussed in the research paper, this project's implications are far-reaching. It has the potential to revolutionize how certificates are issued, managed, and authenticated across multiple sectors. By enhancing the efficiency and security of this critical component, the project contributes to increased trust, reduced fraud, and improved overall workflow efficiency in industries reliant on certificates.",
+      "source_url": "https://doi.org/10.22214/ijraset.2023.56982",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 7,
+      "bm25_rank": 8,
+      "dense_rank": 10,
+      "rrf_score": 0.028991596638655463,
+      "shared_concepts": [
+        "blockchain",
+        "authentication",
+        "nft"
+      ],
+      "distinctive_terms": [
+        "nftcert",
+        "streamlining",
+        "certificate",
+        "creation",
+        "verification",
+        "nfts",
+        "emerges",
+        "need"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 8 and semantic rank 10. Shared terms: blockchain, authentication, nft."
+    },
+    {
+      "candidate_id": "openalex_e51defa38a817694a5008229",
+      "candidate_type": "paper",
+      "title": "A Comprehensive Decentralized Digital Identity System: Blockchain, Artificial Intelligence, Fuzzy Extractors, and NFTs for Secure Identity Management",
+      "description": "Existing digital identification systems are often vulnerable to attacks as they are commonly based on authentication methods such as passwords, PIN codes, biometric data, etc., which can be easily forged or compromised. In this letter, we propose a digital identification system based on a unique set of user biometric data processed by Artificial Intelligence (AI) and fuzzy extractors to generate a cryptographically secure password linked to a unique Non-Fungible Token (NFT). Our system provides decentralized identification based on blockchain technology, which eliminates problems associated with centralized identification systems, such as cyber-attacks on central servers and data leaks. Our proposed system offers a higher level of user identification security by linking the user to their data through a unique NFT, generating a cryptographically secure password, and processing large volumes of biometric data using AI and fuzzy extractors. Our system provides a solution to many of these problems, making it important and relevant to many industries, including banking, medical, and financial sectors. The use of decentralized storage of information on the blockchain provides a high level of protection against hacking and reduces the likelihood of data breaches, making our system particularly relevant in the field of financial services and personal data protection.",
+      "source_url": "https://doi.org/10.55056/ceur-ws.org/vol-3550/paper4.pdf",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 8,
+      "bm25_rank": 5,
+      "dense_rank": 16,
+      "rrf_score": 0.02854251012145749,
+      "shared_concepts": [
+        "decentralized",
+        "blockchain",
+        "authentication",
+        "nft",
+        "storage"
+      ],
+      "distinctive_terms": [
+        "comprehensive",
+        "digital",
+        "identity",
+        "artificial",
+        "intelligence",
+        "fuzzy",
+        "extractors",
+        "nfts"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 5 and semantic rank 16. Shared terms: decentralized, blockchain, authentication, nft, storage."
+    },
+    {
+      "candidate_id": "openalex_e3dc4c4ec3e9fad88e725473",
+      "candidate_type": "paper",
+      "title": "Connect2NFT: A Web-Based, Blockchain Enabled NFT Application with the Aim of Reducing Fraud and Ensuring Authenticated Social, Non-Human Verified Digital Identity",
+      "description": "As of 2022, non-fungible tokens, or NFTs, the smart contract powered tokens that represent ownership in a specific digital asset, have become a popular investment vehicle. In 2021, NFT trading reached USD 17.6 billion and entered mainstream media with several celebrities and major companies launching tokens within the space. The rapid rise in popularity of NFTs has brought with it a number of risks and concerns, two of which will be discussed and addressed in this technical paper. Data storage of the underlying digital asset connected to an NFT is held off-chain in most cases and is therefore out of the NFT holders\u2019 control. This issue will be discussed and addressed using a theoretical workflow developed and presented for a system that converges NFTs and verifiable credentials with the aim of storing underlying NFT digital assets in a decentralized manner. The second issue focuses on the rise of NFT infringements and fraud within the overall NFT space. This will be discussed and addressed through the development of a practical application, named \u201cConnect2NFT\u201d. The main functionality of this practical application will enable users to connect their Twitter social media accounts to the NFTs they own, thus ensuring that potential buyers or viewers of the NFT can comprehensively conclude who is the authentic owner of a specific NFT. An individual performance analysis of the proposed solution will be conducted in addition to being compared and evaluated against similar applications. Thorough development, implementation, and testing has been performed in order to establish a practical solution that can be tested and applied to current NFT use cases. The theoretical NFT storage solution is a minor but equally important contribution in comparison.",
+      "source_url": "https://doi.org/10.3390/math10213934",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 9,
+      "bm25_rank": 12,
+      "dense_rank": 9,
+      "rrf_score": 0.028381642512077296,
+      "shared_concepts": [
+        "blockchain",
+        "nft",
+        "storage",
+        "decentralized"
+      ],
+      "distinctive_terms": [
+        "connect2nft",
+        "web",
+        "enabled",
+        "application",
+        "aim",
+        "reducing",
+        "fraud",
+        "ensuring"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 12 and semantic rank 9. Shared terms: blockchain, nft, storage, decentralized."
+    },
+    {
+      "candidate_id": "openalex_d1c9c6c4aec23717ad12b890",
+      "candidate_type": "paper",
+      "title": "PHR-NFT: Decentralized Blockchain Framework with Hyperledger and NFTs for Secure and Transparent Patient Health Records",
+      "description": "Blockchain technology holds significant promise for healthcare by enhancing the security and integrity of patient health records (PHRs) through decentralized storage and transparent access. However, it has substantial limitations, including problems with scalability, high transaction costs, privacy concerns, and intricate stakeholder access management. This study presents PHR-NFT, a novel framework that strengthens PHR privacy by utilizing Hyperledger Fabric and non-fungible tokens (NFTs) to address these issues. PHR-NFT improves privacy and communication by letting patients keep control of their medical records while permitting temporary, permission-based access by medical professionals. PHR-NFT offers a transparent solution that increases trust among healthcare stakeholders through the robust and decentralized architecture of the Hyperledger Fabric. This study demonstrates the viability and effectiveness of the PHR-NFT framework through performance evaluations focused on transaction latency, throughput, and security. This research has valuable implications for enhancing data privacy and security in healthcare practices and insightful information about blockchain-based healthcare systems.",
+      "source_url": "https://doi.org/10.3390/app142210744",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 10,
+      "bm25_rank": 10,
+      "dense_rank": 11,
+      "rrf_score": 0.028370221327967807,
+      "shared_concepts": [
+        "nft",
+        "decentralized",
+        "blockchain",
+        "storage"
+      ],
+      "distinctive_terms": [
+        "phr",
+        "framework",
+        "hyperledger",
+        "nfts",
+        "secure",
+        "transparent",
+        "patient",
+        "health"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 10 and semantic rank 11. Shared terms: nft, decentralized, blockchain, storage."
+    },
+    {
+      "candidate_id": "openalex_011e48ac8fdbc319eaec3c99",
+      "candidate_type": "paper",
+      "title": "A BLOCKCHAIN-BASED DECENTRALIZED FRAMEWORK FOR CERTIFICATE AUTHENTICATION AND ISSUER TRUST",
+      "description": "It is crucial to confirm the legitimacy of educational degree credentials, particularly when hiring new employees, since falsified paperwork can seriously disrupt operations and reduce productivity. Conventional verification techniques are susceptible to delays, mistakes, and data manipulation because they mostly rely on human procedures and centralized databases. A single, safe platform for smooth communication between issuers, holders, and verifiers is absent from these systems. This study suggests a decentralized, blockchain-based issuer validation and certificate verification solution to overcome these drawbacks. The approach ensures data immutability and tamper resistance by storing certificate hashes on the blockchain using Ethereum. Every participant in the network is represented as a peer node, including the issuer, holder, validator, and verifier. Even in cases when the certificate cannot be located, a hash-based search method drastically cuts down on certificate lookup time. According to experimental evaluation, the system provides quick, dependable verification and is economical in terms of gas use. The maintenance and validation of certificates is made safe, transparent, and effective by this integrated method.",
+      "source_url": "https://doi.org/10.64751/ajaccm.2026.v6.n3.843",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 11,
+      "bm25_rank": 9,
+      "dense_rank": 13,
+      "rrf_score": 0.02819138376017471,
+      "shared_concepts": [
+        "blockchain",
+        "decentralized",
+        "authentication"
+      ],
+      "distinctive_terms": [
+        "framework",
+        "certificate",
+        "issuer",
+        "trust",
+        "crucial",
+        "confirm",
+        "legitimacy",
+        "educational"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 9 and semantic rank 13. Shared terms: blockchain, decentralized, authentication."
+    },
+    {
+      "candidate_id": "openalex_557719925038df0410121b12",
+      "candidate_type": "paper",
+      "title": "A Survey of Blockchain: from Theory to NFT Applications",
+      "description": "The blockchain technology that has emerged in recent years has the characteristics of distributed ledgers, immutability, traceability, programmability, and security, providing new ideas and opportunities for the development of the digital economy. Non-Fungible tokens, due to their immutability and decentralization based on blockchain, have brought new trading models to the digital encryption industry and have had a significant impact on the recognition rights of digital assets. So this article introduces the basic concepts and characteristics of Non-Fungible tokens and blockchain, discusses the impact of blockchain on Non-Fungible tokens, introduces the properties, protocols, and ecosystems of Non-Fungible tokens, and finally looks forward to the future development trends of Non-Fungible tokens.",
+      "source_url": "https://zenodo.org/record/8311858",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 12,
+      "bm25_rank": 19,
+      "dense_rank": 5,
+      "rrf_score": 0.02804284323271665,
+      "shared_concepts": [
+        "blockchain",
+        "nft"
+      ],
+      "distinctive_terms": [
+        "survey",
+        "theory",
+        "applications",
+        "technology",
+        "emerged",
+        "recent",
+        "years",
+        "characteristics"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 19 and semantic rank 5. Shared terms: blockchain, nft."
+    },
+    {
+      "candidate_id": "openalex_d2d8e31cefb08f7c17ff6d2b",
+      "candidate_type": "paper",
+      "title": "TRADENFT: BLOCKCHAIN BASED NFT MARKETPLACE",
+      "description": "This research paper proposes a solution to the persisting problem present in most of the currently available NFT marketplaces based on Blockchain technologies like Ethereum, which is only the web address and metadata of NFT are stored on the blockchain technology whereas the actual image is stored on third-party cloud services making the application partially decentralized.The proposed system TradeNFT utilizes DFINITY Foundation's Internet Computer Platform as the blockchain technology that will store the image on itself making the system completely decentralized.The use of this blockchain makes TradeNFT fast, highly scalable, fully decentralized and economically viable.",
+      "source_url": null,
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 13,
+      "bm25_rank": 15,
+      "dense_rank": 8,
+      "rrf_score": 0.02803921568627451,
+      "shared_concepts": [
+        "blockchain",
+        "nft",
+        "decentralized"
+      ],
+      "distinctive_terms": [
+        "tradenft",
+        "marketplace",
+        "research",
+        "paper",
+        "proposes",
+        "solution",
+        "persisting",
+        "problem"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 15 and semantic rank 8. Shared terms: blockchain, nft, decentralized."
+    },
+    {
+      "candidate_id": "openalex_4beee0f81369779e19d8f3f4",
+      "candidate_type": "paper",
+      "title": "Digital Transformation: Design and Implementation of a Blockchain Platform for Decentralized and Transparent Property Asset Transfer Using NFTs",
+      "description": "In many jurisdictions, property registration and transfers remain constrained by inefficient, paper-based processes that depend on multiple intermediaries and bureaucratic approvals. This paper proposes a decentralized, blockchain-based property platform designed to streamline these processes using Non-Fungible Tokens (NFTs) and artificial intelligence (AI) agents to modernize public-sector asset management. The work addresses the persistent inefficiencies of paper-based property registration and ownership transfer by embedding legal and administrative logic within smart contracts and automating compliance through an intelligent conversational interface. The system was implemented using Ethereum-based ERC-721 standards, React for the user interface, and Langfuse-powered AI integration for guided user interaction. The pilot implementation presents secure, transparent, and auditable property-transfer transactions executed entirely on-chain, while hybrid IPFS-based storage and decentralized identifiers preserve privacy and legal validity. Comparative analysis against existing national initiatives indicates that the proposed architecture delivers decentralization, citizen control, and interoperability without compromising regulatory requirements. The system reduces bureaucratic overhead, simplifies transaction workflows, and lowers user error risk, thereby strengthening accountability and public trust. Overall, the paper outlines a viable foundation for legally aligned, AI-assisted digital property registries and offers a policy-oriented roadmap for integrating blockchain-enabled systems into public-sector governance infrastructures.",
+      "source_url": "https://doi.org/10.3390/world6040166",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 14,
+      "bm25_rank": 14,
+      "dense_rank": 12,
+      "rrf_score": 0.027402402402402402,
+      "shared_concepts": [
+        "blockchain",
+        "decentralized",
+        "storage"
+      ],
+      "distinctive_terms": [
+        "digital",
+        "transformation",
+        "implementation",
+        "platform",
+        "transparent",
+        "property",
+        "asset",
+        "transfer"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 14 and semantic rank 12. Shared terms: blockchain, decentralized, storage."
+    },
+    {
+      "candidate_id": "openalex_1d7ad59bf762765c74d78c4f",
+      "candidate_type": "paper",
+      "title": "NFT Based Land Registry System Using Blockchain",
+      "description": "In recent years,Land registration systems in many countries faces various challenges such as duplicate property, forgeries in documents, ownership conflicts, and unauthorized resale of property. Traditional systems are vulnerable to human errors, tampering of data, corruption which leads to lack of transparency and trust between buyer and seller. To overcome these issues,blockchain technology offers an immutability and transparency land registration system, but blockchain alone fails to ensure ownership integrity during transfer. This paper proposes a Blockchain and Non-Fungible Token (NFT)-based land registration system which ensures unique ownership of property , prevents duplicate registration of land , and reduces fraudulent during transactions. Each land parcel is represented as a unique NFT deployed on a blockchain network, which acts as an blockchain-based land title. Smart contracts enables ownership verification and allow land transfer only by the authorized owner.Land- related documents are stored using the InterPlanetary File System (IPFS), ensuring data integrity and decentralized storage. The proposed system ensures security, transparency and tamper proof while allowing ownership transfer. Experimental implementations and evaluation of implementations establish that the system effectively prevents duplicate land titles, fake ownership of property , and resale of already sold land. The solution provides a scalable and reliable approach for modernizing land registry systems using decentralized technologies.",
+      "source_url": "https://doi.org/10.64388/irev9i10-1715876",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 15,
+      "bm25_rank": 11,
+      "dense_rank": 18,
+      "rrf_score": 0.02690501986276634,
+      "shared_concepts": [
+        "nft",
+        "blockchain",
+        "decentralized",
+        "storage"
+      ],
+      "distinctive_terms": [
+        "land",
+        "registry",
+        "recent",
+        "years",
+        "registration",
+        "systems",
+        "many",
+        "countries"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 11 and semantic rank 18. Shared terms: nft, blockchain, decentralized, storage."
+    },
+    {
+      "candidate_id": "openalex_4ad32289b302fe0670604ed6",
+      "candidate_type": "paper",
+      "title": "Blockchain and NFTs for Trusted Ownership, Trading, and Access of AI Models",
+      "description": "The demand for high-quality Artificial Intelligence (AI) models is ever-increasing in this digital era. However, most of the existing methods leveraged for managing the ownership, trading, and access of AI models fall short of providing traceability, transparency, audit, security, and trustful features. In this paper, we propose a solution based on blockchain and Non-fungible Tokens (NFTs) to manage ownership rights and exchange of AI models in a transparent, traceable, auditable, secure, and trustworthy manner. Smart contracts are employed to enforce ownership, ease of access, and exchange policies for the unique NFT linked to an AI model. We use decentralized storage of the InterPlanetary File System (IPFS) and proxy re-encryption oracles to securely fetch, store, and share data related to AI models. We present algorithms along with their implementation, testing, and validation details. The proposed solution is evaluated using cost and security analyses to show its affordability and resiliency against security threats and attacks. All smart contract codes are made publicly available on GitHub.",
+      "source_url": "https://doi.org/10.1109/access.2022.3215660",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 16,
+      "bm25_rank": 13,
+      "dense_rank": 17,
+      "rrf_score": 0.02668564312399929,
+      "shared_concepts": [
+        "blockchain",
+        "nft",
+        "decentralized",
+        "storage"
+      ],
+      "distinctive_terms": [
+        "nfts",
+        "trusted",
+        "ownership",
+        "trading",
+        "access",
+        "ai",
+        "models",
+        "demand"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 13 and semantic rank 17. Shared terms: blockchain, nft, decentralized, storage."
+    },
+    {
+      "candidate_id": "openalex_2dc5fe75ab9a9f3117d2404a",
+      "candidate_type": "paper",
+      "title": "Blockchain Architecture and Software Design Focused on NFTs",
+      "description": "Non-Fungible Tokens (NFTs) have emerged as a transformative blockchain-based technology, enabling unique digital ownership and novel applications across art, gaming and Decentralized Finance (DeFi).However, the rapid evolution of NFT ecosystems has exposed critical challenges in scalability, security and interoperability, driven by the underlying blockchain architectures and software design paradigms.This article presents a systematic review of state-of-the-art blockchain architectures supporting NFTs, analyzing Layer-1 and Layer-2 solutions, consensus mechanisms and smart contract design patterns.We further explore software design best practices for NFT platforms, including gas optimization, upgradeability and anti-fraud mechanisms.Through a comparative analysis of Ethereum, Solana, Flow and Layer-2 frameworks like Polygon, we identify trade-offs in decentralization, throughput and cost.Finally, we highlight open challenges and future directions, such as cross-chain interoperability and energy-efficient NFT minting.This work serves as a comprehensive reference for researchers and practitioners aiming to advance NFT infrastructure.",
+      "source_url": "https://doi.org/10.31031/cojec.2025.03.000566",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 17,
+      "bm25_rank": 17,
+      "dense_rank": 14,
+      "rrf_score": 0.026500526500526502,
+      "shared_concepts": [
+        "blockchain",
+        "decentralized",
+        "nft"
+      ],
+      "distinctive_terms": [
+        "architecture",
+        "software",
+        "focused",
+        "nfts",
+        "non",
+        "fungible",
+        "tokens",
+        "emerged"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 17 and semantic rank 14. Shared terms: blockchain, decentralized, nft."
+    },
+    {
+      "candidate_id": "openalex_fd4582fc26e468808c9b4840",
+      "candidate_type": "paper",
+      "title": "Decentralized Non-Fungible Token (NFT) Marketplace Using Blockchain",
+      "description": "Before blockchain technology became common, ways to check who owned digital assets and how to protect them were easy to alter. This caused big losses. Blockchain is a new development that will greatly affect how we trade data plus money in a connected society - it is still rather new, and academic studies are scarce, but this situation changes fast. For this review, we first collected mostly peer reviewed sources. We also gathered helpful articles from many channels. The articles we chose show three important parts. They show the main subjects people discuss about blockchain technology. They show the principal groups of these subjects. They show how blockchain will develop also how it will affect society and technology. Key Words: Blockchain, NFTs, Ethereum, Tokenization, Digital Assets.",
+      "source_url": "https://doi.org/10.55041/ijsrem48889",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 18,
+      "bm25_rank": 16,
+      "dense_rank": 19,
+      "rrf_score": 0.02581612258494337,
+      "shared_concepts": [
+        "decentralized",
+        "nft",
+        "blockchain"
+      ],
+      "distinctive_terms": [
+        "non",
+        "fungible",
+        "token",
+        "marketplace",
+        "before",
+        "technology",
+        "became",
+        "common"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 16 and semantic rank 19. Shared terms: decentralized, nft, blockchain."
+    },
+    {
+      "candidate_id": "openalex_fa83219a3376736051569a5f",
+      "candidate_type": "paper",
+      "title": "Blockchain Application Using NFT Marketplace",
+      "description": "The emergence of Non-Fungible Tokens (NFTs) has revolutionized the digital ownership landscape, offering a secure and transparent way to represent ownership and provenance of digital assets. NFT marketplaces have risen as essential platforms, facilitating the creation, exchange, and trade of these unique digital assets. This research paper presents a rigorous investigation into the intricate process of designing and implementing a fully functional NFT marketplace, akin to industry leaders such as Opensea. By harnessing the capabilities of blockchain technology and smart contracts, this study explores the profound implications, technical intricacies, and market dynamics that underlie the development of a cutting-edge NFT marketplace. The research paper's foundation is a meticulous literature review that synthesizes insights from a curated selection of seminal works. These sources provide a robust theoretical framework, which informs the study's understanding of blockchain technology, NFTs, and digital marketplaces. The methodology section of this research outlines the step-by-step process for building an NFT marketplace. It delves into the selection of blockchain technology, the development tools, and the use of smart contracts. The paramount objectives are to ensure the security and unique representation of NFTs, facilitating trust in this innovative digital ecosystem. The architecture of the NFT marketplace is expounded upon, encompassing its various components, layers, and functionalities. This encompasses the creation, buying, selling, and management of NFTs, coupled with robust security measures, ensuring the integrity of the platform and the safety of its users. A comprehensive case study is presented to provide a real-world illustration of the NFT marketplace's operation. Through the utilization of actual data and statistics, this case study offers insights into the marketplace's performance, user experience, and economic impact, further substantiating the platform's practical viability. Results and discussion critically analyze the case study findings, while concurrently addressing the challenges encountered during development, including innovative solutions. A comparative analysis with existing NFT marketplaces underscores the unique value proposition of the platform and potential areas for further improvement. This research paper underscores the significance of NFT marketplaces in the digital economy. By offering a roadmap for the development of a secure, user-friendly, and functional NFT marketplace, this study contributes to the ongoing discourse on blockchain applications and digital asset management. The research paper presents significant scholarly and economic potential, laying the groundwork for further research in this dynamic and transformative field.",
+      "source_url": "https://doi.org/10.48175/ijarsct-13162",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 19,
+      "bm25_rank": 24,
+      "dense_rank": 15,
+      "rrf_score": 0.02523809523809524,
+      "shared_concepts": [
+        "blockchain",
+        "nft"
+      ],
+      "distinctive_terms": [
+        "application",
+        "marketplace",
+        "emergence",
+        "non",
+        "fungible",
+        "tokens",
+        "nfts",
+        "revolutionized"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 24 and semantic rank 15. Shared terms: blockchain, nft."
+    },
+    {
+      "candidate_id": "openalex_14c577bc363f0c76621f4383",
+      "candidate_type": "paper",
+      "title": "Metaverse development based on blockchain technology and NFT in China",
+      "description": "In 2021, the concept of \"meta-universe\" has attracted a lot of attention worldwide. This paper discusses the significance of Blockchain-based Non-Fungible Token (NFT) for the development of China's metaverse industry. In addition, in the context of China's unique institutional environment, this chapter compares current Blockchain and NFT-related regulations and explains whether and how these regulations facilitate the development of China's digital economy. Finally, a case study will be conducted and a Citespace analysis will be performed to provide some recommendations. This chapter will highlight the importance of balancing governance and innovation to facilitate the application and value of emerging technologies in the development of China's metaverse ecosystem and Blockchain.",
+      "source_url": "https://doi.org/10.25236/ajbm.2023.052524",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 20,
+      "bm25_rank": 18,
+      "dense_rank": 24,
+      "rrf_score": 0.024725274725274724,
+      "shared_concepts": [
+        "blockchain",
+        "nft"
+      ],
+      "distinctive_terms": [
+        "metaverse",
+        "development",
+        "technology",
+        "china",
+        "concept",
+        "meta",
+        "universe",
+        "attracted"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 18 and semantic rank 24. Shared terms: blockchain, nft."
+    }
+  ]
+}

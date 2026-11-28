@@ -1,0 +1,986 @@
+{
+  "query_id": "q8",
+  "query_text": "Edge-optimized Indian Sign Language translator using landmark-based motion representation",
+  "category": "Assistive Tech/Edge AI",
+  "timestamp": 1795890700.0631752,
+  "local_candidates": [
+    {
+      "candidate_id": "local:RVCE-PUB-0035",
+      "candidate_type": "local",
+      "title": "Edge-Optimized AI-Powered Translator for Indian Sign Language (ISL)",
+      "description": "Sign Language translation bridges the communi- cation gap between the Deaf and the hearing communities. According to the World Health Organization over 430 million people worldwide experience hearing loss, including nearly 18 million Deaf individuals in India who rely on Indian Sign Language(ISL). However, continuous sign language translation presents significant challenges due to complex spatio-temporal dependencies, signer variations, and contextual ambiguity. This work proposes an efficient, edge-based deep learning framework for continuous ISL translation using landmark-based motion representations. By extracting structured hand, pose, and facial keypoints instead of raw RGB frames, the system reduces com- putational complexity while preserving linguistic information. An ensemble-based classifier with probabilistic modeling ensures robust recognition, while a lightweight student model enables mobile deployment. Experimental evaluation on the dataset demonstrates reliable recognition performance with low-latency inference, validating the suitability of the approach for real-time, resource-constrained environments.",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-9082300/v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": null,
+      "rank": 1,
+      "bm25_rank": 1,
+      "vector_rank": 1,
+      "rrf_score": 0.03278688524590164,
+      "shared_elements": [
+        "edge",
+        "optimized",
+        "indian",
+        "sign",
+        "language",
+        "translator",
+        "landmark",
+        "motion"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3301",
+      "candidate_type": "local",
+      "title": "Dhwani - A Video Conferencing Utility With Sign Language Conversion For Deaf And Dumb",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Assistive Technology / AI",
+      "tech_stack": null,
+      "rank": 2,
+      "bm25_rank": 4,
+      "vector_rank": 3,
+      "rrf_score": 0.03149801587301587,
+      "shared_elements": [
+        "sign",
+        "language"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3436",
+      "candidate_type": "local",
+      "title": "Permanent Teeth Alignment For Optimized Dental Care",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 3,
+      "bm25_rank": 18,
+      "vector_rank": 6,
+      "rrf_score": 0.027972027972027972,
+      "shared_elements": [
+        "optimized"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0136",
+      "candidate_type": "local",
+      "title": "Dense Representation Learning and Differentiable Shape Modeling for Spine Landmark Detection",
+      "description": "Spine landmark detection from spinal X-ray is a key step for estimating spine deformation severity, for building biomechanical models, and for pre-operative planning. We reframe anatomical landmark detection as a pixel-level contrastive representation learning problem, matching dense pixel embeddings with landmark prototypes. Surprisingly, even with a generic U-Net backbone, this formulation results in more discriminative heatmaps compared to the traditional heatmap regression paradigm, leading to improved discrimination between vertebral corners on distinct vertebra. Furthermore, we combine the resulting heatmaps with learnable shape priors over the global configuration of spinal landmarks to resolve ambiguities in landmark locations, yielding a simple and practical approach to spinal landmark detection. Our approach is competitive, in terms of landmark accuracy and clinical parameter estimation, with the state-of-the-art on the public AASCE dataset and on two private spinal X-ray datasets. Our code and pre-trained weights are available at https://github.com/BioMedTP/Pix2Point.",
+      "source_url": "https://arxiv.org/abs/2610.36951v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Computer Vision / Pattern Recognition",
+      "tech_stack": null,
+      "rank": 4,
+      "bm25_rank": 2,
+      "vector_rank": null,
+      "rrf_score": 0.016129032258064516,
+      "shared_elements": [
+        "landmark",
+        "representation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_6356",
+      "candidate_type": "local",
+      "title": "Speech Recognition Using Lip Movements",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Assistive Technology / AI",
+      "tech_stack": null,
+      "rank": 5,
+      "bm25_rank": null,
+      "vector_rank": 2,
+      "rrf_score": 0.016129032258064516,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0313",
+      "candidate_type": "local",
+      "title": "Design and Analysis of Optimized Low Power Dual-Edge-Triggered Pulse Latches",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating design and analysis of optimized low power dual-edge-triggered pulse latches. Published in 2025 IEEE International Conference for Women in Innovation, Technology &amp; Entrepreneurship (ICWITE) (2025).",
+      "source_url": "https://doi.org/10.1109/icwite64848.2025.11306971",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Power Systems / Renewable Energy",
+      "tech_stack": null,
+      "rank": 6,
+      "bm25_rank": 3,
+      "vector_rank": null,
+      "rrf_score": 0.015873015873015872,
+      "shared_elements": [
+        "edge",
+        "optimized"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_5434",
+      "candidate_type": "local",
+      "title": "Speaksync - Transforming Lip Movements Into Text With AI Precision.",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Natural Language Processing",
+      "tech_stack": null,
+      "rank": 7,
+      "bm25_rank": null,
+      "vector_rank": 4,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "language"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0446",
+      "candidate_type": "local",
+      "title": "Enhancing Autonomous Vehicles: Robust Sign Board and Lane Detection",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating enhancing autonomous vehicles: robust sign board and lane detection. Published in 2023 7th International Conference on Computation System and Information Technology for Sustainable Solutions (CSITSS) (2023).",
+      "source_url": "https://doi.org/10.1109/csitss60515.2023.10334160",
+      "source_type": "research_paper",
+      "year": 2023,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": null,
+      "rank": 8,
+      "bm25_rank": 5,
+      "vector_rank": null,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "sign"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0072",
+      "candidate_type": "local",
+      "title": "Video Retalking",
+      "description": "Audio-based talking face video synthesis system generating photorealistic lip synchronization with arbitrary speech audio.",
+      "source_url": "https://github.com/OpenTalker/video-retalking",
+      "source_type": "open_source_repository",
+      "year": 2022,
+      "domain": "Computer Vision / Video Synthesis",
+      "tech_stack": null,
+      "rank": 9,
+      "bm25_rank": null,
+      "vector_rank": 5,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0119",
+      "candidate_type": "local",
+      "title": "Documenso",
+      "description": "Open-source digital signature infrastructure platform allowing users to sign, share, and track PDF documents securely.",
+      "source_url": "https://github.com/documenso/documenso",
+      "source_type": "open_source_repository",
+      "year": 2023,
+      "domain": "Digital Signatures / Enterprise Web",
+      "tech_stack": null,
+      "rank": 10,
+      "bm25_rank": 6,
+      "vector_rank": null,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [
+        "sign"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0220",
+      "candidate_type": "local",
+      "title": "A User Aware Indian Music Recommendation System",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating a user aware indian music recommendation system. Published in 2025 5th International Conference on Robotics, Automation, and Artificial Intelligence (RAAI) (2025).",
+      "source_url": "https://doi.org/10.1109/raai67517.2025.11423370",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 11,
+      "bm25_rank": 7,
+      "vector_rank": null,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [
+        "indian"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0139",
+      "candidate_type": "local",
+      "title": "dmMaze/BallonsTranslator",
+      "description": "\u6df1\u5ea6\u5b66\u4e60\u8f85\u52a9\u6f2b\u753b\u7ffb\u8bd1\u5de5\u5177, \u652f\u6301\u4e00\u952e\u673a\u7ffb\u548c\u7b80\u5355\u7684\u56fe\u50cf/\u6587\u672c\u7f16\u8f91 | Yet another computer-aided comic/manga translation tool powered by deeplearning",
+      "source_url": "https://github.com/dmMaze/BallonsTranslator",
+      "source_type": "open_source_repository",
+      "year": 2022,
+      "domain": "Computer Vision / Video Analytics",
+      "tech_stack": null,
+      "rank": 12,
+      "bm25_rank": null,
+      "vector_rank": 7,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0291",
+      "candidate_type": "local",
+      "title": "NutriLens - A CNN-Based Dietary Management Application for Indian Cuisine",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating nutrilens - a cnn-based dietary management application for indian cuisine. Published in 2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2025).",
+      "source_url": "https://doi.org/10.1109/csitss67709.2025.11294051",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": "CNN",
+      "rank": 13,
+      "bm25_rank": 8,
+      "vector_rank": null,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "indian"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0074",
+      "candidate_type": "local",
+      "title": "SadTalker",
+      "description": "Stylized audio-driven talking face generator with realistic 3D head motion and facial coefficient synthesis.",
+      "source_url": "https://github.com/OpenTalker/SadTalker",
+      "source_type": "open_source_repository",
+      "year": 2023,
+      "domain": "Computer Vision / 3D Avatars",
+      "tech_stack": null,
+      "rank": 14,
+      "bm25_rank": null,
+      "vector_rank": 8,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "motion"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2190",
+      "candidate_type": "local",
+      "title": "Revolutionizing Carbon Neutrality Ai-enhanced Solutions For Indian Coal Mines",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 15,
+      "bm25_rank": 9,
+      "vector_rank": null,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "indian"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2634",
+      "candidate_type": "local",
+      "title": "AI Based Caption Generator In Regional Language",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Natural Language Processing",
+      "tech_stack": null,
+      "rank": 16,
+      "bm25_rank": null,
+      "vector_rank": 9,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "language"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-IEEE-2023-05",
+      "candidate_type": "local",
+      "title": "Deep Learning Offline Virtual Assistant for Technical Queries",
+      "description": "A privacy-preserving localized desktop virtual assistant incorporating quantized recurrent neural networks and local transformer language models to resolve engineering technical queries offline.",
+      "source_url": "https://ieeexplore.ieee.org/document/10334215",
+      "source_type": "research_paper",
+      "year": 2023,
+      "domain": "Conversational AI / Edge Computing",
+      "tech_stack": "Transformers",
+      "rank": 17,
+      "bm25_rank": 10,
+      "vector_rank": null,
+      "rrf_score": 0.014285714285714285,
+      "shared_elements": [
+        "edge",
+        "language"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0071",
+      "candidate_type": "local",
+      "title": "SeamlessM4T",
+      "description": "Foundational multilingual multimodal AI model for seamless speech-to-speech and speech-to-text translation across 100 languages.",
+      "source_url": "https://github.com/facebookresearch/seamless_communication",
+      "source_type": "open_source_repository",
+      "year": 2023,
+      "domain": "Speech Processing / Multilingual AI",
+      "tech_stack": null,
+      "rank": 18,
+      "bm25_rank": null,
+      "vector_rank": 10,
+      "rrf_score": 0.014285714285714285,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0419",
+      "candidate_type": "local",
+      "title": "ruvnet/RuView",
+      "description": "\u03c0 RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection \u2014 all without a single pixel of video.",
+      "source_url": "https://github.com/ruvnet/RuView",
+      "source_type": "open_source_repository",
+      "year": 2025,
+      "domain": "Systems Programming / High Performance",
+      "tech_stack": null,
+      "rank": 19,
+      "bm25_rank": 11,
+      "vector_rank": null,
+      "rrf_score": 0.014084507042253521,
+      "shared_elements": [
+        "sign"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_5931",
+      "candidate_type": "local",
+      "title": "Robotic Arm Control Using Assistance In Kannada",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Assistive Technology / AI",
+      "tech_stack": null,
+      "rank": 20,
+      "bm25_rank": null,
+      "vector_rank": 11,
+      "rrf_score": 0.014084507042253521,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    }
+  ],
+  "live_candidates": [
+    {
+      "candidate_id": "openalex_9abc1fc2a131d369e0bb2a8c",
+      "candidate_type": "paper",
+      "title": "Edge-Optimized AI-Powered Translator for Indian Sign Language (ISL)",
+      "description": "Sign Language translation bridges the communi- cation gap between the Deaf and the hearing communities. According to the World Health Organization over 430 million people worldwide experience hearing loss, including nearly 18 million Deaf individuals in India who rely on Indian Sign Language(ISL). However, continuous sign language translation presents significant challenges due to complex spatio-temporal dependencies, signer variations, and contextual ambiguity. This work proposes an efficient, edge-based deep learning framework for continuous ISL translation using landmark-based motion representations. By extracting structured hand, pose, and facial keypoints instead of raw RGB frames, the system reduces com- putational complexity while preserving linguistic information. An ensemble-based classifier with probabilistic modeling ensures robust recognition, while a lightweight student model enables mobile deployment. Experimental evaluation on the dataset demonstrates reliable recognition performance with low-latency inference, validating the suitability of the approach for real-time, resource-constrained environments.",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-9082300/v1",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 1,
+      "bm25_rank": 1,
+      "dense_rank": 1,
+      "rrf_score": 0.03278688524590164,
+      "shared_concepts": [
+        "edge",
+        "optimized",
+        "translator",
+        "indian",
+        "sign",
+        "language",
+        "landmark",
+        "motion"
+      ],
+      "distinctive_terms": [
+        "ai",
+        "powered",
+        "isl",
+        "translation",
+        "bridges",
+        "communi",
+        "cation",
+        "gap"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 1 and semantic rank 1. Shared terms: edge, optimized, translator, indian, sign, language, landmark, motion."
+    },
+    {
+      "candidate_id": "openalex_563b2ea4d8a8dfdb0cc6b23c",
+      "candidate_type": "paper",
+      "title": "AI-Driven Indian Sign Language Recognition Using Hybrid CNN-BiLSTM Architecture for Divyangjan",
+      "description": "Barriers in expressive and receptive communication for individuals with hearing and speech impairments remain a significant challenge to achieving equitable social interaction and digital accessibility. These limitations restrict their participation in everyday conversations, education, and professional environments, emphasizing the urgent need for intelligent assistive communication technologies. This research introduces an AI-driven real-time Indian Sign Language (ISL) recognition framework that integrates advanced computer vision and deep learning techniques to translate hand gestures into textual outputs. The primary objective of this study is to design a lightweight, accurate, and real-time sign language translator suitable for Divyangjan, ensuring inclusivity in educational and social interactions. The proposed research employs Mediapipe-based hand landmark extraction to detect 21 key points in each gesture frame, followed by preprocessing and normalisation to create robust spatial representations. A hybrid Convolutional Neural Network processes these landmark vectors through a Bidirectional Long Short-Term Memory (CNN\u2013BiLSTM) model that captures both spatial and temporal dependencies in gesture motion, allowing it to recognise static and dynamic gestures such as J and Z. The system was trained on a self-collected dataset of over 26,000 gesture images covering all 26 ISL alphabets. Experimental analysis demonstrates that the proposed model achieved 97.8 percent accuracy, 97.4 percent precision, 97.2 percent recall, 97.3 percent F1-score, and a validation loss of only 0.08, outperforming traditional classifiers such as Random Forest and SVM by a significant margin. The trained model performs robustly under varying lighting, background, and hand orientation conditions, ensuring high reliability for real-world deployment. The novelty of this study lies in the fusion of Mediapipe landmark extraction with a temporal deep learning framework for continuous ISL gesture translation within an interactive CustomTkinter GUI. This human-centric, computationally efficient design enables accessible, real-time communication for the deaf and hard-of-hearing community, contributing to socially assistive AI systems that promote digital inclusivity and empowerment for Divyangjan.",
+      "source_url": "https://doi.org/10.35940/ijese.l2628.14011225",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 2,
+      "bm25_rank": 3,
+      "dense_rank": 2,
+      "rrf_score": 0.03200204813108039,
+      "shared_concepts": [
+        "indian",
+        "sign",
+        "language",
+        "translator",
+        "landmark",
+        "motion"
+      ],
+      "distinctive_terms": [
+        "ai",
+        "driven",
+        "recognition",
+        "hybrid",
+        "cnn",
+        "bilstm",
+        "architecture",
+        "divyangjan"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 3 and semantic rank 2. Shared terms: indian, sign, language, translator, landmark, motion."
+    },
+    {
+      "candidate_id": "openalex_e31ee7203a61542f689640fd",
+      "candidate_type": "paper",
+      "title": "A Systematic Review of Multimodal Representation Learning for Indian Sign Language Recognition Using Spatial Temporal and Transformer Based Approaches",
+      "description": "In India, Indian Sign Language is the important means of communication for people from the Deaf and hard-of-hearing communities, with automated recognition providing the opportunities for overcoming communication problems and supporting simple human-computer interaction. The studies in the field have moved from the hand-crafted features and traditional machine learning to the use of CNN-based representation learning and temporal modelling, landmark and pose-based representations, multimodal learning and the use of Transformer-based technologies. Herein, we carry out a comparative analysis of 36 research articles dedicated to ISL and relevant sign language recognition techniques being focused on research datasets used, tasks, modalities, representations, architectures applied, strategies of fusion, results obtained and the limitations of the investigation. The findings of our analysis suggest a shift from traditional isolated signing classification techniques towards dynamic and multi-modal approaches capable of taking into account the timing of signs and the variability in the signing. While CNNs and transfer learning techniques seem to be working well for related tasks, new methods involving the use of language models can handle more complex patterns in signing. Nonetheless, problems with continuous recognition, generalization across signers, dataset diversity and benchmarking, robust multimodal fusion and computational efficiency are still a huge concern. Thus, according to our results, the integration of RGB and depth video, hand landmarks and body position along with effective temporal modelling seems to be the way to make ISL recognition systems more robust, generalizable and deployable in practice.",
+      "source_url": "https://propulsiontechjournal.com/index.php/journal/article/view/11351",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 3,
+      "bm25_rank": 2,
+      "dense_rank": 5,
+      "rrf_score": 0.0315136476426799,
+      "shared_concepts": [
+        "representation",
+        "indian",
+        "sign",
+        "language",
+        "landmark"
+      ],
+      "distinctive_terms": [
+        "systematic",
+        "review",
+        "multimodal",
+        "learning",
+        "recognition",
+        "spatial",
+        "temporal",
+        "transformer"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 2 and semantic rank 5. Shared terms: representation, indian, sign, language, landmark."
+    },
+    {
+      "candidate_id": "openalex_8a8b46decd8eca871f05217f",
+      "candidate_type": "paper",
+      "title": "Vision-Based Real-Time Sign Language Recognition: A Comparative Benchmark of Landmark Tracking and Deep Sequential Architectures",
+      "description": "Automated sign language recognition offers substantial promise for improving communication accessibility between Deaf and Hard-of-Hearing (DHH) individuals and non-signing communities. However, deploying effective recognition systems on consumer-grade hardware requires addressing significant challenges in feature representation, signer variability, data leakage control, and real-time processing constraints. This paper presents an empirical comparative benchmark evaluating ten machine learning and deep sequential recognition pipelines for vision-based, character-level American Sign Language (ASL) fingerspelling and hand gesture recognition. The framework employs MediaPipe Hands to extract 21 three-dimensional anatomical landmarks, normalizes them into a 42-dimensional scale- and translation-invariant representation, and compares classical classifiers (Logistic Regression, Na\u00efve Bayes, K-Nearest Neighbors, Support Vector Machines, Decision Trees, Random Forest, and XGBoost) against deep architectures (2D-CNN, RNN, and Bidirectional LSTM). Experiments are conducted on a 120,000-frame corpus spanning 38 classes compiled from public benchmarks and custom recordings across 25 signers. Under standard stratified holdout evaluation, XGBoost achieves 99.53% \u00b1 0.11% accuracy with an inference latency of 0.30 ms, while Random Forest achieves 99.34% \u00b1 0.14% (0.80 ms). Under strict Cross-Signer Holdout evaluation where test signers are excluded from training, XGBoost and Bidirectional LSTM maintain 94.18% and 93.85% accuracy, demonstrating superior resilience to domain shifts compared to raw-pixel CNNs (-5.35% drop vs. -7.96%). End-to-end hardware profiling confirms a full-pipeline processing latency of 11.00 ms (90.9 FPS) for XGBoost and 12.80 ms (78.1 FPS) for LSTM, demonstrating the practical feasibility of real-time landmark-based hand sign recognition on standard laptop hardware.",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-11149223/v1",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 4,
+      "bm25_rank": 4,
+      "dense_rank": 3,
+      "rrf_score": 0.03149801587301587,
+      "shared_concepts": [
+        "sign",
+        "language",
+        "landmark",
+        "representation"
+      ],
+      "distinctive_terms": [
+        "vision",
+        "real",
+        "time",
+        "recognition",
+        "comparative",
+        "benchmark",
+        "tracking",
+        "deep"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 4 and semantic rank 3. Shared terms: sign, language, landmark, representation."
+    },
+    {
+      "candidate_id": "openalex_4b244fb01a3665322980e953",
+      "candidate_type": "paper",
+      "title": "Real-Time Bidirectional Translation System Between Text and Indian Sign Language Using Deep Learning and NLP Techniques",
+      "description": "In this paper, we present a real-time translation system that bridges the communication gap between the hearing and non-hearing communities. Our system converts English text to Indian Sign Language (ISL) and vice versa, using Natural Language Processing (NLP) techniques and deep learning-based gesture recognition. The system supports video-based gesture recognition for ISL and provides accurate text translations in real-time. This study addresses the technical challenges involved, including feature extraction from gestures and translating com- plex ISL sentences using neural networks like LSTM. Keywords- Indian Sign Language (ISL), Sign Language Translation, Gesture Recognition, Deep Learning, LSTM Model, Mediapipe Holistic, Text-to-Sign Conversion, Dy- namic Gesture Segmentation, Fingerspelling, Natural Lan- guage Processing (NLP), Pose Estimation, Hand Landmark Tracking, Real-Time Sign Language Recognition, Data Aug- mentation, Accessibility Technology",
+      "source_url": "https://doi.org/10.55041/ijsrem44150",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 5,
+      "bm25_rank": 6,
+      "dense_rank": 4,
+      "rrf_score": 0.030776515151515152,
+      "shared_concepts": [
+        "indian",
+        "sign",
+        "language",
+        "landmark"
+      ],
+      "distinctive_terms": [
+        "real",
+        "time",
+        "bidirectional",
+        "translation",
+        "between",
+        "text",
+        "deep",
+        "learning"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 6 and semantic rank 4. Shared terms: indian, sign, language, landmark."
+    },
+    {
+      "candidate_id": "openalex_67ec0963f22fd03f2209e8fa",
+      "candidate_type": "paper",
+      "title": "DUAL-REPRESENTATION DEEP LEARNING FRAMEWORK FOR REAL-TIME SIGN LANGUAGE TRANSLATION USING GRAPH SKELETON MODELING",
+      "description": "Background The translation systems in sign language are slowly becoming important assistive technologies needed to facilitate communication between the hearing-impaired and the hearing community. Although recent methods made in deep learning, most of the current gesture recognition systems are based predominantly on convolutional network architectures, which look at the visual appearance of gesture frames without considering the structural relationship between finger joints and the contextual information available in gesture frames. Objective In order to overcome these weaknesses, this paper presents a dual-representation deep learning model of real-time sign language translators based on Graph Convolutional Networks (GCN) and the use of Vision Transformers (ViT). Materials and Methods Under the proposed system, MediaPipe and OpenCV are used to extract hand landmarks on real-time video streams to give the accurate spatial location of the finger joints. These landmarks are represented as a skeletal graph in which joints are considered the nodes and anatomy provides edges. The GCN module is able to learn the motion pattern and the spatial relationship among the joints and with this, it is able to represent the articulation of the hand correctly. Meanwhile, the Vision Transformer works on gestures pictures by splitting them into image patches and using self-attention mechanisms to gather information about the entire context. The features produced by the two models are merged with the help of feature fusion module to enhance the performance of gesture classification. The identified gestures are then converted into the text and a text to speech interface. Results Empirical evidence shows that the suggested framework increases the recognition accuracy and creates an effective real-time communication within assistive applications.",
+      "source_url": "https://doi.org/10.25258/ijddt.16.60s.149",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 6,
+      "bm25_rank": 5,
+      "dense_rank": 8,
+      "rrf_score": 0.030090497737556562,
+      "shared_concepts": [
+        "representation",
+        "sign",
+        "language",
+        "motion"
+      ],
+      "distinctive_terms": [
+        "dual",
+        "deep",
+        "learning",
+        "framework",
+        "real",
+        "time",
+        "translation",
+        "graph"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 5 and semantic rank 8. Shared terms: representation, sign, language, motion."
+    },
+    {
+      "candidate_id": "openalex_09e2b38a78dd79d47677b4df",
+      "candidate_type": "paper",
+      "title": "Sign Language Recognition System Sign Wave",
+      "description": "People with hearing and speech disabilities often struggle to communicate without a translator, as sign language is not universally understood. They rely heavily on hand gestures for non-verbal communication. To address this, the paper proposes a system for automatic recognition of finger spelling in Indian Sign Language. The process begins by capturing the sign as an image input. Skin colour-based segmentation is used to detect hand shape, followed by conversion to a binary image. A Euclidean distance transformation is applied, and row/column projections are performed. For feature extraction, central moments and HU\u2019s moments are used, while classification is done using Neural Networks and SVM. Keywords: Artificial Neural Network, Central Moments, Distance Transformation, Fourier Descriptor, HU\u2019s Moments, Indian Sign Language, Projection, Skin Segmentation, SVM.",
+      "source_url": "https://doi.org/10.55041/ijsrem47343",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 7,
+      "bm25_rank": 7,
+      "dense_rank": 11,
+      "rrf_score": 0.02900988017658188,
+      "shared_concepts": [
+        "sign",
+        "language",
+        "translator",
+        "indian"
+      ],
+      "distinctive_terms": [
+        "recognition",
+        "wave",
+        "people",
+        "hearing",
+        "speech",
+        "disabilities",
+        "often",
+        "struggle"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 7 and semantic rank 11. Shared terms: sign, language, translator, indian."
+    },
+    {
+      "candidate_id": "openalex_ad56118674ba5389306774cb",
+      "candidate_type": "paper",
+      "title": "Enhanced Sign Language Translation Between American Sign Language and Indian Sign Language Using LLMs",
+      "description": "This research introduces a comprehensive framework designed to bridge the communication gap between American Sign Language (ASL) and Indian Sign Language (ISL). The proposed system employs a hybrid deep learning model for ASL gesture recognition, integrating a random forest classifier (RFC) and a convolutional neural network (CNN) to enhance accuracy. Recognized gestures are converted into text, which is refined using a fine-tuned Large Language Model (LLM) for contextual and grammatical accuracy. The corrected text is then synthesized into ISL gestures using RIFE-Net, a real-time intermediate flow estimation network, to generate smooth and natural gesture videos. The framework addresses key challenges such as gesture variability and linguistic differences between ASL and ISL, achieving a translation accuracy of 93.0% for gesture recognition and 94.2% for text correction. Initial experimental results demonstrate real-time processing capabilities, averaging one gesture per second, with video outputs at 60 FPS. This system not only facilitates seamless communication between ASL and ISL users but also lays the groundwork for scalability to other sign language pairs. The results highlight the potential to improve accessibility and inclusion of the global deaf community, paving the way for future research in multimodal sign language translation systems.",
+      "source_url": "https://doi.org/10.1109/access.2025.3595943",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 8,
+      "bm25_rank": 16,
+      "dense_rank": 7,
+      "rrf_score": 0.028083267871170464,
+      "shared_concepts": [
+        "sign",
+        "language",
+        "indian"
+      ],
+      "distinctive_terms": [
+        "enhanced",
+        "translation",
+        "between",
+        "american",
+        "llms",
+        "research",
+        "introduces",
+        "comprehensive"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 16 and semantic rank 7. Shared terms: sign, language, indian."
+    },
+    {
+      "candidate_id": "openalex_c7e930830d943d733517a454",
+      "candidate_type": "paper",
+      "title": "A Hybrid Deep Learning Framework for Indian Sign Language Recognition from Images and Videos",
+      "description": "This paper proposes a comprehensive deep learning approach for Indian Sign Language (ISL) recognition based on static image and dynamic video modalities. Based on a common use of spatial and temporal complexities in sign language gestures, this paper proposes two types of specialist hybrids. For static gestures, a CNN-Transformer model is introduced, which effectively combines multiple types of convolutional networks with Transformer models to capture the image features depending on global contextual relationships. A CNN-LSTM model based on the ConvLSTM2D layer is then used to jointly learn both spatial and temporal relations between sequences of video frames, responsible for generating dynamic sign sequences. Fullfledged repository containing the data, which is a balanced set of 36 ISL signs for each modality, along with uniform preprocessing steps like grayscale normalization, Gaussian smoothing, resizing, and sequence padding to maintain homogeneity in inputs. To guarantee computational efficiency while preserving gesture clarity, frames are temporally sampled in the video pipeline. Dynamic class weighting is applied during training to balance the classes, while early stopping and learning rate schedulers ensure that convergence is optimal without leading to overfitting. The models are tested and trained, and five-fold cross-validation is used for statistical strength and generalization. These metrics are calculated, and furthermore, the model's performance is plotted using confusion matrices, ROC curves, and accuracy-loss curves. The CNN-Transformer model has excellent image-based classification performance, and the CNN-LSTM model has very good motion-based temporal features capturing capability. This dual-modality system shows a successful merger of spatial and spatiotemporal deep neural network architectures for real-time, accurate ISL recognition. This system can easily be incorporated into assistive communication tools (such as sign-to-speech translators), educational resources, and mobile applications, thus facilitating inclusion for the hearing and speech-impaired communities.",
+      "source_url": "https://doi.org/10.14445/22315381/ijett-v74i4p114",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 9,
+      "bm25_rank": 8,
+      "dense_rank": 15,
+      "rrf_score": 0.02803921568627451,
+      "shared_concepts": [
+        "indian",
+        "sign",
+        "language",
+        "motion"
+      ],
+      "distinctive_terms": [
+        "hybrid",
+        "deep",
+        "learning",
+        "framework",
+        "recognition",
+        "images",
+        "videos",
+        "paper"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 8 and semantic rank 15. Shared terms: indian, sign, language, motion."
+    },
+    {
+      "candidate_id": "openalex_c4865e4ed7bdab47e784d71e",
+      "candidate_type": "paper",
+      "title": "Efficient Learning for hearing-impaired: Two Way Sign Language Translator using AI",
+      "description": "This research paper describes the design and im- plementation of a two-way sign language translator for deaf- mute and hearing individuals. The device uses a hand gesture recognition system to translate sign language into text for hearing individuals and converts text into sign language videos for deaf- mute individuals. The paper goes over the technical challenges and solutions involved in creating a legitimate system that recognizes gestures and a sign language video generation system. The results of the user testing with deaf-mute and hearing individuals show that the device has high accuracy and is user-friendly. The two-way sign language translator has the possibility of enhancing communication and accessibility in daily interactions for deaf-mute people.",
+      "source_url": "https://doi.org/10.22555/pjets.v12i1.1110",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 10,
+      "bm25_rank": 9,
+      "dense_rank": 14,
+      "rrf_score": 0.028006267136701922,
+      "shared_concepts": [
+        "sign",
+        "language",
+        "translator"
+      ],
+      "distinctive_terms": [
+        "efficient",
+        "learning",
+        "hearing",
+        "impaired",
+        "two",
+        "way",
+        "ai",
+        "research"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 9 and semantic rank 14. Shared terms: sign, language, translator."
+    },
+    {
+      "candidate_id": "openalex_6b548da8a1f3b80b873973e6",
+      "candidate_type": "paper",
+      "title": "Real-Time Sign Language Translator",
+      "description": "This paper presents a real-time sign language translation system integrating Google MediaPipe Handslandmark extraction, sequence-anchored coordinate normalization, and a Transformer-based deep learning architecture.The system recognizes fifteen distinct sign language gesture classes\u2014wave,yes, no, stop, wait, yo, good, bad, peace,call_me, promise, up, down, circle, and idle\u2014from a standard webcam without specialized sensors. The Transformerencoder employs four-head multi-head self-attention (key dimension 256), Conv1D feed-forward sublayers, residualconnections, and Layer Normalization to capture long-range temporal dependencies across 60-frame gesture sequences.A rolling buffer and five-frame majority-vote stabilization mechanism suppress prediction noise for stable real-timeoutput. Evaluation on a 27,000-frame dataset yields 100% classification accuracy with precision, recall, and F1-scoreeach equal to 1.0000. The confusion matrix exhibits perfect diagonal dominance with zerointer-class misclassification.Mean end-to-end inference latency is 39.0 ms on CPU-only consumer hardware, confirming practical real-timedeployment suitability.",
+      "source_url": "https://doi.org/10.36948/ijfmr.2026.v08i03.78073",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 11,
+      "bm25_rank": 13,
+      "dense_rank": 10,
+      "rrf_score": 0.027984344422700584,
+      "shared_concepts": [
+        "sign",
+        "language",
+        "translator"
+      ],
+      "distinctive_terms": [
+        "real",
+        "time",
+        "paper",
+        "presents",
+        "translation",
+        "integrating",
+        "google",
+        "mediapipe"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 13 and semantic rank 10. Shared terms: sign, language, translator."
+    },
+    {
+      "candidate_id": "openalex_3ee07d3f8f4991638e045472",
+      "candidate_type": "paper",
+      "title": "Real-Time Vision-Based Indian Sign Language Translation Using Deep Learning Techniques",
+      "description": "This work proposes a vision-based approach to real-time sign language translation for Indian Sign Language (ISL). The system uses state-of-the-art deep learning architectures such as CNN (Convolutional Neural Networks), LSTM (Long Short-Term Memory) networks, and Transformer-based encoder-decoder models for gesture recognition in both isolated and continuous forms. Data preprocessing techniques such as DTW (Dynamic Time Warping) were applied to augment and normalize gesture sequences from custom ISL and public ASL datasets. The model performance was quantitatively evaluated using precision, recall, F1-score, BLEU, ROUGE, CER(character error rate) and WER (word error rate). A Transformer-based model outperformed the achieving a BLEU score of 0.74 and a classification accuracy of 96.1%. The developed desktop application enables real-time ISL-to-English translation at 18 FPS without requiring external sensors, while ablation studies validate the benefits of multimodal fusion and pose-language alignment. This work demonstrates a robust, scalable approach to non-intrusive sign language translation, advancing accessibility for the DHH community.",
+      "source_url": "https://doi.org/10.55524/ijircst.2025.13.3.6",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 12,
+      "bm25_rank": 20,
+      "dense_rank": 6,
+      "rrf_score": 0.027651515151515153,
+      "shared_concepts": [
+        "indian",
+        "sign",
+        "language"
+      ],
+      "distinctive_terms": [
+        "real",
+        "time",
+        "vision",
+        "translation",
+        "deep",
+        "learning",
+        "techniques",
+        "work"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 20 and semantic rank 6. Shared terms: indian, sign, language."
+    },
+    {
+      "candidate_id": "openalex_c0570fc6d2a9018ff64f24f7",
+      "candidate_type": "paper",
+      "title": "Sign Language Recognition Using Graph and General Deep Neural Network Based on Large Scale Dataset",
+      "description": "Sign Language Recognition (SLR) represents a revolutionary technology aiming to establish communication between deaf and non-deaf communities, surpassing traditional interpreter-based approaches. Existing efforts in automatic sign recognition predominantly rely on hand skeleton joint information, steering clear of image pixels to address challenges like partial occlusion and redundant backgrounds. Many researchers have been working to develop automatic sign recognition using hand skeleton joint information instead of image pixels to overcome partial occlusion and redundant background problems. However, body motion and facial expression play an essential role in increasing the inner gesture variance in expressing sign language emotion besides hand information for large-scale sign word datasets. Recently, some researchers have been working to develop muti-gesture-based SLR recognition systems, but their performance accuracy and efficiency are unsatisfactory for real-time deployment. Addressing these limitations, we propose a novel approach \u2013 a two-stream multistage graph convolution with attention and residual connection (GCAR) \u2013 designed to extract spatial-temporal contextual information. The multistage GCAR system, incorporating a channel attention module, dynamically enhances attention levels, particularly for non-connected skeleton points during specific events within spatial-temporal features. The methodology involves capturing joint skeleton points and motion, offering a comprehensive understanding of a person\u2019s entire body movement during sign language gestures and feeding this information into two streams. In the first stream, joint key features undergo processing through sep-TCN, graph convolution, deep learning layer, and a channel attention module across multiple stages, generating intricate spatial-temporal features in sign language gestures. Simultaneously, the joint motion is processed in the second stream, mirroring the steps of the first branch. The fusion of these two features yields the final feature vector, which is then fed into the classification module. The model excels in capturing discriminative structural displacements and short-range dependencies by leveraging unified joint features projected onto a high-dimensional space. Owing to the effectiveness of these features, the proposed method achieved significant accuracies: 90.31%, 94.10%, 99.75%, and 34.41%, for the WLASL, PSL, MSL, and ASLLVD large-scale datasets, respectively, with 0.69 million parameters. The high-performance accuracy, coupled with stable computational complexity, demonstrates the superiority of the proposed model. This innovative approach is anticipated to redefine the landscape of sign language recognition, setting a new standard in the field.",
+      "source_url": "https://doi.org/10.1109/access.2024.3372425",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 13,
+      "bm25_rank": 10,
+      "dense_rank": 18,
+      "rrf_score": 0.027106227106227107,
+      "shared_concepts": [
+        "sign",
+        "language",
+        "motion"
+      ],
+      "distinctive_terms": [
+        "recognition",
+        "graph",
+        "general",
+        "deep",
+        "neural",
+        "network",
+        "large",
+        "scale"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 10 and semantic rank 18. Shared terms: sign, language, motion."
+    },
+    {
+      "candidate_id": "openalex_655d103722a652e641bee330",
+      "candidate_type": "paper",
+      "title": "SignSpeak: Indian Sign Language Recognition with ML Precision",
+      "description": "Objectives: To develop an accessible educational platform for Indian Sign Language (ISL) recognition, bridging communication gaps using advanced machine learning techniques, and promoting inclusivity for the hearing-impaired community. Methods: The study utilized Random Forest for classifying ISL letters and numbers with 1200 images per class and Long Short-Term Memory (LSTM)/Large Language Model (LLM) for gesture-based word and sentence recognition using 120 custom images. Feedback from Jhaveri Thanawala School for the Deaf validated the approach. Findings: The Random Forest model achieved 99.98% accuracy in recognizing ISL letters and numbers. LSTM and LLM models demonstrated 87% accuracy in translating gestures into meaningful sentences. The dynamic learning and quiz modules improved user engagement, facilitating effective ISL mastery. Feedback from Jhaveri Thanawala School confirmed its real-world usability. These results enhance prior works by offering an integrated, highly accurate platform to promote ISL adoption, enabling better societal inclusivity for individuals with hearing disabilities. Novelty: Signova integrates gesture recognition with sentence generation which makes it a unique ISL recognition system, achieving high accuracy while providing interactive tools for learning and practicing ISL to foster its accessibility. Keywords: Indian Sign Language, Sign-Language Recognition, Random Forest, Long Short-Term Memory, Large Language Model",
+      "source_url": "https://doi.org/10.17485/ijst/v18i8.4049",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 14,
+      "bm25_rank": 17,
+      "dense_rank": 12,
+      "rrf_score": 0.026875901875901876,
+      "shared_concepts": [
+        "indian",
+        "sign",
+        "language"
+      ],
+      "distinctive_terms": [
+        "signspeak",
+        "recognition",
+        "ml",
+        "precision",
+        "objectives",
+        "accessible",
+        "educational",
+        "platform"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 17 and semantic rank 12. Shared terms: indian, sign, language."
+    },
+    {
+      "candidate_id": "openalex_61b2310ca808649cea06a977",
+      "candidate_type": "paper",
+      "title": "Sign Language Translator",
+      "description": "Sign language translation is necessary to increase inclusivity and communication within the Deaf and hard-of-hearing communities [1]. Communication difficulties with non-sign language speakers affect social, professional, and educational relationships for deaf people [1]. These issues can be solved by utilizing technology, such as sign language recognition, which offers substitute communication channels [2]. This work presents a novel method for recognizing and translating sign language motions using MediaPipe Holistic and Long Short-Term Memory (LSTM) neural networks [3]. After extensive testing, our LSTM-based model shows impressive accuracy, which makes it a useful tool for real-time translation [4]. We discuss problems encountered and their solutions, providing insights into the model architecture, training protocols, and data preprocessing [5]. Our results suggest that systems for translating and recognizing sign language have a lot of room for improvement. This method encourages a thorough assessment of its effectiveness and has potential uses for the Deaf community, sign language interpreters and technology developers. This research lays the foundation for future sign language translation technology developments, closing the communication gap between the Deaf and hearing communities.",
+      "source_url": "https://doi.org/10.62441/nano-ntp.v20i6.86",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 15,
+      "bm25_rank": 11,
+      "dense_rank": 19,
+      "rrf_score": 0.026742734890354787,
+      "shared_concepts": [
+        "sign",
+        "language",
+        "translator"
+      ],
+      "distinctive_terms": [
+        "translation",
+        "necessary",
+        "increase",
+        "inclusivity",
+        "communication",
+        "within",
+        "deaf",
+        "hard"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 11 and semantic rank 19. Shared terms: sign, language, translator."
+    },
+    {
+      "candidate_id": "openalex_cf6870558528eee337f60a42",
+      "candidate_type": "paper",
+      "title": "Hybrid CNN-Transformer for Dynamic Indian Sign Language Recognition with Non-Manual Gesture Analysis",
+      "description": "Sign language is a component element of communication between the mute and hearing-impaired communities that are indispensable to them, but it is mostly closed-off to the general population. To step into that gap, the current paper outlines the design of a hybrid Vision Transformer-Convolutional Neural Network system, officially focused on Indian Sign Language (ISL) gesture recognition, strong dynamic gestures, and face muscles. The edited database is 1,100 video samples in 22 different classes, which were recorded in the heterogeneous environmental conditions, to provide the robustness. The empirical findings indicate that the hybrid model has an exemplary training accuracy of 100%, validation accuracy of 88.6%, and a test accuracy of 82.14% and thus outperforms the state-of-the-art that provides accuracy of 88.7% to 92% of training accuracy. Proposed system thus achieves enhanced accuracy by 7-11% in case of continuous sign gestures. Through this, inclusivity and accessibility to the deaf community are thereby enhanced and future possibilities involve data enhancement as well as the integration of NLP-based text-to-speech synthesis.",
+      "source_url": "https://doi.org/10.18280/isi.301222",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 16,
+      "bm25_rank": 22,
+      "dense_rank": 9,
+      "rrf_score": 0.026687875574407917,
+      "shared_concepts": [
+        "indian",
+        "sign",
+        "language"
+      ],
+      "distinctive_terms": [
+        "hybrid",
+        "cnn",
+        "transformer",
+        "dynamic",
+        "recognition",
+        "non",
+        "manual",
+        "gesture"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 22 and semantic rank 9. Shared terms: indian, sign, language."
+    },
+    {
+      "candidate_id": "openalex_ee87838836307fe0e65b99f5",
+      "candidate_type": "paper",
+      "title": "Indian Sign Language Recognition Using Mediapipe Holistic",
+      "description": "Deaf individuals confront significant communication obstacles on a daily basis. Their inability to hear makes it difficult for them to communicate with those who do not understand sign language. Moreover, it presents difficulties in educational, occupational, and social contexts. By providing alternative communication channels, technology can play a crucial role in overcoming these obstacles. One such technology that can facilitate communication between deaf and hearing individuals is sign language recognition. We will create a robust system for sign language recognition in order to convert Indian Sign Language to text or speech. We will evaluate the proposed system and compare CNN and LSTM models. Since there are both static and gesture sign languages, a robust model is required to distinguish between them. In this study, we discovered that a CNN model captures letters and characters for recognition of static sign language better than an LSTM model, but it outperforms CNN by monitoring hands, faces, and pose in gesture sign language phrases and sentences. The creation of a text-to-sign language paradigm is essential since it will enhance the sign language-dependent deaf and hard-of-hearing population's communication skills. Even though the sign-to-text translation is just one side of communication, not all deaf or hard-of-hearing people are proficient in reading or writing text. Some may have difficulty comprehending written language due to educational or literacy issues. Therefore, a text-to-sign language paradigm would allow them to comprehend text-based information and participate in a variety of social, educational, and professional settings. Keywords: deaf and hard-of-hearing, DHH, Indian sign language, CNN, LSTM, static and gesture sign languages, text-to-sign language model, MediaPipe Holistic, sign language recognition, SLR, SLT",
+      "source_url": null,
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 17,
+      "bm25_rank": 14,
+      "dense_rank": 16,
+      "rrf_score": 0.02667140825035562,
+      "shared_concepts": [
+        "indian",
+        "sign",
+        "language"
+      ],
+      "distinctive_terms": [
+        "recognition",
+        "mediapipe",
+        "holistic",
+        "deaf",
+        "individuals",
+        "confront",
+        "significant",
+        "communication"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 14 and semantic rank 16. Shared terms: indian, sign, language."
+    },
+    {
+      "candidate_id": "openalex_e10db8aa59eaea1b6b5ea0ba",
+      "candidate_type": "paper",
+      "title": "Temporal convolutional network for Indonesian word by word sign language translator on MediaPipe framework",
+      "description": "Sign language is a language created to help the deaf-mute communicate with others. In Indonesia, there are two sign languages: Indonesian sign language system or sistem isyarat bahasa Indonesia (SIBI) and Indonesian sign language or bahasa isyarat Indonesia (BISINDO), but the deaf community prefers to use BISINDO. Deaf-mute people use sign language to communicate, but normal people usually avoid learning it because they feel it's unnecessary for daily communication. This will certainly be a problem for the deaf-mute because people who do not learn sign language will certainly have difficulty understanding what they are trying to convey. Therefore, an application that can translate sign language is needed to help overcome communication problems between the deaf-mute and normal people. This research focuses on BISINDO translation using a temporal convolutional network (TCN) with MediaPipe methods. The amount of data used consists of 2,700 videos representing 27 word-level signs in BISINDO; this number increases to 32,400 after undergoing the data augmentation process. The model built was tested in translating BISINDO at the word level in simulation, and a thorough comparison between TCN and bidirectional long short-term memory (BiLSTM); both of them were running on the MediaPipe platform separately. From the experiment, it is shown that the performance of TCN exceeds BiLSTM with an accuracy rate as high as 88.64%.",
+      "source_url": "https://doi.org/10.11591/ijai.v15.i5.pp4081-4095",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 18,
+      "bm25_rank": 12,
+      "dense_rank": 24,
+      "rrf_score": 0.025793650793650792,
+      "shared_concepts": [
+        "sign",
+        "language",
+        "translator"
+      ],
+      "distinctive_terms": [
+        "temporal",
+        "convolutional",
+        "network",
+        "indonesian",
+        "word",
+        "mediapipe",
+        "framework",
+        "created"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 12 and semantic rank 24. Shared terms: sign, language, translator."
+    },
+    {
+      "candidate_id": "openalex_384f7a986ad0299dd1d61312",
+      "candidate_type": "paper",
+      "title": "E-SIGNSPEAK: AN EMOTION-INTEGRATED INDIAN SIGN LANGUAGE TRANSLATION SYSTEM USING DEEP LEARNING",
+      "description": "Sign language serves as the primary mode of communication for over 18 million hearing-impaired individuals in India, yet real-time translation systems that capture both linguistic content and emotional context remain limited. This paper presents E-SignSpeak, a dual-modality deep learning framework that jointly recognizes Indian Sign Language (ISL) gestures and facial emotional expressions from video input, and generates context-aware natural language output with speech synthesis. The ISL recognition module employs a CNN-augmented stacked Bidirectional LSTM with multi-head self-attention, trained on the INCLUDE-262 dataset, achieving 90.86% Top-1 accuracy across 262 classes. The Facial Emotion Recognition module fine-tunes MobileNetV2 on FER2013, achieving performance consistent with human-level benchmarks (~65%). The outputs are fused through a lightweight API pipeline, where few-shot FLAN-T5 prompting generates emotion-aware sentences. To the best of our knowledge, this work represents one of the first web-deployable systems integrating ISL recognition and emotion understanding into a unified assistive pipeline. The results demonstrate the feasibility of affect-aware sign language translation for real-world applications.",
+      "source_url": "https://doi.org/10.56975/jaafr.v4i4.506485",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 19,
+      "bm25_rank": 23,
+      "dense_rank": 13,
+      "rrf_score": 0.02574682290807064,
+      "shared_concepts": [
+        "indian",
+        "sign",
+        "language"
+      ],
+      "distinctive_terms": [
+        "signspeak",
+        "emotion",
+        "integrated",
+        "translation",
+        "deep",
+        "learning",
+        "serves",
+        "primary"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 23 and semantic rank 13. Shared terms: indian, sign, language."
+    },
+    {
+      "candidate_id": "openalex_874bfa4bcb25b0f02a0f270c",
+      "candidate_type": "paper",
+      "title": "Indian Sign Language Recognition Using CNN Inception V3 - A Review",
+      "description": "This research paper explores the intersection of sign language recognition & deep learning, with a focus on the utilization of CNNs and the Inception V3 architecture. The study emphasizes how crucial proper translation and identification of sign language is to closing the communication gap that exists between the hearing and the Deaf populations. It discusses challenges such as limited datasets and ambiguity in sign language and outlines the potential for future advancements in accessibility and education. By combining the power of deep learning and culturally tailored datasets, this research paper paves the way for more effective sign language recognition, offering the promise of improved communication and accessibility for individuals with hearing impairments. It emphasizes how important it is to remove obstacles to communication and promote inclusion in all facets of daily life for the community of people who are Deaf and hard of hearing",
+      "source_url": "https://doi.org/10.22214/ijraset.2024.56887",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 20,
+      "bm25_rank": 19,
+      "dense_rank": 17,
+      "rrf_score": 0.025645240835114255,
+      "shared_concepts": [
+        "indian",
+        "sign",
+        "language"
+      ],
+      "distinctive_terms": [
+        "recognition",
+        "cnn",
+        "inception",
+        "v3",
+        "review",
+        "research",
+        "paper",
+        "explores"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 19 and semantic rank 17. Shared terms: indian, sign, language."
+    }
+  ]
+}

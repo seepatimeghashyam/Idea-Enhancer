@@ -1,0 +1,1009 @@
+{
+  "query_id": "q7",
+  "query_text": "AI-assisted swarm robotics with ant colony optimization for dynamic exploration",
+  "category": "Robotics/AI",
+  "timestamp": 1795890693.9302342,
+  "local_candidates": [
+    {
+      "candidate_id": "local:RVCE-PUB-0054",
+      "candidate_type": "local",
+      "title": "AI-Assisted Swarm Robotics for Autonomous Exploration Using Ant Colony Algorithms",
+      "description": "This study explores the integration of Artificial Intelligence (AI) techniques with Ant Colony Optimization (ACO) to enhance swarm robotic exploration in dynamic and uncertain environments. While traditional ACO provides a decentralized, pheromone-based mechanism for path planning, it suffers from slow convergence, stagnation, and limited adaptability when confronted with environmental changes. To address these challenges, an AI-assisted ACO framework was developed, incorporating RL principles to adapt pheromone update rules in real time. Robots learn from past interactions, adjust strategies dynamically, and maintain efficient exploration under varying conditions. Python-based simulations were conducted across four environments\u201450\u00d750, 100\u00d7100, 250\u00d7250, and 500\u00d7500 grids\u2014with swarm sizes ranging from 20 to 200 robots and obstacle densities of 10%, 20%, and 30%. Results show that AI-assisted ACO consistently outperformed traditional ACO, achieving 7\u201315% higher exploration coverage (\u2248 52.1% vs. 44.6% in the baseline case and \u2248 61% vs. 48% in the largest grid), with \u2248 20\u201325% faster convergence and \u2248 25% higher adaptability under dynamic obstacle scenarios.",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-7789592/v1",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 1,
+      "bm25_rank": 1,
+      "vector_rank": 1,
+      "rrf_score": 0.03278688524590164,
+      "shared_elements": [
+        "assisted",
+        "swarm",
+        "robotics",
+        "ant",
+        "colony",
+        "optimization",
+        "dynamic",
+        "exploration"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3648",
+      "candidate_type": "local",
+      "title": "Collaborative Swarm Robot",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 2,
+      "bm25_rank": 4,
+      "vector_rank": 2,
+      "rrf_score": 0.031754032258064516,
+      "shared_elements": [
+        "swarm",
+        "robotics"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3711",
+      "candidate_type": "local",
+      "title": "Jalswarm: Autonomous Water Waste Collection And Disposal Using Ai-powered Swarm Robots",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 3,
+      "bm25_rank": 3,
+      "vector_rank": 3,
+      "rrf_score": 0.031746031746031744,
+      "shared_elements": [
+        "swarm",
+        "robotics"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0240",
+      "candidate_type": "local",
+      "title": "Design and Development of Swarm Robots for Collaborative Planetary Exploration",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating design and development of swarm robots for collaborative planetary exploration. Published in 2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2025).",
+      "source_url": "https://doi.org/10.1109/csitss67709.2025.11295343",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 4,
+      "bm25_rank": 2,
+      "vector_rank": 6,
+      "rrf_score": 0.03128054740957967,
+      "shared_elements": [
+        "swarm",
+        "exploration"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0092",
+      "candidate_type": "local",
+      "title": "facebookresearch/theseus",
+      "description": "A library for differentiable nonlinear optimization",
+      "source_url": "https://github.com/facebookresearch/theseus",
+      "source_type": "open_source_repository",
+      "year": 2021,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 5,
+      "bm25_rank": 12,
+      "vector_rank": 5,
+      "rrf_score": 0.029273504273504274,
+      "shared_elements": [
+        "robotics",
+        "optimization"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0200",
+      "candidate_type": "local",
+      "title": "RoboAuto: Autonomous Robot Program Search through Multi-Level Physical Understanding",
+      "description": "Recently, LLM-based autonomous agents have shown strong capabilities in iteratively generating, evaluating, and refining executable solutions. In robotic manipulation, Code-as-Policy lets these agents search over modular and editable robot programs. However, effective program search requires physical understanding: agents must understand how objects can be manipulated, how scene geometry constrains actions, and why interactions succeed or fail. Existing methods rely mainly on execution feedback for program refinement, often leaving these physical questions unresolved. We introduce RoboAuto, a framework for robot program search that explicitly organizes physical understanding at the object, scene, and interaction levels through three components. First, a hierarchical knowledge base combines executable skills with object-centric knowledge of affordances, spatial relations, and action effects, learned from embodied data and online task solving. Second, scene grounding connects this knowledge to the current environment by identifying relevant objects and resolving action-critical quantities. Third, multi-stage planning with self-designed experiments checks whether each stage produces its expected physical effects and actively tests competing hypotheses to resolve physical uncertainties. RoboAuto achieves superior performance across five benchmark families, attaining an 89.1% success rate on short-horizon LIBERO-PRO tasks and more than twice the mean success rate of ASPIRE on LIBERO-PRO Long and LIBERO-Plus. It also outperforms ASPIRE and $\u03c0_{0.5}$ on three challenging long-horizon real-robot tasks requiring precise manipulation. We further show that the knowledge base transfers across simulators and embodiments, and that program search performance scales with its size. Project page: https://roboauto-ai.github.io/",
+      "source_url": "https://arxiv.org/abs/2610.36533v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 6,
+      "bm25_rank": null,
+      "vector_rank": 4,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "robotics"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_6220",
+      "candidate_type": "local",
+      "title": "Dynamic 5G Network Resource Allocation And Optimization Using Artificial Intelligence",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Telecommunications / Network Optimization",
+      "tech_stack": null,
+      "rank": 7,
+      "bm25_rank": 5,
+      "vector_rank": null,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "optimization",
+        "dynamic"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0105",
+      "candidate_type": "local",
+      "title": "Portainer",
+      "description": "Lightweight container management UI that simplifies deployment and monitoring of Docker, Swarm, and Kubernetes environments.",
+      "source_url": "https://github.com/portainer/portainer",
+      "source_type": "open_source_repository",
+      "year": 2016,
+      "domain": "DevOps / Container Management",
+      "tech_stack": "Swarm",
+      "rank": 8,
+      "bm25_rank": 6,
+      "vector_rank": null,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [
+        "swarm"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0474",
+      "candidate_type": "local",
+      "title": "Adaptive MAC Layer Scheduling Mechanism for Multimedia Traffic Optimization in Dynamic Network Topologies",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating adaptive mac layer scheduling mechanism for multimedia traffic optimization in dynamic network topologies. Published in 2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2025).",
+      "source_url": "https://doi.org/10.1109/csitss67709.2025.11294162",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Civil & Infrastructure Engineering",
+      "tech_stack": null,
+      "rank": 9,
+      "bm25_rank": 7,
+      "vector_rank": null,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [
+        "optimization",
+        "dynamic"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0079",
+      "candidate_type": "local",
+      "title": "KingKongRobotics/jumper",
+      "description": "\ud83e\udd80 Jumper \u2014 an crab robot.",
+      "source_url": "https://github.com/KingKongRobotics/jumper",
+      "source_type": "open_source_repository",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 10,
+      "bm25_rank": null,
+      "vector_rank": 7,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [
+        "robotics"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0065",
+      "candidate_type": "local",
+      "title": "Predictive Digital Twin-Assisted Geometry-Aware Uncertainty-Adaptive Beamforming for ISAC",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating predictive digital twin-assisted geometry-aware uncertainty-adaptive beamforming for isac. Published in IEEE Access (2026).",
+      "source_url": "https://doi.org/10.1109/access.2026.3740763",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Machine Learning / Applied AI",
+      "tech_stack": null,
+      "rank": 11,
+      "bm25_rank": 8,
+      "vector_rank": null,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "assisted"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0087",
+      "candidate_type": "local",
+      "title": "learnsyslab/gym-pybullet-drones",
+      "description": "PyBullet Gymnasium environments for single and multi-agent reinforcement learning of quadcopter control",
+      "source_url": "https://github.com/learnsyslab/gym-pybullet-drones",
+      "source_type": "open_source_repository",
+      "year": 2020,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 12,
+      "bm25_rank": null,
+      "vector_rank": 8,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "robotics"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0136",
+      "candidate_type": "local",
+      "title": "Revolutionizing Supply Chains",
+      "description": "Artificial Intelligence (AI) is revolutionizing supply chain management (SCM) by addressing challenges such as demand forecasting, logistics inefficiencies, and labor shortages. This chapter explores AI's transformative role in optimizing processes, including predictive analytics for demand planning, dynamic production scheduling, and route optimization for transportation management. AI enhances decision-making, reduces costs, and promotes sustainability by minimizing waste and carbon emissions. The chapter highlights real-world case studies, offering insights into successful AI implementations while addressing barriers such as high costs, resistance to change, and ethical concerns like algorithmic bias and data privacy. Future trends emphasize AI's role in fostering resilience, enabling crisis management, and supporting collaboration among supply chain stakeholders. By integrating AI, organizations can enhance operational efficiency, achieve sustainability goals, and build competitive, resilient supply chains for dynamic global markets.",
+      "source_url": "https://doi.org/10.4018/979-8-3373-0923-1.ch013",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 13,
+      "bm25_rank": 9,
+      "vector_rank": null,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "robotics",
+        "optimization",
+        "dynamic"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0082",
+      "candidate_type": "local",
+      "title": "ARISE-Initiative/robosuite",
+      "description": "robosuite: A Modular Simulation Framework and Benchmark for Robot Learning",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite",
+      "source_type": "open_source_repository",
+      "year": 2018,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 14,
+      "bm25_rank": null,
+      "vector_rank": 9,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "robotics"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_6240",
+      "candidate_type": "local",
+      "title": "Smartstride: Iot-enabled,voice Assisted Wearable Shoe For The Visually Impaired Individual",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Assistive Technology / AI",
+      "tech_stack": null,
+      "rank": 15,
+      "bm25_rank": 10,
+      "vector_rank": null,
+      "rrf_score": 0.014285714285714285,
+      "shared_elements": [
+        "assisted"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0094",
+      "candidate_type": "local",
+      "title": "Farama-Foundation/Gymnasium-Robotics",
+      "description": "A collection of robotics simulation environments for reinforcement learning",
+      "source_url": "https://github.com/Farama-Foundation/Gymnasium-Robotics",
+      "source_type": "open_source_repository",
+      "year": 2021,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 16,
+      "bm25_rank": null,
+      "vector_rank": 10,
+      "rrf_score": 0.014285714285714285,
+      "shared_elements": [
+        "robotics"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0047",
+      "candidate_type": "local",
+      "title": "wkentaro/labelme",
+      "description": "Image annotation with Python. Supports polygon, rectangle, circle, line, point, and AI-assisted annotation.",
+      "source_url": "https://github.com/wkentaro/labelme",
+      "source_type": "open_source_repository",
+      "year": 2016,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": "Python",
+      "rank": 17,
+      "bm25_rank": 11,
+      "vector_rank": null,
+      "rrf_score": 0.014084507042253521,
+      "shared_elements": [
+        "assisted"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2778",
+      "candidate_type": "local",
+      "title": "Ai-driven Sericulture Automation For Optimal Silkworm Rearing",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 18,
+      "bm25_rank": null,
+      "vector_rank": 11,
+      "rrf_score": 0.014084507042253521,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0061",
+      "candidate_type": "local",
+      "title": "isaac-sim/IsaacLab",
+      "description": "Unified framework for robot learning with multi-physics/renderer support",
+      "source_url": "https://github.com/isaac-sim/IsaacLab",
+      "source_type": "open_source_repository",
+      "year": 2022,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 19,
+      "bm25_rank": null,
+      "vector_rank": 12,
+      "rrf_score": 0.013888888888888888,
+      "shared_elements": [
+        "robotics"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:VERIFIED-0013",
+      "candidate_type": "local",
+      "title": "Nav2 (ROS 2 Navigation System)",
+      "description": "Navigation stack for ROS 2 that provides autonomous mobile robot path planning, dynamic obstacle avoidance, behavioral tree execution, and localization.",
+      "source_url": "https://github.com/ros-navigation/navigation2",
+      "source_type": "open_source_repository",
+      "year": 2018,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": "ROS 2",
+      "rank": 20,
+      "bm25_rank": 13,
+      "vector_rank": null,
+      "rrf_score": 0.0136986301369863,
+      "shared_elements": [
+        "robotics",
+        "dynamic"
+      ],
+      "verification_status": "checked"
+    }
+  ],
+  "live_candidates": [
+    {
+      "candidate_id": "openalex_83244f1ec33b11ab2a620bbb",
+      "candidate_type": "paper",
+      "title": "AI-Assisted Swarm Robotics for Autonomous Exploration Using Ant Colony Algorithms",
+      "description": "This study explores the integration of Artificial Intelligence (AI) techniques with Ant Colony Optimization (ACO) to enhance swarm robotic exploration in dynamic and uncertain environments. While traditional ACO provides a decentralized, pheromone-based mechanism for path planning, it suffers from slow convergence, stagnation, and limited adaptability when confronted with environmental changes. To address these challenges, an AI-assisted ACO framework was developed, incorporating RL principles to adapt pheromone update rules in real time. Robots learn from past interactions, adjust strategies dynamically, and maintain efficient exploration under varying conditions. Python-based simulations were conducted across four environments\u201450\u00d750, 100\u00d7100, 250\u00d7250, and 500\u00d7500 grids\u2014with swarm sizes ranging from 20 to 200 robots and obstacle densities of 10%, 20%, and 30%. Results show that AI-assisted ACO consistently outperformed traditional ACO, achieving 7\u201315% higher exploration coverage (\u2248 52.1% vs. 44.6% in the baseline case and \u2248 61% vs. 48% in the largest grid), with \u2248 20\u201325% faster convergence and \u2248 25% higher adaptability under dynamic obstacle scenarios.",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-7789592/v1",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 1,
+      "bm25_rank": 1,
+      "dense_rank": 1,
+      "rrf_score": 0.03278688524590164,
+      "shared_concepts": [
+        "ai",
+        "assisted",
+        "swarm",
+        "robotics",
+        "exploration",
+        "ant",
+        "colony",
+        "optimization",
+        "dynamic"
+      ],
+      "distinctive_terms": [
+        "autonomous",
+        "algorithms",
+        "study",
+        "explores",
+        "integration",
+        "artificial",
+        "intelligence",
+        "techniques"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 1 and semantic rank 1. Shared terms: ai, assisted, swarm, robotics, exploration, ant, colony, optimization, dynamic."
+    },
+    {
+      "candidate_id": "openalex_87b8820d0a70d88d0617b297",
+      "candidate_type": "paper",
+      "title": "AI Driven Approaches in Swarm Robotics - A review",
+      "description": "The integration of artificial intelligence (AI) and swarm robotics has brought about significant advancements. Swarm robotics is based on decentralized control and self-organization, taking inspiration from natural swarms. It involves employing a large number of uncomplicated robots to collaboratively complete intricate tasks. The algorithms underpinning swarm robotics, which is artificial intelligence, vary depending on the specific role of AI - such as error detection, navigation, coordination, and optimization - and according to the tasks that these robots aim to undertake. In this systematic review, we aim to explore algorithms based on artificial intelligence in swarm robots and the advantages of applying them in the real world. In this systematic review, 74 scientific papers published between the years 2020 to 2024 were examined, but 53 of them were included after applying our methodology to them. The review investigated the common role of AI in swarm robotics, the most commonly used AI algorithms, and the percentage of the research that was conducted and tested in the real world. In conclusion, we discovered that there is a need for research that develops fault detection and coordination strategies, as well as a need for real-world testing.",
+      "source_url": "https://doi.org/10.59992/ijci.2024.v3n5p4",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 2,
+      "bm25_rank": 6,
+      "dense_rank": 2,
+      "rrf_score": 0.03128054740957967,
+      "shared_concepts": [
+        "ai",
+        "swarm",
+        "robotics",
+        "optimization"
+      ],
+      "distinctive_terms": [
+        "driven",
+        "approaches",
+        "review",
+        "integration",
+        "artificial",
+        "intelligence",
+        "brought",
+        "about"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 6 and semantic rank 2. Shared terms: ai, swarm, robotics, optimization."
+    },
+    {
+      "candidate_id": "openalex_1ccad2dc611fd701d6cee9ab",
+      "candidate_type": "paper",
+      "title": "Implementing Swarm Intelligence for Mobile Robots: Exploration of Core Algorithms, Multi-Domain Applications, and Future Challenges",
+      "description": "Swarm intelligence, such as Particle Swarm Optimization (PSO) and Ant Colony Optimization (ACO) algorithms, helps robot swarms solve complex tasks through self-organization and localized interactions. It is a dynamic model that is scalable and adaptable to changes. These algorithms assist in various tasks, such as environmental navigation, path planning optimization, and task allocation. Logistics with warehouse robots streamlining inventory, agriculture via precision-farming ground swarms, disaster response using heterogeneous teams for mapping hazardous zones, and environmental monitoring with aquatic drones tracking pollution are all use cases on this model. We also address its limitations and future research directions, such as the integration of advanced AI and bio-hybrid systems. The presented analysis is supported by five detailed case studies and comparative tables. We also implemented and tested simulation results from select SI models on a \"Pob-Bot\" robot with an optimized hardware design.",
+      "source_url": "https://doi.org/10.37394/23201.2025.24.32",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 3,
+      "bm25_rank": 3,
+      "dense_rank": 5,
+      "rrf_score": 0.03125763125763126,
+      "shared_concepts": [
+        "swarm",
+        "exploration",
+        "optimization",
+        "ant",
+        "colony",
+        "dynamic",
+        "ai"
+      ],
+      "distinctive_terms": [
+        "implementing",
+        "intelligence",
+        "mobile",
+        "robots",
+        "core",
+        "algorithms",
+        "multi",
+        "domain"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 3 and semantic rank 5. Shared terms: swarm, exploration, optimization, ant, colony, dynamic, ai."
+    },
+    {
+      "candidate_id": "openalex_7f5b02e5d353a8ccf65ec721",
+      "candidate_type": "paper",
+      "title": "SWARM ROBOTICS: A NATURE-INSPIRED APPROACH TO AI SYSTEMS",
+      "description": "In recent years, artificial intelligence (AI) has drawn immense inspiration from nature, leading to the emergence of innovative paradigms that mimic biological processes. Among these, swarm robotics stands out as a dynamic and promising approach, rooted in the collective behavior observed in natural swarms such as ants, bees, birds, and fish. By leveraging decentralized control, simple rules, and local interactions, swarm robotics offers a powerful solution to complex tasks in uncertain and dynamic environments. Swarm robotics is an emerging field that draws inspiration from the collective behavior of social organisms such as ants, bees, and birds to design decentralized, robust, and scalable multi-robot systems. Unlike traditional robotics, swarm robotics emphasizes autonomy, simplicity, and local interaction to achieve complex global behaviors. This paper provides a comprehensive overview of swarm robotics as a nature-inspired AI paradigm, discussing its foundational principles, current applications, associated challenges, and potential future directions.",
+      "source_url": "https://ijistudies.com/index.php/IJIS/article/view/321",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 4,
+      "bm25_rank": 5,
+      "dense_rank": 3,
+      "rrf_score": 0.03125763125763126,
+      "shared_concepts": [
+        "swarm",
+        "robotics",
+        "ai",
+        "dynamic"
+      ],
+      "distinctive_terms": [
+        "nature",
+        "inspired",
+        "approach",
+        "systems",
+        "recent",
+        "years",
+        "artificial",
+        "intelligence"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 5 and semantic rank 3. Shared terms: swarm, robotics, ai, dynamic."
+    },
+    {
+      "candidate_id": "openalex_2a22bbbda84c5b0085697503",
+      "candidate_type": "paper",
+      "title": "Cognitive Ant Colony Optimization: A New Framework in Swarm Intelligence",
+      "description": "Ant Colony Optimization (ACO) algorithms which belong to metaheuristic algorithms and swarm intelligence algorithms have been the focus of much attention in the quest to solve optimization problems. These algorithms are inspired by colonies of ants foraging for food from their nest and have been considered state-of-art methods for solving both discrete and continuous optimization problems. One of the most important phases of ACO algorithms is the construction phase during which an ant builds a partial solution and develops a state transition strategy. There have been a number of studies on the state transition strategy. However, most of the research studies look at how to improve pheromone updates rather than at how the ant itself makes a decision to move from a current position to the next position. The aim of this research is to develop a novel state transition strategy for Ant Colony Optimization algorithms that can improve the overall performance of the algorithms. The research has shown that the state transition strategy in ACO can be improved by introducing non-rational decision-making. The new proposed algorithm is called Cognitive Ant Colony Optimization and uses a new concept of decision-making taken from cognitive behaviour theory. In this proposed algorithm, the ACO has been endowed with non-rational behaviour in order to improve the overall optimization behaviour of ants during the process. This new behaviour will use a non-rational model named prospect theory (Kahneman & Tversky, 1979) to select the transition movements of the ants in the colony in order to improve the overall search capability and the convergence of the algorithm. The new Cognitive Ant Colony Optimization framework has been tested on the Travelling Salesman Problem (TSP), Water Distribution System and Continuous optimization problems. The results obtained show that our algorithm improved the performance of previous ACO techniques considerably.",
+      "source_url": null,
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 5,
+      "bm25_rank": 7,
+      "dense_rank": 9,
+      "rrf_score": 0.029418126757516764,
+      "shared_concepts": [
+        "ant",
+        "colony",
+        "optimization",
+        "swarm"
+      ],
+      "distinctive_terms": [
+        "cognitive",
+        "new",
+        "framework",
+        "intelligence",
+        "aco",
+        "algorithms",
+        "which",
+        "belong"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 7 and semantic rank 9. Shared terms: ant, colony, optimization, swarm."
+    },
+    {
+      "candidate_id": "openalex_ef149649160e1658999c255c",
+      "candidate_type": "paper",
+      "title": "A Review on Representative Swarm Intelligence Algorithms for Solving Optimization Problems: Applications and Trends",
+      "description": "Swarm intelligence algorithms are a subset of the artificial intelligence (AI) field, which is increasing popularity in resolving different optimization problems and has been widely utilized in various applications. In the past decades, numerous swarm intelligence algorithms have been developed, including ant colony optimization (ACO), particle swarm optimization (PSO), artificial fish swarm (AFS), bacterial foraging optimization (BFO), and artificial bee colony (ABC). This review tries to review the most representative swarm intelligence algorithms in chronological order by highlighting the functions and strengths from 127 research literatures. It provides an overview of the various swarm intelligence algorithms and their advanced developments, and briefly provides the description of their successful applications in optimization problems of engineering fields. Finally, opinions and perspectives on the trends and prospects in this relatively new research domain are represented to support future developments.",
+      "source_url": "https://doi.org/10.1109/jas.2021.1004129",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 6,
+      "bm25_rank": 4,
+      "dense_rank": 14,
+      "rrf_score": 0.029138513513513514,
+      "shared_concepts": [
+        "swarm",
+        "optimization",
+        "ai",
+        "ant",
+        "colony"
+      ],
+      "distinctive_terms": [
+        "review",
+        "representative",
+        "intelligence",
+        "algorithms",
+        "solving",
+        "problems",
+        "applications",
+        "trends"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 4 and semantic rank 14. Shared terms: swarm, optimization, ai, ant, colony."
+    },
+    {
+      "candidate_id": "openalex_43cfe6aeb3b8860d7980c22c",
+      "candidate_type": "paper",
+      "title": "BICLARE: bio-inspired collaborative lightweight algorithm for robust swarm exploration",
+      "description": "Having access to a floor plan upon arrival enables first responders to act swiftly and efficiently. This study investigates the use of robotic swarms for autonomous environment mapping, with the aim of generating maps before emergency personnel arrive at the scene. We introduce BICLARE, a lightweight exploration algorithm inspired by ant-colony pheromone-based communication and navigation. BICLARE employs a confidence model to estimate cell occupancy within a map and optimizes target selection based on travel time and battery estimates to improve efficiency. The algorithm is designed to run efficiently on low-cost hardware. The performance of BICLARE is validated through simulated experiments in diverse and dynamic environments, demonstrating accurate mapping and robust coverage even in the presence of noise and uncertainty. Field trials further confirm the feasibility of the approach on low-cost COTS devices.",
+      "source_url": "https://doi.org/10.1038/s41598-026-71833-3",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 7,
+      "bm25_rank": 8,
+      "dense_rank": 11,
+      "rrf_score": 0.028790389395194696,
+      "shared_concepts": [
+        "swarm",
+        "exploration",
+        "ant",
+        "colony",
+        "dynamic"
+      ],
+      "distinctive_terms": [
+        "biclare",
+        "bio",
+        "inspired",
+        "collaborative",
+        "lightweight",
+        "algorithm",
+        "robust",
+        "having"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 8 and semantic rank 11. Shared terms: swarm, exploration, ant, colony, dynamic."
+    },
+    {
+      "candidate_id": "openalex_9e9f242cf873f9821fa2a5d6",
+      "candidate_type": "paper",
+      "title": "A review of exploring recent advances in ant colony optimization: applications and improvements",
+      "description": "Inspired by the foraging behavior of ants, the well-known metaheuristic Ant Colony Optimization \u200e\u200e(ACO) provides strong answers to challenging optimization issues in many spheres. This work \u200einvestigates current developments in ACO algorithms with an emphasis on hybridization, employing methods including machine learning, adaptive mechanisms, and genetic algorithms to \u200eimprove performance. Applications such as robotics, telecommunications, healthcare, and logistics \u200eshow ACO's adaptability in handling path planning, resource allocation, and data optimization. \u200eDynamic pheromone methods, multi-objective optimization, and domain-specific adaptations \u200e, which have raised computing efficiency, scalability, and solution quality, have been key advances. \u200eNotwithstanding these developments, problems, including parameter sensitivity and real-time \u200eadaptation, remain unresolved. Future studies include integrating real-time data, creating scalable \u200eadaptive algorithms, and tackling domain-specific restrictions to further increase ACO's relevance. \u200eThis work emphasizes ACO's possible importance as a fundamental instrument for addressing \u200eproblems of real-world optimization\u200e.",
+      "source_url": "https://doi.org/10.14419/s0sjgq84",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 8,
+      "bm25_rank": 11,
+      "dense_rank": 8,
+      "rrf_score": 0.028790389395194696,
+      "shared_concepts": [
+        "ant",
+        "colony",
+        "optimization",
+        "robotics",
+        "dynamic"
+      ],
+      "distinctive_terms": [
+        "review",
+        "exploring",
+        "recent",
+        "advances",
+        "applications",
+        "improvements",
+        "inspired",
+        "foraging"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 11 and semantic rank 8. Shared terms: ant, colony, optimization, robotics, dynamic."
+    },
+    {
+      "candidate_id": "openalex_85e6db7fe532312818c6719b",
+      "candidate_type": "paper",
+      "title": "An enhanced genetic algorithm with ant colony optimization for phase shift design in RIS-assisted MIMO networks",
+      "description": "Reconfigurable intelligent surfaces (RISs) have emerged as a promising technology for seamless integration with future sixth-generation (6G) wireless systems. However, their performance critically depends on the optimization of numerous phase shifts across RIS elements, making efficient phase shift design crucial. Existing optimization methods often face limitations, including unbalanced exploration and exploitation, slow convergence, suboptimal channel gain, high computational overhead, poor scalability, and reduced robustness. Among them, the Genetic Algorithm (GA) is a widely used meta-heuristic for RIS phase shift optimization, valued for its strong exploration capabilities in complex, constrained, non-convex problems. Nevertheless, GA suffers from limited exploitation and high sensitivity to control parameters, leading to performance degradation. To address these limitations, this paper proposes an enhanced GA that integrates pheromone-guided selection and heuristic-driven recombination\u2014adapted from ant colony optimization (ACO)\u2014into the GA\u2019s crossover operation only. This novel lightweight hybridization strengthens exploitation without compromising exploration. A new entropy-based mathematical framework is developed to rigorously analyze the exploration\u2013exploitation trade-off. Simulations are performed to assess the enhanced GA while comparing it with the standard GA and another popular optimizer, the particle swarm optimizer (PSO). The results demonstrate that the enhanced GA consistently outperforms both the standard GA and PSO. In small-scale system, its exploration\u2013exploitation balance enables it to reach the 95% balance point in only 6 iterations, compared to 66 and 43 for the original GA and PSO, respectively. It also converges faster with 7 against 62 and 43, achieving up to 1.6 dB higher channel gain. With a minimum runtime of 55 ms, it is more computationally efficient than the original GA (140 ms) and PSO (95 ms), reducing runtime by up to 2.6 times. Its scalability is evident, as its channel gain advantage grows from 1.6 dB to 2.4 dB with increasing network size. Furthermore, the enhanced GA demonstrates superior robustness under algorithmic parameter variations and channel estimation errors.",
+      "source_url": "https://doi.org/10.1007/s44444-026-00102-5",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 9,
+      "bm25_rank": 2,
+      "dense_rank": 24,
+      "rrf_score": 0.02803379416282642,
+      "shared_concepts": [
+        "ant",
+        "colony",
+        "optimization",
+        "assisted",
+        "exploration",
+        "swarm"
+      ],
+      "distinctive_terms": [
+        "enhanced",
+        "genetic",
+        "algorithm",
+        "phase",
+        "shift",
+        "ris",
+        "mimo",
+        "networks"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 2 and semantic rank 24. Shared terms: ant, colony, optimization, assisted, exploration, swarm."
+    },
+    {
+      "candidate_id": "openalex_7bd3ab72fa8b5e94b2cbc8ee",
+      "candidate_type": "paper",
+      "title": "A Survey on Swarm Robotics for Area Coverage Problem",
+      "description": "The area coverage problem solution is one of the vital research areas which can benefit from swarm robotics. The greatest challenge to the swarm robotics system is to complete the task of covering an area effectively. Many domains where area coverage is essential include exploration, surveillance, mapping, foraging, and several other applications. This paper introduces a survey of swarm robotics in area coverage research papers from 2015 to 2022 regarding the algorithms and methods used, hardware, and applications in this domain. Different types of algorithms and hardware were dealt with and analysed; according to the analysis, the characteristics and advantages of each of them were identified, and we determined their suitability for different applications in covering the area for many goals. This study demonstrates that naturally inspired algorithms have the most significant role in swarm robotics for area coverage compared to other techniques. In addition, modern hardware has more capabilities suitable for supporting swarm robotics to cover an area, even if the environment is complex and contains static or dynamic obstacles.",
+      "source_url": "https://doi.org/10.3390/a17010003",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 10,
+      "bm25_rank": 19,
+      "dense_rank": 6,
+      "rrf_score": 0.027809742999616416,
+      "shared_concepts": [
+        "swarm",
+        "robotics",
+        "exploration",
+        "dynamic"
+      ],
+      "distinctive_terms": [
+        "survey",
+        "area",
+        "coverage",
+        "problem",
+        "solution",
+        "one",
+        "vital",
+        "research"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 19 and semantic rank 6. Shared terms: swarm, robotics, exploration, dynamic."
+    },
+    {
+      "candidate_id": "openalex_c482ac2ddb44da83da0ba47e",
+      "candidate_type": "paper",
+      "title": "Swarm Robotics: A Perspective on the Latest Reviewed Concepts and Applications",
+      "description": "Known as an artificial intelligence subarea, Swarm Robotics is a developing study field investigating bio-inspired collaborative control approaches and integrates a huge collection of agents, reasonably plain robots, in a distributed and decentralized manner. It offers an inspiring essential platform for new researchers to be engaged and share new knowledge to examine their concepts in analytical and heuristic strategies. This paper introduces an overview of current activities in Swarm Robotics and examines the present literature in this area to establish to approach between a realistic swarm robotic system and real-world enforcements. First, we review several Swarm Intelligence concepts to define Swarm Robotics systems, reporting their essential qualities and features and contrast them to generic multi-robotic systems. Second, we report a review of the principal projects that allow realistic study of Swarm Robotics. We demonstrate knowledge regarding current hardware platforms and multi-robot simulators. Finally, the forthcoming promissory applications and the troubles to surpass with a view to achieving them have been described and analyzed.",
+      "source_url": "https://doi.org/10.3390/s21062062",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 11,
+      "bm25_rank": 23,
+      "dense_rank": 4,
+      "rrf_score": 0.027673192771084338,
+      "shared_concepts": [
+        "swarm",
+        "robotics"
+      ],
+      "distinctive_terms": [
+        "perspective",
+        "latest",
+        "reviewed",
+        "concepts",
+        "applications",
+        "known",
+        "artificial",
+        "intelligence"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 23 and semantic rank 4. Shared terms: swarm, robotics."
+    },
+    {
+      "candidate_id": "openalex_abbb4c5b6ba952cd310d7b91",
+      "candidate_type": "paper",
+      "title": "OFNAnt Method Based on TSP Ant Colony Optimization",
+      "description": "This chapter presents a hybrid method of swarm intelligence current. Intelligence represented by ant colonies has been enriched with fuzzy logic arithmetics. In this case Kosi\u0144ski\u2019s Ordered Fuzzy Numbers were specifically used. Apart from a fuzzy decision model of a single ant used earlier by other researchers, the author used the order as a trend support. By associating the direction of a number in Ordered Fuzzy Numbers (OFNs) with the trend observed in the ant colony it is possible to provide a unique description of a fuzzy observation of a colony behavior. The experiments were carried out in the area of searching for the optimal connecting route in the field. The experiment covered 10 complex issues of searching for the optimal route. All are benchmarks from the TSPlib repository which are well known among researchers. They represent the actual problems of route selection such as transport connections depending on geographic conditions and optimizing the machining process or the layout of the power networks. The complexity level of optimal solutions for problems to be solved amounted from several hundred to several thousand connections. Each of them was solved using six swarm intelligence methods and five well-known classical methods dedicated to the traveling salesman problem (TSP). The results were presented in the form of tables and graphs, and some of the routes were shown in graphical form. Final conclusions of the experiment indicate the superiority of methods based on ant colony optimization as regards closeness to optimal solutions. The results achieved by the OFNAnt method are generally better (in 92% of cases) than those achieved by classic methods and are in the forefront of solutions from the swarm intelligence group.",
+      "source_url": "https://doi.org/10.1007/978-3-319-59614-3_12",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 12,
+      "bm25_rank": 9,
+      "dense_rank": 16,
+      "rrf_score": 0.027650648360030512,
+      "shared_concepts": [
+        "ant",
+        "colony",
+        "optimization",
+        "swarm"
+      ],
+      "distinctive_terms": [
+        "ofnant",
+        "method",
+        "tsp",
+        "chapter",
+        "presents",
+        "hybrid",
+        "intelligence",
+        "current"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 9 and semantic rank 16. Shared terms: ant, colony, optimization, swarm."
+    },
+    {
+      "candidate_id": "openalex_1240de9974954938d49152b6",
+      "candidate_type": "paper",
+      "title": "Response threshold models, stochastic learning automata and ant colony optimization-based decentralized self-coordination algorithms for heterogeneous multi-tasks distribution in multi-robot systems",
+      "description": "In recent decades, there has been an increasing interest in systems comprised of several autonomous mobile robots, and as a result, there has been a substantial amount of development in the eld of Articial Intelligence, especially in Robotics. There are several studies in the literature by some researchers from the scientic community that focus on the creation of intelligent machines and devices capable to imitate the functions and movements of living beings. Multi-Robot Systems (MRS) can often deal with tasks that are dicult, if not impossible, to be accomplished by a single robot. In the context of MRS, one of the main challenges is the need to control, coordinate and synchronize the operation of multiple robots to perform a specic task. This requires the development of new strategies and methods which allow us to obtain the desired system behavior in a formal and concise way. This PhD thesis aims to study the coordination of multi-robot systems, in particular, addresses the problem of the distribution of heterogeneous multi-tasks. The main interest in these systems is to understand how from simple rules inspired by the division of labor in social insects, a group of robots can perform tasks in an organized and coordinated way. We are mainly interested on truly distributed or decentralized solutions in which the robots themselves, autonomously and in an individual manner, select a particular task so that all tasks are optimally distributed. In general, to perform the multi-tasks distribution among a team of robots, they have to synchronize their actions and exchange information. Under this approach we can speak of multi-tasks selection instead of multi-tasks assignment, which means, that the agents or robots select the tasks instead of being assigned a task by a central controller. The key element in these algorithms is the estimation ix of the stimuli and the adaptive update of the thresholds. This means that each robot performs this estimate locally depending on the load or the number of pending tasks to be performed. In addition, it is very interesting the evaluation of the results in function in each approach, comparing the results obtained by the introducing noise in the number of pending loads, with the purpose of simulate the robot's error in estimating the real number of pending tasks. The main contribution of this thesis can be found in the approach based on self-organization and division of labor in social insects. An experimental scenario for the coordination problem among multiple robots, the robustness of the approaches and the generation of dynamic tasks have been presented and discussed. The particular issues studied are: Threshold models: It presents the experiments conducted to test the response threshold model with the objective to analyze the system performance index, for the problem of the distribution of heterogeneous multitasks in multi-robot systems; also has been introduced additive noise in the number of pending loads and has been generated dynamic tasks over time. Learning automata methods: It describes the experiments to test the learning automata-based probabilistic algorithms. The approach was tested to evaluate the system performance index with additive noise and with dynamic tasks generation for the same problem of the distribution of heterogeneous multi-tasks in multi-robot systems. Ant colony optimization: The goal of the experiments presented is to test the ant colony optimization-based deterministic algorithms, to achieve the distribution of heterogeneous multi-tasks in multi-robot systems. In the experiments performed, the system performance index is evaluated by introducing additive noise and dynamic tasks generation over time.",
+      "source_url": "https://doi.org/10.20868/upm.thesis.14922",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 13,
+      "bm25_rank": 14,
+      "dense_rank": 13,
+      "rrf_score": 0.027212143650499815,
+      "shared_concepts": [
+        "ant",
+        "colony",
+        "optimization",
+        "robotics",
+        "dynamic"
+      ],
+      "distinctive_terms": [
+        "response",
+        "threshold",
+        "models",
+        "stochastic",
+        "learning",
+        "automata",
+        "decentralized",
+        "self"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 14 and semantic rank 13. Shared terms: ant, colony, optimization, robotics, dynamic."
+    },
+    {
+      "candidate_id": "openalex_8a8802efa0f85e38ab347dc2",
+      "candidate_type": "paper",
+      "title": "A Review of Swarm Robotics in a NutShell",
+      "description": "A swarm of robots is the coordination of multiple robots that can perform a collective task and solve a problem more efficiently than a single robot. Over the last decade, this area of research has received significant interest from scientists due to its large field of applications in military or civil, including area exploration, target search and rescue, security and surveillance, agriculture, air defense, area coverage and real-time monitoring, providing wireless services, and delivery of goods. This research domain of collective behaviour draws inspiration from self-organizing systems in nature, such as honey bees, fish schools, social insects, bird flocks, and other social animals. By replicating the same set of interaction rules observed in these natural swarm systems, robot swarms can be created. The deployment of robot swarm or group of intelligent robots in a real-world scenario that can collectively perform a task or solve a problem is still a substantial research challenge. Swarm robots are differentiated from multi-agent robots by specific qualifying criteria, including the presence of at least three agents and the sharing of relative information such as altitude, position, and velocity among all agents. Each agent should be intelligent and follow the same set of interaction rules over the whole network. Also, the system\u2019s stability should not be affected by leaving or disconnecting an agent from a swarm. This survey illustrates swarm systems\u2019 basics and draws some projections from its history to its future. It discusses the important features of swarm robots, simulators, real-world applications, and future ideas.",
+      "source_url": "https://doi.org/10.3390/drones7040269",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 14,
+      "bm25_rank": 22,
+      "dense_rank": 7,
+      "rrf_score": 0.02712049508554787,
+      "shared_concepts": [
+        "swarm",
+        "robotics",
+        "exploration"
+      ],
+      "distinctive_terms": [
+        "review",
+        "nutshell",
+        "robots",
+        "coordination",
+        "multiple",
+        "can",
+        "perform",
+        "collective"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 22 and semantic rank 7. Shared terms: swarm, robotics, exploration."
+    },
+    {
+      "candidate_id": "openalex_903b98615f2332f144a967c9",
+      "candidate_type": "paper",
+      "title": "Exploring advancements and emerging trends in robotic swarm coordination and control of swarm flying robots: A review",
+      "description": "Swarm Robotics (SR) is an interdisciplinary field that is rapidly advancing to address complex industrial challenges. This paper provides a comprehensive review of recent advancements and emerging trends in SR, with a specific focus on the coordination and control of Swarm Flying Robots (SFRs). The motivation behind this review is to explore scalable and robust solutions for SFRs to enhance their performance and adaptability across various applications. Key objectives include examining the characteristics and essential behaviors of SR, analyzing the challenges and so lutions for implementing SR in Flying Robots (FRs), and highlighting current and future research directions. The review delves into critical areas such as multiple robot path planning, Swarm Intelligence (SI), combinatorial optimization, and formation flying using SFR. Special attention is given to coordination and control techniques, including formation control in GPS-denied environments, to underscore their significance in advancing SR. The paper also addresses ethical, privacy, and security considerations, emphasizing the importance of responsible practices in SR development. Major takeaways from this review include the identification of key technical challenges and potential solutions in SFR, the exploration of SI algorithms, and the future research directions necessary for fully realizing the potential of SR technologies. By offering detailed insights into state-of-the-art research and its industrial implications, this paper serves as a foundational guide for future studies in the dynamic and promising domain of swarm robotics.",
+      "source_url": "https://doi.org/10.1177/09544062241275359",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 15,
+      "bm25_rank": 18,
+      "dense_rank": 10,
+      "rrf_score": 0.027106227106227107,
+      "shared_concepts": [
+        "swarm",
+        "robotics",
+        "optimization",
+        "exploration",
+        "dynamic"
+      ],
+      "distinctive_terms": [
+        "exploring",
+        "advancements",
+        "emerging",
+        "trends",
+        "robotic",
+        "coordination",
+        "control",
+        "flying"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 18 and semantic rank 10. Shared terms: swarm, robotics, optimization, exploration, dynamic."
+    },
+    {
+      "candidate_id": "openalex_8ad174e7eee90acd308bff7d",
+      "candidate_type": "paper",
+      "title": "HYBRID OPTIMIZATION FOR QUADCOPTER DRONE SWARMING: COMBINING ANT COLONY AND BIRD FLOCKING STRATEGIES",
+      "description": "Although, the quadcopter drone systems have significantly impacted the drone industry, they are considered to be complicated due to the nature of cooperation in accomplishing specific missions. The complications come from the way of movements and arranges in flying tasks which need to be guided in a certain way and have the skill of obstacle dodging. In this research, a developed proposal of a hybrid robot biological swarming algorithm introduced a significant enhancement in swarming rules and blended between the leadership and members' movement control. This enhancement comes from combining two major abilities from observing the selected biological swarms. From the bird flocks the quadcopter drone will have the capability of formations, obstacle avoidance, and safe distance keeping while flying while preserving the ability to alter directions and speed. However, due to the lack of ability to guide the quadcopter drones into specified stored locations which limits the potential applications, the use of ant colony swarm inspiration has solved this issue. The developed algorithm is suitable for a wide range of real-time applications such as firefighting in open lands, rescue missions, delivery, and scanning in time of disasters, and agricultural field like air scanning, health status, and irrigation condition.",
+      "source_url": "https://doi.org/10.20998/2522-9052.2026.2.07",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 16,
+      "bm25_rank": 13,
+      "dense_rank": 15,
+      "rrf_score": 0.027031963470319637,
+      "shared_concepts": [
+        "optimization",
+        "ant",
+        "colony",
+        "swarm"
+      ],
+      "distinctive_terms": [
+        "hybrid",
+        "quadcopter",
+        "drone",
+        "swarming",
+        "combining",
+        "bird",
+        "flocking",
+        "strategies"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 13 and semantic rank 15. Shared terms: optimization, ant, colony, swarm."
+    },
+    {
+      "candidate_id": "openalex_a0a2f19a10a1b97cc84d9f92",
+      "candidate_type": "paper",
+      "title": "An Improved Ant Colony Optimization to Developing Hilly Areas Tourism Path under Dynamic Objectives",
+      "description": "Tourism path planning is complex in hilly areas due to a variety of challenges including steep hills, narrow roads, and limited accessibility. Furthermore, when planning tourism paths, hilly areas frequently have distinctive natural potential that must be carefully taken into account such as dynamic objectives. Temperature, pressure, and health state are three of the most important dynamic objectives. In this paper, we proposed a dynamic objectives approach to developing tourism path planning in hilly areas. The main contribution of this approach was the improved Ant Colony Optimization algorithm ACO to establish a new multi-dynamic objectives approach and apply this approach in hilly areas. We have improved ACO by comparing construction tour and updating pheromone methods. This approach has been applied to develop tourist routes in Jebel Marra hilly in western Sudan. Our approach was compared with the genetic algorithm GA and the traditional ACO. Results show the advantage of our approach due to the optimizing time being 0.27 seconds, 0.45 seconds for GA, and 0.40 seconds for traditional ACO.",
+      "source_url": null,
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 17,
+      "bm25_rank": 10,
+      "dense_rank": 19,
+      "rrf_score": 0.02694394213381555,
+      "shared_concepts": [
+        "ant",
+        "colony",
+        "optimization",
+        "dynamic"
+      ],
+      "distinctive_terms": [
+        "improved",
+        "developing",
+        "hilly",
+        "areas",
+        "tourism",
+        "path",
+        "under",
+        "objectives"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 10 and semantic rank 19. Shared terms: ant, colony, optimization, dynamic."
+    },
+    {
+      "candidate_id": "openalex_36167853f30158d3a5f2310c",
+      "candidate_type": "paper",
+      "title": "The UAV Path Coverage Algorithm Based on the Greedy Strategy and Ant Colony Optimization",
+      "description": "Today, the development of unmanned aerial vehicles (UAVs) has attracted significant attention in both civil and military fields due to their flight flexibility in complex and dangerous environments. However, due to energy constraints, UAVs can only finish a few tasks in a limited time. The problem of finding the best flight path while balancing the task completion time and the coverage rate needs to be resolved urgently. Therefore, this paper proposes a UAV path coverage algorithm base on the greedy strategy and ant colony optimization. Firstly, this paper introduces a secondary advantage judgment and optimizes it using an ant colony optimization algorithm to reach the goal of minimum time and maximum coverage. Simulations are performed for different numbers of mission points and UAVs, respectively. The results illustrate that the proposed algorithm achieves a 2.8% reduction in task completion time while achieving a 4.4% improvement in coverage rate compared to several previous works.",
+      "source_url": "https://doi.org/10.3390/electronics11172667",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 18,
+      "bm25_rank": 16,
+      "dense_rank": 18,
+      "rrf_score": 0.025978407557354925,
+      "shared_concepts": [
+        "ant",
+        "colony",
+        "optimization"
+      ],
+      "distinctive_terms": [
+        "uav",
+        "path",
+        "coverage",
+        "algorithm",
+        "greedy",
+        "strategy",
+        "today",
+        "development"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 16 and semantic rank 18. Shared terms: ant, colony, optimization."
+    },
+    {
+      "candidate_id": "openalex_5fd25ab02a50cd6824a69cf2",
+      "candidate_type": "paper",
+      "title": "Past, Present, and Future of Swarm Robotics",
+      "description": null,
+      "source_url": null,
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 19,
+      "bm25_rank": 24,
+      "dense_rank": 12,
+      "rrf_score": 0.025793650793650792,
+      "shared_concepts": [
+        "swarm",
+        "robotics"
+      ],
+      "distinctive_terms": [
+        "past",
+        "present",
+        "future",
+        "arxiv"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 24 and semantic rank 12. Shared terms: swarm, robotics."
+    },
+    {
+      "candidate_id": "openalex_4e8f297c972456fd953a2746",
+      "candidate_type": "paper",
+      "title": "A Comprehensive Survey on Particle Swarm Optimization Algorithm and Its Applications",
+      "description": "Particle swarm optimization (PSO) is a heuristic global optimization method, proposed originally by Kennedy and Eberhart in 1995. It is now one of the most commonly used optimization techniques. This survey presented a comprehensive investigation of PSO. On one hand, we provided advances with PSO, including its modifications (including quantum-behaved PSO, bare-bones PSO, chaotic PSO, and fuzzy PSO), population topology (as fully connected, von Neumann, ring, star, random, etc.), hybridization (with genetic algorithm, simulated annealing, Tabu search, artificial immune system, ant colony algorithm, artificial bee colony, differential evolution, harmonic search, and biogeography-based optimization), extensions (to multiobjective, constrained, discrete, and binary optimization), theoretical analysis (parameter selection and tuning, and convergence analysis), and parallel implementation (in multicore, multiprocessor, GPU, and cloud computing forms). On the other hand, we offered a survey on applications of PSO to the following eight fields: electrical and electronic engineering, automation control systems, communication theory, operations research, mechanical engineering, fuel and energy, medicine, chemistry, and biology. It is hoped that this survey would be beneficial for the researchers studying PSO algorithms.",
+      "source_url": "https://doi.org/10.1155/2015/931256",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 20,
+      "bm25_rank": 12,
+      "dense_rank": 25,
+      "rrf_score": 0.02565359477124183,
+      "shared_concepts": [
+        "swarm",
+        "optimization",
+        "ant",
+        "colony"
+      ],
+      "distinctive_terms": [
+        "comprehensive",
+        "survey",
+        "particle",
+        "algorithm",
+        "applications",
+        "pso",
+        "heuristic",
+        "global"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 12 and semantic rank 25. Shared terms: swarm, optimization, ant, colony."
+    }
+  ]
+}

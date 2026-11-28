@@ -95,6 +95,10 @@ const noMatchesMessage = $('no-matches-message');
 const providerStatus = $('provider-status');
 const recurringEvidence = $('recurring-evidence');
 const recurringEvidenceList = $('recurring-evidence-list');
+const enhanceButton = $('enhance-btn');
+const enhanceStatus = $('enhance-status');
+const enhanceOutput = $('enhance-output');
+let lastEnhanceIdea = '';
 
 // ---------------------------------------------------------------------------
 // Small helpers
@@ -169,6 +173,7 @@ function init() {
   updateCharCount();
 
   searchForm.addEventListener('submit', handleFormSubmit);
+  if (enhanceButton) enhanceButton.addEventListener('click', runEnhancement);
   dataSourceSelect.addEventListener('change', handleModeChange);
   updateModeIndicators();
 
@@ -297,6 +302,9 @@ function clearResults() {
   providerStatus.textContent = '';
   recurringEvidence.classList.add('hidden');
   recurringEvidenceList.replaceChildren();
+  lastEnhanceIdea = '';
+  if (enhanceStatus) { enhanceStatus.classList.add('hidden'); enhanceStatus.textContent = ''; }
+  if (enhanceOutput) { enhanceOutput.classList.add('hidden'); enhanceOutput.replaceChildren(); }
   resultsSummary.textContent = 'Search results';
 }
 
@@ -596,6 +604,9 @@ function parseSuccessPayload(data, topK) {
 // Rendering
 // ---------------------------------------------------------------------------
 function renderSuccess(parsed, { mode, idea, clientNotices }) {
+  lastEnhanceIdea = idea;
+  if (enhanceStatus) { enhanceStatus.classList.add('hidden'); enhanceStatus.textContent = ''; }
+  if (enhanceOutput) { enhanceOutput.classList.add('hidden'); enhanceOutput.replaceChildren(); }
   showWarnings([...clientNotices, ...parsed.warnings]);
   offlineDatasetNotice.classList.toggle('hidden', mode !== 'offline');
   const shown = idea.length > 160 ? `${idea.slice(0, 157)}…` : idea;
@@ -626,6 +637,64 @@ function renderSuccess(parsed, { mode, idea, clientNotices }) {
 
   resultsContainer.classList.remove('hidden');
   resultsSummary.focus({ preventScroll: false });
+}
+
+async function runEnhancement() {
+  if (!enhanceButton || !lastEnhanceIdea || !API_BASE_URL) return;
+  const reqIdea = lastEnhanceIdea;
+  const reqMode = currentMode();
+  enhanceButton.disabled = true;
+  enhanceButton.textContent = 'Generating…';
+  enhanceStatus.textContent = 'Retrieving evidence and preparing grounded recommendations…';
+  enhanceStatus.classList.remove('hidden');
+  enhanceOutput.classList.add('hidden');
+  enhanceOutput.replaceChildren();
+  try {
+    const response = await fetch(`${API_BASE_URL}/enhance`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ idea: reqIdea, scope: reqMode === 'live' ? 'online' : 'local', top_k: Math.max(1, Math.min(10, Number(topKInput?.value) || DEFAULT_TOP_K)) }),
+      signal: AbortSignal.timeout(120000)
+    });
+    const data = await response.json();
+    if (reqMode !== currentMode() || reqIdea !== lastEnhanceIdea) return;
+    if (!response.ok) throw new Error(data.message || 'Enhancement is unavailable. Check model configuration and try again.');
+    renderEnhancement(data);
+  } catch (error) {
+    if (reqMode !== currentMode() || reqIdea !== lastEnhanceIdea) return;
+    enhanceStatus.textContent = error.name === 'TimeoutError' ? 'Enhancement timed out. Please try again.' : (error.message || 'Enhancement failed. Please try again.');
+  } finally {
+    enhanceButton.disabled = false;
+    enhanceButton.textContent = 'Enhance idea';
+  }
+}
+
+function renderEnhancement(data) {
+  enhanceOutput.replaceChildren();
+  enhanceOutput.append(el('h4', 'text-lg font-bold text-slate-900', 'Enhancement analysis'));
+  enhanceOutput.append(el('p', 'mt-1 text-xs text-slate-600', `Evidence scope: ${data.coverage}. This analysis is not proof of originality.`));
+  enhanceOutput.append(el('p', 'mt-3 text-sm leading-relaxed text-slate-800', data.overlap_summary));
+  enhanceOutput.append(el('h5', 'mt-5 font-semibold text-slate-900', 'Overlap by dimension'));
+  const facets = el('ul', 'mt-2 grid gap-2 sm:grid-cols-2');
+  Object.entries(data.facets || {}).forEach(([name, facet]) => {
+    const item = el('li', 'rounded-xl border border-slate-200 bg-white p-3 text-sm');
+    item.append(el('strong', 'capitalize text-slate-900', `${name.replace('_', ' ')} · ${facet.overlap}`), el('p', 'mt-1 text-slate-700', facet.details));
+    facets.append(item);
+  });
+  enhanceOutput.append(facets, el('h5', 'mt-5 font-semibold text-slate-900', 'Suggested improvements'));
+  (data.recommendations || []).forEach((recommendation) => {
+    const card = el('article', 'mt-2 rounded-xl border border-slate-200 bg-white p-4');
+    card.append(el('h6', 'font-semibold text-slate-900', recommendation.title), el('p', 'mt-2 text-sm text-slate-700', recommendation.description), el('p', 'mt-2 text-xs text-slate-600', `How: ${recommendation.implementation}`), el('p', 'mt-1 text-xs text-slate-600', `Consideration: ${recommendation.tradeoff}`));
+    if (recommendation.evidence_ids?.length) card.append(el('p', 'mt-2 text-xs font-medium text-indigo-700', `Evidence: ${recommendation.evidence_ids.join(', ')}`));
+    enhanceOutput.append(card);
+  });
+  (data.evidence || []).forEach((source) => {
+    if (!isHttpUrl(source.url)) return;
+    const link = el('a', 'mt-2 mr-3 inline-block text-xs text-indigo-700 underline', `${source.id}: ${source.title}`);
+    link.href = source.url; link.target = '_blank'; link.rel = 'noopener noreferrer'; enhanceOutput.append(link);
+  });
+  (data.warnings || []).forEach((warning) => enhanceOutput.append(el('p', 'mt-2 text-sm text-amber-800', warning)));
+  enhanceStatus.textContent = data.status === 'partial' ? 'Analysis ready with limited evidence or provider availability.' : 'Analysis ready.';
+  enhanceOutput.classList.remove('hidden');
 }
 
 function renderProviderStatus(parsed) {

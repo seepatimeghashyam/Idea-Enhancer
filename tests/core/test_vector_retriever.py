@@ -269,6 +269,39 @@ class VectorRetrieverTests(unittest.TestCase):
         all_ids = [h.project_id for h in hits_v2]
         self.assertNotIn("OLD_1", all_ids)
 
+    def test_unchanged_persistent_collection_is_reused_without_reembedding(self) -> None:
+        base_embedder = self.fake_embedder
+
+        class CountingEmbedder:
+            def __init__(self):
+                self.calls = 0
+
+            def encode(self, texts):
+                self.calls += 1
+                return base_embedder.encode(texts)
+
+        client = self._make_ephemeral_client()
+        embedder = CountingEmbedder()
+        records = [make_record("PERSIST-1", title="Agriculture Sensor")]
+
+        self.VectorRetriever(records, embedder=embedder, chroma_client=client, collection_name="test_reuse")
+        self.assertEqual(embedder.calls, 1)
+
+        reused = self.VectorRetriever(records, embedder=embedder, chroma_client=client, collection_name="test_reuse")
+        self.assertTrue(reused._is_indexed)
+        self.assertEqual(embedder.calls, 1)
+
+    def test_persistent_collection_rebuilds_when_dataset_changes(self) -> None:
+        client = self._make_ephemeral_client()
+        records_v1 = [make_record("OLD", title="Old agriculture record")]
+        self.VectorRetriever(records_v1, embedder=self.fake_embedder, chroma_client=client, collection_name="test_dataset_change")
+
+        records_v2 = [make_record("NEW", title="New robotics record")]
+        retriever = self.VectorRetriever(records_v2, embedder=self.fake_embedder, chroma_client=client, collection_name="test_dataset_change")
+        hits = retriever.search("robotics", top_k=5)
+
+        self.assertEqual([hit.project_id for hit in hits], ["NEW"])
+
     def test_unknown_ids_returned_by_malformed_collection_are_filtered(self) -> None:
         class MalformedCollection:
             def query(self, *args: Any, **kwargs: Any) -> dict[str, list[list[str]]]:
@@ -339,11 +372,14 @@ class VectorRetrieverTests(unittest.TestCase):
                 persist_directory=tmpdir,
                 collection_name="test_persist_collection",
             )
-            hits = retriever.search("agriculture", top_k=1)
-            self.assertEqual(len(hits), 1)
-            self.assertEqual(hits[0].project_id, "P_PERSIST")
-            # Verify persistent storage directory has contents created by ChromaDB
-            self.assertTrue(any(Path(tmpdir).iterdir()))
+            try:
+                hits = retriever.search("agriculture", top_k=1)
+                self.assertEqual(len(hits), 1)
+                self.assertEqual(hits[0].project_id, "P_PERSIST")
+                # Verify persistent storage directory has contents created by ChromaDB
+                self.assertTrue(any(Path(tmpdir).iterdir()))
+            finally:
+                retriever.close()
 
     def test_model_or_client_initialization_failure(self) -> None:
         class FailingClient:

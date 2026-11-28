@@ -120,8 +120,12 @@ class FakeChromaClient:
         del self.collections[name]
 
     def create_collection(self, *, name: str, metadata: dict[str, str]) -> FakeCollection:
-        if metadata != {"hnsw:space": "cosine"}:
-            raise AssertionError("Vector collection must retain cosine distance configuration.")
+        if (
+            metadata.get("hnsw:space") != "cosine"
+            or len(metadata.get("dataset_sha256", "")) != 64
+            or not metadata.get("embedding_model")
+        ):
+            raise AssertionError("Vector collection must retain cosine distance and dataset provenance.")
         collection = FakeCollection(self.response_order)
         self.collections[name] = collection
         return collection
@@ -161,7 +165,7 @@ class CorePipelineIntegrationTests(unittest.TestCase):
             chroma_client=client,
             collection_name="synthetic_core_pipeline",
         )
-        return CoreSearchEngine(records, bm25, vector), bm25, vector, embedder, client
+        return CoreSearchEngine(records, bm25, vector, use_cross_encoder=False), bm25, vector, embedder, client
 
     def test_real_retrievers_fuse_with_rrf_and_keep_rank_provenance(self) -> None:
         engine, bm25, _vector, embedder, client = self.make_pipeline()
@@ -266,7 +270,7 @@ class CorePipelineIntegrationTests(unittest.TestCase):
             collection_name="synthetic_unavailable_index",
             auto_build=False,
         )
-        engine = CoreSearchEngine(records, bm25, vector)
+        engine = CoreSearchEngine(records, bm25, vector, use_cross_encoder=False)
 
         with self.assertRaises(VectorIndexUnavailableError):
             engine.search(QUERY, top_k=3)

@@ -1,0 +1,3062 @@
+[
+  {
+    "row": 2,
+    "project_id": "RVCE-KSCST-48S-1607",
+    "title": "NutriInsight Analyser",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 3,
+    "project_id": "RVCE-KSCST-48S-1606",
+    "title": "AI-Based Virtual Assistant for Visually Disabled",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 4,
+    "project_id": "RVCE-KSCST-48S-0058",
+    "title": "Telemetry-Driven Hazardous Gas Prediction in Atmospheric Monitoring",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 5,
+    "project_id": "RVCE-KSCST-48S-0012",
+    "title": "ZONEFIX: Highlighting AI-Powered Detection, Analysis, and Resolution for Public Issues",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 6,
+    "project_id": "RVCE-KSCST-48S-0010",
+    "title": "Online Intelligent Tool for Identifying Fake and Real Images",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 7,
+    "project_id": "RVCE-KSCST-47S-0058",
+    "title": "BEYOND BOUNDARIES: Engineering Journeys in Rural Communities Through XR",
+    "source_url": "https://www.kscst.org.in/spp/47_series/47s_spp/47S_SPP_Contents/8_projects_sanctioned_under_47th_series_of_SPP.pdf"
+  },
+  {
+    "row": 8,
+    "project_id": "RVCE-KSCST-46S-3815",
+    "title": "Adaptive Anomaly Detection System for Software Defined Networks",
+    "source_url": "https://www.kscst.org.in/spp/46_series/46s_spp/46S_SPP_Contents/11_projects%20sanctioned%20under%2046th%20series%20of%20SPP.pdf"
+  },
+  {
+    "row": 9,
+    "project_id": "RVCE-KSCST-49S-0269",
+    "title": "An Immersive, Interactive Virtual Walkthrough of a Modern Aerospace Maintenance Hangar",
+    "source_url": "https://www.kscst.org.in/spp/49_series/49s_spp/SPP_49S_Technical_Record/14_Projects_sanctioned_under_49th_series_of_SPP.pdf"
+  },
+  {
+    "row": 10,
+    "project_id": "RVCE-KSCST-45S-4467",
+    "title": "Stimulating the Impact of Urban Sprawl in Spatiotemporal Variation of Air Pollution in Bangalore Region Using ML Techniques",
+    "source_url": "https://www.kscst.org.in/spp/45_series/SPP45S/45S_SPP_CD/11_projects%20sanctioned%20under%2045th%20series%20of%20SPP.pdf"
+  },
+  {
+    "row": 11,
+    "project_id": "RVCE-KSCST-44S-0012",
+    "title": "Design of Advanced Encryption Standard System for Data Encryption and Decryption Using FPGA",
+    "source_url": "https://www.kscst.org.in/spp.html"
+  },
+  {
+    "row": 518,
+    "project_id": "KSCST-48S_BE_0677",
+    "title": "IOT Based Baby Monitoring System Smart Cradle",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 519,
+    "project_id": "KSCST-48S_BE_3788",
+    "title": "Personal Server Network For A Self-managed It Lab, Virtualization And Collaborative Storage Using Nas",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 520,
+    "project_id": "KSCST-48S_BE_6220",
+    "title": "Dynamic 5G Network Resource Allocation And Optimization Using Artificial Intelligence",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 521,
+    "project_id": "KSCST-48S_BE_0127",
+    "title": "Multiple Rice Leaf Disease Prediction For M04 Rice Leaf Variety In Dakshina Kannada Using Deep Learning Technique",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 522,
+    "project_id": "KSCST-48S_BE_0128",
+    "title": "Deep Learning Based Fully Automated Grading Of Lumbar Disc Degeneration Using MRI Imaging",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 523,
+    "project_id": "KSCST-48S_BE_0186",
+    "title": "An AI Driven Voting System For Blind Individuals",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 524,
+    "project_id": "KSCST-48S_BE_0198",
+    "title": "Ai-driven Eye-tracking Virtual Keyboard For Enhanced Communication In Mobility- Impaired Individuals",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 525,
+    "project_id": "KSCST-48S_BE_0539",
+    "title": "Tulu Text Recognition With Speech Based Output",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 526,
+    "project_id": "KSCST-48S_BE_0685",
+    "title": "Implementation Of Automated Purity Grading System For Dry Coconuts Using Machine Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 527,
+    "project_id": "KSCST-48S_BE_1032",
+    "title": "Identification And Classification Of PCOD And PCOS Using Machine Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 528,
+    "project_id": "KSCST-48S_BE_1037",
+    "title": "Steptrace: Smart Security Systems For Real-time Human Identification Through Gait Mechanism",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 529,
+    "project_id": "KSCST-48S_BE_1046",
+    "title": "YOLO Always Choose Scenic Road",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 530,
+    "project_id": "KSCST-48S_BE_0937",
+    "title": "Smart Lock For Parking Violation Using: IOT",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 531,
+    "project_id": "KSCST-48S_BE_1051",
+    "title": "Intelligent Iot-based System For Power Load Monitoring And Abnormal Load Alerts",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 532,
+    "project_id": "KSCST-48S_BE_2067",
+    "title": "Cryptotrace: Ai-powered Cryptocurrency Transaction Tracing Platform",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 533,
+    "project_id": "KSCST-48S_BE_3292",
+    "title": "Non-invasive Haemoglobin Measuring Device With Mobile Application IOT & Flutter)",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 534,
+    "project_id": "KSCST-48S_BE_3650",
+    "title": "Detecting And Identifying Drug Trafficking Activities Behind Encrypted Messaging Platforms",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 535,
+    "project_id": "KSCST-48S_BE_3702",
+    "title": "Ai-driven Surveillance: Advanced Threat Detection, Real-time Behaviour Analysis For Citizen, And Predictive Safety Solutions For Women",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 536,
+    "project_id": "KSCST-48S_BE_4068",
+    "title": "Car Damage Detection And Cost Estimation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 537,
+    "project_id": "KSCST-48S_BE_4213",
+    "title": "Fake Product Detection Using Blockchain",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 538,
+    "project_id": "KSCST-48S_BE_5164",
+    "title": "Examination Portal Using Blockchain",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 539,
+    "project_id": "KSCST-48S_BE_5285",
+    "title": "Forensic Face Sketch Construction And Recognition",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 540,
+    "project_id": "KSCST-48S_BE_5393",
+    "title": "Indoor Farming Hydroponic Plant Grow Using Ro Waste Water",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 541,
+    "project_id": "KSCST-48S_BE_5789",
+    "title": "Glaumetric Precision Monitoring System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 542,
+    "project_id": "KSCST-48S_BE_6290",
+    "title": "A Deep Learning Based Radiation-free Body Scanning For Anomaly Detections And Skeleton Mapping",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 543,
+    "project_id": "KSCST-48S_BE_5171",
+    "title": "Hidden Narratives Of Twitter Trends: A Lda Based Exploration",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 544,
+    "project_id": "KSCST-48S_BE_5944",
+    "title": "Fire Fighting Drone",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 545,
+    "project_id": "KSCST-48S_BE_3167",
+    "title": "Smart Autonomous Medicine Delivery Robot With Prescription Assistance And Real Time Patient Health Monitoring",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 546,
+    "project_id": "KSCST-48S_BE_3947",
+    "title": "Design And Develop Of Exam Kit For Children With Dysgraphia Disorder",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 547,
+    "project_id": "KSCST-48S_BE_4621",
+    "title": "Smart Luggage For Physically Challenged People",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 548,
+    "project_id": "KSCST-48S_BE_5982",
+    "title": "Unified Compiler For Language Agnostic Development",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 549,
+    "project_id": "KSCST-48S_BE_6164",
+    "title": "Liver Cirrhosis Prediction Using Random Forest",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 550,
+    "project_id": "KSCST-48S_BE_6160",
+    "title": "Ergonomic Portable Radiant Warmer And Sleep Apnea Monitoring Device For Neonatal Care In Maternity Centres",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 551,
+    "project_id": "KSCST-48S_BE_6193",
+    "title": "Semi-automated Waste Segregation Solution For Efficient Urban Domestic Waste Management",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 552,
+    "project_id": "KSCST-48S_BE_6201",
+    "title": "Anaerobic Digestion Of Canteen Wastes For Biogas Production",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 553,
+    "project_id": "KSCST-48S_BE_6296",
+    "title": "Wrist Disarticulation Prosthesis For Amputees To Support Rehabilitation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 554,
+    "project_id": "KSCST-48S_BE_5044",
+    "title": "IOT Based Food Spoiling Detection Using Arduino And GSM",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 555,
+    "project_id": "KSCST-48S_MCA_0056",
+    "title": "Intelligent Urban Resource Management(iurm): A Big Data IOT Enabled AI Solution For Sustainable City Development",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 556,
+    "project_id": "KSCST-48S_BE_4831",
+    "title": "AI Based Code Debugger Platform (as Bugfix.ai)",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 557,
+    "project_id": "KSCST-48S_BE_3059",
+    "title": "Detections Of Drones- Passive Radar Using Tv Signal",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 558,
+    "project_id": "KSCST-48S_BE_2192",
+    "title": "Fake Currency Detection Using Image Processing Techniques",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 559,
+    "project_id": "KSCST-48S_BE_3327",
+    "title": "IOT Based Raspberry-pi Powered Optophone For The Visually Impaired People",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 560,
+    "project_id": "KSCST-48S_BE_3387",
+    "title": "AI Driven Missing Person Detection",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 561,
+    "project_id": "KSCST-48S_BE_3418",
+    "title": "Cyberbullying Detection Using Machine Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 562,
+    "project_id": "KSCST-48S_BE_3452",
+    "title": "Incorporating Meteorological Data And Pesticide Information To Crop Yields Using Machine Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 563,
+    "project_id": "KSCST-48S_BE_3682",
+    "title": "Predicting Agriculture Yields Based On Machine Learning Using Regression And Deep Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 564,
+    "project_id": "KSCST-48S_BE_3715",
+    "title": "Flood And Landslide Prediction Using Machine Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 565,
+    "project_id": "KSCST-48S_BE_3793",
+    "title": "Med-ai - Intelligent Diseases Prediction And Drug Recommendation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 566,
+    "project_id": "KSCST-48S_BE_0343",
+    "title": "Legal Document Classification Using NLP",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 567,
+    "project_id": "KSCST-48S_BE_0556",
+    "title": "Predictive Model For Post-operative Complications In Cardiac Surgery",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 568,
+    "project_id": "KSCST-48S_BE_0584",
+    "title": "Cloud- Based AI Model Monitoring And Data Drift Detection",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 569,
+    "project_id": "KSCST-48S_BE_3061",
+    "title": "Autism Spectrum Disorder Prediction Using ML And Dl",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 570,
+    "project_id": "KSCST-48S_BE_0617",
+    "title": "Smart Moving Cross Bridge At Railway Station",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 571,
+    "project_id": "KSCST-48S_BE_0714",
+    "title": "Mangrove Mapping Using Convolutional Neural Networks CNN",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 572,
+    "project_id": "KSCST-48S_BE_1081",
+    "title": "Person Recognition And Autonomous Bot Navigation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 573,
+    "project_id": "KSCST-48S_BE_1674",
+    "title": "Smart Agriculture System: Integrated AI And IOT - Based Smart Irrigation, Crop Recommendation And Disease Detection System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 574,
+    "project_id": "KSCST-48S_BE_2697",
+    "title": "Vision Guard Early Detection Of Eye Complications Using Deep Learning On Images",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 575,
+    "project_id": "KSCST-48S_BE_1229",
+    "title": "Multi-pose Virtual Try-on With Identity And Clothing Detail Preservation Using Resnet50, Vgg19 And Mobilenet",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 576,
+    "project_id": "KSCST-48S_BE_1463",
+    "title": "Remote-controlled Water Quality Monitoring Boat",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 577,
+    "project_id": "KSCST-48S_BE_2189",
+    "title": "Underwater Image Enhancement Based On Adaptive Color Correction And Improved Retinex Algorithm",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 578,
+    "project_id": "KSCST-48S_BE_2225",
+    "title": "Use Of Deep Learning For Early Detection Of Human Dental Defects And Problems",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 579,
+    "project_id": "KSCST-48S_BE_2334",
+    "title": "Precipitation Estimates Over India Using Multi- Satellite Approach",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 580,
+    "project_id": "KSCST-48S_BE_2702",
+    "title": "Virtual Matching System With Virtual Try-on (vton) For Transforming Online Shopping",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 581,
+    "project_id": "KSCST-48S_BE_2731",
+    "title": "Integrated Forest Fire Monitoring And Risk Assessment",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 582,
+    "project_id": "KSCST-48S_BE_1089",
+    "title": "Smart Park Assist",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 583,
+    "project_id": "KSCST-48S_BE_1266",
+    "title": "Multifunctional Robot For Specially Abled People",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 584,
+    "project_id": "KSCST-48S_BE_1637",
+    "title": "Iot-driven Baby Care System Using Wsn Technology",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 585,
+    "project_id": "KSCST-48S_BE_1716",
+    "title": "Design And Development Of A Non-invasive System For Blood Group And Glucose Detection Using Advanced Sensor Technologies",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 586,
+    "project_id": "KSCST-48S_BE_2095",
+    "title": "Classification And Quality Analysis Of Rice Grains",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 587,
+    "project_id": "KSCST-48S_BE_2324",
+    "title": "Smartphone Controlled Robotic Arm",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 588,
+    "project_id": "KSCST-48S_BE_0346",
+    "title": "Agrichain: Blockchain- Enabled Agricultural Supply Chain Management",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 589,
+    "project_id": "KSCST-48S_MCA_0080",
+    "title": "Iot-enabled Smart Greenhouse Management: Integrating Biofeedback Systems And Sustainable Practices For Enhanced Agricultural Efficiency",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 590,
+    "project_id": "KSCST-48S_BE_0321",
+    "title": "Lorawan-driven Intelligent Medical Waste Management System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 591,
+    "project_id": "KSCST-48S_BE_0578",
+    "title": "Decentralized Traceability And Direct Marketing Of Agriculture Supply Chains With Qr Scanner",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 592,
+    "project_id": "KSCST-48S_BE_1052",
+    "title": "Next Generation Democracy Based Online Election System Using Blockchain With Security Feature Enhancement",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 593,
+    "project_id": "KSCST-48S_BE_3506",
+    "title": "Integrated IOT Based Dam Automation System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 594,
+    "project_id": "KSCST-48S_BE_4727",
+    "title": "Recognition Of Driving License From Vehicle Number Plate Using Deep Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 595,
+    "project_id": "KSCST-48S_BE_4989",
+    "title": "Automated White Blood Cancer Detection From Bone Marrow Using CNN",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 596,
+    "project_id": "KSCST-48S_BE_5214",
+    "title": "Agritech - Ai-driven Plant Identification, Agricultural Assistance (chatbot) With Docker Enabled Deployment",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 597,
+    "project_id": "KSCST-48S_BE_5336",
+    "title": "Cloud Storage De- Duplication With Enhanced Security",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 598,
+    "project_id": "KSCST-48S_BE_5434",
+    "title": "Speaksync - Transforming Lip Movements Into Text With AI Precision.",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 599,
+    "project_id": "KSCST-48S_BE_4286",
+    "title": "Early Fetal Health Detection Using Cardiotocography With Machine Learning Models",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 600,
+    "project_id": "KSCST-48S_BE_4780",
+    "title": "Smart Educational Ecosystem With Automated Monitoring And Collaborative Tools",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 601,
+    "project_id": "KSCST-48S_BE_5029",
+    "title": "Advanced Multi-face Recognition And Attendance System For Colleges Using Real-time Video Processing",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 602,
+    "project_id": "KSCST-48S_BE_5251",
+    "title": "Animal Health Monitoring And Veterinary Appointment System Using IOT",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 603,
+    "project_id": "KSCST-48S_BE_4484",
+    "title": "Recycling Plastic Bottles Into Sustainable 3d Printing Filament And Electrical Insulator Material",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 604,
+    "project_id": "KSCST-48S_BE_4486",
+    "title": "Design And Development Of A Pyramid Solar Still Using Phase Change Material As Storage Medium",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 605,
+    "project_id": "KSCST-48S_BE_4487",
+    "title": "Solar Biomass Hybrid Dryer For Farmers And Rural Community",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 606,
+    "project_id": "KSCST-48S_BE_4497",
+    "title": "Improved Biomass Cook Stove For Rural And Mountainous",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 607,
+    "project_id": "KSCST-48S_BE_640",
+    "title": "0 Decentralized IOT Security",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 608,
+    "project_id": "KSCST-48S_BE_5620",
+    "title": "Asthmaease - A Personal Healthcare Smart Device For Asthma Patients",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 609,
+    "project_id": "KSCST-48S_BE_1847",
+    "title": "Bridging Reality And Preparedness - Leveraging VR Simulation For Chemical, Biological, Radiological And Nuclear Disaster Response Training",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 610,
+    "project_id": "KSCST-48S_BE_2169",
+    "title": "Skillorbit: Your Gateway To Knowledge And Opportunities",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 611,
+    "project_id": "KSCST-48S_BE_2591",
+    "title": "Copyright Infrignment Detection",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 612,
+    "project_id": "KSCST-48S_BE_2858",
+    "title": "Ai-based Tool For Preliminary Diagnosis Of Dermatological Manifestations",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 613,
+    "project_id": "KSCST-48S_BE_2900",
+    "title": "Sentiment Anaysis On Legal Evidences",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 614,
+    "project_id": "KSCST-48S_BE_2903",
+    "title": "Autism Detection And Cognitive Rehabilitation System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 615,
+    "project_id": "KSCST-48S_BE_3182",
+    "title": "Development And Implementation Of A Cross-platform Racing Game",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 616,
+    "project_id": "KSCST-48S_BE_3433",
+    "title": "Travel Together - A Travel Buddy Finder System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 617,
+    "project_id": "KSCST-48S_BE_3442",
+    "title": "Ayupharma: Leveraging Ayurvedic Classical Texts For Disease- Specific Drug Recommendations",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 618,
+    "project_id": "KSCST-48S_BE_4399",
+    "title": "Aiml Based Crowd Management And Crime Detection",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 619,
+    "project_id": "KSCST-48S_BE_5207",
+    "title": "Pothole Detection And Management",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 620,
+    "project_id": "KSCST-48S_BE_3962",
+    "title": "Voice Controlled Water Dispenser Using Ai-iot",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 621,
+    "project_id": "KSCST-48S_BE_1621",
+    "title": "Iot-based Intravenous (iv) Fluid Monitoring And Alert System For Automated Patient Care",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 622,
+    "project_id": "KSCST-48S_BE_2379",
+    "title": "Health Monitoring Wearable Device For Cattles",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 623,
+    "project_id": "KSCST-48S_BE_5063",
+    "title": "Change Detection In Satellite Imagery : Assessing Human Impacts With Deeplearning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 624,
+    "project_id": "KSCST-48S_BE_5475",
+    "title": "Detection Of Adulteration In Fruits Using IOT And Machine Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 625,
+    "project_id": "KSCST-48S_BE_0033",
+    "title": "Cyber Hacking Breaches Prediction And Detection Using Machine Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 626,
+    "project_id": "KSCST-48S_BE_1551",
+    "title": "Women Empowerment Through E-commerce With Artificial Intelligence",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 627,
+    "project_id": "KSCST-48S_BE_1872",
+    "title": "Garbage Content Estimation And Prediction Using IOT And Machine Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 628,
+    "project_id": "KSCST-48S_BE_1913",
+    "title": "Automatic Detection Of Brain Tumors Using Convolutional And Recurrent Neural Network",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 629,
+    "project_id": "KSCST-48S_BE_1990",
+    "title": "Crop Disease Prediction Using Machine Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 630,
+    "project_id": "KSCST-48S_BE_2022",
+    "title": "Machine Learning-based Early Detection And Intervention For Mental Health Issues In Children",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 631,
+    "project_id": "KSCST-48S_BE_2565",
+    "title": "Automated Detection Of Retinopathy Of Prematurity Using Quantum Machine Learning And Deep Learning Techniques",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 632,
+    "project_id": "KSCST-48S_BE_2649",
+    "title": "YOLO Powered Smart Glasses For Enhanced Vision Assistance",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 633,
+    "project_id": "KSCST-48S_BE_0043",
+    "title": "Early Prediction Of Cva Using AI",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 634,
+    "project_id": "KSCST-48S_BE_0046",
+    "title": "IOT Based Robust Machine Learning Band To Predict Heart Disease",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 635,
+    "project_id": "KSCST-48S_BE_0065",
+    "title": "Voice Based Email System For The Visually Challenged",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 636,
+    "project_id": "KSCST-48S_BE_0070",
+    "title": "Cervical Cancer Detection Using Machine Learning Techniques",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 637,
+    "project_id": "KSCST-48S_BE_0104",
+    "title": "Enhanced Facial Recognition For Criminal And Missing Person Id Using Facenet And Mtcnn",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 638,
+    "project_id": "KSCST-48S_BE_0645",
+    "title": "Parkinson Disease Prediction For Voice Features Extracted Using Supervised Algorithm",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 639,
+    "project_id": "KSCST-48S_BE_0840",
+    "title": "Detection Of Acute Lymphoblastic Leukemia And Subtypes Using Deep Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 640,
+    "project_id": "KSCST-48S_BE_1582",
+    "title": "Smart Shoe For Visually Disabled Individuals With Object Detection And Pit Detections",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 641,
+    "project_id": "KSCST-48S_BE_2283",
+    "title": "Intelligent Water Management And Dam Automation System Using Deep Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 642,
+    "project_id": "KSCST-48S_BE_2589",
+    "title": "Cradle Care: Intelligent Baby Monitoring With Soothing Automation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 643,
+    "project_id": "KSCST-48S_BE_4474",
+    "title": "Autonomous River Depth Plotting Robot To Prevent Drowning Accidents In Tourist Area",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 644,
+    "project_id": "KSCST-48S_BE_0347",
+    "title": "IOT Based Integrated Real Time Bus Tracking And Passenger Seat Availability System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 645,
+    "project_id": "KSCST-48S_BE_2243",
+    "title": "Establishing A Framework For Fruit Quality Classification Using AI",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 646,
+    "project_id": "KSCST-48S_BE_6496",
+    "title": "AI Driven Content Generation For Education",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 647,
+    "project_id": "KSCST-48S_BE_2203",
+    "title": "Reconstruction And Analysis Of Shredded And Ripped-up Documents Using Deep Learning For Forensic Investigation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 648,
+    "project_id": "KSCST-48S_BE_2362",
+    "title": "Real Time Automatic Crime Detection Through Alarm Signal To Police Using AI Techniques",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 649,
+    "project_id": "KSCST-48S_BE_2889",
+    "title": "Skin Cancer Classification And Detection Using Machine Learning And Deep Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 650,
+    "project_id": "KSCST-48S_BE_2975",
+    "title": "Prediction Of Safety Of Location For Women At Given Time",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 651,
+    "project_id": "KSCST-48S_BE_3663",
+    "title": "Video-to-text Summarization And Sentiment Analysis Using AI Techniques",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 652,
+    "project_id": "KSCST-48S_BE_4544",
+    "title": "Gestures Controlled Virtual Mouse",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 653,
+    "project_id": "KSCST-48S_BE_5457",
+    "title": "Anomaly Detection Model For Atm Monitoring Using Machine Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 654,
+    "project_id": "KSCST-48S_BE_6356",
+    "title": "Speech Recognition Using Lip Movements",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 655,
+    "project_id": "KSCST-48S_BE_0465",
+    "title": "Automated Student Attendance And Engagement Analysis Via Facial Detection",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 656,
+    "project_id": "KSCST-48S_BE_1277",
+    "title": "Deep Fake Detection Using Deep Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 657,
+    "project_id": "KSCST-48S_BE_1792",
+    "title": "Application Based Weather Monitoring Using IOT",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 658,
+    "project_id": "KSCST-48S_BE_2712",
+    "title": "Grapes Leaf Disease Detection And Classification Using Deep Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 659,
+    "project_id": "KSCST-48S_BE_2771",
+    "title": "Agriculture Robot With Real Time Farmer Interaction For Seeding And Fertilizer Control System And Video Streaming Techniques",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 660,
+    "project_id": "KSCST-48S_BE_5896",
+    "title": "Multimodal AI For Autonomous Cars",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 661,
+    "project_id": "KSCST-48S_BE_1421",
+    "title": "Iot-integrated Digital Twin For People In Need/elderly Health Monitoring",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 662,
+    "project_id": "KSCST-48S_BE_1474",
+    "title": "Ai-driven Autonomous Robotic Sprayer For Precision Pesticide Application In Agriculture",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 663,
+    "project_id": "KSCST-48S_BE_1500",
+    "title": "IOT Integrated Digital Twin For Monitoring Cow Vital Signs And Reproductive Health",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 664,
+    "project_id": "KSCST-48S_BE_1750",
+    "title": "Bengaluru Waste Segregation And Monitoring Using GPS",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 665,
+    "project_id": "KSCST-48S_BE_3562",
+    "title": "Greensense: The Complete IOT Solution For Plant Growth And Care Using Machine Vision And Ai-powered Disease Detection",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 666,
+    "project_id": "KSCST-48S_BE_3977",
+    "title": "Smart Infant Health Monitoring System With Iot-based Failover Mechanisms For Rural Areas",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 667,
+    "project_id": "KSCST-48S_BE_4079",
+    "title": "Citywide Smoke Spread Prediction And Air Quality Impact Assessment Using Digital Twin Technology",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 668,
+    "project_id": "KSCST-48S_BE_3005",
+    "title": "Convoluted Neural Networks CNN Based Classification Of Diabetic Macular Edema (dme) In Fundus Images",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 669,
+    "project_id": "KSCST-48S_MCA_0042",
+    "title": "Pregnancy Tracking Journey Application (mamacado)",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 670,
+    "project_id": "KSCST-48S_MCA_0046",
+    "title": "Automated Inventory Management System For Refrigerator Using IOT",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 671,
+    "project_id": "KSCST-48S_MCA_0060",
+    "title": "Intelligent Sleep Tracking System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 672,
+    "project_id": "KSCST-48S_BE_2131",
+    "title": "Environment Compliance On Land Registration Using Block-chain And IOT",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 673,
+    "project_id": "KSCST-48S_BE_2763",
+    "title": "Quantum Computing For Network Traffic Analysis",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 674,
+    "project_id": "KSCST-48S_BE_2793",
+    "title": "Smart Doorbell System With 2-factor Biometric Authentication",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 675,
+    "project_id": "KSCST-48S_BE_2814",
+    "title": "Aquabot: Smart Robotics For Pipeline Health",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 676,
+    "project_id": "KSCST-48S_BE_2921",
+    "title": "Detection Of Vunerabilities In Blockchain Smart Contract Using Deep Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 677,
+    "project_id": "KSCST-48S_BE_2776",
+    "title": "Multi Axis Robotic Arm",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 678,
+    "project_id": "KSCST-48S_BE_2790",
+    "title": "Pesticide Spraying IOT Rover",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 679,
+    "project_id": "KSCST-48S_BE_0369",
+    "title": "ML Aided Robotic Arm For Dental Alignment Diagnosis",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 680,
+    "project_id": "KSCST-48S_BE_1595",
+    "title": "Disaster Management And Emergency Response In Smart Cities Using Fog Computing (dmerscfc)",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 681,
+    "project_id": "KSCST-48S_BE_2523",
+    "title": "Agroflow: Intelligent Irrigation And Fertilizer Dispensing System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 682,
+    "project_id": "KSCST-48S_BE_3463",
+    "title": "Emotion Based Music Recommendation System Using IOT",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 683,
+    "project_id": "KSCST-48S_BE_3711",
+    "title": "Jalswarm: Autonomous Water Waste Collection And Disposal Using Ai-powered Swarm Robots",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 684,
+    "project_id": "KSCST-48S_BE_3859",
+    "title": "Fresh AI - Optimised Fruit Quality Prediction With Gans And Computer Vision",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 685,
+    "project_id": "KSCST-48S_BE_3940",
+    "title": "Clean Stream: Ai-driven Waste Water Detection And Classification For Automated Water Body Cleaning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 686,
+    "project_id": "KSCST-48S_BE_5778",
+    "title": "Track Watch: Drone Surveillance For Safer Railways",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 687,
+    "project_id": "KSCST-48S_BE_0390",
+    "title": "AI - Powered Deep Learning For Banana Leaf Spot Detection And Farmer Friendly Mobile Management",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 688,
+    "project_id": "KSCST-48S_BE_0522",
+    "title": "Ufood - Platform For Ordering Customized Food Online And Automated Cooking Process",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 689,
+    "project_id": "KSCST-48S_BE_0782",
+    "title": "Kcet Preparation Application",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 690,
+    "project_id": "KSCST-48S_BE_1866",
+    "title": "Context-aware Llm Optimization Using Domain- Specific Fine-tuning For Industrial Applications",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 691,
+    "project_id": "KSCST-48S_BE_3276",
+    "title": "Smart Agrobot: Ai-driven Automated Weed Control For Sustainable Farming",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 692,
+    "project_id": "KSCST-48S_BE_5881",
+    "title": "Swifteye - Lightweight Micro Drone For Advanced Indoor Surveillance And Monitoring",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 693,
+    "project_id": "KSCST-48S_BE_3635",
+    "title": "Anomaly Detection System For Offline Exam Monitoring",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 694,
+    "project_id": "KSCST-48S_BE_3876",
+    "title": "Ai-based Forest Fire Management System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 695,
+    "project_id": "KSCST-48S_BE_3899",
+    "title": "Pulmonary Pulse: Respiratory Disease Detection Using Lung Sounds",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 696,
+    "project_id": "KSCST-48S_BE_3921",
+    "title": "Passecure: Application For Identifying And Reporting Digital Arrest And Cyber Attacks",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 697,
+    "project_id": "KSCST-48S_BE_2196",
+    "title": "Development Of IOT Based Transformer Health Monitoring System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 698,
+    "project_id": "KSCST-48S_BE_3278",
+    "title": "Development And Fabrication Of A Vertical Axis Wind Turbine Using Areca Nut Nanoparticle",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 699,
+    "project_id": "KSCST-48S_BE_5099",
+    "title": "Crysense: Intelligent Cradle System Using Internet Of Things IOT",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 700,
+    "project_id": "KSCST-48S_BE_5396",
+    "title": "Distributed Denial Of Service (ddos) Attack Detection And Mitigation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 701,
+    "project_id": "KSCST-48S_BE_6021",
+    "title": "Real Time Face Recognition Attendance System With Multi User Management And Automated Reporting",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 702,
+    "project_id": "KSCST-48S_BE_6405",
+    "title": "Intellibin - A Smart Way To Segregate The Waste",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 703,
+    "project_id": "KSCST-48S_BE_3743",
+    "title": "Web Scrapping Using Python And Beautifulsoup",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 704,
+    "project_id": "KSCST-48S_BE_2302",
+    "title": "Generation Of Electric Power Using Spiral Wind Turbine",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 705,
+    "project_id": "KSCST-48S_BE_2821",
+    "title": "Generation Of Bio- Electricity From Fruits And Vegetable Waste",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 706,
+    "project_id": "KSCST-48S_MCA_0138",
+    "title": "Arduino Based Water Dispenser For Irrigation System In Agriculture",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 707,
+    "project_id": "KSCST-48S_MCA_0139",
+    "title": "Live Vehicle Tracking And Security Using IOT",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 708,
+    "project_id": "KSCST-48S_MCA_0142",
+    "title": "Air Quality Monitoring System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 709,
+    "project_id": "KSCST-48S_MCA_0165",
+    "title": "Dual-axis Solar Tracker With Thermal Sensitivity For Maximum Heat Gain",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 710,
+    "project_id": "KSCST-48S_MCA_0193",
+    "title": "Rural Sangam",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 711,
+    "project_id": "KSCST-48S_BE_1068",
+    "title": "Samvidhana Mitra: A System Empowering Citizens And Legal Practitioners Using Deep Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 712,
+    "project_id": "KSCST-48S_BE_4528",
+    "title": "Algorithmic Prognosis: Decoding Health Mysteries",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 713,
+    "project_id": "KSCST-48S_BE_4682",
+    "title": "Smart Poverty Detection And Relief Management",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 714,
+    "project_id": "KSCST-48S_BE_4783",
+    "title": "Plant Disease Severity Detection And Pesticide Recommendation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 715,
+    "project_id": "KSCST-48S_BE_5204",
+    "title": "Micro-expression Recognition Using Hierarchical Transformer Network",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 716,
+    "project_id": "KSCST-48S_BE_5337",
+    "title": "Human Computer Interaction For The Physically Challenged Using Deep Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 717,
+    "project_id": "KSCST-48S_BE_5386",
+    "title": "Segmentation Of Myocardium In Left Ventricle Using Deep Learning To Determine Its Thickness",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 718,
+    "project_id": "KSCST-48S_BE_5576",
+    "title": "Nutrivision: Yolo-sam- Driven Dietary App For Personalized Food Recommendation And Meal Tracking",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 719,
+    "project_id": "KSCST-48S_MTECH_0",
+    "title": "063 Brain Tumor Detection In Neuroimages Via Federated Learning Technique",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 720,
+    "project_id": "KSCST-48S_BE_6210",
+    "title": "Image Authenticity Verification: A Hybrid Approach Of Capsule Networks And Frequency Domain Analysis",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 721,
+    "project_id": "KSCST-48S_BE_6350",
+    "title": "Fortiblock: Hybrid Blockchain Framework For Secure Access Control In Cloud Environment",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 722,
+    "project_id": "KSCST-48S_BE_6388",
+    "title": "Intelligent Video Surveillence System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 723,
+    "project_id": "KSCST-48S_BE_0856",
+    "title": "Simulation Studies On Performance Assessment Solar Pv Array Topologies Under Partial Shading Conditions",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 724,
+    "project_id": "KSCST-48S_BE_0315",
+    "title": "IOT Based Railway Track Crack Detection And Drowsiness Alerting System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 725,
+    "project_id": "KSCST-48S_BE_0521",
+    "title": "Automated Solar Tracking System Using Arduino",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 726,
+    "project_id": "KSCST-48S_BE_0694",
+    "title": "AI Driven Sustainable Waste Collection With Raspberry Pi",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 727,
+    "project_id": "KSCST-48S_BE_2486",
+    "title": "Designing Of Cost Effective Battery Voltage Monitoring, Thermal Management & Cooling System In An Electric Vehicle",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 728,
+    "project_id": "KSCST-48S_BE_3019",
+    "title": "Smars Robot - A 3d Printed Autonomous Navigation System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 729,
+    "project_id": "KSCST-48S_BE_0232",
+    "title": "Medi-crypt: Blockchain- Based Patient Health Record Management",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 730,
+    "project_id": "KSCST-48S_BE_0503",
+    "title": "Question Paper Prediction Model For Examination",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 731,
+    "project_id": "KSCST-48S_BE_0827",
+    "title": "Wealthify: Investments And Wealth Accumulation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 732,
+    "project_id": "KSCST-48S_BE_0961",
+    "title": "NLP Driven Instant Language Translation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 733,
+    "project_id": "KSCST-48S_BE_1297",
+    "title": "Cardiovascular Disease Prediction System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 734,
+    "project_id": "KSCST-48S_BE_1347",
+    "title": "Mediswasthya (empowering Rural Healthcare)",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 735,
+    "project_id": "KSCST-48S_BE_1813",
+    "title": "Energy Strategy Nation: Leveraging Game Theory For Efficiency",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 736,
+    "project_id": "KSCST-48S_BE_2778",
+    "title": "Ai-driven Sericulture Automation For Optimal Silkworm Rearing",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 737,
+    "project_id": "KSCST-48S_BE_4478",
+    "title": "Multilingual Sentiment Analysis Of Youtube Comments",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 738,
+    "project_id": "KSCST-48S_BE_6363",
+    "title": "Agridoctor - Aiml Based Solution For Agriculture Needs",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 739,
+    "project_id": "KSCST-48S_BE_1974",
+    "title": "Smart Agri-rescue Using Machine Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 740,
+    "project_id": "KSCST-48S_BE_2007",
+    "title": "Smart Drug Dosing For Enhanced Immune Response",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 741,
+    "project_id": "KSCST-48S_BE_2070",
+    "title": "Detection Of Skin Cancer On Deep Neural Network",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 742,
+    "project_id": "KSCST-48S_BE_2360",
+    "title": "Speech Emotion Recognition Using Deep Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 743,
+    "project_id": "KSCST-48S_BE_2506",
+    "title": "Merciless Border Security System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 744,
+    "project_id": "KSCST-48S_BE_2655",
+    "title": "Plant Disease Detection",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 745,
+    "project_id": "KSCST-48S_BE_2861",
+    "title": "Security Surveillance Bot With Face Recognition",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 746,
+    "project_id": "KSCST-48S_MCA_0091",
+    "title": "Smart Parking System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 747,
+    "project_id": "KSCST-48S_BE_6232",
+    "title": "In-cab Signaling And Traffic Management With Automated Train Operator (ato)",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 748,
+    "project_id": "KSCST-48S_BE_3322",
+    "title": "Intelligent Pesticide Spraying System By Using Quad Copter",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 749,
+    "project_id": "KSCST-48S_BE_0451",
+    "title": "Fake Job Post Detection Using Machine Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 750,
+    "project_id": "KSCST-48S_BE_0267",
+    "title": "\"aavaranam\" - A Smart Car Parking System Using IOT",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 751,
+    "project_id": "KSCST-48S_BE_0638",
+    "title": "Intelligent Eco Rover Based Diagnosis And Analysis Of Grapes Diseases: A Convolution Neural Network Approach",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 752,
+    "project_id": "KSCST-48S_BE_3392",
+    "title": "Cybersecurity Intrusion Detection",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 753,
+    "project_id": "KSCST-48S_BE_3402",
+    "title": "Weathermap Navigator",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 754,
+    "project_id": "KSCST-48S_BE_3403",
+    "title": "Advanced Real-time Monitoring Detection System For Worker Safety Gear",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 755,
+    "project_id": "KSCST-48S_BE_4274",
+    "title": "Smart City Engagement: Improving Public Services",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 756,
+    "project_id": "KSCST-48S_BE_4407",
+    "title": "Remote Health Monitoring System To Empower Rural Health Using IOT Devices",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 757,
+    "project_id": "KSCST-48S_BE_4698",
+    "title": "IOT Based Patient Monitering System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 758,
+    "project_id": "KSCST-48S_BE_3822",
+    "title": "Solar Panel Health Monitoring Using IOT",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 759,
+    "project_id": "KSCST-48S_BE_4925",
+    "title": "Real Time Cybersecurity For Cloud Applications Using Aiml",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 760,
+    "project_id": "KSCST-48S_BE_5529",
+    "title": "Smart Eyeware 2.0",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 761,
+    "project_id": "KSCST-48S_BE_6028",
+    "title": "Iot-driven Soldier Safety And Positioning System With Wireless Sensors",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 762,
+    "project_id": "KSCST-48S_MCA_0066",
+    "title": "Agricare AI Smart Crop Health Diagnosis And Reporting Portal",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 763,
+    "project_id": "KSCST-48S_MCA_0097",
+    "title": "AI For EEG Emotion Recognition To Enhance Mental Well Being",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 764,
+    "project_id": "KSCST-48S_BE_2322",
+    "title": "Bionic Arm With Emg Sensor For Physically Disabled People",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 765,
+    "project_id": "KSCST-48S_BE_2779",
+    "title": "Real-time Traffic Management Using AI",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 766,
+    "project_id": "KSCST-48S_BE_5349",
+    "title": "Design And Implementation Of A College Chatbot With Voice To Text And Conversion Integration",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 767,
+    "project_id": "KSCST-48S_BE_0980",
+    "title": "Fertilizer Recommendation System For Farmers",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 768,
+    "project_id": "KSCST-48S_BE_1967",
+    "title": "Smart Road Sync",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 769,
+    "project_id": "KSCST-48S_BE_4184",
+    "title": "Empowering Recruitment With Multilingual Resume Analysis Using NLP Techniques",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 770,
+    "project_id": "KSCST-48S_BE_3654",
+    "title": "Detection Of Dangerous Humps By Using Lidar Technology",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 771,
+    "project_id": "KSCST-48S_BE_3675",
+    "title": "AI In Reproductive Health: Developing A Predictive Model For Embryo Viability",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 772,
+    "project_id": "KSCST-48S_BE_3732",
+    "title": "Generative AI (gen AI Based Video Summarization Tool",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 773,
+    "project_id": "KSCST-48S_BE_4210",
+    "title": "IOT Neckband: A Real-time Personal Safety System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 774,
+    "project_id": "KSCST-48S_BE_2957",
+    "title": "IOT And ML Solutions For Smart Farming",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 775,
+    "project_id": "KSCST-48S_BE_5615",
+    "title": "Electricgo - A Portable Electric Solution For Urban Cyclists",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 776,
+    "project_id": "KSCST-48S_BE_4291",
+    "title": "Detection Of Road Condition Defects Using Sensors And IOT Technology",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 777,
+    "project_id": "KSCST-48S_BE_5249",
+    "title": "Mems-based Capacitive Pressure Sensor: Design And Optimizition",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 778,
+    "project_id": "KSCST-48S_BE_0344",
+    "title": "Gynaecological Disease Diagnosis Expert System Using Machine Learning And Natural Language Processing",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 779,
+    "project_id": "KSCST-48S_BE_1020",
+    "title": "Detecting The Untruth: A Deep Learning Framework For Rumor Analysis In Social Media",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 780,
+    "project_id": "KSCST-48S_BE_0687",
+    "title": "Accialert - Real Time Iot-based Accident Detection And Smart Emergency Communication System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 781,
+    "project_id": "KSCST-48S_BE_1399",
+    "title": "Helical Antenna For Satellite Reception And Aircraft Communication",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 782,
+    "project_id": "KSCST-48S_BE_1412",
+    "title": "Solar Panel Cleaning Bot",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 783,
+    "project_id": "KSCST-48S_BE_1882",
+    "title": "GPS Tracking System For Women Safety",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 784,
+    "project_id": "KSCST-48S_BE_0675",
+    "title": "Smartlung Diagnostics: Oncocaps Powered By Capsulecare For Lung Cancer Detection And Classification",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 785,
+    "project_id": "KSCST-48S_BE_4259",
+    "title": "Innovative Strategies And Design Framework For Advancing Green Hydrogen- Powered Electric Vehicle",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 786,
+    "project_id": "KSCST-48S_BE_0032",
+    "title": "Automation Of Cancer Diagnosis And Treatment Using Machine Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 787,
+    "project_id": "KSCST-48S_BE_3849",
+    "title": "Unmasking Deepfakes: Advanced Detection Using Machine Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 788,
+    "project_id": "KSCST-48S_BE_3968",
+    "title": "Development Of Arduino Based Sensor Trainer Kit \"i.c.o - Input Code Output\"",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 789,
+    "project_id": "KSCST-48S_BE_3648",
+    "title": "Collaborative Swarm Robot",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 790,
+    "project_id": "KSCST-48S_BE_3838",
+    "title": "Environmental Monitoring And Rescue Drone",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 791,
+    "project_id": "KSCST-48S_BE_3986",
+    "title": "Design And Development Of Humanoid Robot With Autonomous Navigation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 792,
+    "project_id": "KSCST-48S_BE_6032",
+    "title": "Tracking Drug Trafficking Activities Through Message Platform Insights",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 793,
+    "project_id": "KSCST-48S_BE_2899",
+    "title": "IOT Based Dual Purpose Flame Thrower And Extinguisher Rc Robot",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 794,
+    "project_id": "KSCST-48S_BE_0557",
+    "title": "Waste Collection And Waste Segregation Robot With Dustbin",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 795,
+    "project_id": "KSCST-48S_BE_0749",
+    "title": "IOT Based Automatic Sericulture System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 796,
+    "project_id": "KSCST-48S_BE_3206",
+    "title": "Stride Sentinel: Security Surveillance System Through Gait Analysis",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 797,
+    "project_id": "KSCST-48S_BE_4326",
+    "title": "Building A Model Of Surveillance And Monitoring System For Agriculture Land",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 798,
+    "project_id": "KSCST-48S_BE_5015",
+    "title": "Breathesafe - A Machine Learning Platform Utilizing Random Forest And Neural Networks For Air Quality Index Prediction",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 799,
+    "project_id": "KSCST-48S_BE_5106",
+    "title": "Spidrox Implementation Of Student Social Networking Using Quarkus And Flutter",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 800,
+    "project_id": "KSCST-48S_BE_5499",
+    "title": "Human Activity Recognition Using Deep Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 801,
+    "project_id": "KSCST-48S_BE_6240",
+    "title": "Smartstride: Iot-enabled,voice Assisted Wearable Shoe For The Visually Impaired Individual",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 802,
+    "project_id": "KSCST-48S_BE_6253",
+    "title": "Advanced IOT And Machine Learning Solution To Monitor Underpass Water Logging",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 803,
+    "project_id": "KSCST-48S_BE_6417",
+    "title": "Optimized Platform For Asynchronous Video Communication (opavc) - Saas Product",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 804,
+    "project_id": "KSCST-48S_BE_6419",
+    "title": "Vital Metric Analyser",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 805,
+    "project_id": "KSCST-48S_BE_0551",
+    "title": "Eyespy: Public Surveillance And Safety System And Real Time Crisis Monitoring Platform",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 806,
+    "project_id": "KSCST-48S_BE_0674",
+    "title": "Affingen3d - Integrated Drug Target Affinity Prediction And Protein Visualization Using Generative Deep Networks",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 807,
+    "project_id": "KSCST-48S_BE_1181",
+    "title": "Blockchain-based Tax Calculator And Government Fund Allocation And Tracking Prototype",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 808,
+    "project_id": "KSCST-48S_BE_1183",
+    "title": "Underpass Water Logging Solutions Using Advanced Internet Of Things IOT And Deep Learning Technologies",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 809,
+    "project_id": "KSCST-48S_BE_1208",
+    "title": "Smart Control Of Traffic Lights Using Artifical Intelligence For Dynamic Road Environment",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 810,
+    "project_id": "KSCST-48S_BE_1233",
+    "title": "Neuroarm: Harnessing EEG Signals For Prosthetic Arm Control",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 811,
+    "project_id": "KSCST-48S_BE_1245",
+    "title": "AI Powered Navigation And Object Detection For The Visually Impaired",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 812,
+    "project_id": "KSCST-48S_BE_1780",
+    "title": "Self-navigating Rover For Real Time Mapping And Disaster Management",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 813,
+    "project_id": "KSCST-48S_BE_5208",
+    "title": "Design Of Integrated Dc/dc Converter Topology For Hybrid Vehicles",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 814,
+    "project_id": "KSCST-48S_BE_6277",
+    "title": "Automated Sericulture Monitoring System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 815,
+    "project_id": "KSCST-48S_BE_0028",
+    "title": "Intelligenie 2.0 - A Hardware Based Personal Assistant Development For Digital Application",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 816,
+    "project_id": "KSCST-48S_BE_0052",
+    "title": "Vidyut- Smart Grid With Edge Computing And Fault Detection",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 817,
+    "project_id": "KSCST-48S_BE_2617",
+    "title": "Cogniaid - A Comprehensive System To Manage Alzheimers Patients",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 818,
+    "project_id": "KSCST-48S_BE_6202",
+    "title": "IOT Based Autonomuous Aquaculture System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 819,
+    "project_id": "KSCST-48S_BE_0014",
+    "title": "Design And Implementation Of A Secure Bitcoin Hardware Wallet",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 820,
+    "project_id": "KSCST-48S_BE_0060",
+    "title": "Battery Thermal Management System For Electric Vehicles",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 821,
+    "project_id": "KSCST-48S_BE_0075",
+    "title": "N-bit Alu Using Cmos Forced Transistor Stacking",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 822,
+    "project_id": "KSCST-48S_BE_0077",
+    "title": "Design Of Multiplier Using Compressors And Cmos Logic",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 823,
+    "project_id": "KSCST-48S_BE_0145",
+    "title": "Cpu Design Using Verilog",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 824,
+    "project_id": "KSCST-48S_BE_0254",
+    "title": "Chlorophyll - An App Based Plant Monitoring System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 825,
+    "project_id": "KSCST-48S_BE_2934",
+    "title": "Air Quality Monitoring And Purification Drone With Thermal Imaging",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 826,
+    "project_id": "KSCST-48S_BE_1982",
+    "title": "Transforming Diabetic Retinopathy Detection With Advanced AI Techniques",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 827,
+    "project_id": "KSCST-48S_BE_2800",
+    "title": "Automation In Deployment Of Smart Contract Using Blockchain",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 828,
+    "project_id": "KSCST-48S_BE_3933",
+    "title": "Exam Malpractice Detection Using Yolov8 And CNN",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 829,
+    "project_id": "KSCST-48S_BE_6329",
+    "title": "Optimization Of Eqdc Protocol For Improved Energy Efficiency And Cluster Head Selection In Wsn",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 830,
+    "project_id": "KSCST-48S_BE_6341",
+    "title": "Encapsulating The R3 Corda Framework Through Restful Apis And Developing An Intuitive Gui",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 831,
+    "project_id": "KSCST-48S_BE_6396",
+    "title": "Design And Deployment Of Secure Multi Party Distributed Ledger Technology (dlt) For Loan Management",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 832,
+    "project_id": "KSCST-48S_BE_3910",
+    "title": "Biophotonic Analyzer Diagnosing Anemia And Nail Disease Pathology Using Convolutional Neural Networks",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 833,
+    "project_id": "KSCST-48S_BE_5374",
+    "title": "Optimized Crop Disease Segmentation And Predictive Outbreak Management For Proactive Agricultural Solutions",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 834,
+    "project_id": "KSCST-48S_BE_4646",
+    "title": "Lingobridge AI Multilingual Summarization AI Tool",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 835,
+    "project_id": "KSCST-48S_BE_0864",
+    "title": "Cardiac Arrhythmia Detection",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 836,
+    "project_id": "KSCST-48S_BE_0131",
+    "title": "Smart Surveillance: AI Driven Threat Detection And Women Safety Enhancement",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 837,
+    "project_id": "KSCST-48S_BE_0626",
+    "title": "Pawscan: Ai-powered Early Detection Of Skin Diseases In Stray Dogs",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 838,
+    "project_id": "KSCST-48S_BE_1126",
+    "title": "AI Enabled Cloudless Home Ecosystem",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 839,
+    "project_id": "KSCST-48S_BE_1978",
+    "title": "IOT Based Power Transmission Line Fault Detection",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 840,
+    "project_id": "KSCST-48S_BE_3344",
+    "title": "Virtual Herbal Garden Using Virtual Reality Methodology",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 841,
+    "project_id": "KSCST-48S_BE_3436",
+    "title": "Permanent Teeth Alignment For Optimized Dental Care",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 842,
+    "project_id": "KSCST-48S_BE_3864",
+    "title": "Portable ECG Device With Mobile Application",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 843,
+    "project_id": "KSCST-48S_BE_4386",
+    "title": "Insight Vision",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 844,
+    "project_id": "KSCST-48S_BE_4514",
+    "title": "Advanced Autonomous Vehicle System Using Behaviour Cloning For Path Optimisation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 845,
+    "project_id": "KSCST-48S_BE_4679",
+    "title": "Visionary Adas",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 846,
+    "project_id": "KSCST-48S_BE_4687",
+    "title": "Traffic Management System With AI & IOT",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 847,
+    "project_id": "KSCST-48S_BE_5510",
+    "title": "REST Sense-iot-powored Smart Pillow For Comprehensive Sleep Monitoring",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 848,
+    "project_id": "KSCST-48S_BE_5942",
+    "title": "Humanauth AI Identity Verification)",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 849,
+    "project_id": "KSCST-48S_BE_0031",
+    "title": "Portable Electrochemical Device For Rapid On-site Detection And Quantification Of Bacteria In Water",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 850,
+    "project_id": "KSCST-48S_BE_3069",
+    "title": "Ai-driven Network And Deepfake Threat Detection System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 851,
+    "project_id": "KSCST-48S_BE_3073",
+    "title": "Blood Group Detection By Using Fingerprint",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 852,
+    "project_id": "KSCST-48S_BE_3301",
+    "title": "Dhwani - A Video Conferencing Utility With Sign Language Conversion For Deaf And Dumb",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 853,
+    "project_id": "KSCST-48S_BE_4778",
+    "title": "Ai-driven Video Interview Analysis For Fair And Transparent Recruitment",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 854,
+    "project_id": "KSCST-48S_BE_5598",
+    "title": "Woman Safety Bag",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 855,
+    "project_id": "KSCST-48S_BE_6308",
+    "title": "Split Battery Self-charging E- Bicycle Using Magneto For Rural Application",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 856,
+    "project_id": "KSCST-48S_BE_6252",
+    "title": "Solar Powered Pesticides Spraying Machine",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 857,
+    "project_id": "KSCST-48S_BE_2255",
+    "title": "Blind Sight Boost",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 858,
+    "project_id": "KSCST-48S_BE_3099",
+    "title": "Touch Less Cursor Control : A Multi-model Approach To Control Cursor Using Hand Gesture, Vision Gesture, Speech Commands",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 859,
+    "project_id": "KSCST-48S_BE_3784",
+    "title": "Secure Face Detection And Recognition System With Anti- Spoof Authentication",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 860,
+    "project_id": "KSCST-48S_BE_1472",
+    "title": "Kitchai - Enhancing Culinary Independence For The Visually Impaired",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 861,
+    "project_id": "KSCST-48S_BE_5747",
+    "title": "Spacebiolab: Visualizing The Impact Of Microgravity On Plant Growth",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 862,
+    "project_id": "KSCST-48S_BE_2073",
+    "title": "Infant Emotion Monitoring And Soothing System Using Multisensory Feedback And GSM Alert",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 863,
+    "project_id": "KSCST-48S_BE_2908",
+    "title": "Med-bot For Smart Monitoring And Automation For Patients",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 864,
+    "project_id": "KSCST-48S_BE_2136",
+    "title": "Smart Women Security System Using IOT",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 865,
+    "project_id": "KSCST-48S_BE_6035",
+    "title": "AI Powered Exoskeleton Arm For Paralysed Patients",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 866,
+    "project_id": "KSCST-48S_BE_3084",
+    "title": "AI Driven 3d Motion Capture And Human Body Detection",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 867,
+    "project_id": "KSCST-48S_BE_0018",
+    "title": "Smart Gesture Glove For Wheelchair Navigation And Communication",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 868,
+    "project_id": "KSCST-48S_BE_0883",
+    "title": "Smart IOT Enabled Battery Management And Fire Safety System For Electric Vehicle",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 869,
+    "project_id": "KSCST-48S_BE_1073",
+    "title": "Smart Scan: Quantum Enhanced Threat Matrix",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 870,
+    "project_id": "KSCST-48S_BE_2420",
+    "title": "A New Dawn In Cardamom: Cultivating Sustainability Through Rainwater Harvesting",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 871,
+    "project_id": "KSCST-48S_BE_1061",
+    "title": "Battery Management System Using Active Cell Balancing And Battery Protection",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 872,
+    "project_id": "KSCST-48S_BE_0769",
+    "title": "Aquanebula Smart Water Dispenser",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 873,
+    "project_id": "KSCST-48S_BE_0770",
+    "title": "\"jeevan Raksha\" For Military Ground Robot Using IOT And ML",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 874,
+    "project_id": "KSCST-48S_BE_1925",
+    "title": "6g-driven Wireless Communication Based Smart City Model Using Esp-now And Distributed Antenna Systems (das) For Efficient Communication And Narrowband Sensing",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 875,
+    "project_id": "KSCST-48S_BE_3170",
+    "title": "Intravenous Fluid Monitoring And Alert System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 876,
+    "project_id": "KSCST-48S_BE_3237",
+    "title": "Emg-controlled Lower Limb Exoskeleton Stimulator For Hemiplegic Person",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 877,
+    "project_id": "KSCST-48S_BE_3992",
+    "title": "Automated Solar Panel Positioning And Maintenance System Using Labview",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 878,
+    "project_id": "KSCST-48S_BE_4944",
+    "title": "Implementation Of Amphibious Robot For Wildlife Monitoring",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 879,
+    "project_id": "KSCST-48S_BE_5483",
+    "title": "Aero Cube Surveillance System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 880,
+    "project_id": "KSCST-48S_BE_0222",
+    "title": "Raste Mitra - Automated Pothole Detection And Filling System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 881,
+    "project_id": "KSCST-48S_BE_0278",
+    "title": "Wifi Intrusion Detection System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 882,
+    "project_id": "KSCST-48S_BE_0366",
+    "title": "Bridge Safety For A Secure Society Using AI And IOT For Infrastructure Monitoring",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 883,
+    "project_id": "KSCST-48S_BE_0707",
+    "title": "Fetal Brain Abnormalities Detection",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 884,
+    "project_id": "KSCST-48S_BE_0752",
+    "title": "Smart IOT Panzer Using Wifi",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 885,
+    "project_id": "KSCST-48S_BE_0910",
+    "title": "Intelligent Silkworm Incubator Using IOT",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 886,
+    "project_id": "KSCST-48S_BE_3609",
+    "title": "Automated Speed And Violation Detection With Message Based Fine Notification",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 887,
+    "project_id": "KSCST-48S_BE_5782",
+    "title": "Ai-drs And Automated Third Umpire",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 888,
+    "project_id": "KSCST-48S_BE_5618",
+    "title": "Machine Learning Based Landslide Susceptibility Modelling With Emphasis On Uncertainty Analysis",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 889,
+    "project_id": "KSCST-48S_BE_5650",
+    "title": "Cropping Pattern Prediction Using Machine Learning Techniques",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 890,
+    "project_id": "KSCST-48S_BE_5797",
+    "title": "Detection Of Cyberbullying",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 891,
+    "project_id": "KSCST-48S_BE_5872",
+    "title": "Vechicle Emission Detection And Controlling Measure Using IOT",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 892,
+    "project_id": "KSCST-48S_BE_6322",
+    "title": "Vigilant Vision: Smart Surveillance With Automatic Alerts For Real Time Threat Detection And Public Safety",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 893,
+    "project_id": "KSCST-48S_BE_5522",
+    "title": "Kishori Shakti Yojana To Improve Nutritional And Health Status And Self Development Of Girls In The Age Group Of 11-18 Years Using Machine Learning.",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 894,
+    "project_id": "KSCST-48S_BE_5549",
+    "title": "IOT Based Sanitary Pad Vending Machine",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 895,
+    "project_id": "KSCST-48S_BE_6238",
+    "title": "Three Wheel Bullock Cart",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 896,
+    "project_id": "KSCST-48S_BE_5561",
+    "title": "Low-cost Ai-powered Smart Glasses For Visually Challenged People",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 897,
+    "project_id": "KSCST-48S_BE_5827",
+    "title": "Solar Powered Portable Non-ro Water Purifier",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 898,
+    "project_id": "KSCST-48S_BE_5931",
+    "title": "Robotic Arm Control Using Assistance In Kannada",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 899,
+    "project_id": "KSCST-48S_BE_6280",
+    "title": "Design And Implementation Of Self Charging E-bicycle",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 900,
+    "project_id": "KSCST-48S_BE_5567",
+    "title": "Heat Energy Stored In Bricks",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 901,
+    "project_id": "KSCST-48S_BE_2786",
+    "title": "Advanced Temperature Regulation System For Medical Storage Units",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 902,
+    "project_id": "KSCST-48S_BE_2807",
+    "title": "Underwater Communication Using Visible Light",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 903,
+    "project_id": "KSCST-48S_BE_3416",
+    "title": "Automatic Vehicle Speed Control System In Restricted Areas Using Ble",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 904,
+    "project_id": "KSCST-48S_BE_3591",
+    "title": "Emergency Medicine Using Drone In Remote Areas",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 905,
+    "project_id": "KSCST-48S_BE_4003",
+    "title": "RFID Based Smart Trolley For Theft Detection",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 906,
+    "project_id": "KSCST-48S_BE_2445",
+    "title": "Blockchain Meets Aptitude: The Aptified Breakthrough",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 907,
+    "project_id": "KSCST-48S_BE_2459",
+    "title": "Rainfall Prediction Using Rfa.",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 908,
+    "project_id": "KSCST-48S_BE_2819",
+    "title": "Real-time Tourist Spot Finder And Tour Booking",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 909,
+    "project_id": "KSCST-48S_BE_3268",
+    "title": "Next Gen Academic Verification With Blockchain Technology",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 910,
+    "project_id": "KSCST-48S_BE_1054",
+    "title": "Quicktube: Instant Summaries For Youtube Videos Using AI",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 911,
+    "project_id": "KSCST-48S_BE_1295",
+    "title": "Adaptive AI Framework For Streamline Placement Preparation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 912,
+    "project_id": "KSCST-48S_BE_1320",
+    "title": "Early Detection Of Agoraphobia Using ML Algorithm",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 913,
+    "project_id": "KSCST-48S_BE_1398",
+    "title": "Speech Controlled Wheelchair For Physically Disable People",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 914,
+    "project_id": "KSCST-48S_BE_1414",
+    "title": "Survival And Rescue Based Water Vehicle With IOT",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 915,
+    "project_id": "KSCST-48S_BE_1173",
+    "title": "Traffic Prediction And Controlling System Using Machine Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 916,
+    "project_id": "KSCST-48S_BE_1298",
+    "title": "Revolutionizing Medical Repository Security Through Custom Blockchain Solution",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 917,
+    "project_id": "KSCST-48S_MCA_0099",
+    "title": "IOT And Deep Learning For Smart Waste Sorting And Recycling Automation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 918,
+    "project_id": "KSCST-48S_MCA_0102",
+    "title": "Distributed Pii Authentication On Blockchain Networks",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 919,
+    "project_id": "KSCST-48S_MCA_0103",
+    "title": "Reinforcement Learning For IOT Enabled Air Quality Monitoring And Alert Systems",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 920,
+    "project_id": "KSCST-48S_MCA_0105",
+    "title": "Immortal Presence: Bringing Loved Ones Back With AR Integration",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 921,
+    "project_id": "KSCST-48S_MCA_0106",
+    "title": "Arduino Ide Phone Unlocking, Wifi Hacking And Andriod Hacking",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 922,
+    "project_id": "KSCST-48S_MCA_0109",
+    "title": "Smart Cyber-threat Detection System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 923,
+    "project_id": "KSCST-48S_MCA_0133",
+    "title": "Design And Fabrication Of Smart Sensors Using Embedded Technology For The Study Of Tea Process Parameters",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 924,
+    "project_id": "KSCST-48S_BE_4060",
+    "title": "Piezoelectric Power Generation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 925,
+    "project_id": "KSCST-48S_BE_3681",
+    "title": "Smart Robot System: For Detection And Locating Drainage Pipe Blockages In Urban Areas Of Karnataka.",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 926,
+    "project_id": "KSCST-48S_BE_3700",
+    "title": "Kruthak Samvahan: An Interactive AI Model For Responsive And Empathetic Communication",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 927,
+    "project_id": "KSCST-48S_BE_3797",
+    "title": "Ai-powered Web Application For Cybersecurity And Threat Management Training",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 928,
+    "project_id": "KSCST-48S_BE_4656",
+    "title": "Real Time Tracking And Health Insights For Pets",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 929,
+    "project_id": "KSCST-48S_BE_4820",
+    "title": "A Generic Framework On Encyclopedia Using Augmented Reality",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 930,
+    "project_id": "KSCST-48S_BE_4598",
+    "title": "Water Quality Monitoring System For Lakes And Rivers Using IOT",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 931,
+    "project_id": "KSCST-48S_BE_5369",
+    "title": "Eco Ride: Electric Tricycle Skateboard For Campus Mobility",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 932,
+    "project_id": "KSCST-48S_BE_5551",
+    "title": "Aegis Rover: A Multifunctional Military Robot For Detection And Defense",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 933,
+    "project_id": "KSCST-48S_BE_4619",
+    "title": "Prepaid Energy System: A Sustainable Solution For Automatic Electricity Bill Generation Using GSM",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 934,
+    "project_id": "KSCST-48S_BE_4076",
+    "title": "Iot-enabled Intravenous Therapy System: Flow Control, Backflow Prevention, And Automated Alerts",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 935,
+    "project_id": "KSCST-48S_BE_4298",
+    "title": "AR Indoor Navigation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 936,
+    "project_id": "KSCST-48S_BE_4611",
+    "title": "Design And Implementation Of Iot-based Contactless Metro Access System With Face Recognition",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 937,
+    "project_id": "KSCST-48S_BE_5108",
+    "title": "Railshield: An IOT System For Railway Safety",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 938,
+    "project_id": "KSCST-48S_BE_5461",
+    "title": "Safestreets: Intelligent System For Traffic Rules And Public Safety",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 939,
+    "project_id": "KSCST-48S_BE_5594",
+    "title": "Leveraging Interaction Metrics For Anomaly Detection",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 940,
+    "project_id": "KSCST-48S_BE_5600",
+    "title": "Locoeye - Detection Of Locomotive Signal Lights And Pedestrians On Railway Tracks Using YOLO V8",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 941,
+    "project_id": "KSCST-48S_BE_5622",
+    "title": "Helmnet- A Swin Transformer Based Approach For Motorcycle Helmet Detection Using YOLO V8",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 942,
+    "project_id": "KSCST-48S_BE_6236",
+    "title": "Streamlit Based Ai-assistant For Datascience",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 943,
+    "project_id": "KSCST-48S_BE_4920",
+    "title": "Krishisetu - Connecting Farmers To Consumers For Sustainable Food Systems (similar To Xvii. Thirumathikart: E-commerce Platform For Shgss For Enhancing Their Livelihoods And Generating New Employment Opportunities. )",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 944,
+    "project_id": "KSCST-48S_BE_5013",
+    "title": "Artificial Intelligence Judge",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 945,
+    "project_id": "KSCST-48S_BE_5962",
+    "title": "Trustchain Governence: Revolutionizing Public Sector Projects Through Blockchain Based System For Transparency And Accountability",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 946,
+    "project_id": "KSCST-48S_BE_2879",
+    "title": "Android Controlled Autonomous Rover",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 947,
+    "project_id": "KSCST-48S_BE_6462",
+    "title": "Ai-driven Talent Acquisition Engine And Career Fit Assessment Platform",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 948,
+    "project_id": "KSCST-48S_BE_0332",
+    "title": "Secure Vision: Integrated Anti- Spoofing And Deepfake Detection System Using Mobilenet And Resnext",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 949,
+    "project_id": "KSCST-48S_BE_0908",
+    "title": "Jarvis Genesis: Voice Activated Virtual Assistant",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 950,
+    "project_id": "KSCST-48S_BE_2598",
+    "title": "Wastewatch - Clean City",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 951,
+    "project_id": "KSCST-48S_BE_6186",
+    "title": "Detecting Digital Forgery Images Using Transfer Learning Technique",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 952,
+    "project_id": "KSCST-48S_BE_2210",
+    "title": "Microgrid Management Of Solar (pv) And Battery Management System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 953,
+    "project_id": "KSCST-48S_BE_4380",
+    "title": "Hand Operated Sewing Machine For Handicap People",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 954,
+    "project_id": "KSCST-48S_BE_2744",
+    "title": "Water Pollution Monitoring Rc Boat",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 955,
+    "project_id": "KSCST-48S_BE_3570",
+    "title": "Smart Medical Response System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 956,
+    "project_id": "KSCST-48S_BE_3994",
+    "title": "Detection Of Road Condition Defects Using Multiple Sensors And IOT Technology",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 957,
+    "project_id": "KSCST-48S_BE_4670",
+    "title": "Harmful Animal Identification And Detection In Forests Using Ai&ml",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 958,
+    "project_id": "KSCST-48S_BE_4877",
+    "title": "AI Driven Application For Article Writing And Image Generation Using Llm",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 959,
+    "project_id": "KSCST-48S_BE_1213",
+    "title": "Revolutionizing The Local Labor Market With AI Based Mobile Application",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 960,
+    "project_id": "KSCST-48S_BE_3660",
+    "title": "A Novel Approach To Visualize Air Pollution Using Augmented Reality",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 961,
+    "project_id": "KSCST-48S_BE_5558",
+    "title": "Enhancing Smart Summarization Systems Through Reinforcement Learning And Explainable AI For Better Recommendation Precision",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 962,
+    "project_id": "KSCST-48S_BE_2469",
+    "title": "Early-stage Identification Of Neurological Disorders Like Epilepsy Using Brain Computer Interface",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 963,
+    "project_id": "KSCST-48S_BE_4979",
+    "title": "Iot-enabled Smart Helmet For Miner Safety: Real-time Monitoring And Emergency Detection With Lora Communication",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 964,
+    "project_id": "KSCST-48S_BE_5919",
+    "title": "Intelligent Iot-based Patient Health Monitoring And Ambulance Dispatch System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 965,
+    "project_id": "KSCST-48S_BE_5021",
+    "title": "Ai-powered Detection Of Face- Swap Deepfakes And Synthetic Videos: Safe Guarding Digital Authenticity",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 966,
+    "project_id": "KSCST-48S_BE_5035",
+    "title": "Air Quality Monitoring System In Smart Cities Infrastructures Using IOT",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 967,
+    "project_id": "KSCST-48S_BE_5456",
+    "title": "Virtual Herbal Garden For Ayush: Enhancing Education And Engagement Through Immersive Digital Technology",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 968,
+    "project_id": "KSCST-48S_BE_5464",
+    "title": "Aiva: Ai-driven Virtual Assistant For Desktop",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 969,
+    "project_id": "KSCST-48S_BE_4691",
+    "title": "Smart Shoes For Visually Impaired",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 970,
+    "project_id": "KSCST-48S_BE_6082",
+    "title": "Crop Calendar",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 971,
+    "project_id": "KSCST-48S_BE_0667",
+    "title": "Theft Alert Detector - Guardianeye",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 972,
+    "project_id": "KSCST-48S_BE_1166",
+    "title": "Codespark - Gen-ai Based Coding Assistant Using Socratic Method",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 973,
+    "project_id": "KSCST-48S_BE_1371",
+    "title": "Smart Feedback System For Real-time Presentation Assessment",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 974,
+    "project_id": "KSCST-48S_BE_1457",
+    "title": "AI Firewall:ai Powered Cyber Threat Intelligence And Prevention System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 975,
+    "project_id": "KSCST-48S_BE_3139",
+    "title": "Face -ticket: A Facial Recognition Approach For Exam Hall Ticket Management System To Avoid Cheating",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 976,
+    "project_id": "KSCST-48S_BE_0748",
+    "title": "Design And Implementation Of Solar Powered Anti- Smuggling System For Trees",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 977,
+    "project_id": "KSCST-48S_BE_0911",
+    "title": "Design And Implementation Of Smart Trolley System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 978,
+    "project_id": "KSCST-48S_BE_4519",
+    "title": "MRI Brain Tumor Detection Using Python: Deep Learning And Machine Learning Approaches",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 979,
+    "project_id": "KSCST-48S_BE_4713",
+    "title": "IOT Based Driving License Authentication System Using Face And Fingerprint Of Driver",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 980,
+    "project_id": "KSCST-48S_BE_5082",
+    "title": "Automated Kidney Stone Detection Using Deep Learning Model",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 981,
+    "project_id": "KSCST-48S_BE_5239",
+    "title": "Ai-powered Chatgpt Robot: Redefining Education, Retail, Healthcare, Agriculture, And Beyond With Vision And Voice",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 982,
+    "project_id": "KSCST-48S_MCA_0003",
+    "title": "Interactive Health Monitoring For Young Wards Using Gamification And Mobile Application Technology",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 983,
+    "project_id": "KSCST-48S_MCA_0031",
+    "title": "Sanskrit Sahayak Using Rbmt",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 984,
+    "project_id": "KSCST-48S_MCA_0048",
+    "title": "AI Based Solution For Traffic Management Solution",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 985,
+    "project_id": "KSCST-48S_MCA_0096",
+    "title": "Ai-enabled Vulnerability Detection In Software Products Designed For IOT Applications",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 986,
+    "project_id": "KSCST-48S_MCA_0101",
+    "title": "Image To Plate AI Powered Recipe Generator",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 987,
+    "project_id": "KSCST-48S_BE_6312",
+    "title": "Tracksure: Advanced Real-time GPS And RFID Tracking System With Geofencing And Sos Features",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 988,
+    "project_id": "KSCST-48S_BE_4321",
+    "title": "Dual Mode Fire Fighting Robot With Adaptive Control Systems",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 989,
+    "project_id": "KSCST-48S_BE_5646",
+    "title": "Assistive Robot In Hospitals Using Ros2",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 990,
+    "project_id": "KSCST-48S_BE_6456",
+    "title": "Solar Powered Automatic Weed Removal Robot With Autonomous Navigation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 991,
+    "project_id": "KSCST-48S_BE_4442",
+    "title": "AI Powered Personalised Travel Itinerary Generating Application",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 992,
+    "project_id": "KSCST-48S_BE_4470",
+    "title": "Incognito Complaint Box",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 993,
+    "project_id": "KSCST-48S_BE_4797",
+    "title": "Mindmetrics - A Stress Analysis App",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 994,
+    "project_id": "KSCST-48S_BE_0007",
+    "title": "Rider Safety Jacket With Airbag Deployment And Tracking System",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 995,
+    "project_id": "KSCST-48S_BE_2137",
+    "title": "Eco-friendly Automated Leaf And Dust Collection Vehicle",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 996,
+    "project_id": "KSCST-48S_BE_2238",
+    "title": "Design And Development Of A Portable Electric Scooter",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 997,
+    "project_id": "KSCST-48S_BE_1519",
+    "title": "Hydro Hive : Ai-driven Solutions For Dam Maintenance And Agriculture",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 998,
+    "project_id": "KSCST-48S_BE_2540",
+    "title": "Fabrication Of Advanced Emi Shielding Materials",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 999,
+    "project_id": "KSCST-48S_BE_4652",
+    "title": "Smart Detection Of Electric Theft",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1000,
+    "project_id": "KSCST-48S_BE_5868",
+    "title": "Path Planning Autonomous Agribot",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1001,
+    "project_id": "KSCST-48S_BE_5309",
+    "title": "Autonomous Vehicle For A Smart And Safer Mobility",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1002,
+    "project_id": "KSCST-48S_BE_5984",
+    "title": "Low Cost Smart Ventilator For Critical Care Using IOT Technology",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1003,
+    "project_id": "KSCST-48S_BE_3808",
+    "title": "Clickcatcher AI",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1004,
+    "project_id": "KSCST-48S_BE_4334",
+    "title": "Using Rice Husk Ash (rha) For High-performance Concrete And Silica-based Products",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1005,
+    "project_id": "KSCST-48S_BE_1874",
+    "title": "Attribute Based Encryption And Decryption In Green Cloud Computing",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1006,
+    "project_id": "KSCST-48S_BE_2487",
+    "title": "Detection, Classification & Characterstics Of Split Pigeon Peas",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1007,
+    "project_id": "KSCST-48S_BE_0368",
+    "title": "Portable Ev Charging System With Short Circuit Detection",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1008,
+    "project_id": "KSCST-48S_BE_0512",
+    "title": "Intelligent Surveillance System For Military Applications",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1009,
+    "project_id": "KSCST-48S_BE_0998",
+    "title": "Emergency Communication System In Dead Zone Area Using Lora",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1010,
+    "project_id": "KSCST-48S_BE_1254",
+    "title": "Next-gen Cooling System For Electric Vehicles Battery Bank: Maximizing Safety And Efficiency",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1011,
+    "project_id": "KSCST-48S_BE_1506",
+    "title": "Design And Implementation Of A Quadcopter For Insecticide And Repellent Dispersion",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1012,
+    "project_id": "KSCST-48S_BE_1848",
+    "title": "Sleep Monitoring Neck REST Pillow With Memory Use",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1013,
+    "project_id": "KSCST-48S_BE_1973",
+    "title": "Blood Group Detection Using Fingerprint With Image Processing",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1014,
+    "project_id": "KSCST-48S_BE_2190",
+    "title": "Revolutionizing Carbon Neutrality Ai-enhanced Solutions For Indian Coal Mines",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1015,
+    "project_id": "KSCST-48S_BE_2253",
+    "title": "Real-time Object Dimension Measurement With Opencv And Machine Learning",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1016,
+    "project_id": "KSCST-48S_BE_2387",
+    "title": "Cell Segmentation",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  },
+  {
+    "row": 1017,
+    "project_id": "KSCST-48S_BE_2634",
+    "title": "AI Based Caption Generator In Regional Language",
+    "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf"
+  }
+]

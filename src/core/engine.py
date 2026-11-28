@@ -7,6 +7,7 @@ from collections.abc import Sequence
 from src.core.contracts import ProjectRecord, Retriever, SearchMatch
 from src.core.evidence import _evidence_terms, inspect_evidence
 from src.core.fusion import fuse_rankings
+from src.core.reranker import rerank_with_cross_encoder
 
 
 MIN_IDEA_LENGTH = 10
@@ -36,6 +37,7 @@ class CoreSearchEngine:
         records: Sequence[ProjectRecord],
         bm25_retriever: Retriever,
         vector_retriever: Retriever,
+        use_cross_encoder: bool = True,
     ) -> None:
         if not records:
             raise ValueError("Core Search requires at least one canonical project record.")
@@ -46,12 +48,15 @@ class CoreSearchEngine:
             self._records[record.project_id] = record
         self._bm25 = bm25_retriever
         self._vector = vector_retriever
+        self._use_cross_encoder = use_cross_encoder
 
     def search(self, idea: str, top_k: int = 5) -> list[SearchMatch]:
         query, limit = validate_search_arguments(idea, top_k)
-        bm25_hits = self._bm25.search(query, limit)
-        vector_hits = self._vector.search(query, limit)
-        matches = fuse_rankings(bm25_hits, vector_hits, self._records, limit)
+        # Retrieve more candidates for cross-encoder reranking
+        initial_k = max(limit * 3, 20) if self._use_cross_encoder else limit
+        bm25_hits = self._bm25.search(query, initial_k)
+        vector_hits = self._vector.search(query, initial_k)
+        matches = fuse_rankings(bm25_hits, vector_hits, self._records, initial_k)
 
         query_terms = _evidence_terms(query)
         enriched: list[SearchMatch] = []
@@ -68,4 +73,9 @@ class CoreSearchEngine:
                     verification_status=evidence.verification_status,
                 )
             )
+
+        # Cross-encoder reranking for better precision
+        if self._use_cross_encoder and enriched:
+            enriched = rerank_with_cross_encoder(query, enriched, top_k)
+
         return enriched

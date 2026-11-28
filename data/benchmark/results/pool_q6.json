@@ -1,0 +1,1026 @@
+{
+  "query_id": "q6",
+  "query_text": "Autonomous lunar rover navigation using reinforcement learning and orbital DEMs",
+  "category": "Robotics/Space",
+  "timestamp": 1795890687.232738,
+  "local_candidates": [
+    {
+      "candidate_id": "local:RVCE-PUB-0036",
+      "candidate_type": "local",
+      "title": "Safety-Aware Reinforcement Learning for Lunar Rover Navigation Using Orbital DEMs",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating safety-aware reinforcement learning for lunar rover navigation using orbital dems. Published in IEEE Access (2026).",
+      "source_url": "https://doi.org/10.1109/access.2026.3717682",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 1,
+      "bm25_rank": 1,
+      "vector_rank": 1,
+      "rrf_score": 0.03278688524590164,
+      "shared_elements": [
+        "autonomous",
+        "lunar",
+        "rover",
+        "navigation",
+        "reinforcement",
+        "learning",
+        "orbital",
+        "dems"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2879",
+      "candidate_type": "local",
+      "title": "Android Controlled Autonomous Rover",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 2,
+      "bm25_rank": 2,
+      "vector_rank": 8,
+      "rrf_score": 0.030834914611005692,
+      "shared_elements": [
+        "autonomous",
+        "rover"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_5551",
+      "candidate_type": "local",
+      "title": "Aegis Rover: A Multifunctional Military Robot For Detection And Defense",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 3,
+      "bm25_rank": 3,
+      "vector_rank": 7,
+      "rrf_score": 0.030798389007344232,
+      "shared_elements": [
+        "autonomous",
+        "rover"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0102",
+      "candidate_type": "local",
+      "title": "AgibotTech/agibot_x1_train",
+      "description": "The reinforcement learning training code for AgiBot X1.",
+      "source_url": "https://github.com/AgibotTech/agibot_x1_train",
+      "source_type": "open_source_repository",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 4,
+      "bm25_rank": 9,
+      "vector_rank": 10,
+      "rrf_score": 0.02877846790890269,
+      "shared_elements": [
+        "autonomous",
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0167",
+      "candidate_type": "local",
+      "title": "A Bi-level Co-design Framework for Lunar Monoped with 2D Jump and Landing Control",
+      "description": "Legged robots for lunar exploration must be designed for low gravity, where reduced contact forces and long flight phases make leg morphology and controller choice interdependent. We study this for a planar monoped in lunar gravity ($1.625$ m/s$^2$) using a bi-level co-design framework: a differential evolution outer loop searches over link lengths, and each candidate is evaluated on a vertical jump by either a quadratic program based task-space controller (QP-TSC) or a direct-collocation based trajectory optimization. The two controllers yield different optimal link lengths, and trajectory optimization outperforms the QP-TSC across most of the design space, with 17% lower Cost of Transport (COT) at their respective optima. We then extend to a 2D jump, where trajectory optimization with centroidal angular momentum regulation produces stable in-place and forward jumps, and an LQR controller absorbs impact and stabilizes the robot after touchdown. This is demonstrated on a baseline morphology with both links 0.3 m long.",
+      "source_url": "https://arxiv.org/abs/2610.37199v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 5,
+      "bm25_rank": 17,
+      "vector_rank": 4,
+      "rrf_score": 0.028612012987012988,
+      "shared_elements": [
+        "autonomous",
+        "lunar"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0094",
+      "candidate_type": "local",
+      "title": "Farama-Foundation/Gymnasium-Robotics",
+      "description": "A collection of robotics simulation environments for reinforcement learning",
+      "source_url": "https://github.com/Farama-Foundation/Gymnasium-Robotics",
+      "source_type": "open_source_repository",
+      "year": 2021,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 6,
+      "bm25_rank": 10,
+      "vector_rank": 11,
+      "rrf_score": 0.028370221327967807,
+      "shared_elements": [
+        "autonomous",
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0409",
+      "candidate_type": "local",
+      "title": "Farama-Foundation/HighwayEnv",
+      "description": "A collection of environments for autonomous driving and tactical decision-making tasks",
+      "source_url": "https://github.com/Farama-Foundation/HighwayEnv",
+      "source_type": "open_source_repository",
+      "year": 2017,
+      "domain": "Reinforcement Learning / Decision AI",
+      "tech_stack": null,
+      "rank": 7,
+      "bm25_rank": 13,
+      "vector_rank": 9,
+      "rrf_score": 0.02819138376017471,
+      "shared_elements": [
+        "autonomous",
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0059",
+      "candidate_type": "local",
+      "title": "DLR-RM/stable-baselines3",
+      "description": "PyTorch version of Stable Baselines, reliable implementations of reinforcement learning algorithms.",
+      "source_url": "https://github.com/DLR-RM/stable-baselines3",
+      "source_type": "open_source_repository",
+      "year": 2020,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 8,
+      "bm25_rank": 12,
+      "vector_rank": 16,
+      "rrf_score": 0.027046783625730993,
+      "shared_elements": [
+        "autonomous",
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0087",
+      "candidate_type": "local",
+      "title": "learnsyslab/gym-pybullet-drones",
+      "description": "PyBullet Gymnasium environments for single and multi-agent reinforcement learning of quadcopter control",
+      "source_url": "https://github.com/learnsyslab/gym-pybullet-drones",
+      "source_type": "open_source_repository",
+      "year": 2020,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 9,
+      "bm25_rank": 14,
+      "vector_rank": 17,
+      "rrf_score": 0.026500526500526502,
+      "shared_elements": [
+        "autonomous",
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0174",
+      "candidate_type": "local",
+      "title": "Omni-IGN: Onboard Image-Goal Navigation for Drones with Omnidirectional Vision",
+      "description": "Image-goal navigation (ImageNav) requires an agent to reach a location specified by a goal image in an unknown environment. For drones, this task demands exploration, goal- directed navigation, and collision avoidance under limited onboard computing resources. Existing aerial ImageNav methods are built on single-view observations, requiring additional rotation and exploration to search for goal-relevant cues outside the field of view. In this paper, we present Omni-IGN, a fully onboard ImageNav system that integrates quad-fisheye perception, an attention-based reinforcement learning (RL) policy, and a collision-aware safety layer. The policy adaptively fuses goal-relevant features across multiple views to provide directional guidance for continuous navigation. The quad-fisheye RGB images support both ImageNav and obstacle avoidance without a dedicated depth sensor. On Habitat benchmarks, Omni-IGN achieves the best performance among continuous-action baselines. Moreover, flight tests in IsaacSim validate the effectiveness of integrating learning-based depth estimation with the action safety layer for collision avoidance. Finally, real-world experiments demonstrate zero-shot sim-to-real transfer without any fine-tuning or external localization. The code and model checkpoints will be released upon acceptance.",
+      "source_url": "https://arxiv.org/abs/2610.36968v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 10,
+      "bm25_rank": 16,
+      "vector_rank": 15,
+      "rrf_score": 0.02649122807017544,
+      "shared_elements": [
+        "autonomous",
+        "navigation",
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0080",
+      "candidate_type": "local",
+      "title": "DLR-RM/rl-baselines3-zoo",
+      "description": "A training framework for Stable Baselines3 reinforcement learning agents, with hyperparameter optimization and pre-trained agents included.",
+      "source_url": "https://github.com/DLR-RM/rl-baselines3-zoo",
+      "source_type": "open_source_repository",
+      "year": 2020,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 11,
+      "bm25_rank": 19,
+      "vector_rank": 19,
+      "rrf_score": 0.02531645569620253,
+      "shared_elements": [
+        "autonomous",
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_1780",
+      "candidate_type": "local",
+      "title": "Self-navigating Rover For Real Time Mapping And Disaster Management",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Web Application / Information Systems",
+      "tech_stack": null,
+      "rank": 12,
+      "bm25_rank": null,
+      "vector_rank": 2,
+      "rrf_score": 0.016129032258064516,
+      "shared_elements": [
+        "rover"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0181",
+      "candidate_type": "local",
+      "title": "Integrated Design and Reproducible Feasibility Analysis of a Four-Wheel Rover with Packet-Commanded Imaging, LiDAR Ranging, and Learning-Assisted Target Recognition",
+      "description": "This study develops an integrated, reproducible design assessment for a four-wheel educational rover intended for the high-school remote-control division of the 2027 NASA Human Exploration Rover Challenge. The architecture combines commercial differential drive control, independently sprung wheel carriers, separate drive and task batteries, and a Raspberry Pi-based subsystem that executes received imaging and ranging commands. The analysis reconciles component lists with dimensioned computer-aided design views, derives mobility and electrical constraints, and connects sensor geometry to command execution. At the estimated mass of 10.919 kg, a 215 mm wheel rotating at 200 RPM produces a theoretical rolling speed of 8.105 km/h; consequently, the nominal motor label does not establish compliance with an 8 km/h design ceiling. A steady 20-degree climb requires at least 1.255 newton-meters per wheel under an assumed rolling-resistance coefficient of 0.10 and equal torque sharing. At 50 ft, an ideal 12-inch feature spans approximately 71 pixels across a full-resolution Camera Module 3 Standard image, while a 1-degree pointing error displaces the ranging ray by approximately 266 mm. An executed synthetic benchmark compares color-geometry rules and two linear support-vector classifiers on 2,400 generated board crops with scene-disjoint evaluation. A separate reference command executor is checked using mocked hardware. These software results and analytical sensitivities support a testable development plan; the study does not report physical rover trials. The principal contribution is a traceable connection between component choices, failure mechanisms, quantitative design limits, and reproducible verification tasks.",
+      "source_url": "https://arxiv.org/abs/2610.36816v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 13,
+      "bm25_rank": null,
+      "vector_rank": 3,
+      "rrf_score": 0.015873015873015872,
+      "shared_elements": [
+        "autonomous",
+        "rover",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:VERIFIED-0013",
+      "candidate_type": "local",
+      "title": "Nav2 (ROS 2 Navigation System)",
+      "description": "Navigation stack for ROS 2 that provides autonomous mobile robot path planning, dynamic obstacle avoidance, behavioral tree execution, and localization.",
+      "source_url": "https://github.com/ros-navigation/navigation2",
+      "source_type": "open_source_repository",
+      "year": 2018,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": "ROS 2",
+      "rank": 14,
+      "bm25_rank": 4,
+      "vector_rank": null,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "autonomous",
+        "navigation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_1081",
+      "candidate_type": "local",
+      "title": "Person Recognition And Autonomous Bot Navigation",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 15,
+      "bm25_rank": 5,
+      "vector_rank": null,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "autonomous",
+        "navigation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0381",
+      "candidate_type": "local",
+      "title": "tensorlayer/TensorLayer",
+      "description": "Deep Learning and Reinforcement Learning Library for Scientists and Engineers",
+      "source_url": "https://github.com/tensorlayer/TensorLayer",
+      "source_type": "open_source_repository",
+      "year": 2016,
+      "domain": "Reinforcement Learning / Decision AI",
+      "tech_stack": null,
+      "rank": 16,
+      "bm25_rank": null,
+      "vector_rank": 5,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3019",
+      "candidate_type": "local",
+      "title": "Smars Robot - A 3d Printed Autonomous Navigation System",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 17,
+      "bm25_rank": 6,
+      "vector_rank": null,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [
+        "autonomous",
+        "navigation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0384",
+      "candidate_type": "local",
+      "title": "rllm-org/rllm",
+      "description": "Democratizing Reinforcement Learning for LLMs",
+      "source_url": "https://github.com/rllm-org/rllm",
+      "source_type": "open_source_repository",
+      "year": 2025,
+      "domain": "Reinforcement Learning / Decision AI",
+      "tech_stack": null,
+      "rank": 18,
+      "bm25_rank": null,
+      "vector_rank": 6,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3986",
+      "candidate_type": "local",
+      "title": "Design And Development Of Humanoid Robot With Autonomous Navigation",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 19,
+      "bm25_rank": 7,
+      "vector_rank": null,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [
+        "autonomous",
+        "navigation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_6456",
+      "candidate_type": "local",
+      "title": "Solar Powered Automatic Weed Removal Robot With Autonomous Navigation",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 20,
+      "bm25_rank": 8,
+      "vector_rank": null,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "autonomous",
+        "navigation"
+      ],
+      "verification_status": "checked"
+    }
+  ],
+  "live_candidates": [
+    {
+      "candidate_id": "openalex_b41a028069f131107a34d4e5",
+      "candidate_type": "paper",
+      "title": "Safety-Aware Reinforcement Learning for Lunar Rover Navigation Using Orbital DEMs",
+      "description": "Autonomous lunar rover navigation is constrained by Earth\u2013Moon communication delay, sparse rewards, and high-variance polar terrain. This paper presents a DEM-driven digital twin framework for training and validating safety-aware rover navigation policies using NASA Lunar Reconnaissance Orbiter altimetry. The proposed system combines PPO with Potential-Based Reward Shaping, an onboard Attention U-Net hazard-perception module, a reactive safety filter, and a Multi-Axis Morphology-Aware Curriculum (MAMAC) that increases crater density, obstacle radius, corridor width, elevation variance, and path complexity during training. Across 20,410 in-distribution evaluation episodes, the integrated policy achieved 96% success on moderate terrain and 85% on high-complexity terrain, compared with 15% for heuristic-only baselines; collision rate on the hardest terrain decreased from 35% to 10%. We further evaluated 675 held-out DEM patches unseen during training: MAMAC reached 84.7% success at moderate difficulty and 53.0% at hard difficulty, versus 52.2% and 32.5% for a no-curriculum baseline. These results show that a curriculum-trained, perception-guided safety architecture provides an effective simulation-stage validation framework for autonomous lunar navigation.",
+      "source_url": "https://doi.org/10.1109/access.2026.3717682",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 1,
+      "bm25_rank": 1,
+      "dense_rank": 1,
+      "rrf_score": 0.03278688524590164,
+      "shared_concepts": [
+        "reinforcement",
+        "learning",
+        "lunar",
+        "rover",
+        "navigation",
+        "orbital",
+        "dems",
+        "autonomous"
+      ],
+      "distinctive_terms": [
+        "safety",
+        "aware",
+        "constrained",
+        "earth",
+        "moon",
+        "communication",
+        "delay",
+        "sparse"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 1 and semantic rank 1. Shared terms: reinforcement, learning, lunar, rover, navigation, orbital, dems, autonomous."
+    },
+    {
+      "candidate_id": "openalex_7561736a6e8c988b934d87ed",
+      "candidate_type": "paper",
+      "title": "An integrated process for design and control of lunar robotics using AI and simulation",
+      "description": "We envision an integrated process for developing lunar construction equipment, where physical design and control are explored in parallel. In this paper, we describe a technical framework that supports this process. It relies on OpenPLX, a readable/writable declarative language that links CAD-models and autonomous systems to high-fidelity, real-time 3D simulations of contacting multibody dynamics, machine regolith interaction forces, and non-ideal sensors. To demonstrate its capabilities, we present two case studies, including an autonomous lunar rover that combines a vision-language model for navigation with a reinforcement learning-based control policy for locomotion.",
+      "source_url": null,
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 2,
+      "bm25_rank": 2,
+      "dense_rank": 4,
+      "rrf_score": 0.031754032258064516,
+      "shared_concepts": [
+        "lunar",
+        "autonomous",
+        "rover",
+        "navigation",
+        "reinforcement",
+        "learning"
+      ],
+      "distinctive_terms": [
+        "integrated",
+        "process",
+        "control",
+        "robotics",
+        "ai",
+        "simulation",
+        "we",
+        "envision"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 2 and semantic rank 4. Shared terms: lunar, autonomous, rover, navigation, reinforcement, learning."
+    },
+    {
+      "candidate_id": "openalex_ad636f21f4caf8cbfa1b5921",
+      "candidate_type": "paper",
+      "title": "Learning-Based End-to-End Path Planning for Lunar Rovers with Safety Constraints",
+      "description": "Path planning is an essential technology for lunar rover to achieve safe and efficient autonomous exploration mission, this paper proposes a learning-based end-to-end path planning algorithm for lunar rovers with safety constraints. Firstly, a training environment integrating real lunar surface terrain data was built using the Gazebo simulation environment and a lunar rover simulator was created in it to simulate the real lunar surface environment and the lunar rover system. Then an end-to-end path planning algorithm based on deep reinforcement learning method is designed, including state space, action space, network structure, reward function considering slip behavior, and training method based on proximal policy optimization. In addition, to improve the generalization ability to different lunar surface topography and different scale environments, a variety of training scenarios were set up to train the network model using the idea of curriculum learning. The simulation results show that the proposed planning algorithm can successfully achieve the end-to-end path planning of the lunar rover, and the path generated by the proposed algorithm has a higher safety guarantee compared with the classical path planning algorithm.",
+      "source_url": "https://doi.org/10.3390/s21030796",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 3,
+      "bm25_rank": 5,
+      "dense_rank": 6,
+      "rrf_score": 0.030536130536130537,
+      "shared_concepts": [
+        "learning",
+        "lunar",
+        "rover",
+        "autonomous",
+        "reinforcement"
+      ],
+      "distinctive_terms": [
+        "end",
+        "path",
+        "planning",
+        "rovers",
+        "safety",
+        "constraints",
+        "essential",
+        "technology"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 5 and semantic rank 6. Shared terms: learning, lunar, rover, autonomous, reinforcement."
+    },
+    {
+      "candidate_id": "openalex_e5dd5948a25a903ec1920a4c",
+      "candidate_type": "paper",
+      "title": "A Deep Learning Approach to Lunar Rover Global Path Planning Using Environmental Constraints and the Rover Internal Resource Status",
+      "description": "This research proposes a novel approach to global path and resource planning for lunar rovers. The proposed method incorporates a range of constraints, including static, time-variant, and path-dependent factors related to environmental conditions and the rover's internal resource status. These constraints are integrated into a grid map as a penalty function, and a reinforcement learning-based framework is employed to address the resource constrained shortest path problem (RCSP). Compared to existing approaches referenced in the literature, our proposed method enables the simultaneous consideration of a broader spectrum of constraints. This enhanced flexibility leads to improved path search optimality. To evaluate the performance of our approach, this research applied the proposed learning architecture to lunar rover path search problems, generated based on real lunar digital elevation data. The simulation results demonstrate that our architecture successfully identifies a rover path while consistently adhering to user-defined environmental and rover resource safety criteria across all positions and time epochs. Furthermore, the simulation results indicate that our approach surpasses conventional methods that solely rely on environmental constraints.",
+      "source_url": "https://doi.org/10.3390/s24030844",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 4,
+      "bm25_rank": 9,
+      "dense_rank": 3,
+      "rrf_score": 0.03036576949620428,
+      "shared_concepts": [
+        "learning",
+        "lunar",
+        "rover",
+        "reinforcement"
+      ],
+      "distinctive_terms": [
+        "deep",
+        "approach",
+        "global",
+        "path",
+        "planning",
+        "environmental",
+        "constraints",
+        "internal"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 9 and semantic rank 3. Shared terms: learning, lunar, rover, reinforcement."
+    },
+    {
+      "candidate_id": "openalex_160df7b490a04cb2b99daa47",
+      "candidate_type": "paper",
+      "title": "Lunar Rover Localization Using Craters as Landmarks",
+      "description": "Onboard localization capabilities for planetary rovers to date have used relative navigation, by integrating combinations of wheel odometry, visual odometry, and inertial measurements during each drive to track position relative to the start of each drive. At the end of each drive, a \u201cground-in-the-loop\u201d (GITL) interaction is used to get a position update from human operators in a more global reference frame, by matching images or local maps from onboard the rover to orbital reconnaissance images or maps of a large region around the rover's current position. Autonomous rover drives are limited in distance so that accumulated relative navigation error does not risk the possibility of the rover driving into hazards known from orbital images. In practice, this limits drives to a few hundred meters between GITL cycles. Several rover mission concepts have recently been studied that require much longer drives between GITL cycles, particularly for the Moon. This includes lunar rover mission concepts that involve (1) driving mostly in sunlight at low latitudes, (2) driving in permanently shadowed regions near the south pole, and (3) a mixture of day and night driving in mid-latitudes. These concepts include total traverse distance requirements of up to 1,800 km in 4 Earth years, with individual drives of several kilometers between stops for downlink. These concepts require greater autonomy to minimize GITL cycles to enable such large range; onboard global localization is a key element of such autonomy. Multiple techniques have been studied in the past for onboard rover global localization, but a satisfactory solution has not yet emerged. For the Moon, the ubiquitous craters offer a new possibility, which involves mapping craters from orbit, then recognizing crater landmarks with cameras and/or a lidar onboard the rover. This approach is applicable everywhere on the Moon, does not require high resolution stereo imaging from orbit as some other approaches do, and has potential to enable position knowledge with order of 5 to 10 m accuracy at all times. This paper describes our technical approach to crater-based lunar rover localization and presents initial results on crater detection using 3-D point cloud data from onboard lidar or stereo cameras, as well as using shading cues in monocular onboard imagery.",
+      "source_url": null,
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 5,
+      "bm25_rank": 3,
+      "dense_rank": 10,
+      "rrf_score": 0.030158730158730156,
+      "shared_concepts": [
+        "lunar",
+        "rover",
+        "navigation",
+        "orbital",
+        "autonomous"
+      ],
+      "distinctive_terms": [
+        "localization",
+        "craters",
+        "landmarks",
+        "onboard",
+        "capabilities",
+        "planetary",
+        "rovers",
+        "date"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 3 and semantic rank 10. Shared terms: lunar, rover, navigation, orbital, autonomous."
+    },
+    {
+      "candidate_id": "openalex_b7ec80c05e6740c06a644d1e",
+      "candidate_type": "paper",
+      "title": "Optimizing Earth-Moon Transfer and Cislunar Navigation: Integrating Low-Energy Trajectories, AI Techniques and GNSS-R Technologies",
+      "description": "The rapid growth of cislunar activities, including lunar landings, the Lunar Gateway, and in-space refueling stations, requires advances in cost-efficient trajectory design and reliable integration of navigation and remote sensing. Traditional Earth-Moon transfers suffer from rigid launch windows and high propellant demands, while Earth-based GNSS systems provide little to no coverage beyond geostationary orbit. This limits autonomy and environmental awareness in cislunar space. This review compares four major transfer strategies by evaluating velocity requirements, flight durations, and fuel efficiency, and by identifying their suitability for both crewed and robotic missions. The emerging role of artificial intelligence and machine learning is highlighted: convolutional neural networks support automated crater recognition and digital terrain model generation, while deep reinforcement learning enables adaptive trajectory refinement during descent and landing to reduce risk and decision latency. The study also examines how GNSS-Reflectometry and advanced Positioning, Navigation, and Timing architectures can extend navigation capabilities beyond current limits. GNSS-R can act as a bistatic radar for mapping lunar ice, soil properties, and surface topography, while PNT systems support autonomous rendezvous, Lagrange point station-keeping, and coordinated satellite swarm operations. Combining these developments establishes a scalable framework for sustainable cislunar exploration and long-term human and robotic presence.",
+      "source_url": null,
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 6,
+      "bm25_rank": 8,
+      "dense_rank": 5,
+      "rrf_score": 0.030090497737556562,
+      "shared_concepts": [
+        "navigation",
+        "lunar",
+        "learning",
+        "reinforcement",
+        "autonomous"
+      ],
+      "distinctive_terms": [
+        "optimizing",
+        "earth",
+        "moon",
+        "transfer",
+        "cislunar",
+        "integrating",
+        "low",
+        "energy"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 8 and semantic rank 5. Shared terms: navigation, lunar, learning, reinforcement, autonomous."
+    },
+    {
+      "candidate_id": "openalex_5823248e6517ec022490e8ae",
+      "candidate_type": "paper",
+      "title": "Planetary Terrain Datasets and Benchmarks for Rover Path Planning",
+      "description": "Planetary rover exploration is attracting renewed interest with several upcoming space missions to the Moon and Mars. However, a substantial amount of data from prior missions remain underutilized for path planning and autonomous navigation research. As a result, there is a lack of space mission-based planetary datasets, standardized benchmarks, and evaluation protocols. In this paper, we take a step towards coordinating these three research directions in the context of planetary rover path planning. We propose the first two large planar benchmark datasets, MarsPlanBench and MoonPlanBench, derived from high-resolution digital terrain images of Mars and the Moon. In addition, we set up classical and learned path planning algorithms, in a unified framework, and evaluate them on our proposed datasets and on a popular planning benchmark. Through comprehensive experiments, we report new insights on the performance of representative path planning algorithms on planetary terrains, for the first time to the best of our knowledge. Our results show that classical algorithms can achieve up to 100% global path planning success rates on average across challenging terrains such as Moon's north and south poles. This suggests, for instance, why these algorithms are used in practice by NASA. Conversely, learning-based models, although showing promising results in less complex environments, still struggle to generalize to planetary domains. To serve as a starting point for fundamental path planning research, our code and datasets will be released at: https://github.com/mchancan/PlanetaryPathBench.",
+      "source_url": null,
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 7,
+      "bm25_rank": 15,
+      "dense_rank": 2,
+      "rrf_score": 0.02946236559139785,
+      "shared_concepts": [
+        "rover",
+        "autonomous",
+        "navigation",
+        "learning"
+      ],
+      "distinctive_terms": [
+        "planetary",
+        "terrain",
+        "datasets",
+        "benchmarks",
+        "path",
+        "planning",
+        "exploration",
+        "attracting"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 15 and semantic rank 2. Shared terms: rover, autonomous, navigation, learning."
+    },
+    {
+      "candidate_id": "openalex_c1c770dbd1bef22621f4b576",
+      "candidate_type": "paper",
+      "title": "Computer vision for mars exploration: a review of orbital remote sensing and in situ perception",
+      "description": "Mars exploration has entered a data-intensive stage, with orbital and in situ missions producing rapidly growing volumes of high-resolution, multi-source image data. Deep learning has become an important tool for transforming these data into actionable geological, environmental, and operational information. This review synthesizes recent progress in deep learning for Mars intelligent perception from two complementary perspectives: orbital remote sensing and in situ exploration. We show that computer vision for Mars exploration has developed from isolated task-specific applications into a more structured technical system involving benchmark datasets, object detection, image classification, semantic and instance segmentation, change detection, depth estimation, 3D reconstruction, image enhancement, and synthetic data generation. These methods have improved crater detection, geological unit mapping, dynamic surface monitoring, terrain assessment, high-value target localization, and rover scene understanding. Despite rapid progress, current methods remain constrained by several coupled limitations. Mars data are highly heterogeneous across spatial scales, spectral dimensions, imaging geometries, and temporal conditions. Supervisory signals are sparse, expensive, and sometimes inconsistent because of geological ambiguity. Models may produce overconfident errors or hallucination-like outputs in open environments. Onboard inference must balance accuracy, latency, memory, and power consumption. Generalization remains vulnerable to geological and instrumental domain drift. Most importantly, many models still rely primarily on statistical correlations and remain weakly connected to physical causality, limiting their scientific interpretability. Future research should therefore move from data-driven perception toward knowledge-guided and mission-aware intelligence. Key directions include Mars-specific foundation models trained on large-scale unlabeled multi-source data, embodied autonomous scientific exploration, physically informed causal modeling, uncertainty quantification, multimodal collaborative perception, and edge intelligence. By integrating computer vision, deep learning, onboard computing, and planetary science knowledge, future Mars AI systems may become more robust, trustworthy, and scientifically meaningful tools for autonomous exploration and planetary discovery.",
+      "source_url": "https://doi.org/10.15302/planet.2026.26015",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 8,
+      "bm25_rank": 7,
+      "dense_rank": 12,
+      "rrf_score": 0.028814262023217248,
+      "shared_concepts": [
+        "orbital",
+        "learning",
+        "rover",
+        "autonomous"
+      ],
+      "distinctive_terms": [
+        "computer",
+        "vision",
+        "mars",
+        "exploration",
+        "review",
+        "remote",
+        "sensing",
+        "situ"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 7 and semantic rank 12. Shared terms: orbital, learning, rover, autonomous."
+    },
+    {
+      "candidate_id": "openalex_002196928ec952aff85ca77c",
+      "candidate_type": "paper",
+      "title": "ShadowNav: Autonomous Global Localization for Lunar Navigation in Darkness",
+      "description": "The ability to determine the position of a rover in an inertial frame autonomously is a crucial capability necessary for the next generation of surface rover missions on other planetary bodies. Currently, most on-going rover missions utilize ground-in-the-loop interventions to manually correct for drift in the position estimate, and this human supervision bottlenecks the distance over which rovers can operate autonomously and carry out scientific measurements. In this article, we present ShadowNav, an autonomous approach for global 2-D localization on the Moon with an emphasis on driving in darkness and at nighttime. Our approach uses the leading edge of Lunar craters as landmarks and a particle filtering approach to associate detected craters with known ones on an offboard map. We discuss the key design decisions in developing the ShadowNav framework for use with a Lunar rover concept equipped with a stereo camera and an external illumination source. Finally, we demonstrate the efficacy of our proposed approach in both a Lunar simulation environment and on data collected during a field test at Cinder Lakes, AZ, USA.",
+      "source_url": null,
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 9,
+      "bm25_rank": 11,
+      "dense_rank": 8,
+      "rrf_score": 0.028790389395194696,
+      "shared_concepts": [
+        "autonomous",
+        "lunar",
+        "navigation",
+        "rover"
+      ],
+      "distinctive_terms": [
+        "shadownav",
+        "global",
+        "localization",
+        "darkness",
+        "ability",
+        "determine",
+        "position",
+        "inertial"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 11 and semantic rank 8. Shared terms: autonomous, lunar, navigation, rover."
+    },
+    {
+      "candidate_id": "openalex_b82a4477da260e8374cf0ebc",
+      "candidate_type": "paper",
+      "title": "Lunar ground segmentation using a modified U-net neural network",
+      "description": "Semantic segmentation plays a significant role in unstructured and planetary scene understanding, offering to a robotic system or a planetary rover valuable knowledge about its surroundings. Several studies investigate rover-based scene recognition planetary-like environments but there is a lack of a semantic segmentation architecture, focused on computing systems with low resources and tested on the lunar surface. In this study, a lightweight encoder-decoder neural network (NN) architecture is proposed for rover-based ground segmentation on the lunar surface. The proposed architecture is composed by a modified MobilenetV2 as encoder and a lightweight U-net decoder while the training and evaluation process were conducted using a publicly available synthetic dataset with lunar landscape images. The proposed model provides robust segmentation results, allowing the lunar scene understanding focused on rocks and boulders. It achieves similar accuracy, compared with original U-net and U-net-based architectures which are 110\u2013140 times larger than the proposed architecture. This study, aims to contribute in lunar landscape segmentation utilizing deep learning techniques, while it proves a great potential in autonomous lunar navigation ensuring a safer and smoother navigation on the moon. To the best of our knowledge, this is the first study which propose a lightweight semantic segmentation architecture for the lunar surface, aiming to reinforce the autonomous rover navigation.",
+      "source_url": "https://doi.org/10.1007/s00138-024-01533-3",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 10,
+      "bm25_rank": 6,
+      "dense_rank": 16,
+      "rrf_score": 0.028309409888357256,
+      "shared_concepts": [
+        "lunar",
+        "rover",
+        "learning",
+        "autonomous",
+        "navigation"
+      ],
+      "distinctive_terms": [
+        "ground",
+        "segmentation",
+        "modified",
+        "net",
+        "neural",
+        "network",
+        "semantic",
+        "plays"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 6 and semantic rank 16. Shared terms: lunar, rover, learning, autonomous, navigation."
+    },
+    {
+      "candidate_id": "openalex_84bab095094ef5f9fe22c527",
+      "candidate_type": "paper",
+      "title": "A Comprehensive Review of Path-Planning Algorithms for Planetary Rover Exploration",
+      "description": "Path-planning algorithms for planetary rovers are critical for autonomous robotic exploration, enabling the efficient and safe traversal of complex and dynamic extraterrestrial terrains. Unlike terrestrial mobile robots, planetary rovers must navigate highly unpredictable environments influenced by diverse factors such as terrain variability, obstacles, illumination conditions, and temperature fluctuations, necessitating advanced path-planning strategies to ensure mission success. This review comprehensively synthesizes recent advancements in planetary rover path-planning algorithms. First, we categorize these algorithms from a constraint-oriented perspective, distinguishing between internal rover state constraints and external environmental constraints. Next, we examine rule-based path-planning approaches, including graph search-based methods, potential field methods, sampling-based techniques, and dynamic window approaches, analyzing representative algorithms in each category. Subsequently, we explore bio-inspired path-planning methods, such as evolutionary algorithms, fuzzy computing, and machine learning-based approaches, with a particular emphasis on the latest developments and prospects of machine learning techniques in planetary rover navigation. Finally, we synthesize key insights from existing algorithms and discuss future research directions, highlighting their potential applications in planetary exploration missions.",
+      "source_url": "https://doi.org/10.3390/rs17111924",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 11,
+      "bm25_rank": 14,
+      "dense_rank": 9,
+      "rrf_score": 0.028006267136701922,
+      "shared_concepts": [
+        "rover",
+        "autonomous",
+        "learning",
+        "navigation"
+      ],
+      "distinctive_terms": [
+        "comprehensive",
+        "review",
+        "path",
+        "planning",
+        "algorithms",
+        "planetary",
+        "exploration",
+        "rovers"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 14 and semantic rank 9. Shared terms: rover, autonomous, learning, navigation."
+    },
+    {
+      "candidate_id": "openalex_6738aa6232d471ce0929c829",
+      "candidate_type": "paper",
+      "title": "Linear Quadratic Tracking With Reinforcement Learning Based Reference Trajectory Optimization for the Lunar Hopper in Simulated Environment",
+      "description": "In this work, we provide a novel optimal guidance and control strategy for lunar hopper obstacle-avoidance, descent, and landing problem and demonstrate its behavior using numerical simulations. More specifically, the major contributions of this paper are three-fold: 1) proposed a feedback-based reference trajectory design for lunar hopper guidance, 2) developed the mathematical models and equations of linear quadratic tracking (LQT) controller for lunar hopper control, and 3) developed a method using reinforcement learning to optimize the designed reference trajectory in conjunction with the designed LQT controller, the so-called linear quadratic tracking with reinforcement learning based reference trajectory optimization (LQT-RTO). We demonstrated the LQT-RTO under a 2-dimensional (2D) lunar hopper simulation environment with 1) the LQT with heuristic reference trajectory design (LQT-HTD) and 2) reinforcement learning (reinforcement learning based controller, or RLC). We confirmed by numerical simulation that the LTQ-RTO outperformed the LQT-HTD in terms of fuel consumption, and outperformed the RLC in terms of landing success rate. Lastly, we provided theoretical interpretation to the simulation results.",
+      "source_url": "https://doi.org/10.1109/access.2021.3134592",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 12,
+      "bm25_rank": 12,
+      "dense_rank": 11,
+      "rrf_score": 0.02797339593114241,
+      "shared_concepts": [
+        "reinforcement",
+        "learning",
+        "lunar"
+      ],
+      "distinctive_terms": [
+        "linear",
+        "quadratic",
+        "tracking",
+        "reference",
+        "trajectory",
+        "optimization",
+        "hopper",
+        "simulated"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 12 and semantic rank 11. Shared terms: reinforcement, learning, lunar."
+    },
+    {
+      "candidate_id": "openalex_2301fe0c794a8e3225eee776",
+      "candidate_type": "paper",
+      "title": "Automatic Data Processing for Space Robotics Machine Learning",
+      "description": "Autonomous terrain classification is an important problem in planetary navigation, whether the goal is to identify scientific sites of interest or to traverse treacherous areas safely. Past Martian rovers have relied on human operators to manually identify a navigable path from transmitted imagery. Our goals on Mars in the next few decades will eventually require rovers that can autonomously move farther, faster, and through more dangerous landscapes--demonstrating a need for improved terrain classification for traversability. Autonomous navigation through extreme environments will enable the search for water on the Moon and Mars as well as preparations for human habitats. Advancements in machine learning techniques have demonstrated potential to improve terrain classification capabilities for ground vehicles on Earth. However, classification results for space applications are limited by the availability of training data suitable for supervised learning methods. This paper contributes an open source automatic data processing pipeline that uses camera geometry to co-locate Curiosity and Perseverance Mastcam image products with Mars overhead maps via ray projection over a terrain model. In future work, this automated data processing pipeline will be leveraged for development of machine learning methods for terrain classification.",
+      "source_url": null,
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 13,
+      "bm25_rank": 17,
+      "dense_rank": 7,
+      "rrf_score": 0.027912386121341344,
+      "shared_concepts": [
+        "learning",
+        "autonomous",
+        "navigation"
+      ],
+      "distinctive_terms": [
+        "automatic",
+        "data",
+        "processing",
+        "space",
+        "robotics",
+        "machine",
+        "terrain",
+        "classification"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 17 and semantic rank 7. Shared terms: learning, autonomous, navigation."
+    },
+    {
+      "candidate_id": "openalex_6e10ef02bb166d6b21e1ee38",
+      "candidate_type": "paper",
+      "title": "Lunar Sentinel: Computational Analysis of Lunar Surface Instabilities from Orbital Remote Sensing Data",
+      "description": "Safe lunar landing requires quantitative assessment of the terrain of hazards such as steep slopes, shadowed regions and high crater density. This study presents an integrated multicriteria hazard modelling framework for lunar landing site evaluation using Chandrayaan-2 Terrain Mapping Camera-2 (TMC-2) imagery and corresponding Digital Elevation Model (DEM) data, combined with deep learning-based crater detection from LROC Narrow Angle Camera imagery. The terrain slope was derived from DEM gradients and was normalised using a min\u2013 max approach, while hillshade modelling was employed to identify persistent low-illumination zones. Crater instances were detected using a custom-trained YOLOv8 model trained and validated on 8521 annotated image samples, achieving a mean average precision (mAP@0.75) of 0.89 and an optimal F1 score of 0.87 at a confidence threshold of 0.45. The extracted hazard layers (slope, illumination mask and crater density surface) were integrated through a weighted multi-parameter fusion scheme to generate a continuous Landing Safety Index (LSI). The resulting LSI index classifies terrain into safe, moderate and high-risk zones, highlighting the steep craters and shadowed depressions as hazardous to rover landing. The given system shows the results of combining DEM-based terrain with a deep learning technique. This is used to identify the lunar hazard surface and also provides a structured methodology for future autonomous missions. The existing solution analysed crater detection, slope analysis and Illumination conditions separately. Whereas our approach combines all three components within a unified index, fulfilling the gaps in lunar hazard analysis.",
+      "source_url": "https://doi.org/10.63503/acset.978-81-995593-9-4.51",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 14,
+      "bm25_rank": 4,
+      "dense_rank": 23,
+      "rrf_score": 0.027673192771084338,
+      "shared_concepts": [
+        "lunar",
+        "orbital",
+        "learning",
+        "rover",
+        "autonomous"
+      ],
+      "distinctive_terms": [
+        "sentinel",
+        "computational",
+        "analysis",
+        "surface",
+        "instabilities",
+        "remote",
+        "sensing",
+        "data"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 4 and semantic rank 23. Shared terms: lunar, orbital, learning, rover, autonomous."
+    },
+    {
+      "candidate_id": "openalex_560825846b23662c417b9b37",
+      "candidate_type": "paper",
+      "title": "Learning All-Terrain Locomotion for a Planetary Rover with Actively Articulated Suspension",
+      "description": "This paper presents ERNEST, a four-wheeled planetary rover concept equipped with a two-degree-of-freedom Active Gimbal Suspension that combines yaw and roll actuation to enable wheel reconfiguration, steering, and active load redistribution. A single neural network controller, trained to track a desired path across challenging terrain, fully unlocks the capabilities of this actuated suspension system for autonomous obstacle negotiation. A reinforcement learning framework is developed using the high-fidelity DARTS simulation engine, which combines rigid-contact dynamics and Bekker-Wong terramechanics, enabling the emergence of locomotion strategies adapted to loose-soil conditions. To obtain a single unified controller across heterogeneous terrains, a policy consolidation strategy merges the experience of terrain-specialized agents into one neural network, eliminating the need for explicit terrain classification and controller switching. The resulting controller operates on a combination of proprioceptive and exteroceptive feedback, including sparse stereo-derived terrain elevation, chassis attitude, joint states, and force-torque measurements. Zero-shot transfer to the physical rover is achieved through domain randomization, sensor noise injection, and model-to-real system identification. Experimental results demonstrate autonomous traversal of rock fields, a Bickler trap (bump obstacle), a wheel-high step, sand ripples, and sandy slopes. On a 20\u00b0 sandy slope, the learned controller reduces the cost of transport by 37% on dry sand despite the additional actuation, and achieves superior performance on wet sand where the passive suspension becomes completely immobilized. A video accompanying this paper is available at https://youtu.be/d684P5a3xMc",
+      "source_url": "https://arxiv.org/abs/2606.06790",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 15,
+      "bm25_rank": 13,
+      "dense_rank": 15,
+      "rrf_score": 0.027031963470319637,
+      "shared_concepts": [
+        "learning",
+        "rover",
+        "autonomous",
+        "reinforcement"
+      ],
+      "distinctive_terms": [
+        "all",
+        "terrain",
+        "locomotion",
+        "planetary",
+        "actively",
+        "articulated",
+        "suspension",
+        "paper"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 13 and semantic rank 15. Shared terms: learning, rover, autonomous, reinforcement."
+    },
+    {
+      "candidate_id": "openalex_a9a94eea6326b2283950debc",
+      "candidate_type": "paper",
+      "title": "A flexible deep learning crater detection scheme using Segment Anything Model (SAM)",
+      "description": "Craters are one of the most important morphological features in planetary exploration. To that extent, detecting, mapping and counting craters is a mainstream process in planetary science, done primarily manually, which is a very laborious, time-consuming and inconsistent process. Recently, machine learning (ML) and computer vision have been successfully applied for both detecting craters and estimating their size. Existing ML models for automated crater detection have been trained in specific types of data e.g. digital elevation model (DEM), images and associated metadata from orbiters such as the Lunar Reconnaissance Orbiter Camera (LROC) etc.. Due to that, each of the resulting ML schemes is applicable and reliable only to the type of data used during the training process. Data from different sources, angles and setups can compromise the reliability of these ML schemes. In this paper we present a flexible crater detection scheme that is based on the recently proposed Segment Anything Model (SAM) from META AI. SAM is a prompt-able segmentation system with zero-shot generalization to unfamiliar objects and images without the need for additional training. Using SAM, without additional training and fine-tuning, we can successfully identify crater-looking objects in various types of data (e,g, raw satellite images Level-1 and 2 products, DEMs etc.) for different setups (e.g. Lunar, Mars) and different capturing angles. Moreover, using shape indexes, we only keep the segmentation masks of crater-like features. These masks are subsequently fitted with a circle or an ellipse, recovering both the location and the size/geometry of the detected craters.",
+      "source_url": "https://doi.org/10.1016/j.icarus.2023.115797",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 16,
+      "bm25_rank": 10,
+      "dense_rank": 21,
+      "rrf_score": 0.026631393298059962,
+      "shared_concepts": [
+        "learning",
+        "lunar",
+        "dems"
+      ],
+      "distinctive_terms": [
+        "flexible",
+        "deep",
+        "crater",
+        "detection",
+        "scheme",
+        "segment",
+        "anything",
+        "model"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 10 and semantic rank 21. Shared terms: learning, lunar, dems."
+    },
+    {
+      "candidate_id": "openalex_3be100784d59d3c5ff6251fc",
+      "candidate_type": "paper",
+      "title": "OmniLRS: A Photorealistic Simulator for Lunar Robotics",
+      "description": "Developing algorithms for extra-terrestrial robotic exploration has always been challenging. Along with the complexity associated with these environments, one of the main issues remains the evaluation of said algorithms. With the regained interest in lunar exploration, there is also a demand for quality simulators that will enable the development of lunar robots. In this paper, we propose Omniverse Lunar Robotic-Sim (OmniLRS) that is a photorealistic Lunar simulator based on Nvidia\u2019s robotic simulator. This simulation provides fast procedural environment generation, multi-robot capabilities, along with synthetic data pipeline for machine-learning applications. It comes with ROS1 and ROS2 bindings to control not only the robots, but also the environments. This work also performs sim-to-real rock instance segmentation to show the effectiveness of our simulator for image-based perception. Trained on our synthetic data, a yolov8 model achieves performance close to a model trained on real-world data, with 5% performance gap. When finetuned with real data, the model achieves 14% higher average precision than the model trained on real-world data, demonstrating our simulator\u2019s photorealism. The code is fully open-source, accessible here: https://github.com/AntoineRichard/OmniLRS, and comes with demonstrations.",
+      "source_url": null,
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 17,
+      "bm25_rank": 23,
+      "dense_rank": 13,
+      "rrf_score": 0.02574682290807064,
+      "shared_concepts": [
+        "lunar",
+        "learning"
+      ],
+      "distinctive_terms": [
+        "omnilrs",
+        "photorealistic",
+        "simulator",
+        "robotics",
+        "developing",
+        "algorithms",
+        "extra",
+        "terrestrial"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 23 and semantic rank 13. Shared terms: lunar, learning."
+    },
+    {
+      "candidate_id": "openalex_04593371be9d17f6d5609e01",
+      "candidate_type": "paper",
+      "title": "Detection and Initial Assessment of Lunar Landing Sites Using Neural Networks",
+      "description": "Robotic and human lunar landings are a focus of future NASA missions. Precision landing capabilities are vital to guarantee the success of the mission, and the safety of the lander and crew. During the approach to the surface there are multiple challenges associated with Hazard Relative Navigation to ensure safe landings. This paper will focus on a passive autonomous hazard detection and avoidance sub-system to generate an initial assessment of possible landing regions for the guidance system. The system uses a single camera and the MobileNetV2 neural network architecture to detect and discern between safe landing sites and hazards such as rocks, shadows, and craters. Then a monocular structure from motion will recreate the surface to provide slope and roughness analysis.",
+      "source_url": null,
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 18,
+      "bm25_rank": 19,
+      "dense_rank": 17,
+      "rrf_score": 0.025645240835114255,
+      "shared_concepts": [
+        "lunar",
+        "navigation",
+        "autonomous"
+      ],
+      "distinctive_terms": [
+        "detection",
+        "initial",
+        "assessment",
+        "landing",
+        "sites",
+        "neural",
+        "networks",
+        "robotic"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 19 and semantic rank 17. Shared terms: lunar, navigation, autonomous."
+    },
+    {
+      "candidate_id": "openalex_eef63b4e848ee9cb7371850b",
+      "candidate_type": "paper",
+      "title": "A Review of Deep Space Image-Based Navigation Methods",
+      "description": "Deep space exploration missions face technical challenges such as long-distance communication delays and high-precision autonomous positioning. Traditional ground-based telemetry and control as well as inertial navigation schemes struggle to meet mission requirements in the complex environment of deep space. As a vision-based autonomous navigation technology, image-based navigation enables spacecraft to obtain real-time images of the target celestial body surface through a variety of onboard remote sensing devices, and it achieves high-precision positioning using stable terrain features, demonstrating good autonomy and adaptability. Craters, due to their stable geometry and wide distribution, serve as one of the most important terrain features in deep space image-based navigation and have been widely adopted in practical missions. This paper systematically reviews the research progress of deep space image-based navigation technology, with a focus on the main sources of remote sensing data and a comprehensive summary of its typical applications in lunar, Martian, and asteroid exploration missions. Focusing on key technologies in image-based navigation, this paper analyzes core methods such as surface feature detection, including the accurate identification and localization of craters as critical terrain features in deep space exploration. On this basis, the paper further discusses possible future directions of image-based navigation technology in response to key challenges such as the scarcity of remote sensing data, limited computing resources, and environmental noise in deep space, including the intelligent evolution of image navigation systems, enhanced perception robustness in complex environments, hardware evolution of autonomous navigation systems, and cross-mission adaptability and multi-body generalization, providing a reference for subsequent research and engineering practice.",
+      "source_url": "https://doi.org/10.3390/aerospace12090789",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 19,
+      "bm25_rank": 18,
+      "dense_rank": 19,
+      "rrf_score": 0.025478740668614087,
+      "shared_concepts": [
+        "navigation",
+        "autonomous",
+        "lunar"
+      ],
+      "distinctive_terms": [
+        "review",
+        "deep",
+        "space",
+        "image",
+        "methods",
+        "exploration",
+        "missions",
+        "face"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 18 and semantic rank 19. Shared terms: navigation, autonomous, lunar."
+    },
+    {
+      "candidate_id": "openalex_90c378ad5e8ca651447ac74b",
+      "candidate_type": "paper",
+      "title": "Safe and Fuel-Efficient Motion Planning for Lunar Propulsive Drones",
+      "description": "Propulsive drones are a promising new technology for generating high-resolution terrain models of the Moon. In future lunar missions, propulsive drones will complete a series of hops across the lunar surface while capturing images with downward-facing cameras. We present an autonomous motion planning framework that uses a vision-guided optimal control strategy for performing safe, efficient hops between specified waypoints. The drone plans parabolic hops between waypoints generated by a global-level planner; if a nominal waypoint is unsafe or unreachable, the drone then completes a diversion maneuver to safely land. To evaluate the validity of potential landing sites, we develop a custom semantic segmentation model for identifying obstacles from aerial images, and we introduce an approach for rapidly calculating reachable terrain. We then use model predictive control (MPC) to robustly track hop trajectories that guide the drone towards safe landing sites. We test the optimal hop planner in a high-fidelity lunar simulation environment. Our results demonstrate that our unified motion planning framework yields safe, fuel-efficient hop trajectories which can be tracked rapidly and with low error via MPC.",
+      "source_url": "https://arxiv.org/abs/2610.22225",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 20,
+      "bm25_rank": 24,
+      "dense_rank": 14,
+      "rrf_score": 0.02541827541827542,
+      "shared_concepts": [
+        "lunar",
+        "autonomous"
+      ],
+      "distinctive_terms": [
+        "safe",
+        "fuel",
+        "efficient",
+        "motion",
+        "planning",
+        "propulsive",
+        "drones",
+        "promising"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 24 and semantic rank 14. Shared terms: lunar, autonomous."
+    }
+  ]
+}

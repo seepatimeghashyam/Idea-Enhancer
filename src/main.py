@@ -5,14 +5,16 @@ from __future__ import annotations
 import logging
 import os
 import threading
+import time
+import uuid
 from contextlib import asynccontextmanager
 from typing import Any, Mapping
 from urllib.parse import urlsplit
 
-from fastapi import Body, FastAPI
+from fastapi import Body, FastAPI, Request, Response
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, StreamingResponse
 
 from src.search_gateway import (
     CoreSearchGateway,
@@ -22,6 +24,10 @@ from src.search_gateway import (
     UnavailableCoreSearchGateway,
 )
 from src.live_search.service import LiveSearchService, LiveSearchUnavailable
+from src.enhance.contracts import EnhanceRequest
+from src.enhance.provider import ProviderBadOutput, ProviderUnavailable
+from src.enhance.service import EnhanceService
+from src.enhance.provider import EnhancementProvider
 
 MIN_IDEA_LENGTH = 10
 MAX_IDEA_LENGTH = 2000
@@ -32,6 +38,26 @@ NO_MATCH_MESSAGE = "No records were returned from the current search."
 SEARCH_UNAVAILABLE_MESSAGE = "Search is temporarily unavailable. Please try again shortly."
 DEFAULT_CORS_ORIGINS = ("http://localhost:5500", "http://127.0.0.1:5500")
 logger = logging.getLogger("idea_enhancer.api")
+
+# Rate limiting
+RATE_LIMIT_REQUESTS = 60
+RATE_LIMIT_WINDOW = 60  # seconds
+_rate_limit_store: dict[str, list[float]] = {}
+_rate_limit_lock = threading.Lock()
+
+
+def check_rate_limit(client_ip: str) -> tuple[bool, int]:
+    """Check if client has exceeded rate limit. Returns (allowed, remaining)."""
+    now = time.time()
+    with _rate_limit_lock:
+        if client_ip not in _rate_limit_store:
+            _rate_limit_store[client_ip] = []
+        # Clean old entries
+        _rate_limit_store[client_ip] = [t for t in _rate_limit_store[client_ip] if now - t < RATE_LIMIT_WINDOW]
+        if len(_rate_limit_store[client_ip]) >= RATE_LIMIT_REQUESTS:
+            return False, 0
+        _rate_limit_store[client_ip].append(now)
+        return True, RATE_LIMIT_REQUESTS - len(_rate_limit_store[client_ip])
 
 
 def warm_up_search() -> None:
@@ -209,6 +235,7 @@ def success_response(query: str, outcome: SearchOutcome, warnings: list[str]) ->
 def create_app(
     search_gateway: SearchGateway | None = None,
     live_search_service: LiveSearchService | None = None,
+    enhance_provider: EnhancementProvider | None = None,
 ) -> FastAPI:
     """Create an app with an injectable search boundary for tests and integration."""
     live_service = live_search_service or LiveSearchService()
@@ -231,21 +258,102 @@ def create_app(
             await live_service.close()
 
     app = FastAPI(title="Idea Enhancer API", lifespan=lifespan)
-    # The frontend runs on a different local port during development.
-    # Allow only local browser origins to call this API.
+
+    # Request logging middleware
+    @app.middleware("http")
+    async def log_requests(request: Request, call_next):
+        request_id = str(uuid.uuid4())[:8]
+        start_time = time.time()
+        client_ip = request.client.host if request.client else "unknown"
+
+        # Rate limiting
+        allowed, remaining = check_rate_limit(client_ip)
+        if not allowed:
+            return JSONResponse(
+                status_code=429,
+                content={
+                    "status": "error",
+                    "error_code": "RATE_LIMIT_EXCEEDED",
+                    "message": f"Rate limit exceeded. Maximum {RATE_LIMIT_REQUESTS} requests per minute.",
+                    "details": {"retry_after": RATE_LIMIT_WINDOW},
+                },
+                headers={"X-RateLimit-Remaining": "0", "X-RateLimit-Reset": str(int(time.time() + RATE_LIMIT_WINDOW))},
+            )
+
+        logger.info("Request %s: %s %s from %s", request_id, request.method, request.url.path, client_ip)
+
+        try:
+            response = await call_next(request)
+            duration = time.time() - start_time
+            logger.info("Response %s: %d in %.3fs (remaining: %d)", request_id, response.status_code, duration, remaining)
+            response.headers["X-Request-ID"] = request_id
+            response.headers["X-RateLimit-Remaining"] = str(remaining)
+            return response
+        except Exception as e:
+            duration = time.time() - start_time
+            logger.exception("Request %s failed after %.3fs: %s", request_id, duration, e)
+            raise
+
+    # CORS
     app.add_middleware(
         CORSMiddleware,
         allow_origins=configured_cors_origins(),
         allow_origin_regex=r"^http://(localhost|127\.0\.0\.1)(?::\d+)?$",
-        allow_methods=["POST", "OPTIONS"],
+        allow_methods=["POST", "OPTIONS", "GET"],
         allow_headers=["Content-Type", "Accept"],
     )
     gateway = search_gateway or CoreSearchGateway()
+    enhance_service = EnhanceService(gateway, live_service, enhance_provider)
 
     @app.get("/health", tags=["operations"])
     def health() -> dict[str, str]:
-        """Report process liveness without checking providers, indexes, or models."""
+        """Report process liveness (k8s liveness probe)."""
         return {"status": "ok"}
+
+    @app.get("/health/ready", tags=["operations"])
+    def health_ready() -> JSONResponse:
+        """Report dependency readiness (k8s readiness probe)."""
+        from src.database import CoreSearchUnavailable as DatabaseCoreSearchUnavailable
+        from src.core.vector_retriever import VectorIndexUnavailableError
+
+        checks = {
+            "api": "ok",
+            "database": "unknown",
+            "vector_index": "unknown",
+            "embedding_model": "unknown",
+            "live_providers": "unknown",
+        }
+
+        # Check Core Search
+        try:
+            gateway.search("test query", 1)
+            checks["database"] = "ok"
+            checks["vector_index"] = "ok"
+            checks["embedding_model"] = "ok"
+        except CoreSearchUnavailable as e:
+            checks["database"] = "unavailable"
+            checks["vector_index"] = "unavailable"
+            checks["embedding_model"] = "unavailable"
+        except DatabaseCoreSearchUnavailable:
+            checks["database"] = "unavailable"
+        except VectorIndexUnavailableError:
+            checks["vector_index"] = "unavailable"
+            checks["embedding_model"] = "unavailable"
+        except Exception:
+            checks["database"] = "error"
+
+        # Check live providers (quick check)
+        import httpx
+        try:
+            with httpx.Client(timeout=2.0) as client:
+                r1 = client.get("https://api.openalex.org/works", params={"per-page": 1})
+                r2 = client.get("https://api.github.com/search/repositories", params={"q": "test", "per_page": 1})
+                checks["live_providers"] = "ok" if r1.status_code == 200 and r2.status_code == 200 else "degraded"
+        except Exception:
+            checks["live_providers"] = "unavailable"
+
+        status_code = 200 if all(v in ("ok", "unknown") for v in checks.values()) else 503
+        return JSONResponse(status_code=status_code, content={"status": "ok" if status_code == 200 else "degraded", "checks": checks})
 
     @app.exception_handler(RequestValidationError)
     def handle_request_validation_error(_request: Any, exc: RequestValidationError) -> JSONResponse:
@@ -344,6 +452,123 @@ def create_app(
             "warnings": [*warnings, *outcome.warnings],
             "recurring_evidence": list(outcome.recurring_evidence),
         })
+
+    @app.post("/enhance")
+    async def enhance(payload: EnhanceRequest) -> JSONResponse:
+        """Retrieve evidence on the server and generate a grounded analysis."""
+        try:
+            response = await enhance_service.enhance(payload)
+        except CoreSearchUnavailable:
+            return error_response(503, "SEARCH_UNAVAILABLE", SEARCH_UNAVAILABLE_MESSAGE)
+        except LiveSearchUnavailable:
+            return error_response(503, "LIVE_SEARCH_UNAVAILABLE", "Online research sources are temporarily unavailable.")
+        except ProviderUnavailable as error:
+            logger.info("Enhance provider unavailable")
+            return error_response(503, "ENHANCE_UNAVAILABLE", str(error))
+        except ProviderBadOutput as error:
+            logger.warning("Enhance provider returned unusable output")
+            return error_response(502, "ENHANCE_BAD_OUTPUT", str(error))
+        except Exception:
+            logger.exception("Enhancement failed")
+            return error_response(500, "ENHANCE_FAILED", "An internal error occurred while preparing the analysis.")
+        return JSONResponse(status_code=200, content=response.model_dump())
+
+    @app.get("/export")
+    async def export_results(
+        format: str = "json",
+        mode: str = "local",
+        idea: str = "",
+        top_k: int = 20,
+    ) -> Response:
+        """Export search results in various formats (json, csv, bibtex)."""
+        if not idea or len(idea.strip()) < MIN_IDEA_LENGTH:
+            return error_response(422, "VALIDATION_ERROR", "Query 'idea' parameter is required (min 10 chars)")
+
+        query = idea.strip()
+        top_k = max(MIN_TOP_K, min(top_k, MAX_TOP_K))
+
+        if mode == "live":
+            try:
+                outcome = await live_service.search(query, top_k)
+                matches = []
+                for match in outcome.matches:
+                    matches.append({
+                        "id": match.get("candidate_id"),
+                        "type": match.get("source_type"),
+                        "title": match.get("title"),
+                        "description": match.get("description", ""),
+                        "url": match.get("source_url"),
+                        "source": match.get("source_provider"),
+                        "year": match.get("publication_year"),
+                        "authors": match.get("authors", []),
+                        "venue": match.get("venue"),
+                        "doi": match.get("doi"),
+                        "rank": match.get("rank"),
+                        "rrf_score": match.get("rrf_score"),
+                    })
+            except LiveSearchUnavailable as e:
+                return error_response(503, "LIVE_SEARCH_UNAVAILABLE", "Live sources unavailable", {"providers": e.providers})
+        else:
+            try:
+                outcome = gateway.search(query, top_k)
+                matches = []
+                for match in outcome.matches:
+                    matches.append({
+                        "id": f"local:{match.get('project_id')}",
+                        "type": match.get("source_type"),
+                        "title": match.get("title"),
+                        "description": match.get("abstract", ""),
+                        "url": match.get("source_url"),
+                        "source": match.get("source_type"),
+                        "year": match.get("year"),
+                        "domain": match.get("domain"),
+                        "tech_stack": match.get("tech_stack"),
+                        "rank": match.get("rank"),
+                        "bm25_rank": match.get("bm25_rank"),
+                        "vector_rank": match.get("vector_rank"),
+                        "rrf_score": match.get("rrf_score"),
+                    })
+            except CoreSearchUnavailable:
+                return error_response(503, "SEARCH_UNAVAILABLE", SEARCH_UNAVAILABLE_MESSAGE)
+
+        if format == "csv":
+            import csv
+            from io import StringIO
+            output = StringIO()
+            if matches:
+                writer = csv.DictWriter(output, fieldnames=matches[0].keys())
+                writer.writeheader()
+                writer.writerows(matches)
+            return Response(content=output.getvalue(), media_type="text/csv", headers={"Content-Disposition": f'attachment; filename="idea_enhancer_results_{query[:30]}.csv"'})
+
+        elif format == "bibtex":
+            lines = []
+            for m in matches:
+                if m["type"] == "research_paper":
+                    lines.append(f'@article{{{m["id"]},')
+                    lines.append(f'  title = {{{m["title"]}}},')
+                    if m.get("authors"):
+                        authors_str = " and ".join(m["authors"][:3])
+                        lines.append(f'  author = {{{authors_str}}},')
+                    if m.get("year"):
+                        lines.append(f'  year = {{{m["year"]}}},')
+                    if m.get("venue"):
+                        lines.append(f'  journal = {{{m["venue"]}}},')
+                    if m.get("doi"):
+                        lines.append(f'  doi = {{{m["doi"]}}},')
+                    if m.get("url"):
+                        lines.append(f'  url = {{{m["url"]}}},')
+                    lines.append('}')
+                    lines.append('')
+            return Response(content="\n".join(lines), media_type="text/plain", headers={"Content-Disposition": f'attachment; filename="idea_enhancer_results_{query[:30]}.bib"'})
+
+        else:  # json
+            return JSONResponse(content={
+                "query": query,
+                "mode": mode,
+                "result_count": len(matches),
+                "matches": matches,
+            })
 
     return app
 
