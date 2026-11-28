@@ -137,11 +137,11 @@ async def run_live_search(query: str, top_k: int = 20) -> list[dict[str, Any]]:
         return [
             {
                 "candidate_id": m["candidate_id"],
-                "candidate_type": m["source_type"],
+                "candidate_type": m.get("candidate_type", "unknown"),
                 "title": m["title"],
                 "description": m.get("description", ""),
                 "source_url": m.get("source_url"),
-                "source_type": m.get("source_type"),
+                "source_type": "research_paper" if m.get("candidate_type") == "paper" else "open_source_repository",
                 "source_provider": m.get("source_provider"),
                 "rank": m["rank"],
                 "bm25_rank": m.get("bm25_rank"),
@@ -203,6 +203,12 @@ def export_annotation_sheet() -> None:
         return
 
     all_rows = []
+    fieldnames = [
+        "query_id", "candidate_id", "candidate_type", "title", "description",
+        "source_url", "source_type", "source_provider", "year", "domain",
+        "shared_elements", "shared_concepts", "grade", "rationale", "confidence"
+    ]
+
     for pool_file in pools:
         pool = json.loads(pool_file.read_text())
         query_id = pool["query_id"]
@@ -213,12 +219,14 @@ def export_annotation_sheet() -> None:
                 "candidate_id": cand["candidate_id"],
                 "candidate_type": "local",
                 "title": cand["title"],
-                "description": cand["description"][:500],
+                "description": (cand.get("description") or "")[:500],
                 "source_url": cand.get("source_url", ""),
                 "source_type": cand.get("source_type", ""),
+                "source_provider": "",
                 "year": cand.get("year", ""),
                 "domain": cand.get("domain", ""),
                 "shared_elements": ", ".join(cand.get("shared_elements", [])),
+                "shared_concepts": "",
                 "grade": "",
                 "rationale": "",
                 "confidence": "",
@@ -230,10 +238,13 @@ def export_annotation_sheet() -> None:
                 "candidate_id": cand["candidate_id"],
                 "candidate_type": cand.get("source_type", "unknown"),
                 "title": cand["title"],
-                "description": cand.get("description", "")[:500],
+                "description": (cand.get("description") or "")[:500],
                 "source_url": cand.get("source_url", ""),
                 "source_type": cand.get("source_type", ""),
                 "source_provider": cand.get("source_provider", ""),
+                "year": "",
+                "domain": "",
+                "shared_elements": "",
                 "shared_concepts": ", ".join(cand.get("shared_concepts", [])),
                 "grade": "",
                 "rationale": "",
@@ -243,7 +254,7 @@ def export_annotation_sheet() -> None:
     out_file = BENCHMARK_DIR / "annotation_sheet.csv"
     with out_file.open("w", encoding="utf-8", newline="") as f:
         if all_rows:
-            writer = csv.DictWriter(f, fieldnames=list(all_rows[0].keys()))
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(all_rows)
 

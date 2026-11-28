@@ -1,0 +1,992 @@
+{
+  "query_id": "q13",
+  "query_text": "Deep learning capsule and tablet identification for pharmaceutical inspection using YOLO",
+  "category": "Healthcare/Vision",
+  "timestamp": 1795890743.3595655,
+  "local_candidates": [
+    {
+      "candidate_id": "local:RVCE-IEEE-2023-03",
+      "candidate_type": "local",
+      "title": "Deep Learning Capsule and Tablet Identification System for Pharmaceuticals",
+      "description": "A vision-based pharmaceutical inspection system utilizing the YOLO deep learning object detection architecture to identify, count, and classify medication tablets and capsules on conveyor feeds.",
+      "source_url": "https://ieeexplore.ieee.org/document/10334260",
+      "source_type": "research_paper",
+      "year": 2023,
+      "domain": "Healthcare AI / Pharmaceutical Vision",
+      "tech_stack": "YOLO",
+      "rank": 1,
+      "bm25_rank": 1,
+      "vector_rank": 1,
+      "rrf_score": 0.03278688524590164,
+      "shared_elements": [
+        "deep",
+        "learning",
+        "capsule",
+        "tablet",
+        "identification",
+        "pharmaceutical",
+        "inspection",
+        "yolo"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_6210",
+      "candidate_type": "local",
+      "title": "Image Authenticity Verification: A Hybrid Approach Of Capsule Networks And Frequency Domain Analysis",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Telecommunications / Network Optimization",
+      "tech_stack": null,
+      "rank": 2,
+      "bm25_rank": 6,
+      "vector_rank": 2,
+      "rrf_score": 0.03128054740957967,
+      "shared_elements": [
+        "capsule"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0144",
+      "candidate_type": "local",
+      "title": "KaiyangZhou/deep-person-reid",
+      "description": "Torchreid: Deep learning person re-identification in PyTorch.",
+      "source_url": "https://github.com/KaiyangZhou/deep-person-reid",
+      "source_type": "open_source_repository",
+      "year": 2018,
+      "domain": "Computer Vision / Video Analytics",
+      "tech_stack": "PyTorch",
+      "rank": 3,
+      "bm25_rank": 2,
+      "vector_rank": null,
+      "rrf_score": 0.016129032258064516,
+      "shared_elements": [
+        "deep",
+        "learning",
+        "identification"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0293",
+      "candidate_type": "local",
+      "title": "Comparative Analysis of Machine Learning Models for Pharmaceutical Demand Forecasting",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating comparative analysis of machine learning models for pharmaceutical demand forecasting. Published in 2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2025).",
+      "source_url": "https://doi.org/10.1109/csitss67709.2025.11294064",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Machine Learning / Applied AI",
+      "tech_stack": null,
+      "rank": 4,
+      "bm25_rank": 3,
+      "vector_rank": null,
+      "rrf_score": 0.015873015873015872,
+      "shared_elements": [
+        "learning",
+        "pharmaceutical"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_0675",
+      "candidate_type": "local",
+      "title": "Smartlung Diagnostics: Oncocaps Powered By Capsulecare For Lung Cancer Detection And Classification",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Healthcare / Biomedical AI",
+      "tech_stack": null,
+      "rank": 5,
+      "bm25_rank": null,
+      "vector_rank": 3,
+      "rrf_score": 0.015873015873015872,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_1046",
+      "candidate_type": "local",
+      "title": "YOLO Always Choose Scenic Road",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 6,
+      "bm25_rank": 4,
+      "vector_rank": null,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "learning",
+        "yolo"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0040",
+      "candidate_type": "local",
+      "title": "onnx/onnx",
+      "description": "Open standard for machine learning interoperability",
+      "source_url": "https://github.com/onnx/onnx",
+      "source_type": "open_source_repository",
+      "year": 2017,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": null,
+      "rank": 7,
+      "bm25_rank": null,
+      "vector_rank": 4,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "deep",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_5622",
+      "candidate_type": "local",
+      "title": "Helmnet- A Swin Transformer Based Approach For Motorcycle Helmet Detection Using YOLO V8",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Public Safety / Computer Vision",
+      "tech_stack": "YOLO",
+      "rank": 8,
+      "bm25_rank": 5,
+      "vector_rank": null,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "yolo"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0089",
+      "candidate_type": "local",
+      "title": "Retention Time Prediction in High-Performance Liquid Chromatography Using Random Forest Regression",
+      "description": "High-Performance Liquid Chromatography is widely used for compound analysis, where retention time (RT) serves as a critical parameter. This study employs a Random Forest Regression model to predict RT based on molecular descriptors such as molecular weight, partial charge, partition coefficient, and topological polar surface area. The model successfully predicted the retention time with high similarity to the real data, thereby validating its accuracy. This study highlights the potential of machine learning in optimizing chromatographic analysis.",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-6053718/v1",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": null,
+      "rank": 9,
+      "bm25_rank": null,
+      "vector_rank": 5,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "deep",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0007",
+      "candidate_type": "local",
+      "title": "ultralytics/ultralytics",
+      "description": "Ultralytics YOLO27, YOLO26, YOLO11, YOLOv8 \u2014 object detection, instance segmentation, semantic segmentation, image classification, pose estimation, object tracking",
+      "source_url": "https://github.com/ultralytics/ultralytics",
+      "source_type": "open_source_repository",
+      "year": 2022,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": null,
+      "rank": 10,
+      "bm25_rank": null,
+      "vector_rank": 6,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [
+        "deep",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_5600",
+      "candidate_type": "local",
+      "title": "Locoeye - Detection Of Locomotive Signal Lights And Pedestrians On Railway Tracks Using YOLO V8",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 11,
+      "bm25_rank": 7,
+      "vector_rank": null,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [
+        "learning",
+        "yolo"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_0840",
+      "candidate_type": "local",
+      "title": "Detection Of Acute Lymphoblastic Leukemia And Subtypes Using Deep Learning",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 12,
+      "bm25_rank": null,
+      "vector_rank": 7,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [
+        "deep",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0287",
+      "candidate_type": "local",
+      "title": "0xSteph/pentest-ai",
+      "description": "Open-source AI pentester that proves every finding. Machine oracles re-run each exploit; verified bugs ship a proof capsule you can replay yourself.",
+      "source_url": "https://github.com/0xSteph/pentest-ai",
+      "source_type": "open_source_repository",
+      "year": 2026,
+      "domain": "Cybersecurity / Network Defense",
+      "tech_stack": null,
+      "rank": 13,
+      "bm25_rank": 8,
+      "vector_rank": null,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "capsule"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2225",
+      "candidate_type": "local",
+      "title": "Use Of Deep Learning For Early Detection Of Human Dental Defects And Problems",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 14,
+      "bm25_rank": null,
+      "vector_rank": 8,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "deep",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2649",
+      "candidate_type": "local",
+      "title": "YOLO Powered Smart Glasses For Enhanced Vision Assistance",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Assistive Technology / AI",
+      "tech_stack": null,
+      "rank": 15,
+      "bm25_rank": 9,
+      "vector_rank": null,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "yolo"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3933",
+      "candidate_type": "local",
+      "title": "Exam Malpractice Detection Using Yolov8 And CNN",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 16,
+      "bm25_rank": null,
+      "vector_rank": 9,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_1032",
+      "candidate_type": "local",
+      "title": "Identification And Classification Of PCOD And PCOS Using Machine Learning",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Healthcare / Biomedical AI",
+      "tech_stack": null,
+      "rank": 17,
+      "bm25_rank": 10,
+      "vector_rank": null,
+      "rrf_score": 0.014285714285714285,
+      "shared_elements": [
+        "learning",
+        "identification"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3849",
+      "candidate_type": "local",
+      "title": "Unmasking Deepfakes: Advanced Detection Using Machine Learning",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Healthcare / Biomedical AI",
+      "tech_stack": null,
+      "rank": 18,
+      "bm25_rank": null,
+      "vector_rank": 10,
+      "rrf_score": 0.014285714285714285,
+      "shared_elements": [
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0125",
+      "candidate_type": "local",
+      "title": "An Accessibility-Aware AI Learning Platform for Dynamic Learning Style Identification and Multi-Modal Content Delivery: A Comprehensive Framework With Empirical Validation",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating an accessibility-aware ai learning platform for dynamic learning style identification and multi-modal content delivery: a comprehensive framework with empirical validation. Published in IEEE Access (2026).",
+      "source_url": "https://doi.org/10.1109/access.2026.3706401",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Applied Engineering / Computing",
+      "tech_stack": null,
+      "rank": 19,
+      "bm25_rank": 11,
+      "vector_rank": null,
+      "rrf_score": 0.014084507042253521,
+      "shared_elements": [
+        "learning",
+        "identification"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0028",
+      "candidate_type": "local",
+      "title": "deezer/spleeter",
+      "description": "Deezer source separation library including pretrained models.",
+      "source_url": "https://github.com/deezer/spleeter",
+      "source_type": "open_source_repository",
+      "year": 2019,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": null,
+      "rank": 20,
+      "bm25_rank": null,
+      "vector_rank": 11,
+      "rrf_score": 0.014084507042253521,
+      "shared_elements": [
+        "deep",
+        "learning"
+      ],
+      "verification_status": "checked"
+    }
+  ],
+  "live_candidates": [
+    {
+      "candidate_id": "openalex_cdcfe04753732613b14e68fc",
+      "candidate_type": "paper",
+      "title": "Deep learning algorithm based tablet drug screening system",
+      "description": "At present, the world's major pharmaceutical companies often identify defective tablets by visual inspection, but because of the fatigue of staff and the human eye's recognition limit of tiny parts, so there are often missed inspection, inefficient inspection phenomenon.[1] How to effectively monitor and ensure more qualified inspection rate in the inspection activities, which is the current problems encountered by pharmaceutical companies. How to efficiently detect and maintain a high detection rate in the testing process, which is currently the difficulties faced by pharmaceutical companies. In order to improve the service quality of the company, the adoption of machine inspection and sorting technology to replace manual inspection and sorting has become a trend. [2]Therefore, after systematic research, we obtained a method for monitoring surface defects of tablet products based on convolutional neural network. Using this method, we developed a tablet screening technique for surface defects, which significantly improved the accuracy and efficiency of surface defect detection.",
+      "source_url": null,
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 1,
+      "bm25_rank": 1,
+      "dense_rank": 3,
+      "rrf_score": 0.032266458495966696,
+      "shared_concepts": [
+        "deep",
+        "learning",
+        "tablet",
+        "pharmaceutical",
+        "inspection"
+      ],
+      "distinctive_terms": [
+        "algorithm",
+        "drug",
+        "screening",
+        "present",
+        "world",
+        "major",
+        "companies",
+        "often"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 1 and semantic rank 3. Shared terms: deep, learning, tablet, pharmaceutical, inspection."
+    },
+    {
+      "candidate_id": "openalex_69103da27269f702dfdc57ae",
+      "candidate_type": "paper",
+      "title": "Comparison of YOLO v3, Faster R-CNN, and SSD for Real-Time Pill Identification",
+      "description": "Background: The correct identification of pills is very important to ensure the safe administration of drugs to patients. We used three currently mainstream object detection models, respectively Faster R-CNN, Single Shot Multi-Box Detector (SSD), and You Only Look Once v3(YOLO v3), to identify pills and compare the associated performance.Methods: In this paper, we introduce the basic principles of three object detection models. We trained each algorithm on a pill image dataset and analyzed the performance of the three models to determine the best pill recognition model. Finally, these models are then used to detect difficult samples and compare the results.Results: The mean average precision (MAP) of Faster R-CNN reached 87.69% but YOLO v3 had a significant advantage in detection speed where the frames per second (FPS) was more than eight times than that of Faster R-CNN. This means that YOLO v3 can operate in real time with a high MAP of 80.17%. The YOLO v3 algorithm also performed better in the comparison of difficult sample detection results. In contrast, SSD did not achieve the highest score in terms of MAP or FPS.Conclusion: Our study shows that YOLO v3 has advantages in detection speed while maintaining certain MAP and thus can be applied for real-time pill identification in a hospital pharmacy environment.",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-668895/v1",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 2,
+      "bm25_rank": 4,
+      "dense_rank": 4,
+      "rrf_score": 0.03125,
+      "shared_concepts": [
+        "yolo",
+        "identification"
+      ],
+      "distinctive_terms": [
+        "comparison",
+        "v3",
+        "faster",
+        "cnn",
+        "ssd",
+        "real",
+        "time",
+        "pill"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 4 and semantic rank 4. Shared terms: yolo, identification."
+    },
+    {
+      "candidate_id": "openalex_f96e0f44ebb45097fd4a4322",
+      "candidate_type": "paper",
+      "title": "Pill Recognition via Deep Learning Approaches",
+      "description": "Deep learning significantly transforms pill imaging recognition in the healthcare and pharmaceutical industries by automating the identification and classification processes based on visual indicators. It is important to develop a robust deep learning framework to ensure the accurate dispensing of medications. The features such as size, color, shape, markings and text imprint are scrutinized by these methods. However, real-world matching is difficult due to factors like the similarity of pill forms and the scarcity of databases. The goal of this work is to improve deep learning models for better classification of pill images. A dataset of 994 images are utilized from a public pharmaceutical database which sorted by 20 common type of pills. These images were split into training, validation, and testing sets in a 70:15:15 ratio. There are three different models which are YOLOv3, YOLOv5, and YOLOv8 were employed to the system. These models use performance metrics like recall, mean Average Precision (mAP), and precision as results. According to our results, YOLOv8 did remarkably well, obtaining a precision and F1-score of 99.17% and 96.95%, respectively, while YOLOv5 great with mAP and recall of 94.83% and 95%, respectively, outperforming the YOLOv3 model. The success of YOLOv8 underscores its significance in reducing medical errors with its accurate, real-time capabilities for identifying pills. The use of artificial intelligence in pill recognition not only lowers the chance of incorrect medication use but also streamlines the duties of healthcare professionals. This shift allows them to prioritize crucial responsibilities and simplifies the process of pill identification.",
+      "source_url": "https://journal.ump.edu.my/index.php/mekatronika/article/view/11020",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 3,
+      "bm25_rank": 8,
+      "dense_rank": 1,
+      "rrf_score": 0.031099324975891997,
+      "shared_concepts": [
+        "deep",
+        "learning",
+        "pharmaceutical",
+        "identification"
+      ],
+      "distinctive_terms": [
+        "pill",
+        "recognition",
+        "via",
+        "approaches",
+        "significantly",
+        "transforms",
+        "imaging",
+        "healthcare"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 8 and semantic rank 1. Shared terms: deep, learning, pharmaceutical, identification."
+    },
+    {
+      "candidate_id": "openalex_f2336129cb4f976e457c18da",
+      "candidate_type": "paper",
+      "title": "AUTOMATED PILL RECOGNITION AND CLASSIFICATION USING CONVOLUTIONAL NEURAL NETWORKS",
+      "description": "Accurate detection and identification of pharmaceutical pills has become an essential component of modern healthcare automation, ensuring medication safety, reducing dispensing errors, and supporting efficient clinical workflows. With the rapid growth of digital health systems and the global need for reliable medication verification tools, deep learning\u2014particularly Convolutional Neural Networks (CNNs)\u2014has emerged as a powerful approach for pill recognition. Existing research demonstrates considerable advancements in pill detection, fine-grained image classification, metric-learning\u2013based retrieval, and real-time recognition across mobile and clinical platforms through methods such as deep convolutional feature extraction, proxy-based learning, lightweight mobile architectures, and domainadaptive training frameworks [1\u201314]. Recent studies emphasize the importance of robust datasets, multicenter clinical evaluations, and optimized CNN pipelines capable of handling variations in pill color, shape, imprint, lighting, and occlusion, supported by curated repositories, mobile capture environments, and real-world deployment scenarios [4\u20137, 15\u201320]. Building upon these developments, this work proposes a CNN-driven pill detection framework that integrates fine-grained visual feature learning, imprint-focused representation modeling, and high-precision classification to accurately differentiate visually similar pills. Leveraging insights from metric learning, mobile-optimized CNN architectures, and explainable deep learning strategies, the system aims to enhance identification accuracy while minimizing misclassification in challenging imaging conditions. This study contributes a unified analysis of traditional image-processing techniques and contemporary deep-learning approaches, highlighting their strengths, limitations, and applicability in clinical, industrial, and patient-centric environments. The proposed model aligns with emerging trends in intelligent medication verification and offers a scalable, reliable, and interpretable solution for real-world healthcare ecosystems.",
+      "source_url": "https://doi.org/10.62643/ijerst.2025.v21.n4.pp654-660",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 4,
+      "bm25_rank": 9,
+      "dense_rank": 2,
+      "rrf_score": 0.030621785881252923,
+      "shared_concepts": [
+        "identification",
+        "pharmaceutical",
+        "deep",
+        "learning"
+      ],
+      "distinctive_terms": [
+        "automated",
+        "pill",
+        "recognition",
+        "classification",
+        "convolutional",
+        "neural",
+        "networks",
+        "accurate"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 9 and semantic rank 2. Shared terms: identification, pharmaceutical, deep, learning."
+    },
+    {
+      "candidate_id": "openalex_1439f05bffc3edfda60ba81c",
+      "candidate_type": "paper",
+      "title": "Comparison of RetinaNet, SSD, and YOLO v3 for real-time pill identification",
+      "description": "BACKGROUND: The correct identification of pills is very important to ensure the safe administration of drugs to patients. Here, we use three current mainstream object detection models, namely RetinaNet, Single Shot Multi-Box Detector (SSD), and You Only Look Once v3(YOLO v3), to identify pills and compare the associated performance. METHODS: In this paper, we introduce the basic principles of three object detection models. We trained each algorithm on a pill image dataset and analyzed the performance of the three models to determine the best pill recognition model. The models were then used to detect difficult samples and we compared the results. RESULTS: The mean average precision (MAP) of RetinaNet reached 82.89%, but the frames per second (FPS) is only one third of YOLO v3, which makes it difficult to achieve real-time performance. SSD does not perform as well on the indicators of MAP and FPS. Although the MAP of YOLO v3 is slightly lower than the others (80.69%), it has a significant advantage in terms of detection speed. YOLO v3 also performed better when tasked with hard sample detection, and therefore the model is more suitable for deployment in hospital equipment. CONCLUSION: Our study reveals that object detection can be applied for real-time pill identification in a hospital pharmacy, and YOLO v3 exhibits an advantage in detection speed while maintaining a satisfactory MAP.",
+      "source_url": "https://doi.org/10.1186/s12911-021-01691-8",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 5,
+      "bm25_rank": 5,
+      "dense_rank": 7,
+      "rrf_score": 0.030309988518943745,
+      "shared_concepts": [
+        "yolo",
+        "identification"
+      ],
+      "distinctive_terms": [
+        "comparison",
+        "retinanet",
+        "ssd",
+        "v3",
+        "real",
+        "time",
+        "pill",
+        "background"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 5 and semantic rank 7. Shared terms: yolo, identification."
+    },
+    {
+      "candidate_id": "openalex_464c49be345c8a61a35a5670",
+      "candidate_type": "paper",
+      "title": "Identification and Detection of pills using Machine Learning Methods- A Survey",
+      "description": "Pill identification is one of the most important duties to guarantee pharmaceutical safety.The quick development of technology has created new opportunities to enhance patient safety, medication adherence, and healthcare delivery.This is particularly valid in the healthcare sector..A crucial step in the administration of healthcare and patient safety is the identification of pharmaceuticals, including pills, tablets, and capsules.Historically, This project has mostly relied on human judgment and manual procedures, which may be laborious and prone to mistakes.Correct prescription writing is essential for patient safety since medication errors frequently arise and can lead to patient difficulties.The main reasons for these mistakes are label damage, mismatches in medicine consumption, and other issues.This study examines the application of machine learning, deep learning and hybrid algorithms for pill detection.",
+      "source_url": "https://doi.org/10.56726/irjmets47985",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 6,
+      "bm25_rank": 10,
+      "dense_rank": 5,
+      "rrf_score": 0.02967032967032967,
+      "shared_concepts": [
+        "identification",
+        "learning",
+        "pharmaceutical",
+        "deep"
+      ],
+      "distinctive_terms": [
+        "detection",
+        "pills",
+        "machine",
+        "methods",
+        "survey",
+        "pill",
+        "one",
+        "most"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 10 and semantic rank 5. Shared terms: identification, learning, pharmaceutical, deep."
+    },
+    {
+      "candidate_id": "openalex_f75cc8e5445f690e69068a76",
+      "candidate_type": "paper",
+      "title": "PharmaNet Deep: Real-Time Pharmaceutical Defect Detection Using Defect-Guided Feature Fusion and Uncertainty-Driven Inspection",
+      "description": "Oral dosage forms are the most widely employed method of drug delivery in therapeutic treatments. However, the presence of visual defects in blister packages can adversely affect the drug's bioavailability and therapeutic efficacy, potentially compromising treatment outcomes. Consequently, detecting tablet defects post-blister packaging in real-time represents a critical challenge in the pharmaceutical industry. Additionally, factors such as blister reflections and limited dataset size hinder the deep learning model's ability to identify defects accurately. To address these challenges, the PharmaNet deep model is developed utilizing a convolutional neural network (CNN) architecture, incorporating defect-guided dynamic feature fusion (DGDFF) in which the fusion process is dynamically guided by potential defect regions, allowing the model to focus on relevant features (defect areas) more efficiently, adaptive deep chain (ADC) which includes occlusion pattern generator (OPG) and residual recursive feature reconstructor (R 2 FR). The OPG creates multiple views of potential defect regions by systematically dividing features into blocks and creating layered occlusions. At the same time, the R 2 FR uses gates with ELU activation and residual connections to reconstruct detailed features from these occluded sequences, ultimately enhancing the model's ability to detect subtle defects. The model culminates in an uncertainty-aware detection head that enhances defect prediction reliability by incorporating uncertainty estimates alongside traditional class probabilities and bounding box predictions. This provides a more informed and interpretable decision-making process for pharmaceutical quality control in real-time. Empirical evaluation on the proposed model demonstrates state-of-the-art performance with 99.4% mAP on the PharmaBlister dataset and 97.2% mAP on MVTech AD, with minimal predictive uncertainty, validating its efficacy in pharmaceutical quality control applications.",
+      "source_url": "https://doi.org/10.1007/s44196-025-00986-2",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 7,
+      "bm25_rank": 3,
+      "dense_rank": 14,
+      "rrf_score": 0.029386529386529386,
+      "shared_concepts": [
+        "deep",
+        "pharmaceutical",
+        "inspection",
+        "tablet",
+        "learning"
+      ],
+      "distinctive_terms": [
+        "pharmanet",
+        "real",
+        "time",
+        "defect",
+        "detection",
+        "guided",
+        "feature",
+        "fusion"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 3 and semantic rank 14. Shared terms: deep, pharmaceutical, inspection, tablet, learning."
+    },
+    {
+      "candidate_id": "openalex_19c6bed5529de159434de9be",
+      "candidate_type": "paper",
+      "title": "A systematic review of deep learning based machine vision for quality control in industry 4.0",
+      "description": "The increasing need for automated quality control techniques has been driven by the rapid advancement of smart manufacturing systems within the Industry 4.0 framework. Machine vision using deep learning technologies has emerged as a key enabler of streamlined inspection and decision-making workflows across various production environments. This systematic review analyzes the evolution of deep learning models from traditional Convolutional Neural Networks (CNNs) to transformer-based architectures, examining how these developments address challenges in defect detection and classification on modern industrial production lines. Several key findings emerge from our analysis. First, while CNNs continue to dominate due to well-established performance in local feature extraction, transformer models demonstrate superior accuracy for complex defect geometries through global contextual reasoning, albeit at higher computational costs. Second, real-time detection methods such as YOLO have proven viable for high-velocity production environments, though they typically sacrifice accuracy for speed. Third, integration with edge computing, digital twins, and IoT infrastructure is essential for developing scalable quality control systems. Additionally, ongoing challenges include data format inconsistency, model interpretability, domain transfer limitations, and the gap between controlled development conditions and actual factory environments. This review concludes by outlining future research priorities: developing hybrid CNN-Transformer models, establishing standard evaluation criteria, creating resource-efficient edge applications, and building collaborative human-AI frameworks, thereby providing guidance for researchers and engineers advancing automated visual inspection systems.",
+      "source_url": "https://doi.org/10.1007/s44245-026-00320-w",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 8,
+      "bm25_rank": 2,
+      "dense_rank": 17,
+      "rrf_score": 0.029116045245077504,
+      "shared_concepts": [
+        "deep",
+        "learning",
+        "inspection",
+        "yolo"
+      ],
+      "distinctive_terms": [
+        "systematic",
+        "review",
+        "machine",
+        "vision",
+        "quality",
+        "control",
+        "industry",
+        "increasing"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 2 and semantic rank 17. Shared terms: deep, learning, inspection, yolo."
+    },
+    {
+      "candidate_id": "openalex_e6b0e1591d8bec840f64109e",
+      "candidate_type": "paper",
+      "title": "Deep Learning for Visual Defect Detection and Data Retrieval in Pharmaceutical Blister Packaging",
+      "description": "This study presents an automated quality control system for pharmaceutical blister packaging, integrating a dual-path deep learning framework to detect physical defects and verify printed information.The system employs YOLOv8-enhanced object detection with spatial attention for real-time inspection of physical defects, including missing pills, seal breaches, and tampering, while a hybrid OCR pipeline combining Tesseract and CRNN accurately localizes and extracts batch numbers and expiry dates.High-resolution images are captured under controlled lighting, then pre-processed and augmented to ensure model robustness.The outputs from both analytical paths are fused within a decision engine, where extracted textual data is cross-verified against manufacturer databases for regulatory compliance.Large-scale testing on over blister packs from multiple manufacturers reveals real-time inspection at with robust accuracy for both defect detection and information verification.The integrated framework classifies each blister pack as either 'Approved' or 'Rejected + Alert,' enabling prompt removal of defective units and ensuring compliance with WHO GMP standards.This automated approach substantially improves medication safety and product integrity through reliable defect detection and data validation.",
+      "source_url": "https://doi.org/10.55248/gengpi.06.1125.38109",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 9,
+      "bm25_rank": 12,
+      "dense_rank": 6,
+      "rrf_score": 0.02904040404040404,
+      "shared_concepts": [
+        "deep",
+        "learning",
+        "pharmaceutical",
+        "inspection"
+      ],
+      "distinctive_terms": [
+        "visual",
+        "defect",
+        "detection",
+        "data",
+        "retrieval",
+        "blister",
+        "packaging",
+        "study"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 12 and semantic rank 6. Shared terms: deep, learning, pharmaceutical, inspection."
+    },
+    {
+      "candidate_id": "openalex_53135f6536192095189c637e",
+      "candidate_type": "paper",
+      "title": "Detection and Quantification of Visual Tablet Surface Defects by Combining Convolutional Neural Network-Based Object Detection and Deterministic Computer Vision Approaches",
+      "description": "Tablet surface defects are typically controlled by visual inspection in the pharmaceutical industry. This is an insufficient response variable for knowledge-based formulation and process development, and it results in rather limited robustness of the control strategy. In this article, we present an analytical method for the quantitative characterization of visual tablet surface defects. The method involves analysis of the tablet surface by a digital microscope to obtain optical images and three-dimensional surface scans. Pre-processing procedures are applied for the simplification of the data to allow the detection of the imprint characters and tablet surface structures by a Faster R-CNN object detection model. Geometrical variables like perimeter and area were derived from the results of the object detection model and statistically analyzed for a selected number of tablets. The analysis allowed the development of product-specific acceptance criteria by a small reference dataset, and the quantitative evaluation of sticking, picking, chipping, and abrasion defects. The method showed high precision and sensitivity and demonstrated robust detection of visual tablet surface defects without false negative results. The image analysis was automated, and the developed algorithm can be operated by a simple routine on a standard computer in a few minutes. The method is suitable for industrial use and enables advancements in industrial formulation and process development while providing a novel opportunity for the quality control of visual tablet surface defects.",
+      "source_url": "https://doi.org/10.3390/jpbi2020009",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 10,
+      "bm25_rank": 7,
+      "dense_rank": 11,
+      "rrf_score": 0.02900988017658188,
+      "shared_concepts": [
+        "tablet",
+        "inspection",
+        "pharmaceutical"
+      ],
+      "distinctive_terms": [
+        "detection",
+        "quantification",
+        "visual",
+        "surface",
+        "defects",
+        "combining",
+        "convolutional",
+        "neural"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 7 and semantic rank 11. Shared terms: tablet, inspection, pharmaceutical."
+    },
+    {
+      "candidate_id": "openalex_c026f8e1041a6bf2fa450390",
+      "candidate_type": "paper",
+      "title": "A Comprehensive Review of Pill Image Recognition",
+      "description": "Pill image recognition is an important field in computer vision. It has become a vital technology in healthcare and pharmaceuticals due to the necessity for precise medication identification to prevent errors and ensure patient safety. This survey examines the current state of pill image recognition, focusing on advancements, methodologies, and the challenges that remain unresolved. It provides a comprehensive overview of traditional image processing-based, machine learning-based, deep learning-based, and hybrid-based methods, and aims to explore the ongoing difficulties in the field. We summarize and classify the methods used in each article, compare the strengths and weaknesses of traditional image processing-based, machine learning-based, deep learning-based, and hybrid-based methods, and review benchmark datasets for pill image recognition. Additionally, we compare the performance of proposed methods on popular benchmark datasets. This survey applies recent advancements, such as Transformer models and cutting-edge technologies like Augmented Reality (AR), to discuss potential research directions and conclude the review. By offering a holistic perspective, this paper aims to serve as a valuable resource for researchers and practitioners striving to advance the field of pill image recognition.",
+      "source_url": "https://doi.org/10.32604/cmc.2025.060793",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 11,
+      "bm25_rank": 11,
+      "dense_rank": 9,
+      "rrf_score": 0.028577260665441927,
+      "shared_concepts": [
+        "identification",
+        "learning",
+        "deep"
+      ],
+      "distinctive_terms": [
+        "comprehensive",
+        "review",
+        "pill",
+        "image",
+        "recognition",
+        "important",
+        "field",
+        "computer"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 11 and semantic rank 9. Shared terms: identification, learning, deep."
+    },
+    {
+      "candidate_id": "openalex_cf3776def13877d539c84cc2",
+      "candidate_type": "paper",
+      "title": "Real-Time Multi-Pill Detection and Slot-Aware Counting in Blister Packs Using a Lightweight YOLOv8 Nano Framework",
+      "description": "This paper introduces an object detection and recognition approach to identify the locations and the type of pills in images of multiple pills, using a limited dataset of single-pill images as training data. Medicine strips have become very popular for packaging pills and capsules; however, manually counting the number of pills remaining is inconvenient and imprecise. This project describes a mobile-based system that automatically identifies and counts occupied and vacant pill slots in medicine strip images using deep learning methods. Images of medicine strips were gathered from the real world and manually annotated into two categories: filled pills and empty slots. A YOLOv8 Nano object detector model was chosen for its speed and low computational requirements. The model was trained on Google Colab using GPU resources to learn the visual patterns of pills and empty spaces. To enable deployment on mobile devices, the model was optimized and quantized into TensorFlow Lite with Int8 values, and this optimized model was subsequently incorporated into a Flutter Android application. Additional geometric logic was used to minimize false detections and enhance counting accuracy. The experimental findings indicate that the proposed system is capable of real-time identification and counting of pills on a mobile device with high accuracy. The solution is portable, effective, and applicable to healthcare tasks related to medication use and pharmacy-based smart systems.",
+      "source_url": "https://doi.org/10.21015/vtcs.v14i1.2436",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 12,
+      "bm25_rank": 15,
+      "dense_rank": 8,
+      "rrf_score": 0.02803921568627451,
+      "shared_concepts": [
+        "deep",
+        "learning",
+        "identification"
+      ],
+      "distinctive_terms": [
+        "real",
+        "time",
+        "multi",
+        "pill",
+        "detection",
+        "slot",
+        "aware",
+        "counting"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 15 and semantic rank 8. Shared terms: deep, learning, identification."
+    },
+    {
+      "candidate_id": "openalex_a190b6b6f7cbac62cc3fd396",
+      "candidate_type": "paper",
+      "title": "CNN-Based Automatic Tablet Classification Using a Vibration-Controlled Bowl Feeder with Spiral Torque Optimization",
+      "description": "This paper proposes a drug classification system using convolutional neural network (CNN) training and rotational pill dropping technology. Images of 40 pills for each of 102 types (total 4080 images) were captured, achieving a CNN classification accuracy of 88.8%. The system uses a bowl feeder with optimized operating parameters-voltage, torque, PWM, tilt angle, vibration amplitude (0.2-1.5 mm), and frequency (4-40 Hz)-to ensure stable, sequential pill movement without loss or clumping. Performance tests were conducted at 5 V, 20 rpm, 20% PWM (@40 Hz), and 1.5 mm vibration amplitude. The bowl feeder structure tolerates oblique angles up to 75\u00b0, enabling precise pill alignment and classification. The CNN model plays a key role in accurate pill detection and classification.",
+      "source_url": "https://doi.org/10.3390/s25144248",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 13,
+      "bm25_rank": 13,
+      "dense_rank": 10,
+      "rrf_score": 0.027984344422700584,
+      "shared_concepts": [
+        "tablet"
+      ],
+      "distinctive_terms": [
+        "cnn",
+        "automatic",
+        "classification",
+        "vibration",
+        "controlled",
+        "bowl",
+        "feeder",
+        "spiral"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 13 and semantic rank 10. Shared terms: tablet."
+    },
+    {
+      "candidate_id": "openalex_45b47e226cccbb29fdafc01a",
+      "candidate_type": "paper",
+      "title": "Multi-Frame Joint Detection Approach for Foreign Object Detection in Large-Volume Parenterals",
+      "description": "Large-volume parenterals (LVPs), as essential medical products, are widely used in healthcare settings, making their safety inspection crucial. Current methods for detecting foreign particles in LVP solutions through image analysis primarily rely on single-frame detection or simple temporal smoothing strategies, which fail to effectively utilize spatiotemporal correlations across multiple frames. Factors such as occlusion, motion blur, and refractive distortion can significantly impact detection accuracy. To address these challenges, this paper proposes a multi-frame object detection framework based on spatiotemporal collaborative learning, incorporating three key innovations: a YOLO network optimized with deformable convolution, a differentiable cross-frame association module, and an uncertainty-aware feature fusion and re-identification module. Experimental results demonstrate that our method achieves a 97% detection rate for contaminated LVP solutions on the LVPD dataset. Furthermore, the proposed method enables end-to-end training and processes five bottles per second, meeting the requirements for real-time pipeline applications.",
+      "source_url": "https://doi.org/10.3390/math13081333",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 14,
+      "bm25_rank": 6,
+      "dense_rank": 19,
+      "rrf_score": 0.027809742999616416,
+      "shared_concepts": [
+        "inspection",
+        "learning",
+        "yolo",
+        "identification"
+      ],
+      "distinctive_terms": [
+        "multi",
+        "frame",
+        "joint",
+        "detection",
+        "approach",
+        "foreign",
+        "object",
+        "large"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 6 and semantic rank 19. Shared terms: inspection, learning, yolo, identification."
+    },
+    {
+      "candidate_id": "openalex_f86b703c564c95363404c689",
+      "candidate_type": "paper",
+      "title": "Artificial intelligence in pharmaceutical drug product quality control and assurance",
+      "description": "Machine learning has moved from proof of concept to routine operation in pharmaceutical quality control, yet the autonomy it is granted narrows sharply as products approach release. In this narrative review, we propose that this unevenness reflects not model capability but the regulatory burden an output must clear before it can be acted on, a pattern we term the validation\u2010barrier gradient. We score this barrier across four stages on criteria covering decision criticality under good manufacturing practice, validation and data\u2010integrity load, locus of legal liability, and patient\u2010safety consequence. The composite barrier rises as observed autonomy falls. At final product inspection, deep vision systems already detect defects at line speed, often on small single\u2010site datasets, but the authority to release a batch still rests with a qualified person. This gap between what a model can do and what it is allowed to decide cannot be explained by task difficulty alone. Closing it requires not further accuracy gains but shared benchmarks, routine robustness reporting, and change\u2010control pathways allowing validated models to be updated rather than frozen.",
+      "source_url": "https://doi.org/10.1002/bkcs.70235",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 15,
+      "bm25_rank": 16,
+      "dense_rank": 12,
+      "rrf_score": 0.027046783625730993,
+      "shared_concepts": [
+        "pharmaceutical",
+        "learning",
+        "inspection",
+        "deep"
+      ],
+      "distinctive_terms": [
+        "artificial",
+        "intelligence",
+        "drug",
+        "product",
+        "quality",
+        "control",
+        "assurance",
+        "machine"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 16 and semantic rank 12. Shared terms: pharmaceutical, learning, inspection, deep."
+    },
+    {
+      "candidate_id": "openalex_217d09cd77ea582741382f8f",
+      "candidate_type": "paper",
+      "title": "A Novel Two-Stage Induced Deep Learning System for Classifying Similar Drugs with Diverse Packaging",
+      "description": "Dispensing errors play a crucial role in various medical errors, unfortunately emerging as the third leading cause of death in the United States. This alarming statistic has spurred the World Health Organization (WHO) into action, leading to the initiation of the Medication Without Harm Campaign. The primary objective of this campaign is to prevent dispensing errors from occurring and ensure patient safety. Due to the rapid development of deep learning technology, there has been a significant increase in the development of automatic dispensing systems based on deep learning classification to avoid dispensing errors. However, most previous studies have focused on developing deep learning classification systems for unpackaged pills or drugs with the same type of packaging. However, in the actual dispensing process, thousands of similar drugs with diverse packaging within a healthcare facility greatly increase the risk of dispensing errors. In this study, we proposed a novel two-stage induced deep learning (TSIDL)-based system to classify similar drugs with diverse packaging efficiently. The results demonstrate that the proposed TSIDL method outperforms state-of-the-art CNN models in all classification metrics. It achieved a state-of-the-art classification accuracy of 99.39%. Moreover, this study also demonstrated that the TSIDL method achieved an inference time of only 3.12 ms per image. These results highlight the potential of real-time classification for similar drugs with diverse packaging and their applications in future dispensing systems, which can prevent dispensing errors from occurring and ensure patient safety efficiently.",
+      "source_url": "https://doi.org/10.3390/s23167275",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 16,
+      "bm25_rank": 14,
+      "dense_rank": 15,
+      "rrf_score": 0.02684684684684685,
+      "shared_concepts": [
+        "deep",
+        "learning"
+      ],
+      "distinctive_terms": [
+        "novel",
+        "two",
+        "stage",
+        "induced",
+        "classifying",
+        "similar",
+        "drugs",
+        "diverse"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 14 and semantic rank 15. Shared terms: deep, learning."
+    },
+    {
+      "candidate_id": "openalex_3f8412407856de2d3638ce5d",
+      "candidate_type": "paper",
+      "title": "Virtually Possible: Enhancing Quality Control of 3D-Printed Medicines with Machine Vision Trained on Photorealistic Images",
+      "description": "Three-dimensional (3D) printing is an advanced pharmaceutical manufacturing technology, and concerted efforts are underway to establish its applicability to various industries. However, for any technology to achieve widespread adoption, robustness and reliability are critical factors. Machine vision (MV), a subset of artificial intelligence (AI), has emerged as a powerful tool to replace human inspection with unprecedented speed and accuracy. Previous studies have demonstrated the potential of MV in pharmaceutical processes. However, training models using real images proves to be both costly and time consuming. In this study, we present an alternative approach, where synthetic images were used to train models to classify the quality of dosage forms. We generated 200 photorealistic virtual images that replicated 3D-printed dosage forms, where seven machine learning techniques (MLTs) were used to perform image classification. By exploring various MV pipelines, including image resizing and transformation, we achieved remarkable classification accuracies of 80.8%, 74.3%, and 75.5% for capsules, tablets, and films, respectively, for classifying stereolithography (SLA)-printed dosage forms. Additionally, we subjected the MLTs to rigorous stress tests, evaluating their scalability to classify over 3000 images and their ability to handle irrelevant images, where accuracies of 66.5% (capsules), 72.0% (tablets), and 70.9% (films) were obtained. Moreover, model confidence was also measured, and Brier scores ranged from 0.20 to 0.40. Our results demonstrate promising proof of concept that virtual images exhibit great potential for image classification of SLA-printed dosage forms. By using photorealistic virtual images, which are faster and cheaper to generate, we pave the way for accelerated, reliable, and sustainable AI model development to enhance the quality control of 3D-printed medicines.",
+      "source_url": "https://doi.org/10.3390/pharmaceutics15112630",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 17,
+      "bm25_rank": 21,
+      "dense_rank": 13,
+      "rrf_score": 0.02604430914933198,
+      "shared_concepts": [
+        "pharmaceutical",
+        "inspection",
+        "learning"
+      ],
+      "distinctive_terms": [
+        "virtually",
+        "possible",
+        "enhancing",
+        "quality",
+        "control",
+        "3d",
+        "printed",
+        "medicines"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 21 and semantic rank 13. Shared terms: pharmaceutical, inspection, learning."
+    },
+    {
+      "candidate_id": "openalex_e8a9a48307369cdc95c2f132",
+      "candidate_type": "paper",
+      "title": "MIRA-Pill: Multimodal Imprint Reading and Confidence-Gated Re-Ranking for Fine-Grained Pill Identification",
+      "description": "Automated pill identification is a safety-critical task whose hardest cases involve visually near-identical medications that differ only in their printed or debossed imprint code. The widely used ePillID benchmark explicitly identified the reliable reading of such imprints as the most important open problem, but left it unsolved because the optical character recognition available at the time was not dependable on small, low-contrast pill surfaces. We revisit this problem with modern vision\u2013language models (VLMs) and propose MIRA-Pill (Multimodal Imprint Reading and Confidence-Gated Re-Ranking), a framework that couples (i) a visual metric-learning branch (ResNet50 with Compact Bilinear Pooling) with (ii) a dedicated imprint-reading branch built on a compact VLM (Qwen2-VL-2B) fine-tuned with Low-Rank Adaptation, and fuses the two through a confidence-gated, log-linear product-of-experts re-ranking rule. The fusion is derived from a conditional-independence assumption and is accompanied by two provable properties: a no-harm guarantee when the imprint cannot be read, and a precise rescue condition that explains which errors the imprint corrects. Fine-tuning lifts imprint token recall on unseen pill types by 19.5 percentage points (pp) on hard consumer images. On ePillID (four cross-validation rounds over a fixed held-out test fold, both-sides protocol), MIRA-Pill raises Top-1 accuracy from 90.34% to 94.33% (+3.99 pp), a gain that is statistically significant at every test we apply (McNemar p=8.4\u00d710\u221221; bootstrap 95% confidence interval (CI) of \u0394Top-1 =[3.19,4.83] pp), whereas a prior single-benchmark improvement of +0.29 pp was not significant. The method generalises across datasets: +7.29 pp on CURE with an OCR-consensus imprint database, and no aggregate degradation on the imprint-free OGYEIv2 dataset, where only 5 of 480 queries are hurt. The size of the gain correlates with imprint availability, confirming that the imprint signal, rather than incidental tuning, drives the improvement, while the confidence gate keeps the observed harm rate low when no imprint is present. For comparison, a zero-shot CLIP baseline reaches only 10.54% Top-1 under the same protocol, so the gain stems from the specialised reader and fusion rather than from generic vision\u2013language capability. These results indicate that imprint reading, long considered unreliable, is now a dependable source of identification evidence on retrospective benchmarks; because the framework has not yet been evaluated in a real-world clinical or pharmacy setting, we position it as a promising candidate component, rather than a validated tool, for future automated pharmacy-verification and medication-safety systems.",
+      "source_url": "https://doi.org/10.32604/cmc.2026.087689",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 18,
+      "bm25_rank": 20,
+      "dense_rank": 16,
+      "rrf_score": 0.025657894736842105,
+      "shared_concepts": [
+        "identification",
+        "learning"
+      ],
+      "distinctive_terms": [
+        "mira",
+        "pill",
+        "multimodal",
+        "imprint",
+        "reading",
+        "confidence",
+        "gated",
+        "re"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 20 and semantic rank 16. Shared terms: identification, learning."
+    },
+    {
+      "candidate_id": "openalex_09fa577a783b0bd00639a844",
+      "candidate_type": "paper",
+      "title": "Computer Vision on X-Ray Data in Industrial Production and Security Applications: A Comprehensive Survey",
+      "description": "X-ray imaging technology has been used for decades in clinical tasks to reveal the internal condition of different organs, and in recent years, it has become more common in other areas such as industry, security, and geography. The recent development of computer vision and machine learning techniques has also made it easier to automatically process X-ray images and several machine learning-based object (anomaly) detection, classification, and segmentation methods have been recently employed in X-ray image analysis. Due to the high potential of deep learning in related image processing applications, it has been used in most of the studies. This survey reviews the recent research on using computer vision and machine learning for X-ray analysis in industrial production and security applications and covers the applications, techniques, evaluation metrics, datasets, and performance comparison of those techniques on publicly available datasets. We also highlight some drawbacks in the published research and give recommendations for future research in computer vision-based X-ray analysis.",
+      "source_url": "https://doi.org/10.1109/access.2023.3234187",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 19,
+      "bm25_rank": 17,
+      "dense_rank": 23,
+      "rrf_score": 0.025035205758097326,
+      "shared_concepts": [
+        "learning",
+        "deep"
+      ],
+      "distinctive_terms": [
+        "computer",
+        "vision",
+        "ray",
+        "data",
+        "industrial",
+        "production",
+        "security",
+        "applications"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 17 and semantic rank 23. Shared terms: learning, deep."
+    },
+    {
+      "candidate_id": "openalex_ec1475b6aa7a149e13039456",
+      "candidate_type": "paper",
+      "title": "Real-Time Defect Detection Using Edge AI In Smart Manufacturing Systems",
+      "description": "Ensuring zero-defect production in smart manufacturing demands fast, accurate, and intelligent inspection systems. However, conventional cloud-based defect detection approaches struggle with high latency, excessive bandwidth usage, and delayed decision-making, limiting their effectiveness in real-time industrial environments. To overcome these challenges, this paper proposes a novel Edge AI-driven framework for real-time defect detection, where optimized deep learning models are deployed directly on edge devices for instant analysis at the production line. The proposed system seamlessly integrates industrial vision sensors, edge computing units, and cloud platforms to achieve scalable, efficient, and intelligent quality control. Extensive experiments conducted on the MVTec AD dataset demonstrate that the proposed model achieves a high detection accuracy of 96%, while maintaining an ultra-low inference latency of 20 ms, significantly outperforming traditional cloud-based systems with latency exceeding 150 ms. Furthermore, the framework reduces bandwidth consumption by approximately 60%, enabling faster response times and efficient resource utilization. These results highlight the effectiveness of the proposed approach in delivering low-latency, high-accuracy, and scalable defect detection, making it a promising solution for next-generation Industry 4.0 manufacturing systems.\\\\n\\\\n",
+      "source_url": "https://doi.org/10.5281/zenodo.19509357",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 20,
+      "bm25_rank": 18,
+      "dense_rank": 22,
+      "rrf_score": 0.025015634771732333,
+      "shared_concepts": [
+        "inspection",
+        "deep",
+        "learning"
+      ],
+      "distinctive_terms": [
+        "real",
+        "time",
+        "defect",
+        "detection",
+        "edge",
+        "ai",
+        "smart",
+        "manufacturing"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 18 and semantic rank 22. Shared terms: inspection, deep, learning."
+    }
+  ]
+}

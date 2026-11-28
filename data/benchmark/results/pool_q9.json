@@ -2,7 +2,7 @@
   "query_id": "q9",
   "query_text": "Hydrogen fuel-cell utility aircraft conceptual design with PEM fuel cells for sustainable aviation",
   "category": "Aerospace/Energy",
-  "timestamp": 1795888807.507175,
+  "timestamp": 1795890706.727993,
   "local_candidates": [
     {
       "candidate_id": "local:RVCE-PUB-0034",
@@ -392,5 +392,624 @@
       "verification_status": "insufficient"
     }
   ],
-  "live_candidates": []
+  "live_candidates": [
+    {
+      "candidate_id": "openalex_05bfbf23b82affabc4e3de05",
+      "candidate_type": "paper",
+      "title": "Conceptual Design of Hydrogen Fuel-Cell-Based Utility Aircraft",
+      "description": "The aviation industry contributes to around 2% of global carbon dioxide emissions. As various sectors of the economy look to reduce their global carbon footprint, the aviation industry is positively acknowledging alternatives to jet fuel. Hydrogen proves to be one such alternative having a high energy density and producing zero carbon emissions on combustion. Hydrogen when used in a jet engine produces water vapour and NOx emissions. In order to reduce the effect of GHGs, the current study aims to develop aircraft concepts suitable with hydrogen propulsion through fuel cells for a short-haul commercial mission profile. Aircrafts such as Metro-23 and Dornier 228-212 were referenced for the requirements of a utility turboprop aircraft. The weight estimation was done to obtain the take-off weight of 10,863 kg following the optimization of thrust to weight ratio and wing loading to calculate the initial dimensions. OpenVSP was used to model the initial structure of the aircraft. For the propulsion system, the PEM fuel cell was sized for the aircraft to achieve a range of 2,065 km and endurance of 6 hours in two configurations. Also, various configurations of fuel tanks and their positions were analyzed. The design was able to achieve a reduction of up to 18% in the propulsion system weight through fuel stack configuration. Iterations were performed to achieve static stability and CG was estimated to be 31% of root chord. The final configuration layout with cabin seats, propellers, fuel tank and fuel cells were analysed for static stability. The flight performance of the aircraft is comparable to the reference aircrafts. The proposed design leads towards the path of sustainable aviation.",
+      "source_url": "https://doi.org/10.4271/2026-26-0783",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 1,
+      "bm25_rank": 1,
+      "dense_rank": 1,
+      "rrf_score": 0.03278688524590164,
+      "shared_concepts": [
+        "conceptual",
+        "hydrogen",
+        "fuel",
+        "cell",
+        "utility",
+        "aircraft",
+        "aviation",
+        "cells",
+        "pem",
+        "sustainable"
+      ],
+      "distinctive_terms": [
+        "industry",
+        "contributes",
+        "around",
+        "global",
+        "carbon",
+        "dioxide",
+        "emissions",
+        "various"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 1 and semantic rank 1. Shared terms: conceptual, hydrogen, fuel, cell, utility, aircraft, aviation, cells, pem, sustainable."
+    },
+    {
+      "candidate_id": "openalex_50a3dae2485c4d1db00021c9",
+      "candidate_type": "paper",
+      "title": "Multidisciplinary Optimization of Hydrogen Fuel System Architectures for Conceptual Aircraft Design",
+      "description": "The pursuit of sustainable aviation has promoted the evaluation of alternative aircraft propulsion technologies, such as hydrogen fuel cells. In light of this, this study attempts to reduce the existing knowledge gap related to the fuel system of such aircraft, in order to assist decision making in the conceptual and preliminary design phases. For this purpose, system architecture optimization (SAO) is used to study the design space of the hydrogen fuel system of a fuel-cell-based regional airliner. The employed framework consists mainly of the ADORE, MDAx and RCE platforms. Together, these platforms enable the joint use of MBSE and MDO for the automatic exploration of architecture design spaces. In addition, CPACS is used as a central data schema. Using system mass and electric power consumption as performance metrics, the results show that the fuel system\u2019s performance is strongly dependent on the type of heater used for the various heating functions of the system. Given this stark influence, other architectural decisions become less prominent. Among them are the type of insulation, type of pump, and the choice between a pressure driven and a pump driven system. Two different optimization approaches are compared, with surrogate-based optimization showing superior performance to that of the NSGA-II algorithm. The benefits of using an automated approach in the system architecting phase are quantified by comparing it to more conventional approaches. Significant time savings are achieved, as well as a more comprehensive design space exploration. This research demonstrates the use of system architecture optimization in a realistic engineering application. It also creates a foundation for the study of hydrogen fuel system architectures, which can be further developed to expand the system boundaries and conduct more extensive studies.",
+      "source_url": "https://elib.dlr.de/219204/1/Diogo%20Neves%20Master%20Thesis.pdf",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 2,
+      "bm25_rank": 2,
+      "dense_rank": 5,
+      "rrf_score": 0.0315136476426799,
+      "shared_concepts": [
+        "hydrogen",
+        "fuel",
+        "conceptual",
+        "aircraft",
+        "sustainable",
+        "aviation",
+        "cells",
+        "cell"
+      ],
+      "distinctive_terms": [
+        "multidisciplinary",
+        "optimization",
+        "architectures",
+        "pursuit",
+        "promoted",
+        "evaluation",
+        "alternative",
+        "propulsion"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 2 and semantic rank 5. Shared terms: hydrogen, fuel, conceptual, aircraft, sustainable, aviation, cells, cell."
+    },
+    {
+      "candidate_id": "openalex_fb4f06a808a307975765d1c7",
+      "candidate_type": "paper",
+      "title": "Semi-Empirical Models for Stack and Balance of Plant in Closed-Cathode Fuel Cell Systems for Aviation",
+      "description": "In recent years, there has been a growing interest in utilizing hydrogen as an energy carrier across various transportation sectors, including aerospace applications. This interest stems from its unique capability to yield energy without generating direct carbon dioxide emissions. The conversion process is particularly efficient when performed in a fuel cell system. In aerospace applications, two crucial factors come into play: power-to-weight ratio and the simplicity of the powerplant. In fact, the transient behavior and control of the fuel cell are complicated by the continuously changing values of load and altitude during the flight. To meet these criteria, air-cooled open-cathode Proton Exchange Membrane (PEM) fuel cells should be the preferred choice. However, they have limitations regarding the amount of thermal power they can dissipate. Moreover, the performances of fuel cell systems are significantly worsened at high altitude operating conditions because of the lower air density. Consequently, they find suitability primarily in applications such as Unmanned Aerial Vehicles (UAVs) and Urban Air Mobility (UAM). In the case of ultralight and light aviation, liquid-cooled solutions with a separate circuit for compressed air supply are adopted. The goal of this investigation is to identify the correct simulation approach to predict the behavior of such systems under dynamic conditions, typical of their application in aerial vehicles. To this aim, a detailed review of the scientific literature has been performed, with specific reference to semi-empirical and control-oriented models of the whole fuel cell systems including not only the stack but also the complete balance of plant.",
+      "source_url": "https://doi.org/10.3390/en16227676",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 3,
+      "bm25_rank": 5,
+      "dense_rank": 2,
+      "rrf_score": 0.0315136476426799,
+      "shared_concepts": [
+        "fuel",
+        "cell",
+        "aviation",
+        "hydrogen",
+        "pem",
+        "cells"
+      ],
+      "distinctive_terms": [
+        "semi",
+        "empirical",
+        "models",
+        "stack",
+        "balance",
+        "plant",
+        "closed",
+        "cathode"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 5 and semantic rank 2. Shared terms: fuel, cell, aviation, hydrogen, pem, cells."
+    },
+    {
+      "candidate_id": "openalex_1712e7986d939b9ed6d92015",
+      "candidate_type": "paper",
+      "title": "Modelling and Optimization of Scalable Hydrogen Fuel Cell Systems for Aviation",
+      "description": "Fuel cell systems provide one possible technological pathway for sustainable aviation propulsion; however, aviation presents unique challenges for these systems. To address these challenges, this thesis presents a modelling, simulation, and optimization tool for the sizing and performance estimation of a fuel cell system operating in an aviation environment. The tool includes the drag from the thermal management system, optimal design of the compressor system considering the altitude, and a hydrogen storage system sizing procedure. The tool sizes components based on their on-design performance requirements, and completes an off-design performance analysis, ensuring that all components remain within their operational limits. An optimization algorithm is implemented that determines the component parameters that minimize the system mass and volume. The tool represents the first model to date that optimizes aircraft fuel cell systems considering the increased power demand from the thermal management system drag, with a high-fidelity hydrogen storage system sizing methodology.",
+      "source_url": "https://hdl.handle.net/20.500.14718/44763",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 4,
+      "bm25_rank": 4,
+      "dense_rank": 3,
+      "rrf_score": 0.03149801587301587,
+      "shared_concepts": [
+        "hydrogen",
+        "fuel",
+        "cell",
+        "aviation",
+        "sustainable",
+        "aircraft"
+      ],
+      "distinctive_terms": [
+        "modelling",
+        "optimization",
+        "scalable",
+        "systems",
+        "provide",
+        "one",
+        "possible",
+        "technological"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 4 and semantic rank 3. Shared terms: hydrogen, fuel, cell, aviation, sustainable, aircraft."
+    },
+    {
+      "candidate_id": "openalex_91e6726a4d59458d9d35d74f",
+      "candidate_type": "paper",
+      "title": "INNOVATIVE THERMAL MANAGEMENT SYSTEMS FOR FUEL CELL ELECTRIC AIRCRAFT",
+      "description": "The Thermal Management System (TMS) is a crucial component of the aircraft, particularly in case of layout exploiting a high level of electrification of propulsion systems. Specifically, use of fuel cells in aviation industry appears to be extremely challenging, due to the significant amount of waste heat produced. Therefore, the aim of this paper is introducing some technical solutions proposed by the literature for an effective thermal management of the aircraft. Particularly, the identification of most relevant heat sinks for the aviation is performed, with a specific interest for solutions exploiting the stored fuel intrinsic heat capacity. The example of a conceptual hybridelectric, fuel cell powered, turbo-propeller driven, regional transport aircraft is then described. The Model Based System Engineering (MBSE) methodology is applied to define the system use cases and to identify the most relevant requirements. A possible system architecture is finally proposed. The paper provides some considerations over the topic of fuel-based TMS (F-TMS) to the specific case of hybrid-electric, fuel cell, regional aircraft.",
+      "source_url": "https://hdl.handle.net/11583/3001430",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 5,
+      "bm25_rank": 3,
+      "dense_rank": 9,
+      "rrf_score": 0.03036576949620428,
+      "shared_concepts": [
+        "fuel",
+        "cell",
+        "aircraft",
+        "cells",
+        "aviation",
+        "conceptual"
+      ],
+      "distinctive_terms": [
+        "innovative",
+        "thermal",
+        "management",
+        "systems",
+        "electric",
+        "tms",
+        "crucial",
+        "component"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 3 and semantic rank 9. Shared terms: fuel, cell, aircraft, cells, aviation, conceptual."
+    },
+    {
+      "candidate_id": "openalex_fa0d8b184bdeebaf76346a78",
+      "candidate_type": "paper",
+      "title": "Retrofitting of ultralight aircraft with a fuel cell power system",
+      "description": "Hydrogen power systems are one of the main development prospects of our century in all means of transportation. Among them, the conversion of hydrogen energy in a fuel cell system guarantees the highest value of efficiency. However, fuel cells need to be coupled with a secondary electric storage system in mobility applications because of their limitations in terms of dynamic response and power density. In the present investigation, the preliminary design of a hybrid electric power system with fuel cells for an ultralight aerial vehicle is addressed with a retrofitting approach. The proposed power system includes a fuel cell, a lithium battery, and a compressed hydrogen vessel to replace the conventional piston-prop configuration while keeping the same maximum take-off mass. A simple but comprehensive procedure is used to find the size of the power system components that minimize the total mass and satisfy the target of a size below 200 L. The inputs of the parametric analysis are the hybridization ratio and the type of lithium battery. The results of the analysis revealed that fuel cell systems are suitable for the electrification of ultralight aviation if the desired endurance is higher than 30 min In this case, batteries by high power density are needed to satisfy the power requirements at take-off. For shorter flight times, a battery configuration is to be preferred and energy density is the most critical parameters for the choice of the battery. The possibility of charging the battery on-board determines a larger fuel cell and a higher consumption of hydrogen than a charge depleting strategy (+10 %) but avoid long charging times between two consecutive flights.",
+      "source_url": "https://doi.org/10.1016/j.ets.2024.100002",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 6,
+      "bm25_rank": 7,
+      "dense_rank": 6,
+      "rrf_score": 0.03007688828584351,
+      "shared_concepts": [
+        "aircraft",
+        "fuel",
+        "cell",
+        "hydrogen",
+        "cells",
+        "aviation"
+      ],
+      "distinctive_terms": [
+        "retrofitting",
+        "ultralight",
+        "power",
+        "systems",
+        "one",
+        "main",
+        "development",
+        "prospects"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 7 and semantic rank 6. Shared terms: aircraft, fuel, cell, hydrogen, cells, aviation."
+    },
+    {
+      "candidate_id": "openalex_8fbe55e73a439a3daa39c709",
+      "candidate_type": "paper",
+      "title": "Evolution of Proton Exchange Membrane Fuel Cell Technology for Aviation Applications: A Review",
+      "description": "This review provides a comprehensive analysis of recent advancements in proton exchange membrane fuel cell (PEMFC) technology, with a specific focus on aviation applications. Each component of the PEMFC (bipolar plates, gas flow fields, gas diffusion layers, catalyst layers, and membranes) is critically examined in the context of aerospace requirements, including high specific power, lightweight construction, and operation under varying pressure, temperature, and humidity. Key aviation-specific challenges, such as water management in microgravity-aligned configurations, oxygen transport under low ambient pressures, and thermal cycling resilience, are discussed. Material innovations such as corrosion-resistant metallic bipolar plates, nanostructured Pt-alloy catalysts, hydrophobically tuned gas diffusion layers, reinforced composite membranes, and integrated flow field\u2013diffusion interfaces are highlighted for their relevance to flight-ready systems. System-level trade-offs\u2500balancing durability, efficiency, and safety\u2500are also reviewed based on recent demonstrator platforms. The review concludes by identifying critical research directions to advance PEMFC deployment in short- and medium-range aircraft with particular emphasis on improving specific power, durability under load cycling, and component multifunctionality.",
+      "source_url": "https://doi.org/10.1021/acs.energyfuels.5c03463",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 7,
+      "bm25_rank": 15,
+      "dense_rank": 4,
+      "rrf_score": 0.028958333333333336,
+      "shared_concepts": [
+        "fuel",
+        "cell",
+        "aviation",
+        "aircraft"
+      ],
+      "distinctive_terms": [
+        "evolution",
+        "proton",
+        "exchange",
+        "membrane",
+        "technology",
+        "applications",
+        "review",
+        "provides"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 15 and semantic rank 4. Shared terms: fuel, cell, aviation, aircraft."
+    },
+    {
+      "candidate_id": "openalex_30622d0009b1d9c901a81c4f",
+      "candidate_type": "paper",
+      "title": "Fuel Cell Powered Drone: Use of Fuel Cells to Extend Multirotor Drone Endurance",
+      "description": "Unmanned aerial systems can be used for a range of industrial applications to reduce risk, cost, and time. Fuel cell-based propulsion systems are outlined as a solution to extend mission endurance, one of the current main barriers for further adoption. This coincides with a general societal push towards more sustainable aviation and the use of fuel cells and hydrogen as important zero-emission enablers. In this thesis, results from research about the use of fuel cells to extend multirotor drone flight endurance are presented. This application entails certain challenges compared to fixed-wing drones, which has been the scope of most previous research. The research explores the performance threshold between batteries and a fuel cell-based propulsion system, the prospects of further adoption, and how the performance can be improved. A prototype fuel cell system is developed and integrated into an X8 multirotor drone with a take-off mass of 21 kg and flight-tested. The specific energy on a power plant level was 243 Wh/kg, and the gross endurance for the current system is estimated to be 76 minutes, a 90% increase from the comparable endurance of the battery-powered alternative. The performance of the 2 kW fuel cell hybrid system is characterized in laboratory testing and exposed to relevant load profiles with a peak load of 2.8 kW. This is one of few independent third-party multirotor drone integrations of a fuel cell-based propulsion system. Based on experimental data from laboratory testing and full-scale flight in a realistic operating environment, a unique overview of associated challenges and further work is provided. As there is little published research on this topic, the work should be valuable for the research community, as well as drone operators and technology providers.",
+      "source_url": "https://doi.org/10.31265/usps.105",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 8,
+      "bm25_rank": 11,
+      "dense_rank": 8,
+      "rrf_score": 0.028790389395194696,
+      "shared_concepts": [
+        "fuel",
+        "cell",
+        "cells",
+        "sustainable",
+        "aviation",
+        "hydrogen"
+      ],
+      "distinctive_terms": [
+        "powered",
+        "drone",
+        "extend",
+        "multirotor",
+        "endurance",
+        "unmanned",
+        "aerial",
+        "systems"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 11 and semantic rank 8. Shared terms: fuel, cell, cells, sustainable, aviation, hydrogen."
+    },
+    {
+      "candidate_id": "openalex_4be2d78af12f8f3ed79e31ae",
+      "candidate_type": "paper",
+      "title": "Comparative Analysis of Direct Operating Costs: Conventional vs. Hydrogen Fuel Cell 19-Seat Aircraft",
+      "description": "In this paper, a comparative analysis of direct operating costs between a 19-seat conventional and hydrogen-powered fuel cell aircraft is performed by developing a model to estimate direct operating costs and considering the evolution of costs over time from 2030 to 2050. However, due to the technology being in its early stages of development and implementation, there are still considerable uncertainties surrounding the direct operating costs of hydrogen aircraft. To address this, the study considers high and low kerosene growth rates and optimistic and pessimistic development scenarios for hydrogen fuel cell aircraft, while also considering the evolution of costs over time. The comparative analysis uses real flight and aircraft data for the airliner Trade Air. The results show that the use of 19-seat hydrogen fuel cell aircraft for air transportation is a viable option when compared to conventional aircraft. Additionally, the study suggests potential policies and other measures that could accelerate the adoption of hydrogen fuel cell technology by considering their direct operating costs.",
+      "source_url": "https://doi.org/10.3390/su151411271",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 9,
+      "bm25_rank": 10,
+      "dense_rank": 10,
+      "rrf_score": 0.02857142857142857,
+      "shared_concepts": [
+        "hydrogen",
+        "fuel",
+        "cell",
+        "aircraft"
+      ],
+      "distinctive_terms": [
+        "comparative",
+        "analysis",
+        "direct",
+        "operating",
+        "costs",
+        "conventional",
+        "vs",
+        "seat"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 10 and semantic rank 10. Shared terms: hydrogen, fuel, cell, aircraft."
+    },
+    {
+      "candidate_id": "openalex_8f8a97ddb161ba7ecc9a4bad",
+      "candidate_type": "paper",
+      "title": "An Analytical Performance Assessment of a Fuel Cell-Powered, Small Electric Airplane",
+      "description": "Rapidly emerging fuel cell power technologies may be used to launch a new revolution of electric propulsion systems for light aircraft. Future small electric airplanes using fuel cell technologies hold the promise of high reliability, low maintenance, low noise, and with exception of water vapor zero emissions. This paper describes an analytical feasibility and performance assessment conducted by NASA's Glenn Research Center of a fuel cell-powered, propeller-driven, small electric airplane based on a model of the MCR 01 two-place kitplane.",
+      "source_url": null,
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 10,
+      "bm25_rank": 16,
+      "dense_rank": 7,
+      "rrf_score": 0.028083267871170464,
+      "shared_concepts": [
+        "fuel",
+        "cell",
+        "aircraft"
+      ],
+      "distinctive_terms": [
+        "analytical",
+        "performance",
+        "assessment",
+        "powered",
+        "small",
+        "electric",
+        "airplane",
+        "rapidly"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 16 and semantic rank 7. Shared terms: fuel, cell, aircraft."
+    },
+    {
+      "candidate_id": "openalex_6bdacd694f8c8367e36d479e",
+      "candidate_type": "paper",
+      "title": "DOD Residential Proton Exchange Membrane (PEM) Fuel Cell Demonstration Program. Volume 2. Summary of Fiscal Year 2001-2003 Projects",
+      "description": "In Fiscal Year 2001 (FY01), Congress funded the Department of Defense (DoD) residential PEM Demonstration Project to demonstrate domestically-produced, residential Proton Exchange Membrane (PEM) fuel cells at DoD Facilities. The objectives were to: assess PEM fuel cells' role in supporting sustainability at military installations; increase efficiency in installation, operation, and maintenance of fuel cell sites; evaluate their potential in DoD training, readiness, and sustainability missions; provide a military base market for this technology; and evaluate and give feedback to promote commercialization and market growth, operational product testing and validation, grid interconnection standards, and system operation in diverse environmental conditions. This project developed and advertised a Broad Agency Announcement each fiscal year, outlining core requirements for proposals. Sixty one preproposals were received and evaluated. In FY01, six contracts were awarded (22 fuel cells at 10 military installations). In FY02, five contracts were awarded (17 fuel cells at 15 military and DOD installations). In FY03, seven contracts were awarded (30 fuel cells at 20 military and DOD installations). Awardees were required to report detailed operational performance of each of their fuel cell system installations. This report discusses FY02 and FY03 Residential PEM Demonstrations, and revisits FY01 Projects.",
+      "source_url": null,
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 11,
+      "bm25_rank": 6,
+      "dense_rank": 18,
+      "rrf_score": 0.027972027972027972,
+      "shared_concepts": [
+        "pem",
+        "fuel",
+        "cell",
+        "cells"
+      ],
+      "distinctive_terms": [
+        "dod",
+        "residential",
+        "proton",
+        "exchange",
+        "membrane",
+        "demonstration",
+        "program",
+        "volume"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 6 and semantic rank 18. Shared terms: pem, fuel, cell, cells."
+    },
+    {
+      "candidate_id": "openalex_3cddeee5037de2f632f7eb87",
+      "candidate_type": "paper",
+      "title": "Modelling and Simulation of an Ammonia-Fuelled PEM Fuel Cell System for Maritime Applications in Aspen HYSYS",
+      "description": "The maritime sector transports a large share of global trade, and accounts for a significant amount of global carbon dioxide emissions. These emissions are mainly linked to the sector\u2019s continued reliance on fossil fuels. Stricter international regulations have therefore increased the need for low- and zero-emission maritime propulsion solutions. Among the available alternatives, ammonia has emerged as a promising hydrogen carrier for deep-sea and high-power maritime applications. The use of ammonia-fuelled proton exchange membrane fuel cell (PEMFC) systems represents a possible solution for utilising ammonia as a fuel, but this approach requires the ammonia to be decomposed and subsequently purified into high-purity hydrogen before use. In this thesis, a steady-state, integrated ammonia-fuelled PEMFC energy system was modelled and simulated at the system level in Aspen HYSYS. The model included ammonia cracking, combustion-based heat supply, hydrogen purification by temperature swing adsorption (TSA) and pressure swing adsorption (PSA), and PEMFC-based power generation. The model parameters were selected based on available literature and representative specifications for a maritime PEM fuel cell module. The complete system was designed to deliver a net electrical power output of 125 kW. A base case was first established, before two alternative cracker operating configurations were investigated to evaluate the effect of pressure and temperature on system performance. In addition, a heat integration analysis of the reference configuration was conducted in Aspen Energy Analyzer. The base case, operated at a cracker pressure and temperature of 1,2 bara and 450\u00b0C, respectively, achieved a system net electrical efficiency of 38,3%. Increasing the cracker pressure to 10 bara at the same temperature eliminated the need for downstream cracked gas compression and increased the system net electrical efficiency to 41,3%. Increasing the cracker temperature to 695\u00b0C at 10 bara improved the ammonia conversion compared to the lower-temperature case with high pressure, but also increased the external heat demand. This resulted in a system net electrical efficiency of 40,6%. Heat integration of the base case showed a significant potential for internal heat recovery. For the theoretical heat-integrated base case, the external heat duty was reduced to 0,91 kW, and the system net electrical efficiency increased to 45,5%. The results show that cracker operating pressure, cracker temperature and heat integration strongly influence the performance of the ammonia-fuelled PEMFC system. The heat-integrated base case was the most efficient configuration investigated in this study. The obtained efficiencies were generally within the range reported for comparable ammonia-fuelled PEMFC systems in the literature, although direct comparison is limited by differences in system boundaries, degree of heat integration, process configuration and efficiency definitions. Aspen HYSYS was found to be useful for early-stage steady-state system analysis, particularly for evaluating mass and energy balances and for comparison of operating configurations. However, the software was less suitable for detailed modelling of the PEMFC stack and cyclic TSA and PSA processes.",
+      "source_url": "https://hdl.handle.net/11250/5595750",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 12,
+      "bm25_rank": 9,
+      "dense_rank": 15,
+      "rrf_score": 0.02782608695652174,
+      "shared_concepts": [
+        "pem",
+        "fuel",
+        "cell",
+        "hydrogen"
+      ],
+      "distinctive_terms": [
+        "modelling",
+        "simulation",
+        "ammonia",
+        "fuelled",
+        "maritime",
+        "applications",
+        "aspen",
+        "hysys"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 9 and semantic rank 15. Shared terms: pem, fuel, cell, hydrogen."
+    },
+    {
+      "candidate_id": "openalex_19f5d75a76eb79b202a61ae5",
+      "candidate_type": "paper",
+      "title": "Use of Fuel Cells to Extend Multirotor Drone Endurance",
+      "description": "Unmanned aerial systems can be used for a range of industrial applications to reduce risk, cost, and time. Fuel cell-based propulsion systems are outlined as a solution to extend mission endurance, one of the current main barriers for further adoption. This coincides with a general societal push towards more sustainable aviation and the use of fuel cells and hydrogen as important zero-emission enablers. In this thesis, results from research about the use of fuel cells to extend multirotor drone flight endurance are presented. This application entails certain challenges compared to fixed-wing drones, which has been the scope of most previous research. The research explores the performance threshold between batteries and a fuel cell-based propulsion system, the prospects of further adoption, and how the performance can be improved. A prototype fuel cell system is developed and integrated into an X8 multirotor drone with a take-off mass of 21 kg and flight-tested. The specific energy on a power plant level was 243 Wh/kg, and the gross endurance for the current system is estimated to be 76 minutes, a 90% increase from the comparable endurance of the battery-powered alternative. The performance of the 2 kW fuel cell hybrid system is characterized in laboratory testing and exposed to relevant load profiles with a peak load of 2.8 kW. This is one of few independent third-party multirotor drone integrations of a fuel cell-based propulsion system. Based on experimental data from laboratory testing and full-scale flight in a realistic operating environment, a unique overview of associated challenges and further work is provided. As there is little published research on this topic, the work should be valuable for the research community, as well as drone operators and technology providers.",
+      "source_url": "https://hdl.handle.net/11250/2787738",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 13,
+      "bm25_rank": 12,
+      "dense_rank": 12,
+      "rrf_score": 0.027777777777777776,
+      "shared_concepts": [
+        "fuel",
+        "cells",
+        "cell",
+        "sustainable",
+        "aviation",
+        "hydrogen"
+      ],
+      "distinctive_terms": [
+        "extend",
+        "multirotor",
+        "drone",
+        "endurance",
+        "unmanned",
+        "aerial",
+        "systems",
+        "can"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 12 and semantic rank 12. Shared terms: fuel, cells, cell, sustainable, aviation, hydrogen."
+    },
+    {
+      "candidate_id": "openalex_be5f03c1f8e372c0c930fdb8",
+      "candidate_type": "paper",
+      "title": "Life cycle costing approaches of fuel cell and hydrogen systems: A literature review",
+      "description": "Hydrogen is a versatile energy carrier which can be produced from variety of feedstocks, stored and transported in various forms for multi-functional end-uses in transportation, energy and manufacturing sectors. Several regional, national and supra-national climate policy frameworks emphasize the need, value and importance of Fuel cell and Hydrogen (FCH) technologies for deep and sector-wide decarbonization. Despite these multi-faceted advantages, familiar and proven FCH technologies such as alkaline electrolysis and proton-exchange membrane fuel cell (PEMFC) often face economic, technical and societal barriers to mass-market adoption. There is no single, unified, standardized, and globally harmonized normative definition of costs. Nevertheless, the discussion and debates surrounding plausible candidates and/or constituents integral for assessing the economics and value proposition of status-quo as well as developmental FCH technologies are steadily increasing\u2014Life Cycle Costing (LCC) being one of them, if not the most important outcome of such exercises. To that end, this review article seeks to improve our collective understanding of LCC of FCH technologies by scrutinizing close to a few hundred publications drawn from representative databases\u2014SCOPUS and Web of Science encompassing several tens of technologies for production and select transportation, storage and end-user utilization cases. This comprehensive review forms part of and serves as the basis for the Clean Hydrogen Partnership funded SH2E project, whose ultimate goal is the methodical development a formal set of principles and guardrails for evaluating the economic, environmental and social impacts of FCH technologies. Additionally, the SH2E projects will also facilitate the proper comparison of different FCH technologies whilst reconciling range of technologies, methodologies, modelling assumptions, and parameterization found in existing literature.",
+      "source_url": "https://doi.org/10.1016/j.ijhydene.2023.04.035",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 14,
+      "bm25_rank": 17,
+      "dense_rank": 11,
+      "rrf_score": 0.027071520029266508,
+      "shared_concepts": [
+        "fuel",
+        "cell",
+        "hydrogen"
+      ],
+      "distinctive_terms": [
+        "life",
+        "cycle",
+        "costing",
+        "approaches",
+        "systems",
+        "literature",
+        "review",
+        "versatile"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 17 and semantic rank 11. Shared terms: fuel, cell, hydrogen."
+    },
+    {
+      "candidate_id": "openalex_6d30aec3a1724e4700d78d6a",
+      "candidate_type": "paper",
+      "title": "A Comprehensive Review on exploring Fuel Cell Potential in Energy Sector",
+      "description": "Fuel cells are emerging as a game-changing solution to address the pressing environmental and energy concerns caused by the transportation and industrial sectors, both of which are major contributors to greenhouse gas emissions. This review examines recent advancements in fuel cell technologies and their diverse applications, focusing on key types like Proton Exchange Membrane Fuel Cells (PEMFCs), Alkaline Fuel Cells (AFCs), Phosphoric Acid Fuel Cells (PAFCs), Solid Oxide Fuel Cells (SOFCs), and Direct Methanol Fuel Cells (DMFCs). The fundamental principles, material requirements, and unique applications of each type are explored in detail, covering areas such as transportation, portable devices, stationary energy systems, and aeronautics. Fuel cells stand out for their high efficiency, minimal emissions, and adaptability to a wide range of energy needs. However, challenges remain, including high production costs, durability of materials, and effective hydrogen storage. This review highlights ongoing innovations aimed at overcoming these obstacles and emphasizes the transformative potential of fuel cells in supporting sustainable energy systems across various sectors.",
+      "source_url": "https://doi.org/10.56946/jce.v3i2.586",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 15,
+      "bm25_rank": 14,
+      "dense_rank": 14,
+      "rrf_score": 0.02702702702702703,
+      "shared_concepts": [
+        "fuel",
+        "cell",
+        "cells",
+        "hydrogen",
+        "sustainable"
+      ],
+      "distinctive_terms": [
+        "comprehensive",
+        "review",
+        "exploring",
+        "potential",
+        "energy",
+        "sector",
+        "emerging",
+        "game"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 14 and semantic rank 14. Shared terms: fuel, cell, cells, hydrogen, sustainable."
+    },
+    {
+      "candidate_id": "openalex_bb5312b94032d0272a1f49ea",
+      "candidate_type": "paper",
+      "title": "Sensitivity Study of Design Parameters for a Fuel Cell Powered Multirotor Drone",
+      "description": "The use of multirotor drones for industrial applications is accelerating, and fuel cell based propulsion systems are highlighted as a promising approach to improve endurance \u2013 one of the current main limitations. Due to multirotor drones\u2019 unique requirements, careful system design is needed to maximize the performance advantage. In this work a sensitivity analysis that quantifies the impact of central system parameters for an X8 multirotor drone with a 2 kW fuel cell hybrid system is presented and discussed. Thrust stand measurements identified a 20\u201330% efficiency loss from the coaxial configuration, and a \u2018single\u2019 configuration can reduce power consumption by 700 W at 25 kg take-off mass. Thus, a smaller fuel cell system can be used, giving an additional 1 kg mass saving and 75\u2013140 W power reduction. Peak endurance is found at a 0.67 energy system weight fraction, and if batteries are improved from 180 Wh/kg to 350 Wh/kg, the energy system mass threshold from where fuel cells are superior rises from 7.4 kg to 8.5 kg. At 700 bar, a 3 L hydrogen cylinder can replace a 6 L at 300 bar, provide a 72-min endurance, and is the preferred option to reach minimum system volume. This work provides guidance in early conceptual stages and insights on how fuel cell based powerplants for multirotors can be improved and optimized to increase their value proposition. Further research can expand the work to cover other system variations and do experimental testing of system performance.",
+      "source_url": "https://doi.org/10.1007/s10846-021-01363-9",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 16,
+      "bm25_rank": 8,
+      "dense_rank": 22,
+      "rrf_score": 0.02690100430416069,
+      "shared_concepts": [
+        "fuel",
+        "cell",
+        "cells",
+        "hydrogen",
+        "conceptual"
+      ],
+      "distinctive_terms": [
+        "sensitivity",
+        "study",
+        "parameters",
+        "powered",
+        "multirotor",
+        "drone",
+        "drones",
+        "industrial"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 8 and semantic rank 22. Shared terms: fuel, cell, cells, hydrogen, conceptual."
+    },
+    {
+      "candidate_id": "openalex_0fbe4767bccc982998b09b4e",
+      "candidate_type": "paper",
+      "title": "Progress and Future Perspectives in Hydrogen Energy and Fuel Cell Technologies for Clean Energy Applications",
+      "description": "Hydrogen energy has emerged as one of the most promising pathways for achieving sustainable, low-carbon, and net-zero energy systems in response to growing concerns regarding climate change, greenhouse gas emissions, and fossil fuel depletion. Owing to its high energy density, environmental compatibility, and versatility across multiple sectors, hydrogen is increasingly recognized as a key energy carrier for future clean energy infrastructures. In particular, hydrogen fuel cells and electrochemical conversion technologies offer highly efficient alternatives to conventional combustion-based systems while enabling significant reductions in carbon emissions across transportation, power generation, industrial manufacturing, and renewable energy integration. This review provides a comprehensive overview of recent advances in hydrogen energy and fuel cell technologies, focusing on material innovations, electrochemical mechanisms, durability, and sustainable applications. State-of-the-art hydrogen production pathways, including water electrolysis, photoelectrochemical hydrogen generation, thermochemical conversion, and biomass-assisted processes, are critically discussed together with emerging hydrogen storage and transportation technologies. Recent developments in advanced electrocatalysts, including noble-metal-free catalysts, high-entropy materials, perovskite oxides, MXene-derived catalysts, single-atom catalysts, and defect-engineered nanostructures, are evaluated in terms of catalytic activity, electronic structure modulation, stability, and scalability. The review further examines the fundamental electrochemical mechanisms governing hydrogen evolution, oxygen evolution, oxygen reduction reactions, proton transport, and oxygen-ion conduction in fuel cell systems. Various fuel cell technologies, including proton exchange membrane fuel cells, solid oxide fuel cells, proton ceramic fuel cells, and anion exchange membrane fuel cells, are comparatively analyzed with respect to operating principles, electrochemical performance, efficiency, degradation behavior, and commercial readiness. In addition, critical degradation pathways involving catalyst dissolution, carbon corrosion, electrolyte instability, and thermal degradation are discussed together with advanced durability enhancement strategies. Beyond materials and electrochemical perspectives, this review highlights sustainable applications of hydrogen technologies in fuel cell electric vehicles, heavy-duty transportation, stationary power generation, industrial decarbonization, and renewable energy storage systems. Techno-economic feasibility, lifecycle sustainability, carbon footprint analysis, infrastructure development, and global hydrogen market trends are also critically assessed. Finally, emerging future directions involving artificial intelligence-assisted materials discovery, digital hydrogen systems, integrated renewable hydrogen infrastructures, low-cost electrolyzers, and advanced hydrogen storage technologies are outlined to provide strategic insights into the future development of sustainable hydrogen economies and next-generation fuel cell technologies.",
+      "source_url": "https://doi.org/10.3390/ma19214441",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 17,
+      "bm25_rank": 13,
+      "dense_rank": 20,
+      "rrf_score": 0.0261986301369863,
+      "shared_concepts": [
+        "hydrogen",
+        "fuel",
+        "cell",
+        "sustainable",
+        "cells"
+      ],
+      "distinctive_terms": [
+        "progress",
+        "future",
+        "perspectives",
+        "energy",
+        "technologies",
+        "clean",
+        "applications",
+        "emerged"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 13 and semantic rank 20. Shared terms: hydrogen, fuel, cell, sustainable, cells."
+    },
+    {
+      "candidate_id": "openalex_ee99028be26fa3759bb3c152",
+      "candidate_type": "paper",
+      "title": "A Comprehensive Review on Fuel Cell UAV Key Technologies: Propulsion System, Management Strategy, and Design Procedure",
+      "description": "Unmanned aerial vehicles (UAVs) can be regarded as one of the most emerging technologies. Compared with piloted aerial vehicles, UAVs qualify for higher safety and lower cost, and they are more suitable for dangerous missions. Recently, fuel cell (FC) UAVs have obtained more and more attention due to their relatively higher energy density. However, their propulsion system still needs to be further improved to meet different requirements of performing difficult tasks. This article aims to give a comprehensive review of the key technologies of FC UAVs. First, various architectures of the propulsion system and corresponding advantages and disadvantages are introduced. Then, three kinds of management strategies for FC UAVs are reviewed. Next, some special applications and considered design procedures are summarized. Compared with other review articles, this article tries to cover more aspects of FC UAVs. Since these aspects have a tight relationship with each other, giving a comprehensive review can be more beneficial to us to understand the state-of-the-art development of propulsion systems for FC UAVs. The conclusions show that advanced propulsion architectures, efficient online energy management strategies, and professional design procedures are still in urgent demand in the commercial process of FC UAVs.",
+      "source_url": "https://doi.org/10.1109/tte.2022.3195272",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 18,
+      "bm25_rank": 24,
+      "dense_rank": 13,
+      "rrf_score": 0.025603392041748205,
+      "shared_concepts": [
+        "fuel",
+        "cell"
+      ],
+      "distinctive_terms": [
+        "comprehensive",
+        "review",
+        "uav",
+        "key",
+        "technologies",
+        "propulsion",
+        "management",
+        "strategy"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 24 and semantic rank 13. Shared terms: fuel, cell."
+    },
+    {
+      "candidate_id": "openalex_46335c75cc449e75c85ef356",
+      "candidate_type": "paper",
+      "title": "Hydrogen-powered aviation in Germany: A macroeconomic perspective and methodological approach of fuel supply chain integration into an economy-wide dataset",
+      "description": "The hydrogen (H2) momentum affects the aviation sector. However, a macroeconomic consideration is currently missing. To address this research gap, the paper derives a methodology for evaluating macroeconomic effects of H2 in aviation and applies this approach to Germany. Three goals are addressed: (1) Construction of a German macroeconomic database. (2) Translation of H2 supply chains to the system of national accounts. (3) Implementation of H2-powered aviation into the macroeconomic data framework. The article presents an economy-wide database for analyzing H2-powered aviation. Subsequently, the paper highlights three H2 supply pathways, provides an exemplary techno-economic cost break-down for ten H2 components and translates them into the data framework. Eight relevant macroeconomic sectors for H2-powered aviation are identified and quantified. Overall, the paper contributes on a suitable foundation to apply the macroeconomic dataset and to conduct macroeconomic analyses on H2-powered aviation. Finally, the article highlights further research potential on job effects related to future H2 demand.",
+      "source_url": "https://doi.org/10.1016/j.ijhydene.2022.10.168",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 19,
+      "bm25_rank": 19,
+      "dense_rank": 19,
+      "rrf_score": 0.02531645569620253,
+      "shared_concepts": [
+        "hydrogen",
+        "aviation",
+        "fuel"
+      ],
+      "distinctive_terms": [
+        "powered",
+        "germany",
+        "macroeconomic",
+        "perspective",
+        "methodological",
+        "approach",
+        "supply",
+        "chain"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 19 and semantic rank 19. Shared terms: hydrogen, aviation, fuel."
+    },
+    {
+      "candidate_id": "openalex_284e4d4699dab4dce680bf46",
+      "candidate_type": "paper",
+      "title": "A review of the impact of ambient conditions and degradation in hybrid fuel cell powered unmanned aerial vehicles",
+      "description": null,
+      "source_url": "https://lirias.kuleuven.be/handle/20.500.12942/750778",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 20,
+      "bm25_rank": 23,
+      "dense_rank": 16,
+      "rrf_score": 0.025206087507926443,
+      "shared_concepts": [
+        "fuel",
+        "cell"
+      ],
+      "distinctive_terms": [
+        "review",
+        "impact",
+        "ambient",
+        "conditions",
+        "degradation",
+        "hybrid",
+        "powered",
+        "unmanned"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 23 and semantic rank 16. Shared terms: fuel, cell."
+    }
+  ]
 }

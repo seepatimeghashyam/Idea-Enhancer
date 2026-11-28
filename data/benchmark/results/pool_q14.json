@@ -1,0 +1,473 @@
+{
+  "query_id": "q14",
+  "query_text": "Virtual reality aerospace maintenance hangar walkthrough for training simulation",
+  "category": "VR/Training",
+  "timestamp": 1795890745.5381558,
+  "local_candidates": [
+    {
+      "candidate_id": "local:RVCE-KSCST-49S-0269",
+      "candidate_type": "local",
+      "title": "An Immersive, Interactive Virtual Walkthrough of a Modern Aerospace Maintenance Hangar",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/49_series/49s_spp/SPP_49S_Technical_Record/14_Projects_sanctioned_under_49th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2025,
+      "domain": "Virtual Reality / Aerospace Simulation",
+      "tech_stack": null,
+      "rank": 1,
+      "bm25_rank": 1,
+      "vector_rank": 1,
+      "rrf_score": 0.03278688524590164,
+      "shared_elements": [
+        "virtual",
+        "reality",
+        "aerospace",
+        "maintenance",
+        "hangar",
+        "walkthrough",
+        "simulation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3344",
+      "candidate_type": "local",
+      "title": "Virtual Herbal Garden Using Virtual Reality Methodology",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 2,
+      "bm25_rank": 2,
+      "vector_rank": 3,
+      "rrf_score": 0.03200204813108039,
+      "shared_elements": [
+        "virtual",
+        "reality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_1847",
+      "candidate_type": "local",
+      "title": "Bridging Reality And Preparedness - Leveraging VR Simulation For Chemical, Biological, Radiological And Nuclear Disaster Response Training",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 3,
+      "bm25_rank": 3,
+      "vector_rank": 2,
+      "rrf_score": 0.03200204813108039,
+      "shared_elements": [
+        "reality",
+        "training",
+        "simulation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-KSCST-47S-0058",
+      "candidate_type": "local",
+      "title": "BEYOND BOUNDARIES: Engineering Journeys in Rural Communities Through XR",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/47_series/47s_spp/47S_SPP_Contents/8_projects_sanctioned_under_47th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2023,
+      "domain": "Extended Reality / Education",
+      "tech_stack": null,
+      "rank": 4,
+      "bm25_rank": 10,
+      "vector_rank": 15,
+      "rrf_score": 0.02761904761904762,
+      "shared_elements": [
+        "reality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3660",
+      "candidate_type": "local",
+      "title": "A Novel Approach To Visualize Air Pollution Using Augmented Reality",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Web Application / Information Systems",
+      "tech_stack": null,
+      "rank": 5,
+      "bm25_rank": 14,
+      "vector_rank": 12,
+      "rrf_score": 0.027402402402402402,
+      "shared_elements": [
+        "reality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0013",
+      "candidate_type": "local",
+      "title": "ChatDev",
+      "description": "Communicative agent simulation platform recreating virtual software development teams to synthesize applications.",
+      "source_url": "https://github.com/OpenBMB/ChatDev",
+      "source_type": "open_source_repository",
+      "year": 2023,
+      "domain": "Multi-Agent Systems / Code Generation",
+      "tech_stack": null,
+      "rank": 6,
+      "bm25_rank": 4,
+      "vector_rank": null,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "virtual",
+        "simulation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0151",
+      "candidate_type": "local",
+      "title": "Learning Visuomotor Quadrotor Flight Through Dynamic Narrow Gaps via Differentiable Simulation",
+      "description": "Threading a quadrotor through a moving narrow gap is a demanding test of agile flight, requiring centimeter-level spatial alignment and precise temporal execution. We address this challenge using a control policy that operates directly on onboard visual and inertial measurements to output collective thrust and body-rate commands. The task is difficult because success lies on a thin feasible manifold: small errors in timing, position, attitude, or visual observability cause collision. Prior planning and learning methods rely on privileged state, teachers, planners, or distillation; learning dynamic narrow-gap traversal directly, from scratch, remains open. We introduce a differentiable moving-gap formulation that gates centering, alignment, and smooth collision terms by signed distance to a time-varying gap plane, turning a sparse traversal event into a dense pathwise objective. We integrate this formulation into a visual-feature-to-command policy trained in one stage from random initialization, without a teacher, planner, or distillation. We validate our approach in both synthetic and real-world experiments. In controlled benchmarks, we demonstrate that pathwise gradients significantly outperform score-function gradients for precision-critical tasks, yielding a 99.3% success rate in simulation after only a few minutes of training on a single GPU. Furthermore, the policy transfers directly to a real quadrotor, successfully crossing a dynamic narrow gap from varied initial conditions using onboard sensing and inertial measurements, achieving an 80% success rate over 10 physical trials.",
+      "source_url": "https://arxiv.org/abs/2610.37557v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": "Simulation",
+      "rank": 7,
+      "bm25_rank": null,
+      "vector_rank": 4,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "training",
+        "simulation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0226",
+      "candidate_type": "local",
+      "title": "Gesture Controlled Instrument Panel in Augmented Reality Using LabVIEW",
+      "description": "This project focuses on developing an augmented reality-based gesture control system using LabVIEW, where hand gestures are captured using a webcam, processed using classical image processing techniques, and interpreted to control system outputs. Multiple intermediate image representations are displayed on the front panel to provide insight into each stage of processing, making the system both functional and educational. Unlike virtual reality, which replaces the real environment entirely, AR preserves the real-world view and augments it with additional data. In gesture-based AR systems, users can see both their physical gestures and the system\u2019s interpretation of those gestures simultaneously, leading to more intuitive interaction. Index Terms\u2014Augmented Reality, Gesture Control, LabVIEW, Image Processing, Human Computer Interaction.",
+      "source_url": "https://doi.org/10.55041/ijcope.v2i7.034",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": null,
+      "rank": 8,
+      "bm25_rank": 5,
+      "vector_rank": null,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "virtual",
+        "reality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0165",
+      "candidate_type": "local",
+      "title": "KEPT: Conformal Keepouts Kept in Planning for Enclosed-Space Navigation in Degraded Sensing",
+      "description": "Autonomous vehicles in enclosed spaces such as tunnels and mines rely on range maps that smoke, dust and fog make inaccurate. Conformal prediction calibrates a keepout around the mapped walls that covers the true unsafe set at a chosen probability. Typically an unmodified planner treats the keepout as an inflated obstacle, and nothing ensures that the vehicle can stop before the keepout as it moves when sensing degrades. In narrow passages this margin and the planner's buffer close the route, and existing remedies recover reach by relaxing the coverage level. This paper conditions the conformal margin on a label-free severity estimate to hold coverage near its target as degradation varies. A planning and control layer enforces one braking-distance condition on the keepout at plan time and at every command, takes the measured tracking residual as its only margin and never alters the keepout. The keepout is validated on ground-robot smoke recordings and the closed loop in simulated quadrotor flights in a foggy tunnel against the standard deployment. In closed-loop simulation the proposed system substantially reduces entries into the calibrated keepout and reaches numerically more goals than the deployment pattern in both calibration regimes, an observed gain of 3.2 percentage points pooled whose per-regime confidence intervals include zero. The per-class keepout holds its coverage near the target on held-out recordings.",
+      "source_url": "https://arxiv.org/abs/2610.37217v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": "Simulation",
+      "rank": 9,
+      "bm25_rank": null,
+      "vector_rank": 5,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "simulation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0129",
+      "candidate_type": "local",
+      "title": "Supply Chain Monitoring of Chemical and Aerospace Components Using Blockchain",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating supply chain monitoring of chemical and aerospace components using blockchain. Published in 2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2025).",
+      "source_url": "https://doi.org/10.1109/csitss67709.2025.11295848",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Blockchain / Decentralized Systems",
+      "tech_stack": null,
+      "rank": 10,
+      "bm25_rank": 6,
+      "vector_rank": null,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [
+        "aerospace"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0152",
+      "candidate_type": "local",
+      "title": "Rendering-Free Event Frame Simulation for Fast Reinforcement Learning of Autonomous Robot Navigation",
+      "description": "Event cameras offer low latency, high dynamic range, and milliwatt-level power consumption, making them ideal for agile robots such as tiny drones navigating through cluttered environments. However, existing simulators generally render photorealistic images before converting them into events, making large-scale reinforcement learning prohibitively slow. We propose an analytic event simulator that exploits what event cameras fundamentally measure - moving contrast edges - to synthesize event streams directly from scene geometry and ego-motion without visual rendering. Our simulator generates a 64x64 event observation in 17 microseconds on a single GPU - over 400x faster than a state-of-the-art rendering pipeline - enabling end-to-end reinforcement learning for goal-directed obstacle avoidance to converge in under 30 minutes - three orders of magnitude faster than training on rendered events. Policies transfer zero-shot to physically based event simulations (ray-traced Isaac Sim). Our policy reaches 83% success in cluttered courses unseen during training (mid-difficulty, traversability probability approx. 0.57), at 2.4 m/s average goal velocity, and retains 70% in a simulated texture-dense indoor hall. Furthermore, we quantized the policy to a 1.2 MB int8 network running fully onboard a 56-gram Crazyflie equipped with a Prophesee GenX320 event camera and an OpenMV N6 microcontroller board. Without any fine-tuning, external processing, or positioning, the policy achieves an average success rate of 82% (5/5, 5/6, 4/6 flights) across three real-world obstacle courses of increasing difficulty. Code: https://github.com/tudelft/rendering-free-event-nav",
+      "source_url": "https://arxiv.org/abs/2610.37543v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": "Simulation",
+      "rank": 11,
+      "bm25_rank": null,
+      "vector_rank": 6,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [
+        "training",
+        "simulation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_1519",
+      "candidate_type": "local",
+      "title": "Hydro Hive : Ai-driven Solutions For Dam Maintenance And Agriculture",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Smart Agriculture / AI",
+      "tech_stack": null,
+      "rank": 12,
+      "bm25_rank": 7,
+      "vector_rank": null,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [
+        "maintenance"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0087",
+      "candidate_type": "local",
+      "title": "learnsyslab/gym-pybullet-drones",
+      "description": "PyBullet Gymnasium environments for single and multi-agent reinforcement learning of quadcopter control",
+      "source_url": "https://github.com/learnsyslab/gym-pybullet-drones",
+      "source_type": "open_source_repository",
+      "year": 2020,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 13,
+      "bm25_rank": null,
+      "vector_rank": 7,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3992",
+      "candidate_type": "local",
+      "title": "Automated Solar Panel Positioning And Maintenance System Using Labview",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Web Application / Information Systems",
+      "tech_stack": null,
+      "rank": 14,
+      "bm25_rank": 8,
+      "vector_rank": null,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "maintenance"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0160",
+      "candidate_type": "local",
+      "title": "VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning",
+      "description": "Vision-Language-Action (VLA) models integrate high-level reasoning with low-level action execution for end-to-end robotic control. However, most VLA models target static manipulation in unconstrained environments, overlooking spatial constraints and dynamic obstacles. Fine-tuning VLAs on obstacle-avoidance data is a straightforward solution, but collecting such data is costly, especially for dynamic scenarios, and may degrade their original task capabilities. To address these limitations, we propose VLA-Stem, a lightweight, reinforcement-learning-based safety mechanism for VLA systems. Without fine-tuning the underlying VLA policy, VLA-Stem converts its action chunks into motion references and uses trajectory-level guidance to preserve their spatial intent while allowing flexible motion and timing adjustments. Conditioned on these references, robot proprioception, and local obstacle information, the Stem policy adaptively modifies execution at inference time, preserving the original task intent while enabling responsive adaptation to spatial constraints and dynamic obstacles. For robust and sample-efficient training, we combine teacher-student distillation with curriculum learning. We evaluate VLA-Stem on reference following, static spatial constraints, and dynamic obstacle avoidance. Across six constrained simulation settings, VLA-Stem achieves 52.8% average collision-free task success versus 23.7% for the strongest safety baseline, while preserving base-policy performance in obstacle-free settings; real-world experiments further show consistent collision reductions under static and dynamic obstacles. These results demonstrate that VLA-Stem couples high-level VLA task intent with rapid, reflex-like responses to immediate physical risks, providing a brainstem-inspired mechanism for robust robot execution.",
+      "source_url": "https://arxiv.org/abs/2610.37378v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": "Simulation",
+      "rank": 15,
+      "bm25_rank": null,
+      "vector_rank": 8,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "training",
+        "simulation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_4820",
+      "candidate_type": "local",
+      "title": "A Generic Framework On Encyclopedia Using Augmented Reality",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 16,
+      "bm25_rank": 9,
+      "vector_rank": null,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "reality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0094",
+      "candidate_type": "local",
+      "title": "Farama-Foundation/Gymnasium-Robotics",
+      "description": "A collection of robotics simulation environments for reinforcement learning",
+      "source_url": "https://github.com/Farama-Foundation/Gymnasium-Robotics",
+      "source_type": "open_source_repository",
+      "year": 2021,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 17,
+      "bm25_rank": null,
+      "vector_rank": 9,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "simulation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0098",
+      "candidate_type": "local",
+      "title": "ScIntBench: Physical Interaction Plausibility in 3D Scene Generation",
+      "description": "Existing evaluations of text-conditioned 3D indoor scene generation largely emphasize semantic fidelity and physical validity at rest, leaving interaction-time physical reliability insufficiently assessed. To address this gap, we introduce ScIntBench, a unified benchmark centered on interaction readiness: it executes prescribed manipulation actions (e.g., pushing, opening, and surface probing) in physics simulation and measures task success, capability and progress, post-interaction integrity, and dynamic plausibility. Multi-view semantic and static physical evaluations complement these metrics and help explain interaction outcomes. We systematically evaluate 12 state-of-the-art scene generation systems across 10 room types. Our results reveal that strong semantic and static physical performance does not necessarily translate into interaction readiness: a system with near-perfect static plausibility completes only 11.54% of interactions, 7 of the 12 systems produce scenes that cannot support any interaction, and even the best system succeeds in only 36.92% of prescribed tasks. These findings highlight two fundamental challenges in generating interaction-ready scenes: providing the necessary physical interaction capabilities and ensuring reliable physical behavior under active manipulation.",
+      "source_url": "https://arxiv.org/abs/2610.37326v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Computer Vision / Pattern Recognition",
+      "tech_stack": null,
+      "rank": 18,
+      "bm25_rank": null,
+      "vector_rank": 10,
+      "rrf_score": 0.014285714285714285,
+      "shared_elements": [
+        "simulation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0241",
+      "candidate_type": "local",
+      "title": "Digital Twin Driven Predictive Maintenance for Belt Driven Conveyor Systems in Smart Factories",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating digital twin driven predictive maintenance for belt driven conveyor systems in smart factories. Published in 2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2025).",
+      "source_url": "https://doi.org/10.1109/csitss67709.2025.11295713",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Machine Learning / Applied AI",
+      "tech_stack": null,
+      "rank": 19,
+      "bm25_rank": 11,
+      "vector_rank": null,
+      "rrf_score": 0.014084507042253521,
+      "shared_elements": [
+        "maintenance"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_4298",
+      "candidate_type": "local",
+      "title": "AR Indoor Navigation",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 20,
+      "bm25_rank": null,
+      "vector_rank": 11,
+      "rrf_score": 0.014084507042253521,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    }
+  ],
+  "live_candidates": [
+    {
+      "candidate_id": "openalex_171228a0609ff910d708ab6e",
+      "candidate_type": "paper",
+      "title": "Can situation awareness be predicted? : investigating relationships between CogScreen-AE and pilot situation awareness",
+      "description": "This two-phase study assessed CogScreen - Aerospace Edition (AE) as a potential predictor of situation awareness. It included a cognitive task analysis and empirical testing. Sea King pilots completed the CogScreen - AE and a situation awareness task (a simulated deck landing tasks using the Helicopter Maritime Environmental Trainer). The Situation Awareness Global Assessment Technique was used to assess participants' situation awareness. The situation awareness task revealed experienced pilots to be more accurate and more confident than inexperienced pilots. Probes tapping into comprehension of the situation resulted in the highest accuracy. The higher situation awareness performance group included some inexperienced pilots. This group demonstrated better accuracy on two CogScreen - AE tests. These results demonstrate a predictive relationship with situation awareness in terms of recall, retention; working memory, attribute identification and motor tracking.",
+      "source_url": "https://doi.org/10.22215/etd/2011-08630",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 1,
+      "bm25_rank": 1,
+      "dense_rank": 2,
+      "rrf_score": 0.03252247488101534,
+      "shared_concepts": [
+        "aerospace"
+      ],
+      "distinctive_terms": [
+        "can",
+        "situation",
+        "awareness",
+        "predicted",
+        "investigating",
+        "relationships",
+        "between",
+        "cogscreen"
+      ],
+      "explanation": "Retrieved from openalex by keyword rank 1 and semantic rank 2. Shared terms: aerospace."
+    },
+    {
+      "candidate_id": "openalex_994081c43533f85b2809d26e",
+      "candidate_type": "paper",
+      "title": "Piloting the Future: Design of a Data Link System With Airport Moving Map for Taxi Operations",
+      "description": "This study presents the design, implementation, and evaluation of an integrated Controller-Pilot Data Link Communication (CPDLC) and Airport Moving Map (AMM) system intended to enhance communication, situational awareness, and safety during airport surface operations. Radio-based communication, though ubiquitous, often results in ambiguity, increased cognitive workload, and susceptibility to miscommunication, especially during non-nominal or time-critical taxiing procedures. CPDLC offers a digital alternative by transmitting standardized, pre-formatted clearances. When coupled with AMM, which provides real-time graphical taxi route visualization, the resulting integration has the potential to substantially reduce pilot workload, support better decision-making, and increase communication fidelity. In this study, eight licensed commercial pilots completed six nominal and non-nominal taxiing procedures on a flight simulator using either the CPDLC-AMM system, or radio instructions and paper chart as baseline. The scenarios were carefully designed and divided into three functional groups: time-sensitive sequencing and prioritization, adaptive rerouting due to operational constraints, and nominal routine operations. Each participant experienced each type of scenario in both communication modes using a counterbalanced design to eliminate learning effects and maintain task complexity. The results showed that the CPDLC-AMM system resulted in lower workload compared to baseline, particularly in managing unexpected changes in routing and clearances, and improved situational awareness. Workload was evaluated using the NASA-TLX, and the integrated system demonstrated consistent reductions across all six dimensions, with especially lower ratings in mental demand, effort, and frustration. Situational awareness, measured through SAGAT, was significantly higher when using the CPDLC-AMM, indicating better perception, comprehension, and projection of traffic situations. Notably, the radio communication condition led to 9 navigational errors out of 24 trials, while CPDLC-AMM led to zero errors. These errors were primarily due to wrong turns and occurred most often in scenarios involving time pressure or dynamic rerouting. The usability of the integrated system was assessed using the System Usability Scale (SUS) and the User Experience Questionnaire (UEQ). The SUS score averaged 68.12, indicating acceptable usability. UEQ results were favourable across dimensions like efficiency, clarity, and stimulation, while moderate concerns were noted in reliability and attractiveness. Participant feedback reinforced the usability findings, with most pilots reporting that the system was intuitive, easy to learn, and beneficial in high workload situations, though a few highlighted concerns about increased head-down time and the need for timely visual alerts. Overall, the findings support the implementation of integrated digital communication systems in modern cockpit environments to ensure safety, efficiency, and scalability in increasingly congested airport operations. Importantly, this is the first study to have shown better performance when using the CPDLC-AMM during time-critical scenarios, compared to radio communication. CPDLC-AMM integration clearly reduced error rates, improved pilot workload ratings, and enhanced SA, particularly in scenarios where radio proved insufficient. The study contributes to ongoing efforts to modernize surface operations and provides a validated prototype that could be further refined for operational deployment.",
+      "source_url": "https://publications.polymtl.ca/68168/",
+      "source_type": "research_paper",
+      "source_provider": "openalex",
+      "rank": 2,
+      "bm25_rank": null,
+      "dense_rank": 1,
+      "rrf_score": 0.01639344262295082,
+      "shared_concepts": [],
+      "distinctive_terms": [
+        "piloting",
+        "future",
+        "data",
+        "link",
+        "airport",
+        "moving",
+        "map",
+        "taxi"
+      ],
+      "explanation": "Retrieved from openalex by semantic rank 1."
+    },
+    {
+      "candidate_id": "github_885b8eed4f4cbbfaaa32c8b7",
+      "candidate_type": "repository",
+      "title": "anveshr312-bit/VISION",
+      "description": null,
+      "source_url": "https://github.com/anveshr312-bit/VISION",
+      "source_type": "open_source_repository",
+      "source_provider": "github",
+      "rank": 3,
+      "bm25_rank": null,
+      "dense_rank": 3,
+      "rrf_score": 0.015873015873015872,
+      "shared_concepts": [],
+      "distinctive_terms": [
+        "anveshr312",
+        "bit",
+        "vision",
+        "typescript"
+      ],
+      "explanation": "Retrieved from github by semantic rank 3."
+    }
+  ]
+}
