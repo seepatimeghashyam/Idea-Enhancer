@@ -175,6 +175,28 @@ class LiveSearchService:
                     break
                 candidates.setdefault(candidate.candidate_id, candidate)
 
+        # Citation graph expansion for OpenAlex papers
+        if os.getenv("LIVE_CITATION_EXPANSION", "0").strip().lower() not in {"0", "false", "no", "off"}:
+            try:
+                openalex_provider = next((p for p in self.providers if p.name == "openalex"), None)
+                if openalex_provider and candidates:
+                    # Get OpenAlex work IDs from candidates
+                    work_ids = [
+                        c.provider_id for c in candidates.values()
+                        if c.source_provider == "openalex" and c.provider_id
+                    ][:10]  # Limit to first 10 for API call budget
+                    if work_ids:
+                        expanded = await openalex_provider.expand_citations(
+                            self._client, work_ids, max_per_work=3, direction="both"
+                        )
+                        for c in expanded:
+                            if len(candidates) >= MAX_CANDIDATES_TOTAL:
+                                break
+                            candidates.setdefault(c.candidate_id, c)
+                        logger.info("Citation expansion added %d candidates", len(expanded))
+            except Exception as e:
+                logger.warning("Citation expansion failed: %s", e)
+
         if not candidates:
             if any(result.state not in _SUCCESS_PROVIDER_STATES for result in provider_results):
                 return LiveSearchResponse(
