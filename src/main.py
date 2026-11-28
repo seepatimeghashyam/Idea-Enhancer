@@ -513,21 +513,20 @@ def create_app(
                 outcome = gateway.search(query, top_k)
                 matches = []
                 for match in outcome.matches:
-                    m = match.project
                     matches.append({
-                        "id": f"local:{m.project_id}",
-                        "type": m.source_type,
-                        "title": m.title,
-                        "description": m.abstract,
-                        "url": m.source_url,
-                        "source": m.source_type,
-                        "year": m.year,
-                        "domain": m.domain,
-                        "tech_stack": m.tech_stack,
-                        "rank": match.rank,
-                        "bm25_rank": match.bm25_rank,
-                        "vector_rank": match.vector_rank,
-                        "rrf_score": match.rrf_score,
+                        "id": f"local:{match.get('project_id')}",
+                        "type": match.get("source_type"),
+                        "title": match.get("title"),
+                        "description": match.get("abstract", ""),
+                        "url": match.get("source_url"),
+                        "source": match.get("source_type"),
+                        "year": match.get("year"),
+                        "domain": match.get("domain"),
+                        "tech_stack": match.get("tech_stack"),
+                        "rank": match.get("rank"),
+                        "bm25_rank": match.get("bm25_rank"),
+                        "vector_rank": match.get("vector_rank"),
+                        "rrf_score": match.get("rrf_score"),
                     })
             except CoreSearchUnavailable:
                 return error_response(503, "SEARCH_UNAVAILABLE", SEARCH_UNAVAILABLE_MESSAGE)
