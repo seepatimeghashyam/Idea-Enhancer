@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (() => {
+      let theme = null;
+      try { theme = localStorage.getItem('idea-enhancer-theme'); } catch (_) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light';
+      }
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
+  <title>About — Idea Enhancer</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./pages.css">
+</head>
+<body class="min-h-full flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
+
+  <canvas id="particle-canvas" class="fixed inset-0 -z-10 pointer-events-none" aria-hidden="true"></canvas>
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:z-50 focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-white focus:text-indigo-700 focus:font-semibold focus:shadow-lg">Skip to main content</a>
+
+  <header class="app-header sticky top-0 z-40 bg-[#FBF9F5]/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 min-h-[5rem] flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+      <a href="index.html" class="flex items-center gap-3.5 group" aria-label="Idea Enhancer Home">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-700 to-violet-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-200" id="logo-mark">
+          <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-base sm:text-lg font-bold tracking-tight text-slate-900 group-hover:text-indigo-600 transition-colors">Idea Enhancer</span>
+          </div>
+          <p class="text-xs text-slate-600 hidden sm:block">Engineering project prior-art discovery</p>
+        </div>
+      </a>
+
+      <nav aria-label="Primary" class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600" id="nav-links"></nav>
+
+      <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false">
+        <span class="theme-toggle-art" aria-hidden="true">
+          <svg class="theme-sun" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="7" /><path d="M20 2v5M20 33v5M2 20h5M33 20h5M7.3 7.3l3.5 3.5m18.4 18.4 3.5 3.5m0-25.4-3.5 3.5m-18.4 18.4-3.5 3.5" /></svg>
+          <svg class="theme-moon" viewBox="0 0 40 40" fill="none"><path d="M29.6 25.5A14.2 14.2 0 0 1 14.5 10.4 14.5 14.5 0 1 0 29.6 25.5Z" /><path d="M29 5.5v4m-2-2h4" /></svg>
+        </span>
+      </button>
+
+      <div class="flex items-center gap-3" id="auth-section"></div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1" class="flex-1 flex flex-col focus:outline-none">
+
+    <!-- Page Header -->
+    <section class="py-16 sm:py-24 bg-white border-b border-slate-200/80">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-xs font-bold text-indigo-700 uppercase tracking-wider mb-6">About Idea Enhancer</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
+          How It Works:<br>
+          <span class="font-editorial italic font-normal text-indigo-600">Methodology & Boundaries</span>
+        </h1>
+        <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+          A transparent, evidence-based research copilot for engineering students. No invented similarity scores—just traceable matches from verified sources.
+        </p>
+      </div>
+    </section>
+
+    <!-- Abstract / Overview -->
+    <section class="py-16 sm:py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="surface-card rounded-3xl p-8 sm:p-12 bg-white border border-slate-200/90 shadow-md">
+          <div class="flex flex-col sm:flex-row gap-8 items-start">
+            <div class="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center shrink-0">
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h2 class="text-2xl font-bold text-slate-900 mb-4">What Is Idea Enhancer?</h2>
+              <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed">
+                <p class="mb-4">
+                  Idea Enhancer is a research intelligence platform designed specifically for engineering students who need to evaluate project ideas against existing work before committing months to development. It combines <strong>local historical project records</strong> with <strong>live research discovery</strong> from open academic and code repositories.
+                </p>
+                <p class="mb-4">
+                  Unlike traditional similarity checkers that produce opaque percentage scores, Idea Enhancer provides <strong>ordered, traceable matches</strong> with explicit evidence: shared technical concepts, source links, verification status, and domain classification. Every result can be inspected, verified, and cited.
+                </p>
+                <p class="mb-4">
+                  The platform includes an optional <strong>AI enhancement layer</strong> (powered by multiple free-tier models including Gemini, OpenRouter, and HuggingFace) that analyzes retrieved evidence to suggest differentiation angles, identify gaps, and propose technical improvements—all grounded in the actual search results.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Principles -->
+    <section class="py-16 sm:py-24 bg-[#FBF9F5] border-t border-b border-slate-200/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-3 block">Core Principles</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Guiding Design Decisions</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article class="p-6 rounded-2xl bg-white ambient-panel border border-slate-200/80 hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+            <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg mb-2">Evidence Over Scores</h3>
+            <p class="text-slate-600 leading-relaxed">
+              No invented similarity percentages. Results are ordered by relevance with explicit shared concepts, verification tags, and source provenance. You decide what constitutes overlap.
+            </p>
+          </article>
+
+          <article class="p-6 rounded-2xl bg-white ambient-panel border border-slate-200/80 hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+            <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg mb-2">Hybrid by Default</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Smart routing automatically chooses local dataset search for well-trodden domains and live API discovery for novel queries. You can override to force local-only or live-only modes.
+            </p>
+          </article>
+
+          <article class="p-6 rounded-2xl bg-white ambient-panel border border-slate-200/80 hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg mb-2">Multi-Model AI</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Not locked to one provider. Choose from Gemini, OpenRouter (Mixtral, Llama3, Qwen), HuggingFace, Groq, or local Ollama. Compare outputs side-by-side for the best insights.
+            </p>
+          </article>
+
+          <article class="p-6 rounded-2xl bg-white ambient-panel border border-slate-200/80 hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg mb-2">Privacy-First</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Demo mode uses localStorage only—no backend, no tracking. Your ideas never leave your browser unless you explicitly use Live Search (which queries public APIs). No accounts required.
+            </p>
+          </article>
+
+          <article class="p-6 rounded-2xl bg-white ambient-panel border border-slate-200/80 hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+            <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg mb-2">Transparent Limitations</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Cannot prove universal originality. Coverage depends on indexed datasets and public APIs. Rank numbers show order only. Not a plagiarism detector—use for exploration, not verification.
+            </p>
+          </article>
+
+          <article class="p-6 rounded-2xl bg-white ambient-panel border border-slate-200/80 hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+            <div class="w-10 h-10 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg mb-2">Student-Centric</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Built for engineering capstone, final-year projects, and research proposals. Domain tags, tech stack extraction, and year filtering match academic workflows. Export to BibTeX, CSV, JSON.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Architecture -->
+    <section class="py-16 sm:py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-3 block">Technical Architecture</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Under the Hood</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Search Pipeline -->
+          <div class="surface-card rounded-3xl p-8 bg-white border border-slate-200/90 shadow-md">
+            <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-lg">1</span>
+              Search Pipeline
+            </h3>
+            <div class="space-y-6 text-slate-600">
+              <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 text-sm font-bold">A</div>
+                <div>
+                  <h4 class="font-semibold text-slate-900">Query Analysis</h4>
+                  <p class="text-sm mt-1">Extracts technical terms, domain indicators, novelty signals. Computes complexity score for routing.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 text-sm font-bold">B</div>
+                <div>
+                  <h4 class="font-semibold text-slate-900">Smart Routing</h4>
+                  <p class="text-sm mt-1">Routes to Local (common/well-researched), Live (novel/emerging), or Hybrid. Configurable threshold.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 text-sm font-bold">C</div>
+                <div>
+                  <h4 class="font-semibold text-slate-900">Local Search (BM25 + Dense + RRF)</h4>
+                  <p class="text-sm mt-1">2,000+ verified records. ChromaDB + BAAI/bge-small-en-v1.5 + BM25. Optional cross-encoder reranking.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 text-sm font-bold">D</div>
+                <div>
+                  <h4 class="font-semibold text-slate-900">Live Search (Multi-Provider)</h4>
+                  <p class="text-sm mt-1">OpenAlex, GitHub, Semantic Scholar, arXiv, CrossRef, CORE. Citation graph expansion. Query expansion with 200+ engineering synonyms.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 text-sm font-bold">E</div>
+                <div>
+                  <h4 class="font-semibold text-slate-900">Fusion & Ranking</h4>
+                  <p class="text-sm mt-1">Reciprocal Rank Fusion (k=60) merges sources. Optional cross-encoder (ms-marco-MiniLM-L-6-v2) for precision boost.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enhancement Pipeline -->
+          <div class="surface-card rounded-3xl p-8 bg-white border border-slate-200/90 shadow-md">
+            <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-lg">2</span>
+              AI Enhancement Pipeline
+            </h3>
+            <div class="space-y-6 text-slate-600">
+              <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 text-sm font-bold">A</div>
+                <div>
+                  <h4 class="font-semibold text-slate-900">Evidence Packing</h4>
+                  <p class="text-sm mt-1">Top-k matches compressed into structured context: titles, abstracts, shared concepts, citations, verification tags.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 text-sm font-bold">B</div>
+                <div>
+                  <h4 class="font-semibold text-slate-900">Model Selection</h4>
+                  <p class="text-sm mt-1">User chooses from Gemini, OpenRouter (Mixtral/Llama3/Qwen), HuggingFace, Groq, Ollama. Fallback chain on quota/error.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 text-sm font-bold">C</div>
+                <div>
+                  <h4 class="font-semibold text-slate-900">Structured Prompting</h4>
+                  <p class="text-sm mt-1">Schema-enforced JSON output: differentiation angles, technical gaps, risk assessment, next steps, citations.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 text-sm font-bold">D</div>
+                <div>
+                  <h4 class="font-semibold text-slate-900">Validation & Caching</h4>
+                  <p class="text-sm mt-1">Response validated against schema. Cached by (query hash + model + evidence hash). Streaming for perceived speed.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 text-sm font-bold">E</div>
+                <div>
+                  <h4 class="font-semibold text-slate-900">Comparison View</h4>
+                  <p class="text-sm mt-1">Side-by-side model outputs with token counts, latency, cost estimates. Export enhanced analysis.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Sources -->
+    <section class="py-16 sm:py-24 bg-[#FBF9F5] border-t border-b border-slate-200/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-3 block">Data Sources</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Where Results Come From</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article class="p-6 rounded-2xl bg-white ambient-panel border border-slate-200/80 hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-900">Local Dataset</h3>
+                <p class="text-xs text-slate-500">2,000+ verified projects</p>
+              </div>
+            </div>
+            <ul class="text-sm text-slate-600 space-y-2">
+              <li>• Institutional project archives (KSCST, RVCE, IEEE)</li>
+              <li>• Research papers with DOIs</li>
+              <li>• Synthetic abstracts for previously placeholder records</li>
+              <li>• Domain tags, tech stack, year, verification status</li>
+              <li>• Pre-computed embeddings (BAAI/bge-small-en-v1.5)</li>
+            </ul>
+          </article>
+
+          <article class="p-6 rounded-2xl bg-white ambient-panel border border-slate-200/80 hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-900">OpenAlex</h3>
+                <p class="text-xs text-slate-500">200M+ scholarly works</p>
+              </div>
+            </div>
+            <ul class="text-sm text-slate-600 space-y-2">
+              <li>• Papers, preprints, conference proceedings</li>
+              <li>• Authors, institutions, venues, concepts</li>
+              <li>• Citation counts, open access status</li>
+              <li>• Forward/backward citation graph traversal</li>
+              <li>• Free API, no key required</li>
+            </ul>
+          </article>
+
+          <article class="p-6 rounded-2xl bg-white ambient-panel border border-slate-200/80 hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-900">GitHub</h3>
+                <p class="text-xs text-slate-500">Code repositories</p>
+              </div>
+            </div>
+            <ul class="text-sm text-slate-600 space-y-2">
+              <li>• Repositories by name, description, README</li>
+              <li>• Stars, forks, language, topics</li>
+              <li>• Query expansion for technical terms</li>
+              <li>• Optional token for higher rate limits</li>
+              <li>• Free tier: 30 req/min (authenticated)</li>
+            </ul>
+          </article>
+
+          <article class="p-6 rounded-2xl bg-white ambient-panel border border-slate-200/80 hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-900">Semantic Scholar</h3>
+                <p class="text-xs text-slate-500">200M+ papers with AI</p>
+              </div>
+            </div>
+            <ul class="text-sm text-slate-600 space-y-2">
+              <li>• Semantic search with embeddings</li>
+              <li>• TLDR summaries, influential citations</li>
+              <li>• Author profiles, venues, fields of study</li>
+              <li>• Free API key (optional, higher limits)</li>
+              <li>• Citation graph, references</li>
+            </ul>
+          </article>
+
+          <article class="p-6 rounded-2xl bg-white ambient-panel border border-slate-200/80 hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-900">arXiv</h3>
+                <p class="text-xs text-slate-500">2M+ preprints</p>
+              </div>
+            </div>
+            <ul class="text-sm text-slate-600 space-y-2">
+              <li>• Physics, CS, Math, Engineering preprints</li>
+              <li>• Categories, authors, comments, versions</li>
+              <li>• RSS/Atom + API (no key required)</li>
+              <li>• Updated daily, full metadata</li>
+              <li>• Great for cutting-edge research</li>
+            </ul>
+          </article>
+
+          <article class="p-6 rounded-2xl bg-white ambient-panel border border-slate-200/80 hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-900">CrossRef</h3>
+                <p class="text-xs text-slate-500">DOI resolution & metadata</p>
+              </div>
+            </div>
+            <ul class="text-sm text-slate-600 space-y-2">
+              <li>• 140M+ DOI records</li>
+              <li>• Bibliographic metadata, citations</li>
+              <li>• Free REST API (polite pool)</li>
+              <li>• Links to full text where available</li>
+              <li>• Funders, licenses, references</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scope & Limits -->
+    <section class="py-16 sm:py-24 bg-white">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="surface-card rounded-3xl p-8 sm:p-12 bg-indigo-50/60 border border-indigo-100 text-indigo-950">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-xl shrink-0 shadow-md shadow-indigo-500/20">
+              ⚖️
+            </div>
+            <div class="flex-1 text-base leading-relaxed">
+              <h3 class="font-bold text-base text-indigo-950 mb-2">Guiding Principle & Scope Boundaries</h3>
+              <p class="text-indigo-900/80 mb-3">
+                Idea Enhancer is a research copilot for student engineers, <strong>not a plagiarism detector</strong>. It cannot prove universal originality or catalog all worldwide projects. It retrieves traceable matches from indexed project records and open datasets.
+              </p>
+              <p class="text-indigo-800/70">
+                Rank numbers show order only, never similarity percentages. Our mission is to help you explore past engineering work with confidence and clarity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer bg-[#F8F6F1] border-t border-slate-200 py-10 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <p class="font-bold text-slate-800">Idea Enhancer</p>
+        <p class="text-slate-500 mt-1">v2.0.0-beta — Engineering project prior-art discovery</p>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a>
+        <a href="get-started.html" class="hover:text-indigo-600 transition-colors">Get Started</a>
+        <a href="search.html" class="hover:text-indigo-600 transition-colors">Search</a>
+        <a href="settings.html" class="hover:text-indigo-600 transition-colors">Settings</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./config.js"></script>
+  <script src="./shared/auth.js"></script>
+  <script src="./shared/router.js"></script>
+  <script type="module" src="./script.js"></script>
+</body>
+</html>

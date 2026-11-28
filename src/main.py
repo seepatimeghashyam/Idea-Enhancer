@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import logging
 import os
 import threading
@@ -28,6 +29,10 @@ from src.enhance.contracts import EnhanceRequest
 from src.enhance.provider import ProviderBadOutput, ProviderUnavailable
 from src.enhance.service import EnhanceService
 from src.enhance.provider import EnhancementProvider
+from src.hybrid_search import HybridSearchService, HybridSearchConfig, create_hybrid_search_service
+from src.multi_model import MultiModelEnhancer, get_provider, MODEL_REGISTRY
+from src.additional_providers import get_additional_provider
+import httpx
 
 MIN_IDEA_LENGTH = 10
 MAX_IDEA_LENGTH = 2000
@@ -569,6 +574,214 @@ def create_app(
                 "result_count": len(matches),
                 "matches": matches,
             })
+
+    # === V2 Hybrid Search Endpoint ===
+    @app.post("/v2/search/hybrid")
+    async def hybrid_search(
+        idea: str = Body(..., min_length=10, max_length=2000),
+        top_k: int = Body(5, ge=1, le=20),
+        mode: str = Body("auto", pattern="^(auto|local|live|hybrid)$"),
+    ) -> JSONResponse:
+        """Hybrid search with smart routing between local and live sources."""
+        try:
+            hybrid_config = HybridSearchConfig(
+                innovation_threshold=float(os.getenv("HYBRID_INNOVATION_THRESHOLD", "0.7")),
+                common_query_cache_ttl=int(os.getenv("HYBRID_CACHE_TTL", "3600")),
+                enable_cross_encoder=os.getenv("USE_CROSS_ENCODER", "1").lower() not in {"0", "false", "no"},
+                enable_citation_expansion=os.getenv("LIVE_CITATION_EXPANSION", "0").lower() not in {"0", "false", "no"},
+                enable_query_expansion=os.getenv("LIVE_QUERY_EXPANSION", "0").lower() not in {"0", "false", "no"}
+            )
+            
+            hybrid_service = await create_hybrid_search_service()
+            # Override config if needed
+            hybrid_service.config = hybrid_config
+            
+            result = await hybrid_service.search(idea, top_k, mode)
+            
+            return JSONResponse(content={
+                "status": "success",
+                "query": idea,
+                "mode_used": result["mode_used"],
+                "analysis": result["analysis"],
+                "result_count": result["result_count"],
+                "matches": result["matches"],
+                "warnings": result["warnings"],
+                "latency_ms": result["latency_ms"],
+                "local_count": result.get("local_count", 0),
+                "live_count": result.get("live_count", 0)
+            })
+        except Exception as e:
+            logger.exception("Hybrid search failed")
+            return error_response(500, "HYBRID_SEARCH_FAILED", str(e))
+
+    # === V2 Multi-Model Enhancement Endpoint ===
+    @app.post("/v2/enhance/multi")
+    async def multi_model_enhance(
+        idea: str = Body(..., min_length=10, max_length=2000),
+        top_k: int = Body(5, ge=1, le=20),
+        mode: str = Body("hybrid", pattern="^(local|live|hybrid)$"),
+        models: list[str] = Body(default=["gemini-1.5-flash"]),
+        compare: bool = Body(False),
+    ) -> JSONResponse:
+        """Enhance idea using multiple AI models with optional comparison."""
+        try:
+            # First get search results for evidence
+            if mode == "live":
+                try:
+                    outcome = await live_service.search(idea, top_k)
+                    evidence = list(outcome.matches)
+                except LiveSearchUnavailable as e:
+                    return error_response(503, "LIVE_SEARCH_UNAVAILABLE", "Live sources unavailable", {"providers": e.providers})
+            else:
+                try:
+                    outcome = gateway.search(idea, top_k)
+                    evidence = []
+                    for match in outcome.matches:
+                        evidence.append({
+                            "candidate_id": match.get("candidate_id"),
+                            "source_provider": match.get("source_type"),
+                            "title": match.get("title"),
+                            "description": match.get("abstract", ""),
+                            "shared_concepts": match.get("shared_elements", [])
+                        })
+                except CoreSearchUnavailable:
+                    return error_response(503, "SEARCH_UNAVAILABLE", SEARCH_UNAVAILABLE_MESSAGE)
+            
+            if not evidence:
+                return error_response(404, "NO_EVIDENCE", "No evidence found to enhance")
+            
+            # Get API keys from environment
+            api_keys = {
+                "gemini": os.getenv("GEMINI_API_KEY"),
+                "openrouter": os.getenv("OPENROUTER_API_KEY"),
+                "huggingface": os.getenv("HUGGINGFACE_API_KEY"),
+                "groq": os.getenv("GROQ_API_KEY"),
+            }
+            
+            enhancer = MultiModelEnhancer()
+            
+            if compare and len(models) > 1:
+                # Compare multiple models
+                results = await enhancer.compare_models(idea, evidence, models, api_keys)
+                return JSONResponse(content={
+                    "status": "success",
+                    "query": idea,
+                    "evidence_count": len(evidence),
+                    "comparison": {
+                        model_id: {
+                            "output": result.output.model_dump() if not result.error else None,
+                            "latency_ms": result.latency_ms,
+                            "tokens_used": result.tokens_used,
+                            "cached": result.cached,
+                            "error": result.error
+                        }
+                        for model_id, result in results.items()
+                    }
+                })
+            else:
+                # Single model (first in list)
+                model_id = models[0] if models else "gemini-1.5-flash"
+                result = await enhancer.enhance(idea, evidence, model_id, api_keys)
+                
+                return JSONResponse(content={
+                    "status": "success",
+                    "query": idea,
+                    "model": model_id,
+                    "evidence_count": len(evidence),
+                    "output": result.output.model_dump() if not result.error else None,
+                    "latency_ms": result.latency_ms,
+                    "tokens_used": result.tokens_used,
+                    "cached": result.cached,
+                    "error": result.error
+                })
+        except Exception as e:
+            logger.exception("Multi-model enhancement failed")
+            return error_response(500, "ENHANCE_FAILED", str(e))
+
+    # === V2 Provider Management ===
+    @app.get("/v2/providers")
+    async def list_providers() -> JSONResponse:
+        """List all available search providers."""
+        return JSONResponse(content={
+            "core_providers": [
+                {"id": "openalex", "name": "OpenAlex", "type": "papers", "free": True, "enabled": True},
+                {"id": "github", "name": "GitHub", "type": "repositories", "free": True, "enabled": True},
+            ],
+            "additional_providers": [
+                {"id": "semantic_scholar", "name": "Semantic Scholar", "type": "papers", "free": True, "enabled": os.getenv("ENABLE_SEMANTIC_SCHOLAR", "0") == "1"},
+                {"id": "arxiv", "name": "arXiv", "type": "preprints", "free": True, "enabled": os.getenv("ENABLE_ARXIV", "0") == "1"},
+                {"id": "crossref", "name": "CrossRef", "type": "doi_metadata", "free": True, "enabled": os.getenv("ENABLE_CROSSREF", "0") == "1"},
+                {"id": "core", "name": "CORE", "type": "open_access", "free": True, "enabled": os.getenv("ENABLE_CORE", "0") == "1"},
+            ],
+            "ai_models": [
+                {"id": k, "name": v.name, "provider": v.provider, "free_tier": v.free_tier, "requires_key": v.requires_key}
+                for k, v in MODEL_REGISTRY.items()
+            ]
+        })
+
+    @app.post("/v2/providers/test")
+    async def test_provider(provider_id: str = Body(...), api_key: str = Body(...)) -> JSONResponse:
+        """Test a provider's API key."""
+        try:
+            if provider_id in ["semantic_scholar", "arxiv", "crossref", "core"]:
+                provider = get_additional_provider(provider_id, api_key if api_key else None)
+                # Test with a simple query
+                async with httpx.AsyncClient(timeout=10.0) as client:
+                    result = await provider.search("test query", client, limit=1)
+                    return JSONResponse(content={"valid": result.get("state") == "success", "state": result.get("state")})
+            else:
+                # AI model providers
+                provider = get_provider(provider_id)
+                valid = await provider.validate_key(api_key)
+                return JSONResponse(content={"valid": valid})
+        except Exception as e:
+            return JSONResponse(content={"valid": False, "error": str(e)})
+
+    @app.post("/v2/search/additional")
+    async def search_additional_provider(
+        provider_id: str = Body(...),
+        idea: str = Body(..., min_length=10, max_length=2000),
+        top_k: int = Body(10, ge=1, le=50),
+        api_key: str = Body(default=""),
+    ) -> JSONResponse:
+        """Search using an additional provider."""
+        try:
+            if provider_id not in ["semantic_scholar", "arxiv", "crossref", "core"]:
+                return error_response(400, "INVALID_PROVIDER", f"Unknown provider: {provider_id}")
+            
+            provider = get_additional_provider(provider_id, api_key if api_key else None)
+            async with httpx.AsyncClient(timeout=30.0) as client:
+                result = await provider.search(idea, client, limit=top_k)
+            
+            return JSONResponse(content={
+                "status": "success" if result.get("state") == "success" else "error",
+                "provider": provider_id,
+                "state": result.get("state"),
+                "candidates": result.get("candidates", []),
+                "error": result.get("error")
+            })
+        except Exception as e:
+            logger.exception("Additional provider search failed")
+            return error_response(500, "PROVIDER_SEARCH_FAILED", str(e))
+
+    @app.get("/v2/models")
+    async def list_models() -> JSONResponse:
+        """List all available AI models with their configurations."""
+        return JSONResponse(content={
+            "models": [
+                {
+                    "id": k,
+                    "name": v.name,
+                    "provider": v.provider,
+                    "api_base": v.api_base,
+                    "free_tier": v.free_tier,
+                    "requires_key": v.requires_key,
+                    "max_tokens": v.max_tokens,
+                    "supports_streaming": v.supports_streaming
+                }
+                for k, v in MODEL_REGISTRY.items()
+            ]
+        })
 
     return app
 

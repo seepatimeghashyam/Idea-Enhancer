@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (() => {
+      let theme = null;
+      try { theme = localStorage.getItem('idea-enhancer-theme'); } catch (_) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefs-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light';
+      }
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
+  <title>Settings — Idea Enhancer</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./pages.css">
+</head>
+<body class="min-h-full flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
+
+  <canvas id="particle-canvas" class="fixed inset-0 -z-10 pointer-events-none" aria-hidden="true"></canvas>
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:z-50 focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-white focus:text-indigo-700 focus:font-semibold focus:shadow-lg">Skip to main content</a>
+
+  <header class="app-header sticky top-0 z-40 bg-[#FBF9F5]/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 min-h-[5rem] flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+      <a href="index.html" class="flex items-center gap-3.5 group" aria-label="Idea Enhancer Home">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-700 to-violet-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-200" id="logo-mark">
+          <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-base sm:text-lg font-bold tracking-tight text-slate-900 group-hover:text-indigo-600 transition-colors">Idea Enhancer</span>
+          </div>
+          <p class="text-xs text-slate-600 hidden sm:block">Engineering project prior-art discovery</p>
+        </div>
+      </a>
+
+      <nav aria-label="Primary" class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600" id="nav-links"></nav>
+
+      <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false">
+        <span class="theme-toggle-art" aria-hidden="true">
+          <svg class="theme-sun" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="7" /><path d="M20 2v5M20 33v5M2 20h5M33 20h5M7.3 7.3l3.5 3.5m18.4 18.4 3.5 3.5m0-25.4-3.5 3.5m-18.4 18.4-3.5 3.5" /></svg>
+          <svg class="theme-moon" viewBox="0 0 40 40" fill="none"><path d="M29.6 25.5A14.2 14.2 0 0 1 14.5 10.4 14.5 14.5 0 1 0 29.6 25.5Z" /><path d="M29 5.5v4m-2-2h4" /></svg>
+        </span>
+      </button>
+
+      <div class="flex items-center gap-3" id="auth-section"></div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1" class="flex-1 flex flex-col focus:outline-none">
+
+    <!-- Page Header -->
+    <section class="py-12 sm:py-16 bg-white border-b border-slate-200/80">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-3 block">Settings</span>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Preferences</h1>
+        <p class="text-slate-600 mt-2">Customize your search experience, AI models, and privacy settings.</p>
+      </div>
+    </section>
+
+    <!-- Settings Content -->
+    <section class="flex-1 px-4 sm:px-6 lg:px-8 py-8">
+      <div class="max-w-3xl mx-auto space-y-8">
+
+        <!-- Search Preferences -->
+        <div class="surface-card rounded-3xl p-6 sm:p-8 bg-white border border-slate-200/90 shadow-md">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></path></svg>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-slate-900">Search Preferences</h2>
+              <p class="text-slate-600 text-sm">Default behavior for new searches</p>
+            </div>
+          </div>
+
+          <form id="search-prefs-form" class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-2">Default Search Mode</label>
+              <select id="set-default-mode" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 focus:outline-none">
+                <option value="hybrid">Hybrid (Auto) — Smart routing between local & live</option>
+                <option value="local">Local Only — Historical project records</option>
+                <option value="live">Live Only — OpenAlex, GitHub, Semantic Scholar, arXiv, CrossRef</option>
+              </select>
+              <p class="text-xs text-slate-500 mt-1">Hybrid automatically chooses the best source based on query complexity.</p>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-2">Default Results Count</label>
+              <select id="set-default-topk" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 focus:outline-none">
+                <option value="5">5 results</option>
+                <option value="10">10 results</option>
+                <option value="15">15 results</option>
+                <option value="20">20 results</option>
+              </select>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <input type="checkbox" id="set-auto-save" class="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+              <label for="set-auto-save" class="text-sm text-slate-700">Auto-save searches to history</label>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <input type="checkbox" id="set-reduced-motion" class="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+              <label for="set-reduced-motion" class="text-sm text-slate-700">Reduce animations (accessibility)</label>
+            </div>
+          </form>
+        </div>
+
+        <!-- AI Model Preferences -->
+        <div class="surface-card rounded-3xl p-6 sm:p-8 bg-white border border-slate-200/90 shadow-md">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></path></svg>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-slate-900">AI Enhancement Models</h2>
+              <p class="text-slate-600 text-sm">Choose your preferred model for idea enhancement. Cloud models require API keys.</p>
+            </div>
+          </div>
+
+          <form id="model-prefs-form" class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-2">Default Enhancement Model</label>
+              <select id="set-default-model" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 focus:outline-none">
+                <optgroup label="Google Gemini">
+                  <option value="gemini-1.5-flash">Gemini 1.5 Flash (Fast, free tier: 1500/day)</option>
+                  <option value="gemini-1.5-pro">Gemini 1.5 Pro (Higher quality)</option>
+                  <option value="gemini-1.5-flash-lite">Gemini 1.5 Flash-Lite (Ultra fast)</option>
+                </optgroup>
+                <optgroup label="OpenRouter (Free tier: 50/day)">
+                  <option value="openrouter:mistralai/mixtral-8x7b-instruct">Mixtral 8x7B Instruct</option>
+                  <option value="openrouter:meta-llama/llama-3-70b-instruct">Llama 3 70B Instruct</option>
+                  <option value="openrouter:qwen/qwen-2.5-72b-instruct">Qwen 2.5 72B Instruct</option>
+                  <option value="openrouter:microsoft/phi-3-medium-128k-instruct">Phi-3 Medium 128K</option>
+                </optgroup>
+                <optgroup label="HuggingFace (Free tier: 30/day)">
+                  <option value="huggingface:HuggingFaceH4/zephyr-7b-beta">Zephyr 7B Beta</option>
+                  <option value="huggingface:berkeley-nest/Starling-LM-7B-alpha">Starling LM 7B</option>
+                </optgroup>
+                <optgroup label="Groq (Free tier: 14400/day)">
+                  <option value="groq:llama3-70b-8192">Llama 3 70B (Groq)</option>
+                  <option value="groq:mixtral-8x7b-32768">Mixtral 8x7B (Groq)</option>
+                </optgroup>
+                <optgroup label="Local (Ollama - Unlimited)">
+                  <option value="ollama:llama3.1:8b">Llama 3.1 8B (Local)</option>
+                  <option value="ollama:mistral:7b">Mistral 7B (Local)</option>
+                  <option value="ollama:qwen2.5:7b">Qwen 2.5 7B (Local)</option>
+                </optgroup>
+              </select>
+              <p class="text-xs text-slate-500 mt-1">Cloud models require API keys configured below. Ollama runs locally on your machine.</p>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-slate-700 mb-2">Auto-Enhance After Search</label>
+              <div class="flex items-center gap-3">
+                <input type="checkbox" id="set-auto-enhance" class="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+                <label for="set-auto-enhance" class="text-sm text-slate-700">Automatically enhance results using default model</label>
+              </div>
+            </div>
+
+            <div class="border-t border-slate-200 pt-6">
+              <h3 class="font-bold text-slate-900 mb-4">API Keys (Stored locally in browser)</h3>
+              <p class="text-sm text-slate-500 mb-4">Keys never leave your browser. Used only for direct API calls to providers.</p>
+              
+              <div class="space-y-4" id="api-keys-container">
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-1">Gemini API Key</label>
+                  <div class="flex gap-2">
+                    <input type="password" id="api-gemini" class="flex-1 bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder:text-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 focus:outline-none" placeholder="AIzaSy...">
+                    <button type="button" id="test-gemini" class="px-4 py-3 rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 text-sm font-medium">Test</button>
+                  </div>
+                  <p class="text-xs text-slate-500 mt-1">Get key at <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">aistudio.google.com</a> • Free tier: 1500 req/day</p>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-1">OpenRouter API Key</label>
+                  <div class="flex gap-2">
+                    <input type="password" id="api-openrouter" class="flex-1 bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder:text-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 focus:outline-none" placeholder="sk-or-v1-...">
+                    <button type="button" id="test-openrouter" class="px-4 py-3 rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 text-sm font-medium">Test</button>
+                  </div>
+                  <p class="text-xs text-slate-500 mt-1">Get key at <a href="https://openrouter.ai/keys" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">openrouter.ai</a> • Free tier: 50 req/day</p>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-1">HuggingFace API Key</label>
+                  <div class="flex gap-2">
+                    <input type="password" id="api-huggingface" class="flex-1 bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder:text-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 focus:outline-none" placeholder="hf_...">
+                    <button type="button" id="test-huggingface" class="px-4 py-3 rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 text-sm font-medium">Test</button>
+                  </div>
+                  <p class="text-xs text-slate-500 mt-1">Get key at <a href="https://huggingface.co/settings/tokens" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">huggingface.co</a> • Free tier: 30 req/day</p>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-1">Groq API Key</label>
+                  <div class="flex gap-2">
+                    <input type="password" id="api-groq" class="flex-1 bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-900 placeholder:text-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 focus:outline-none" placeholder="gsk_...">
+                    <button type="button" id="test-groq" class="px-4 py-3 rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 text-sm font-medium">Test</button>
+                  </div>
+                  <p class="text-xs text-slate-500 mt-1">Get key at <a href="https://console.groq.com/keys" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">console.groq.com</a> • Free tier: 14400 req/day</p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Live Search Providers -->
+        <div class="surface-card rounded-3xl p-6 sm:p-8 bg-white border border-slate-200/90 shadow-md">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9" /></path></svg>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-slate-900">Live Search Providers</h2>
+              <p class="text-slate-600 text-sm">Enable/disable external research sources</p>
+            </div>
+          </div>
+
+          <div class="space-y-4" id="providers-list">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Privacy & Data -->
+        <div class="surface-card rounded-3xl p-6 sm:p-8 bg-white border border-slate-200/90 shadow-md">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></path></svg>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-slate-900">Privacy & Data</h2>
+              <p class="text-slate-600 text-sm">Control your data and privacy settings</p>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex items-center justify-between p-4 rounded-xl bg-slate-50 border border-slate-200">
+              <div>
+                <h3 class="font-semibold text-slate-900">Anonymous Usage Analytics</h3>
+                <p class="text-sm text-slate-500 mt-1">Help improve Idea Enhancer by sharing anonymous usage statistics</p>
+              </div>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" id="analytics-optin" class="sr-only peer">
+                <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+              </label>
+            </div>
+
+            <div class="flex items-center justify-between p-4 rounded-xl bg-slate-50 border border-slate-200">
+              <div>
+                <h3 class="font-semibold text-slate-900">Clear All Local Data</h3>
+                <p class="text-sm text-slate-500 mt-1">Remove all history, saved results, preferences, and API keys</p>
+              </div>
+              <button id="clear-all-data-btn" class="px-4 py-2 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 hover:bg-rose-100 text-sm font-medium">Clear All Data</button>
+            </div>
+
+            <div class="flex items-center justify-between p-4 rounded-xl bg-slate-50 border border-slate-200">
+              <div>
+                <h3 class="font-semibold text-slate-900">Export All Data</h3>
+                <p class="text-sm text-slate-500 mt-1">Download your history, saved results, and preferences as JSON</p>
+              </div>
+              <button id="export-all-data-btn" class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 text-sm font-medium">Export Data</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Save Buttons -->
+        <div class="flex flex-wrap justify-end gap-4 pt-4 border-t border-slate-200">
+          <button id="save-settings-btn" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm shadow-md hover:shadow-lg shadow-indigo-600/25">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" /></path></svg>
+            Save All Settings
+          </button>
+          <a href="search.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-semibold text-sm shadow-sm hover:border-slate-300">
+            Cancel
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer bg-[#F8F6F1] border-t border-slate-200 py-10 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <p class="font-bold text-slate-800">Idea Enhancer</p>
+        <p class="text-slate-500 mt-1">v2.0.0-beta — Engineering project prior-art discovery</p>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a>
+        <a href="about.html" class="hover:text-indigo-600 transition-colors">About</a>
+        <a href="search.html" class="hover:text-indigo-600 transition-colors">Search</a>
+        <a href="history.html" class="hover:text-indigo-600 transition-colors">History</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./config.js"></script>
+  <script src="./shared/auth.js"></script>
+  <script src="./shared/router.js"></script>
+  <script type="module" src="./settings.js"></script>
+</body>
+</html>

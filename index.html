@@ -15,9 +15,9 @@
       document.documentElement.dataset.theme = theme;
     })();
   </script>
-  <title>Idea Enhancer</title>
+  <title>Idea Enhancer — Engineering Project Intelligence</title>
   
-  <!-- Google Fonts: Plus Jakarta Sans (Modern Geometric) & Newsreader (Editorial Serif) -->
+  <!-- Google Fonts: Plus Jakarta Sans & Newsreader -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -27,18 +27,22 @@
   
   <!-- Custom Design System & Keyframe Animations -->
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./pages.css">
 </head>
 <body class="min-h-full flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Particle Canvas Background -->
+  <canvas id="particle-canvas" class="fixed inset-0 -z-10 pointer-events-none" aria-hidden="true"></canvas>
 
   <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:z-50 focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-white focus:text-indigo-700 focus:font-semibold focus:shadow-lg">Skip to main content</a>
 
   <!-- Top Navigation Bar -->
-  <header class="app-header sticky top-0 z-30 bg-[#FBF9F5]/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200">
+  <header class="app-header sticky top-0 z-40 bg-[#FBF9F5]/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 min-h-[5rem] flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
       
       <!-- Brand Logo & Identity -->
-      <a href="#" class="flex items-center gap-3.5 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-700 to-violet-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-200">
+      <a href="index.html" class="flex items-center gap-3.5 group" aria-label="Idea Enhancer Home">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-700 to-violet-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-200" id="logo-mark">
           <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
@@ -52,10 +56,11 @@
       </a>
 
       <!-- Navigation Links -->
-      <nav aria-label="Primary" class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
-        <a href="#discover" class="hover:text-indigo-600 transition-colors py-1">Discover</a>
-        <a href="#how-it-works" class="hover:text-indigo-600 transition-colors py-1">How It Works</a>
-        <a href="#system-architecture" class="hover:text-indigo-600 transition-colors py-1">Scope & Limits</a>
+      <nav aria-label="Primary" class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600" id="nav-links">
+        <a href="about.html" class="hover:text-indigo-600 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-indigo-600 after:transition-all hover:after:w-full">About</a>
+        <a href="get-started.html" class="hover:text-indigo-600 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-indigo-600 after:transition-all hover:after:w-full">Get Started</a>
+        <a href="search.html" class="hover:text-indigo-600 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-indigo-600 after:transition-all hover:after:w-full">Search</a>
+        <a href="history.html" class="hover:text-indigo-600 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-indigo-600 after:transition-all hover:after:w-full">History</a>
       </nav>
 
       <button
@@ -77,16 +82,9 @@
         </span>
       </button>
 
-      <!-- Search modes: local historical records or external live research -->
-      <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm">
-        <label for="data-source-select" class="text-xs font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
-          <span id="header-mode-dot" aria-hidden="true" class="w-2 h-2 rounded-full bg-amber-500"></span>
-          Mode:
-        </label>
-        <select id="data-source-select" aria-describedby="mode-description" class="max-w-[55vw] sm:max-w-none bg-slate-50 text-slate-800 text-xs font-medium rounded-lg border border-slate-200 px-2.5 py-1 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none cursor-pointer hover:bg-slate-100 transition-colors">
-          <option value="offline" selected>Offline Demo · historical records</option>
-          <option value="live">Live Research · OpenAlex + GitHub</option>
-        </select>
+      <!-- Auth / User Menu -->
+      <div class="flex items-center gap-3" id="auth-section">
+        <!-- Will be populated by auth.js -->
       </div>
 
     </div>
@@ -95,123 +93,131 @@
   <!-- Main Content Wrapper -->
   <main id="main" tabindex="-1" class="flex-1 flex flex-col focus:outline-none">
 
-    <!-- Hero Section: Editorial Headline & Prototyping Collage -->
-    <section class="hero-section relative pt-12 pb-20 sm:pt-16 sm:pb-24 border-b border-slate-200/80 overflow-hidden">
+    <!-- Landing Hero Section -->
+    <section class="hero-section relative pt-20 pb-28 sm:pt-28 sm:pb-36 border-b border-slate-200/80 overflow-hidden">
       
       <!-- Subtle Decorative Background Gradients -->
-      <div class="hero-halo absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-gradient-to-b from-indigo-100/60 via-purple-50/40 to-transparent blur-3xl -z-10 pointer-events-none"></div>
+      <div class="hero-halo absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-indigo-100/60 via-purple-50/40 to-transparent blur-3xl -z-10 pointer-events-none"></div>
+      <div class="hero-halo absolute -bottom-40 right-1/4 -translate-x-1/4 w-[600px] h-[300px] bg-gradient-to-tr from-purple-100/40 via-pink-50/30 to-transparent blur-3xl -z-10 pointer-events-none"></div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           <!-- Left Column: Editorial Headline & Mission -->
-          <div class="lg:col-span-7 flex flex-col items-start gap-6">
+          <div class="lg:col-span-7 flex flex-col items-start gap-6 text-center lg:text-left">
             
             <!-- Eyebrow Pill -->
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-sm text-xs font-semibold text-slate-700">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-sm text-xs font-semibold text-slate-700 mx-auto lg:mx-0">
               <span class="px-1.5 py-0.5 rounded text-[11px] font-bold bg-indigo-100 text-indigo-700 uppercase tracking-wider">Prior-Art</span>
               <span>Engineering Project Intelligence</span>
             </div>
 
             <!-- Expressive Title -->
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.12]">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
               Explore what exists.<br>
               Find your next <span class="font-editorial italic font-normal text-indigo-600">distinctive angle</span>.
             </h1>
 
             <!-- Supporting Paragraph -->
-            <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal mx-auto lg:mx-0">
               Idea Enhancer helps engineering students investigate past project records and open datasets before investing months in development. Uncover traceable, evidence-backed overlap and pinpoint opportunities to differentiate your concept.
             </p>
 
             <!-- Actions Row -->
-            <div class="flex flex-wrap items-center gap-4 pt-2">
-              <a href="#discover" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-semibold text-sm transition-all shadow-md hover:shadow-lg shadow-indigo-600/20 hover:-translate-y-0.5">
-                <span>Investigate an Idea</span>
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="flex flex-wrap items-center gap-4 pt-4 justify-center lg:justify-start">
+              <a href="get-started.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-semibold text-sm transition-all shadow-lg hover:shadow-xl shadow-indigo-600/25 hover:-translate-y-0.5 group">
+                <span>Start Investigating</span>
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
               </a>
-              <a href="#how-it-works" class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-semibold text-sm transition-all shadow-sm hover:border-slate-300">
-                <span>How It Works</span>
+              <a href="about.html" class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-semibold text-sm transition-all shadow-sm hover:border-slate-300">
+                <span>Learn How It Works</span>
               </a>
             </div>
 
-            <!-- Micro Metrics / Guarantees -->
-            <div class="flex flex-wrap items-center gap-6 pt-4 text-xs text-slate-500 font-medium">
+            <!-- Trust Indicators -->
+            <div class="flex flex-wrap items-center gap-6 pt-6 text-xs text-slate-500 font-medium justify-center lg:justify-start">
               <div class="flex items-center gap-2">
                 <svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Traceable project matches</span>
+                <span>2,000+ verified projects</span>
               </div>
               <div class="flex items-center gap-2">
                 <svg class="w-4 h-4 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>Ordered by relevance</span>
+                <span>Hybrid search: Local + Live</span>
               </div>
               <div class="flex items-center gap-2">
                 <svg class="w-4 h-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>Evidence-Backed Overlap</span>
+                <span>Multi-model AI enhancement</span>
               </div>
             </div>
 
           </div>
 
-          <!-- Right Column: Research & Prototyping Collage -->
+          <!-- Right Column: Interactive Demo Preview -->
           <div class="lg:col-span-5 relative">
             <div class="relative w-full max-w-md mx-auto aspect-[4/5] sm:aspect-[4/4.5] flex items-center justify-center">
               
               <!-- Background Ambient Card -->
               <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50/60 rounded-3xl border border-slate-200/80 shadow-sm -rotate-2 -z-10"></div>
               
-              <!-- Main Photograph Container (Robotics / Hardware prototyping) -->
-              <div class="w-[86%] h-[76%] rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-white relative img-fallback-wrapper">
-                <img 
-                  src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" 
-                  alt=""
-                  loading="lazy"
-                  class="w-full h-full object-cover"
-                  onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
-                >
-                <!-- Fallback if Unsplash is unreachable -->
-                <div class="hidden absolute inset-0 bg-gradient-to-tr from-indigo-100 to-purple-100 flex flex-col items-center justify-center p-6 text-center">
-                  <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center mb-2 font-bold">IE</div>
-                  <p class="text-xs font-semibold text-slate-700">Engineering Prior-Art Research</p>
-                  <p class="text-xs text-slate-600 mt-1">Indexing student projects & technical records</p>
+              <!-- Main Preview Card -->
+              <div class="w-[90%] h-[85%] rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-white relative img-fallback-wrapper group">
+                <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-purple-500/10"></div>
+                <div class="relative z-10 p-6 h-full flex flex-col items-center justify-center text-center">
+                  <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-indigo-500 to-violet-600 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-indigo-500/25">
+                    <svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Search Interface Preview</h3>
+                  <p class="text-slate-600 mb-6 max-w-sm mx-auto">Hybrid search across local projects and live research papers with AI-powered enhancement</p>
+                  
+                  <!-- Mini Search Preview -->
+                  <div class="w-full max-w-xs mx-auto bg-slate-50 rounded-xl border border-slate-200 p-4 text-left">
+                    <div class="flex items-center gap-2 mb-3">
+                      <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+                      <span class="text-xs font-medium text-slate-700">Hybrid Mode</span>
+                    </div>
+                    <input type="text" placeholder="e.g. IoT crop disease detection..." class="w-full bg-white text-slate-900 text-sm border border-slate-300 rounded-lg px-3 py-2 placeholder:text-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 focus:outline-none">
+                    <div class="flex items-center justify-between gap-2 mt-3 pt-3 border-t border-slate-200">
+                      <span class="text-xs text-slate-500">Local + Live</span>
+                      <button class="text-xs font-semibold text-indigo-600 hover:text-indigo-700">Search</button>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <!-- Floating Card 1: Top Right -->
-              <div class="absolute -top-4 right-0 sm:-right-6 bg-white p-3.5 rounded-2xl shadow-lg border border-slate-200/90 max-w-[210px] animate-float-1 flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-200">
+              <!-- Floating Stats Cards -->
+              <div class="absolute -top-6 right-0 sm:-right-8 bg-white p-4 rounded-2xl shadow-lg border border-slate-200/90 max-w-[200px] animate-float-1 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-200">
                   <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
-                <div class="text-xs leading-tight">
-                  <p class="font-bold text-slate-900">Relevant matches</p>
-                  <p class="text-slate-500 mt-0.5">Ordered by how closely they relate</p>
+                <div class="text-sm leading-tight">
+                  <p class="font-bold text-slate-900">2,000+</p>
+                  <p class="text-slate-500 mt-0.5">Verified project records</p>
                 </div>
               </div>
 
-              <!-- Floating Card 2: Bottom Left (Secondary Image + Evidence Tag) -->
-              <div class="absolute -bottom-6 left-0 sm:-left-6 bg-white p-3.5 rounded-2xl shadow-lg border border-slate-200/90 max-w-[230px] animate-float-2 flex items-center gap-3">
+              <div class="absolute -bottom-6 left-0 sm:-left-8 bg-white p-4 rounded-2xl shadow-lg border border-slate-200/90 max-w-[220px] animate-float-2 flex items-center gap-3">
                 <div class="w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-slate-200 bg-slate-100 img-fallback-wrapper">
-                  <img 
-                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=300&q=80" 
-                    alt=""
-                    loading="lazy"
-                    class="w-full h-full object-cover"
-                    onerror="this.style.display='none';"
-                  >
+                  <div class="w-full h-full bg-gradient-to-tr from-indigo-100 to-purple-100 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
                 </div>
-                <div class="text-xs leading-tight">
-                  <span class="inline-block px-1.5 py-0.5 rounded text-[11px] font-bold bg-amber-50 text-amber-800 border border-amber-200 mb-1">Traceability</span>
-                  <p class="font-semibold text-slate-800">Clear Overlap Evidence</p>
+                <div class="text-sm leading-tight">
+                  <span class="inline-block px-1.5 py-0.5 rounded text-[11px] font-bold bg-amber-50 text-amber-800 border border-amber-200 mb-1">AI Enhanced</span>
+                  <p class="font-semibold text-slate-800">Gemini + OpenRouter + HF</p>
                 </div>
               </div>
 
@@ -219,7 +225,7 @@
             
             <!-- Research Atmosphere Disclaimer -->
             <p class="text-xs text-slate-500 text-center mt-6 italic">
-              *Collage images represent engineering research atmosphere; not retrieved project assets.
+              *Preview interface; actual search connects to local dataset and live APIs.
             </p>
           </div>
 
@@ -227,320 +233,69 @@
       </div>
     </section>
 
-    <!-- Main Workspace Section: Idea Submission & Results -->
-    <section id="discover" class="py-14 sm:py-20 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
-        <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Step 1 — Investigation Workspace</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Submit Your Project Idea</h2>
-          <p class="text-sm text-slate-600 mt-1 max-w-xl">
-            Input a proposal, abstract, or methodology. We compare it against indexed project records and highlight overlapping concepts.
-          </p>
-          <p id="mode-description" class="mt-3 max-w-xl rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-950" role="status" aria-live="polite">Offline Demo searches the local historical project dataset. It does not send your idea to OpenAlex or GitHub.</p>
-        </div>
-
-        <!-- Mode indicator clarifies which source is being searched -->
-        <div id="mode-status-pill" role="status" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200 shrink-0">
-          <span aria-hidden="true" class="w-2 h-2 rounded-full bg-amber-500"></span>
-          <span id="mode-status-text">Offline Demo — local historical records</span>
-        </div>
-      </div>
-
-      <!-- Main Submission Surface Card -->
-      <div class="surface-card rounded-3xl p-6 sm:p-8 bg-white border border-slate-200/90 shadow-md">
-        
-        <form id="search-form" novalidate class="flex flex-col gap-6">
+    <!-- Features Strip -->
+    <section class="py-16 sm:py-24 bg-white border-t border-b border-slate-200/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           
-          <!-- Textarea Container -->
-          <div class="flex flex-col gap-2">
-            <div class="flex items-center justify-between">
-              <label for="idea-input" class="text-sm font-semibold text-slate-800 flex items-center gap-1.5">
-                <span>Technical Project Proposal</span>
-                <span class="text-rose-500">*</span>
-              </label>
-              <!-- Live Character Counter -->
-              <span id="char-count" class="text-xs font-medium text-slate-500">
-                0 / 2000 characters
-              </span>
-            </div>
-
-            <textarea 
-              id="idea-input" 
-              name="idea" 
-              rows="5"
-              placeholder="e.g. An IoT-based crop disease detection system using Raspberry Pi and CNNs to monitor foliar infections in real time..."
-              required
-              aria-describedby="idea-hint privacy-notice char-count client-validation-text"
-              class="w-full bg-[#FAF9F6] text-slate-900 text-base border border-slate-300 rounded-2xl p-4 placeholder:text-slate-500 focus:bg-white focus:border-indigo-600 focus:ring-4 focus:ring-indigo-100 focus:outline-none transition-all resize-y leading-relaxed font-normal shadow-inner"
-            ></textarea>
-            
-            <div class="flex flex-wrap items-center justify-between gap-3 mt-1.5">
-              <p id="idea-hint" class="text-xs text-slate-500">
-                Minimum 10 characters, maximum 2000 characters. Specific details on hardware, models, and domain produce better matches.
-              </p>
-
-              <!-- Sample Quick-Fill Prompts -->
-              <div class="flex items-center gap-2 text-xs">
-                <span class="text-slate-600 font-medium">Try sample:</span>
-                <button type="button" id="sample-idea-1" class="chip-interactive px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 font-medium border border-indigo-200/70">
-                  🌱 IoT Crop Disease
-                </button>
-                <button type="button" id="sample-idea-2" class="chip-interactive px-2.5 py-1 rounded-lg bg-purple-50 text-purple-700 hover:bg-purple-100 font-medium border border-purple-200/70">
-                  🌌 Quantum Pet Device
-                </button>
-              </div>
-            </div>
-
-            <p id="privacy-notice" class="hidden rounded-xl border border-indigo-200 bg-indigo-50 px-3.5 py-3 text-xs leading-relaxed text-indigo-950" role="note">
-              <span class="font-semibold">Live Research shares your idea text with OpenAlex and GitHub</span> to find related papers and repositories. These are external services, and Idea Enhancer does not control how they handle submitted queries. Do not submit confidential or personally sensitive information. Use Offline Demo to search the local historical dataset without sending the query to these providers.
-            </p>
-
-            <!-- Client-Side Validation Alert Box -->
-            <div id="client-validation-error" class="hidden mt-3 p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-700 font-medium flex items-center gap-2" role="alert">
-              <svg class="w-4 h-4 text-rose-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-              </svg>
-              <span id="client-validation-text"></span>
-            </div>
-          </div>
-
-          <!-- Bottom Control Bar: top_k & Submit Button -->
-          <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-100">
-            
-            <!-- Top_K Selector -->
-            <div class="flex items-center gap-3">
-              <label for="top-k-input" class="text-xs sm:text-sm font-semibold text-slate-700">Number of matches:</label>
-              <input 
-                type="number" 
-                id="top-k-input" 
-                name="top_k" step="1" inputmode="numeric" aria-describedby="top-k-hint" 
-                min="1" 
-                max="20" 
-                value="5" 
-                class="w-16 bg-white text-slate-900 text-base font-semibold border border-slate-300 rounded-xl px-2.5 py-1.5 focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 focus:outline-none text-center shadow-sm"
-              >
-              <span id="top-k-hint" class="text-xs text-slate-600">(1–20, default 5)</span>
-            </div>
-
-            <!-- Submit Button with Spinner & Icon -->
-            <button 
-              type="submit" 
-              id="submit-btn"
-              class="inline-flex items-center justify-center gap-2.5 px-7 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-semibold text-sm transition-all shadow-md hover:shadow-indigo-500/25 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer hover:-translate-y-0.5"
-            >
-              <!-- Animated Spinner for Loading State -->
-              <svg id="submit-btn-spinner" class="hidden animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-              <!-- Search Icon -->
-              <svg id="submit-btn-icon" class="w-4 h-4 text-indigo-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <div class="p-6 rounded-2xl bg-[#FBF9F5] ambient-panel border border-slate-200/80 flex flex-col gap-4 group hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
-              <span id="submit-btn-text">Investigate Idea</span>
-            </button>
-          </div>
-
-        </form>
-
-      </div>
-
-      <!-- Error Alert Banner -->
-      <div id="error-banner" class="hidden mt-6 p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-sm flex items-start gap-3 shadow-sm" role="alert">
-        <div class="w-8 h-8 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center shrink-0 font-bold">
-          !
-        </div>
-        <div class="flex-1">
-          <p class="font-bold text-rose-900">Something went wrong</p>
-          <p id="error-message" class="text-xs sm:text-sm mt-0.5 text-rose-700 leading-relaxed"></p>
-        </div>
-      </div>
-
-      <!-- Warnings Container (e.g. Clamped top_k from server) -->
-      <div id="warnings-container" role="status" class="hidden mt-4 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs">
-        <p class="font-bold text-amber-800 flex items-center gap-1.5">
-          <span><span aria-hidden="true">⚠️</span> Notice</span>
-        </p>
-        <ul id="warnings-list" class="list-disc list-inside mt-1 space-y-1 text-amber-800"></ul>
-      </div>
-
-      <!-- Loading Skeleton Experience -->
-      <section id="loading-skeleton" class="hidden mt-10 flex flex-col gap-6" aria-label="Searching indexed project records" role="status" aria-busy="false">
-        
-        <!-- Animated Scanning Beam Container -->
-        <div class="surface-card rounded-2xl p-6 bg-white border border-slate-200/90 flex items-center gap-4 relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-500/10 to-transparent animate-scanline"></div>
-          <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-sm font-bold text-slate-800">Comparing your idea with indexed project records…</h3>
-            <p class="text-xs text-slate-500 mt-0.5">The first search after launch may take longer while the local search index is prepared.</p>
-          </div>
-        </div>
-
-        <!-- Shimmer Placeholder Cards -->
-        <div class="flex flex-col gap-4">
-          <div class="surface-card rounded-2xl p-6 bg-white border border-slate-200/90 flex flex-col gap-3">
-            <div class="w-1/3 h-5 skeleton-shimmer rounded-lg"></div>
-            <div class="w-full h-16 skeleton-shimmer rounded-lg mt-1"></div>
-            <div class="w-2/3 h-4 skeleton-shimmer rounded-lg"></div>
-          </div>
-          <div class="surface-card rounded-2xl p-6 bg-white border border-slate-200/90 flex flex-col gap-3">
-            <div class="w-1/4 h-5 skeleton-shimmer rounded-lg"></div>
-            <div class="w-full h-16 skeleton-shimmer rounded-lg mt-1"></div>
-            <div class="w-1/2 h-4 skeleton-shimmer rounded-lg"></div>
-          </div>
-        </div>
-
-      </section>
-
-      <!-- Results Experience Container -->
-      <section id="results-container" class="hidden mt-12 flex flex-col gap-6" aria-labelledby="results-summary">
-        
-        <!-- Offline mode uses the real local historical dataset, not fixed UI fixtures. -->
-        <div id="offline-dataset-notice" role="note" class="hidden p-4 rounded-2xl bg-amber-50 border border-amber-300 text-amber-950 text-sm flex flex-wrap items-start gap-x-3 gap-y-2 shadow-sm">
-          <span class="font-bold uppercase tracking-wider text-xs bg-amber-200 text-amber-950 px-2 py-0.5 rounded shrink-0">Offline Demo</span>
-          <p class="flex-1 min-w-0 leading-relaxed">
-            Results come from the local historical project dataset. Links and records may not have been independently verified; these results do not include live web research.
-          </p>
-        </div>
-
-        <!-- Results Header Bar -->
-        <div class="border-b border-slate-200 pb-4">
-          <h2 id="results-summary" tabindex="-1" class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight focus:outline-none">Search results</h2>
-          <p id="results-query" class="hidden text-sm text-slate-700 mt-1 break-words"></p>
-          <p class="text-sm text-slate-600 mt-1">Ordered by relevance to your idea. Rank numbers show order only, not a similarity percentage.</p>
-        </div>
-
-        <div id="provider-status" class="hidden surface-card rounded-xl px-4 py-3 text-sm text-slate-700" role="status" aria-live="polite"></div>
-
-        <section id="recurring-evidence" class="hidden surface-card rounded-xl px-4 py-4" aria-labelledby="recurring-evidence-title">
-          <h3 id="recurring-evidence-title" class="font-bold text-slate-900">Recurring evidence in these results</h3>
-          <p class="text-xs text-slate-600 mt-1">These terms or repository topics appear across multiple retrieved candidates; they are evidence to inspect, not recommendations.</p>
-          <ul id="recurring-evidence-list" class="flex flex-wrap gap-2 list-none p-0 mt-3"></ul>
-        </section>
-
-        <section id="enhance-panel" class="surface-card rounded-2xl border border-indigo-200 bg-indigo-50/60 p-5" aria-labelledby="enhance-title">
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div>
-              <h3 id="enhance-title" class="font-bold text-slate-900">Improve this idea with AI</h3>
-              <p class="mt-1 text-sm text-slate-700">Get practical suggestions grounded in the results above. The idea and retrieved excerpts are sent to Gemini when configured. Do not submit sensitive information.</p>
             </div>
-            <button id="enhance-btn" type="button" class="shrink-0 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Enhance idea</button>
+            <h3 class="font-bold text-slate-900 text-lg">Hybrid Search</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Combines local project records (2,000+) with live research from OpenAlex, GitHub, Semantic Scholar, and arXiv. Smart routing chooses the best source automatically.
+            </p>
           </div>
-          <div id="enhance-status" class="hidden mt-4 text-sm text-slate-700" role="status" aria-live="polite"></div>
-          <div id="enhance-output" class="hidden mt-5 border-t border-indigo-200 pt-5"></div>
-        </section>
 
-        <!-- Zero Matches State Banner -->
-        <div id="no-matches-banner" class="hidden surface-card rounded-3xl p-10 bg-white border border-slate-200/90 text-center flex flex-col items-center gap-4 shadow-sm animate-fade-in-up">
-          <div aria-hidden="true" class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 border border-indigo-100 flex items-center justify-center text-2xl shadow-inner">
-            🔍
+          <div class="p-6 rounded-2xl bg-[#FBF9F5] ambient-panel border border-slate-200/80 flex flex-col gap-4 group hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg">Multi-Model AI</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Choose from Gemini, OpenRouter (Mixtral, Llama3, Qwen), HuggingFace, Groq, or local Ollama models. Compare outputs side-by-side for the best insights.
+            </p>
           </div>
-          <div class="max-w-md">
-            <h3 class="text-lg font-bold text-slate-900">No Search Results Returned</h3>
-            <p id="no-matches-message" class="text-sm text-slate-600 mt-2 leading-relaxed"></p>
+
+          <div class="p-6 rounded-2xl bg-[#FBF9F5] ambient-panel border border-slate-200/80 flex flex-col gap-4 group hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg">Traceable Evidence</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Every match shows shared concepts, source links, and verification status. No invented similarity percentages—just ordered relevance with transparent evidence.
+            </p>
           </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-sm text-slate-600 max-w-lg leading-relaxed mt-2">
-            <strong class="text-slate-700 font-semibold">Important Research Limitation:</strong> The current search returned no records. This does not show that similar projects do not exist in the indexed data or elsewhere.
-          </div>
-          <div class="max-w-lg w-full text-left">
-            <h4 class="text-sm font-bold text-slate-900">Ways to refine your description</h4>
-            <p class="text-xs text-slate-600 mt-0.5">General tips only; they are not generated from your idea.</p>
-            <ul class="mt-2 list-disc pl-5 text-sm text-slate-700 leading-relaxed flex flex-col gap-1">
-              <li>Broaden the wording: describe the problem you are solving, not only your specific solution.</li>
-              <li>Add relevant application details, such as the setting, the users and the domain.</li>
-              <li>Name the main technologies, components or techniques involved.</li>
-              <li>Try describing the core idea in different words.</li>
-            </ul>
-          </div>
-          <button id="edit-idea-btn" type="button" class="mt-1 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold shadow-sm">
-            Edit my idea
-          </button>
+
         </div>
-
-        <!-- Dynamic Matches Card List -->
-        <ol id="matches-list" aria-label="Matching projects" class="flex flex-col gap-5 list-none p-0 m-0"></ol>
-
-      </section>
-
+      </div>
     </section>
 
-    <!-- How It Works Section: Conceptual Workflow & Boundaries -->
-    <section id="how-it-works" class="py-16 sm:py-24 bg-white border-t border-b border-slate-200/80">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-2xl mx-auto mb-14">
-          <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">The Discovery Pipeline</span>
-          <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1.5">How Idea Enhancer Evaluates Ideas</h2>
-          <p class="text-sm sm:text-base text-slate-600 mt-2">
-            A clear, traceable way to see what already exists, without made-up similarity percentages.
-          </p>
+    <!-- CTA Section -->
+    <section class="py-16 sm:py-24 bg-indigo-50/60 border-t border-indigo-100">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Ready to investigate your idea?</h2>
+        <p class="text-base sm:text-lg text-slate-600 mt-4 max-w-xl mx-auto">
+          Create a free account to save searches, compare AI models, and build your research history.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+          <a href="get-started.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-semibold text-sm transition-all shadow-lg hover:shadow-xl shadow-indigo-600/25 hover:-translate-y-0.5">
+            <span>Get Started Free</span>
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+          <a href="about.html" class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-semibold text-sm transition-all shadow-sm hover:border-slate-300">
+            <span>Learn More</span>
+          </a>
         </div>
-
-        <!-- 4 Workflow Steps -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          
-          <!-- Step 1 -->
-          <div class="p-6 rounded-2xl bg-[#FBF9F5] ambient-panel border border-slate-200/80 flex flex-col gap-3">
-            <div class="w-9 h-9 rounded-xl bg-indigo-100 text-indigo-700 font-bold text-sm flex items-center justify-center">1</div>
-            <h3 class="font-bold text-slate-900 text-base">Describe Idea</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Submit your technical abstract detailing hardware, architecture, machine learning models, and application goals.
-            </p>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="p-6 rounded-2xl bg-[#FBF9F5] ambient-panel border border-slate-200/80 flex flex-col gap-3">
-            <div class="w-9 h-9 rounded-xl bg-purple-100 text-purple-700 font-bold text-sm flex items-center justify-center">2</div>
-            <h3 class="font-bold text-slate-900 text-base">Smart Search</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Your idea is compared against indexed project records to find both exact terms and related concepts.
-            </p>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="p-6 rounded-2xl bg-[#FBF9F5] ambient-panel border border-slate-200/80 flex flex-col gap-3">
-            <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 font-bold text-sm flex items-center justify-center">3</div>
-            <h3 class="font-bold text-slate-900 text-base">Ordered Results</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              The closest matches are listed first, with no invented similarity percentages.
-            </p>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="p-6 rounded-2xl bg-[#FBF9F5] ambient-panel border border-slate-200/80 flex flex-col gap-3">
-            <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 font-bold text-sm flex items-center justify-center">4</div>
-            <h3 class="font-bold text-slate-900 text-base">Evidence & Angle</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Inspect shared technical concepts and verification tags to understand prior art and discover opportunities to differentiate.
-            </p>
-          </div>
-
-        </div>
-
-        <!-- Architectural Boundaries Card -->
-        <div id="system-architecture" class="mt-12 p-6 sm:p-8 rounded-3xl bg-indigo-50/60 border border-indigo-100 text-indigo-950 flex flex-col md:flex-row items-start gap-6">
-          <div aria-hidden="true" class="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-xl shrink-0 shadow-md shadow-indigo-500/20">
-            ⚖️
-          </div>
-          <div class="flex-1 text-sm leading-relaxed">
-            <h3 class="font-bold text-base text-indigo-950 mb-1">Guiding Principle & Scope Boundaries</h3>
-            <p class="text-indigo-900/80 mb-2">
-              Idea Enhancer is a research copilot for student engineers, <strong>not a plagiarism detector</strong>. It cannot prove universal originality or catalog all worldwide projects. It retrieves traceable matches from indexed project records and open datasets.
-            </p>
-            <p class="text-indigo-800/70">
-              Rank numbers show order only, never similarity percentages. Our mission is to help you explore past engineering work with confidence and clarity.
-            </p>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -551,18 +306,21 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
       <div>
         <p class="font-bold text-slate-800">Idea Enhancer</p>
+        <p class="text-slate-500 mt-1">v2.0.0-beta — Engineering project prior-art discovery</p>
       </div>
       <div class="flex items-center gap-6">
-        <a href="#discover" class="hover:text-indigo-600 transition-colors">Workspace</a>
-        <a href="#how-it-works" class="hover:text-indigo-600 transition-colors">How It Works</a>
-        <a href="#system-architecture" class="hover:text-indigo-600 transition-colors">Boundaries</a>
+        <a href="about.html" class="hover:text-indigo-600 transition-colors">About</a>
+        <a href="search.html" class="hover:text-indigo-600 transition-colors">Search</a>
+        <a href="history.html" class="hover:text-indigo-600 transition-colors">History</a>
+        <a href="settings.html" class="hover:text-indigo-600 transition-colors">Settings</a>
       </div>
     </div>
   </footer>
 
   <!-- Public backend origin only; never put provider credentials in frontend config. -->
   <script src="./config.js"></script>
-  <!-- Frontend Controller & API Adapter Module -->
+  <script src="./shared/auth.js"></script>
+  <script src="./shared/router.js"></script>
   <script type="module" src="./script.js"></script>
 </body>
 </html>
