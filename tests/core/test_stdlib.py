@@ -31,7 +31,7 @@ class CoreSearchSmokeTests(unittest.TestCase):
         records = load_project_records(FIXTURE)
         bm25 = FakeRetriever([RetrievalHit("SYNTHETIC-001", 1), RetrievalHit("SYNTHETIC-002", 2)])
         vector = FakeRetriever([RetrievalHit("SYNTHETIC-003", 1), RetrievalHit("SYNTHETIC-001", 2)])
-        engine = CoreSearchEngine(records, bm25, vector)
+        engine = CoreSearchEngine(records, bm25, vector, use_cross_encoder=False)
 
         matches = engine.search("  crop disease monitoring  ", 2)
 
@@ -60,6 +60,7 @@ class CoreSearchSmokeTests(unittest.TestCase):
             load_project_records(FIXTURE),
             FakeRetriever([RetrievalHit("SYNTHETIC-001", 1)]),
             FakeRetriever([RetrievalHit("SYNTHETIC-001", 1)]),
+            use_cross_encoder=False,
         )
         configure_search_engine(engine)
         try:

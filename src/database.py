@@ -36,6 +36,7 @@ def _make_default_engine(records: Sequence[ProjectRecord]) -> CoreSearchEngine:
     The vector module is responsible for lazy model initialization and reporting
     a missing/unbuilt ChromaDB index during construction or search.
     """
+    import os
 
     try:
         from src.core.bm25_retriever import BM25Retriever
@@ -45,8 +46,10 @@ def _make_default_engine(records: Sequence[ProjectRecord]) -> CoreSearchEngine:
             "Core Search retrievers are not installed yet; BM25 and vector retriever modules are required."
         ) from error
 
+    use_cross_encoder = os.getenv("USE_CROSS_ENCODER", "1").strip().lower() not in {"0", "false", "no", "off"}
+
     try:
-        return CoreSearchEngine(records, BM25Retriever(records), VectorRetriever(records))
+        return CoreSearchEngine(records, BM25Retriever(records), VectorRetriever(records), use_cross_encoder=use_cross_encoder)
     except CoreSearchUnavailable:
         raise
     except Exception as error:

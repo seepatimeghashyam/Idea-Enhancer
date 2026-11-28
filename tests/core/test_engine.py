@@ -26,7 +26,7 @@ class FakeRetriever:
 
 
 def make_engine(bm25: FakeRetriever, vector: FakeRetriever) -> CoreSearchEngine:
-    return CoreSearchEngine(load_project_records(FIXTURE), bm25, vector)
+    return CoreSearchEngine(load_project_records(FIXTURE), bm25, vector, use_cross_encoder=False)
 
 
 def test_orchestrates_same_query_and_top_k_then_enriches_with_evidence() -> None:
