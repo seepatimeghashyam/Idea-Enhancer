@@ -302,6 +302,9 @@ function clearResults() {
   providerStatus.textContent = '';
   recurringEvidence.classList.add('hidden');
   recurringEvidenceList.replaceChildren();
+  lastEnhanceIdea = '';
+  if (enhanceStatus) { enhanceStatus.classList.add('hidden'); enhanceStatus.textContent = ''; }
+  if (enhanceOutput) { enhanceOutput.classList.add('hidden'); enhanceOutput.replaceChildren(); }
   resultsSummary.textContent = 'Search results';
 }
 
@@ -638,6 +641,8 @@ function renderSuccess(parsed, { mode, idea, clientNotices }) {
 
 async function runEnhancement() {
   if (!enhanceButton || !lastEnhanceIdea || !API_BASE_URL) return;
+  const reqIdea = lastEnhanceIdea;
+  const reqMode = currentMode();
   enhanceButton.disabled = true;
   enhanceButton.textContent = 'Generating…';
   enhanceStatus.textContent = 'Retrieving evidence and preparing grounded recommendations…';
@@ -647,13 +652,15 @@ async function runEnhancement() {
   try {
     const response = await fetch(`${API_BASE_URL}/enhance`, {
       method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({ idea: lastEnhanceIdea, scope: currentMode() === 'live' ? 'online' : 'local', top_k: Math.max(1, Math.min(10, Number(topKInput?.value) || DEFAULT_TOP_K)) }),
-      signal: AbortSignal.timeout(90000)
+      body: JSON.stringify({ idea: reqIdea, scope: reqMode === 'live' ? 'online' : 'local', top_k: Math.max(1, Math.min(10, Number(topKInput?.value) || DEFAULT_TOP_K)) }),
+      signal: AbortSignal.timeout(120000)
     });
     const data = await response.json();
+    if (reqMode !== currentMode() || reqIdea !== lastEnhanceIdea) return;
     if (!response.ok) throw new Error(data.message || 'Enhancement is unavailable. Check model configuration and try again.');
     renderEnhancement(data);
   } catch (error) {
+    if (reqMode !== currentMode() || reqIdea !== lastEnhanceIdea) return;
     enhanceStatus.textContent = error.name === 'TimeoutError' ? 'Enhancement timed out. Please try again.' : (error.message || 'Enhancement failed. Please try again.');
   } finally {
     enhanceButton.disabled = false;

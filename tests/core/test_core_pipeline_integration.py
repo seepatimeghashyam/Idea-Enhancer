@@ -120,8 +120,12 @@ class FakeChromaClient:
         del self.collections[name]
 
     def create_collection(self, *, name: str, metadata: dict[str, str]) -> FakeCollection:
-        if metadata != {"hnsw:space": "cosine"}:
-            raise AssertionError("Vector collection must retain cosine distance configuration.")
+        if (
+            metadata.get("hnsw:space") != "cosine"
+            or len(metadata.get("dataset_sha256", "")) != 64
+            or not metadata.get("embedding_model")
+        ):
+            raise AssertionError("Vector collection must retain cosine distance and dataset provenance.")
         collection = FakeCollection(self.response_order)
         self.collections[name] = collection
         return collection

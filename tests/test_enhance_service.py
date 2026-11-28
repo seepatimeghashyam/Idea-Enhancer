@@ -38,7 +38,7 @@ class FakeProvider:
         self.payload = payload
         self.prompt = ""
 
-    def generate(self, prompt):
+    async def generate(self, prompt):
         self.prompt = prompt
         return self.payload
 
@@ -89,13 +89,67 @@ def test_gemini_provider_loads_dotenv_when_constructed(monkeypatch):
 
 
 def test_gemini_provider_reports_rate_limit_without_exposing_key(monkeypatch):
+    import httpx
     from unittest.mock import patch
-    from urllib.error import HTTPError
 
     provider = GeminiProvider(api_key="test-key", model="gemini-3.5-flash-lite")
-    error = HTTPError("https://example.invalid", 429, "limited", {"Retry-After": "30"}, None)
-    with patch("urllib.request.urlopen", side_effect=error), pytest.raises(ProviderUnavailable, match="HTTP 429.*30"):
-        provider.generate("test prompt")
+    request = httpx.Request("POST", "https://example.invalid")
+    response = httpx.Response(429, headers={"Retry-After": "30"}, request=request)
+
+    class FakeAsyncClient:
+        async def __aenter__(self): return self
+        async def __aexit__(self, *args): return False
+        async def post(self, *args, **kwargs):
+            response.raise_for_status()
+
+    with patch("httpx.AsyncClient", return_value=FakeAsyncClient()), pytest.raises(ProviderUnavailable, match="HTTP 429.*30"):
+        asyncio.run(provider.generate("test prompt"))
+
+
+def test_gemini_provider_skips_thought_parts_and_parses_final_json():
+    import httpx
+    from unittest.mock import patch
+
+    response_json = {"candidates": [{"content": {"parts": [
+        {"text": "Thinking that should not be parsed", "thought": True},
+        {"text": json.dumps({"overlap_summary": "Grounded summary"})},
+    ]}}]}
+
+    class FakeResponse:
+        def raise_for_status(self): pass
+        def json(self): return response_json
+
+    class FakeAsyncClient:
+        async def __aenter__(self): return self
+        async def __aexit__(self, *args): return False
+        async def post(self, *args, **kwargs): return FakeResponse()
+
+    provider = GeminiProvider(api_key="test-key", model="gemini-3.5-flash-lite")
+    with patch("httpx.AsyncClient", return_value=FakeAsyncClient()):
+        assert asyncio.run(provider.generate("test prompt")) == {"overlap_summary": "Grounded summary"}
+
+
+def test_gemini_provider_has_a_total_request_deadline(monkeypatch):
+    import httpx
+
+    monkeypatch.setattr("src.enhance.provider.GEMINI_REQUEST_TIMEOUT_SECONDS", 0.01)
+
+    class SlowAsyncClient:
+        async def __aenter__(self): return self
+        async def __aexit__(self, *args): return False
+        async def post(self, *args, **kwargs):
+            await asyncio.sleep(0.05)
+
+    provider = GeminiProvider(api_key="test-key", model="gemini-3.5-flash-lite")
+    with pytest.raises(ProviderUnavailable, match="timed out"):
+        asyncio.run(_generate_with_client(provider, SlowAsyncClient()))
+
+
+async def _generate_with_client(provider, client):
+    from unittest.mock import patch
+
+    with patch("httpx.AsyncClient", return_value=client):
+        return await provider.generate("test prompt")
 
 
 def test_enhance_route_uses_server_search_and_injected_provider():
