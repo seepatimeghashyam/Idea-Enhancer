@@ -1,0 +1,410 @@
+{
+  "query_id": "q10",
+  "query_text": "FPGA-based AES encryption system for hardware security and data protection",
+  "category": "Hardware Security",
+  "timestamp": 1795888817.2289064,
+  "local_candidates": [
+    {
+      "candidate_id": "local:RVCE-KSCST-44S-0012",
+      "candidate_type": "local",
+      "title": "Design of Advanced Encryption Standard System for Data Encryption and Decryption Using FPGA",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp.html",
+      "source_type": "institutional_project",
+      "year": 2020,
+      "domain": "Hardware Security / VLSI Systems",
+      "tech_stack": "FPGA",
+      "rank": 1,
+      "bm25_rank": 1,
+      "vector_rank": 1,
+      "rrf_score": 0.03278688524590164,
+      "shared_elements": [
+        "fpga",
+        "encryption",
+        "hardware",
+        "security",
+        "data"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0228",
+      "candidate_type": "local",
+      "title": "Ensuring Greenhouse Security Using AES Encryption",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating ensuring greenhouse security using aes encryption. Published in 2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2025).",
+      "source_url": "https://doi.org/10.1109/csitss67709.2025.11295616",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Cybersecurity / Network Security",
+      "tech_stack": null,
+      "rank": 2,
+      "bm25_rank": 2,
+      "vector_rank": 7,
+      "rrf_score": 0.031054405392392875,
+      "shared_elements": [
+        "aes",
+        "encryption",
+        "security"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0207",
+      "candidate_type": "local",
+      "title": "FPGA-Based Hardware Accelerator with RISC-V Processor for Real-Time CNN Inference on ECG Signals",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating fpga-based hardware accelerator with risc-v processor for real-time cnn inference on ecg signals. Published in 2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2025).",
+      "source_url": "https://doi.org/10.1109/csitss67709.2025.11294741",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": "CNN",
+      "rank": 3,
+      "bm25_rank": 6,
+      "vector_rank": 4,
+      "rrf_score": 0.030776515151515152,
+      "shared_elements": [
+        "fpga",
+        "hardware"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0050",
+      "candidate_type": "local",
+      "title": "A Fine-Grained Versatile Systolic Array Architecture for Mixed-Sparsity Hardware Acceleration on FPGA",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating a fine-grained versatile systolic array architecture for mixed-sparsity hardware acceleration on fpga. Published in 2026 IEEE 6th International Conference on VLSI Systems, Architecture, Technology and Applications (VLSI SATA) (2026).",
+      "source_url": "https://doi.org/10.1109/vlsisata69163.2026.11610337",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "VLSI Design / Microelectronics",
+      "tech_stack": null,
+      "rank": 4,
+      "bm25_rank": 5,
+      "vector_rank": 5,
+      "rrf_score": 0.03076923076923077,
+      "shared_elements": [
+        "fpga",
+        "hardware"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0320",
+      "candidate_type": "local",
+      "title": "Combining TCP Reno, Bit Stuffing, Kruskal's Algorithm and AES Encryption",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating combining tcp reno, bit stuffing, kruskal's algorithm and aes encryption. Published in 2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2025).",
+      "source_url": "https://doi.org/10.1109/csitss67709.2025.11295667",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Applied Engineering / Computing",
+      "tech_stack": null,
+      "rank": 5,
+      "bm25_rank": 3,
+      "vector_rank": 11,
+      "rrf_score": 0.029957522915269395,
+      "shared_elements": [
+        "aes",
+        "encryption"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0482",
+      "candidate_type": "local",
+      "title": "FPGA-Based Efficient MLP Neural Network for Digit Recognition",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating fpga-based efficient mlp neural network for digit recognition. Published in 2023 International Conference on Integration of Computational Intelligent System (ICICIS) (2023).",
+      "source_url": "https://doi.org/10.1109/icicis56802.2023.10430242",
+      "source_type": "research_paper",
+      "year": 2023,
+      "domain": "VLSI Design / Microelectronics",
+      "tech_stack": null,
+      "rank": 6,
+      "bm25_rank": 15,
+      "vector_rank": 2,
+      "rrf_score": 0.02946236559139785,
+      "shared_elements": [
+        "fpga"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0223",
+      "candidate_type": "local",
+      "title": "GKS Fully Homomorphic Encryption: Security Analysis",
+      "description": "All traditional encryption schemes share a fundamental operational vulnerability: encrypted data must be decrypted before it can be used. Fully homomorphic encryption eliminates this vulnerability by enabling computation directly on encrypted data, but existing FHE schemes impose substantial practical constraints that limit deployment. This paper presents a formal security analysis of the Gribov-Kahrobaei-Shpilrain (GKS) private-key FHE scheme. GKS requires no bootstrapping or de-linearization, produces bit-exact decryption, supports native encrypted search, and scales to unbounded depth.",
+      "source_url": "https://arxiv.org/abs/2610.37061v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Cybersecurity / Applied Cryptography",
+      "tech_stack": null,
+      "rank": 7,
+      "bm25_rank": 4,
+      "vector_rank": 17,
+      "rrf_score": 0.028612012987012988,
+      "shared_elements": [
+        "encryption",
+        "security",
+        "data"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0237",
+      "candidate_type": "local",
+      "title": "Silent Blindness: Fault Vulnerability of Hardware Malware Detectors",
+      "description": "Hardware malware detectors (HMDs) classify hardware performance-counter measurements to identify malicious execution. Faults in their decision logic or parameters can weaken detection and allow malware to be classified as benign. We investigate this vulnerability through structural fault injection across a design space comprising 18 classifiers, four counter budgets, and AdaBoost and Bagging ensembles. The simulation evaluates 453,174 decision stuck-at and selected parameter bit-flip events on a 7,400-instance. Primary comparisons use 128 completed configurations. These completed-subset results are distinguished from the simulation summaries covering 140 configurations with enumerable fault sites. Fault outcomes are classified by their security consequences, including evasion, false-alarm increases, and metric silence. A fault is critical when malware recall decreases by at least five percentage points. Tree-based models exhibit a lower mean critical-fault fraction than function-based models, 5.3% versus 14.3%; exhaustive-only analysis preserves this ordering. Moreover, 72.3% of evaluated tree faults are metric-silent, changing both recall and false-positive rate by less than 0.1 percentage points without necessarily preserving individual predictions. Among the 27 completed matched comparisons, Bagging reduces criticality in 26, whereas AdaBoost increases it in two. Finally, an exact minimax selection method identifies protection candidates under additive unit costs and ideal correction. For a representative J48 detector, protecting 16 of 115 structural units reduces predicted maximum recall loss from 60.1 to 3.3 percentage points. These results characterize structural-model sensitivity and potential protection benefits; faulted RTL correspondence and physical hardening overhead remain unvalidated.",
+      "source_url": "https://arxiv.org/abs/2610.36612v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Cybersecurity / Applied Cryptography",
+      "tech_stack": null,
+      "rank": 8,
+      "bm25_rank": 17,
+      "vector_rank": 8,
+      "rrf_score": 0.027692895339954164,
+      "shared_elements": [
+        "hardware",
+        "security",
+        "protection"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_0014",
+      "candidate_type": "local",
+      "title": "Design And Implementation Of A Secure Bitcoin Hardware Wallet",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 9,
+      "bm25_rank": null,
+      "vector_rank": 3,
+      "rrf_score": 0.015873015873015872,
+      "shared_elements": [
+        "hardware"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0219",
+      "candidate_type": "local",
+      "title": "SecDMP: Provably Secure Data Memory-Dependent Prefetching (Extended Version)",
+      "description": "Data memory-dependent prefetchers (DMPs) are a microarchitectural optimization recently introduced in mainstream desktop and server CPUs. Although DMPs offer performance improvements, they have been shown to enable side-channel leakage of secrets, even from constant-time code that has been hardened against Spectre attacks. Unfortunately, existing defenses either incur significant performance overhead or, as we show, fail to prevent all DMP leakage. In this work, we address this gap by designing a defense that is both secure and efficient. First, we propose a classification of DMP leakage, categorize existing and novel attacks, and analyze which leakage classes are mitigated by existing defenses. We validate this analysis empirically by implementing the first open-source DMPs on a RISC-V processor, showing that the only existing defense that aims to preserve DMP performance fails to protect against entire leakage classes. Next, we propose SecDMP, a provably secure and efficient hardware-based defense. SecDMP requires secrets to be marked in memory and ensures that DMPs never encode these secrets in the microarchitecture---without compromising performance for public data. We formally prove that SecDMP introduces no leakage beyond a baseline semantics without DMPs. Notably, when combined with speculative-execution defenses, SecDMP restores complete microarchitectural security for constant-time code. Finally, our empirical evaluation shows that SecDMP prevents all DMP leakage while incurring minimal performance overhead and hardware cost.",
+      "source_url": "https://arxiv.org/abs/2610.37454v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Cybersecurity / Applied Cryptography",
+      "tech_stack": null,
+      "rank": 10,
+      "bm25_rank": null,
+      "vector_rank": 6,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [
+        "hardware",
+        "security",
+        "data"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0246",
+      "candidate_type": "local",
+      "title": "Digital Data Protection Laws : A Review",
+      "description": "Over the past couple of years, India has noted the significance of digital data and its protection. This article talks about the arising and present regime of India\u2019s laws on digital data protection, specifically diving into the Digital Personal Data Protection Act, 2023. This act has tried to balance the scales between individual privacy rights and the economic growth that needs to be brought about by data-driven economic progress. A comparative study regarding data protection laws in the UK and US have been established, and this has been compared with DPDP 2023 in order to provide suggestions for improvements for the act. This paper examines various provisions, objects, and shortcomings of the DPDP Act, bringing into sharper focus areas of concern, notably government exemptions, data localization, and inadequacies in regard to a strong data protection authority. The article concludes with comparative analysis to shed light on strengthening the data protection regime in India and also makes some recommendations for future legislation in the light of emerging technologies like AI.",
+      "source_url": "https://doi.org/10.32628/ijsrset2411416",
+      "source_type": "research_paper",
+      "year": 2024,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": null,
+      "rank": 11,
+      "bm25_rank": 7,
+      "vector_rank": null,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [
+        "data",
+        "protection"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0227",
+      "candidate_type": "local",
+      "title": "Developing a Dynamic Multi-factor Authentication System for Securing Smart Organizations",
+      "description": "As smart organizations increasingly rely on technologies like AI, big data, and IoT, securing these systems is crucial. This research introduces a dynamic multi-factor authentication (MFA) system within the Zero Trust Architecture (ZTA) framework, which enforces continuous verification. The system randomly selects biometric authentication factors, such as fingerprint, iris, and face recognition using a Markov chain model to ensure adaptability and reduce predictability in security measures. Using CASIA biometric datasets and AES-128 encryption, the system securely manages user data and authentication. Performance analysis shows that the dynamic selection process balances security and efficiency, making it suitable for smart organizations, particularly in e-government contexts. This MFA system strengthens cybersecurity by providing a flexible, real-time defense against evolving threats.",
+      "source_url": "https://arxiv.org/abs/2610.36926v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Cybersecurity / Applied Cryptography",
+      "tech_stack": null,
+      "rank": 12,
+      "bm25_rank": 8,
+      "vector_rank": null,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "aes",
+        "encryption",
+        "security",
+        "data"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0096",
+      "candidate_type": "local",
+      "title": "AdGuard Home",
+      "description": "Network-wide DNS server and ad-blocking application with advanced parental control and query encryption support.",
+      "source_url": "https://github.com/AdguardTeam/AdGuardHome",
+      "source_type": "open_source_repository",
+      "year": 2018,
+      "domain": "Network Security / DNS Filtering",
+      "tech_stack": null,
+      "rank": 13,
+      "bm25_rank": 9,
+      "vector_rank": null,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "encryption",
+        "security"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_1874",
+      "candidate_type": "local",
+      "title": "Attribute Based Encryption And Decryption In Green Cloud Computing",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 14,
+      "bm25_rank": null,
+      "vector_rank": 9,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "encryption"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0032",
+      "candidate_type": "local",
+      "title": "Sustainable Data Storage Solutions Using AI",
+      "description": "AI-driven data storage systems play a transformative and prominent role in ensuring the key features of sustainability and efficiency of the modern management systems. AI techniques such as compression and deduplication help reduce the storage space by efficiently identifying redundancies and patterns in data. Another major step in the direction of efficient data storage is predictive maintenance powered by machine learning algorithms which minimize hardware failures and extend the primitive lifespan of storage devices. The horizons of energy management can also be expanded by using AI algorithms to dynamically adjust power usage on demand, resulting in substantial energy savings. AI can also enhance security features. This combination of AI's predictive power, energy optimization, and security measures is crucial for achieving sustainable and reliable data storage infrastructures.",
+      "source_url": "https://doi.org/10.4018/979-8-3693-8034-5.ch016",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Cybersecurity / Network Security",
+      "tech_stack": null,
+      "rank": 15,
+      "bm25_rank": 10,
+      "vector_rank": null,
+      "rrf_score": 0.014285714285714285,
+      "shared_elements": [
+        "hardware",
+        "security",
+        "data"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0235",
+      "candidate_type": "local",
+      "title": "mcu-tools/mcuboot",
+      "description": "Secure boot for 32-bit Microcontrollers!",
+      "source_url": "https://github.com/mcu-tools/mcuboot",
+      "source_type": "open_source_repository",
+      "year": 2016,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 16,
+      "bm25_rank": null,
+      "vector_rank": 10,
+      "rrf_score": 0.014285714285714285,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0443",
+      "candidate_type": "local",
+      "title": "RSA Encryption for Secure Key Exchange and Encrypted Data Transmission Using Stop and Wait Protocol",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating rsa encryption for secure key exchange and encrypted data transmission using stop and wait protocol. Published in 2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2025).",
+      "source_url": "https://doi.org/10.1109/csitss67709.2025.11294831",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Applied Engineering / Computing",
+      "tech_stack": null,
+      "rank": 17,
+      "bm25_rank": 11,
+      "vector_rank": null,
+      "rrf_score": 0.014084507042253521,
+      "shared_elements": [
+        "encryption",
+        "data"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0044",
+      "candidate_type": "local",
+      "title": "Frigate NVR",
+      "description": "Complete open-source network video recorder featuring real-time AI object detection via Google Coral TPU hardware acceleration.",
+      "source_url": "https://github.com/blakeblackshear/frigate",
+      "source_type": "open_source_repository",
+      "year": 2019,
+      "domain": "Computer Vision / Smart Security",
+      "tech_stack": null,
+      "rank": 18,
+      "bm25_rank": 12,
+      "vector_rank": null,
+      "rrf_score": 0.013888888888888888,
+      "shared_elements": [
+        "hardware",
+        "security"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_0077",
+      "candidate_type": "local",
+      "title": "Design Of Multiplier Using Compressors And Cmos Logic",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 19,
+      "bm25_rank": null,
+      "vector_rank": 12,
+      "rrf_score": 0.013888888888888888,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0174",
+      "candidate_type": "local",
+      "title": "ADC Emulation on FPGA",
+      "description": "Analog-to-Digital Converters (ADCs) are devices that transform analog signals into digital signals and are used in various applications such as audio recording, data acquisition, and measurement systems [1]. Prior to the development of actual chip, there is a need for prototyping, testing and verifying the performance of ADCs in different scenarios. Analog macros cannot be tested on an FPGA. In order to ensure the macros function properly, the emulation of the ADC is done first. This is a digital module and can be designed in System Verilog. This paper demonstrates the design of the module on FPGA for Analog to Digital Converter (ADC) emulation. The emulation is done specific to the ADC macro which has programmable resolutions of 12/10/8/6 bit.",
+      "source_url": "https://doi.org/10.24425/ijet.2023.144379",
+      "source_type": "research_paper",
+      "year": 2023,
+      "domain": "Power Systems / Renewable Energy",
+      "tech_stack": null,
+      "rank": 20,
+      "bm25_rank": 13,
+      "vector_rank": null,
+      "rrf_score": 0.0136986301369863,
+      "shared_elements": [
+        "fpga",
+        "data"
+      ],
+      "verification_status": "checked"
+    }
+  ],
+  "live_candidates": []
+}

@@ -1,0 +1,423 @@
+{
+  "query_id": "q6",
+  "query_text": "Autonomous lunar rover navigation using reinforcement learning and orbital DEMs",
+  "category": "Robotics/Space",
+  "timestamp": 1795888782.078762,
+  "local_candidates": [
+    {
+      "candidate_id": "local:RVCE-PUB-0036",
+      "candidate_type": "local",
+      "title": "Safety-Aware Reinforcement Learning for Lunar Rover Navigation Using Orbital DEMs",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating safety-aware reinforcement learning for lunar rover navigation using orbital dems. Published in IEEE Access (2026).",
+      "source_url": "https://doi.org/10.1109/access.2026.3717682",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 1,
+      "bm25_rank": 1,
+      "vector_rank": 1,
+      "rrf_score": 0.03278688524590164,
+      "shared_elements": [
+        "autonomous",
+        "lunar",
+        "rover",
+        "navigation",
+        "reinforcement",
+        "learning",
+        "orbital",
+        "dems"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2879",
+      "candidate_type": "local",
+      "title": "Android Controlled Autonomous Rover",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 2,
+      "bm25_rank": 2,
+      "vector_rank": 8,
+      "rrf_score": 0.030834914611005692,
+      "shared_elements": [
+        "autonomous",
+        "rover"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_5551",
+      "candidate_type": "local",
+      "title": "Aegis Rover: A Multifunctional Military Robot For Detection And Defense",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 3,
+      "bm25_rank": 3,
+      "vector_rank": 7,
+      "rrf_score": 0.030798389007344232,
+      "shared_elements": [
+        "autonomous",
+        "rover"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0102",
+      "candidate_type": "local",
+      "title": "AgibotTech/agibot_x1_train",
+      "description": "The reinforcement learning training code for AgiBot X1.",
+      "source_url": "https://github.com/AgibotTech/agibot_x1_train",
+      "source_type": "open_source_repository",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 4,
+      "bm25_rank": 9,
+      "vector_rank": 10,
+      "rrf_score": 0.02877846790890269,
+      "shared_elements": [
+        "autonomous",
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0167",
+      "candidate_type": "local",
+      "title": "A Bi-level Co-design Framework for Lunar Monoped with 2D Jump and Landing Control",
+      "description": "Legged robots for lunar exploration must be designed for low gravity, where reduced contact forces and long flight phases make leg morphology and controller choice interdependent. We study this for a planar monoped in lunar gravity ($1.625$ m/s$^2$) using a bi-level co-design framework: a differential evolution outer loop searches over link lengths, and each candidate is evaluated on a vertical jump by either a quadratic program based task-space controller (QP-TSC) or a direct-collocation based trajectory optimization. The two controllers yield different optimal link lengths, and trajectory optimization outperforms the QP-TSC across most of the design space, with 17% lower Cost of Transport (COT) at their respective optima. We then extend to a 2D jump, where trajectory optimization with centroidal angular momentum regulation produces stable in-place and forward jumps, and an LQR controller absorbs impact and stabilizes the robot after touchdown. This is demonstrated on a baseline morphology with both links 0.3 m long.",
+      "source_url": "https://arxiv.org/abs/2610.37199v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 5,
+      "bm25_rank": 17,
+      "vector_rank": 4,
+      "rrf_score": 0.028612012987012988,
+      "shared_elements": [
+        "autonomous",
+        "lunar"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0094",
+      "candidate_type": "local",
+      "title": "Farama-Foundation/Gymnasium-Robotics",
+      "description": "A collection of robotics simulation environments for reinforcement learning",
+      "source_url": "https://github.com/Farama-Foundation/Gymnasium-Robotics",
+      "source_type": "open_source_repository",
+      "year": 2021,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 6,
+      "bm25_rank": 10,
+      "vector_rank": 11,
+      "rrf_score": 0.028370221327967807,
+      "shared_elements": [
+        "autonomous",
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0409",
+      "candidate_type": "local",
+      "title": "Farama-Foundation/HighwayEnv",
+      "description": "A collection of environments for autonomous driving and tactical decision-making tasks",
+      "source_url": "https://github.com/Farama-Foundation/HighwayEnv",
+      "source_type": "open_source_repository",
+      "year": 2017,
+      "domain": "Reinforcement Learning / Decision AI",
+      "tech_stack": null,
+      "rank": 7,
+      "bm25_rank": 13,
+      "vector_rank": 9,
+      "rrf_score": 0.02819138376017471,
+      "shared_elements": [
+        "autonomous",
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0059",
+      "candidate_type": "local",
+      "title": "DLR-RM/stable-baselines3",
+      "description": "PyTorch version of Stable Baselines, reliable implementations of reinforcement learning algorithms.",
+      "source_url": "https://github.com/DLR-RM/stable-baselines3",
+      "source_type": "open_source_repository",
+      "year": 2020,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 8,
+      "bm25_rank": 12,
+      "vector_rank": 16,
+      "rrf_score": 0.027046783625730993,
+      "shared_elements": [
+        "autonomous",
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0087",
+      "candidate_type": "local",
+      "title": "learnsyslab/gym-pybullet-drones",
+      "description": "PyBullet Gymnasium environments for single and multi-agent reinforcement learning of quadcopter control",
+      "source_url": "https://github.com/learnsyslab/gym-pybullet-drones",
+      "source_type": "open_source_repository",
+      "year": 2020,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 9,
+      "bm25_rank": 14,
+      "vector_rank": 17,
+      "rrf_score": 0.026500526500526502,
+      "shared_elements": [
+        "autonomous",
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0174",
+      "candidate_type": "local",
+      "title": "Omni-IGN: Onboard Image-Goal Navigation for Drones with Omnidirectional Vision",
+      "description": "Image-goal navigation (ImageNav) requires an agent to reach a location specified by a goal image in an unknown environment. For drones, this task demands exploration, goal- directed navigation, and collision avoidance under limited onboard computing resources. Existing aerial ImageNav methods are built on single-view observations, requiring additional rotation and exploration to search for goal-relevant cues outside the field of view. In this paper, we present Omni-IGN, a fully onboard ImageNav system that integrates quad-fisheye perception, an attention-based reinforcement learning (RL) policy, and a collision-aware safety layer. The policy adaptively fuses goal-relevant features across multiple views to provide directional guidance for continuous navigation. The quad-fisheye RGB images support both ImageNav and obstacle avoidance without a dedicated depth sensor. On Habitat benchmarks, Omni-IGN achieves the best performance among continuous-action baselines. Moreover, flight tests in IsaacSim validate the effectiveness of integrating learning-based depth estimation with the action safety layer for collision avoidance. Finally, real-world experiments demonstrate zero-shot sim-to-real transfer without any fine-tuning or external localization. The code and model checkpoints will be released upon acceptance.",
+      "source_url": "https://arxiv.org/abs/2610.36968v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 10,
+      "bm25_rank": 16,
+      "vector_rank": 15,
+      "rrf_score": 0.02649122807017544,
+      "shared_elements": [
+        "autonomous",
+        "navigation",
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0080",
+      "candidate_type": "local",
+      "title": "DLR-RM/rl-baselines3-zoo",
+      "description": "A training framework for Stable Baselines3 reinforcement learning agents, with hyperparameter optimization and pre-trained agents included.",
+      "source_url": "https://github.com/DLR-RM/rl-baselines3-zoo",
+      "source_type": "open_source_repository",
+      "year": 2020,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 11,
+      "bm25_rank": 19,
+      "vector_rank": 19,
+      "rrf_score": 0.02531645569620253,
+      "shared_elements": [
+        "autonomous",
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_1780",
+      "candidate_type": "local",
+      "title": "Self-navigating Rover For Real Time Mapping And Disaster Management",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Web Application / Information Systems",
+      "tech_stack": null,
+      "rank": 12,
+      "bm25_rank": null,
+      "vector_rank": 2,
+      "rrf_score": 0.016129032258064516,
+      "shared_elements": [
+        "rover"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0181",
+      "candidate_type": "local",
+      "title": "Integrated Design and Reproducible Feasibility Analysis of a Four-Wheel Rover with Packet-Commanded Imaging, LiDAR Ranging, and Learning-Assisted Target Recognition",
+      "description": "This study develops an integrated, reproducible design assessment for a four-wheel educational rover intended for the high-school remote-control division of the 2027 NASA Human Exploration Rover Challenge. The architecture combines commercial differential drive control, independently sprung wheel carriers, separate drive and task batteries, and a Raspberry Pi-based subsystem that executes received imaging and ranging commands. The analysis reconciles component lists with dimensioned computer-aided design views, derives mobility and electrical constraints, and connects sensor geometry to command execution. At the estimated mass of 10.919 kg, a 215 mm wheel rotating at 200 RPM produces a theoretical rolling speed of 8.105 km/h; consequently, the nominal motor label does not establish compliance with an 8 km/h design ceiling. A steady 20-degree climb requires at least 1.255 newton-meters per wheel under an assumed rolling-resistance coefficient of 0.10 and equal torque sharing. At 50 ft, an ideal 12-inch feature spans approximately 71 pixels across a full-resolution Camera Module 3 Standard image, while a 1-degree pointing error displaces the ranging ray by approximately 266 mm. An executed synthetic benchmark compares color-geometry rules and two linear support-vector classifiers on 2,400 generated board crops with scene-disjoint evaluation. A separate reference command executor is checked using mocked hardware. These software results and analytical sensitivities support a testable development plan; the study does not report physical rover trials. The principal contribution is a traceable connection between component choices, failure mechanisms, quantitative design limits, and reproducible verification tasks.",
+      "source_url": "https://arxiv.org/abs/2610.36816v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 13,
+      "bm25_rank": null,
+      "vector_rank": 3,
+      "rrf_score": 0.015873015873015872,
+      "shared_elements": [
+        "autonomous",
+        "rover",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:VERIFIED-0013",
+      "candidate_type": "local",
+      "title": "Nav2 (ROS 2 Navigation System)",
+      "description": "Navigation stack for ROS 2 that provides autonomous mobile robot path planning, dynamic obstacle avoidance, behavioral tree execution, and localization.",
+      "source_url": "https://github.com/ros-navigation/navigation2",
+      "source_type": "open_source_repository",
+      "year": 2018,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": "ROS 2",
+      "rank": 14,
+      "bm25_rank": 4,
+      "vector_rank": null,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "autonomous",
+        "navigation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_1081",
+      "candidate_type": "local",
+      "title": "Person Recognition And Autonomous Bot Navigation",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 15,
+      "bm25_rank": 5,
+      "vector_rank": null,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "autonomous",
+        "navigation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0381",
+      "candidate_type": "local",
+      "title": "tensorlayer/TensorLayer",
+      "description": "Deep Learning and Reinforcement Learning Library for Scientists and Engineers",
+      "source_url": "https://github.com/tensorlayer/TensorLayer",
+      "source_type": "open_source_repository",
+      "year": 2016,
+      "domain": "Reinforcement Learning / Decision AI",
+      "tech_stack": null,
+      "rank": 16,
+      "bm25_rank": null,
+      "vector_rank": 5,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3019",
+      "candidate_type": "local",
+      "title": "Smars Robot - A 3d Printed Autonomous Navigation System",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 17,
+      "bm25_rank": 6,
+      "vector_rank": null,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [
+        "autonomous",
+        "navigation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0384",
+      "candidate_type": "local",
+      "title": "rllm-org/rllm",
+      "description": "Democratizing Reinforcement Learning for LLMs",
+      "source_url": "https://github.com/rllm-org/rllm",
+      "source_type": "open_source_repository",
+      "year": 2025,
+      "domain": "Reinforcement Learning / Decision AI",
+      "tech_stack": null,
+      "rank": 18,
+      "bm25_rank": null,
+      "vector_rank": 6,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [
+        "reinforcement",
+        "learning"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3986",
+      "candidate_type": "local",
+      "title": "Design And Development Of Humanoid Robot With Autonomous Navigation",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 19,
+      "bm25_rank": 7,
+      "vector_rank": null,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [
+        "autonomous",
+        "navigation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_6456",
+      "candidate_type": "local",
+      "title": "Solar Powered Automatic Weed Removal Robot With Autonomous Navigation",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 20,
+      "bm25_rank": 8,
+      "vector_rank": null,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "autonomous",
+        "navigation"
+      ],
+      "verification_status": "checked"
+    }
+  ],
+  "live_candidates": []
+}

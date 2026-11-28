@@ -1,0 +1,502 @@
+[
+  {
+    "row": 2,
+    "project_id": "RVCE-KSCST-48S-1607",
+    "title": "NutriInsight Analyser"
+  },
+  {
+    "row": 3,
+    "project_id": "RVCE-KSCST-48S-1606",
+    "title": "AI-Based Virtual Assistant for Visually Disabled"
+  },
+  {
+    "row": 4,
+    "project_id": "RVCE-KSCST-48S-0058",
+    "title": "Telemetry-Driven Hazardous Gas Prediction in Atmospheric Monitoring"
+  },
+  {
+    "row": 5,
+    "project_id": "RVCE-KSCST-48S-0012",
+    "title": "ZONEFIX: Highlighting AI-Powered Detection, Analysis, and Resolution for Public Issues"
+  },
+  {
+    "row": 6,
+    "project_id": "RVCE-KSCST-48S-0010",
+    "title": "Online Intelligent Tool for Identifying Fake and Real Images"
+  },
+  {
+    "row": 7,
+    "project_id": "RVCE-KSCST-47S-0058",
+    "title": "BEYOND BOUNDARIES: Engineering Journeys in Rural Communities Through XR"
+  },
+  {
+    "row": 8,
+    "project_id": "RVCE-KSCST-46S-3815",
+    "title": "Adaptive Anomaly Detection System for Software Defined Networks"
+  },
+  {
+    "row": 9,
+    "project_id": "RVCE-KSCST-49S-0269",
+    "title": "An Immersive, Interactive Virtual Walkthrough of a Modern Aerospace Maintenance Hangar"
+  },
+  {
+    "row": 10,
+    "project_id": "RVCE-KSCST-45S-4467",
+    "title": "Stimulating the Impact of Urban Sprawl in Spatiotemporal Variation of Air Pollution in Bangalore Region Using ML Techniques"
+  },
+  {
+    "row": 17,
+    "project_id": "RVCE-IEEE-2023-04",
+    "title": "Network Intrusion Detection for IoT-Botnet Attacks Using Machine Learning"
+  },
+  {
+    "row": 18,
+    "project_id": "RVCE-IEEE-2024-03",
+    "title": "Social Platform Recommendation System Using Graph Neural Networks"
+  },
+  {
+    "row": 20,
+    "project_id": "RVCE-PUB-0025",
+    "title": "Surface Modification of Biomass and Enhancing Sorption Capacity of Azo-dyes"
+  },
+  {
+    "row": 22,
+    "project_id": "RVCE-PUB-0027",
+    "title": "Classification of cashew kernel using deep learning"
+  },
+  {
+    "row": 23,
+    "project_id": "RVCE-PUB-0028",
+    "title": "Data Driven Approaches to Optimize Vehicle Availability in Fleet Management"
+  },
+  {
+    "row": 24,
+    "project_id": "RVCE-PUB-0029",
+    "title": "A Hybrid Deterministic-AI Multi-Agent Framework for Healthcare Provider Validation: Architecture and Implementation"
+  },
+  {
+    "row": 25,
+    "project_id": "RVCE-PUB-0030",
+    "title": "Decentralized Document Storage with NFT Authentication Using Blockchain Technology"
+  },
+  {
+    "row": 26,
+    "project_id": "RVCE-PUB-0031",
+    "title": "Youtube Comment Summarizer and Post Content Analysis"
+  },
+  {
+    "row": 27,
+    "project_id": "RVCE-PUB-0032",
+    "title": "Sustainable Data Storage Solutions Using AI"
+  },
+  {
+    "row": 28,
+    "project_id": "RVCE-PUB-0033",
+    "title": "Study on How Competitive Pricing Strategies Shape Cloud Service Markets: A Game-Theoretic Perspective With Semi-Greedy Consumer Agents"
+  },
+  {
+    "row": 29,
+    "project_id": "RVCE-PUB-0034",
+    "title": "Conceptual Design of Hydrogen Fuel-Cell-Based Utility Aircraft"
+  },
+  {
+    "row": 30,
+    "project_id": "RVCE-PUB-0035",
+    "title": "Edge-Optimized AI-Powered Translator for Indian Sign Language (ISL)"
+  },
+  {
+    "row": 31,
+    "project_id": "RVCE-PUB-0036",
+    "title": "Safety-Aware Reinforcement Learning for Lunar Rover Navigation Using Orbital DEMs"
+  },
+  {
+    "row": 32,
+    "project_id": "RVCE-PUB-0037",
+    "title": "Image Conversion Module for GNN Library of HPCC Systems"
+  },
+  {
+    "row": 33,
+    "project_id": "RVCE-PUB-0038",
+    "title": "Energy-Aware Calibration of 10-Bit SAR ADC for Low-Power IoT Sensor Nodes in Smart City Infrastructure"
+  },
+  {
+    "row": 35,
+    "project_id": "RVCE-PUB-0040",
+    "title": "Optimizing Queueing in Passport Offices"
+  },
+  {
+    "row": 37,
+    "project_id": "RVCE-PUB-0042",
+    "title": "Simulation-based comparison of robust control and deep reinforcement learning control techniques for active suspension systems"
+  },
+  {
+    "row": 39,
+    "project_id": "RVCE-PUB-0044",
+    "title": "Potential Aerodynamics Benefits of the Camber\u2013Morphing Wing"
+  },
+  {
+    "row": 40,
+    "project_id": "RVCE-PUB-0045",
+    "title": "Role of Machine Learning in Artificial Emotional Intelligence"
+  },
+  {
+    "row": 41,
+    "project_id": "RVCE-PUB-0046",
+    "title": "OT Security Protocol Attack and Anomaly Detection"
+  },
+  {
+    "row": 42,
+    "project_id": "RVCE-PUB-0047",
+    "title": "Synergizing AI and Blockchain"
+  },
+  {
+    "row": 43,
+    "project_id": "RVCE-PUB-0048",
+    "title": "Cloud-Based Water Leakage Detection and Localization"
+  },
+  {
+    "row": 45,
+    "project_id": "RVCE-PUB-0050",
+    "title": "A Fine-Grained Versatile Systolic Array Architecture for Mixed-Sparsity Hardware Acceleration on FPGA"
+  },
+  {
+    "row": 46,
+    "project_id": "RVCE-PUB-0051",
+    "title": "Multimodal Ensemble Learning for Coronary Artery Disease Risk Stratification Using ECG and Clinical Biomarkers"
+  },
+  {
+    "row": 47,
+    "project_id": "RVCE-PUB-0052",
+    "title": "A Hybrid RAG-LLaMA Framework for Scalable and Accurate Interpretation of Legal Texts"
+  },
+  {
+    "row": 48,
+    "project_id": "RVCE-PUB-0053",
+    "title": "Impact Damage Estimation and Localization in Composite Sandwich Plates Using Deep Learning"
+  },
+  {
+    "row": 49,
+    "project_id": "RVCE-PUB-0054",
+    "title": "AI-Assisted Swarm Robotics for Autonomous Exploration Using Ant Colony Algorithms"
+  },
+  {
+    "row": 50,
+    "project_id": "RVCE-PUB-0055",
+    "title": "A Low-Power LDO Regulator with Adaptive Biasing and Dynamic Current Boosting forWearable ECG Monitoring Systems"
+  },
+  {
+    "row": 51,
+    "project_id": "RVCE-PUB-0056",
+    "title": "Variability-Aware Statistical Read Stability and Yield Analysis of 6T and 8T SRAM Cells in 45 nm CMOS Technology"
+  },
+  {
+    "row": 52,
+    "project_id": "RVCE-PUB-0057",
+    "title": "AI-Powered Blind Man Stick"
+  },
+  {
+    "row": 53,
+    "project_id": "RVCE-PUB-0058",
+    "title": "A Future Look at Artificial Intelligence in the World of Tourism"
+  },
+  {
+    "row": 54,
+    "project_id": "RVCE-PUB-0059",
+    "title": "Structure-Based Drug Discovery"
+  },
+  {
+    "row": 55,
+    "project_id": "RVCE-PUB-0060",
+    "title": "Reducing Aluminum Toxicity in Food Packaging Using Bio- Polymer"
+  },
+  {
+    "row": 56,
+    "project_id": "RVCE-PUB-0061",
+    "title": "Charging Solutions for Electric Vehicles Using Solar- Powered Inductive Lanes"
+  },
+  {
+    "row": 57,
+    "project_id": "RVCE-PUB-0062",
+    "title": "Optimisation of laser surface ablation of alumina/GO coating on AZ31D magnesium alloy using Cuckoo Search Algorithm method"
+  },
+  {
+    "row": 58,
+    "project_id": "RVCE-PUB-0063",
+    "title": "Adaptive Text Mutation: A Closed-Loop Framework for Real-Time Cognitive Load\u2013Aware Language Learning using Artificial Intelligence and Machine Learning"
+  },
+  {
+    "row": 59,
+    "project_id": "RVCE-PUB-0064",
+    "title": "NLP in Social Media Data Processing"
+  },
+  {
+    "row": 60,
+    "project_id": "RVCE-PUB-0065",
+    "title": "Predictive Digital Twin-Assisted Geometry-Aware Uncertainty-Adaptive Beamforming for ISAC"
+  },
+  {
+    "row": 61,
+    "project_id": "RVCE-PUB-0066",
+    "title": "A case study on design, optimisation and effects of traffic signals at sarakki junction"
+  },
+  {
+    "row": 62,
+    "project_id": "RVCE-PUB-0067",
+    "title": "Cooperative Localisation System Using Ultra-Wide Band and GPS"
+  },
+  {
+    "row": 63,
+    "project_id": "RVCE-PUB-0068",
+    "title": "Revolutionizing Digital Marketing Using Machine Learning"
+  },
+  {
+    "row": 65,
+    "project_id": "RVCE-PUB-0070",
+    "title": "Noise-Resilient Optimization of Parameterized Quantum Circuits for Near-Term Quantum Devices"
+  },
+  {
+    "row": 66,
+    "project_id": "RVCE-PUB-0071",
+    "title": "Design and Analysis of an Energy-Efficient Binarized Neural Network Neuron Using XNOR\u2013Popcount Architecture"
+  },
+  {
+    "row": 67,
+    "project_id": "RVCE-PUB-0072",
+    "title": "Plagiarism Detection: Identifying AI-Generated and Paraphrased Content"
+  },
+  {
+    "row": 68,
+    "project_id": "RVCE-PUB-0073",
+    "title": "Influence of Jute Fiber Strengthening on Load Carrying Capacity of SCC Short Columns"
+  },
+  {
+    "row": 69,
+    "project_id": "RVCE-PUB-0074",
+    "title": "Public Key Security for Quantum Key Distribution"
+  },
+  {
+    "row": 70,
+    "project_id": "RVCE-PUB-0075",
+    "title": "Optimised fluoride adsorption from water using functionalised rice straw: a response surface methodology approach"
+  },
+  {
+    "row": 71,
+    "project_id": "RVCE-PUB-0076",
+    "title": "Multi Mobile Agent Based Remote Health Monitoring"
+  },
+  {
+    "row": 72,
+    "project_id": "RVCE-PUB-0077",
+    "title": "Utilizing Marketing Information Systems and Big Data Analytics in Promoting Tourism Destinations"
+  },
+  {
+    "row": 73,
+    "project_id": "RVCE-PUB-0078",
+    "title": "Analytical Review of Carbon Footprinting at R V College of Engineering"
+  },
+  {
+    "row": 74,
+    "project_id": "RVCE-PUB-0079",
+    "title": "Hiring and Keeping Talent in a Time of Transformation and Staff Empowerment"
+  },
+  {
+    "row": 75,
+    "project_id": "RVCE-PUB-0080",
+    "title": "In silico identification and structural characterization of ClAPRR2 and ClPSY1 as independent genetic targets for a white-rinded, orange-fleshed watermelon (Citrullus lanatus) accessible to colour-vision-deficient consumers"
+  },
+  {
+    "row": 76,
+    "project_id": "RVCE-PUB-0081",
+    "title": "AI-powered edge-based gunshot detection for protecting wildlife"
+  },
+  {
+    "row": 77,
+    "project_id": "RVCE-PUB-0082",
+    "title": "Influence of construction and demolition waste grades on crushing efficiency, utility factor, recycled aggregate properties and their environmental indicators"
+  },
+  {
+    "row": 78,
+    "project_id": "RVCE-PUB-0083",
+    "title": "Efficient Text Summarization using Natural Language Processing"
+  },
+  {
+    "row": 79,
+    "project_id": "RVCE-PUB-0084",
+    "title": "CAN-SAT Based Artificial Cloud Seeding and Analysis of Atmospheric Parameters"
+  },
+  {
+    "row": 80,
+    "project_id": "RVCE-PUB-0085",
+    "title": "Improving beta phase of spin coated PVDF thin films by doping with silver nanoparticles"
+  },
+  {
+    "row": 81,
+    "project_id": "RVCE-PUB-0086",
+    "title": "LLM-Assisted Incremental Migration from React to Next.js"
+  },
+  {
+    "row": 82,
+    "project_id": "RVCE-PUB-0087",
+    "title": "Transforming Wastewater Management: The Evolution and Future of Compact STPs"
+  },
+  {
+    "row": 83,
+    "project_id": "RVCE-PUB-0088",
+    "title": "Examination of QUIC-based Website Fingerprinting"
+  },
+  {
+    "row": 84,
+    "project_id": "RVCE-PUB-0089",
+    "title": "Retention Time Prediction in High-Performance Liquid Chromatography Using Random Forest Regression"
+  },
+  {
+    "row": 85,
+    "project_id": "RVCE-PUB-0090",
+    "title": "Piezoelectric - Based Energy Harvesting Testbed for Sounding Rocket Platforms"
+  },
+  {
+    "row": 86,
+    "project_id": "RVCE-PUB-0091",
+    "title": "Linearity Enhancement of Class-AB, S-Band HEMT PA Using Balanced Configuration"
+  },
+  {
+    "row": 87,
+    "project_id": "RVCE-PUB-0092",
+    "title": "Airframe Stabilization and Control System for Near Space Balloon Payloads"
+  },
+  {
+    "row": 88,
+    "project_id": "RVCE-PUB-0093",
+    "title": "Fault Detection in Combinational Circuits using ML"
+  },
+  {
+    "row": 89,
+    "project_id": "RVCE-PUB-0094",
+    "title": "Pansharpening and Semantic Segmentation of Satellite Imagery"
+  },
+  {
+    "row": 90,
+    "project_id": "RVCE-PUB-0095",
+    "title": "Aerovitals: Flight Passenger Health Monitoring System"
+  },
+  {
+    "row": 91,
+    "project_id": "RVCE-PUB-0096",
+    "title": "Design and Performance Analysis of Slotted Vivaldi Antennae in X-Band"
+  },
+  {
+    "row": 92,
+    "project_id": "RVCE-PUB-0097",
+    "title": "Energy Optimized AI Based O-Ring Defect Detection for Sustainable Manufacturing"
+  },
+  {
+    "row": 93,
+    "project_id": "RVCE-PUB-0098",
+    "title": "Machine Learning Based VoxelNet and LUNET architectures for Object Detection using LiDAR Cloud Points"
+  },
+  {
+    "row": 94,
+    "project_id": "RVCE-PUB-0099",
+    "title": "Comparative Analysis of CMOS and CNFET Technologies for Low Power Circuits"
+  },
+  {
+    "row": 95,
+    "project_id": "RVCE-PUB-0100",
+    "title": "Disease Prediction Using K-Nearest Neighbors on Genetic Microarray Data"
+  },
+  {
+    "row": 96,
+    "project_id": "RVCE-PUB-0101",
+    "title": "Micropropagation and in Vitro Flowering in Basella Spp."
+  },
+  {
+    "row": 97,
+    "project_id": "RVCE-PUB-0102",
+    "title": "Efficiency Optimization of Dual-Axis Solar Tracking Systems Using Computational Vision Models"
+  },
+  {
+    "row": 98,
+    "project_id": "RVCE-PUB-0103",
+    "title": "Smart Battery Management System for Electric Vehicles"
+  },
+  {
+    "row": 100,
+    "project_id": "RVCE-PUB-0105",
+    "title": "The Role of AI in Empowering Startup Growth and IP Strategy: Case Studies & A Practical Web Platform"
+  },
+  {
+    "row": 101,
+    "project_id": "RVCE-PUB-0106",
+    "title": "Smart Flood Monitoring: AI-Integrated Radar-Camera System for Contamination and Debris Detection"
+  },
+  {
+    "row": 102,
+    "project_id": "RVCE-PUB-0107",
+    "title": "Automated Marine Debris Detection and Classification Using Deep Learning"
+  },
+  {
+    "row": 103,
+    "project_id": "RVCE-PUB-0108",
+    "title": "Machine Learning-Based Prediction of Anti-Cancer Peptides (ACPs)"
+  },
+  {
+    "row": 104,
+    "project_id": "RVCE-PUB-0109",
+    "title": "Augmented Reality-Based Visualization and Education for Biogas Plant Adoption in Rural Communities"
+  },
+  {
+    "row": 105,
+    "project_id": "RVCE-PUB-0110",
+    "title": "Design of Shark-Fin Superstrate Antenna for 5G and GPS Applications"
+  },
+  {
+    "row": 106,
+    "project_id": "RVCE-PUB-0111",
+    "title": "AI-Based Maze Solving Robot Using Hybrid Path Planning and Reinforcement Learning in Webots Simulation"
+  },
+  {
+    "row": 107,
+    "project_id": "RVCE-PUB-0112",
+    "title": "Massively Scalable Image Processing on the HPCC Systems Big Data Platform"
+  },
+  {
+    "row": 108,
+    "project_id": "RVCE-PUB-0113",
+    "title": "ANN Technique for the Prediction of Solar Power Generation"
+  },
+  {
+    "row": 109,
+    "project_id": "RVCE-PUB-0114",
+    "title": "Natural Language Interface for Data Visualization: Harnessing the Power of Large Language Models"
+  },
+  {
+    "row": 110,
+    "project_id": "RVCE-PUB-0115",
+    "title": "Learning-Based Simultaneous Localization and Navigation Planning for Self-Driving Vehicles"
+  },
+  {
+    "row": 111,
+    "project_id": "RVCE-PUB-0116",
+    "title": "A Detail Survey on QUIC and its Impact on Network Data Transmission"
+  },
+  {
+    "row": 112,
+    "project_id": "RVCE-PUB-0117",
+    "title": "Artificial Intelligence based Optimized Resource Allocation using Predictive Analysis in a Virtual Environment"
+  },
+  {
+    "row": 113,
+    "project_id": "RVCE-PUB-0118",
+    "title": "Detection of Manhole and Sewage Overflow Using Computer Vision"
+  },
+  {
+    "row": 114,
+    "project_id": "RVCE-PUB-0119",
+    "title": "Smart Detection of Defects in Railway Tracks Using Ultrasonic Sensor"
+  },
+  {
+    "row": 115,
+    "project_id": "RVCE-PUB-0120",
+    "title": "High-Performance Hydrogen Sulfide Gas Sensors Based on Conjugated Polymer Nanocomposites"
+  }
+]

@@ -1,0 +1,379 @@
+{
+  "query_id": "q5",
+  "query_text": "Quantum teleportation device for household pets using acoustic levitation",
+  "category": "Quantum/Novelty",
+  "timestamp": 1795888772.9834068,
+  "local_candidates": [
+    {
+      "candidate_id": "local:KSCST-48S_BE_2763",
+      "candidate_type": "local",
+      "title": "Quantum Computing For Network Traffic Analysis",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Public Safety / Computer Vision",
+      "tech_stack": null,
+      "rank": 1,
+      "bm25_rank": 10,
+      "vector_rank": 1,
+      "rrf_score": 0.030679156908665108,
+      "shared_elements": [
+        "quantum"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0070",
+      "candidate_type": "local",
+      "title": "Noise-Resilient Optimization of Parameterized Quantum Circuits for Near-Term Quantum Devices",
+      "description": "Noisy Intermediate-Scale Quantum (NISQ) devices are near-term quantum computing devices that inherently suffer from imperfect gate implementation, decoherence, and measurement noise. The main type of variational quantum algorithms(VQAs) is based on Parameterized Quantum Circuits (PQCs), which, however, face practical challenges due to optimization instability of optimization caused by noise and reduced performance. In this paper, we suggest a comprehensive noise-resilient optimization framework for PQCs, which explicitly incorporates noise-resilient circuit architecture design, incorporating noise-aware training strategies into the variational optimization loop. The framework uses circuit structures that are efficient in depth and are hardware compatible in addition to adaptive optimizer choice, stochastic optimization, and averaging as a part of repeated measurement to reduce the impacts of realistic noise. Large-scale experiments are performed with different amounts of qubits, depths of the circuit and noise strengths with realistic noise models. The findings indicate that the convergence rate is faster, the stability is increased, the variability of run-to-run variability is minimized, and other robustness is better than the noise-unaware optimization techniques. Moreover, systematic studies determine optimal operating regions that optimally trade-off expressibility and noise tolerance to offer useful design advice on trusted implementation of VQAs with near-term quantum hardware.",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-8510087/v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": null,
+      "rank": 2,
+      "bm25_rank": 11,
+      "vector_rank": 3,
+      "rrf_score": 0.029957522915269395,
+      "shared_elements": [
+        "quantum"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_1073",
+      "candidate_type": "local",
+      "title": "Smart Scan: Quantum Enhanced Threat Matrix",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Public Safety / Computer Vision",
+      "tech_stack": null,
+      "rank": 3,
+      "bm25_rank": 9,
+      "vector_rank": 7,
+      "rrf_score": 0.029418126757516764,
+      "shared_elements": [
+        "quantum"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2379",
+      "candidate_type": "local",
+      "title": "Health Monitoring Wearable Device For Cattles",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Healthcare / Biomedical AI",
+      "tech_stack": null,
+      "rank": 4,
+      "bm25_rank": 15,
+      "vector_rank": 16,
+      "rrf_score": 0.02649122807017544,
+      "shared_elements": [
+        "device"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_4656",
+      "candidate_type": "local",
+      "title": "Real Time Tracking And Health Insights For Pets",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Healthcare / Biomedical AI",
+      "tech_stack": null,
+      "rank": 5,
+      "bm25_rank": 1,
+      "vector_rank": null,
+      "rrf_score": 0.01639344262295082,
+      "shared_elements": [
+        "pets"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0152",
+      "candidate_type": "local",
+      "title": "Grocy",
+      "description": "Self-hosted ERP and inventory tracking application for personal households managing groceries, chores, and batteries.",
+      "source_url": "https://github.com/grocy/grocy",
+      "source_type": "open_source_repository",
+      "year": 2018,
+      "domain": "Home Management / Household ERP",
+      "tech_stack": null,
+      "rank": 6,
+      "bm25_rank": 2,
+      "vector_rank": null,
+      "rrf_score": 0.016129032258064516,
+      "shared_elements": [
+        "household"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3327",
+      "candidate_type": "local",
+      "title": "IOT Based Raspberry-pi Powered Optophone For The Visually Impaired People",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Assistive Technology / AI",
+      "tech_stack": null,
+      "rank": 7,
+      "bm25_rank": null,
+      "vector_rank": 2,
+      "rrf_score": 0.016129032258064516,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0153",
+      "candidate_type": "local",
+      "title": "Mealie",
+      "description": "Self-hosted recipe manager and meal planner with automatic web scraping, meal scheduling, and shopping lists.",
+      "source_url": "https://github.com/mealie-recipes/mealie",
+      "source_type": "open_source_repository",
+      "year": 2020,
+      "domain": "Household Management / Recipe Planner",
+      "tech_stack": null,
+      "rank": 8,
+      "bm25_rank": 3,
+      "vector_rank": null,
+      "rrf_score": 0.015873015873015872,
+      "shared_elements": [
+        "household"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0104",
+      "candidate_type": "local",
+      "title": "IoT-Enabled Predictive Maintenance for Rotating Machinery Using ESP32-Based Low-Cost Vibration and Acoustic Sensing",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating iot-enabled predictive maintenance for rotating machinery using esp32-based low-cost vibration and acoustic sensing. Published in 2026 7th International Conference on Smart Electronics and Communication (ICOSEC) (2026).",
+      "source_url": "https://doi.org/10.1109/icosec70158.2026.11736120",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": "ESP32",
+      "rank": 9,
+      "bm25_rank": 4,
+      "vector_rank": null,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "acoustic"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0168",
+      "candidate_type": "local",
+      "title": "Acoustic Signature Optimisation for Bioinspired Flapping-Wing Micro Aerial Vehicles",
+      "description": "Flapping-wing micro air vehicles are prized for quiet flight, yet the few existing measurements show engineered wings to be 15-30 dB louder than the animals they imitate. This paper investigates two passive geometric approaches to reduce the acoustic signature of a flapping membrane wing, and applies these to an exemplary wing. A significant sound source in flapping wings is the impulsive click radiated at stroke reversal, when a slack membrane snaps between two curvatures. Our first noise-reduction approach optimises the wing's venation layout, based on an analytical model of the reversal click as a dynamic snap-through of the membrane. The optimised venation pattern was manufactured and resulted in a reduction of up to 8 dB during the reversal snap in experiments. During testing, the venation was found to be sensitive to orientation rather than thickness. Secondly, an additive trailing-edge fringe inspired by hummingbird feathers was shown to further reduce the broadband swoosh by 3-4 dB at no lift cost, matching a cut serration wing without removing lifting area.",
+      "source_url": "https://arxiv.org/abs/2610.37190v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 10,
+      "bm25_rank": null,
+      "vector_rank": 4,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "acoustic"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0463",
+      "candidate_type": "local",
+      "title": "Optimal Parameter Prediction for Secure Quantum Key Distribution Using Quantum Machine Learning Models",
+      "description": "The advent of quantum computing is bringing threats to successful operations of classical cryptographic techniques. To conduct quantum key distribution (QKD) in a finite time interval, there is a need to estimate photon states and analyze the fluctuations statistically. The use of brute force and local search methods for parameter optimization are computationally intensive and becomes an infeasible solution even for smaller connections. Therefore, the use of quantum machine learning models with self-learning ability is useful in predicting the optimal parameters for quantum key distribution. This chapter discusses some of the quantum machine learning models with their architecture, advantages, and disadvantages. The performance of quantum convoluted neural network (QCNN) and Quantum Particle Swarm Optimization (QPSO) towards QKD is found to be good compared to all the other quantum machine learning models discussed.",
+      "source_url": "https://doi.org/10.4018/978-1-7998-2253-0.ch003",
+      "source_type": "research_paper",
+      "year": 2020,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": null,
+      "rank": 11,
+      "bm25_rank": 5,
+      "vector_rank": null,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "quantum"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0079",
+      "candidate_type": "local",
+      "title": "KingKongRobotics/jumper",
+      "description": "\ud83e\udd80 Jumper \u2014 an crab robot.",
+      "source_url": "https://github.com/KingKongRobotics/jumper",
+      "source_type": "open_source_repository",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 12,
+      "bm25_rank": null,
+      "vector_rank": 5,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0245",
+      "candidate_type": "local",
+      "title": "Quantum Antenna Behavioral Analysis Using Quantum Tunneling",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating quantum antenna behavioral analysis using quantum tunneling. Published in 2024 8th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2024).",
+      "source_url": "https://doi.org/10.1109/csitss64042.2024.10816869",
+      "source_type": "research_paper",
+      "year": 2024,
+      "domain": "Applied Engineering / Computing",
+      "tech_stack": null,
+      "rank": 13,
+      "bm25_rank": 6,
+      "vector_rank": null,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [
+        "quantum"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_4621",
+      "candidate_type": "local",
+      "title": "Smart Luggage For Physically Challenged People",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 14,
+      "bm25_rank": null,
+      "vector_rank": 6,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0271",
+      "candidate_type": "local",
+      "title": "QryptoNet: Quantum Support Vector Machine for Encrypted Network Traffic Analysis using Quantum Machine Learning (QML)",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating qryptonet: quantum support vector machine for encrypted network traffic analysis using quantum machine learning (qml). Published in 2025 International Conference on Sustainable Communication Networks and Application (ICSCN) (2025).",
+      "source_url": "https://doi.org/10.1109/icscn67106.2025.11308614",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Civil & Infrastructure Engineering",
+      "tech_stack": null,
+      "rank": 15,
+      "bm25_rank": 7,
+      "vector_rank": null,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [
+        "quantum"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0074",
+      "candidate_type": "local",
+      "title": "Public Key Security for Quantum Key Distribution",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating public key security for quantum key distribution. Published in 2024 8th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2024).",
+      "source_url": "https://doi.org/10.1109/csitss64042.2024.10817048",
+      "source_type": "research_paper",
+      "year": 2024,
+      "domain": "Cybersecurity / Network Security",
+      "tech_stack": null,
+      "rank": 16,
+      "bm25_rank": 8,
+      "vector_rank": null,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "quantum"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_5881",
+      "candidate_type": "local",
+      "title": "Swifteye - Lightweight Micro Drone For Advanced Indoor Surveillance And Monitoring",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Public Safety / Computer Vision",
+      "tech_stack": null,
+      "rank": 17,
+      "bm25_rank": null,
+      "vector_rank": 8,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_0910",
+      "candidate_type": "local",
+      "title": "Intelligent Silkworm Incubator Using IOT",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 18,
+      "bm25_rank": null,
+      "vector_rank": 9,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0469",
+      "candidate_type": "local",
+      "title": "Area and energy optimized Hamming encoder and decoder for nano-communication",
+      "description": "The Hamming code or Linear block code is used in communication to identify and repair errors. Redundancy bits are introduced to the Hamming communication network (HCN) for error detection and correction. It can detect two errors and correct one error. Quantum-dot Cellular Automata (QCA) is used for designing circuits with high switching speed and low energy dissipation. This work proposes a cost-effective QCA-based (7, 4) Hamming encoder and decoder design. Hamming encoder is designed using coplanar structure and the error detector used in Hamming decoder uses a multilayer structure. The effort is to optimize the area, cost, and energy dissipation. The work proposes a coplanar (7, 4) Hamming encoder and decoder. Hamming decoder is implemented in two parts a syndrome calculator and an error detector. Proposed (7, 4) Hamming encoder circuit reduces cell count by 49.47% compared to [1] and 9.52% compared to [12]. The proposed (7, 4) syndrome calculator has reduced cell count by 56.54%, an 11.11% reduction in total area compared to [1]. The proposed design reduces the cell area, QCA cost, and also energy dissipation. The designs are realized and QCA parameters are assessed in QCADesigner2.0.3 and energy is analyzed in QCADesigner-E.",
+      "source_url": "https://doi.org/10.2478/jee-2024-0028",
+      "source_type": "research_paper",
+      "year": 2024,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": null,
+      "rank": 19,
+      "bm25_rank": null,
+      "vector_rank": 10,
+      "rrf_score": 0.014285714285714285,
+      "shared_elements": [
+        "quantum"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3292",
+      "candidate_type": "local",
+      "title": "Non-invasive Haemoglobin Measuring Device With Mobile Application IOT & Flutter)",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Healthcare / Biomedical AI",
+      "tech_stack": "Flutter",
+      "rank": 20,
+      "bm25_rank": null,
+      "vector_rank": 11,
+      "rrf_score": 0.014084507042253521,
+      "shared_elements": [
+        "device"
+      ],
+      "verification_status": "checked"
+    }
+  ],
+  "live_candidates": []
+}

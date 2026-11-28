@@ -1,0 +1,403 @@
+{
+  "query_id": "q7",
+  "query_text": "AI-assisted swarm robotics with ant colony optimization for dynamic exploration",
+  "category": "Robotics/AI",
+  "timestamp": 1795888790.974153,
+  "local_candidates": [
+    {
+      "candidate_id": "local:RVCE-PUB-0054",
+      "candidate_type": "local",
+      "title": "AI-Assisted Swarm Robotics for Autonomous Exploration Using Ant Colony Algorithms",
+      "description": "This study explores the integration of Artificial Intelligence (AI) techniques with Ant Colony Optimization (ACO) to enhance swarm robotic exploration in dynamic and uncertain environments. While traditional ACO provides a decentralized, pheromone-based mechanism for path planning, it suffers from slow convergence, stagnation, and limited adaptability when confronted with environmental changes. To address these challenges, an AI-assisted ACO framework was developed, incorporating RL principles to adapt pheromone update rules in real time. Robots learn from past interactions, adjust strategies dynamically, and maintain efficient exploration under varying conditions. Python-based simulations were conducted across four environments\u201450\u00d750, 100\u00d7100, 250\u00d7250, and 500\u00d7500 grids\u2014with swarm sizes ranging from 20 to 200 robots and obstacle densities of 10%, 20%, and 30%. Results show that AI-assisted ACO consistently outperformed traditional ACO, achieving 7\u201315% higher exploration coverage (\u2248 52.1% vs. 44.6% in the baseline case and \u2248 61% vs. 48% in the largest grid), with \u2248 20\u201325% faster convergence and \u2248 25% higher adaptability under dynamic obstacle scenarios.",
+      "source_url": "https://doi.org/10.21203/rs.3.rs-7789592/v1",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 1,
+      "bm25_rank": 1,
+      "vector_rank": 1,
+      "rrf_score": 0.03278688524590164,
+      "shared_elements": [
+        "assisted",
+        "swarm",
+        "robotics",
+        "ant",
+        "colony",
+        "optimization",
+        "dynamic",
+        "exploration"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3648",
+      "candidate_type": "local",
+      "title": "Collaborative Swarm Robot",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 2,
+      "bm25_rank": 4,
+      "vector_rank": 2,
+      "rrf_score": 0.031754032258064516,
+      "shared_elements": [
+        "swarm",
+        "robotics"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3711",
+      "candidate_type": "local",
+      "title": "Jalswarm: Autonomous Water Waste Collection And Disposal Using Ai-powered Swarm Robots",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 3,
+      "bm25_rank": 3,
+      "vector_rank": 3,
+      "rrf_score": 0.031746031746031744,
+      "shared_elements": [
+        "swarm",
+        "robotics"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0240",
+      "candidate_type": "local",
+      "title": "Design and Development of Swarm Robots for Collaborative Planetary Exploration",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating design and development of swarm robots for collaborative planetary exploration. Published in 2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2025).",
+      "source_url": "https://doi.org/10.1109/csitss67709.2025.11295343",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 4,
+      "bm25_rank": 2,
+      "vector_rank": 6,
+      "rrf_score": 0.03128054740957967,
+      "shared_elements": [
+        "swarm",
+        "exploration"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0092",
+      "candidate_type": "local",
+      "title": "facebookresearch/theseus",
+      "description": "A library for differentiable nonlinear optimization",
+      "source_url": "https://github.com/facebookresearch/theseus",
+      "source_type": "open_source_repository",
+      "year": 2021,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 5,
+      "bm25_rank": 12,
+      "vector_rank": 5,
+      "rrf_score": 0.029273504273504274,
+      "shared_elements": [
+        "robotics",
+        "optimization"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0200",
+      "candidate_type": "local",
+      "title": "RoboAuto: Autonomous Robot Program Search through Multi-Level Physical Understanding",
+      "description": "Recently, LLM-based autonomous agents have shown strong capabilities in iteratively generating, evaluating, and refining executable solutions. In robotic manipulation, Code-as-Policy lets these agents search over modular and editable robot programs. However, effective program search requires physical understanding: agents must understand how objects can be manipulated, how scene geometry constrains actions, and why interactions succeed or fail. Existing methods rely mainly on execution feedback for program refinement, often leaving these physical questions unresolved. We introduce RoboAuto, a framework for robot program search that explicitly organizes physical understanding at the object, scene, and interaction levels through three components. First, a hierarchical knowledge base combines executable skills with object-centric knowledge of affordances, spatial relations, and action effects, learned from embodied data and online task solving. Second, scene grounding connects this knowledge to the current environment by identifying relevant objects and resolving action-critical quantities. Third, multi-stage planning with self-designed experiments checks whether each stage produces its expected physical effects and actively tests competing hypotheses to resolve physical uncertainties. RoboAuto achieves superior performance across five benchmark families, attaining an 89.1% success rate on short-horizon LIBERO-PRO tasks and more than twice the mean success rate of ASPIRE on LIBERO-PRO Long and LIBERO-Plus. It also outperforms ASPIRE and $\u03c0_{0.5}$ on three challenging long-horizon real-robot tasks requiring precise manipulation. We further show that the knowledge base transfers across simulators and embodiments, and that program search performance scales with its size. Project page: https://roboauto-ai.github.io/",
+      "source_url": "https://arxiv.org/abs/2610.36533v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 6,
+      "bm25_rank": null,
+      "vector_rank": 4,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "robotics"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_6220",
+      "candidate_type": "local",
+      "title": "Dynamic 5G Network Resource Allocation And Optimization Using Artificial Intelligence",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Telecommunications / Network Optimization",
+      "tech_stack": null,
+      "rank": 7,
+      "bm25_rank": 5,
+      "vector_rank": null,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "optimization",
+        "dynamic"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0105",
+      "candidate_type": "local",
+      "title": "Portainer",
+      "description": "Lightweight container management UI that simplifies deployment and monitoring of Docker, Swarm, and Kubernetes environments.",
+      "source_url": "https://github.com/portainer/portainer",
+      "source_type": "open_source_repository",
+      "year": 2016,
+      "domain": "DevOps / Container Management",
+      "tech_stack": "Swarm",
+      "rank": 8,
+      "bm25_rank": 6,
+      "vector_rank": null,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [
+        "swarm"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0474",
+      "candidate_type": "local",
+      "title": "Adaptive MAC Layer Scheduling Mechanism for Multimedia Traffic Optimization in Dynamic Network Topologies",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating adaptive mac layer scheduling mechanism for multimedia traffic optimization in dynamic network topologies. Published in 2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2025).",
+      "source_url": "https://doi.org/10.1109/csitss67709.2025.11294162",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Civil & Infrastructure Engineering",
+      "tech_stack": null,
+      "rank": 9,
+      "bm25_rank": 7,
+      "vector_rank": null,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [
+        "optimization",
+        "dynamic"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0079",
+      "candidate_type": "local",
+      "title": "KingKongRobotics/jumper",
+      "description": "\ud83e\udd80 Jumper \u2014 an crab robot.",
+      "source_url": "https://github.com/KingKongRobotics/jumper",
+      "source_type": "open_source_repository",
+      "year": 2026,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 10,
+      "bm25_rank": null,
+      "vector_rank": 7,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [
+        "robotics"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0065",
+      "candidate_type": "local",
+      "title": "Predictive Digital Twin-Assisted Geometry-Aware Uncertainty-Adaptive Beamforming for ISAC",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating predictive digital twin-assisted geometry-aware uncertainty-adaptive beamforming for isac. Published in IEEE Access (2026).",
+      "source_url": "https://doi.org/10.1109/access.2026.3740763",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Machine Learning / Applied AI",
+      "tech_stack": null,
+      "rank": 11,
+      "bm25_rank": 8,
+      "vector_rank": null,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "assisted"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0087",
+      "candidate_type": "local",
+      "title": "learnsyslab/gym-pybullet-drones",
+      "description": "PyBullet Gymnasium environments for single and multi-agent reinforcement learning of quadcopter control",
+      "source_url": "https://github.com/learnsyslab/gym-pybullet-drones",
+      "source_type": "open_source_repository",
+      "year": 2020,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 12,
+      "bm25_rank": null,
+      "vector_rank": 8,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "robotics"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0136",
+      "candidate_type": "local",
+      "title": "Revolutionizing Supply Chains",
+      "description": "Artificial Intelligence (AI) is revolutionizing supply chain management (SCM) by addressing challenges such as demand forecasting, logistics inefficiencies, and labor shortages. This chapter explores AI's transformative role in optimizing processes, including predictive analytics for demand planning, dynamic production scheduling, and route optimization for transportation management. AI enhances decision-making, reduces costs, and promotes sustainability by minimizing waste and carbon emissions. The chapter highlights real-world case studies, offering insights into successful AI implementations while addressing barriers such as high costs, resistance to change, and ethical concerns like algorithmic bias and data privacy. Future trends emphasize AI's role in fostering resilience, enabling crisis management, and supporting collaboration among supply chain stakeholders. By integrating AI, organizations can enhance operational efficiency, achieve sustainability goals, and build competitive, resilient supply chains for dynamic global markets.",
+      "source_url": "https://doi.org/10.4018/979-8-3373-0923-1.ch013",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 13,
+      "bm25_rank": 9,
+      "vector_rank": null,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "robotics",
+        "optimization",
+        "dynamic"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0082",
+      "candidate_type": "local",
+      "title": "ARISE-Initiative/robosuite",
+      "description": "robosuite: A Modular Simulation Framework and Benchmark for Robot Learning",
+      "source_url": "https://github.com/ARISE-Initiative/robosuite",
+      "source_type": "open_source_repository",
+      "year": 2018,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 14,
+      "bm25_rank": null,
+      "vector_rank": 9,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "robotics"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_6240",
+      "candidate_type": "local",
+      "title": "Smartstride: Iot-enabled,voice Assisted Wearable Shoe For The Visually Impaired Individual",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Assistive Technology / AI",
+      "tech_stack": null,
+      "rank": 15,
+      "bm25_rank": 10,
+      "vector_rank": null,
+      "rrf_score": 0.014285714285714285,
+      "shared_elements": [
+        "assisted"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0094",
+      "candidate_type": "local",
+      "title": "Farama-Foundation/Gymnasium-Robotics",
+      "description": "A collection of robotics simulation environments for reinforcement learning",
+      "source_url": "https://github.com/Farama-Foundation/Gymnasium-Robotics",
+      "source_type": "open_source_repository",
+      "year": 2021,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 16,
+      "bm25_rank": null,
+      "vector_rank": 10,
+      "rrf_score": 0.014285714285714285,
+      "shared_elements": [
+        "robotics"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0047",
+      "candidate_type": "local",
+      "title": "wkentaro/labelme",
+      "description": "Image annotation with Python. Supports polygon, rectangle, circle, line, point, and AI-assisted annotation.",
+      "source_url": "https://github.com/wkentaro/labelme",
+      "source_type": "open_source_repository",
+      "year": 2016,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": "Python",
+      "rank": 17,
+      "bm25_rank": 11,
+      "vector_rank": null,
+      "rrf_score": 0.014084507042253521,
+      "shared_elements": [
+        "assisted"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2778",
+      "candidate_type": "local",
+      "title": "Ai-driven Sericulture Automation For Optimal Silkworm Rearing",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 18,
+      "bm25_rank": null,
+      "vector_rank": 11,
+      "rrf_score": 0.014084507042253521,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0061",
+      "candidate_type": "local",
+      "title": "isaac-sim/IsaacLab",
+      "description": "Unified framework for robot learning with multi-physics/renderer support",
+      "source_url": "https://github.com/isaac-sim/IsaacLab",
+      "source_type": "open_source_repository",
+      "year": 2022,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 19,
+      "bm25_rank": null,
+      "vector_rank": 12,
+      "rrf_score": 0.013888888888888888,
+      "shared_elements": [
+        "robotics"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:VERIFIED-0013",
+      "candidate_type": "local",
+      "title": "Nav2 (ROS 2 Navigation System)",
+      "description": "Navigation stack for ROS 2 that provides autonomous mobile robot path planning, dynamic obstacle avoidance, behavioral tree execution, and localization.",
+      "source_url": "https://github.com/ros-navigation/navigation2",
+      "source_type": "open_source_repository",
+      "year": 2018,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": "ROS 2",
+      "rank": 20,
+      "bm25_rank": 13,
+      "vector_rank": null,
+      "rrf_score": 0.0136986301369863,
+      "shared_elements": [
+        "robotics",
+        "dynamic"
+      ],
+      "verification_status": "checked"
+    }
+  ],
+  "live_candidates": []
+}

@@ -1,0 +1,418 @@
+{
+  "query_id": "q1",
+  "query_text": "IoT-based crop disease detection using Raspberry Pi and CNN for real-time foliar infection monitoring",
+  "category": "Agriculture/IoT",
+  "timestamp": 1795888742.8816571,
+  "local_candidates": [
+    {
+      "candidate_id": "local:KSCST-48S_BE_1674",
+      "candidate_type": "local",
+      "title": "Smart Agriculture System: Integrated AI And IOT - Based Smart Irrigation, Crop Recommendation And Disease Detection System",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Smart Agriculture / AI",
+      "tech_stack": null,
+      "rank": 1,
+      "bm25_rank": 1,
+      "vector_rank": 2,
+      "rrf_score": 0.03252247488101534,
+      "shared_elements": [
+        "iot",
+        "crop",
+        "disease",
+        "detection"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_1990",
+      "candidate_type": "local",
+      "title": "Crop Disease Prediction Using Machine Learning",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Smart Agriculture / AI",
+      "tech_stack": null,
+      "rank": 2,
+      "bm25_rank": 14,
+      "vector_rank": 6,
+      "rrf_score": 0.028665028665028666,
+      "shared_elements": [
+        "crop",
+        "disease"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3562",
+      "candidate_type": "local",
+      "title": "Greensense: The Complete IOT Solution For Plant Growth And Care Using Machine Vision And Ai-powered Disease Detection",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Smart Agriculture / AI",
+      "tech_stack": null,
+      "rank": 3,
+      "bm25_rank": null,
+      "vector_rank": 1,
+      "rrf_score": 0.01639344262295082,
+      "shared_elements": [
+        "iot",
+        "disease",
+        "detection"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3327",
+      "candidate_type": "local",
+      "title": "IOT Based Raspberry-pi Powered Optophone For The Visually Impaired People",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Assistive Technology / AI",
+      "tech_stack": null,
+      "rank": 4,
+      "bm25_rank": 2,
+      "vector_rank": null,
+      "rrf_score": 0.016129032258064516,
+      "shared_elements": [
+        "iot",
+        "raspberry"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0209",
+      "candidate_type": "local",
+      "title": "BrewBlox",
+      "description": "Modular control system for brewing and fermentation temperature control running on Spark controllers and Raspberry Pi.",
+      "source_url": "https://github.com/BrewBlox/brewblox-ui",
+      "source_type": "open_source_repository",
+      "year": 2018,
+      "domain": "IoT / Industrial Brewing",
+      "tech_stack": null,
+      "rank": 5,
+      "bm25_rank": 3,
+      "vector_rank": null,
+      "rrf_score": 0.015873015873015872,
+      "shared_elements": [
+        "iot",
+        "raspberry"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2655",
+      "candidate_type": "local",
+      "title": "Plant Disease Detection",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Smart Agriculture / AI",
+      "tech_stack": null,
+      "rank": 6,
+      "bm25_rank": null,
+      "vector_rank": 3,
+      "rrf_score": 0.015873015873015872,
+      "shared_elements": [
+        "disease",
+        "detection"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0198",
+      "candidate_type": "local",
+      "title": "Gladys Assistant",
+      "description": "Privacy-focused smart home assistant designed to run on Raspberry Pi with built-in voice commands and automation.",
+      "source_url": "https://github.com/GladysAssistant/Gladys",
+      "source_type": "open_source_repository",
+      "year": 2013,
+      "domain": "IoT / Home Automation",
+      "tech_stack": null,
+      "rank": 7,
+      "bm25_rank": 4,
+      "vector_rank": null,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "iot",
+        "raspberry"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_5374",
+      "candidate_type": "local",
+      "title": "Optimized Crop Disease Segmentation And Predictive Outbreak Management For Proactive Agricultural Solutions",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Smart Agriculture / AI",
+      "tech_stack": null,
+      "rank": 8,
+      "bm25_rank": null,
+      "vector_rank": 4,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "crop",
+        "disease"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0399",
+      "candidate_type": "local",
+      "title": "Real Time Smart Forest Fire Detection and Monitoring System Using IoT and Machine Learning",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating real time smart forest fire detection and monitoring system using iot and machine learning. Published in 2024 8th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2024).",
+      "source_url": "https://doi.org/10.1109/csitss64042.2024.10816855",
+      "source_type": "research_paper",
+      "year": 2024,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": null,
+      "rank": 9,
+      "bm25_rank": 5,
+      "vector_rank": null,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "iot",
+        "detection",
+        "real",
+        "time",
+        "monitoring"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2712",
+      "candidate_type": "local",
+      "title": "Grapes Leaf Disease Detection And Classification Using Deep Learning",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Smart Agriculture / AI",
+      "tech_stack": null,
+      "rank": 10,
+      "bm25_rank": null,
+      "vector_rank": 5,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "disease",
+        "detection"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_4979",
+      "candidate_type": "local",
+      "title": "Iot-enabled Smart Helmet For Miner Safety: Real-time Monitoring And Emergency Detection With Lora Communication",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Public Safety / Computer Vision",
+      "tech_stack": null,
+      "rank": 11,
+      "bm25_rank": 6,
+      "vector_rank": null,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [
+        "iot",
+        "detection",
+        "real",
+        "time",
+        "monitoring"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0498",
+      "candidate_type": "local",
+      "title": "Enhancing Crop Productivity: Integrated Solutions for Crop Yield, Crop Recommendation, and Crop Disease Management",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating enhancing crop productivity: integrated solutions for crop yield, crop recommendation, and crop disease management. Published in 2023 7th International Conference on Computation System and Information Technology for Sustainable Solutions (CSITSS) (2023).",
+      "source_url": "https://doi.org/10.1109/csitss60515.2023.10334167",
+      "source_type": "research_paper",
+      "year": 2023,
+      "domain": "Applied Engineering / Computing",
+      "tech_stack": null,
+      "rank": 12,
+      "bm25_rank": 7,
+      "vector_rank": null,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [
+        "crop",
+        "disease"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_5475",
+      "candidate_type": "local",
+      "title": "Detection Of Adulteration In Fruits Using IOT And Machine Learning",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 13,
+      "bm25_rank": null,
+      "vector_rank": 7,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [
+        "iot",
+        "detection"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_0694",
+      "candidate_type": "local",
+      "title": "AI Driven Sustainable Waste Collection With Raspberry Pi",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 14,
+      "bm25_rank": 8,
+      "vector_rank": null,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "raspberry"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_0390",
+      "candidate_type": "local",
+      "title": "AI - Powered Deep Learning For Banana Leaf Spot Detection And Farmer Friendly Mobile Management",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Smart Agriculture / AI",
+      "tech_stack": null,
+      "rank": 15,
+      "bm25_rank": null,
+      "vector_rank": 8,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "detection"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0114",
+      "candidate_type": "local",
+      "title": "Netdata",
+      "description": "Real-time performance and health monitoring platform providing per-second metric resolution across servers and IoT devices.",
+      "source_url": "https://github.com/netdata/netdata",
+      "source_type": "open_source_repository",
+      "year": 2016,
+      "domain": "Infrastructure Monitoring / Telemetry",
+      "tech_stack": null,
+      "rank": 16,
+      "bm25_rank": 9,
+      "vector_rank": null,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "iot",
+        "real",
+        "time",
+        "monitoring"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_0127",
+      "candidate_type": "local",
+      "title": "Multiple Rice Leaf Disease Prediction For M04 Rice Leaf Variety In Dakshina Kannada Using Deep Learning Technique",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Smart Agriculture / AI",
+      "tech_stack": null,
+      "rank": 17,
+      "bm25_rank": null,
+      "vector_rank": 9,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "disease"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0219",
+      "candidate_type": "local",
+      "title": "OpenPlotter",
+      "description": "Hardware and software nautical navigational workstation for sailing vessels built around Raspberry Pi computers.",
+      "source_url": "https://github.com/openplotter/openplotter-settings",
+      "source_type": "open_source_repository",
+      "year": 2015,
+      "domain": "Marine Electronics / Navigation",
+      "tech_stack": null,
+      "rank": 18,
+      "bm25_rank": 10,
+      "vector_rank": null,
+      "rrf_score": 0.014285714285714285,
+      "shared_elements": [
+        "raspberry"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_4783",
+      "candidate_type": "local",
+      "title": "Plant Disease Severity Detection And Pesticide Recommendation",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Smart Agriculture / AI",
+      "tech_stack": null,
+      "rank": 19,
+      "bm25_rank": null,
+      "vector_rank": 10,
+      "rrf_score": 0.014285714285714285,
+      "shared_elements": [
+        "disease",
+        "detection"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0222",
+      "candidate_type": "local",
+      "title": "NeuroNest: A Hybrid IoT-Framework for Real-Time Canine Emotion and Vital Monitoring",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating neuronest: a hybrid iot-framework for real-time canine emotion and vital monitoring. Published in 2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2025).",
+      "source_url": "https://doi.org/10.1109/csitss67709.2025.11295381",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 20,
+      "bm25_rank": 11,
+      "vector_rank": null,
+      "rrf_score": 0.014084507042253521,
+      "shared_elements": [
+        "iot",
+        "real",
+        "time",
+        "monitoring"
+      ],
+      "verification_status": "checked"
+    }
+  ],
+  "live_candidates": []
+}

@@ -1,0 +1,413 @@
+{
+  "query_id": "q2",
+  "query_text": "Smart door lock system with facial recognition using ESP32-CAM for biometric access control",
+  "category": "IoT/Security",
+  "timestamp": 1795888752.52022,
+  "local_candidates": [
+    {
+      "candidate_id": "local:RVCE-IEEE-2024-01",
+      "candidate_type": "local",
+      "title": "Smart Door Lock System with Facial Recognition Using IoT",
+      "description": "An IoT-connected smart physical access control system using an ESP32-CAM microcontroller running edge computer vision to authenticate personnel via biometric face recognition and log entry records.",
+      "source_url": "https://ieeexplore.ieee.org/document/10787123",
+      "source_type": "research_paper",
+      "year": 2024,
+      "domain": "IoT / Embedded Vision",
+      "tech_stack": "ESP32-CAM",
+      "rank": 1,
+      "bm25_rank": 1,
+      "vector_rank": 1,
+      "rrf_score": 0.03278688524590164,
+      "shared_elements": [
+        "smart",
+        "door",
+        "lock",
+        "facial",
+        "recognition",
+        "esp32",
+        "cam",
+        "biometric",
+        "access",
+        "control"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2793",
+      "candidate_type": "local",
+      "title": "Smart Doorbell System With 2-factor Biometric Authentication",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 2,
+      "bm25_rank": 8,
+      "vector_rank": 2,
+      "rrf_score": 0.030834914611005692,
+      "shared_elements": [
+        "smart",
+        "biometric"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0181",
+      "candidate_type": "local",
+      "title": "Design and Implementation of Smart Door Lock System Using IoT",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating design and implementation of smart door lock system using iot. Published in 2024 8th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2024).",
+      "source_url": "https://doi.org/10.1109/csitss64042.2024.10816710",
+      "source_type": "research_paper",
+      "year": 2024,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 3,
+      "bm25_rank": 2,
+      "vector_rank": 16,
+      "rrf_score": 0.02928692699490662,
+      "shared_elements": [
+        "smart",
+        "door",
+        "lock"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_0104",
+      "candidate_type": "local",
+      "title": "Enhanced Facial Recognition For Criminal And Missing Person Id Using Facenet And Mtcnn",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 4,
+      "bm25_rank": 12,
+      "vector_rank": 11,
+      "rrf_score": 0.02797339593114241,
+      "shared_elements": [
+        "facial",
+        "recognition"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:VERIFIED-0007",
+      "candidate_type": "local",
+      "title": "DeepFace",
+      "description": "Lightweight facial recognition and facial attribute analysis library for Python wrapping leading face recognition models with verification and clustering.",
+      "source_url": "https://github.com/serengil/deepface",
+      "source_type": "open_source_repository",
+      "year": 2020,
+      "domain": "Computer Vision / Biometrics",
+      "tech_stack": "Python",
+      "rank": 5,
+      "bm25_rank": 7,
+      "vector_rank": 17,
+      "rrf_score": 0.027912386121341344,
+      "shared_elements": [
+        "facial",
+        "recognition"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3139",
+      "candidate_type": "local",
+      "title": "Face -ticket: A Facial Recognition Approach For Exam Hall Ticket Management System To Avoid Cheating",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Web Application / Information Systems",
+      "tech_stack": null,
+      "rank": 6,
+      "bm25_rank": 17,
+      "vector_rank": 8,
+      "rrf_score": 0.027692895339954164,
+      "shared_elements": [
+        "facial",
+        "recognition"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_4611",
+      "candidate_type": "local",
+      "title": "Design And Implementation Of Iot-based Contactless Metro Access System With Face Recognition",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 7,
+      "bm25_rank": 19,
+      "vector_rank": 10,
+      "rrf_score": 0.02694394213381555,
+      "shared_elements": [
+        "recognition",
+        "access"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0227",
+      "candidate_type": "local",
+      "title": "Developing a Dynamic Multi-factor Authentication System for Securing Smart Organizations",
+      "description": "As smart organizations increasingly rely on technologies like AI, big data, and IoT, securing these systems is crucial. This research introduces a dynamic multi-factor authentication (MFA) system within the Zero Trust Architecture (ZTA) framework, which enforces continuous verification. The system randomly selects biometric authentication factors, such as fingerprint, iris, and face recognition using a Markov chain model to ensure adaptability and reduce predictability in security measures. Using CASIA biometric datasets and AES-128 encryption, the system securely manages user data and authentication. Performance analysis shows that the dynamic selection process balances security and efficiency, making it suitable for smart organizations, particularly in e-government contexts. This MFA system strengthens cybersecurity by providing a flexible, real-time defense against evolving threats.",
+      "source_url": "https://arxiv.org/abs/2610.36926v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Cybersecurity / Applied Cryptography",
+      "tech_stack": null,
+      "rank": 8,
+      "bm25_rank": 11,
+      "vector_rank": 18,
+      "rrf_score": 0.02690501986276634,
+      "shared_elements": [
+        "smart",
+        "recognition",
+        "biometric"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_0937",
+      "candidate_type": "local",
+      "title": "Smart Lock For Parking Violation Using: IOT",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 9,
+      "bm25_rank": 10,
+      "vector_rank": 20,
+      "rrf_score": 0.026785714285714288,
+      "shared_elements": [
+        "smart",
+        "lock"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0201",
+      "candidate_type": "local",
+      "title": "Tasmota",
+      "description": "Alternative open-source firmware for ESP8266 and ESP32 smart home devices providing local HTTP, MQTT, and OTA control.",
+      "source_url": "https://github.com/arendst/Tasmota",
+      "source_type": "open_source_repository",
+      "year": 2016,
+      "domain": "Embedded Firmware / Smart Home",
+      "tech_stack": "ESP8266, ESP32, MQTT",
+      "rank": 10,
+      "bm25_rank": 3,
+      "vector_rank": null,
+      "rrf_score": 0.015873015873015872,
+      "shared_elements": [
+        "smart",
+        "esp32",
+        "control"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_1037",
+      "candidate_type": "local",
+      "title": "Steptrace: Smart Security Systems For Real-time Human Identification Through Gait Mechanism",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 11,
+      "bm25_rank": null,
+      "vector_rank": 3,
+      "rrf_score": 0.015873015873015872,
+      "shared_elements": [
+        "smart"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0233",
+      "candidate_type": "local",
+      "title": "IoT-based Smart Water Flow Control and Monitoring System using ESP32 and 2-Way Solenoid Valves",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating iot-based smart water flow control and monitoring system using esp32 and 2-way solenoid valves. Published in 2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2025).",
+      "source_url": "https://doi.org/10.1109/csitss67709.2025.11293995",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": "ESP32",
+      "rank": 12,
+      "bm25_rank": 4,
+      "vector_rank": null,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "smart",
+        "esp32",
+        "control"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3784",
+      "candidate_type": "local",
+      "title": "Secure Face Detection And Recognition System With Anti- Spoof Authentication",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Web Application / Information Systems",
+      "tech_stack": null,
+      "rank": 13,
+      "bm25_rank": null,
+      "vector_rank": 4,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "recognition"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-IEEE-2024-02",
+      "candidate_type": "local",
+      "title": "Smart IoT-Driven Monitoring and Control System for Shrimp Aquaculture",
+      "description": "An autonomous aquaculture telemetry and regulation station utilizing submersible chemical sensors coupled to an ESP32 controller to monitor dissolved oxygen, pH, and water temperature.",
+      "source_url": "https://ieeexplore.ieee.org/document/10787201",
+      "source_type": "research_paper",
+      "year": 2024,
+      "domain": "Smart Agriculture / Aquaculture IoT",
+      "tech_stack": "ESP32",
+      "rank": 14,
+      "bm25_rank": 5,
+      "vector_rank": null,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "smart",
+        "esp32",
+        "control"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2136",
+      "candidate_type": "local",
+      "title": "Smart Women Security System Using IOT",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Public Safety / Computer Vision",
+      "tech_stack": null,
+      "rank": 15,
+      "bm25_rank": null,
+      "vector_rank": 5,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "smart"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:VERIFIED-0014",
+      "candidate_type": "local",
+      "title": "ESPHome Smart Sensor Firmware",
+      "description": "System to control ESP8266 and ESP32 microcontrollers with simple YAML configuration files, sensor reading routines, and automated Home Assistant integration.",
+      "source_url": "https://github.com/esphome/esphome",
+      "source_type": "open_source_repository",
+      "year": 2018,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 16,
+      "bm25_rank": 6,
+      "vector_rank": null,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [
+        "smart",
+        "esp32",
+        "control"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2861",
+      "candidate_type": "local",
+      "title": "Security Surveillance Bot With Face Recognition",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Public Safety / Computer Vision",
+      "tech_stack": null,
+      "rank": 17,
+      "bm25_rank": null,
+      "vector_rank": 6,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [
+        "recognition"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_4713",
+      "candidate_type": "local",
+      "title": "IOT Based Driving License Authentication System Using Face And Fingerprint Of Driver",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 18,
+      "bm25_rank": null,
+      "vector_rank": 7,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0228",
+      "candidate_type": "local",
+      "title": "FluidNC",
+      "description": "Next-generation motion control firmware running on ESP32 microcontrollers with web configuration and WiFi streaming.",
+      "source_url": "https://github.com/bdring/FluidNC",
+      "source_type": "open_source_repository",
+      "year": 2021,
+      "domain": "CNC Milling / Embedded Firmware",
+      "tech_stack": "ESP32",
+      "rank": 19,
+      "bm25_rank": 9,
+      "vector_rank": null,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "esp32",
+        "control"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_3206",
+      "candidate_type": "local",
+      "title": "Stride Sentinel: Security Surveillance System Through Gait Analysis",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Public Safety / Computer Vision",
+      "tech_stack": null,
+      "rank": 20,
+      "bm25_rank": null,
+      "vector_rank": 9,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    }
+  ],
+  "live_candidates": []
+}

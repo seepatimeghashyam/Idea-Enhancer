@@ -1,0 +1,400 @@
+{
+  "query_id": "q11",
+  "query_text": "Smart aquaculture monitoring system with ESP32 for dissolved oxygen, pH, temperature",
+  "category": "IoT/Agriculture",
+  "timestamp": 1795888826.9954789,
+  "local_candidates": [
+    {
+      "candidate_id": "local:RVCE-IEEE-2024-02",
+      "candidate_type": "local",
+      "title": "Smart IoT-Driven Monitoring and Control System for Shrimp Aquaculture",
+      "description": "An autonomous aquaculture telemetry and regulation station utilizing submersible chemical sensors coupled to an ESP32 controller to monitor dissolved oxygen, pH, and water temperature.",
+      "source_url": "https://ieeexplore.ieee.org/document/10787201",
+      "source_type": "research_paper",
+      "year": 2024,
+      "domain": "Smart Agriculture / Aquaculture IoT",
+      "tech_stack": "ESP32",
+      "rank": 1,
+      "bm25_rank": 1,
+      "vector_rank": 1,
+      "rrf_score": 0.03278688524590164,
+      "shared_elements": [
+        "smart",
+        "aquaculture",
+        "monitoring",
+        "esp32",
+        "dissolved",
+        "oxygen",
+        "temperature"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0233",
+      "candidate_type": "local",
+      "title": "IoT-based Smart Water Flow Control and Monitoring System using ESP32 and 2-Way Solenoid Valves",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating iot-based smart water flow control and monitoring system using esp32 and 2-way solenoid valves. Published in 2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2025).",
+      "source_url": "https://doi.org/10.1109/csitss67709.2025.11293995",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": "ESP32",
+      "rank": 2,
+      "bm25_rank": 2,
+      "vector_rank": 4,
+      "rrf_score": 0.031754032258064516,
+      "shared_elements": [
+        "smart",
+        "monitoring",
+        "esp32"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_6202",
+      "candidate_type": "local",
+      "title": "IOT Based Autonomuous Aquaculture System",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 3,
+      "bm25_rank": 7,
+      "vector_rank": 2,
+      "rrf_score": 0.031054405392392875,
+      "shared_elements": [
+        "aquaculture"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:VERIFIED-0014",
+      "candidate_type": "local",
+      "title": "ESPHome Smart Sensor Firmware",
+      "description": "System to control ESP8266 and ESP32 microcontrollers with simple YAML configuration files, sensor reading routines, and automated Home Assistant integration.",
+      "source_url": "https://github.com/esphome/esphome",
+      "source_type": "open_source_repository",
+      "year": 2018,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 4,
+      "bm25_rank": 6,
+      "vector_rank": 8,
+      "rrf_score": 0.029857397504456328,
+      "shared_elements": [
+        "smart",
+        "esp32"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0104",
+      "candidate_type": "local",
+      "title": "IoT-Enabled Predictive Maintenance for Rotating Machinery Using ESP32-Based Low-Cost Vibration and Acoustic Sensing",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating iot-enabled predictive maintenance for rotating machinery using esp32-based low-cost vibration and acoustic sensing. Published in 2026 7th International Conference on Smart Electronics and Communication (ICOSEC) (2026).",
+      "source_url": "https://doi.org/10.1109/icosec70158.2026.11736120",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": "ESP32",
+      "rank": 5,
+      "bm25_rank": 5,
+      "vector_rank": 14,
+      "rrf_score": 0.0288981288981289,
+      "shared_elements": [
+        "smart",
+        "esp32"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0049",
+      "candidate_type": "local",
+      "title": "Sustainable Aquaculture Development Using Cloud Computing",
+      "description": "This chapter explores the infusion of digital technologies into marine fisheries by considering how the transformative effects of IoT, AI, cloud computing, and blockchain are innovatively integrated. It further elaborates on the details of IoT-driven appliances such as drones and underwater sensors in the collection of relevant data from the aquaculture environment. The AI then processes and analyzes such information to yield actionable insights for efficiency improvement. Additionally, the chapter discusses how cloud computing makes big data volumes manageable and flexible. The chapter further narrates blockchain's critical role in trust and transparency within seafood supply chains. Case studies of the Norwegian approach to smart aquaculture and sustainable shrimp farming in Vietnam are covered as well. The chapter elaborates on the aspects that address pollution, propel economic growth, and promote social equity through IoT, AI, big data, and blockchain.",
+      "source_url": "https://doi.org/10.4018/979-8-3693-8034-5.ch023",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": "Sensors",
+      "rank": 6,
+      "bm25_rank": 10,
+      "vector_rank": 11,
+      "rrf_score": 0.028370221327967807,
+      "shared_elements": [
+        "smart",
+        "aquaculture"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_0254",
+      "candidate_type": "local",
+      "title": "Chlorophyll - An App Based Plant Monitoring System",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Smart Agriculture / AI",
+      "tech_stack": null,
+      "rank": 7,
+      "bm25_rank": 15,
+      "vector_rank": 7,
+      "rrf_score": 0.028258706467661692,
+      "shared_elements": [
+        "smart",
+        "monitoring"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0201",
+      "candidate_type": "local",
+      "title": "Tasmota",
+      "description": "Alternative open-source firmware for ESP8266 and ESP32 smart home devices providing local HTTP, MQTT, and OTA control.",
+      "source_url": "https://github.com/arendst/Tasmota",
+      "source_type": "open_source_repository",
+      "year": 2016,
+      "domain": "Embedded Firmware / Smart Home",
+      "tech_stack": "ESP8266, ESP32, MQTT",
+      "rank": 8,
+      "bm25_rank": 3,
+      "vector_rank": null,
+      "rrf_score": 0.015873015873015872,
+      "shared_elements": [
+        "smart",
+        "esp32"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_1463",
+      "candidate_type": "local",
+      "title": "Remote-controlled Water Quality Monitoring Boat",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 9,
+      "bm25_rank": null,
+      "vector_rank": 3,
+      "rrf_score": 0.015873015873015872,
+      "shared_elements": [
+        "monitoring"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-IEEE-2024-01",
+      "candidate_type": "local",
+      "title": "Smart Door Lock System with Facial Recognition Using IoT",
+      "description": "An IoT-connected smart physical access control system using an ESP32-CAM microcontroller running edge computer vision to authenticate personnel via biometric face recognition and log entry records.",
+      "source_url": "https://ieeexplore.ieee.org/document/10787123",
+      "source_type": "research_paper",
+      "year": 2024,
+      "domain": "IoT / Embedded Vision",
+      "tech_stack": "ESP32-CAM",
+      "rank": 10,
+      "bm25_rank": 4,
+      "vector_rank": null,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "smart",
+        "esp32"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_4598",
+      "candidate_type": "local",
+      "title": "Water Quality Monitoring System For Lakes And Rivers Using IOT",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 11,
+      "bm25_rank": null,
+      "vector_rank": 5,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "monitoring"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_0031",
+      "candidate_type": "local",
+      "title": "Portable Electrochemical Device For Rapid On-site Detection And Quantification Of Bacteria In Water",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Machine Learning / Applied Computing",
+      "tech_stack": null,
+      "rank": 12,
+      "bm25_rank": null,
+      "vector_rank": 6,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0223",
+      "candidate_type": "local",
+      "title": "RavenSystem/esp-homekit-devices",
+      "description": "Advanced firmware to add native Apple HomeKit and custom configurations, compatible with any SoC based on ESP32, ESP32-S, ESP32-C and ESP8266 series. (Shelly, Sonoff, Electrodragon, Tuya...)",
+      "source_url": "https://github.com/RavenSystem/esp-homekit-devices",
+      "source_type": "open_source_repository",
+      "year": 2018,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": "ESP32",
+      "rank": 13,
+      "bm25_rank": 8,
+      "vector_rank": null,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "esp32"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0199",
+      "candidate_type": "local",
+      "title": "Effect of melamine cyanurate on thermal and flame-retardant behaviour of chopped glass fibre reinforced polyphenylene ether/polystyrene/nylon-6",
+      "description": "This paper deals with the effect of melamine cyanurate on the thermal and fire retardant behaviour of chopped glass fibre (40 wt.%) reinforced polyphenylene ether/polystyrene/nylon-6 (40/40/20 wt. %) which are processed in a twin screw co-rotating extruder. The composite specimens were fabricated by injection moulding. Addition of melamine cyanurate decreased the amount of toxic gases and organic volatile compounds, crystallinity, crystalline temperature and melt temperature but the same fire-retardant increased glass transition temperature and heat distortion temperature of the ternary alloy. Flame retardancy with V0 and V2 rating along with Limiting Oxygen Index 35% was observed in UL94 test for 5 wt. % and 10 wt. % addition of melamine cyanurate, respectively. Addition of melamine cyanurate increased tensile modulus and elongation at break but decreased the melt flow rate and the moisture content of the ternary alloy.",
+      "source_url": "https://doi.org/10.1177/09673911221093165",
+      "source_type": "research_paper",
+      "year": 2022,
+      "domain": "Materials Science & Mechanical Systems",
+      "tech_stack": null,
+      "rank": 14,
+      "bm25_rank": 9,
+      "vector_rank": null,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "oxygen",
+        "temperature"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_MCA_0138",
+      "candidate_type": "local",
+      "title": "Arduino Based Water Dispenser For Irrigation System In Agriculture",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Smart Agriculture / AI",
+      "tech_stack": "Arduino",
+      "rank": 15,
+      "bm25_rank": null,
+      "vector_rank": 9,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "smart"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_6253",
+      "candidate_type": "local",
+      "title": "Advanced IOT And Machine Learning Solution To Monitor Underpass Water Logging",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 16,
+      "bm25_rank": null,
+      "vector_rank": 10,
+      "rrf_score": 0.014285714285714285,
+      "shared_elements": [],
+      "verification_status": "insufficient"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0228",
+      "candidate_type": "local",
+      "title": "FluidNC",
+      "description": "Next-generation motion control firmware running on ESP32 microcontrollers with web configuration and WiFi streaming.",
+      "source_url": "https://github.com/bdring/FluidNC",
+      "source_type": "open_source_repository",
+      "year": 2021,
+      "domain": "CNC Milling / Embedded Firmware",
+      "tech_stack": "ESP32",
+      "rank": 17,
+      "bm25_rank": 11,
+      "vector_rank": null,
+      "rrf_score": 0.014084507042253521,
+      "shared_elements": [
+        "esp32"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0202",
+      "candidate_type": "local",
+      "title": "WLED",
+      "description": "High-performance ESP8266/ESP32 web server for controlling addressable NeoPixel and WS2812B LED light strips.",
+      "source_url": "https://github.com/Aircoookie/WLED",
+      "source_type": "open_source_repository",
+      "year": 2018,
+      "domain": "Embedded Systems / Lighting IoT",
+      "tech_stack": "ESP32, ESP8266",
+      "rank": 18,
+      "bm25_rank": 12,
+      "vector_rank": null,
+      "rrf_score": 0.013888888888888888,
+      "shared_elements": [
+        "esp32"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_2744",
+      "candidate_type": "local",
+      "title": "Water Pollution Monitoring Rc Boat",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 19,
+      "bm25_rank": null,
+      "vector_rank": 12,
+      "rrf_score": 0.013888888888888888,
+      "shared_elements": [
+        "monitoring"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0229",
+      "candidate_type": "local",
+      "title": "OpenDTU",
+      "description": "ESP32 firmware communicating with Hoymiles microinverters via 2.4GHz radio to read solar PV generation metrics.",
+      "source_url": "https://github.com/tbnobody/OpenDTU",
+      "source_type": "open_source_repository",
+      "year": 2022,
+      "domain": "Solar Energy / Microinverter IoT",
+      "tech_stack": "ESP32",
+      "rank": 20,
+      "bm25_rank": 13,
+      "vector_rank": null,
+      "rrf_score": 0.0136986301369863,
+      "shared_elements": [
+        "esp32"
+      ],
+      "verification_status": "checked"
+    }
+  ],
+  "live_candidates": []
+}

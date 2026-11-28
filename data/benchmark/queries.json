@@ -1,0 +1,151 @@
+[
+  {
+    "id": "q1",
+    "text": "IoT-based crop disease detection using Raspberry Pi and CNN for real-time foliar infection monitoring",
+    "category": "Agriculture/IoT",
+    "expected_domains": [
+      "IoT",
+      "Computer Vision",
+      "Agriculture"
+    ]
+  },
+  {
+    "id": "q2",
+    "text": "Smart door lock system with facial recognition using ESP32-CAM for biometric access control",
+    "category": "IoT/Security",
+    "expected_domains": [
+      "IoT",
+      "Embedded Vision",
+      "Security"
+    ]
+  },
+  {
+    "id": "q3",
+    "text": "Deep learning anomaly detection in surveillance video using CNN and RNN for violence detection",
+    "category": "Computer Vision",
+    "expected_domains": [
+      "Computer Vision",
+      "Video Analytics",
+      "Deep Learning"
+    ]
+  },
+  {
+    "id": "q4",
+    "text": "Network intrusion detection for IoT botnet attacks using machine learning ensemble classifiers",
+    "category": "Cybersecurity",
+    "expected_domains": [
+      "Cybersecurity",
+      "Network Defense",
+      "Machine Learning"
+    ]
+  },
+  {
+    "id": "q5",
+    "text": "Quantum teleportation device for household pets using acoustic levitation",
+    "category": "Quantum/Novelty",
+    "expected_domains": [
+      "Quantum",
+      "Physics"
+    ]
+  },
+  {
+    "id": "q6",
+    "text": "Autonomous lunar rover navigation using reinforcement learning and orbital DEMs",
+    "category": "Robotics/Space",
+    "expected_domains": [
+      "Robotics",
+      "Autonomous Systems",
+      "Reinforcement Learning"
+    ]
+  },
+  {
+    "id": "q7",
+    "text": "AI-assisted swarm robotics with ant colony optimization for dynamic exploration",
+    "category": "Robotics/AI",
+    "expected_domains": [
+      "Robotics",
+      "Swarm Intelligence",
+      "AI"
+    ]
+  },
+  {
+    "id": "q8",
+    "text": "Edge-optimized Indian Sign Language translator using landmark-based motion representation",
+    "category": "Assistive Tech/Edge AI",
+    "expected_domains": [
+      "Computer Vision",
+      "Edge Computing",
+      "Assistive Technology"
+    ]
+  },
+  {
+    "id": "q9",
+    "text": "Hydrogen fuel-cell utility aircraft conceptual design with PEM fuel cells for sustainable aviation",
+    "category": "Aerospace/Energy",
+    "expected_domains": [
+      "Aerospace",
+      "Power Systems",
+      "Renewable Energy"
+    ]
+  },
+  {
+    "id": "q10",
+    "text": "FPGA-based AES encryption system for hardware security and data protection",
+    "category": "Hardware Security",
+    "expected_domains": [
+      "Hardware Security",
+      "VLSI",
+      "FPGA"
+    ]
+  },
+  {
+    "id": "q11",
+    "text": "Smart aquaculture monitoring system with ESP32 for dissolved oxygen, pH, temperature",
+    "category": "IoT/Agriculture",
+    "expected_domains": [
+      "IoT",
+      "Smart Agriculture",
+      "Embedded Systems"
+    ]
+  },
+  {
+    "id": "q12",
+    "text": "Graph neural network recommendation system for social platforms modeling high-order user interactions",
+    "category": "Graph ML",
+    "expected_domains": [
+      "Data Science",
+      "Graph Machine Learning",
+      "Recommendation Systems"
+    ]
+  },
+  {
+    "id": "q13",
+    "text": "Deep learning capsule and tablet identification for pharmaceutical inspection using YOLO",
+    "category": "Healthcare/Vision",
+    "expected_domains": [
+      "Healthcare AI",
+      "Pharmaceutical Vision",
+      "Object Detection"
+    ]
+  },
+  {
+    "id": "q14",
+    "text": "Virtual reality aerospace maintenance hangar walkthrough for training simulation",
+    "category": "VR/Training",
+    "expected_domains": [
+      "Virtual Reality",
+      "Aerospace",
+      "Simulation"
+    ]
+  },
+  {
+    "id": "q15",
+    "text": "Blockchain-based decentralized document storage with NFT authentication",
+    "category": "Blockchain",
+    "expected_domains": [
+      "Blockchain",
+      "Decentralized Systems",
+      "Security"
+    ]
+  }
+]

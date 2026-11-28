@@ -1,0 +1,421 @@
+{
+  "query_id": "q12",
+  "query_text": "Graph neural network recommendation system for social platforms modeling high-order user interactions",
+  "category": "Graph ML",
+  "timestamp": 1795888837.1745093,
+  "local_candidates": [
+    {
+      "candidate_id": "local:RVCE-IEEE-2024-03",
+      "candidate_type": "local",
+      "title": "Social Platform Recommendation System Using Graph Neural Networks",
+      "description": "A personalized content and connection recommendation engine constructed for online community platforms, leveraging graph convolutional neural networks to model high-order user interactions.",
+      "source_url": "https://ieeexplore.ieee.org/document/10787310",
+      "source_type": "research_paper",
+      "year": 2024,
+      "domain": "Data Science / Graph Machine Learning",
+      "tech_stack": null,
+      "rank": 1,
+      "bm25_rank": 1,
+      "vector_rank": 1,
+      "rrf_score": 0.03278688524590164,
+      "shared_elements": [
+        "graph",
+        "neural",
+        "recommendation",
+        "social",
+        "platforms",
+        "high",
+        "order",
+        "user",
+        "interactions"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0035",
+      "candidate_type": "local",
+      "title": "pyg-team/pytorch_geometric",
+      "description": "Graph Neural Network Library for PyTorch",
+      "source_url": "https://github.com/pyg-team/pytorch_geometric",
+      "source_type": "open_source_repository",
+      "year": 2017,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": "PyTorch",
+      "rank": 2,
+      "bm25_rank": 2,
+      "vector_rank": 16,
+      "rrf_score": 0.02928692699490662,
+      "shared_elements": [
+        "graph",
+        "neural",
+        "network"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0220",
+      "candidate_type": "local",
+      "title": "A User Aware Indian Music Recommendation System",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating a user aware indian music recommendation system. Published in 2025 5th International Conference on Robotics, Automation, and Artificial Intelligence (RAAI) (2025).",
+      "source_url": "https://doi.org/10.1109/raai67517.2025.11423370",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Robotics / Autonomous Systems",
+      "tech_stack": null,
+      "rank": 3,
+      "bm25_rank": 8,
+      "vector_rank": 14,
+      "rrf_score": 0.02821939586645469,
+      "shared_elements": [
+        "recommendation",
+        "user"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_5106",
+      "candidate_type": "local",
+      "title": "Spidrox Implementation Of Student Social Networking Using Quarkus And Flutter",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Telecommunications / Network Optimization",
+      "tech_stack": null,
+      "rank": 4,
+      "bm25_rank": 16,
+      "vector_rank": 7,
+      "rrf_score": 0.028083267871170464,
+      "shared_elements": [
+        "network",
+        "social"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0064",
+      "candidate_type": "local",
+      "title": "NLP in Social Media Data Processing",
+      "description": "Natural Language Processing (NLP) represents a cross-disciplinary domain that merges computer science with linguistics, empowering machines to comprehend, interpret, and generate human language. Its significance extends to transformative applications like chatbots, language translation, and sentiment analysis, thereby reshaping the landscape of human-computer interaction. Within the context of social media data analysis, NLP is indispensable for gleaning valuable insights from unstructured text data present on platforms such as Twitter, Facebook and Instagram. NLP serves as a linchpin in sentiment analysis, unraveling emotions in posts and comments. It aids businesses in understanding public opinion, customer satisfaction, and brand perception. Additionally, NLP facilitates trend analysis, user engagement, and personalized marketing by dissecting user-generated content. A notable trend is the fusion of NLP with image and video processing, ushering in multimodal analysis. Explainable AI (XAI) enhances transparency in NLP models, contributing to accountable decision-making. NLP also plays an important role in combating misinformation on social media and assisting companies in refining their engagement strategies. The chapter explores the future of NLP in social media data analysis. It also involves advancements in contextual understanding, accuracy, and adaptability. It also includes incorporation of multimodal analysis and real-time data processing promises deeper insights and informed decision-making. The evolving landscape of NLP in social media analysis ensures refined analyses, responsible implementation, and informed decisions across diverse industries and societal contexts.",
+      "source_url": "https://doi.org/10.4018/979-8-3693-2935-1.ch007",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": null,
+      "rank": 5,
+      "bm25_rank": 14,
+      "vector_rank": 10,
+      "rrf_score": 0.027799227799227798,
+      "shared_elements": [
+        "social",
+        "platforms",
+        "user"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0038",
+      "candidate_type": "local",
+      "title": "recommenders-team/recommenders",
+      "description": "Best Practices on Recommendation Systems",
+      "source_url": "https://github.com/recommenders-team/recommenders",
+      "source_type": "open_source_repository",
+      "year": 2018,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": null,
+      "rank": 6,
+      "bm25_rank": null,
+      "vector_rank": 2,
+      "rrf_score": 0.016129032258064516,
+      "shared_elements": [
+        "recommendation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0483",
+      "candidate_type": "local",
+      "title": "Graph Neural Network (GNN)-Based Path Planning Accelerator on FPGA",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating graph neural network (gnn)-based path planning accelerator on fpga. Published in 2026 2nd International Conference on Computing for Sustainability and Intelligent Future (COMP-SIF) (2026).",
+      "source_url": "https://doi.org/10.1109/comp-sif69752.2026.11481949",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "VLSI Design / Microelectronics",
+      "tech_stack": null,
+      "rank": 7,
+      "bm25_rank": 3,
+      "vector_rank": null,
+      "rrf_score": 0.015873015873015872,
+      "shared_elements": [
+        "graph",
+        "neural",
+        "network"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-GH-0403",
+      "candidate_type": "local",
+      "title": "wzhe06/Reco-papers",
+      "description": "Classic papers and resources on recommendation",
+      "source_url": "https://github.com/wzhe06/Reco-papers",
+      "source_type": "open_source_repository",
+      "year": 2018,
+      "domain": "Reinforcement Learning / Decision AI",
+      "tech_stack": null,
+      "rank": 8,
+      "bm25_rank": null,
+      "vector_rank": 3,
+      "rrf_score": 0.015873015873015872,
+      "shared_elements": [
+        "recommendation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0227",
+      "candidate_type": "local",
+      "title": "ClimateAuditX: A Heterogeneous Graph Neural Network Framework for Carbon Leakage Detection and Scope 3 Emissions Attribution",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating climateauditx: a heterogeneous graph neural network framework for carbon leakage detection and scope 3 emissions attribution. Published in IEEE Access (2026).",
+      "source_url": "https://doi.org/10.1109/access.2026.3689385",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": null,
+      "rank": 9,
+      "bm25_rank": 4,
+      "vector_rank": null,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "graph",
+        "neural",
+        "network"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0015",
+      "candidate_type": "local",
+      "title": "REGER: Modeling inter-item Relations with Semantic IDs for Generative Recommendation",
+      "description": "Personalized recommendation depends on learning semantic and collaborative relations among items from online content and user interactions. Generative recommendation (GR) offers a promising paradigm by autoregressively generating discrete semantic IDs (SIDs) of items. However, randomly initialized SID token embeddings and GR models trained from scratch do not directly inherit the semantic relations inherent in items, while inter-item collaborative relations are learned largely implicitly through token-level attention and next-token supervision. To address this limitation, we propose REGER, a unified framework that explicitly incorporates inter-item relations into semantic pretraining, history encoding, and SID generation. We pretrain the GR model through generative semantic retrieval, enabling it to inherit inter-item semantic similarity by learning to generate semantic neighbors' SIDs. We combine global attention with local attention aligned with SID boundaries to capture historical context and directed transitions between adjacent items. We further develop a theoretical framework for hierarchical preference decomposition over the SID prefix tree, proving an exact factorization of collaborative preference distributions and a weighted decomposition of item-level KL divergence into prefix-conditional KL divergences. Building on this analysis, we distill a discriminative teacher's full conditional distributions over all legal next tokens at ground-truth prefixes along the target SID path, jointly optimizing this objective with cross-entropy. Extensive experiments on real-world datasets demonstrate consistent improvements over existing GR baselines and support the effectiveness of the proposed preference distillation.",
+      "source_url": "https://arxiv.org/abs/2610.37584v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Artificial Intelligence / Reasoning",
+      "tech_stack": null,
+      "rank": 10,
+      "bm25_rank": null,
+      "vector_rank": 4,
+      "rrf_score": 0.015625,
+      "shared_elements": [
+        "recommendation",
+        "modeling",
+        "user",
+        "interactions"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0404",
+      "candidate_type": "local",
+      "title": "Real-Time IoT Intrusion Detection Using a Lightweight Graph Neural Network Approach",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating real-time iot intrusion detection using a lightweight graph neural network approach. Published in 2025 10th International Conference on Communication and Electronics Systems (ICCES) (2025).",
+      "source_url": "https://doi.org/10.1109/icces67310.2025.11336940",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": null,
+      "rank": 11,
+      "bm25_rank": 5,
+      "vector_rank": null,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "graph",
+        "neural",
+        "network"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0052",
+      "candidate_type": "local",
+      "title": "RPSD: Retrieval-Privileged On-Policy Self-Distillation with Optimal Transport",
+      "description": "Sequential recommendation predicts a user's next interaction from historical behavior. Recent LLM-based methods recast this task as generative recommendation and increasingly adopt reinforcement learning such as GRPO for post-training. However, these methods suffer from two limitations, namely credit-blind optimization, where a sequence-level reward is shared across all generated tokens, and collaborative-blind supervision, where each training signal is derived from a single user and ignores behavioral patterns shared across similar users. To address both issues, we propose Retrieval-Privileged on-policy Self-Distillation (RPSD). For credit-blind optimization, we introduce on-policy self-distillation (OPSD), in which a teacher with privileged knowledge re-evaluates the student's on-policy response, and the token-level confidence difference between the student and teacher reshapes the shared sequence-level advantage into token-specific credit. However, the privileged knowledge in vanilla OPSD is still derived from a single user, leaving collaborative-blind supervision unresolved. We therefore ground the teacher in collaborative behavioral evidence from similar users. Specifically, we use temporally aware optimal transport (OT) to compare interaction trajectories across users by jointly considering item similarity and temporal structure, and further apply diversity-aware selection to retain complementary trajectories as privileged evidence. In this way, on-policy self-distillation provides fine-grained token-level credit, while OT enriches the teacher with structured cross-user evidence. To the best of our knowledge, this is the first work to bring on-policy self-distillation to sequential recommendation and to use cross-user behavior as its privileged signal. Extensive experiments across multiple real-world datasets demonstrate that RPSD achieves state-of-the-art performance.",
+      "source_url": "https://arxiv.org/abs/2610.37281v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Artificial Intelligence / Reasoning",
+      "tech_stack": null,
+      "rank": 12,
+      "bm25_rank": null,
+      "vector_rank": 5,
+      "rrf_score": 0.015384615384615385,
+      "shared_elements": [
+        "recommendation",
+        "user"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0452",
+      "candidate_type": "local",
+      "title": "Analysis of Fake News Detection using Graph Neural Network (GNN) and Deep Learning",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating analysis of fake news detection using graph neural network (gnn) and deep learning. Published in 2023 2nd International Conference on Automation, Computing and Renewable Systems (ICACRS) (2023).",
+      "source_url": "https://doi.org/10.1109/icacrs58579.2023.10405304",
+      "source_type": "research_paper",
+      "year": 2023,
+      "domain": "Computer Vision / Deep Learning",
+      "tech_stack": null,
+      "rank": 13,
+      "bm25_rank": 6,
+      "vector_rank": null,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [
+        "graph",
+        "neural",
+        "network"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_5558",
+      "candidate_type": "local",
+      "title": "Enhancing Smart Summarization Systems Through Reinforcement Learning And Explainable AI For Better Recommendation Precision",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "IoT / Embedded Systems",
+      "tech_stack": null,
+      "rank": 14,
+      "bm25_rank": null,
+      "vector_rank": 6,
+      "rrf_score": 0.015151515151515152,
+      "shared_elements": [
+        "recommendation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0341",
+      "candidate_type": "local",
+      "title": "NLP Pipeline for Electronic Health Records and Predicting the Necessity of MRI Scan Requirement Using Graph Neural Network",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating nlp pipeline for electronic health records and predicting the necessity of mri scan requirement using graph neural network. Published in 2025 5th International Conference on Robotics, Automation, and Artificial Intelligence (RAAI) (2025).",
+      "source_url": "https://doi.org/10.1109/raai67517.2025.11423345",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Natural Language Processing / AI",
+      "tech_stack": null,
+      "rank": 15,
+      "bm25_rank": 7,
+      "vector_rank": null,
+      "rrf_score": 0.014925373134328358,
+      "shared_elements": [
+        "graph",
+        "neural",
+        "network"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_0980",
+      "candidate_type": "local",
+      "title": "Fertilizer Recommendation System For Farmers",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Smart Agriculture / AI",
+      "tech_stack": null,
+      "rank": 16,
+      "bm25_rank": null,
+      "vector_rank": 8,
+      "rrf_score": 0.014705882352941176,
+      "shared_elements": [
+        "recommendation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:ACAD-ARXIV-0218",
+      "candidate_type": "local",
+      "title": "Penny for Your Prompts: A Measurement Study of Contextual Leakage in AI Chat Platforms",
+      "description": "AI chatbot platforms have become one of the most popular web interfaces users interact with online, routinely receiving personal and intimate information shared under an expectation of privacy. Yet, on the web application side, these platforms have the ability to embed third-party analytics, advertising, and session replay scripts that operate silently alongside the chatbot, creating an underexamined channel for conversational data leakage towards third parties. We conduct the first systematic large-scale measurement study of contextual leakage in AI chatbots, auditing the web interfaces of 42 general-purpose and domain-specific (health, legal, and education) platforms. Beyond standard network interception, we instrument the browser at the JavaScript engine level to attribute each data flow to the exact user action that triggered it, and the DOM capture mechanism used to retrieve its content, a granularity invisible to network-layer analysis alone. We find that 21 of these platforms leak conversation titles to third-party trackers, while nine leak verbatim user prompts. Beyond content, we observe a substantial amount of chatbot platforms sending user emails to third-party trackers, enabling the association of conversational context with a user's identity. Our findings cast traditional web privacy issues under a new light, highlighting the privacy issues that are inherent in how users interact with modern AI chatbots.",
+      "source_url": "https://arxiv.org/abs/2610.37467v1",
+      "source_type": "research_paper",
+      "year": 2026,
+      "domain": "Cybersecurity / Applied Cryptography",
+      "tech_stack": null,
+      "rank": 17,
+      "bm25_rank": 9,
+      "vector_rank": null,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "network",
+        "platforms",
+        "user"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:KSCST-48S_BE_5576",
+      "candidate_type": "local",
+      "title": "Nutrivision: Yolo-sam- Driven Dietary App For Personalized Food Recommendation And Meal Tracking",
+      "description": "Description not independently verified.",
+      "source_url": "https://www.kscst.org.in/spp/48_series/48s_spp/SPP_48S_Technical_Record/15_Projects_sanctioned_under_48th_series_of_SPP.pdf",
+      "source_type": "institutional_project",
+      "year": 2024,
+      "domain": "Web Application / Information Systems",
+      "tech_stack": null,
+      "rank": 18,
+      "bm25_rank": null,
+      "vector_rank": 9,
+      "rrf_score": 0.014492753623188406,
+      "shared_elements": [
+        "recommendation"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:GLOBAL-APP-0151",
+      "candidate_type": "local",
+      "title": "Monica CRM",
+      "description": "Personal relationship management web application helping individuals log interactions, birthdays, and relationship notes.",
+      "source_url": "https://github.com/monicahq/monica",
+      "source_type": "open_source_repository",
+      "year": 2017,
+      "domain": "Personal CRM / Social Tracker",
+      "tech_stack": null,
+      "rank": 19,
+      "bm25_rank": 10,
+      "vector_rank": null,
+      "rrf_score": 0.014285714285714285,
+      "shared_elements": [
+        "social",
+        "interactions"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "candidate_id": "local:RVCE-PUB-0422",
+      "candidate_type": "local",
+      "title": "Modeling Tumor-Treatment Interactions via Gradient-Optimized Controlled ARMA Models",
+      "description": "Applied engineering research project conducted at R.V. College of Engineering (RVCE), Bengaluru, investigating modeling tumor-treatment interactions via gradient-optimized controlled arma models. Published in 2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS) (2025).",
+      "source_url": "https://doi.org/10.1109/csitss67709.2025.11294612",
+      "source_type": "research_paper",
+      "year": 2025,
+      "domain": "Applied Engineering / Computing",
+      "tech_stack": null,
+      "rank": 20,
+      "bm25_rank": 11,
+      "vector_rank": null,
+      "rrf_score": 0.014084507042253521,
+      "shared_elements": [
+        "modeling",
+        "interactions"
+      ],
+      "verification_status": "checked"
+    }
+  ],
+  "live_candidates": []
+}
